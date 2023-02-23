@@ -11,6 +11,7 @@ import getopt, sys
 from sklearn.preprocessing import normalize
 import math
 import random
+from csv import writer
 
 death         = True
 forced_obvert = False
@@ -142,7 +143,7 @@ class LearningAgent(Agent):
                     distance = 2
                 if distance == 5:
                     distance = 1
-                if((math.floor((self.id-1)/5) == math.floor((agent.id-1)/5)) or (p<=np.pow(probability,distance))):
+                if((math.floor((self.id-1)/5) == math.floor((agent.id-1)/5)) or (p<=pow(probability,distance))):
                     agentComms.append(agent)
         #print(len(agentComms))
         if (len(agentComms)!=0):

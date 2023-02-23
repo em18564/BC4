@@ -11,6 +11,9 @@ import getopt, sys
 from sklearn.preprocessing import normalize
 import math
 import random
+import csv
+
+probability   = 0.01
 
 death         = True
 forced_obvert = False
@@ -19,7 +22,6 @@ witnesses     = False
 cont          = False
 adultComm     = True
 contVal       = 0
-probability   = 0.01
 xs = []
 ys = []
 stabilities = []
@@ -153,13 +155,10 @@ class LearningAgent(Agent):
 
 
     def induce(self, otherAgent,pairs):
-        p = self.random.uniform(0, 1)
-        global probability
-        if((math.floor((self.id-1)/5) == math.floor((otherAgent-1)/5)) or p<=probability):
-            self.learnPairings(pairs)
-            if(not forced_obvert):
-                self.learnSignal(pairs)
-            self.recieved = True
+        self.learnPairings(pairs)
+        if(not forced_obvert):
+            self.learnSignal(pairs)
+        self.recieved = True
 
     def induceUpdate(self, otherAgent,pairs):
         if(self.recieved):
@@ -297,8 +296,8 @@ class LearningAgent(Agent):
         global firstSpoken
         global speakingMatrix
         if(self.stepVal>firstSpoken):
-            if(self.stepVal%100 ==0):
-                print(self.stepVal)
+            #if(self.stepVal%100 ==0):
+                #print(self.stepVal)
             speakingMatrix = []
             possibleMatrix = []
             firstSpoken = self.stepVal
@@ -335,14 +334,18 @@ class LearningAgent(Agent):
         #     name = str(self.stepVal) +'.agentW2-'+str(self.id)+'.csv'
         #     np.savetxt(name,self.W2, delimiter=',')
         #     print(str(self.id) + ':' + str(self.expressiveness))
-        if(self.stepVal==1000):
-            if self.id == 1:
-                global probability
-                #print(probability, "-", self.stepVal)
+        if(self.stepVal%100==99):
             global stabMatrix
             neighbors_nodes = self.model.grid.get_neighbors(self.pos, include_center=False)
             for agent in self.model.grid.get_cell_list_contents(neighbors_nodes):
                 stabMatrix[self.id-1][agent.id-1]=compareStability(self,agent,self.meaningSpace)
+        if(self.stepVal%100==0):
+            if self.id == 1:
+                global probability
+                global stabMatrix
+                with open("out.csv", "w", newline="") as f:
+                    writer = csv.writer(f)
+                    writer.writerows(stabMatrix)
 
 
 
@@ -447,12 +450,33 @@ def calculate_stabilities():
 def main(argv):
     global probability
     if len(argv)!=0:
-        probability = float(argv[0])/1000
-        print("prob:",probability)
-        expressiveness = runSimulation(30,1001)
-        #expressiveness.plot()
-        inStab,outStab = calculate_stabilities()
-        print(probability,":",inStab,"-",outStab)
+        for i in range(10):
+            global adultComm
+            global contVal
+            global xs
+            global ys
+            global stabilities
+            global weights1
+            global weights2
+            global stabMatrix
+            global firstSpoken
+            global speakingMatrix
+            adultComm     = True
+            contVal       = 0
+            xs = []
+            ys = []
+            stabilities = []
+            weights1 = []
+            weights2 = []
+            stabMatrix = [[0 for x in range(30)] for y in range(30)] 
+            firstSpoken = 0
+            speakingMatrix = []
+            probability = float(argv[0])/1000
+            print("prob:",probability)
+            expressiveness = runSimulation(30,1001)
+            #expressiveness.plot()
+            inStab,outStab = calculate_stabilities()
+            print(probability,":",inStab,"-",outStab)
     else:
         probs = np.arange(0.01,0.1,0.01)
         print(probs)
