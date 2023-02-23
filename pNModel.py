@@ -11,7 +11,10 @@ import getopt, sys
 from sklearn.preprocessing import normalize
 import math
 import random
-from csv import writer
+import csv
+
+probability   = 0.01
+percent       = 0
 
 death         = True
 forced_obvert = False
@@ -20,7 +23,6 @@ witnesses     = False
 cont          = False
 adultComm     = True
 contVal       = 0
-probability   = 0.01
 xs = []
 ys = []
 stabilities = []
@@ -300,8 +302,8 @@ class LearningAgent(Agent):
         global firstSpoken
         global speakingMatrix
         if(self.stepVal>firstSpoken):
-            if(self.stepVal%100 ==0):
-                print(self.stepVal)
+            #if(self.stepVal%100 ==0):
+                #print(self.stepVal)
             speakingMatrix = []
             possibleMatrix = []
             firstSpoken = self.stepVal
@@ -310,7 +312,7 @@ class LearningAgent(Agent):
                 if agent.age>5:
                     possibleMatrix.append(agent.id)
             if(len(possibleMatrix)>=6):
-                speakingMatrix = random.sample(possibleMatrix, 6)
+                speakingMatrix = random.sample(possibleMatrix, 6)	
                 # print(self.stepVal,possibleMatrix,speakingMatrix)
         if speakingMatrix.count(self.id)>0:
             self.invent()
@@ -338,14 +340,22 @@ class LearningAgent(Agent):
         #     name = str(self.stepVal) +'.agentW2-'+str(self.id)+'.csv'
         #     np.savetxt(name,self.W2, delimiter=',')
         #     print(str(self.id) + ':' + str(self.expressiveness))
-        if(self.stepVal==1000):
+        global stabMatrix
+
+        if(self.stepVal%100==99):
+            neighbors_nodes = self.model.grid.get_neighbors(self.pos, include_center=False)
+            stabMatrix[self.id-1][self.id-1] = 1
+            for agent in self.model.grid.get_cell_list_contents(neighbors_nodes):
+                stabMatrix[self.id-1][agent.id-1]=1-compareStability(self,agent,self.meaningSpace)
+        if(self.stepVal%100==0):
             if self.id == 1:
                 global probability
-                #print(probability, "-", self.stepVal)
-            global stabMatrix
-            neighbors_nodes = self.model.grid.get_neighbors(self.pos, include_center=False)
-            for agent in self.model.grid.get_cell_list_contents(neighbors_nodes):
-                stabMatrix[self.id-1][agent.id-1]=compareStability(self,agent,self.meaningSpace)
+                global percent
+                with open("pNstability"+str(percent)+".csv", "a", newline="") as f:
+                    writer = csv.writer(f)
+                    flat = [item for sublist in stabMatrix for item in sublist]
+                    print(flat)
+                    writer.writerow(flat)
 
 
 
@@ -450,32 +460,39 @@ def calculate_stabilities():
 def main(argv):
     global probability
     if len(argv)!=0:
-        probability = float(argv[0])/1000
-        print("prob:",probability)
-        expressiveness = runSimulation(30,1001)
-        #expressiveness.plot()
-        inStab,outStab = calculate_stabilities()
-        print(probability,":",inStab,"-",outStab)
-    else:
-        probs = np.arange(0.01,0.1,0.01)
-        print(probs)
-        with open('results.csv', 'a') as f_object:
-                writer_object = writer(f_object)
-                writer_object.writerow(probs)
-                f_object.close()
-        
-        for j in probs:
-            probability = j
+        for i in range(10):
+            global adultComm
+            global contVal
+            global xs
+            global ys
+            global stabilities
+            global weights1
+            global weights2
+            global stabMatrix
+            global firstSpoken
+            global speakingMatrix
+            global percent
+            adultComm     = True
+            contVal       = 0
+            xs = []
+            ys = []
+            stabilities = []
+            weights1 = []
+            weights2 = []
+            stabMatrix = [[0 for x in range(30)] for y in range(30)] 
+            firstSpoken = 0
+            speakingMatrix = []
+            percent = int(argv[0])
+            x = float(percent*0.01)
+            probability = x
+            print("perc:",percent," prob:",probability)
             expressiveness = runSimulation(30,1001)
             #expressiveness.plot()
             inStab,outStab = calculate_stabilities()
-            
-            List = [probability,inStab,outStab]
-            with open('results.csv', 'a') as f_object:
-                writer_object = writer(f_object)
-                writer_object.writerow(List)
-                f_object.close()
             print(probability,":",inStab,"-",outStab)
 
+
+
 if __name__ == "__main__":
-   main(sys.argv[1:])
+    main(sys.argv[1:])
+

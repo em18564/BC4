@@ -14,6 +14,7 @@ import random
 import csv
 
 probability   = 0.01
+percent       = 0
 
 death         = True
 forced_obvert = False
@@ -334,18 +335,22 @@ class LearningAgent(Agent):
         #     name = str(self.stepVal) +'.agentW2-'+str(self.id)+'.csv'
         #     np.savetxt(name,self.W2, delimiter=',')
         #     print(str(self.id) + ':' + str(self.expressiveness))
+        global stabMatrix
+
         if(self.stepVal%100==99):
-            global stabMatrix
             neighbors_nodes = self.model.grid.get_neighbors(self.pos, include_center=False)
+            stabMatrix[self.id-1][self.id-1] = 1
             for agent in self.model.grid.get_cell_list_contents(neighbors_nodes):
-                stabMatrix[self.id-1][agent.id-1]=compareStability(self,agent,self.meaningSpace)
+                stabMatrix[self.id-1][agent.id-1]=1-compareStability(self,agent,self.meaningSpace)
         if(self.stepVal%100==0):
             if self.id == 1:
                 global probability
-                global stabMatrix
-                with open("out.csv", "w", newline="") as f:
+                global percent
+                with open("stability"+str(percent)+".csv", "a", newline="") as f:
                     writer = csv.writer(f)
-                    writer.writerows(stabMatrix)
+                    flat = [item for sublist in stabMatrix for item in sublist]
+                    print(flat)
+                    writer.writerow(flat)
 
 
 
@@ -461,6 +466,7 @@ def main(argv):
             global stabMatrix
             global firstSpoken
             global speakingMatrix
+            global percent
             adultComm     = True
             contVal       = 0
             xs = []
@@ -471,32 +477,16 @@ def main(argv):
             stabMatrix = [[0 for x in range(30)] for y in range(30)] 
             firstSpoken = 0
             speakingMatrix = []
-            probability = float(argv[0])/1000
-            print("prob:",probability)
+            percent = int(argv[0])
+            probability = float((float(percent*0.01)*-4)/(25*float(percent*0.01)-25))
+            print("perc:",percent," prob:",probability)
             expressiveness = runSimulation(30,1001)
             #expressiveness.plot()
             inStab,outStab = calculate_stabilities()
-            print(probability,":",inStab,"-",outStab)
-    else:
-        probs = np.arange(0.01,0.1,0.01)
-        print(probs)
-        with open('results.csv', 'a') as f_object:
-                writer_object = writer(f_object)
-                writer_object.writerow(probs)
-                f_object.close()
-        
-        for j in probs:
-            probability = j
-            expressiveness = runSimulation(30,1001)
-            #expressiveness.plot()
-            inStab,outStab = calculate_stabilities()
-            
-            List = [probability,inStab,outStab]
-            with open('results.csv', 'a') as f_object:
-                writer_object = writer(f_object)
-                writer_object.writerow(List)
-                f_object.close()
             print(probability,":",inStab,"-",outStab)
 
+
+
 if __name__ == "__main__":
-   main(sys.argv[1:])
+    main(sys.argv[1:])
+
