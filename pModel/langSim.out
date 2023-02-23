@@ -1,0 +1,57 @@
+Running on host compute117.bc4.acrc.priv
+Time is Wed Feb 22 23:18:39 GMT 2023
+Directory is /user/home/em18564/LanguageSim/pModel
+Slurm job ID is 11229350
+This job runs on the following machines:
+compute117
+slurmstepd: error: *** JOB 11229355 ON compute479 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229324 ON compute291 CANCELLED AT 2023-02-23T14:43:31 ***
+slurmstepd: error: *** JOB 11229346 ON compute452 CANCELLED AT 2023-02-23T14:43:31 ***
+slurmstepd: error: *** JOB 11229310 ON compute361 CANCELLED AT 2023-02-23T14:43:31 ***
+slurmstepd: error: *** JOB 11229326 ON compute304 CANCELLED AT 2023-02-23T14:43:31 ***
+slurmstepd: error: *** JOB 11229349 ON compute320 CANCELLED AT 2023-02-23T14:43:31 ***
+slurmstepd: error: *** JOB 11229322 ON compute286 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229281 ON compute163 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229357 ON compute423 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229343 ON compute297 CANCELLED AT 2023-02-23T14:43:31 ***
+slurmstepd: error: *** JOB 11229350 ON compute117 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229319 ON compute209 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229331 ON compute414 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229335 ON compute210 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229353 ON compute413 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229345 ON compute444 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229338 ON compute421 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229272 ON compute340 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229263 ON compute425 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229332 ON compute415 CANCELLED AT 2023-02-23T14:43:31 ***
+slurmstepd: error: *** JOB 11229356 ON compute483 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229316 ON compute475 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229354 ON compute467 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229344 ON compute375 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229329 ON compute388 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229333 ON compute420 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229337 ON compute373 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229317 ON compute478 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229323 ON compute288 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229313 ON compute446 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229351 ON compute131 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229327 ON compute311 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229352 ON compute412 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229348 ON compute277 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229312 ON compute422 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229307 ON compute268 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229315 ON compute472 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229314 ON compute454 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229334 ON compute132 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229330 ON compute410 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229318 ON compute208 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229320 ON compute225 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229358 ON compute424 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229321 ON compute229 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229336 ON compute310 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229328 ON compute387 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229311 ON compute362 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229342 ON compute273 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229325 ON compute292 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229339 ON compute448 CANCELLED AT 2023-02-23T14:43:32 ***
+slurmstepd: error: *** JOB 11229341 ON compute130 CANCELLED AT 2023-02-23T14:43:31 ***

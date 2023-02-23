@@ -1,0 +1,10 @@
+Running on host compute080.bc4.acrc.priv
+Time is Thu Feb 16 18:04:43 GMT 2023
+Directory is /user/home/em18564/LanguageSim/testingSpeed
+Slurm job ID is 11193581
+This job runs on the following machines:
+compute080
+Traceback (most recent call last):
+  File "modelArr.py", line 1, in <module>
+    import numpy as np
+ImportError: No module named numpy

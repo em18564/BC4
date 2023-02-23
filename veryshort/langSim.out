@@ -1,0 +1,15 @@
+Running on host compute520.bc4.acrc.priv
+Time is Thu Feb 16 15:20:12 GMT 2023
+Directory is /user/home/em18564/LanguageSim/veryshort
+Slurm job ID is 11192811
+This job runs on the following machines:
+compute520
+slurmstepd: error: *** JOB 11192813 ON highmem13 CANCELLED AT 2023-02-16T20:30:33 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 11192814 ON highmem14 CANCELLED AT 2023-02-16T20:30:33 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 11192815 ON highmem15 CANCELLED AT 2023-02-16T20:30:33 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 11192820 ON highmem11 CANCELLED AT 2023-02-16T20:34:02 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 11192819 ON highmem10 CANCELLED AT 2023-02-16T20:34:02 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 11192891 ON compute177 CANCELLED AT 2023-02-16T21:20:04 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 11192892 ON compute261 CANCELLED AT 2023-02-16T21:20:04 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 11192893 ON compute321 CANCELLED AT 2023-02-16T21:20:04 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 11192811 ON compute520 CANCELLED AT 2023-02-16T21:20:34 DUE TO TIME LIMIT ***
