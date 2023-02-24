@@ -3,7 +3,7 @@
 #SBATCH --job-name test
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --time=00:10:0
+#SBATCH --time=00:30:0
 #SBATCH --output test.out
 #SBATCH --account=cosc029104
 
@@ -15,4 +15,4 @@ echo This job runs on the following machines:
 echo `echo $SLURM_JOB_NODELIST | uniq`
 OMP_DISPLAY_ENV=true
 # Run the executable
-python -u test.py
+python -u pModelTEST.py
