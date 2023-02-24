@@ -1,6 +1,6 @@
-Running on host compute323.bc4.acrc.priv
-Time is Wed Feb 22 21:08:06 GMT 2023
-Directory is /user/home/em18564/LanguageSim/pNModel
-Slurm job ID is 11229218
+Running on host compute150.bc4.acrc.priv
+Time is Thu Feb 23 18:40:12 GMT 2023
+Directory is /user/home/em18564/LanguageSim/OldResults/pNModel
+Slurm job ID is 11231689
 This job runs on the following machines:
-compute323
+compute150
