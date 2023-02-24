@@ -4,3 +4,14 @@ Directory is /user/home/em18564/LanguageSim/indefiniteRun
 Slurm job ID is 11231698
 This job runs on the following machines:
 compute126
+slurmstepd: error: *** JOB 11231684 ON compute159 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231687 ON compute497 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231693 ON compute204 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231686 ON compute421 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231685 ON compute167 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231695 ON compute473 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231694 ON compute471 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231690 ON compute156 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231698 ON compute126 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231691 ON compute162 CANCELLED AT 2023-02-24T15:44:45 ***
+slurmstepd: error: *** JOB 11231692 ON compute203 CANCELLED AT 2023-02-24T15:44:45 ***
