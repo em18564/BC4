@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH --job-name langP
+#SBATCH --nodes 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --time=2-00:00:0
+#SBATCH --output langSim.out
+#SBATCH --account=cosc029104
+#SBATCH --array 0-20
+
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo Slurm job ID is $SLURM_JOB_ID
+echo This job runs on the following machines:
+echo `echo $SLURM_JOB_NODELIST | uniq`
+OMP_DISPLAY_ENV=true
+# Run the executable
+python -u pModel.py ${SLURM_ARRAY_TASK_ID}

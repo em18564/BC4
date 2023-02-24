@@ -346,7 +346,7 @@ class LearningAgent(Agent):
             if self.id == 1:
                 global probability
                 global percent
-                with open("stability"+str(percent)+".csv", "a", newline="") as f:
+                with open("data/stability"+str(percent)+".csv", "a", newline="") as f:
                     writer = csv.writer(f)
                     flat = [item for sublist in stabMatrix for item in sublist]
                     print(flat)

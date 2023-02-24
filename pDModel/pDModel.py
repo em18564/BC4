@@ -140,7 +140,12 @@ class LearningAgent(Agent):
         for agent in self.model.grid.get_cell_list_contents(neighbors_nodes):
             if agent.age<6 or adultComm:
                 p = self.random.uniform(0, 1)
-                if((math.floor((self.id-1)/5) == math.floor((agent.id-1)/5)) or p<=probability):
+                distance = abs(math.floor((agent.id-1)/5) - math.floor((self.id-1)/5))
+                if distance == 4:
+                    distance = 2
+                if distance == 5:
+                    distance = 1
+                if((math.floor((self.id-1)/5) == math.floor((agent.id-1)/5)) or (p<=pow(probability,distance))):
                     agentComms.append(agent)
         #print(len(agentComms))
         if (len(agentComms)!=0):
@@ -346,7 +351,7 @@ class LearningAgent(Agent):
             if self.id == 1:
                 global probability
                 global percent
-                with open("stability"+str(percent)+".csv", "a", newline="") as f:
+                with open("data/stability"+str(percent)+".csv", "a", newline="") as f:
                     writer = csv.writer(f)
                     flat = [item for sublist in stabMatrix for item in sublist]
                     print(flat)
@@ -478,7 +483,8 @@ def main(argv):
             firstSpoken = 0
             speakingMatrix = []
             percent = int(argv[0])
-            probability = float((float(percent*0.01)*-4)/(25*float(percent*0.01)-25))
+            x = float(percent*0.01)
+            probability = -(4.1997 *(x - 1))/pow((-200 * x*x*x - 2100 * x*x + math.sqrt(pow((-200 * x*x*x - 2100 * x*x + 4800 * x - 2500),2) + 500000 * pow((x - 1),6)) + 4800 * x - 2500),(1/3)) + (0.052913 *pow((-200 *x*x*x - 2100 *x*x + math.sqrt(pow((-200 * x*x*x - 2100 *x*x + 4800 *x - 2500),2) + 500000 * pow((x - 1),6)) + 4800 * x - 2500),(1/3)))/(x - 1) - 0.66667
             print("perc:",percent," prob:",probability)
             expressiveness = runSimulation(30,1001)
             #expressiveness.plot()
