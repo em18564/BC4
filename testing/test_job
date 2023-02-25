@@ -6,6 +6,7 @@
 #SBATCH --time=00:30:0
 #SBATCH --output test.out
 #SBATCH --account=cosc029104
+#SBATCH --partition=test
 
 echo Running on host `hostname`
 echo Time is `date`
@@ -15,4 +16,4 @@ echo This job runs on the following machines:
 echo `echo $SLURM_JOB_NODELIST | uniq`
 OMP_DISPLAY_ENV=true
 # Run the executable
-python -u pModelTEST.py
+python -u pModelTEST.py 10
