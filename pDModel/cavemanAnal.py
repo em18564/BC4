@@ -194,6 +194,8 @@ def getStabs():
     plt.errorbar(xs, np.mean(y1, axis=0), yerr=np.std(y1,axis=0),capsize=3,color='red',linewidth=width,label = "in Stability")
     plt.errorbar(xs, np.mean(y2, axis=0), fmt='--',yerr=np.std(y2,axis=0),capsize=3,color='blue',linewidth=width,label = "out Stability")
     plt.title("Mean language stability in pD Model with standard deviation")
+    plt.xlabel ('Percentage of communication being external')
+    plt.ylabel ('Language Stability')
     plt.tight_layout()
     plt.legend()
     plt.show()
