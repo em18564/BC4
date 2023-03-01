@@ -109,46 +109,53 @@ def performPlotTwo(age):
             #print(agents[i].meaningSignalPairings)
             stabilities[j%30][int(j/30)] = stabs[i][j]
         print(str((i+1)*100),"-",calculate_stabilities(stabilities))    
-        ax = sns.heatmap(stabilities, linewidth=0.5,vmin=0,vmax=1,cmap='rocket_r').set(title=(str(age)+"% external communication in pD model"))
+        f, ax = plt.subplots(figsize=(11, 9))
+
+        # ax = sns.heatmap(stabilities, linewidth=0.5,vmin=0,vmax=1,cmap='rocket_r')
+        ax = sns.heatmap(stabilities,  linewidth=0.5,vmin=0,vmax=1,cmap='rocket_r', ax=ax)
+        ax.set_title((str(age)+"% external communication in pD model"))
+        ax.hlines([5, 10, 15,20,25], *ax.get_xlim(),color='grey')
+        ax.vlines([5, 10, 15,20,25], *ax.get_ylim(),color='grey')
         plt.xlabel ('Agent ID')
         plt.ylabel ('Agent ID')
         plt.show()
 
     
 
-def performPlot(age):
-    agents = []
-    for i in range(25):
-        string = str(age)+'.agentW1-' + str(i+1) + '.csv'
-        W1 = np.genfromtxt(string, delimiter=',')
-        string = str(age)+'.agentW2-' + str(i+1) + '.csv'
-        W2 = np.genfromtxt(string, delimiter=',')
-        agents.append(agent(W1,W2))
-        agents[i].generateObvert(signalSpace,meaningSpace)
-        print(agents[i].analyseHammingData())
+# def performPlot(age):
+#     agents = []
+#     for i in range(25):
+#         string = str(age)+'.agentW1-' + str(i+1) + '.csv'
+#         W1 = np.genfromtxt(string, delimiter=',')
+#         string = str(age)+'.agentW2-' + str(i+1) + '.csv'
+#         W2 = np.genfromtxt(string, delimiter=',')
+#         agents.append(agent(W1,W2))
+#         agents[i].generateObvert(signalSpace,meaningSpace)
+#         print(agents[i].analyseHammingData())
 
 
-    stabilities = np.zeros((25,25))
+#     stabilities = np.zeros((25,25))
 
 
-    for i in range(25):
-        for j in range(25):
-            #print(agents[i].meaningSignalPairings)
-            stabilities[i][j] = (compareStability(agents[i],agents[j],meaningSpace))
+#     for i in range(25):
+#         for j in range(25):
+#             #print(agents[i].meaningSignalPairings)
+#             stabilities[i][j] = (compareStability(agents[i],agents[j],meaningSpace))
 
-    np.savetxt('stabilities.csv',stabilities, delimiter=',')
-
-
+#     np.savetxt('stabilities.csv',stabilities, delimiter=',')
 
 
-    stabs = np.genfromtxt('stabilities.csv', delimiter=',')
 
-    import seaborn as sns
 
-    ax = sns.heatmap(stabs, linewidth=0.5)
-    plt.xlabel ('Agent ID')
-    plt.ylabel ('Agent ID')
-    plt.show()
+#     stabs = np.genfromtxt('stabilities.csv', delimiter=',')
+
+#     import seaborn as sns
+
+   
+#     ax.hlines([5, 10, 15], *ax.get_xlim())
+#     plt.xlabel ('Agent ID')
+#     plt.ylabel ('Agent ID')
+#     plt.show()
 
 # for i in range(200,2001,200):
 #     print(i)
@@ -177,7 +184,7 @@ def getStabs():
             y2[t].append(y)
     fig, ax = plt.subplots()
     fsize = 10
-    tsize = 9
+    tsize = 10
     major = 2.0
     minor = 0.5
     width = 1
@@ -201,5 +208,5 @@ def getStabs():
     plt.show()
 
 getStabs()
-
-#performPlotTwo(15)
+performPlotTwo(15)
+performPlotTwo(20)
