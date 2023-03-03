@@ -1,0 +1,40 @@
+Running on host compute298.bc4.acrc.priv
+Time is Fri Mar 3 03:08:13 GMT 2023
+Directory is /user/home/em18564/BC4/pDModel/insetGraph
+Slurm job ID is 11251319
+This job runs on the following machines:
+compute298
+Running on host compute299.bc4.acrc.priv
+Time is Fri Mar 3 03:08:13 GMT 2023
+Running on host compute297.bc4.acrc.priv
+Directory is /user/home/em18564/BC4/pDModel/insetGraph
+Slurm job ID is 11251320
+This job runs on the following machines:
+Time is Fri Mar 3 03:08:13 GMT 2023
+Directory is /user/home/em18564/BC4/pDModel/insetGraph
+Slurm job ID is 11251318
+This job runs on the following machines:
+compute299
+compute297
+Running on host compute301.bc4.acrc.priv
+Time is Fri Mar 3 03:08:13 GMT 2023
+Directory is /user/home/em18564/BC4/pDModel/insetGraph
+Slurm job ID is 11248684
+This job runs on the following machines:
+compute301
+Running on host compute300.bc4.acrc.priv
+Time is Fri Mar 3 03:08:13 GMT 2023
+Directory is /user/home/em18564/BC4/pDModel/insetGraph
+Slurm job ID is 11251321
+This job runs on the following machines:
+compute300
+perc:Traceback (most recent call last):
+perc:perc:   File "/user/home/em18564/BC4/pDModel/insetGraph/pDModel.py", line 497, in <module>
+  80    90perc:60 main(sys.argv[1:])    prob:
+ prob:70 prob:   File "/user/home/em18564/BC4/pDModel/insetGraph/pDModel.py", line 487, in main
+   0.7725554838972827    1.2170981100047005 prob:0.40389652156669864
+probability = -(4.1997 *(x - 1))/pow((-200 * x*x*x - 2100 * x*x + math.sqrt(pow((-200 * x*x*x - 2100 * x*x + 4800 * x - 2500),2) + 500000 * pow((x - 1),6)) + 4800 * x - 2500),(1/3)) + (0.052913 *pow((-200 *x*x*x - 2100 *x*x + math.sqrt(pow((-200 * x*x*x - 2100 *x*x + 4800 *x - 2500),2) + 500000 * pow((x - 1),6)) + 4800 * x - 2500),(1/3)))/(x - 1) - 0.66667
+ 
+
+0.5490632575588302ZeroDivisionError
+: float division by zero
