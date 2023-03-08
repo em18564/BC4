@@ -205,6 +205,23 @@ def getStabs():
     plt.legend()
     plt.show()
 
-getStabs()
+#getStabs()
 # performPlotTwo(15)
 # performPlotTwo(20)
+
+string = 'stab50.csv'
+stabs = np.genfromtxt(string, delimiter=',')
+
+string = 'expr50.csv'
+expr = np.genfromtxt(string, delimiter=',')
+xs = range(0,100)
+fsize = 10
+tsize = 10
+major = 2.0
+minor = 0.5
+width = 1
+plt.plot(xs,np.mean(stabs, axis=1),color='red',linewidth=width,label = "Expressiveness")
+plt.plot(xs,np.mean(expr, axis=1),'b--',color='blue',linewidth=width,label = "Stability")
+plt.tight_layout()
+plt.legend()
+plt.show()

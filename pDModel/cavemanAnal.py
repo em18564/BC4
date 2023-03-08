@@ -166,12 +166,12 @@ def performPlotTwo(age):
 #     performPlotTwo(sys.argv[1])
 def getStabs():
     xs = range(0,21)
-    string = 'data/stability1.csv'
+    string = 'data/stability20.csv'
     stabs = np.genfromtxt(string, delimiter=',')
-    y1 = [[] for y in range(len(stabs))] 
-    y2 = [[] for y in range(len(stabs))] 
+    y1 = [[] for y in range(6)] 
+    y2 = [[] for y in range(6)] 
 
-    for t in range(len(stabs)):
+    for t in range(6):
         for i in xs: 
             string = 'data/stability' + str(i) + '.csv'
             stabs = np.genfromtxt(string, delimiter=',')
