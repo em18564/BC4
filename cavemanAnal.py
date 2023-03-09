@@ -98,27 +98,51 @@ def calculate_stabilities(stab):
                     out_grp_tot+=1
 
     return local_sum/local_tot,out_grp_sum/out_grp_tot
-def performPlotTwo(age):
+def performPlotTwo(age,ax,i,title):
+    plt.rcParams['font.size'] = 18
     agents = []
-    string = 'data/stability' + str(age) + '.csv'
+    string = 'pModel/data/stability' + str(age) + '.csv'
     stabs = np.genfromtxt(string, delimiter=',')
 
     stabilities = np.zeros((30,30))
-    for i in range(len(stabs)):
-        for j in range(len(stabs[0])):
-            #print(agents[i].meaningSignalPairings)
-            stabilities[j%30][int(j/30)] = stabs[i][j]
-        print(str((i+1)*100),"-",calculate_stabilities(stabilities))    
-        f, ax = plt.subplots(figsize=(11, 9))
+    for j in range(len(stabs[0])):
+        #print(agents[i].meaningSignalPairings)
+        stabilities[j%30][int(j/30)] = stabs[i][j]
+    print(str((i+1)*100),"-",calculate_stabilities(stabilities))    
+    # ax = sns.heatmap(stabilities, linewidth=0.5,vmin=0,vmax=1,cmap='rocket_r')
+    if(title=="4"):
+        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket_r', ax=ax)
+    else:
+        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket_r',cbar=False, ax=ax)
+    ax.set_title(title)
+    ax.axes.get_xaxis().set_visible(False)
+    ax.axes.get_yaxis().set_visible(False)  
+    ax.hlines([5, 10, 15,20,25], *ax.get_xlim(),color='white')
+    ax.vlines([5, 10, 15,20,25], *ax.get_ylim(),color='white')
+    return ax  
 
-        # ax = sns.heatmap(stabilities, linewidth=0.5,vmin=0,vmax=1,cmap='rocket_r')
-        ax = sns.heatmap(stabilities,  linewidth=0.5,vmin=0,vmax=1,cmap='rocket_r', ax=ax)
-        ax.set_title((str(age)+"% external communication in p model"))
-        ax.hlines([5, 10, 15,20,25], *ax.get_xlim(),color='grey')
-        ax.vlines([5, 10, 15,20,25], *ax.get_ylim(),color='grey')
-        plt.xlabel ('Agent ID')
-        plt.ylabel ('Agent ID')
-        plt.show()
+def performPlotTwoPD(age,ax,i,title):
+    plt.rcParams['font.size'] = 18
+    agents = []
+    string = 'pDModel/data/stability' + str(age) + '.csv'
+    stabs = np.genfromtxt(string, delimiter=',')
+
+    stabilities = np.zeros((30,30))
+    for j in range(len(stabs[0])):
+        #print(agents[i].meaningSignalPairings)
+        stabilities[j%30][int(j/30)] = stabs[i][j]
+    print(str((i+1)*100),"-",calculate_stabilities(stabilities))    
+    # ax = sns.heatmap(stabilities, linewidth=0.5,vmin=0,vmax=1,cmap='rocket_r')
+    if(title=="4"):
+        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket_r', ax=ax)
+    else:
+        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket_r',cbar=False, ax=ax)
+    ax.set_title(title)
+    ax.axes.get_xaxis().set_visible(False)
+    ax.axes.get_yaxis().set_visible(False)  
+    ax.hlines([5, 10, 15,20,25], *ax.get_xlim(),color='white')
+    ax.vlines([5, 10, 15,20,25], *ax.get_ylim(),color='white')
+    return ax    
 
     
 
@@ -168,10 +192,10 @@ def getStabs():
     xs = range(0,21)
     string = 'data/stability20.csv'
     stabs = np.genfromtxt(string, delimiter=',')
-    y1 = [[] for y in range(len(stabs))] 
-    y2 = [[] for y in range(len(stabs))] 
+    y1 = [[] for y in range(6)] 
+    y2 = [[] for y in range(6)] 
 
-    for t in range(len(stabs)):
+    for t in range(6):
         for i in xs: 
             string = 'data/stability' + str(i) + '.csv'
             stabs = np.genfromtxt(string, delimiter=',')
@@ -182,32 +206,36 @@ def getStabs():
             x,y = calculate_stabilities(stabilities)
             y1[t].append(x)
             y2[t].append(y)
-    fsize = 16
-    tsize = 16
+    fig, ax = plt.subplots()
+    fsize = 10
+    tsize = 10
     major = 2.0
     minor = 0.5
     width = 1
+
     plt.rcParams['font.size'] = fsize
     plt.rcParams['legend.fontsize'] = tsize
     plt.rcParams['xtick.major.size'] = major
     plt.rcParams['xtick.minor.size'] = minor
     plt.rcParams['ytick.major.size'] = major
     plt.rcParams['ytick.minor.size'] = minor
-    fig, ax = plt.subplots()
-    fig.set_size_inches(8,6)
-    ax.set_xticks(np.arange(0,21,5))
-    
     
     #plt.plot(xs, np.mean(y1, axis=0), label = "in Stability",color='red',linewidth=width)
     #plt.plot(xs, np.mean(y2, axis=0),'b--', label = "out Stability",linewidth=width)
     plt.errorbar(xs, np.mean(y1, axis=0), yerr=np.std(y1,axis=0),capsize=3,color='red',linewidth=width,label = "in Stability")
     plt.errorbar(xs, np.mean(y2, axis=0), fmt='--',yerr=np.std(y2,axis=0),capsize=3,color='blue',linewidth=width,label = "out Stability")
+    plt.title("Mean language stability in pD Model with standard deviation")
     plt.xlabel ('Percentage of communication being external')
     plt.ylabel ('Language Stability')
     plt.tight_layout()
     plt.legend()
     plt.show()
 
-getStabs()
-# performPlotTwo(15)
-# performPlotTwo(20)
+#getStabs()
+fig, (ax1, ax2, ax3,ax4) = plt.subplots(1, 4,sharey='row')
+performPlotTwo(15,ax1,0,"1")
+performPlotTwo(20,ax2,0,"2")
+performPlotTwoPD(15,ax3,1,"3")
+performPlotTwoPD(20,ax4,2,"4")
+
+plt.show()

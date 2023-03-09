@@ -31,6 +31,7 @@ weights2 = []
 stabMatrix = [[0 for x in range(30)] for y in range(30)] 
 firstSpoken = 0
 speakingMatrix = []
+hammingVals = []
 
 def compareStability(adultAgent,learnerAgent,meaningSpace):
     sum=0
@@ -74,7 +75,7 @@ def generate_meaning(size,quantity):
     return np.random.randint(size[1],size = (quantity,size[0]))
 
 class LearningAgent(Agent):
-    def __init__(self, id, model, signalSize, meaningSize, hiddenSize, utterances = 20,epochs = 20):
+    def __init__(self, id, model, signalSize, meaningSize, hiddenSize, utterances = 200,epochs = 20):
         super().__init__(id,model)
         self.id             = id
         self.expressiveness = 0
@@ -86,7 +87,7 @@ class LearningAgent(Agent):
         self.signalSpace    = generate_all_signals(signalSize)
         self.W1             = np.random.randn(signalSize[0], hiddenSize)
         self.W2             = np.random.randn(hiddenSize, meaningSize[0])
-        self.lr             = 0.1
+        self.lr             = 0.05
         self.utterances     = utterances
         self.witnesses      = np.zeros((len(self.meaningSpace),len(self.signalSpace)))
         self.epochs         = epochs
@@ -283,7 +284,7 @@ class LearningAgent(Agent):
                     if(hdM == hdS):
                         output += 1
                     total += 1
-                    print("Hamming Distance: Meaning: ",hdM," - Signal: ",hdS)
+                    #print("Hamming Distance: Meaning: ",hdM," - Signal: ",hdS)
 
         return output/total
 
@@ -328,6 +329,9 @@ class LearningAgent(Agent):
             self.W1             = np.random.randn(self.signalSize[0], self.hiddenSize)
             self.W2             = np.random.randn(self.hiddenSize, self.meaningSize[0])
             self.spoke = False
+        if(self.stepVal==99):
+            global hammingVals
+            hammingVals.append(self.analyseHammingData())
         # if(self.stepVal%200==0):
         #     name = str(self.stepVal) +'.agentW1-'+str(self.id)+'.csv'
         #     np.savetxt(name,self.W1, delimiter=',')
@@ -401,14 +405,16 @@ def runSimulation(N,iterations):
     # plt.show()
 
     name = str(N)+'-'+str(iterations)+('-d' if death else '')+('-o' if forced_obvert else '')+('-w' if witnesses else '')+'.csv'
-    np.savetxt('expr20.csv', expressivenesses, delimiter=',')
-    np.savetxt('stab20.csv',stabilities, delimiter=',')
-    with open("stab.csv", "a", newline="") as f:
-                    writer = csv.writer(f)
-                    writer.writerow(stabilities)
-    with open("expre.csv", "a", newline="") as f:
-                    writer = csv.writer(f)
-                    writer.writerow(expressivenesses)
+    global hammingVals
+    print(np.average(hammingVals))
+    np.savetxt('expr2000.csv', expressivenesses, delimiter=',')
+    np.savetxt('stab2000.csv',stabilities, delimiter=',')
+    # with open("stab.csv", "a", newline="") as f:
+    #                 writer = csv.writer(f)
+    #                 writer.writerow(stabilities)
+    # with open("expre.csv", "a", newline="") as f:
+    #                 writer = csv.writer(f)
+    #                 writer.writerow(expressivenesses)
    
 
     # for i in range(iterations):

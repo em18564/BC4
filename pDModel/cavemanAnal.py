@@ -168,10 +168,10 @@ def getStabs():
     xs = range(0,21)
     string = 'data/stability20.csv'
     stabs = np.genfromtxt(string, delimiter=',')
-    y1 = [[] for y in range(6)] 
-    y2 = [[] for y in range(6)] 
+    y1 = [[] for y in range(10)] 
+    y2 = [[] for y in range(10)] 
 
-    for t in range(6):
+    for t in range(10):
         for i in xs: 
             string = 'data/stability' + str(i) + '.csv'
             stabs = np.genfromtxt(string, delimiter=',')
@@ -182,31 +182,75 @@ def getStabs():
             x,y = calculate_stabilities(stabilities)
             y1[t].append(x)
             y2[t].append(y)
-    fig, ax = plt.subplots()
-    fsize = 10
-    tsize = 10
+    fsize = 16
+    tsize = 16
     major = 2.0
     minor = 0.5
     width = 1
-
     plt.rcParams['font.size'] = fsize
     plt.rcParams['legend.fontsize'] = tsize
     plt.rcParams['xtick.major.size'] = major
     plt.rcParams['xtick.minor.size'] = minor
     plt.rcParams['ytick.major.size'] = major
     plt.rcParams['ytick.minor.size'] = minor
+    fig, ax = plt.subplots()
+    fig.set_size_inches(8,6)
+    ax.set_xticks(np.arange(0,21,5))
+    
     
     #plt.plot(xs, np.mean(y1, axis=0), label = "in Stability",color='red',linewidth=width)
     #plt.plot(xs, np.mean(y2, axis=0),'b--', label = "out Stability",linewidth=width)
     plt.errorbar(xs, np.mean(y1, axis=0), yerr=np.std(y1,axis=0),capsize=3,color='red',linewidth=width,label = "in Stability")
     plt.errorbar(xs, np.mean(y2, axis=0), fmt='--',yerr=np.std(y2,axis=0),capsize=3,color='blue',linewidth=width,label = "out Stability")
-    plt.title("Mean language stability in pD Model with standard deviation")
     plt.xlabel ('Percentage of communication being external')
     plt.ylabel ('Language Stability')
     plt.tight_layout()
     plt.legend()
+
+    left, bottom, width, height = [0.22, 0.45, 0.4, 0.3]
+    ax2 = fig.add_axes([left, bottom, width, height])
+    getStabsInset(ax2)
     plt.show()
 
+def getStabsInset(ax):
+    xs = range(0,51,5)
+    string = 'insetGraph/data/stability20.csv'
+    stabs = np.genfromtxt(string, delimiter=',')
+    y1 = [[] for y in range(10)] 
+    y2 = [[] for y in range(10)] 
+
+    for t in range(10):
+        for i in xs: 
+            string = 'insetGraph/data/stability' + str(i) + '.csv'
+            stabs = np.genfromtxt(string, delimiter=',')
+            stabilities = np.zeros((30,30))
+            for j in range(len(stabs[0])):
+                #print(agents[i].meaningSignalPairings)
+                stabilities[j%30][int(j/30)] = stabs[t][j]
+            x,y = calculate_stabilities(stabilities)
+            y1[t].append(x)
+            y2[t].append(y)
+    fsize = 16
+    tsize = 16
+    major = 2.0
+    minor = 0.5
+    width = 1
+    plt.rcParams['font.size'] = fsize
+    plt.rcParams['legend.fontsize'] = tsize
+    plt.rcParams['xtick.major.size'] = major
+    plt.rcParams['xtick.minor.size'] = minor
+    plt.rcParams['ytick.major.size'] = major
+    plt.rcParams['ytick.minor.size'] = minor
+    ax.set_xticks(np.arange(0,51,10))
+    
+    
+    #plt.plot(xs, np.mean(y1, axis=0), label = "in Stability",color='red',linewidth=width)
+    #plt.plot(xs, np.mean(y2, axis=0),'b--', label = "out Stability",linewidth=width)
+    ax.errorbar(xs, np.mean(y1, axis=0), yerr=np.std(y1,axis=0),capsize=3,color='red',linewidth=width,label = "in Stability")
+    ax.errorbar(xs, np.mean(y2, axis=0), fmt='--',yerr=np.std(y2,axis=0),capsize=3,color='blue',linewidth=width,label = "out Stability")
+    # ax.xlabel('Percentage of communication being external')
+    # ax.ylabel('Language Stability')
+
 getStabs()
-performPlotTwo(15)
-performPlotTwo(20)
+# performPlotTwo(15)
+# performPlotTwo(20)

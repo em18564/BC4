@@ -209,10 +209,13 @@ def getStabs():
 # performPlotTwo(15)
 # performPlotTwo(20)
 
-string = 'stab50.csv'
+fig, (ax1, ax2, ax3) = plt.subplots(1, 3,sharey='row')
+
+
+string = 'stab20.csv'
 stabs = np.genfromtxt(string, delimiter=',')
 
-string = 'expr50.csv'
+string = 'expr20.csv'
 expr = np.genfromtxt(string, delimiter=',')
 xs = range(0,100)
 fsize = 10
@@ -220,8 +223,28 @@ tsize = 10
 major = 2.0
 minor = 0.5
 width = 1
-plt.plot(xs,np.mean(stabs, axis=1),color='red',linewidth=width,label = "Expressiveness")
-plt.plot(xs,np.mean(expr, axis=1),'b--',color='blue',linewidth=width,label = "Stability")
-plt.tight_layout()
-plt.legend()
+ax1.plot(xs,np.mean(stabs, axis=1),color='red',linewidth=width,label = "Expressiveness")
+ax1.plot(xs,np.mean(expr, axis=1),'b--',color='blue',linewidth=width,label = "Stability")
+ax1.set_title("Utterences=20")
+
+string = 'stab50.csv'
+stabs = np.genfromtxt(string, delimiter=',')
+
+string = 'expr50.csv'
+expr = np.genfromtxt(string, delimiter=',')
+ax2.plot(xs,np.mean(stabs, axis=1),color='red',linewidth=width,label = "Expressiveness")
+ax2.plot(xs,np.mean(expr, axis=1),'b--',color='blue',linewidth=width,label = "Stability")
+ax2.set_title("Utterences=50")
+
+string = 'stab2000.csv'
+stabs = np.genfromtxt(string, delimiter=',')
+
+string = 'expr2000.csv'
+expr = np.genfromtxt(string, delimiter=',')
+ax3.plot(xs,np.mean(stabs, axis=1),color='red',linewidth=width,label = "Expressiveness")
+ax3.plot(xs,np.mean(expr, axis=1),'b--',color='blue',linewidth=width,label = "Stability")
+ax3.set_title("Utterences=2000")
+ax1.legend()
+
+
 plt.show()
