@@ -202,10 +202,11 @@ def getStabs():
     #plt.plot(xs, np.mean(y2, axis=0),'b--', label = "out Stability",linewidth=width)
     plt.errorbar(xs, np.mean(y1, axis=0), yerr=np.std(y1,axis=0),capsize=3,color='red',linewidth=width,label = "in Stability")
     plt.errorbar(xs, np.mean(y2, axis=0), fmt='--',yerr=np.std(y2,axis=0),capsize=3,color='blue',linewidth=width,label = "out Stability")
-    plt.xlabel ('Percentage of communication being external')
+    plt.xlabel ('Between-Community Communication')
     plt.ylabel ('Language Stability')
     plt.tight_layout()
     plt.legend()
+    plt.savefig('pModelGraph.png', dpi=300)
     plt.show()
 
 getStabs()

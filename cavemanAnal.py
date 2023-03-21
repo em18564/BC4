@@ -233,9 +233,10 @@ def getStabs():
 
 #getStabs()
 fig, (ax1, ax2, ax3,ax4) = plt.subplots(1, 4,sharey='row')
-performPlotTwo(15,ax1,0,"1")
+performPlotTwo(14,ax1,0,"1")
 performPlotTwo(20,ax2,0,"2")
 performPlotTwoPD(15,ax3,1,"3")
 performPlotTwoPD(20,ax4,2,"4")
-
+fig.set_figwidth(18)
+plt.savefig('heatmapsOld.png', dpi=300)
 plt.show()

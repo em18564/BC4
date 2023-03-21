@@ -218,11 +218,14 @@ stabs = np.genfromtxt(string, delimiter=',')
 string = 'expr20.csv'
 expr = np.genfromtxt(string, delimiter=',')
 xs = range(0,100)
-fsize = 10
-tsize = 10
-major = 2.0
-minor = 0.5
+fsize = 15
+tsize = 15
+major = 4.0
+minor = 1
 width = 1
+plt.rcParams['font.size'] = fsize
+plt.rcParams['legend.fontsize'] = tsize
+
 ax1.plot(xs,np.mean(stabs, axis=1),color='red',linewidth=width,label = "Expressiveness")
 ax1.plot(xs,np.mean(expr, axis=1),'b--',color='blue',linewidth=width,label = "Stability")
 ax1.set_title("Utterences=20")
@@ -246,5 +249,6 @@ ax3.plot(xs,np.mean(expr, axis=1),'b--',color='blue',linewidth=width,label = "St
 ax3.set_title("Utterences=2000")
 ax1.legend()
 
-
+fig.set_figwidth(15)
+plt.savefig('utterances.png', dpi=400)
 plt.show()
