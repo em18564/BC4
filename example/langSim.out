@@ -1,0 +1,9 @@
+Running on host compute138.bc4.acrc.priv
+Time is Tue Mar 21 09:29:54 GMT 2023
+Directory is /user/home/em18564/BC4/example
+Slurm job ID is 11308521
+This job runs on the following machines:
+compute138
+perc: 2  prob: 0.0032653061224489797
+slurmstepd: error: *** JOB 11308521 ON compute138 CANCELLED AT 2023-03-21T09:29:56 ***
+slurmstepd: error: *** JOB 11308519 ON compute165 CANCELLED AT 2023-03-21T09:29:56 ***

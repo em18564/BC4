@@ -1,0 +1,7 @@
+Running on host compute366.bc4.acrc.priv
+Time is Wed May 3 13:21:36 BST 2023
+Directory is /user/home/em18564/BC4/Bayes
+Slurm job ID is 11430563
+This job runs on the following machines:
+compute366
+slurmstepd: error: *** JOB 11430563 ON compute366 CANCELLED AT 2023-05-04T16:23:36 ***
