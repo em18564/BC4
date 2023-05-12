@@ -111,12 +111,13 @@ def performPlotTwo(age,ax,i,title):
     print(str((i+1)*100),"-",calculate_stabilities(stabilities))    
     # ax = sns.heatmap(stabilities, linewidth=0.5,vmin=0,vmax=1,cmap='rocket_r')
     if(title=="4"):
-        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket_r', ax=ax)
+        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket',cbar=False, ax=ax)
     else:
-        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket_r',cbar=False, ax=ax)
+        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket',cbar=False, ax=ax)
     ax.set_title(title)
     ax.axes.get_xaxis().set_visible(False)
-    ax.axes.get_yaxis().set_visible(False)  
+    ax.axes.get_yaxis().set_visible(False)
+
     ax.hlines([5, 10, 15,20,25], *ax.get_xlim(),color='white')
     ax.vlines([5, 10, 15,20,25], *ax.get_ylim(),color='white')
     return ax  
@@ -134,12 +135,12 @@ def performPlotTwoPD(age,ax,i,title):
     print(str((i+1)*100),"-",calculate_stabilities(stabilities))    
     # ax = sns.heatmap(stabilities, linewidth=0.5,vmin=0,vmax=1,cmap='rocket_r')
     if(title=="4"):
-        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket_r', ax=ax)
+        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket',cbar=False, ax=ax)
     else:
-        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket_r',cbar=False, ax=ax)
+        ax = sns.heatmap(stabilities,  linewidth=0,vmin=0,vmax=1,cmap='rocket',cbar=False, ax=ax)
     ax.set_title(title)
     ax.axes.get_xaxis().set_visible(False)
-    ax.axes.get_yaxis().set_visible(False)  
+    ax.axes.get_yaxis().set_visible(False)
     ax.hlines([5, 10, 15,20,25], *ax.get_xlim(),color='white')
     ax.vlines([5, 10, 15,20,25], *ax.get_ylim(),color='white')
     return ax    
@@ -238,5 +239,6 @@ performPlotTwo(20,ax2,0,"2")
 performPlotTwoPD(15,ax3,1,"3")
 performPlotTwoPD(20,ax4,2,"4")
 fig.set_figwidth(18)
+
 plt.savefig('heatmapsOld.png', dpi=300)
 plt.show()
