@@ -1,11 +1,17 @@
-using CSV
 using Random
 using StatsBase
-using DataFrames
 using Distributions
-using Turing
 using StatsPlots
+using StatsFuns
+using Logging
+
+using Turing
+using CSV
+using DataFrames
+using Optim
 using StatisticalRethinking
+
+using MCMCDiagnosticTools
 
 NUM_SENTENCES = 205
 NUM_PARTICIPANTS = 4
@@ -39,6 +45,7 @@ end
 df = CSV.read("savedData/df.csv", DataFrame)
 df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS+1)))
 mod=model(df_modified.Participant, df_modified.ERP,df_modified.word,df_modified.surprisal)
-m = sample(mod, NUTS(), MCMCThreads(), 1000, 4)
+m = sample(mod, NUTS(), MCMCThreads(), 1,10)
 m_df = DataFrame(m)
-CSV.write("savedData/m_df.csv", m_df)
+display(m)
+#CSV.write("savedData/m_df.csv", m_df)

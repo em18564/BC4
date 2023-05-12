@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH --job-name lang500
+#SBATCH --nodes 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --time=2-00:00:0
+#SBATCH --output mod500.out
+#SBATCH --account=cosc029104
+#SBATCH --array 1-10
+
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo Slurm job ID is $SLURM_JOB_ID
+echo This job runs on the following machines:
+echo `echo $SLURM_JOB_NODELIST | uniq`
+OMP_DISPLAY_ENV=true
+# Run the executable
+python -u mod.py 500 ${SLURM_ARRAY_TASK_ID} > model-out-500-${SLURM_ARRAY_TASK_ID}.out
