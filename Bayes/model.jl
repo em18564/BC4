@@ -1,3 +1,18 @@
+import Pkg
+Pkg.add("Random")
+Pkg.add("StatsBase")
+Pkg.add("Distributions")
+Pkg.add("StatsPlots")
+Pkg.add("StatsFuns")
+Pkg.add("Logging")
+
+Pkg.add("Turing")
+Pkg.add("CSV")
+Pkg.add("DataFrames")
+Pkg.add("Optim")
+Pkg.add("StatisticalRethinking")
+Pkg.add("MCMCDiagnosticTools")
+Pkg.add("Serialization")
 using Random
 using StatsBase
 using Distributions
