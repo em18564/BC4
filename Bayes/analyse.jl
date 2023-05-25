@@ -12,6 +12,7 @@ using Optim
 using StatisticalRethinking
 
 using MCMCDiagnosticTools
+using MCMCChains
 
 m_df = CSV.read("savedData/m_df.csv", DataFrame)
 df = CSV.read("savedData/df.csv", DataFrame)
@@ -30,4 +31,8 @@ df = CSV.read("savedData/df.csv", DataFrame)
 #     global sum +=  ((df[i,"ERP"]-PredERP)/df[i,"ERP"])
 # end
 # print(sum/length(df[!,"ERP"]))
-ess_rhat(m_df,method=MCMCDiagnosticTools.ESSMethod(), maxlag=4000)
+# chn = Chains(Array(m_df))
+# ess_rhat(chn)
+# Assuming you already have a DataFrame named `df`
+mat = Matrix(m_df)
+chn = Chains(mat)

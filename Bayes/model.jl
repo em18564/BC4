@@ -12,6 +12,7 @@ using Optim
 using StatisticalRethinking
 
 using MCMCDiagnosticTools
+using Serialization
 
 NUM_SENTENCES = 205
 NUM_PARTICIPANTS = 4
@@ -45,7 +46,8 @@ end
 df = CSV.read("savedData/df.csv", DataFrame)
 df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS+1)))
 mod=model(df_modified.Participant, df_modified.ERP,df_modified.word,df_modified.surprisal)
-m = sample(mod, NUTS(), MCMCThreads(), 1,10)
+m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 m_df = DataFrame(m)
 display(m)
-#CSV.write("savedData/m_df.csv", m_df)
+CSV.write("savedData/m_df.csv", m_df)
+serialize("savedData/m_df.jls",m)
