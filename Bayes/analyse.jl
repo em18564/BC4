@@ -13,26 +13,23 @@ using StatisticalRethinking
 
 using MCMCDiagnosticTools
 using MCMCChains
+using Serialization
+using Plots
 
-m_df = CSV.read("savedData/m_df.csv", DataFrame)
-df = CSV.read("savedData/df.csv", DataFrame)
-#precis(df)
-#precis(m_df)
-#print(df[1,"ERP"])
-# sum=0
-# for i in 1:length(df[!,"ERP"])
-#     a1 = (m_df[1,"a1"])
-#     a2 = (m_df[1,string("a2[",string(Int(df[i,"Participant"])),"]")])
-#     a3 = (m_df[1,string("a3[",string(Int(df[i,"word"])),"]")])
-#     b1 = (m_df[1,"b1"])
-#     b2 = (m_df[1,string("b2[",string(Int(df[i,"Participant"])),"]")])
-#     b3 = (m_df[1,string("b3[",string(Int(df[i,"word"])),"]")])
-#     PredERP = (a1 + a2 + a3) + (b1 + b2 + b3) * df[i,"surprisal"]
-#     global sum +=  ((df[i,"ERP"]-PredERP)/df[i,"ERP"])
-# end
-# print(sum/length(df[!,"ERP"]))
-# chn = Chains(Array(m_df))
-# ess_rhat(chn)
-# Assuming you already have a DataFrame named `df`
-mat = Matrix(m_df)
-chn = Chains(mat)
+chn = deserialize("savedData/m_df.jls")
+
+ess_rhat_df = DataFrame(ess_rhat(chn))
+
+histogram(ess_rhat_df[!,"rhat"],label="rhat")
+savefig("graphs/rhat.png")
+
+histogram(ess_rhat_df[!,"ess"],label="ess")
+savefig("graphs/ess.png")
+
+
+plot(chn, colordim = :parameter; size=(1680, 800))
+savefig("graphs/trace.png")
+
+# autocorplot(chn,size=(1680,800))
+# savefig("graphs/autocor.png")
+
