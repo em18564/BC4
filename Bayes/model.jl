@@ -32,25 +32,38 @@ using Serialization
 NUM_SENTENCES = 205
 NUM_PARTICIPANTS = 4
 NUM_WORDS = 1931
-@model function model(participant,ERP,word,surprisal)
-    a ~ Normal(0,1)
+NUM_TYPES = 2
+NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
+@model function model(participant,ERP,word,surprisal,tags,component)
+    a   ~ MvNormal(zeros(NUM_WORDS),1)
     a_p ~ MvNormal(zeros(NUM_PARTICIPANTS),1)
-    a_w ~ MvNormal(zeros(NUM_WORDS),1)
+    a_w ~ MvNormal(zeros(NUM_TYPES),1)
+    a_e ~ MvNormal(zeros(NUM_ERP),1)
 
     σ_a  ~ Exponential(1)
     σ_ap ~ Exponential(1)
     σ_aw ~ Exponential(1)
+    σ_ae ~ Exponential(1)
 
-    b ~ Normal(0,1)
+    b   ~ MvNormal(zeros(NUM_WORDS),1)
     b_p ~ MvNormal(zeros(NUM_PARTICIPANTS),1)
     b_w ~ MvNormal(zeros(NUM_WORDS),1)
+    b_e ~ MvNormal(zeros(NUM_ERP),1)
 
     σ_b  ~ Exponential(1)
     σ_bp ~ Exponential(1)
     σ_bw ~ Exponential(1)
+    σ_be ~ Exponential(1)
+    
+    # my a is an a_i, my a_i is the word type
+    # contact sean, weds lunch pref 12 but can do 1
+    # plot regression on word type
+    # whisker plot
+    # for each variable take the relevant columns and plot them as violin plot/ HDI plot
+    # contact Davide for POS
 
-
-    μ = ((a .* σ_a) .+ (a_p[Int.(participant)] .* σ_ap) .+ (a_w[Int.(word)] .* σ_aw)) .+ ((b .* σ_b) .+ (b_p[Int.(participant)] .* σ_bp) .+ (b_w[Int.(word)] .* σ_bw)) .* surprisal
+    μ = (((a[Int.(word)] .* σ_a) .+ (a_p[Int.(participant.+1)] .* σ_ap) .+ (a_w[Int.(tags.+1)] .* σ_aw) .+ (a_e[Int.(component.+1)] .* σ_ae))
+     .+  ((b[Int.(word)] .* σ_b) .+ (b_p[Int.(participant.+1)] .* σ_bp) .+ (b_w[Int.(tags.+1)] .* σ_bw) .+ (b_e[Int.(component.+1)] .* σ_be)) .* surprisal)
 
     ζ ~ Normal(0,1)
     σ ~ Exponential(20)
@@ -58,11 +71,12 @@ NUM_WORDS = 1931
     ERP = σ .* ζ .+ μ
 end
 
-df = CSV.read("savedData/df.csv", DataFrame)
-df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS+1)))
-mod=model(df_modified.Participant, df_modified.ERP,df_modified.word,df_modified.surprisal)
+df = CSV.read("savedData/df_2.csv", DataFrame)
+df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
+mod=model(df_modified.Participant, df_modified.ERP,df_modified.word,df_modified.surprisal,df_modified.tags,df_modified.component)
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
-m_df = DataFrame(m)
 display(m)
-CSV.write("savedData/m_df.csv", m_df)
 serialize("savedData/m_df.jls",m)
+
+
+# Highest Density Interval
