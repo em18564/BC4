@@ -74,7 +74,7 @@ end
 df = CSV.read("savedData/df_2.csv", DataFrame)
 df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
 mod=model(df_modified.Participant, df_modified.ERP,df_modified.word,df_modified.surprisal,df_modified.tags,df_modified.component)
-m = sample(mod, NUTS(), MCMCThreads(), 250,4)
+m = sample(mod, NUTS(), MCMCThreads(), 5,4)
 display(m)
 serialize("savedData/m_df.jls",m)
 
