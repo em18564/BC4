@@ -45,10 +45,10 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
     σ_aw ~ Exponential(1)
     σ_ae ~ Exponential(1)
 
-    b   ~ MvNormal(zeros(NUM_WORDS),1)
-    b_p ~ MvNormal(zeros(NUM_PARTICIPANTS),1)
-    b_w ~ MvNormal(zeros(NUM_WORDS),1)
-    b_e ~ MvNormal(zeros(NUM_ERP),1)
+    b   ~ MvNormal(zeros(NUM_WORDS),0.5)
+    b_p ~ MvNormal(zeros(NUM_PARTICIPANTS),0.5)
+    b_w ~ MvNormal(zeros(NUM_WORDS),0.5)
+    b_e ~ MvNormal(zeros(NUM_ERP),0.5)
 
     σ_b  ~ Exponential(1)
     σ_bp ~ Exponential(1)
@@ -66,7 +66,7 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
      .+  ((b[Int.(word)] .* σ_b) .+ (b_p[Int.(participant.+1)] .* σ_bp) .+ (b_w[Int.(tags.+1)] .* σ_bw) .+ (b_e[Int.(component.+1)] .* σ_be)) .* surprisal)
 
     ζ ~ Normal(0,1)
-    σ ~ Exponential(20)
+    σ ~ truncated(Cauchy(0,20),0,1000)
     
     ERP = σ .* ζ .+ μ
 end
