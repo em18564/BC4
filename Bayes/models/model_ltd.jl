@@ -61,8 +61,8 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
     σ ~ truncated(Cauchy(0,20),0,1000)
     for i in eachindex(eRP)
         #ζ ~ Normal(0,1)
-        μ = (((a * σ_a) + (a_p[Int(participant[i]+1)] * σ_ap) + (a_w[Int(tags[i]+1)] * σ_aw) + (a_e[Int.(component.+1)] * σ_ae))
-        +    ((b * σ_b) + (b_p[Int(participant[i]+1)] * σ_bp) + (b_w[Int(tags[i]+1)] * σ_bw) + (b_e[Int.(component.+1)] * σ_be)) * surprisal[i])
+        μ = (((a * σ_a) + (a_p[Int(participant[i]+1)] * σ_ap) + (a_w[Int(tags[i]+1)] * σ_aw) + (a_e[Int.(component[i]+1)] * σ_ae))
+        +    ((b * σ_b) + (b_p[Int(participant[i]+1)] * σ_bp) + (b_w[Int(tags[i]+1)] * σ_bw) + (b_e[Int.(component[i]+1)] * σ_be)) * surprisal[i])
         eRP[i] ~ Normal(μ,σ)
       end
 end
