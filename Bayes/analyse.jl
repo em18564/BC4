@@ -23,12 +23,14 @@ function HDI(data)
     return m,p1,p2
 end
 
-df = CSV.read("savedData/df_2.csv", DataFrame)
+# df = CSV.read("savedData/df_2.csv", DataFrame)
 chn = deserialize("savedData/m_df_n400.jls")
 chn_ss = DataFrame(summarystats(chn))
 chn_df = DataFrame(chn)
-# density(chn_df[!,"a_w[1]"],label = "Content",xaxis="Posterior Effect")
-# density!(chn_df[!,"a_w[2]"],label = "Function")
+# density(chn_df[!,"b_w[1]"],label = "Content",xaxis="Posterior Effect")
+# density!(chn_df[!,"b_w[2]"],label = "Function")
+#density(chn_df[!,"b_w[2]"]-chn_df[!,"b_w[1]"],label = "Difference",xaxis="Posterior Effect")
+density(chn_df[!,"b_e"],label="n400",xaxis="Posterior Effect")
 
 # PNP  = HDI(chn_df[!,"a_e[1]"])
 # P600 = HDI(chn_df[!,"a_e[2]"])
@@ -36,8 +38,8 @@ chn_df = DataFrame(chn)
 # N400 = HDI(chn_df[!,"a_e[4]"])
 # LAN  = HDI(chn_df[!,"a_e[5]"])
 # ELAN = HDI(chn_df[!,"a_e[6]"])
-y = [chn_df[!,"b"]]
-violin(["N400"], y, legend=false,xaxis="Posterior Effect")
+# y = [chn_df[!,"b"]]
+# violin(["N400"], y, legend=false,xaxis="Posterior Effect")
 # ess_rhat_df = DataFrame(ess_rhat(chn))
 # xs = ess_rhat_df[!,"rhat"]
 # ys = ess_rhat_df[!,"ess"]
