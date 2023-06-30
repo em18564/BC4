@@ -27,10 +27,12 @@ end
 chn = deserialize("savedData/m_df_n400.jls")
 chn_ss = DataFrame(summarystats(chn))
 chn_df = DataFrame(chn)
-# density(chn_df[!,"b_w[1]"],label = "Content",xaxis="Posterior Effect")
-# density!(chn_df[!,"b_w[2]"],label = "Function")
+density(chn_df[!,"a_w"],label = "Content",xaxis="Posterior Effect")
+density!(chn_df[!,"b_w"],label = "Function")
+CSV.write("savedData/n400_ss.csv", chn_ss)
+
 #density(chn_df[!,"b_w[2]"]-chn_df[!,"b_w[1]"],label = "Difference",xaxis="Posterior Effect")
-density(chn_df[!,"b_e"],label="n400",xaxis="Posterior Effect")
+#density(chn_df[!,"b_e"],label="n400",xaxis="Posterior Effect")
 
 # PNP  = HDI(chn_df[!,"a_e[1]"])
 # P600 = HDI(chn_df[!,"a_e[2]"])
