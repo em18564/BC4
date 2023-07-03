@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#SBATCH --job-name bayes_ltd
+#SBATCH --job-name bayes_full_full
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
 #SBATCH --time=7-00:00:0
-#SBATCH --output bayes_full.out
+#SBATCH --output bayes_full_full.out
 #SBATCH --account=cosc029104
 
 echo Running on host `hostname`
@@ -16,4 +16,4 @@ echo This job runs on the following machines:
 echo `echo $SLURM_JOB_NODELIST | uniq`
 OMP_DISPLAY_ENV=true
 # Run the executable
-julia models/model_ltd.jl
+julia models/model_full_full.jl

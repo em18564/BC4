@@ -32,7 +32,7 @@ using MCMCDiagnosticTools
 using Serialization
 
 NUM_SENTENCES = 205
-NUM_PARTICIPANTS = 12
+NUM_PARTICIPANTS = 24
 NUM_WORDS = 1931
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
@@ -81,7 +81,7 @@ df_modified = subset(df_modified_2, :component => ByRow(==(2)))
 mod=model(df_modified.Participant, df_modified.ERP,df_modified.word,df_modified.surprisal,df_modified.tags,df_modified.component)
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
-serialize("savedData/m_df_n400.jls",m)
+serialize("savedData/m_df_n400_full.jls",m)
 
 
 # Highest Density Interval

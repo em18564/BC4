@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH --job-name bayes_ltd_comp
+#SBATCH --nodes 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --cpus-per-task 4
+#SBATCH --time=7-00:00:0
+#SBATCH --output bayes_ltd_comp.out
+#SBATCH --account=cosc029104
+
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo Slurm job ID is $SLURM_JOB_ID
+echo This job runs on the following machines:
+echo `echo $SLURM_JOB_NODELIST | uniq`
+OMP_DISPLAY_ENV=true
+# Run the executable
+julia models/model_ltd_comp.jl
