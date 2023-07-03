@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH --job-name all
+#SBATCH --nodes 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --cpus-per-task 4
+#SBATCH --time=7-00:00:0
+#SBATCH --output all.out
+#SBATCH --account=cosc029104
+sbatch job_sub_full
+sbatch job_sub_full_full
+sbatch job_sub_n400
+sbatch job_sub_n400_full
+sbatch job_sub_ltd_comp
+sbatch job_sub_ltd_word
