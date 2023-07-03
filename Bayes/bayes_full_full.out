@@ -1,0 +1,41 @@
+Running on host compute309.bc4.acrc.priv
+Time is Mon Jul 3 12:24:22 BST 2023
+Directory is /user/home/em18564/BC4/Bayes
+Slurm job ID is 11633188
+This job runs on the following machines:
+compute309
+    Updating registry at `~/.julia/registries/General.toml`
+┌ Warning: Expected the compressed registry for "/user/home/em18564/.julia/registries/General.toml" to exist at "/user/home/em18564/.julia/registries/General.tar.gz"
+└ @ Pkg.Registry /cache/build/default-amdci4-2/julialang/julia-release-1-dot-8/usr/share/julia/stdlib/v1.8/Pkg/src/Registry/registry_instance.jl:334
+   Resolving package versions...
+ERROR: LoadError: expected package `AxisArrays [39de3d68]` to be registered
+Stacktrace:
+  [1] pkgerror(msg::String)
+    @ Pkg.Types /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Types.jl:67
+  [2] check_registered
+    @ /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1190 [inlined]
+  [3] targeted_resolve(env::Pkg.Types.EnvCache, registries::Vector{Pkg.Registry.RegistryInstance}, pkgs::Vector{Pkg.Types.PackageSpec}, preserve::Pkg.Types.PreserveLevel, julia_version::VersionNumber)
+    @ Pkg.Operations /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1252
+  [4] tiered_resolve(env::Pkg.Types.EnvCache, registries::Vector{Pkg.Registry.RegistryInstance}, pkgs::Vector{Pkg.Types.PackageSpec}, julia_version::VersionNumber)
+    @ Pkg.Operations /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1225
+  [5] _resolve(io::IOStream, env::Pkg.Types.EnvCache, registries::Vector{Pkg.Registry.RegistryInstance}, pkgs::Vector{Pkg.Types.PackageSpec}, preserve::Pkg.Types.PreserveLevel, julia_version::VersionNumber)
+    @ Pkg.Operations /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1260
+  [6] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}, new_git::Set{Base.UUID}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform)
+    @ Pkg.Operations /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1276
+  [7] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform, kwargs::Base.Pairs{Symbol, IOStream, Tuple{Symbol}, NamedTuple{(:io,), Tuple{IOStream}}})
+    @ Pkg.API /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:275
+  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}})
+    @ Pkg.API /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:156
+  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
+    @ Pkg.API /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:145
+ [10] #add#27
+    @ /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:144 [inlined]
+ [11] add
+    @ /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:144 [inlined]
+ [12] #add#26
+    @ /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:143 [inlined]
+ [13] add(pkg::String)
+    @ Pkg.API /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:143
+ [14] top-level scope
+    @ ~/BC4/Bayes/models/model_full_full.jl:2
+in expression starting at /user/home/em18564/BC4/Bayes/models/model_full_full.jl:2

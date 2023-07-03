@@ -61,7 +61,7 @@ end
 
 df = CSV.read("savedData/df.csv", DataFrame)
 df_modified_1 = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
-df_modified_2 = subset(df_modified_1, :word => ByRow(<(NUM_WORDS)))
+df_modified = subset(df_modified_1, :word => ByRow(<(NUM_WORDS)))
 mod=model(df_modified.Participant, df_modified.ERP,df_modified.word,df_modified.surprisal,df_modified.tags,df_modified.component)
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
