@@ -22,17 +22,22 @@ function HDI(data)
     m = mean(data)
     return m,p1,p2
 end
-
+l = @layout [a ; b]
 # df = CSV.read("savedData/df_2.csv", DataFrame)
 chn = deserialize("savedData/m_df_n400.jls")
 chn_ss = DataFrame(summarystats(chn))
 chn_df = DataFrame(chn)
-density(chn_df[!,"a_w"],label = "Content",xaxis="Posterior Effect")
-density!(chn_df[!,"b_w"],label = "Function")
-CSV.write("savedData/n400_ss.csv", chn_ss)
+p1 = density(chn_df[!,"ab_w[2,1]"],label = "Content",xaxis="Posterior Effect")
+density!(chn_df[!,"ab_w[2,2]"],label = "Function")
+#CSV.write("savedData/n400_ss.csv", chn_ss)
 
-#density(chn_df[!,"b_w[2]"]-chn_df[!,"b_w[1]"],label = "Difference",xaxis="Posterior Effect")
-#density(chn_df[!,"b_e"],label="n400",xaxis="Posterior Effect")
+p2 = density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
+plot(p1,p2,layout=l,dpi=300)
+savefig("graphs/n400/wordType.png")
+
+p = density(chn_df[!,"ab_e[2,1]"],label="n400",xaxis="Posterior Effect")
+plot(p,dpi=300)
+savefig("graphs/n400/n400.png")
 
 # PNP  = HDI(chn_df[!,"a_e[1]"])
 # P600 = HDI(chn_df[!,"a_e[2]"])
@@ -42,11 +47,12 @@ CSV.write("savedData/n400_ss.csv", chn_ss)
 # ELAN = HDI(chn_df[!,"a_e[6]"])
 # y = [chn_df[!,"b"]]
 # violin(["N400"], y, legend=false,xaxis="Posterior Effect")
-# ess_rhat_df = DataFrame(ess_rhat(chn))
-# xs = ess_rhat_df[!,"rhat"]
-# ys = ess_rhat_df[!,"ess"]
-# scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
-
+ess_rhat_df = DataFrame(ess_rhat(chn))
+xs = ess_rhat_df[!,"rhat"]
+ys = ess_rhat_df[!,"ess"]
+p = scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
+plot(p,dpi=300)
+savefig("graphs/n400/essRhat.png")
 #plot(truncated(Cauchy(20),0,1000),lw=3,xlims=(-1, 100),legend=false,title="Half-Cauchy")
 
 # density(chn_df[!,"σ"],label="n400")
