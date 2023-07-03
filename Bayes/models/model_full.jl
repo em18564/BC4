@@ -62,8 +62,8 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   ρ_e ~ LKJ(2, 2)
   Σ_e = (σ_e .* σ_e') .* ρ_e
   ab_e ~ filldist(MvNormal([a_e,b_e], Σ_e),NUM_ERP)
-  a_e = ab_e[1,component]
-  b_e = ab_e[2,component]
+  a_e = ab_e[1,component.+1]
+  b_e = ab_e[2,component.+1]
 
   μ = @. a_w + a_p + a_e + ((b_w + b_p + b_e) * surprisal)
 
