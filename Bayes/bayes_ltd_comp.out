@@ -1,16 +1,13 @@
-Running on host compute310.bc4.acrc.priv
-Time is Mon Jul 3 12:24:23 BST 2023
+Running on host compute354.bc4.acrc.priv
+Time is Mon Jul 3 12:34:57 BST 2023
 Directory is /user/home/em18564/BC4/Bayes
-Slurm job ID is 11633189
+Slurm job ID is 11634523
 This job runs on the following machines:
-compute310
+compute354
     Updating registry at `~/.julia/registries/General.toml`
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.8/Project.toml`
   No Changes to `~/.julia/environments/v1.8/Manifest.toml`
-┌ Warning: Expected the compressed registry for "/user/home/em18564/.julia/registries/General.toml" to exist at "/user/home/em18564/.julia/registries/General.tar.gz"
-└ @ Pkg.Registry /cache/build/default-amdci4-2/julialang/julia-release-1-dot-8/usr/share/julia/stdlib/v1.8/Pkg/src/Registry/registry_instance.jl:334
-  Installing known registries into `~/.julia`
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.8/Project.toml`
   No Changes to `~/.julia/environments/v1.8/Manifest.toml`
@@ -48,100 +45,82 @@ compute310
   No Changes to `~/.julia/environments/v1.8/Project.toml`
   No Changes to `~/.julia/environments/v1.8/Manifest.toml`
 Sampling (4 threads)   0%|                              |  ETA: N/A
-Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:20
-ERROR: LoadError: TaskFailedException
+┌ Info: Found initial step size
+└   ϵ = 0.0003662109375
+┌ Info: Found initial step size
+└   ϵ = 0.000390625
+┌ Info: Found initial step size
+└   ϵ = 0.0125
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+Sampling (4 threads)  25%|███████▌                      |  ETA: 7:54:23
+Sampling (4 threads)  50%|███████████████               |  ETA: 2:38:08
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 0:52:43
+Sampling (4 threads) 100%|██████████████████████████████| Time: 2:53:22
+Sampling (4 threads) 100%|██████████████████████████████| Time: 2:53:23
+Chains MCMC chain (250×35×4 Array{Float64, 3}):
 
-    nested task error: TaskFailedException
-    
-        nested task error: BoundsError: attempt to access 2×6 Matrix{Float64} at index [1, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0  …  5, 5, 5, 5, 5, 5, 5, 5, 5, 5]]
-        Stacktrace:
-          [1] throw_boundserror(A::Matrix{Float64}, I::Tuple{Int64, Vector{Int64}})
-            @ Base ./abstractarray.jl:703
-          [2] checkbounds
-            @ ./abstractarray.jl:668 [inlined]
-          [3] _getindex
-            @ ./multidimensional.jl:874 [inlined]
-          [4] getindex
-            @ ./abstractarray.jl:1241 [inlined]
-          [5] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, eRP::Vector{Float64}, word::Vector{Int64}, surprisal::Vector{Float64}, tags::Vector{Int64}, component::Vector{Int64})
-            @ Main ~/BC4/Bayes/models/model_ltd_comp.jl:50
-          [6] macro expansion
-            @ ~/.julia/packages/DynamicPPL/HyKGK/src/model.jl:593 [inlined]
-          [7] _evaluate!!
-            @ ~/.julia/packages/DynamicPPL/HyKGK/src/model.jl:576 [inlined]
-          [8] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/HyKGK/src/model.jl:567
-          [9] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/HyKGK/src/model.jl:502
-         [10] evaluate!!
-            @ ~/.julia/packages/DynamicPPL/HyKGK/src/model.jl:515 [inlined]
-         [11] Model
-            @ ~/.julia/packages/DynamicPPL/HyKGK/src/model.jl:475 [inlined]
-         [12] VarInfo
-            @ ~/.julia/packages/DynamicPPL/HyKGK/src/varinfo.jl:135 [inlined]
-         [13] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/HyKGK/src/sampler.jl:80 [inlined]
-         [14] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/HyKGK/src/sampler.jl:71 [inlined]
-         [15] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{Turing.Essential.ForwardDiffAD{0}, (), AdvancedHMC.DiagEuclideanMetric}}; resume_from::Nothing, init_params::Nothing, kwargs::Base.Pairs{Symbol, Int64, Tuple{Symbol}, NamedTuple{(:nadapts,), Tuple{Int64}}})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/HyKGK/src/sampler.jl:98
-         [16] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/bE6VB/src/sample.jl:125 [inlined]
-         [17] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/bE6VB/src/logging.jl:16 [inlined]
-         [18] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{Turing.Essential.ForwardDiffAD{0}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, kwargs::Base.Pairs{Symbol, Union{Nothing, Int64}, Tuple{Symbol, Symbol}, NamedTuple{(:nadapts, :init_params), Tuple{Int64, Nothing}}})
-            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/bE6VB/src/sample.jl:116
-         [19] #sample#42
-            @ ~/.julia/packages/Turing/WXGfh/src/inference/hmc.jl:133 [inlined]
-         [20] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/bE6VB/src/sample.jl:370 [inlined]
-         [21] (::AbstractMCMC.var"#35#48"{DynamicPPL.Sampler{NUTS{Turing.Essential.ForwardDiffAD{0}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Base.Pairs{Symbol, UnionAll, Tuple{Symbol}, NamedTuple{(:chain_type,), Tuple{UnionAll}}}, Int64, Vector{Any}, Nothing, Vector{UInt64}})()
-            @ AbstractMCMC ./threadingconstructs.jl:258
-    
-    ...and 3 more exceptions.
-    
-    Stacktrace:
-     [1] sync_end(c::Channel{Any})
-       @ Base ./task.jl:436
-     [2] macro expansion
-       @ ./task.jl:455 [inlined]
-     [3] macro expansion
-       @ ~/.julia/packages/AbstractMCMC/bE6VB/src/sample.jl:349 [inlined]
-     [4] (::AbstractMCMC.var"#34#47"{Bool, Base.Pairs{Symbol, UnionAll, Tuple{Symbol}, NamedTuple{(:chain_type,), Tuple{UnionAll}}}, Int64, Int64, Vector{Any}, Nothing, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{Turing.Essential.ForwardDiffAD{0}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, Int64, Int64})()
-       @ AbstractMCMC ./task.jl:484
-Stacktrace:
-  [1] sync_end(c::Channel{Any})
-    @ Base ./task.jl:436
-  [2] macro expansion
-    @ ./task.jl:455 [inlined]
-  [3] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/bE6VB/src/sample.jl:327 [inlined]
-  [4] macro expansion
-    @ ~/.julia/packages/ProgressLogging/6KXlp/src/ProgressLogging.jl:328 [inlined]
-  [5] (::AbstractMCMC.var"#32#45"{Bool, String, Base.Pairs{Symbol, UnionAll, Tuple{Symbol}, NamedTuple{(:chain_type,), Tuple{UnionAll}}}, Int64, Int64, Vector{Any}, Nothing, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{Turing.Essential.ForwardDiffAD{0}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, UnitRange{Int64}, Int64, Int64})()
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/bE6VB/src/logging.jl:12
-  [6] with_logstate(f::Function, logstate::Any)
-    @ Base.CoreLogging ./logging.jl:511
-  [7] with_logger(f::Function, logger::LoggingExtras.TeeLogger{Tuple{LoggingExtras.EarlyFilteredLogger{TerminalLoggers.TerminalLogger, AbstractMCMC.var"#1#3"{Module}}, LoggingExtras.EarlyFilteredLogger{ConsoleLogger, AbstractMCMC.var"#2#4"{Module}}}})
-    @ Base.CoreLogging ./logging.jl:623
-  [8] with_progresslogger(f::Function, _module::Module, logger::ConsoleLogger)
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/bE6VB/src/logging.jl:36
-  [9] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/bE6VB/src/logging.jl:11 [inlined]
- [10] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{Turing.Essential.ForwardDiffAD{0}, (), AdvancedHMC.DiagEuclideanMetric}}, ::MCMCThreads, N::Int64, nchains::Int64; progress::Bool, progressname::String, init_params::Nothing, kwargs::Base.Pairs{Symbol, UnionAll, Tuple{Symbol}, NamedTuple{(:chain_type,), Tuple{UnionAll}}})
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/bE6VB/src/sample.jl:321
- [11] sample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{Turing.Essential.ForwardDiffAD{0}, (), AdvancedHMC.DiagEuclideanMetric}}, ensemble::MCMCThreads, N::Int64, n_chains::Int64; chain_type::Type, progress::Bool, kwargs::Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}})
-    @ Turing.Inference ~/.julia/packages/Turing/WXGfh/src/inference/Inference.jl:221
- [12] sample
-    @ ~/.julia/packages/Turing/WXGfh/src/inference/Inference.jl:210 [inlined]
- [13] #sample#6
-    @ ~/.julia/packages/Turing/WXGfh/src/inference/Inference.jl:206 [inlined]
- [14] sample
-    @ ~/.julia/packages/Turing/WXGfh/src/inference/Inference.jl:197 [inlined]
- [15] #sample#5
-    @ ~/.julia/packages/Turing/WXGfh/src/inference/Inference.jl:193 [inlined]
- [16] sample(model::DynamicPPL.Model{typeof(model), (:participant, :eRP, :word, :surprisal, :tags, :component), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Int64}, Vector{Int64}}, Tuple{}, DynamicPPL.DefaultContext}, alg::NUTS{Turing.Essential.ForwardDiffAD{0}, (), AdvancedHMC.DiagEuclideanMetric}, ensemble::MCMCThreads, N::Int64, n_chains::Int64)
-    @ Turing.Inference ~/.julia/packages/Turing/WXGfh/src/inference/Inference.jl:185
- [17] top-level scope
-    @ ~/BC4/Bayes/models/model_ltd_comp.jl:66
-in expression starting at /user/home/em18564/BC4/Bayes/models/model_ltd_comp.jl:66
+Iterations        = 126:1:375
+Number of chains  = 4
+Samples per chain = 250
+Wall duration     = 10384.04 seconds
+Compute duration  = 37469.36 seconds
+parameters        = a_w, a_p, a_e, b_e, σ_e[1], σ_e[2], ρ_e[1,1], ρ_e[2,1], ρ_e[1,2], ρ_e[2,2], ab_e[1,1], ab_e[2,1], ab_e[1,2], ab_e[2,2], ab_e[1,3], ab_e[2,3], ab_e[1,4], ab_e[2,4], ab_e[1,5], ab_e[2,5], ab_e[1,6], ab_e[2,6], σ
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters      mean       std   naive_se      mcse         ess      rhat   ess_per_sec
+      Symbol   Float64   Float64    Float64   Float64     Float64   Float64       Float64
+
+         a_w   -0.1238    0.7624     0.0241    0.0701    123.5866    1.0133        0.0033
+         a_p   -0.0129    0.8997     0.0285    0.1010     19.0331    1.1477        0.0005
+         a_e    0.0089    0.7967     0.0252    0.1003     23.8476    1.1249        0.0006
+         b_e   -0.0079    0.1176     0.0037    0.0036    588.4535    0.9990        0.0157
+      σ_e[1]    0.5393    0.3667     0.0116    0.0322    117.4710    1.0296        0.0031
+      σ_e[2]    0.2022    0.0932     0.0029    0.0051    227.7259    1.0260        0.0061
+    ρ_e[1,1]    1.0000    0.0000     0.0000    0.0000         NaN       NaN           NaN
+    ρ_e[2,1]    0.1805    0.3493     0.0110    0.0136    544.9548    1.0006        0.0145
+    ρ_e[1,2]    0.1805    0.3493     0.0110    0.0136    544.9548    1.0006        0.0145
+    ρ_e[2,2]    1.0000    0.0000     0.0000    0.0000   1071.2634    0.9960        0.0286
+   ab_e[1,1]    0.1016    0.8278     0.0262    0.1097     20.8931    1.1420        0.0006
+   ab_e[2,1]    0.1359    0.0335     0.0011    0.0012    791.2712    0.9980        0.0211
+   ab_e[1,2]   -0.5912    0.8237     0.0260    0.1086     21.1300    1.1415        0.0006
+   ab_e[2,2]   -0.1651    0.0441     0.0014    0.0024    329.9650    1.0087        0.0088
+   ab_e[1,3]    0.1732    0.8267     0.0261    0.1094     21.0840    1.1406        0.0006
+   ab_e[2,3]   -0.1977    0.0428     0.0014    0.0025    297.2916    1.0093        0.0079
+   ab_e[1,4]   -0.2335    0.8353     0.0264    0.1110     20.9159    1.1417        0.0006
+   ab_e[2,4]    0.0063    0.0349     0.0011    0.0011    614.0421    1.0001        0.0164
+   ab_e[1,5]   -0.0130    0.8288     0.0262    0.1098     20.7737    1.1429        0.0006
+   ab_e[2,5]    0.1161    0.0340     0.0011    0.0013    712.4008    1.0004        0.0190
+   ab_e[1,6]    0.5473    0.8240     0.0261    0.1084     21.2024    1.1405        0.0006
+   ab_e[2,6]    0.0792    0.0367     0.0012    0.0012    712.6191    1.0006        0.0190
+           σ    4.5694    0.0096     0.0003    0.0003   1142.0286    0.9978        0.0305
+
+Quantiles
+  parameters      2.5%     25.0%     50.0%     75.0%     97.5%
+      Symbol   Float64   Float64   Float64   Float64   Float64
+
+         a_w   -1.5879   -0.6842   -0.0764    0.4268    1.3639
+         a_p   -1.8039   -0.6518    0.0175    0.6523    1.6347
+         a_e   -1.6367   -0.4472    0.0752    0.4949    1.4754
+         b_e   -0.1851   -0.0569   -0.0063    0.0478    0.1842
+      σ_e[1]    0.2604    0.3693    0.4586    0.5962    1.2150
+      σ_e[2]    0.0930    0.1404    0.1800    0.2359    0.4424
+    ρ_e[1,1]    1.0000    1.0000    1.0000    1.0000    1.0000
+    ρ_e[2,1]   -0.5430   -0.0598    0.2090    0.4459    0.7631
+    ρ_e[1,2]   -0.5430   -0.0598    0.2090    0.4459    0.7631
+    ρ_e[2,2]    1.0000    1.0000    1.0000    1.0000    1.0000
+   ab_e[1,1]   -1.8381   -0.3620    0.1774    0.6309    1.5707
+   ab_e[2,1]    0.0767    0.1140    0.1353    0.1558    0.1987
+   ab_e[1,2]   -2.3750   -1.0683   -0.5245   -0.0650    0.8730
+   ab_e[2,2]   -0.2338   -0.1901   -0.1660   -0.1414   -0.0978
+   ab_e[1,3]   -1.7548   -0.2983    0.2524    0.7010    1.6464
+   ab_e[2,3]   -0.2623   -0.2187   -0.1989   -0.1796   -0.1342
+   ab_e[1,4]   -2.0659   -0.6911   -0.1585    0.2910    1.2171
+   ab_e[2,4]   -0.0528   -0.0135    0.0048    0.0260    0.0692
+   ab_e[1,5]   -1.9602   -0.4755    0.0619    0.5136    1.4683
+   ab_e[2,5]    0.0549    0.0957    0.1153    0.1362    0.1767
+   ab_e[1,6]   -1.1796    0.0898    0.6184    1.0724    2.0000
+   ab_e[2,6]    0.0161    0.0583    0.0789    0.0986    0.1467
+           σ    4.5501    4.5634    4.5692    4.5758    4.5892
+

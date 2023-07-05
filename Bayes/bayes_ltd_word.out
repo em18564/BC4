@@ -4,3 +4,110 @@ Directory is /user/home/em18564/BC4/Bayes
 Slurm job ID is 11633190
 This job runs on the following machines:
 compute311
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+┌ Warning: Expected the compressed registry for "/user/home/em18564/.julia/registries/General.toml" to exist at "/user/home/em18564/.julia/registries/General.tar.gz"
+└ @ Pkg.Registry /cache/build/default-amdci4-2/julialang/julia-release-1-dot-8/usr/share/julia/stdlib/v1.8/Pkg/src/Registry/registry_instance.jl:334
+  Installing known registries into `~/.julia`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.000732421875
+┌ Info: Found initial step size
+└   ϵ = 0.00037841796875
+┌ Info: Found initial step size
+└   ϵ = 0.00034179687500000003
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+Sampling (4 threads)  25%|███████▌                      |  ETA: 9:17:50
+Sampling (4 threads)  50%|███████████████               |  ETA: 3:05:57
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:01:59
+Sampling (4 threads) 100%|██████████████████████████████| Time: 3:05:56
+Sampling (4 threads) 100%|██████████████████████████████| Time: 3:05:56
+Chains MCMC chain (250×27×4 Array{Float64, 3}):
+
+Iterations        = 126:1:375
+Number of chains  = 4
+Samples per chain = 250
+Wall duration     = 11137.4 seconds
+Compute duration  = 36030.93 seconds
+parameters        = a_w, b_w, σ_w[1], σ_w[2], ρ_w[1,1], ρ_w[2,1], ρ_w[1,2], ρ_w[2,2], ab_w[1,1], ab_w[2,1], ab_w[1,2], ab_w[2,2], a_p, a_e, σ
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters      mean       std   naive_se      mcse         ess      rhat   ess_per_sec
+      Symbol   Float64   Float64    Float64   Float64     Float64   Float64       Float64
+
+         a_w   -0.1341    0.8152     0.0258    0.0746     51.9827    1.0618        0.0014
+         b_w   -0.0213    0.3142     0.0099    0.0279    148.5814    1.0146        0.0041
+      σ_w[1]    0.4337    0.4608     0.0146    0.0380    163.8820    1.0049        0.0045
+      σ_w[2]    0.4445    0.3746     0.0118    0.0266    169.1522    1.0454        0.0047
+    ρ_w[1,1]    1.0000    0.0000     0.0000    0.0000         NaN       NaN           NaN
+    ρ_w[2,1]   -0.0299    0.4291     0.0136    0.0303    150.6790    1.0162        0.0042
+    ρ_w[1,2]   -0.0299    0.4291     0.0136    0.0303    150.6790    1.0162        0.0042
+    ρ_w[2,2]    1.0000    0.0000     0.0000    0.0000    923.0769    0.9960        0.0256
+   ab_w[1,1]   -0.0491    0.8784     0.0278    0.0856     60.9399    1.0579        0.0017
+   ab_w[2,1]   -0.0963    0.0184     0.0006    0.0010    419.8236    1.0088        0.0117
+   ab_w[1,2]   -0.1630    0.8883     0.0281    0.0885     51.7985    1.0646        0.0014
+   ab_w[2,2]    0.0947    0.0897     0.0028    0.0069    110.4910    1.0234        0.0031
+         a_p    0.0045    0.8462     0.0268    0.0612    160.2842    1.0282        0.0044
+         a_e    0.0015    0.7935     0.0251    0.0637    151.2407    1.0330        0.0042
+           σ    4.5838    0.0091     0.0003    0.0003   1004.4904    1.0003        0.0279
+
+Quantiles
+  parameters      2.5%     25.0%     50.0%     75.0%     97.5%
+      Symbol   Float64   Float64   Float64   Float64   Float64
+
+         a_w   -1.7072   -0.7209   -0.1718    0.4163    1.5308
+         b_w   -0.7686   -0.1309    0.0026    0.1402    0.5553
+      σ_w[1]    0.0362    0.1531    0.2962    0.5409    1.7794
+      σ_w[2]    0.0741    0.1856    0.3400    0.5620    1.3543
+    ρ_w[1,1]    1.0000    1.0000    1.0000    1.0000    1.0000
+    ρ_w[2,1]   -0.8206   -0.3564   -0.0355    0.2993    0.7824
+    ρ_w[1,2]   -0.8206   -0.3564   -0.0355    0.2993    0.7824
+    ρ_w[2,2]    1.0000    1.0000    1.0000    1.0000    1.0000
+   ab_w[1,1]   -1.5977   -0.6623   -0.0732    0.5320    1.7240
+   ab_w[2,1]   -0.1350   -0.1074   -0.0961   -0.0837   -0.0641
+   ab_w[1,2]   -1.7732   -0.7844   -0.1865    0.4328    1.6368
+   ab_w[2,2]    0.0303    0.0793    0.1007    0.1237    0.1641
+         a_p   -1.7241   -0.5386    0.0247    0.5709    1.5896
+         a_e   -1.5720   -0.5136    0.0162    0.5240    1.5870
+           σ    4.5663    4.5774    4.5836    4.5898    4.6019
+

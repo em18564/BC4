@@ -1,41 +1,210 @@
-Running on host compute309.bc4.acrc.priv
-Time is Mon Jul 3 12:24:22 BST 2023
+Running on host compute310.bc4.acrc.priv
+Time is Mon Jul 3 12:34:57 BST 2023
 Directory is /user/home/em18564/BC4/Bayes
-Slurm job ID is 11633188
+Slurm job ID is 11634522
 This job runs on the following machines:
-compute309
+compute310
     Updating registry at `~/.julia/registries/General.toml`
-┌ Warning: Expected the compressed registry for "/user/home/em18564/.julia/registries/General.toml" to exist at "/user/home/em18564/.julia/registries/General.tar.gz"
-└ @ Pkg.Registry /cache/build/default-amdci4-2/julialang/julia-release-1-dot-8/usr/share/julia/stdlib/v1.8/Pkg/src/Registry/registry_instance.jl:334
    Resolving package versions...
-ERROR: LoadError: expected package `AxisArrays [39de3d68]` to be registered
-Stacktrace:
-  [1] pkgerror(msg::String)
-    @ Pkg.Types /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Types.jl:67
-  [2] check_registered
-    @ /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1190 [inlined]
-  [3] targeted_resolve(env::Pkg.Types.EnvCache, registries::Vector{Pkg.Registry.RegistryInstance}, pkgs::Vector{Pkg.Types.PackageSpec}, preserve::Pkg.Types.PreserveLevel, julia_version::VersionNumber)
-    @ Pkg.Operations /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1252
-  [4] tiered_resolve(env::Pkg.Types.EnvCache, registries::Vector{Pkg.Registry.RegistryInstance}, pkgs::Vector{Pkg.Types.PackageSpec}, julia_version::VersionNumber)
-    @ Pkg.Operations /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1225
-  [5] _resolve(io::IOStream, env::Pkg.Types.EnvCache, registries::Vector{Pkg.Registry.RegistryInstance}, pkgs::Vector{Pkg.Types.PackageSpec}, preserve::Pkg.Types.PreserveLevel, julia_version::VersionNumber)
-    @ Pkg.Operations /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1260
-  [6] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}, new_git::Set{Base.UUID}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform)
-    @ Pkg.Operations /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/Operations.jl:1276
-  [7] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform, kwargs::Base.Pairs{Symbol, IOStream, Tuple{Symbol}, NamedTuple{(:io,), Tuple{IOStream}}})
-    @ Pkg.API /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:275
-  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}})
-    @ Pkg.API /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:156
-  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
-    @ Pkg.API /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:145
- [10] #add#27
-    @ /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:144 [inlined]
- [11] add
-    @ /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:144 [inlined]
- [12] #add#26
-    @ /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:143 [inlined]
- [13] add(pkg::String)
-    @ Pkg.API /mnt/storage/software/languages/julia-1.8.5/julia-1.8.5/share/julia/stdlib/v1.8/Pkg/src/API.jl:143
- [14] top-level scope
-    @ ~/BC4/Bayes/models/model_full_full.jl:2
-in expression starting at /user/home/em18564/BC4/Bayes/models/model_full_full.jl:2
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.00078125
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.00078125
+┌ Info: Found initial step size
+└   ϵ = 0.000390625
+Sampling (4 threads)  25%|███████▌                      |  ETA: 2 days, 7:06:13
+Sampling (4 threads)  50%|███████████████               |  ETA: 18:22:04
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 6:07:21
+Sampling (4 threads) 100%|██████████████████████████████| Time: 18:22:04
+Sampling (4 threads) 100%|██████████████████████████████| Time: 18:22:04
+Chains MCMC chain (250×77×4 Array{Float64, 3}):
+
+Iterations        = 126:1:375
+Number of chains  = 4
+Samples per chain = 250
+Wall duration     = 66102.54 seconds
+Compute duration  = 200990.22 seconds
+parameters        = a_w, b_w, σ_w[1], σ_w[2], ρ_w[1,1], ρ_w[2,1], ρ_w[1,2], ρ_w[2,2], ab_w[1,1], ab_w[2,1], ab_w[1,2], ab_w[2,2], a_p, b_p, σ_p[1], σ_p[2], ρ_p[1,1], ρ_p[2,1], ρ_p[1,2], ρ_p[2,2], ab_p[1,1], ab_p[2,1], ab_p[1,2], ab_p[2,2], ab_p[1,3], ab_p[2,3], ab_p[1,4], ab_p[2,4], ab_p[1,5], ab_p[2,5], ab_p[1,6], ab_p[2,6], ab_p[1,7], ab_p[2,7], ab_p[1,8], ab_p[2,8], ab_p[1,9], ab_p[2,9], ab_p[1,10], ab_p[2,10], ab_p[1,11], ab_p[2,11], ab_p[1,12], ab_p[2,12], a_e, b_e, σ_e[1], σ_e[2], ρ_e[1,1], ρ_e[2,1], ρ_e[1,2], ρ_e[2,2], ab_e[1,1], ab_e[2,1], ab_e[1,2], ab_e[2,2], ab_e[1,3], ab_e[2,3], ab_e[1,4], ab_e[2,4], ab_e[1,5], ab_e[2,5], ab_e[1,6], ab_e[2,6], σ
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters      mean        std   naive_se      mcse        ess      rhat   ess_per_sec
+      Symbol   Float64    Float64    Float64   Float64    Float64   Float64       Float64
+
+         a_w    0.2350     0.9017     0.0285    0.1163    10.3438    1.3350        0.0001
+         b_w   -0.0041     0.3921     0.0124    0.0233   263.9236    1.0201        0.0013
+      σ_w[1]    0.7383     0.7475     0.0236    0.1155     5.9123    1.8639        0.0000
+      σ_w[2]    0.8459     0.7795     0.0247    0.1222     5.5062    2.0893        0.0000
+    ρ_w[1,1]    1.0000     0.0000     0.0000    0.0000        NaN       NaN           NaN
+    ρ_w[2,1]   -0.0012     0.4393     0.0139    0.0382    25.9100    1.1064        0.0001
+    ρ_w[1,2]   -0.0012     0.4393     0.0139    0.0382    25.9100    1.1064        0.0001
+    ρ_w[2,2]    1.0000     0.0000     0.0000    0.0000   997.5839    0.9960        0.0050
+   ab_w[1,1]    0.0604     0.7262     0.0230    0.0640   139.4976    1.0424        0.0007
+   ab_w[2,1]   -0.0761     1.0466     0.0331    0.1718     5.8139    1.9184        0.0000
+   ab_w[1,2]    0.2296     1.1334     0.0358    0.1677     7.2161    1.5776        0.0000
+   ab_w[2,2]   -0.0008     1.0877     0.0344    0.1793     5.8631    1.9073        0.0000
+         a_p    0.1108     0.6755     0.0214    0.0848    60.7044    1.0970        0.0003
+         b_p   -0.4642     0.9437     0.0298    0.1573     4.9343    2.6065        0.0000
+      σ_p[1]    0.5478     0.3659     0.0116    0.0639     5.3442    2.2129        0.0000
+      σ_p[2]    0.6105     0.9028     0.0285    0.1608     5.1585    2.3819        0.0000
+    ρ_p[1,1]    1.0000     0.0000     0.0000    0.0000        NaN       NaN           NaN
+    ρ_p[2,1]    0.6050     0.3019     0.0095    0.0486     6.9425    1.6257        0.0000
+    ρ_p[1,2]    0.6050     0.3019     0.0095    0.0486     6.9425    1.6257        0.0000
+    ρ_p[2,2]    1.0000     0.0000     0.0000    0.0000   882.1138    0.9960        0.0044
+   ab_p[1,1]   -0.4110     1.1787     0.0373    0.1908     7.1630    1.5628        0.0000
+   ab_p[2,1]   -0.5475     1.1392     0.0360    0.1941     4.6225    3.2666        0.0000
+   ab_p[1,2]    0.2018     0.8093     0.0256    0.1158    11.9362    1.3175        0.0001
+   ab_p[2,2]   -0.4535     1.1189     0.0354    0.1902     4.6467    3.1947        0.0000
+   ab_p[1,3]    0.8311     1.2140     0.0384    0.1986     6.1415    1.8073        0.0000
+   ab_p[2,3]   -0.9102     1.9944     0.0631    0.3506     4.4047    4.3623        0.0000
+   ab_p[1,4]   -0.0949     0.6571     0.0208    0.0790    73.4932    1.0427        0.0004
+   ab_p[2,4]   -1.1280     1.9503     0.0617    0.3428     4.4058    4.3564        0.0000
+   ab_p[1,5]    0.0109     0.8807     0.0278    0.1313     9.3939    1.4168        0.0000
+   ab_p[2,5]   -0.5781     1.0142     0.0321    0.1704     4.8536    2.7321        0.0000
+   ab_p[1,6]    1.1604     0.7486     0.0237    0.1019    17.4206    1.2215        0.0001
+   ab_p[2,6]   -0.6503     1.8119     0.0573    0.3177     4.4037    4.3712        0.0000
+   ab_p[1,7]    0.0666     0.7040     0.0223    0.0918    30.3667    1.1516        0.0002
+   ab_p[2,7]   -1.1744     2.2541     0.0713    0.3975     4.4181    4.2621        0.0000
+   ab_p[1,8]   -0.0748     0.8144     0.0258    0.1161    14.6774    1.2228        0.0001
+   ab_p[2,8]   -0.8141     1.6876     0.0534    0.2952     4.4016    4.3893        0.0000
+   ab_p[1,9]    0.1980     0.9633     0.0305    0.1488     7.9214    1.5239        0.0000
+   ab_p[2,9]   -0.7405     1.3410     0.0424    0.2316     4.4705    3.9268        0.0000
+  ab_p[1,10]   -0.3689     0.7307     0.0231    0.0971    31.0975    1.1255        0.0002
+  ab_p[2,10]   -1.0425     1.7060     0.0539    0.2983     4.4045    4.3705        0.0000
+  ab_p[1,11]    0.0991     1.2261     0.0388    0.2013     6.0974    1.8189        0.0000
+  ab_p[2,11]   -0.7411     0.9116     0.0288    0.1503     5.2925    2.2355        0.0000
+  ab_p[1,12]    0.1543     0.8901     0.0281    0.1336     9.1477    1.4309        0.0000
+  ab_p[2,12]   -1.2925     2.2308     0.0705    0.3933     4.4225    4.2247        0.0000
+         a_e   -0.1062     0.7064     0.0223    0.0761    40.7861    1.1059        0.0002
+         b_e   -0.1676     0.5835     0.0185    0.0845     9.7968    1.3367        0.0000
+      σ_e[1]    0.7328     0.4877     0.0154    0.0804     5.9355    1.8841        0.0000
+      σ_e[2]    0.2170     0.1151     0.0036    0.0101   112.6014    1.0207        0.0006
+    ρ_e[1,1]    1.0000     0.0000     0.0000    0.0000        NaN       NaN           NaN
+    ρ_e[2,1]    0.2158     0.3346     0.0106    0.0248    63.5486    1.0441        0.0003
+    ρ_e[1,2]    0.2158     0.3346     0.0106    0.0248    63.5486    1.0441        0.0003
+    ρ_e[2,2]    1.0000     0.0000     0.0000    0.0000   999.7850    0.9960        0.0050
+   ab_e[1,1]   -0.0135     0.7226     0.0229    0.0822    29.5600    1.1254        0.0001
+   ab_e[2,1]    0.0901     0.4993     0.0158    0.0641    10.1819    1.3189        0.0001
+   ab_e[1,2]   -0.5103     0.8057     0.0255    0.1028    15.6751    1.1987        0.0001
+   ab_e[2,2]   -0.1755     0.4662     0.0147    0.0559    12.5973    1.2418        0.0001
+   ab_e[1,3]    0.3017     0.8597     0.0272    0.1154    12.4920    1.2540        0.0001
+   ab_e[2,3]   -0.1819     0.4453     0.0141    0.0504    15.0827    1.1979        0.0001
+   ab_e[1,4]   -0.8611     1.3946     0.0441    0.2284     5.6329    2.0004        0.0000
+   ab_e[2,4]   -0.0267     0.4847     0.0153    0.0607    10.9339    1.2870        0.0001
+   ab_e[1,5]   -0.5425     1.2130     0.0384    0.1927     6.1116    1.8199        0.0000
+   ab_e[2,5]    0.0329     0.5402     0.0171    0.0738     8.5552    1.4105        0.0000
+   ab_e[1,6]    0.8179     1.0680     0.0338    0.1603     8.0065    1.4681        0.0000
+   ab_e[2,6]    0.0463     0.4826     0.0153    0.0603    11.1149    1.2838        0.0001
+           σ   30.4761   110.6577     3.4993   18.3482    11.1109    1.3017        0.0001
+
+Quantiles
+  parameters      2.5%     25.0%     50.0%     75.0%      97.5%
+      Symbol   Float64   Float64   Float64   Float64    Float64
+
+         a_w   -1.5446   -0.4160    0.2213    1.0890     1.4191
+         b_w   -0.8796   -0.2108    0.0015    0.1978     0.8102
+      σ_w[1]    0.0426    0.1411    0.3567    1.2439     2.0432
+      σ_w[2]    0.0811    0.2226    0.4704    1.7028     2.3295
+    ρ_w[1,1]    1.0000    1.0000    1.0000    1.0000     1.0000
+    ρ_w[2,1]   -0.8330   -0.3536    0.0365    0.4067     0.7178
+    ρ_w[1,2]   -0.8330   -0.3536    0.0365    0.4067     0.7178
+    ρ_w[2,2]    1.0000    1.0000    1.0000    1.0000     1.0000
+   ab_w[1,1]   -1.4905   -0.3591    0.1233    0.5143     1.4884
+   ab_w[2,1]   -2.4268   -0.5306   -0.1081    0.3532     2.4530
+   ab_w[1,2]   -1.6065   -0.5252    0.1212    0.6730     3.0159
+   ab_w[2,2]   -2.5788   -0.3979    0.0455    0.4687     2.5303
+         a_p   -1.1714   -0.3936    0.2715    0.4925     1.4145
+         b_p   -2.5415   -1.2568   -0.1695    0.2116     0.7726
+      σ_p[1]    0.2613    0.3292    0.3845    0.4979     1.3211
+      σ_p[2]    0.1178    0.1504    0.1797    0.2428     2.5425
+    ρ_p[1,1]    1.0000    1.0000    1.0000    1.0000     1.0000
+    ρ_p[2,1]    0.0305    0.4872    0.7217    0.8291     0.9231
+    ρ_p[1,2]    0.0305    0.4872    0.7217    0.8291     0.9231
+    ρ_p[2,2]    1.0000    1.0000    1.0000    1.0000     1.0000
+   ab_p[1,1]   -2.6398   -0.9374   -0.1980    0.4444     1.3985
+   ab_p[2,1]   -2.7366   -1.3236   -0.1287    0.2452     0.8166
+   ab_p[1,2]   -1.2479   -0.4118    0.2302    0.9053     1.3586
+   ab_p[2,2]   -2.6961   -1.2680   -0.0499    0.3349     0.9040
+   ab_p[1,3]   -0.8668   -0.0435    0.6079    1.3701     3.2249
+   ab_p[2,3]   -5.1625   -1.2102   -0.0249    0.3581     0.9100
+   ab_p[1,4]   -1.3018   -0.4534   -0.2343    0.3132     1.3381
+   ab_p[2,4]   -5.2598   -1.4888   -0.2617    0.1180     0.6747
+   ab_p[1,5]   -1.4899   -0.6534   -0.0058    0.7278     1.3997
+   ab_p[2,5]   -2.8843   -1.3006   -0.2479    0.1358     0.7262
+   ab_p[1,6]   -0.2474    0.5877    1.2438    1.8392     2.3766
+   ab_p[2,6]   -4.4355   -1.0822    0.1262    0.5292     1.1056
+   ab_p[1,7]   -1.2683   -0.4609    0.1900    0.6325     1.3187
+   ab_p[2,7]   -6.1296   -1.3834   -0.1643    0.2247     0.7810
+   ab_p[1,8]   -1.1874   -0.8031   -0.0686    0.5342     1.5256
+   ab_p[2,8]   -4.2718   -1.2769   -0.0903    0.2979     0.8388
+   ab_p[1,9]   -1.3443   -0.5215    0.1276    0.8735     1.8476
+   ab_p[2,9]   -3.3118   -1.4519   -0.1933    0.1794     0.7413
+  ab_p[1,10]   -1.4363   -1.1069   -0.4205    0.1857     1.1749
+  ab_p[2,10]   -4.5545   -1.5642   -0.3118    0.0805     0.6643
+  ab_p[1,11]   -1.6234   -0.7833   -0.1287    0.6404     2.5371
+  ab_p[2,11]   -3.1610   -1.4391   -0.5057   -0.1272     0.4596
+  ab_p[1,12]   -1.3575   -0.5259    0.1241    0.8432     1.5758
+  ab_p[2,12]   -6.1241   -1.4891   -0.2930    0.0995     0.6683
+         a_e   -1.3435   -0.4944   -0.2884    0.3787     1.4166
+         b_e   -1.1453   -0.5938   -0.0669    0.2645     0.8097
+      σ_e[1]    0.2654    0.4006    0.5227    0.8133     1.7403
+      σ_e[2]    0.1028    0.1512    0.2048    0.2353     0.4505
+    ρ_e[1,1]    1.0000    1.0000    1.0000    1.0000     1.0000
+    ρ_e[2,1]   -0.4947   -0.0241    0.2756    0.4573     0.7551
+    ρ_e[1,2]   -0.4947   -0.0241    0.2756    0.4573     0.7551
+    ρ_e[2,2]    1.0000    1.0000    1.0000    1.0000     1.0000
+   ab_e[1,1]   -1.3489   -0.5064   -0.0542    0.4676     1.4570
+   ab_e[2,1]   -0.8753   -0.2359    0.1309    0.4505     0.9517
+   ab_e[1,2]   -2.0244   -1.1208   -0.4810    0.1226     0.7894
+   ab_e[2,2]   -0.9562   -0.4898   -0.1550    0.1577     0.6658
+   ab_e[1,3]   -1.2843   -0.3668    0.3044    0.9861     1.5965
+   ab_e[2,3]   -0.9611   -0.5131   -0.1693    0.1538     0.6309
+   ab_e[1,4]   -3.6110   -1.2942   -0.5699    0.1395     1.1575
+   ab_e[2,4]   -0.9265   -0.3415    0.0024    0.3193     0.8219
+   ab_e[1,5]   -2.7617   -1.0678   -0.3411    0.3378     1.4116
+   ab_e[2,5]   -1.1030   -0.2756    0.0732    0.4263     0.9165
+   ab_e[1,6]   -0.8986    0.0148    0.6838    1.4354     2.8968
+   ab_e[2,6]   -0.8310   -0.2731    0.0718    0.3955     0.9010
+           σ    4.5329    4.5484    4.5548    4.5660   520.9998
+
