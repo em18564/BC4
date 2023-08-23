@@ -16,28 +16,82 @@ using MCMCChains
 using Serialization
 using Plots
 
-function HDI(data)
-    p1 = percentile(data,1.5)
-    p2 = percentile(data,98.5)
-    m = mean(data)
-    return m,p1,p2
+function plotFuncN400(data,folder)
+    l = @layout [a ; b]
+    chn = deserialize(data)
+    chn_ss = DataFrame(summarystats(chn))
+    chn_df = DataFrame(chn)
+    p1 = density(chn_df[!,"ab_w[2,1]"],label = "Content",xaxis="Posterior Effect")
+    density!(chn_df[!,"ab_w[2,2]"],label = "Function")
+    p2 = density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
+    plot(p1,p2,layout=l,dpi=300)
+    savefig(folder*"/wordType.png")
+    p = density(chn_df[!,"ab_e[2,1]"],label="n400",xaxis="Posterior Effect")
+    plot(p,dpi=300)
+    savefig(folder*"/n400.png")
+    ess_rhat_df = DataFrame(ess_rhat(chn))
+    xs = ess_rhat_df[!,"rhat"]
+    ys = ess_rhat_df[!,"ess"]
+    p = scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
+    plot(p,dpi=300)
+    savefig(folder*"/essRhat.png")
 end
-l = @layout [a ; b]
+
+function plotFuncFull(data,folder)
+    l = @layout [a ; b]
+    chn = deserialize(data)
+    chn_ss = DataFrame(summarystats(chn))
+    chn_df = DataFrame(chn)
+    p1 = density(chn_df[!,"ab_w[2,1]"],label = "Content",xaxis="Posterior Effect")
+    density!(chn_df[!,"ab_w[2,2]"],label = "Function")
+    p2 = density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
+    plot(p1,p2,layout=l,dpi=300)
+    savefig(folder*"/wordType.png")
+    y = [chn_df[!,"ab_e[2,1]"],chn_df[!,"ab_e[2,2]"],chn_df[!,"ab_e[2,3]"],chn_df[!,"ab_e[2,4]"],chn_df[!,"ab_e[2,5]"],chn_df[!,"ab_e[2,6]"]]
+    names =["PNP" "P600" "EPNP" "N400" "LAN" "ELAN"]
+    print(y[1])
+    p = violin(names, y, legend=false,xaxis="Posterior Effect")
+    plot(p,dpi=300)
+    savefig(folder*"/erp.png")
+    ess_rhat_df = DataFrame(ess_rhat(chn))
+    xs = ess_rhat_df[!,"rhat"]
+    ys = ess_rhat_df[!,"ess"]
+    p = scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
+    plot(p,dpi=300)
+    savefig(folder*"/essRhat.png")
+end
+
+plotFuncN400("savedData/m_df_n400.jls","graphs/n400")
+plotFuncN400("savedData/m_df_n400_full.jls","graphs/n400_full")
+plotFuncFull("savedData/m_df_full_full.jls","graphs/full_full")
+plotFuncFull("savedData/m_df_full.jls","graphs/full")
 # df = CSV.read("savedData/df_2.csv", DataFrame)
-chn = deserialize("savedData/m_df_n400.jls")
+
+
+
+l = @layout [a ; b]
+data = "savedData/m_df_ltd_word.jls"
+folder = "graphs/ltd_word"
+chn = deserialize(data)
 chn_ss = DataFrame(summarystats(chn))
 chn_df = DataFrame(chn)
 p1 = density(chn_df[!,"ab_w[2,1]"],label = "Content",xaxis="Posterior Effect")
 density!(chn_df[!,"ab_w[2,2]"],label = "Function")
-#CSV.write("savedData/n400_ss.csv", chn_ss)
-
 p2 = density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
 plot(p1,p2,layout=l,dpi=300)
-savefig("graphs/n400/wordType.png")
-
-p = density(chn_df[!,"ab_e[2,1]"],label="n400",xaxis="Posterior Effect")
+savefig(folder*"/wordType.png")
+p = density(chn_df[!,"a_e"],label="n400",xaxis="Posterior Effect")
 plot(p,dpi=300)
-savefig("graphs/n400/n400.png")
+savefig(folder*"/n400.png")
+ess_rhat_df = DataFrame(ess_rhat(chn))
+xs = ess_rhat_df[!,"rhat"]
+ys = ess_rhat_df[!,"ess"]
+p = scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
+plot(p,dpi=300)
+savefig(folder*"/essRhat.png")
+
+
+
 
 # PNP  = HDI(chn_df[!,"a_e[1]"])
 # P600 = HDI(chn_df[!,"a_e[2]"])
@@ -47,12 +101,7 @@ savefig("graphs/n400/n400.png")
 # ELAN = HDI(chn_df[!,"a_e[6]"])
 # y = [chn_df[!,"b"]]
 # violin(["N400"], y, legend=false,xaxis="Posterior Effect")
-ess_rhat_df = DataFrame(ess_rhat(chn))
-xs = ess_rhat_df[!,"rhat"]
-ys = ess_rhat_df[!,"ess"]
-p = scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
-plot(p,dpi=300)
-savefig("graphs/n400/essRhat.png")
+
 #plot(truncated(Cauchy(20),0,1000),lw=3,xlims=(-1, 100),legend=false,title="Half-Cauchy")
 
 # density(chn_df[!,"σ"],label="n400")
