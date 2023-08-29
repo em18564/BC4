@@ -18,4 +18,3 @@ OMP_DISPLAY_ENV=true
 # Run the executable
 julia ../../input/setup.jl
 julia model.jl
-julia analyse.jl
