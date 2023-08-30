@@ -1,7 +1,7 @@
 Running on host compute483.bc4.acrc.priv
-Time is Tue Aug 29 14:52:09 BST 2023
+Time is Wed Aug 30 02:21:42 BST 2023
 Directory is /user/home/em18564/BC4/Bayes/experiments/hier_e_w_mul
-Slurm job ID is 11836997
+Slurm job ID is 11837577
 This job runs on the following machines:
 compute483
     Updating registry at `~/.julia/registries/General.toml`
@@ -46,17 +46,14 @@ compute483
   No Changes to `~/.julia/environments/v1.8/Manifest.toml`
 Sampling (4 threads)   0%|                              |  ETA: N/A
 ┌ Info: Found initial step size
-└   ϵ = 0.000390625
-┌ Info: Found initial step size
-└   ϵ = 0.0015625
-Sampling (4 threads)  25%|███████▌                      |  ETA: 11:33:16
-Sampling (4 threads)  50%|███████████████               |  ETA: 3:57:19
-Sampling (4 threads) 100%|██████████████████████████████| Time: 3:57:19
+└   ϵ = 0.0125
+Sampling (4 threads)  25%|███████▌                      |  ETA: 11:46:04
+Sampling (4 threads) 100%|██████████████████████████████| Time: 3:55:21
 ERROR: LoadError: TaskFailedException
 
     nested task error: TaskFailedException
     
-        nested task error: DomainError with -0.4780288531973831:
+        nested task error: DomainError with -2.122994988445033:
         Exponential: the condition θ > zero(θ) is not satisfied.
         Stacktrace:
           [1] #255
@@ -106,7 +103,7 @@ ERROR: LoadError: TaskFailedException
          [23] (::AbstractMCMC.var"#35#48"{DynamicPPL.Sampler{NUTS{Turing.Essential.ForwardDiffAD{0}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :eLAN, :lAN, :n400, :ePNP, :p600, :pNP), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Float64}, Vector{Float64}, Vector{Float64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Base.Pairs{Symbol, UnionAll, Tuple{Symbol}, NamedTuple{(:chain_type,), Tuple{UnionAll}}}, Int64, Vector{Any}, Nothing, Vector{UInt64}})()
             @ AbstractMCMC ./threadingconstructs.jl:258
     
-    ...and 1 more exception.
+    ...and 2 more exceptions.
     
     Stacktrace:
      [1] sync_end(c::Channel{Any})
@@ -153,13 +150,3 @@ Stacktrace:
  [17] top-level scope
     @ ~/BC4/Bayes/experiments/hier_e_w_mul/model.jl:112
 in expression starting at /user/home/em18564/BC4/Bayes/experiments/hier_e_w_mul/model.jl:112
-ERROR: LoadError: ArgumentError: Package MCMCChains not found in current path, maybe you meant `import/using .MCMCChains`.
-- Otherwise, run `import Pkg; Pkg.add("MCMCChains")` to install the MCMCChains package.
-Stacktrace:
- [1] macro expansion
-   @ ./loading.jl:1163 [inlined]
- [2] macro expansion
-   @ ./lock.jl:223 [inlined]
- [3] require(into::Module, mod::Symbol)
-   @ Base ./loading.jl:1144
-in expression starting at /user/home/em18564/BC4/Bayes/experiments/hier_e_w_mul/analyse.jl:15
