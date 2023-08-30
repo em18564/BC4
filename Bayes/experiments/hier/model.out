@@ -1,8 +1,46 @@
-Running on host compute463.bc4.acrc.priv
-Time is Wed Aug 30 10:16:00 BST 2023
+Running on host compute074.bc4.acrc.priv
+Time is Wed Aug 30 11:09:10 BST 2023
 Directory is /user/home/em18564/BC4/Bayes/experiments/hier
-Slurm job ID is 11838036
+Slurm job ID is 11838065
 This job runs on the following machines:
-compute463
-/tmp/slurmd/job11838036/slurm_script: line 19: julia: command not found
-/tmp/slurmd/job11838036/slurm_script: line 20: julia: command not found
+compute074
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
