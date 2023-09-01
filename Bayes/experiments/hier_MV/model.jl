@@ -15,88 +15,77 @@ using MCMCDiagnosticTools
 using Serialization
 
 NUM_SENTENCES = 205
-NUM_PARTICIPANTS = 8
-NUM_WORDS = 800
+NUM_PARTICIPANTS = 12
+NUM_WORDS = 1931
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 @model function model(participant,word,surprisal,tags,eLAN,lAN,n400,ePNP,p600,pNP)
-  cor ~ MvNormal(zeros(6),ones(6))
   σ_cor ~ filldist(Exponential(), 6)
   ρ_cor ~ LKJ(6, 2)
   Σ_cor = ((σ_cor .* σ_cor') .* ρ_cor)
-  e_cor ~ filldist(MvNormal(cor,Σ_cor), 1)
 
+  a_w_es ~ filldist(MvNormal(zeros(6), Σ_cor),NUM_TYPES)
+  b_w_es ~ filldist(MvNormal(zeros(6), Σ_cor),NUM_TYPES)
 
-  a_w ~ Normal(0,1)
-  b_w ~ Normal(0,0.5)
-  σ_w ~ filldist(Exponential(), 2)
-  ρ_w ~ LKJ(2, 2)
-  Σ_w = ((σ_w .* σ_w') .* ρ_w)
-  ab_w ~ filldist(MvNormal([a_w,b_w], Σ_w),NUM_TYPES)
-  
-  a_w = ab_w[1,tags.+1]
-  b_w = ab_w[2,tags.+1]
+  a_p_es ~ filldist(MvNormal(zeros(6), Σ_cor),NUM_PARTICIPANTS)
+  b_p_es ~ filldist(MvNormal(zeros(6), Σ_cor),NUM_PARTICIPANTS)
 
-  a_p ~ Normal(0,1)
-  b_p ~ Normal(0,0.5)
-  σ_p ~ filldist(Exponential(), 2)
-  ρ_p ~ LKJ(2, 2)
-  Σ_p = (σ_p .* σ_p') .* ρ_p
-  ab_p ~ filldist(MvNormal([a_p,b_p], Σ_p),NUM_PARTICIPANTS)
-  a_p = ab_p[1,participant.+1]
-  b_p = ab_p[2,participant.+1]
+    #[a_ep,b_ep] ~ MvNormal(zero, LKJ)
 
-  a_e ~ Normal(0,1)
-  b_e ~ Normal(0,0.5)
+  ae ~ Normal(0,1)
+  be ~ Normal(0,0.5)
   σ_e ~ filldist(Exponential(), 2)
   ρ_e ~ LKJ(2, 2)
   Σ_e = (σ_e .* σ_e') .* ρ_e
-  ab_e ~ filldist(MvNormal([a_e,b_e], Σ_e),NUM_ERP)
+  ab_e ~ filldist(MvNormal([ae,be], Σ_e),NUM_ERP)
   
   a_e = ab_e[1,1]
   b_e = ab_e[2,1]
-  a_w_e = a_w * e_cor[1]
-  b_w_e = b_w * e_cor[1]
+  a_w_e = a_w_es[1,tags.+1]
+  b_w_e = b_w_es[1,tags.+1]
 
-  a_p_e = a_p * e_cor[1]
-  b_p_e = b_p * e_cor[1]
+  a_p_e = a_p_es[1,participant.+1]
+  b_p_e = b_p_es[1,participant.+1]
   μ_eLAN = @. a_w_e + a_p_e + a_e + ((b_w_e + b_p_e + b_e) * surprisal)
   a_e = ab_e[1,2]
   b_e = ab_e[2,2]
-  a_w_e = a_w * e_cor[2]
-  b_w_e = b_w * e_cor[2]
+  a_w_e = a_w_es[2,tags.+1]
+  b_w_e = b_w_es[2,tags.+1]
 
-  a_p_e = a_p * e_cor[2]
-  b_p_e = b_p * e_cor[2]
+  a_p_e = a_p_es[2,participant.+1]
+  b_p_e = b_p_es[2,participant.+1]
   μ_lAN = @. a_w_e + a_p_e + a_e + ((b_w_e + b_p_e + b_e) * surprisal)
   a_e = ab_e[1,3]
   b_e = ab_e[2,3]
-  a_w_e = a_w * e_cor[3]
-  b_w_e = b_w * e_cor[3]
+  a_w_e = a_w_es[3,tags.+1]
+  b_w_e = b_w_es[3,tags.+1]
 
-  a_p_e = a_p * e_cor[3]
-  b_p_e = b_p * e_cor[3]
+  a_p_e = a_p_es[3,participant.+1]
+  b_p_e = b_p_es[3,participant.+1]
   μ_n400 = @. a_w_e + a_p_e + a_e + ((b_w_e + b_p_e + b_e) * surprisal)
   a_e = ab_e[1,4]
   b_e = ab_e[2,4]
-  a_w_e = a_w * e_cor[4]
-  b_w_e = b_w * e_cor[4]
+  a_w_e = a_w_es[4,tags.+1]
+  b_w_e = b_w_es[4,tags.+1]
+
+  a_p_e = a_p_es[4,participant.+1]
+  b_p_e = b_p_es[4,participant.+1]
   μ_ePNP = @. a_w_e + a_p_e + a_e + ((b_w_e + b_p_e + b_e) * surprisal)
   a_e = ab_e[1,5]
   b_e = ab_e[2,5]
-  a_w_e = a_w * e_cor[5]
-  b_w_e = b_w * e_cor[5]
+  a_w_e = a_w_es[5,tags.+1]
+  b_w_e = b_w_es[5,tags.+1]
 
-  a_p_e = a_p * e_cor[5]
-  b_p_e = b_p * e_cor[5]
+  a_p_e = a_p_es[5,participant.+1]
+  b_p_e = b_p_es[5,participant.+1]
   μ_p600 = @. a_w_e + a_p_e + a_e + ((b_w_e + b_p_e + b_e) * surprisal)
   a_e = ab_e[1,6]
   b_e = ab_e[2,6]
-  a_w_e = a_w * e_cor[6]
-  b_w_e = b_w * e_cor[6]
+  a_w_e = a_w_es[6,tags.+1]
+  b_w_e = b_w_es[6,tags.+1]
 
-  a_p_e = a_p * e_cor[6]
-  b_p_e = b_p * e_cor[6]
+  a_p_e = a_p_es[6,participant.+1]
+  b_p_e = b_p_es[6,participant.+1]
   μ_pNP = @. a_w_e + a_p_e + a_e + ((b_w_e + b_p_e + b_e) * surprisal)
 
   # b_w - 2, 12 of them, pair of word type and erp. add pooling. regression gives means for each erp with correlation  matrix
@@ -118,15 +107,17 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   # Sigma ~ LKJ(6,2) up to the factors
   # erp ~ MVNormal([mu_e],Sigma)
 
-  σ ~ truncated(Cauchy(0,20),0,1000)
+  #σ ~ truncated(Cauchy(0,20),0,1000)
+
+  σ_σ ~ filldist(Exponential(10), 6)
+  ρ_σ ~ LKJ(6, 2)
+  Σ_σ = ((σ_σ .* σ_σ') .* ρ_σ)
+
+  samples = [eLAN lAN n400 ePNP p600 pNP]
+  μs = [μ_eLAN μ_lAN μ_n400 μ_ePNP μ_p600 μ_pNP]
 
   for i in eachindex(participant)
-    eLAN[i] ~ Normal(μ_eLAN[i],σ)
-    lAN[i]  ~ Normal(μ_lAN[i],σ)
-    n400[i] ~ Normal(μ_n400[i],σ)
-    ePNP[i] ~ Normal(μ_ePNP[i],σ)
-    p600[i] ~ Normal(μ_p600[i],σ)
-    pNP[i]  ~ Normal(μ_pNP[i],σ)
+    samples[i,:] ~ MvNormal(μs[i,:],Σ_σ)
     end
 end
 

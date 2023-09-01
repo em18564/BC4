@@ -23,7 +23,6 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   a   ~ Normal(0,1)
   b   ~ Normal(0,0.5)
 
-  c   ~ Exponential(10)
 
   a_w ~ Normal(0,1)
   b_w ~ Normal(0,0.5)
@@ -53,24 +52,24 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   
   a_e = ab_e[1,1]
   b_e = ab_e[2,1]
-  μ_eLAN = @. a * a_e * a_w + ((b * b_e) * surprisal)
+  μ_eLAN = @. a_e * (a_w + a + a_p) + (b_e * (b + b_p + b_e) * surprisal)
   a_e = ab_e[1,2]
   b_e = ab_e[2,2]
-  μ_lAN  = @. a * a_e * a_w + ((b * b_e) * surprisal)
+  μ_lAN  = @. a_e * (a_w + a + a_p) + (b_e * (b + b_p + b_e) * surprisal)
   a_e = ab_e[1,3]
   b_e = ab_e[2,3]
-  μ_n400 = @. a * a_e * a_w + ((b * b_e) * surprisal)
+  μ_n400 = @. a_e * (a_w + a + a_p) + (b_e * (b + b_p + b_e) * surprisal)
   a_e = ab_e[1,4]
   b_e = ab_e[2,4]
-  μ_ePNP = @. a * a_e * a_w + ((b * b_e) * surprisal)
+  μ_ePNP = @. a_e * (a_w + a + a_p) + (b_e * (b + b_p + b_e) * surprisal)
   a_e = ab_e[1,5]
   b_e = ab_e[2,5]
-  μ_p600 = @. a * a_e * a_w + ((b * b_e) * surprisal)
+  μ_p600 = @. a_e * (a_w + a + a_p) + (b_e * (b + b_p + b_e) * surprisal)
   a_e = ab_e[1,6]
   b_e = ab_e[2,6]
-  μ_pNP  = @. a * a_e * a_w + ((b * b_e) * surprisal)
+  μ_pNP  = @. a_e * (a_w + a + a_p) + (b_e * (b + b_p + b_e) * surprisal)
 
-  σ_O = @. c + a_p + ((b_p) * surprisal)
+  σ ~ truncated(Cauchy(0,20),0,1000)
   
 
   # b_w - 2, 12 of them, pair of word type and erp. add pooling. regression gives means for each erp with correlation  matrix
@@ -95,7 +94,6 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   
 
   for i in eachindex(participant)
-    σ ~ Exponential(σ_O[i])
     eLAN[i] ~ Normal(μ_eLAN[i],σ)
     lAN[i]  ~ Normal(μ_lAN[i],σ)
     n400[i] ~ Normal(μ_n400[i],σ)

@@ -70,8 +70,7 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   b_e = ab_e[2,6]
   μ_pNP = @. a + a_e + a_w + ((b + b_e) * surprisal)
 
-  σ_O = @. c + a_p + ((b_p) * surprisal)
-  
+  σ ~ truncated(Cauchy(0,20),0,1000)
 
   # b_w - 2, 12 of them, pair of word type and erp. add pooling. regression gives means for each erp with correlation  matrix
   # e.g. correlation n400 with pnp -1
@@ -95,7 +94,6 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   
 
   for i in eachindex(participant)
-    σ ~ Exponential(σ_O[i])
     eLAN[i] ~ Normal(μ_eLAN[i],σ)
     lAN[i]  ~ Normal(μ_lAN[i],σ)
     n400[i] ~ Normal(μ_n400[i],σ)

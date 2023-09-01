@@ -30,7 +30,7 @@ chn_df = DataFrame(chn)
 density(chn_df[!,"ab_w[2,1]"],label = "Content",xaxis="Posterior Effect")
 density!(chn_df[!,"ab_w[2,2]"],label = "Function")
 savefig("output/dens.png")
-CSV.write("savedData/n400_ss.csv", chn_ss)
+CSV.write("output/ss.csv", chn_ss)
 
 density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
 savefig("output/dif.png")

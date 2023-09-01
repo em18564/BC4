@@ -24,8 +24,8 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   b   ~ Normal(0,0.5)
   c   ~ Exponential(10)
 
-  a_w ~ Normal(0,1)
-  b_w ~ Normal(0,0.5)
+  a_w ~ Exponential(10)
+  b_w ~ Exponential(5)
   σ_w ~ filldist(Exponential(), 2)
   ρ_w ~ LKJ(2, 2)
   Σ_w = (σ_w .* σ_w') .* ρ_w
@@ -70,7 +70,7 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   b_e = ab_e[2,6]
   μ_pNP = @. a + a_e + ((b + b_e) * surprisal)
 
-  σ_O = @. c + a_w + a_p + ((b_w + b_p) * surprisal)
+  σ_O = @. c + a_w + a_p + ((b_w + b_p) * sqrt(surprisal*surprisal))
   
 
   # b_w - 2, 12 of them, pair of word type and erp. add pooling. regression gives means for each erp with correlation  matrix
