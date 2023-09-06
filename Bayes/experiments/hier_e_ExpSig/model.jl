@@ -70,8 +70,8 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   b_e = ab_e[2,6]
   μ_pNP = @. a + a_e + ((b + b_e) * surprisal)
 
-  σ_O = @. c + a_w + a_p + ((b_w + b_p) * sqrt(surprisal*surprisal))
-  
+  σ_Oa = @. c + a_w + a_p + ((b_w + b_p) * sqrt(surprisal*surprisal))
+  σ_O  = sqrt(σ_Oa*σ_Oa)
 
   # b_w - 2, 12 of them, pair of word type and erp. add pooling. regression gives means for each erp with correlation  matrix
   # e.g. correlation n400 with pnp -1
