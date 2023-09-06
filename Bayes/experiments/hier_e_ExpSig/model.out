@@ -1,9 +1,9 @@
-Running on host compute381.bc4.acrc.priv
-Time is Fri Sep 1 18:00:42 BST 2023
+Running on host compute505.bc4.acrc.priv
+Time is Wed Sep 6 10:08:28 BST 2023
 Directory is /user/home/em18564/BC4/Bayes/experiments/hier_e_ExpSig
-Slurm job ID is 11850324
+Slurm job ID is 11866720
 This job runs on the following machines:
-compute381
+compute505
     Updating registry at `~/.julia/registries/General.toml`
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.8/Project.toml`
@@ -49,14 +49,14 @@ Sampling (4 threads)   0%|                              |  ETA: N/A
 └   ϵ = 0.00625
 ┌ Info: Found initial step size
 └   ϵ = 0.00625
-Sampling (4 threads)  25%|███████▌                      |  ETA: 7:13:14
-Sampling (4 threads)  50%|███████████████               |  ETA: 2:50:28
-Sampling (4 threads) 100%|██████████████████████████████| Time: 2:50:28
+Sampling (4 threads)  25%|███████▌                      |  ETA: 7:17:18
+Sampling (4 threads)  50%|███████████████               |  ETA: 2:33:56
+Sampling (4 threads) 100%|██████████████████████████████| Time: 2:33:56
 ERROR: LoadError: TaskFailedException
 
     nested task error: TaskFailedException
     
-        nested task error: DomainError with Dual{ForwardDiff.Tag{Turing.TuringTag, Float64}}(-0.8010159841480881,0.0,0.0,0.08402486230932803,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0):
+        nested task error: DomainError with Dual{ForwardDiff.Tag{Turing.TuringTag, Float64}}(-1.329476835367714,0.0,0.0,0.06538115412308812,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0):
         Exponential: the condition θ > zero(θ) is not satisfied.
         Stacktrace:
           [1] #255
