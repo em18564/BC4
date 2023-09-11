@@ -87,7 +87,9 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   σ ~ truncated(Cauchy(0,20),0,1000)
 
   for i in eachindex(participant)
-    eLAN[i] ~ Normal(μ_eLAN[i],σ)
+    z ~ Normal(0,1)
+    eLAN[i] ~ μ_eLAN[i] + σ*z
+    z ~ Normal(0,1)
     lAN[i]  ~ Normal(μ_lAN[i],σ)
     n400[i] ~ Normal(μ_n400[i],σ)
     ePNP[i] ~ Normal(μ_ePNP[i],σ)
