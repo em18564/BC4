@@ -20,114 +20,89 @@ NUM_WORDS = 800
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 @model function model(participant,word,surprisal,tags,eLAN,lAN,n400,ePNP,p600,pNP)
-  a_w_1 ~ Normal(0,1)
-  b_w_1 ~ Normal(0,0.5)
-  σ_w_1 ~ filldist(Exponential(), 2)
+  a_w ~ filldist(Normal(0,1),6)
+  b_w ~ filldist(Normal(0,0.5),6)
+  σ_w ~ filldist(Exponential(), 12)
+  reshape(σ_w,(6,2))
   ρ_w_1 ~ LKJ(2, 2)
-  Σ_w_1 = (σ_w_1 .* σ_w_1') .* ρ_w_1
-  ab_w_1 ~ filldist(MvNormal([a_w_1,b_w_1], Σ_w_1),NUM_TYPES)
+  ρ_w_2 ~ LKJ(2, 2)
+  ρ_w_3 ~ LKJ(2, 2)
+  ρ_w_4 ~ LKJ(2, 2)
+  ρ_w_5 ~ LKJ(2, 2)
+  ρ_w_6 ~ LKJ(2, 2)
+  Σ_w_1 = (σ_w[1] .* σ_w[1]') .* ρ_w_1
+  Σ_w_2 = (σ_w[2] .* σ_w[2]') .* ρ_w_2
+  Σ_w_3 = (σ_w[3] .* σ_w[3]') .* ρ_w_3
+  Σ_w_4 = (σ_w[4] .* σ_w[4]') .* ρ_w_4
+  Σ_w_5 = (σ_w[5] .* σ_w[5]') .* ρ_w_5
+  Σ_w_6 = (σ_w[6] .* σ_w[6]') .* ρ_w_6
+
+  ab_w_1 ~ filldist(MvNormal([a_w[1],b_w[1]], Σ_w_1),NUM_TYPES)
   a_w_1 = ab_w_1[1,tags.+1]
   b_w_1 = ab_w_1[2,tags.+1]
 
-  a_p_1 ~ Normal(0,1)
-  b_p_1 ~ Normal(0,0.5)
-  σ_p_1 ~ filldist(Exponential(), 2)
-  ρ_p_1 ~ LKJ(2, 2)
-  Σ_p_1 = (σ_p_1 .* σ_p_1') .* ρ_p_1
-  ab_p_1 ~ filldist(MvNormal([a_p_1,b_p_1], Σ_p_1),NUM_PARTICIPANTS)
-  a_p_1 = ab_p_1[1,participant.+1]
-  b_p_1 = ab_p_1[2,participant.+1]
-
-  a_w_2 ~ Normal(0,1)
-  b_w_2 ~ Normal(0,0.5)
-  σ_w_2 ~ filldist(Exponential(), 2)
-  ρ_w_2 ~ LKJ(2, 2)
-  Σ_w_2 = (σ_w_2 .* σ_w_2') .* ρ_w_2
-  ab_w_2 ~ filldist(MvNormal([a_w_2,b_w_2], Σ_w_2),NUM_TYPES)
+  ab_w_2 ~ filldist(MvNormal([a_w[2],b_w[2]], Σ_w_2),NUM_TYPES)
   a_w_2 = ab_w_2[1,tags.+1]
   b_w_2 = ab_w_2[2,tags.+1]
 
-  a_p_2 ~ Normal(0,1)
-  b_p_2 ~ Normal(0,0.5)
-  σ_p_2 ~ filldist(Exponential(), 2)
-  ρ_p_2 ~ LKJ(2, 2)
-  Σ_p_2 = (σ_p_2 .* σ_p_2') .* ρ_p_2
-  ab_p_2 ~ filldist(MvNormal([a_p_2,b_p_2], Σ_p_2),NUM_PARTICIPANTS)
-  a_p_2 = ab_p_2[1,participant.+1]
-  b_p_2 = ab_p_2[2,participant.+1]
-
-  a_w_3 ~ Normal(0,1)
-  b_w_3 ~ Normal(0,0.5)
-  σ_w_3 ~ filldist(Exponential(), 2)
-  ρ_w_3 ~ LKJ(2, 2)
-  Σ_w_3 = (σ_w_3 .* σ_w_3') .* ρ_w_3
-  ab_w_3 ~ filldist(MvNormal([a_w_3,b_w_3], Σ_w_3),NUM_TYPES)
+  ab_w_3 ~ filldist(MvNormal([a_w[3],b_w[3]], Σ_w_3),NUM_TYPES)
   a_w_3 = ab_w_3[1,tags.+1]
   b_w_3 = ab_w_3[2,tags.+1]
 
-  a_p_3 ~ Normal(0,1)
-  b_p_3 ~ Normal(0,0.5)
-  σ_p_3 ~ filldist(Exponential(), 2)
-  ρ_p_3 ~ LKJ(2, 2)
-  Σ_p_3 = (σ_p_3 .* σ_p_3') .* ρ_p_3
-  ab_p_3 ~ filldist(MvNormal([a_p_3,b_p_3], Σ_p_3),NUM_PARTICIPANTS)
-  a_p_3 = ab_p_3[1,participant.+1]
-  b_p_3 = ab_p_3[2,participant.+1]
-
-  a_w_4 ~ Normal(0,1)
-  b_w_4 ~ Normal(0,0.5)
-  σ_w_4 ~ filldist(Exponential(), 2)
-  ρ_w_4 ~ LKJ(2, 2)
-  Σ_w_4 = (σ_w_4 .* σ_w_4') .* ρ_w_4
-  ab_w_4 ~ filldist(MvNormal([a_w_4,b_w_4], Σ_w_4),NUM_TYPES)
+  ab_w_4 ~ filldist(MvNormal([a_w[4],b_w[4]], Σ_w_4),NUM_TYPES)
   a_w_4 = ab_w_4[1,tags.+1]
   b_w_4 = ab_w_4[2,tags.+1]
 
-  a_p_4 ~ Normal(0,1)
-  b_p_4 ~ Normal(0,0.5)
-  σ_p_4 ~ filldist(Exponential(), 2)
-  ρ_p_4 ~ LKJ(2, 2)
-  Σ_p_4 = (σ_p_4 .* σ_p_4') .* ρ_p_4
-  ab_p_4 ~ filldist(MvNormal([a_p_4,b_p_4], Σ_p_4),NUM_PARTICIPANTS)
-  a_p_4 = ab_p_4[1,participant.+1]
-  b_p_4 = ab_p_4[2,participant.+1]
-
-  a_w_5 ~ Normal(0,1)
-  b_w_5 ~ Normal(0,0.5)
-  σ_w_5 ~ filldist(Exponential(), 2)
-  ρ_w_5 ~ LKJ(2, 2)
-  Σ_w_5 = (σ_w_5 .* σ_w_5') .* ρ_w_5
-  ab_w_5 ~ filldist(MvNormal([a_w_5,b_w_5], Σ_w_5),NUM_TYPES)
+  ab_w_5 ~ filldist(MvNormal([a_w[5],b_w[5]], Σ_w_5),NUM_TYPES)
   a_w_5 = ab_w_5[1,tags.+1]
   b_w_5 = ab_w_5[2,tags.+1]
 
-  a_p_5 ~ Normal(0,1)
-  b_p_5 ~ Normal(0,0.5)
-  σ_p_5 ~ filldist(Exponential(), 2)
-  ρ_p_5 ~ LKJ(2, 2)
-  Σ_p_5 = (σ_p_5 .* σ_p_5') .* ρ_p_5
-  ab_p_5 ~ filldist(MvNormal([a_p_5,b_p_5], Σ_p_5),NUM_PARTICIPANTS)
-  a_p_5 = ab_p_5[1,participant.+1]
-  b_p_5 = ab_p_5[2,participant.+1]
-
-  a_w_6 ~ Normal(0,1)
-  b_w_6 ~ Normal(0,0.5)
-  σ_w_6 ~ filldist(Exponential(), 2)
-  ρ_w_6 ~ LKJ(2, 2)
-  Σ_w_6 = (σ_w_6 .* σ_w_6') .* ρ_w_6
-  ab_w_6 ~ filldist(MvNormal([a_w_6,b_w_6], Σ_w_6),NUM_TYPES)
+  ab_w_6 ~ filldist(MvNormal([a_w[6],b_w[6]], Σ_w_6),NUM_TYPES)
   a_w_6 = ab_w_6[1,tags.+1]
   b_w_6 = ab_w_6[2,tags.+1]
 
-  a_p_6 ~ Normal(0,1)
-  b_p_6 ~ Normal(0,0.5)
-  σ_p_6 ~ filldist(Exponential(), 2)
+
+  
+  a_p ~ filldist(Normal(0,1),6)
+  b_p ~ filldist(Normal(0,0.5),6)
+  σ_p ~ filldist(Exponential(), 12)
+  reshape(σ_p,(6,2))
+  ρ_p_1 ~ LKJ(2, 2)
+  ρ_p_2 ~ LKJ(2, 2)
+  ρ_p_3 ~ LKJ(2, 2)
+  ρ_p_4 ~ LKJ(2, 2)
+  ρ_p_5 ~ LKJ(2, 2)
   ρ_p_6 ~ LKJ(2, 2)
-  Σ_p_6 = (σ_p_6 .* σ_p_6') .* ρ_p_6
-  ab_p_6 ~ filldist(MvNormal([a_p_6,b_p_6], Σ_p_6),NUM_PARTICIPANTS)
+  Σ_p_1 = (σ_p[1] .* σ_p[1]') .* ρ_p_1
+  Σ_p_2 = (σ_p[2] .* σ_p[2]') .* ρ_p_2
+  Σ_p_3 = (σ_p[3] .* σ_p[3]') .* ρ_p_3
+  Σ_p_4 = (σ_p[4] .* σ_p[4]') .* ρ_p_4
+  Σ_p_5 = (σ_p[5] .* σ_p[5]') .* ρ_p_5
+  Σ_p_6 = (σ_p[6] .* σ_p[6]') .* ρ_p_6
+
+  ab_p_1 ~ filldist(MvNormal([a_p[1],b_p[1]], Σ_p_1),NUM_PARTICIPANTS)
+  a_p_1 = ab_p_1[1,participant.+1]
+  b_p_1 = ab_p_1[2,participant.+1]
+
+  ab_p_2 ~ filldist(MvNormal([a_p[2],b_p[2]], Σ_p_2),NUM_PARTICIPANTS)
+  a_p_2 = ab_p_2[1,participant.+1]
+  b_p_2 = ab_p_2[2,participant.+1]
+
+  ab_p_3 ~ filldist(MvNormal([a_p[3],b_p[3]], Σ_p_3),NUM_PARTICIPANTS)
+  a_p_3 = ab_p_3[1,participant.+1]
+  b_p_3 = ab_p_3[2,participant.+1]
+
+  ab_p_4 ~ filldist(MvNormal([a_p[4],b_p[4]], Σ_p_4),NUM_PARTICIPANTS)
+  a_p_4 = ab_p_4[1,participant.+1]
+  b_p_4 = ab_p_4[2,participant.+1]
+
+  ab_p_5 ~ filldist(MvNormal([a_p[5],b_p[5]], Σ_p_5),NUM_PARTICIPANTS)
+  a_p_5 = ab_p_5[1,participant.+1]
+  b_p_5 = ab_p_5[2,participant.+1]
+
+  ab_p_6 ~ filldist(MvNormal([a_p[6],b_p[6]], Σ_p_6),NUM_PARTICIPANTS)
   a_p_6 = ab_p_6[1,participant.+1]
   b_p_6 = ab_p_6[2,participant.+1]
-
 
   ae ~ Normal(0,1)
   be ~ Normal(0,0.5)
@@ -190,7 +165,7 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   μs = [μ_eLAN μ_lAN μ_n400 μ_ePNP μ_p600 μ_pNP]
 
   for i in eachindex(participant)
-    samples[i,:] ~ MvNormal(μs[i,:],Σ_σ)
+    samples[i,:] ~ μs[i,:] +Σ_σ*MvNormal(zeros(6),ones(6))
     end
 end
 
