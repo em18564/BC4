@@ -158,14 +158,16 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   #σ ~ truncated(Cauchy(0,20),0,1000)
 
   σ_σ ~ filldist(Exponential(10), 6)
-  ρ_σ ~ LKJ(6, 2) # identity matrix sanity checks
+  ρ_σ ~ LKJ(6, 2) # THIS is the matrix not positive definite
   Σ_σ = ((σ_σ .* σ_σ') .* ρ_σ)
-
-  samples = [eLAN lAN n400 ePNP p600 pNP]
-  μs = [μ_eLAN μ_lAN μ_n400 μ_ePNP μ_p600 μ_pNP]
-
   for i in eachindex(participant)
-    samples[i,:] ~ μs[i,:] +Σ_σ*MvNormal(zeros(6),ones(6))
+    ζ       ~ [μ_eLAN[i], μ_lAN[i], μ_n400[i], μ_ePNP[i], μ_p600[i], μ_pNP[i]] + Σ_σ*MvNormal(zeros(6),ones(6))
+    eLAN[i] ~ Normal(ζ[1],0)
+    lAN[i]  ~ Normal(ζ[2],0)
+    n400[i] ~ Normal(ζ[3],0)
+    ePNP[i] ~ Normal(ζ[4],0)
+    p600[i] ~ Normal(ζ[5],0)
+    pNP[i]  ~ Normal(ζ[6],0)
     end
 end
 
@@ -178,4 +180,4 @@ display(m)
 serialize("output/out.jls",m)
 
 
-# Highest Density Interval
+# Highest Density Interval~
