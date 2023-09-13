@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name hier_MV_SIMPLE
+#SBATCH --job-name hier_MV
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4

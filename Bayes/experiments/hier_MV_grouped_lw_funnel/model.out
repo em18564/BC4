@@ -1,9 +1,9 @@
-Running on host compute350.bc4.acrc.priv
-Time is Fri Sep 1 17:35:40 BST 2023
-Directory is /user/home/em18564/BC4/Bayes/experiments/hier_MV
-Slurm job ID is 11850322
+Running on host compute164.bc4.acrc.priv
+Time is Tue Sep 12 12:53:51 BST 2023
+Directory is /user/home/em18564/BC4/Bayes/experiments/hier_MV_grouped_lw_funnel
+Slurm job ID is 11916781
 This job runs on the following machines:
-compute350
+compute164
     Updating registry at `~/.julia/registries/General.toml`
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.8/Project.toml`
