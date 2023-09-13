@@ -113,27 +113,21 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   
   a_e = ab_e[1,1]
   b_e = ab_e[2,1]
-
   μ_eLAN = @. a_w_1 + a_p_1 + a_e + ((b_w_1 + b_p_1 + b_e) * surprisal)
   a_e = ab_e[1,2]
   b_e = ab_e[2,2]
-
   μ_lAN  = @. a_w_2 + a_p_2 + a_e + ((b_w_2 + b_p_2 + b_e) * surprisal)
   a_e = ab_e[1,3]
   b_e = ab_e[2,3]
-
   μ_n400 = @. a_w_3 + a_p_3 + a_e + ((b_w_3 + b_p_3 + b_e) * surprisal)
   a_e = ab_e[1,4]
   b_e = ab_e[2,4]
-
   μ_ePNP = @. a_w_4 + a_p_4 + a_e + ((b_w_4 + b_p_4 + b_e) * surprisal)
   a_e = ab_e[1,5]
   b_e = ab_e[2,5]
-
   μ_p600 = @. a_w_5 + a_p_5 + a_e + ((b_w_5 + b_p_5 + b_e) * surprisal)
   a_e = ab_e[1,6]
   b_e = ab_e[2,6]
-
   μ_pNP  = @. a_w_6 + a_p_6 + a_e + ((b_w_6 + b_p_6 + b_e) * surprisal)
 
   # b_w - 2, 12 of them, pair of word type and erp. add pooling. regression gives means for each erp with correlation  matrix
