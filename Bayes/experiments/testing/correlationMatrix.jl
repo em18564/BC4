@@ -14,6 +14,7 @@ using StatisticalRethinking
 
 using MCMCDiagnosticTools
 using Serialization
+using LinearAlgebra
 NUM_SENTENCES = 205
 NUM_PARTICIPANTS = 6
 NUM_WORDS = 800
@@ -32,3 +33,6 @@ a = [1.0        0.181342   0.0810761  0.0116194  -0.0903498  -0.10144
 0.0116194  0.339601   0.310265   1.0         0.331713    0.675938
 -0.0903498  0.0354594  0.246098   0.331713    1.0         0.679675
 -0.10144    0.0669557  0.150833   0.675938    0.679675    1.0]
+
+println(det(correlation), "-",det(covariance))
+#0.13300242656059408  5.086361098159326e6
