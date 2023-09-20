@@ -44,3 +44,4 @@ compute516
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.8/Project.toml`
   No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+slurmstepd: error: *** JOB 11915174 ON compute516 CANCELLED AT 2023-09-15T15:46:52 ***
