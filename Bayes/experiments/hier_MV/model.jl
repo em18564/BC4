@@ -15,11 +15,11 @@ using MCMCDiagnosticTools
 using Serialization
 
 NUM_SENTENCES = 205
-NUM_PARTICIPANTS = 12
-NUM_WORDS = 1931
+NUM_PARTICIPANTS = 5
+NUM_WORDS = 800
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
-@model function model(participant,word,surprisal,tags,eLAN,lAN,n400,ePNP,p600,pNP)
+@model function model(participant,word,surprisal,tags,eEGs)
   a_w ~ filldist(Normal(0,1),6)
   b_w ~ filldist(Normal(0,0.5),6)
   σ_w ~ filldist(Exponential(), 12)
@@ -149,26 +149,27 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   # Sigma ~ LKJ(6,2) up to the factors
   # erp ~ MVNormal([mu_e],Sigma)
 
-  #σ ~ truncated(Cauchy(0,20),0,1000)
-
   σ_σ ~ filldist(Exponential(10), 6)
   ρ_σ ~ LKJ(6, 2) # THIS is the matrix not positive definite
   Σ_σ = ((σ_σ .* σ_σ') .* ρ_σ)
+
+
+
   for i in eachindex(participant)
-    ζ       ~ [μ_eLAN[i], μ_lAN[i], μ_n400[i], μ_ePNP[i], μ_p600[i], μ_pNP[i]] + Σ_σ*MvNormal(zeros(6),ones(6))
-    eLAN[i] ~ Normal(ζ[1],0)
-    lAN[i]  ~ Normal(ζ[2],0)
-    n400[i] ~ Normal(ζ[3],0)
-    ePNP[i] ~ Normal(ζ[4],0)
-    p600[i] ~ Normal(ζ[5],0)
-    pNP[i]  ~ Normal(ζ[6],0)
+    eEGs[i,:] ~ MvNormal([μ_eLAN[i], μ_lAN[i], μ_n400[i], μ_ePNP[i], μ_p600[i], μ_pNP[i]],Σ_σ)
     end
 end
 
 df = CSV.read("../../input/dfHierarchical.csv", DataFrame)
 df_modified_1 = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
 df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
-mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,df_modified.ELAN,df_modified.LAN,df_modified.N400,df_modified.EPNP,df_modified.P600,df_modified.PNP)
+
+
+
+mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,[df_modified.ELAN df_modified.LAN df_modified.N400 df_modified.EPNP df_modified.P600 df_modified.PNP])
+
+
+
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
 serialize("output/out.jls",m)

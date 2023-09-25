@@ -15,11 +15,11 @@ using MCMCDiagnosticTools
 using Serialization
 
 NUM_SENTENCES = 205
-NUM_PARTICIPANTS = 5
-NUM_WORDS = 800
+NUM_PARTICIPANTS = 12
+NUM_WORDS = 1931
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
-@model function model(participant,word,surprisal,tags,eEGs,Σ_σ)
+@model function model(participant,word,surprisal,tags,eLAN,lAN,n400,ePNP,p600,pNP)
   a_w ~ filldist(Normal(0,1),6)
   b_w ~ filldist(Normal(0,0.5),6)
   σ_w ~ filldist(Exponential(), 12)
@@ -149,30 +149,25 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   # Sigma ~ LKJ(6,2) up to the factors
   # erp ~ MVNormal([mu_e],Sigma)
 
-  #σ ~ truncated(Cauchy(0,20),0,1000)
-
-
+  σ ~ truncated(Cauchy(0,20),0,1000)
 
   for i in eachindex(participant)
-    eEGs[i,:] ~ MvNormal([μ_eLAN[i], μ_lAN[i], μ_n400[i], μ_ePNP[i], μ_p600[i], μ_pNP[i]],Σ_σ)
+    eLAN[i] ~ Normal(μ_eLAN[i],σ)
+    lAN[i]  ~ Normal(μ_lAN[i],σ)
+    n400[i] ~ Normal(μ_n400[i],σ)
+    ePNP[i] ~ Normal(μ_ePNP[i],σ)
+    p600[i] ~ Normal(μ_p600[i],σ)
+    pNP[i]  ~ Normal(μ_pNP[i],σ)
     end
 end
 
 df = CSV.read("../../input/dfHierarchical.csv", DataFrame)
 df_modified_1 = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
 df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
-
-dfcov = df_modified[:,[:"ELAN",:"LAN",:"N400",:"EPNP",:"P600",:"PNP"]]
-Σ_σ  = cov(Matrix(dfcov))
-
-
-mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,[df_modified.ELAN df_modified.LAN df_modified.N400 df_modified.EPNP df_modified.P600 df_modified.PNP],Σ_σ)
-
-
-
+mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,df_modified.ELAN,df_modified.LAN,df_modified.N400,df_modified.EPNP,df_modified.P600,df_modified.PNP)
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
 serialize("output/out.jls",m)
 
 
-# Highest Density Interval~
+# Highest Density Interval
