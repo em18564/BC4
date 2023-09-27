@@ -15,8 +15,8 @@ using MCMCDiagnosticTools
 using Serialization
 
 NUM_SENTENCES = 205
-NUM_PARTICIPANTS = 2
-NUM_WORDS = 400
+NUM_PARTICIPANTS = 4
+NUM_WORDS = 800
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 @model function model(participant,word,surprisal,tags,eEGs,Σ_σ)
