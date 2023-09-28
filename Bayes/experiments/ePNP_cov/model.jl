@@ -36,7 +36,7 @@ NUM_PARTICIPANTS = 12
 NUM_WORDS = 1931
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
-@model function model(participant,eRP,word,surprisal,tags,component)
+@model function model(participant,word,surprisal,tags,ePNP)
     a_w ~ Normal(0,1)
     b_w ~ Normal(0,0.5)
     σ_w ~ filldist(Exponential(), 2)
@@ -68,19 +68,17 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 
     σ ~ truncated(Cauchy(0,20),0,1000)
 
-    for i in eachindex(eRP)
-        eRP[i] ~ Normal(μ[i],σ)
+    for i in eachindex(ePNP)
+      ePNP[i] ~ Normal(μ[i],σ)
       end
 end
 
-df = CSV.read("savedData/df.csv", DataFrame)
+df = CSV.read("../../input/dfHierarchical.csv", DataFrame)
 df_modified_1 = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
-df_modified_2 = subset(df_modified_1, :word => ByRow(<(NUM_WORDS)))
-df_modified = subset(df_modified_2, :component => ByRow(==(2)))
-mod=model(df_modified.Participant, df_modified.ERP,df_modified.word,df_modified.surprisal,df_modified.tags,df_modified.component)
+df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
+mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,df_modified.EPNP)
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
-serialize("savedData/m_df_n400.jls",m)
-
+serialize("output/out.jls",m)
 
 # Highest Density Interval
