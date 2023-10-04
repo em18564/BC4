@@ -1,21 +1,21 @@
-using Random
-using StatsBase
-using Distributions
-using StatsPlots
-using StatsFuns
-using Logging
+# using Random
+# using StatsBase
+# using Distributions
+# using StatsPlots
+# using StatsFuns
+# using Logging
 
-using Turing
+# using Turing
 using CSV
 using DataFrames
-using Optim
-using StatisticalRethinking
+# using Optim
+# using StatisticalRethinking
 
-using MCMCDiagnosticTools
-using MCMCChains
+# using MCMCDiagnosticTools
+# using MCMCChains
 using Serialization
 using PlotlyJS
-using Plots
+# using Plots
 function HDI(data)
     l = percentile(data,1.5)
     u = percentile(data,98.5)
@@ -43,7 +43,7 @@ p = PlotlyJS.plot(box(
     mean=[m1, m2],
     lowerfence=[l1, l2],
     upperfence=[u1, u2]
-))
+),ylims=(-0.5,0.5))
 PlotlyJS.savefig(p,"output/dif.png")
 # density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
 # savefig("output/dif.png")
