@@ -53,8 +53,9 @@ difd4 = chn_dfd[!,"ab_w_p[2,2]"]-chn_dfd[!,"ab_w_p[2,1]"]
 df = DataFrame(data         = vcat(difa1,difa2,difb1,difb2,difc1,difc2,difc3,difc4,difd1,difd2,difd3,difd4)
               ,group        = vcat(fill("Just EPNP Δa_w",length(difa1)),fill("Just EPNP Δb_w",length(difa2)),fill("Just EPNP Δa_w Cov",length(difb1)),fill("Just EPNP Δb_w Cov",length(difb2)),fill("EPNP Δa_w",length(difc1)),fill("EPNP Δb_w",length(difc2)),fill("PNP Δa_w",length(difc3)),fill("PNP Δb_w",length(difc4)),fill("EPNP Δa_w w/ Cov",length(difd1)),fill("EPNP Δb_w w/ Cov",length(difd2)),fill("PNP Δa_w w/ Cov",length(difd3)),fill("PNP Δb_w w/ Cov",length(difd4)))
               ,experiment   = vcat(fill("EPNP No Covariance",length(difa1)+length(difa2)),fill("EPNP W/ Covariance",length(difb1)+length(difb2)),fill("EPNP+PNP No Covariance",length(difc1)+length(difc2)+length(difc3)+length(difc4)),fill("EPNP+PNP W/ Covariance",length(difd1)+length(difd2)+length(difd3)+length(difd4))))
-vio = Gadfly.plot(  layer(df, x=:group,y=:data,color=:experiment,Geom.violin),
-                    );
-#layer(df, x=:group,y=:data,Geom.boxplot(suppress_outliers=true,method=[0.015,0.015,0.50,0.985,0.985]),Theme(default_color="red"))
+vio = Gadfly.plot(  Theme(background_color = "ghostwhite",default_color="grey"),
+                    layer(df, x=:group,y=:data,color=:experiment,Geom.violin),
+                    layer(df, x=:group,y=:data,Geom.boxplot(suppress_outliers=true,method=[0.015,0.015,0.50,0.985,0.985])));
+
 
 draw(PNG("violin.png", 8inch, 8inch), vio)
