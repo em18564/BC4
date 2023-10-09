@@ -1,21 +1,23 @@
 # using Random
-# using StatsBase
-# using Distributions
-# using StatsPlots
-# using StatsFuns
-# using Logging
+using StatsBase
+using Distributions
+#using StatsPlots
+using StatsFuns
+using Logging
 
-# using Turing
+using Turing
 using CSV
 using DataFrames
-# using Optim
-# using StatisticalRethinking
+using Optim
+using StatisticalRethinking
 
-# using MCMCDiagnosticTools
-# using MCMCChains
+using MCMCDiagnosticTools
+using MCMCChains
 using Serialization
-using PlotlyJS
+# using PlotlyJS
 # using Plots
+using Gadfly
+import Cairo, Fontconfig
 function HDI(data)
     l = percentile(data,1.5)
     u = percentile(data,98.5)
@@ -33,21 +35,23 @@ chn_df = DataFrame(chn)
 CSV.write("output/ss.csv", chn_ss)
 dif1 = chn_df[!,"ab_w[1,2]"]-chn_df[!,"ab_w[1,1]"]
 dif2 = chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"]
-m1,l1,u1 = HDI(dif1)
-m2,l2,u2 = HDI(dif2)
-p = PlotlyJS.plot(box(
-    name="Δa_w & Δb_w for EPNP with covariance",
-    q1=[l1, l2],
-    median=[m1, m2],
-    q3=[u1, u2],
-    mean=[m1, m2],
-    lowerfence=[l1, l2],
-    upperfence=[u1, u2]
-),ylims=(-0.5,0.5))
-PlotlyJS.savefig(p,"output/dif.png")
-# density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
-# savefig("output/dif.png")
+df = DataFrame(data=vcat(dif1,dif2),group=vcat(fill("Δa_w",length(dif1)),fill("Δb_w",length(dif2))))
+vio = Gadfly.plot(layer(df, x=:group,y=:data,Geom.violin),layer(df, x=:group,y=:data,Geom.boxplot(suppress_outliers=true,method=[0.015,0.015,0.50,0.985,0.985]),Theme(default_color="red")));
 
+# m1,l1,u1 = HDI(dif1)
+# m2,l2,u2 = HDI(dif2)
+# p = PlotlyJS.plot(box(
+#     name="Δa_w & Δb_w for EPNP with covariance",
+#     q1=[l1, l2],
+#     median=[m1, m2],
+#     q3=[u1, u2],
+#     mean=[m1, m2],
+#     lowerfence=[l1, l2],
+#     upperfence=[u1, u2]
+# ))
+# PlotlyJS.savefig(p,"output/dif.png")
+# density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
+draw(PNG("output/violin.png", 8inch, 8inch), vio)
 # #density(chn_df[!,"b_e"],label="n400",xaxis="Posterior Effect")
 
 # ELAN  = (chn_df[!,"ab_e[2,1]"])
