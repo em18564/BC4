@@ -32,7 +32,11 @@ using MCMCDiagnosticTools
 using Serialization
 using LinearAlgebra
 NUM_SENTENCES = 205
+<<<<<<< HEAD
 NUM_PARTICIPANTS = 18
+=======
+NUM_PARTICIPANTS = 24
+>>>>>>> 5ddbefbee6890de6411a2985dbafddfdcb748a0c
 NUM_WORDS = 1931
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
