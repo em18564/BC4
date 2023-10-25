@@ -71,15 +71,15 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
     μ_PNP = @. a_w_p + a_p_p + a_e_p + ((b_w_p + b_p_p + b_e_p) * surprisal)
 
     sigma ~ filldist(truncated(Cauchy(0., 20.); lower = 0), 2)
-    n, eta = 2.0, 1.0
+    n, eta = 2, 1.0
     #solution from https://discourse.julialang.org/t/singular-exception-with-lkjcholesky/85020/2
     trans = CorrCholeskyFactor(n)
     R_tilde ~ filldist(Turing.Flat(), dimension(trans))
     R_U, logdetJ = transform_and_logjac(trans, R_tilde)
-    F = Cholesky(R_U)
+    F = Turing.Cholesky(R_U)
     Turing.@addlogprob! logpdf(LKJCholesky(n, eta), F) + logdetJ
     Σ_L = LowerTriangular(collect((sigma .+ 1e-6) .* R_U'))
-    Sigma = PDMat(Cholesky(Σ_L))
+    Sigma = PDMat(Turing.Cholesky(Σ_L))
     if any(i -> iszero(Σ_L[i]), diagind(Σ_L))
       Turing.@addlogprob! Inf
     else
