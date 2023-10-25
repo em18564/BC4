@@ -24,7 +24,12 @@ function HDI(data)
     m = mean(data)
     return m,l,u
 end
-
+chn = deserialize("output/out.jls")
+ess_rhat_df = DataFrame(ess_rhat(chn))
+xs = ess_rhat_df[!,"rhat"]
+ys = ess_rhat_df[!,"ess"]
+scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
+savefig("output/essRhat.png")
 #df = CSV.read("savedData/df_2.csv", DataFrame)
 chn = deserialize("output/out.jls")
 chn_ss = DataFrame(summarystats(chn))

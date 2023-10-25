@@ -50,19 +50,19 @@ difd2 = chn_dfd[!,"ab_w_e[2,2]"]-chn_dfd[!,"ab_w_e[2,1]"]
 difd3 = chn_dfd[!,"ab_w_p[1,2]"]-chn_dfd[!,"ab_w_p[1,1]"]
 difd4 = chn_dfd[!,"ab_w_p[2,2]"]-chn_dfd[!,"ab_w_p[2,1]"]
 
-# df = DataFrame(data         = vcat(difb1,difb2,difd1,difd2,difd3,difd4)
-#               ,group        = vcat(fill("Δa_w ",length(difb1)),fill("Δb_w ",length(difb2)),fill("EPNP Δa_w ",length(difd1)),fill("EPNP Δb_w ",length(difd2)),fill("PNP Δa_w ",length(difd3)),fill("PNP Δb_w ",length(difd4)))
-#               ,model   = vcat(fill("EPNP With Covariance",length(difb1)+length(difb2)),fill("EPNP+PNP With Covariance",length(difd1)+length(difd2)+length(difd3)+length(difd4))))
-# vio = Gadfly.plot(  Theme(major_label_font_size=17pt,key_title_font_size=14pt,key_label_font_size=12pt,minor_label_font_size=12pt,background_color = "ghostwhite",default_color="grey",boxplot_spacing=70px),Guide.ylabel("Posterior Difference (with 97% HCI)"),Guide.title("Posterior Difference of content and function words across different Bayesian models"),Guide.xlabel("Posterior"),
-#                     layer(df, x=:group,y=:data,color=:model,Geom.violin),
-#                     layer(df, x=:group,y=:data,Geom.boxplot(suppress_outliers=true,method=[0.015,0.015,0.50,0.985,0.985])));
-
-                    
-df = DataFrame(data         = vcat(difd1,difd2,difd3,difd4)
-              ,group        = vcat(fill("Δa_w",length(difd1)),fill("Δb_w",length(difd2)),fill("Δa_w ",length(difd3)),fill("Δb_w ",length(difd4)))
-              ,ERP   = vcat(fill("EPNP",length(difd1)+length(difd2)),fill("PNP",length(difd3)+length(difd4)),))
-vio = Gadfly.plot(  Theme(major_label_font_size=17pt,key_title_font_size=16pt,key_label_font_size=14pt,minor_label_font_size=14pt,background_color = "ghostwhite",default_color="grey",boxplot_spacing=70px),Guide.ylabel("Posterior Difference (with 97% HCI)"),Guide.title("Posterior Difference of content and function words"),Guide.xlabel("Posterior"),
-                    layer(df, x=:group,y=:data,color=:ERP,Geom.violin),
+df = DataFrame(data         = vcat(difb1,difb2,difd1,difd2,difd3,difd4)
+              ,group        = vcat(fill("Δa_w ",length(difb1)),fill("Δb_w ",length(difb2)),fill("EPNP Δa_w ",length(difd1)),fill("EPNP Δb_w ",length(difd2)),fill("PNP Δa_w ",length(difd3)),fill("PNP Δb_w ",length(difd4)))
+              ,model   = vcat(fill("EPNP With Covariance",length(difb1)+length(difb2)),fill("EPNP+PNP With Covariance",length(difd1)+length(difd2)+length(difd3)+length(difd4))))
+vio = Gadfly.plot(  Theme(major_label_font_size=17pt,key_title_font_size=14pt,key_label_font_size=12pt,minor_label_font_size=12pt,background_color = "ghostwhite",default_color="grey",boxplot_spacing=70px),Guide.ylabel("Posterior Difference (with 97% HCI)"),Guide.title("Posterior Difference of content and function words across different Bayesian models"),Guide.xlabel("Posterior"),
+                    layer(df, x=:group,y=:data,color=:model,Geom.violin),
                     layer(df, x=:group,y=:data,Geom.boxplot(suppress_outliers=true,method=[0.015,0.015,0.50,0.985,0.985])));
 
-draw(PNG("violin3.png", 8inch, 6inch, dpi=300), vio)
+                    
+# df = DataFrame(data         = vcat(difd1,difd2,difd3,difd4)
+#               ,group        = vcat(fill("Δa_w",length(difd1)),fill("Δb_w",length(difd2)),fill("Δa_w ",length(difd3)),fill("Δb_w ",length(difd4)))
+#               ,ERP   = vcat(fill("EPNP",length(difd1)+length(difd2)),fill("PNP",length(difd3)+length(difd4)),))
+# vio = Gadfly.plot(  Theme(major_label_font_size=17pt,key_title_font_size=16pt,key_label_font_size=14pt,minor_label_font_size=14pt,background_color = "ghostwhite",default_color="grey",boxplot_spacing=70px),Guide.ylabel("Posterior Difference (with 97% HCI)"),Guide.title("Posterior Difference of content and function words"),Guide.xlabel("Posterior"),
+#                     layer(df, x=:group,y=:data,color=:ERP,Geom.violin),
+#                     layer(df, x=:group,y=:data,Geom.boxplot(suppress_outliers=true,method=[0.015,0.015,0.50,0.985,0.985])));
+
+draw(PNG("violin.png", 16inch, 8inch, dpi=300), vio)

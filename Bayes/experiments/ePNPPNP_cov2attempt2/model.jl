@@ -1,19 +1,4 @@
 import Pkg
-Pkg.add("Random")
-Pkg.add("StatsBase")
-Pkg.add("Distributions")
-Pkg.add("StatsPlots")
-Pkg.add("StatsFuns")
-Pkg.add("Logging")
-
-Pkg.add("Turing")
-Pkg.add("CSV")
-Pkg.add("DataFrames")
-Pkg.add("Optim")
-Pkg.add("StatisticalRethinking")
-Pkg.add("MCMCDiagnosticTools")
-Pkg.add("Serialization")
-
 
 using Random
 using StatsBase
@@ -30,12 +15,15 @@ using StatisticalRethinking
 
 using MCMCDiagnosticTools
 using Serialization
-
+using TransformVariables
 NUM_SENTENCES = 205
 NUM_PARTICIPANTS = 24
 NUM_WORDS = 1931
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
+
+
+
 @model function model(participant,word,surprisal,tags,eEGs)
     σ_w_e ~ filldist(Exponential(), 2)
     ρ_w_e ~ LKJ(2, 2)
@@ -82,14 +70,26 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
     μ_ePNP = @. a_w_e + a_p_e + a_e_e + ((b_w_e + b_p_e + b_e_e) * surprisal)
     μ_PNP = @. a_w_p + a_p_p + a_e_p + ((b_w_p + b_p_p + b_e_p) * surprisal)
 
-    σ_μ ~ filldist(Exponential(20), 2)
-    ρ_μ ~ LKJ(2, 2)
-    Σ_μ = (σ_μ .* σ_μ') .* ρ_μ
+    sigma ~ filldist(truncated(Cauchy(0., 20.); lower = 0), 2)
+    n, eta = 2.0, 1.0
+    #solution from https://discourse.julialang.org/t/singular-exception-with-lkjcholesky/85020/2
+    trans = CorrCholeskyFactor(n)
+    R_tilde ~ filldist(Turing.Flat(), dimension(trans))
+    R_U, logdetJ = transform_and_logjac(trans, R_tilde)
+    F = Cholesky(R_U)
+    Turing.@addlogprob! logpdf(LKJCholesky(n, eta), F) + logdetJ
+    Σ_L = LowerTriangular(collect((sigma .+ 1e-6) .* R_U'))
+    Sigma = PDMat(Cholesky(Σ_L))
+    if any(i -> iszero(Σ_L[i]), diagind(Σ_L))
+      Turing.@addlogprob! Inf
+    else
+      for i in eachindex(participant)
+        eEGs[i,:] ~ MvNormal([μ_ePNP[i],μ_PNP[i]],Sigma)
+        end
+    end
 
 
-    for i in eachindex(participant)
-      eEGs[i,:] ~ MvNormal([μ_ePNP[i],μ_PNP[i]],Σ_μ)
-      end
+    
 end
 
 df = CSV.read("../../input/dfHierarchical.csv", DataFrame)

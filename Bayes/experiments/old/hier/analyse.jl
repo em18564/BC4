@@ -46,7 +46,7 @@ PNP = (chn_df[!,"ab_e[2,6]"])
 y = [ELAN,LAN,N400,EPNP,P600,PNP]
 violin(["ELAN" "LAN" "N400" "EPNP" "P600" "PNP" ], y, legend=false,xaxis="Posterior Effect")
 savefig("output/violin.png")
-
+chn = deserialize("output/out.jls")
 ess_rhat_df = DataFrame(ess_rhat(chn))
 xs = ess_rhat_df[!,"rhat"]
 ys = ess_rhat_df[!,"ess"]
