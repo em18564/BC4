@@ -16,6 +16,8 @@ using StatisticalRethinking
 using MCMCDiagnosticTools
 using Serialization
 using TransformVariables
+using LinearAlgebra
+using PDMats
 NUM_SENTENCES = 205
 NUM_PARTICIPANTS = 24
 NUM_WORDS = 1931
