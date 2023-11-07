@@ -36,7 +36,7 @@ NUM_PARTICIPANTS = 24
 NUM_WORDS = 1931
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
-@model function model(participant,word,surprisal,tags,ePNP)
+@model function model(participant,word,surprisal,tags,ePNP) #NGRAM surprisal LOO
     σ_w ~ filldist(Exponential(), 2)
     ρ_w ~ LKJ(2, 2) # LKJ prior on the correlation matrix
     Σ_w = Symmetric(Diagonal(σ_w) * ρ_w * Diagonal(σ_w))
