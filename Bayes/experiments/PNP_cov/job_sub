@@ -4,10 +4,9 @@
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
-#SBATCH --time=06:00:0
+#SBATCH --time=23:00:0
 #SBATCH --output model.out
 #SBATCH --account=cosc029104
-#SBATCH --partition=veryshort
 
 echo Running on host `hostname`
 echo Time is `date`
