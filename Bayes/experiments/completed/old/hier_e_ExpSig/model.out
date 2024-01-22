@@ -1,0 +1,7 @@
+Running on host compute174.bc4.acrc.priv
+Time is Wed Sep 6 16:01:28 BST 2023
+Directory is /user/home/em18564/BC4/Bayes/experiments/hier_e_ExpSig
+Slurm job ID is 11868873
+This job runs on the following machines:
+compute174
+slurmstepd: error: *** JOB 11868873 ON compute174 CANCELLED AT 2023-09-06T16:01:34 ***
