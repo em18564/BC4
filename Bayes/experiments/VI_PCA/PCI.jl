@@ -13,15 +13,26 @@ using RDatasets
 df_full = CSV.read("../../input/dfHierarchicalNorm.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
 M = fit(PCA, transpose(Matrix(df)))
-Yte = predict(M, Matrix(df))
+Yte = predict(M, transpose(Matrix(df)))
 Xr = reconstruct(M, Yte)
 
-ELAN = Yte[:,1]
-LAN  = Yte[:,2]
-N400 = Yte[:,3]
-EPNP = Yte[:,4]
-P600 = Yte[:,5]
-PNP  = Yte[:,6]
+df_PCA = df_full
+
+PCs = transpose(Yte)
+
+df_PCA[!,"PC_1"] = PCs[:,1]
+df_PCA[!,"PC_2"] = PCs[:,2]
+df_PCA[!,"PC_3"] = PCs[:,3]
+df_PCA[!,"PC_4"] = PCs[:,4]
+df_PCA[!,"PC_5"] = PCs[:,5]
+df_PCA[!,"PC_6"] = PCs[:,6]
+CSV.write("../../input/dfPCA.csv", df_PCA)
+ELAN = Yte[1,:]
+LAN  = Yte[2,:]
+N400 = Yte[3,:]
+EPNP = Yte[4,:]
+P600 = Yte[5,:]
+PNP  = Yte[6,:]
 p = scatter(ELAN[1,:],ELAN[2,:],ELAN[3,:],marker=:circle,linewidth=0,label="ELAN")
 scatter!(LAN[1,:],LAN[2,:],LAN[3,:],marker=:circle,linewidth=0,label="LAN")
 scatter!(N400[1,:],N400[2,:],N400[3,:],marker=:circle,linewidth=0,label="N400")

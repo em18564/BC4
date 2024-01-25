@@ -19,7 +19,7 @@ NUM_PARTICIPANTS = 24
 NUM_WORDS = 1931
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
-@model function model(participant,word,surprisal,tags,ePNP)
+@model function model(participant,word,surprisal,tags,ePNP,wordLength)
   a_w_s ~ filldist(Normal(0,1),NUM_TYPES)
   b_w_s ~ filldist(Normal(0,0.5),NUM_TYPES)
   a_w   = a_w_s[tags.+1]
@@ -33,9 +33,11 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   a_e ~ Normal(0,1)
   b_e ~ Normal(0,0.5)
 
-  μ = @. a_w + a_p + a_e + ((b_w + b_p + b_e) * surprisal)
+  c_w ~ Normal(0,1)
 
-  σ ~ truncated(Cauchy(0,20),0,1000)
+  μ = @. a_w + a_p + a_e + ((b_w + b_p + b_e) * surprisal) + ((c_w) * wordLength)
+
+  σ ~ truncated(Cauchy(0., 20.); lower = 0)
 
   for i in eachindex(ePNP)
     ePNP[i] ~ Normal(μ[i],σ)
@@ -43,8 +45,8 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 end
 
 chain = deserialize("output/out.jls")
-df = CSV.read("../../input/dfHierarchical.csv", DataFrame)
+df = CSV.read("../../input/dfHierarchicalNorm.csv", DataFrame)
 df_modified_1 = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
 df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
-mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,df_modified.EPNP)
+mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,df_modified.PNP,df_modified.Wordlen)
 psis_loo(mod,chain)
