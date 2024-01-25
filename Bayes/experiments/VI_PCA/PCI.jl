@@ -12,7 +12,7 @@ using Plots
 using RDatasets
 df_full = CSV.read("../../input/dfHierarchicalNorm.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
-M = fit(PCA, Matrix(df))
+M = fit(PCA, transpose(Matrix(df)))
 Yte = predict(M, Matrix(df))
 Xr = reconstruct(M, Yte)
 
