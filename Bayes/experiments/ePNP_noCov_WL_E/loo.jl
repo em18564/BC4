@@ -52,4 +52,4 @@ df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
 mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,df_modified.PNP,df_modified.Wordlen)
 
 chain = deserialize("output/out.jls")
-psis_loo(mod,chain)
+p= psis_loo(mod,chain)
