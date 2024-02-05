@@ -9,6 +9,8 @@ using DataFrames
 using Serialization
 using MultivariateStats
 using Plots
+using PlotlyJS
+
 df_full = CSV.read("../../input/dfHierarchicalNorm.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
 df_labels = Vector(df_full[:, :Tags])
@@ -28,12 +30,20 @@ df_PCA[!,"PC_4"] = PCs[:,4]
 df_PCA[!,"PC_5"] = PCs[:,5]
 df_PCA[!,"PC_6"] = PCs[:,6]
 CSV.write("../../input/dfPCA.csv", df_PCA)
+df_PCA[!,"PC_1"] = (df_PCA[:,:PC_1] .- mean(df_PCA[:,:PC_1]))./std(df_PCA[:,:PC_1])
+df_PCA[!,"PC_2"] = (df_PCA[:,:PC_2] .- mean(df_PCA[:,:PC_2]))./std(df_PCA[:,:PC_2])
+df_PCA[!,"PC_3"] = (df_PCA[:,:PC_3] .- mean(df_PCA[:,:PC_3]))./std(df_PCA[:,:PC_3])
+df_PCA[!,"PC_4"] = (df_PCA[:,:PC_4] .- mean(df_PCA[:,:PC_4]))./std(df_PCA[:,:PC_4])
+df_PCA[!,"PC_5"] = (df_PCA[:,:PC_5] .- mean(df_PCA[:,:PC_5]))./std(df_PCA[:,:PC_5])
+df_PCA[!,"PC_6"] = (df_PCA[:,:PC_6] .- mean(df_PCA[:,:PC_6]))./std(df_PCA[:,:PC_6])
+CSV.write("../../input/dfPCANorm.csv", df_PCA)
 
 cont = Yte[:,df_labels.==0]
 func = Yte[:,df_labels.==1]
 
 scatter(cont[1,:],cont[2,:])
 scatter!(func[1,:],func[2,:])
+
 # ELAN = Yte[1,:]
 # LAN  = Yte[2,:]
 # N400 = Yte[3,:]

@@ -60,7 +60,7 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 end
 args = map(x->string(x), ARGS)
 pc   = parse(Int,args[1])
-df   = CSV.read("../../input/dfPCA.csv", DataFrame)
+df   = CSV.read("../../input/dfPCANorm.csv", DataFrame)
 df_modified_1 = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
 df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
 
@@ -71,6 +71,6 @@ dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4, :PC_5, :PC_6]]
 mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,dfPCA[:,pc])
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
-serialize("output/out"*args[1]*".jls",m)
+serialize("output2/out"*args[1]*".jls",m)
 
 # Highest Density Interval

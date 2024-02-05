@@ -19,4 +19,4 @@ echo `echo $SLURM_JOB_NODELIST | uniq`
 OMP_DISPLAY_ENV=true
 # Run the executable
 julia ../../input/setup.jl
-julia model.jl ${SLURM_ARRAY_TASK_ID} > model-${SLURM_ARRAY_TASK_ID}.out
+julia model.jl ${SLURM_ARRAY_TASK_ID} > model2-${SLURM_ARRAY_TASK_ID}.out
