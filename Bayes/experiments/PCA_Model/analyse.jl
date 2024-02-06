@@ -21,12 +21,12 @@ function HDI(data)
     m = mean(data)
     return m,l,u
 end
-chn = deserialize("output/out6.jls")
+chn = deserialize("output2/out6.jls")
 ess_rhat_df = DataFrame(ess_rhat(chn))
 xs = ess_rhat_df[!,"rhat"]
 ys = ess_rhat_df[!,"ess"]
 Plots.scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
-Plots.savefig("output/essRhat6.png")
+Plots.savefig("output2/essRhat6.png")
 # #df = CSV.read("savedData/df_2.csv", DataFrame)
 # chn = deserialize("output/out1.jls")
 # chn_ss = DataFrame(summarystats(chn))
@@ -35,23 +35,23 @@ Plots.savefig("output/essRhat6.png")
 # # density!(chn_df[!,"ab_w[2,2]"],label = "Function")
 # # savefig("output/dens.png")
 # CSV.write("output/ss1.csv", chn_ss)
-# chn_df = DataFrame(chn)
-# dif1 = chn_df[!,"a_w_s[2]"]-chn_df[!,"a_w_s[1]"]
-# dif2 = chn_df[!,"b_w_s[2]"]-chn_df[!,"b_w_s[1]"]
-# m1,l1,u1 = HDI(dif1)
-# m2,l2,u2 = HDI(dif2)
-# p = PlotlyJS.plot(box(
-#     name="Δa_w & Δb_w for PC1",
-#     q1=[l1, l2],
-#     median=[m1, m2],
-#     q3=[u1, u2],
-#     mean=[m1, m2],
-#     lowerfence=[l1, l2],
-#     upperfence=[u1, u2]
-# ))
-# PlotlyJS.savefig(p,"output/dif1.png")
+chn_df = DataFrame(chn)
+dif1 = chn_df[!,"a_w_s[2]"]-chn_df[!,"a_w_s[1]"]
+dif2 = chn_df[!,"b_w_s[2]"]-chn_df[!,"b_w_s[1]"]
+m1,l1,u1 = HDI(dif1)
+m2,l2,u2 = HDI(dif2)
+p = PlotlyJS.plot(box(
+    name="Δa_w & Δb_w for PC1",
+    q1=[l1, l2],
+    median=[m1, m2],
+    q3=[u1, u2],
+    mean=[m1, m2],
+    lowerfence=[l1, l2],
+    upperfence=[u1, u2]
+))
+PlotlyJS.savefig(p,"output2/dif6.png")
 # density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
-# savefig("output/dif.png")
+# savefig("output2/dif1.png")
 
 # #density(chn_df[!,"b_e"],label="n400",xaxis="Posterior Effect")
 

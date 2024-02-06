@@ -44,32 +44,32 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
     end
 end
 
-df   = CSV.read("../../input/dfPCA.csv", DataFrame)
+df   = CSV.read("../../input/dfPCANorm.csv", DataFrame)
 df_modified_1 = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
 df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
 dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4, :PC_5, :PC_6]]
 
-chain = deserialize("output/out1.jls")
+chain = deserialize("output2/out1.jls")
 mod   = model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,dfPCA[:,1])
 ps1   = psis_loo(mod,chain)
 
-chain = deserialize("output/out2.jls")
+chain = deserialize("output2/out2.jls")
 mod   = model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,dfPCA[:,2])
 ps2   = psis_loo(mod,chain)
 
-chain = deserialize("output/out3.jls")
+chain = deserialize("output2/out3.jls")
 mod   = model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,dfPCA[:,3])
 ps3   = psis_loo(mod,chain)
 
-chain = deserialize("output/out4.jls")
+chain = deserialize("output2/out4.jls")
 mod   = model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,dfPCA[:,4])
 ps4   = psis_loo(mod,chain)
 
-chain = deserialize("output/out5.jls")
+chain = deserialize("output2/out5.jls")
 mod   = model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,dfPCA[:,5])
 ps5   = psis_loo(mod,chain)
 
-chain = deserialize("output/out6.jls")
+chain = deserialize("output2/out6.jls")
 mod   = model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,dfPCA[:,6])
 ps6   = psis_loo(mod,chain)
 
