@@ -14,7 +14,7 @@ using Plots
 df_full = CSV.read("../../input/dfHierarchicalNorm.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
 df_labels = Vector(df_full[:, :Tags])
-M = fit(ICA, transpose(Matrix(df)),6)
+M = fit(PCA, transpose(Matrix(df)))
 Yte = predict(M, transpose(Matrix(df)))
 # Xr = reconstruct(M, Yte)
 
@@ -22,7 +22,7 @@ df_PCA = df_full
 #go through PCA in detail and get basic idea, interpret, plot by word type of scatter, check loo against normalisation.
 PCs = transpose(Yte)
 
-Plots.scatter(transpose(projection(M)),label = ["ELAN" "LAN" "N400" "EPNP" "P600" "PNP"])
+Plots.scatter(transpose(projection(M)),label = ["ELAN" "LAN" "N400" "EPNP" "P600" "PNP"],title="PCA Components")
 
 
 
@@ -50,8 +50,9 @@ Plots.scatter(transpose(projection(M)),label = ["ELAN" "LAN" "N400" "EPNP" "P600
 # scatter!(func[1,:],func[2,:])
 
 
-
-
+function dPrime(i)
+    return (mean(cont[i,:]) - mean(func[i,:]))/var([cont[i,:]; func[i,:]])
+end
 
 
 # ELAN = Yte[1,:]
