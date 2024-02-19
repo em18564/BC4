@@ -20,8 +20,11 @@ df_full = CSV.read("../../input/dfEEG.csv", DataFrame)
 df = select(df_full, Not([:"Participant", :"Tag",:"Word"]))
 df_lab = unique(select(df_full, ([:"Participant", :"Tag",:"Word"])))
 df_labels = Vector(df_lab[:, :Tag])
-M = fit(PCA, transpose(Matrix(df)); maxoutdim=6)
-Yte = predict(M, transpose(Matrix(df)))
+
+a = reshape(Matrix(df),(:,175,34))
+b = reshape(a,(:,175*34))
+M = fit(PCA, transpose(b); maxoutdim=30)
+Yte = predict(M, transpose(b))
 Xr = reconstruct(M, Yte)
 
 # df_PCA = df_full

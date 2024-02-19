@@ -28,15 +28,13 @@ function performPlots(val)
     ess_rhat_df = DataFrame(ess_rhat(chn))
     xs = ess_rhat_df[!,"rhat"]
     ys = ess_rhat_df[!,"ess"]
-    Plots.scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
-    Plots.savefig("output/essRhat" *string(val)*".png")
-
+    p1 = Plots.scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
     chn_df = DataFrame(chn)
     dif1 = chn_df[!,"a_w_s[2]"]-chn_df[!,"a_w_s[1]"]
     dif2 = chn_df[!,"b_w_s[2]"]-chn_df[!,"b_w_s[1]"]
     m1,l1,u1 = HDI(dif1)
     m2,l2,u2 = HDI(dif2)
-    p = PlotlyJS.plot(box(
+    p2 = PlotlyJS.plot(box(
         name="Δa_w & Δb_w for PC1",
         q1=[l1, l2],
         median=[m1, m2],
@@ -45,14 +43,14 @@ function performPlots(val)
         lowerfence=[l1, l2],
         upperfence=[u1, u2]
     ))
-    PlotlyJS.savefig(p,"output/dif" *string(val)*".png")
+    return p1,p2
 end
-performPlots(1)
-performPlots(2)
-performPlots(3)
-performPlots(4)
-performPlots(5)
-performPlots(6)
+p1,p2 = performPlots(1)
+p3,p4 = performPlots(2)
+p5,p6 = performPlots(3)
+p7,p8 = performPlots(4)
+p9,p10 = performPlots(5)
+p11,p12 = performPlots(6)
 # #df = CSV.read("savedData/df_2.csv", DataFrame)
 # chn = deserialize("output/out1.jls")
 # chn_ss = DataFrame(summarystats(chn))
