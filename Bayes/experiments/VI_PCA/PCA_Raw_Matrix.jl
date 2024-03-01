@@ -15,42 +15,50 @@ using Plots
 function dPrime(i)
     return (mean(cont[i,:]) - mean(func[i,:]))/var([cont[i,:]; func[i,:]])
 end
+elan=[      0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+lan =[      0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0]
+n400=[      1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+epnp=[      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+p600=[      1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
+pnp =[      1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+erps = [elan, lan, n400, epnp, p600, pnp]
+cur = erps[3]
 
 df_full = CSV.read("../../input/dfEEG.csv", DataFrame)
-df = select(df_full, Not([:"Participant", :"Tag",:"Word"]))
+df = select(df_full, Not([:"Participant", :"Tag",:"Word",:"EEG1",:"EEG2"]))
+mat = Matrix(df)*cur./sum(cur)
+mat = reshape(mat,(175,:))
 df_lab = unique(select(df_full, ([:"Participant", :"Tag",:"Word"])))
 df_labels = Vector(df_lab[:, :Tag])
-
-a = reshape(Matrix(df),(:,175,34))
-b = reshape(a,(:,175*34))
-M = fit(PCA, transpose(b); maxoutdim=30)
-Yte = predict(M, transpose(b))
+M = fit(PCA, mat; maxoutdim=5)
+Yte = predict(M, mat)
 Xr = reconstruct(M, Yte)
 
 # df_PCA = df_full
 # #go through PCA in detail and get basic idea, interpret, plot by word type of scatter, check loo against normalisation.
 # PCs = transpose(Yte)
 
-Plots.scatter(transpose(projection(M)),title="PCA Components on EEGs")
+#Plots.scatter(transpose(projection(M)),title="PCA Components on EEGs")
 
-Ys = reshape(Yte,(6,175,:))
+# Ys = reshape(Yte,(6,175,:))
 
-avgYs = reshape(mean(Ys,dims=3),(6,175))
+# avgYs = reshape(mean(Ys,dims=3),(6,175))
 
-cont = Ys[:,:,df_labels.==0]
-func = Ys[:,:,df_labels.==1]
+# cont = Ys[:,:,df_labels.==0]
+# func = Ys[:,:,df_labels.==1]
 
-avgCont = reshape(mean(cont,dims=3),(6,175))
-avgFunc = reshape(mean(func,dims=3),(6,175))
-plot(range(0, 700, length=175), transpose(avgYs))
+# avgCont = reshape(mean(cont,dims=3),(6,175))
+# avgFunc = reshape(mean(func,dims=3),(6,175))
+plot(range(0, 700, length=175), projection(M))
 
 v = principalvars(M)
 plot(principalvars(M)./var(M),ylims=[0,1],label="variance explained")
 
-for i in 2:6
+for i in 2:5
     v[i]+=v[i-1]
 end
 plot!(v./var(M),ylims=[0,1],label="cumulative variance explained")
+
 #ICA
 #scatter(Yte[1,:],Yte[2,:])
 # df_PCA[!,"PC_1"] = PCs[:,1]

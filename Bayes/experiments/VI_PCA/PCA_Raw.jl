@@ -15,9 +15,14 @@ using Plots
 function dPrime(i)
     return (mean(cont[i,:]) - mean(func[i,:]))/var([cont[i,:]; func[i,:]])
 end
-
+elan=[      0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+lan =[      0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0]
+n400=[      1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+epnp=[      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+p600=[      1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
+pnp =[      1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 df_full = CSV.read("../../input/dfEEG.csv", DataFrame)
-df = select(df_full, Not([:"Participant", :"Tag",:"Word"]))
+df = select(df_full, Not([:"Participant", :"Tag",:"Word",:"EEG1",:"EEG2"]))
 df_lab = unique(select(df_full, ([:"Participant", :"Tag",:"Word"])))
 df_labels = Vector(df_lab[:, :Tag])
 M = fit(PCA, transpose(Matrix(df)); maxoutdim=6)
