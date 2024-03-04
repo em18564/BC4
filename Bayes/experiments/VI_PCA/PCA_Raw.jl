@@ -49,10 +49,10 @@ plot(range(0, 700, length=175), transpose(avgYs))
 v = principalvars(M)
 plot(principalvars(M)./var(M),ylims=[0,1],label="variance explained")
 
-for i in 2:6
-    v[i]+=v[i-1]
-end
-plot!(v./var(M),ylims=[0,1],label="cumulative variance explained")
+# for i in 2:6
+#     v[i]+=v[i-1]
+# end
+# plot!(v./var(M),ylims=[0,1],label="cumulative variance explained")
 #ICA
 #scatter(Yte[1,:],Yte[2,:])
 # df_PCA[!,"PC_1"] = PCs[:,1]

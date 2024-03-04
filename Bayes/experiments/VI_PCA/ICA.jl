@@ -9,9 +9,16 @@ using DataFrames
 using Serialization
 using MultivariateStats
 using Plots
-df_full = CSV.read("../../input/dfHierarchicalNorm.csv", DataFrame)
-df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
-df_labels = Vector(df_full[:, :Tags])
+elan=[      0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+lan =[      0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0]
+n400=[      1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+epnp=[      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+p600=[      1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
+pnp =[      1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+df_full = CSV.read("../../input/dfEEG.csv", DataFrame)
+df = select(df_full, Not([:"Participant", :"Tag",:"Word",:"EEG1",:"EEG2"]))
+df_lab = unique(select(df_full, ([:"Participant", :"Tag",:"Word"])))
+df_labels = Vector(df_lab[:, :Tag])
 M = fit(ICA, transpose(Matrix(df)),6)
 
 Yte = predict(M, transpose(Matrix(df)))

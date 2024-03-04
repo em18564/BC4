@@ -1,5 +1,5 @@
 using TopoPlots, CairoMakie,Serialization#, GLMakie 
-using Makie.FileIO
+using Makie
 
 topoplot(rand(10), rand(Point2f, 10); contours=(color=:white, linewidth=2), label_scatter=true, bounding_geometry=Rect)
 data, positions = TopoPlots.example_data()
@@ -29,7 +29,7 @@ n400=[      1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0,
 epnp=[      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
 p600=[      1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
 pnp =[      1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
+vars = [ 54.9, 15.7, 5.5, 4.5, 2.4, 1.9]
 
 
 
@@ -40,13 +40,26 @@ function reorder(input)
                   input[5],input[3]]
         return output
 end
-function plotComponent(val)
+function plotComponent(f,val)
         x = append!([0.0,0.0],proj[:,val])
-        eeg_topoplot(reorder(x); positions=pos)
+        return eeg_topoplot(f[2, val],reorder(x); positions=pos,axis=(type=Axis, title="Component " * string(val) * " (" * string(vars[val]) * "%)",aspect=DataAspect(),))
 end
-p1 = eeg_topoplot(elan; positions=pos,title="ELAN")
-p2 = eeg_topoplot(lan; positions=pos,title="LAN")
-p3 = eeg_topoplot(n400; positions=pos,title="N400")
-p4 = eeg_topoplot(epnp; positions=pos,title="EPNP")
-p5 = eeg_topoplot(p600; positions=pos,title="P600")
-p6 = eeg_topoplot(pnp; positions=pos,title="PNP")
+
+function eegPlots(f = Figure(size = (1200, 400)))
+        eeg_topoplot(f[1, 1],elan; positions=pos,axis=(type=Axis, title="ELAN",aspect=DataAspect(),))
+        eeg_topoplot(f[1, 2],lan;  positions=pos,axis=(type=Axis, title="LAN" ,aspect=DataAspect(),))
+        eeg_topoplot(f[1, 3],n400; positions=pos,axis=(type=Axis, title="N400",aspect=DataAspect(),))
+        eeg_topoplot(f[1, 4],epnp; positions=pos,axis=(type=Axis, title="EPNP",aspect=DataAspect(),))
+        eeg_topoplot(f[1, 5],p600; positions=pos,axis=(type=Axis, title="P600",aspect=DataAspect(),))
+        eeg_topoplot(f[1, 6],pnp;  positions=pos,axis=(type=Axis, title="PNP" ,aspect=DataAspect(),))
+        plotComponent(f,1)
+        plotComponent(f,2)
+        plotComponent(f,3)
+        plotComponent(f,4)
+        plotComponent(f,5)
+        plotComponent(f,6)
+        f
+    end
+
+
+eegPlots()
