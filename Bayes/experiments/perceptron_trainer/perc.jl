@@ -40,3 +40,25 @@ function forward(xs)
     return z,h,v,out
 end
 
+function forward2(ys)
+    z = ys * transpose(W2)
+    h = logistic.(z)
+    v = h * transpose(W1)
+    out= logistic.(v)
+    return z,h,v,out
+end
+
+function runModel(batchSize,epochs,iterations)
+    for i in 1:iterations
+        for j in 1:epochs
+            sample = shuffle(1:length(Xtr[:,1]))[1:batchSize]
+            z,h,v,out = forward(Xtr[sample])
+            println("forward-"*string(i) * "-" *string(j))
+        end
+        for j in 1:epochs
+            sample = shuffle(1:length(Xtr[:,1]))[1:batchSize]
+            z,h,v,out = forward2(Ytr[sample,:])
+            println("backward-"*string(i) * "-" *string(j))
+        end
+    end
+end
