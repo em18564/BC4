@@ -2,6 +2,8 @@ using Flux,Serialization,CSV,DataFrames,StatsBase,Distributions,Plots,Random,Sta
 
 df     = CSV.read("../../input/dfHierarchical.csv", DataFrame)
 dfTags = CSV.read("../../input/full_tags.csv", DataFrame)
+PCA_3  = CSV.read("../../input/dfPCA_3.csv", DataFrame)
+PCA_4  = CSV.read("../../input/dfPCA_4.csv", DataFrame)
 dfWord = filter(row -> row.Participant==0, df)[:,"Word"]
 dfTags = filter(row -> row.Participant==0, dfTags)
 dfTags = dfTags[!,"tags"]

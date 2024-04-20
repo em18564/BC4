@@ -11,12 +11,12 @@ using MultivariateStats
 using Plots
 #using PlotlyJS
 
-df_full = CSV.read("../../input/dfHierarchicalNorm.csv", DataFrame)
+df_full = CSV.read("../../input/dfHierarchical.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
 df_labels = Vector(df_full[:, :Tags])
-M = fit(PCA, transpose(Matrix(df)))
+M = fit(PCA, transpose(Matrix(df)); maxoutdim=3)
 Yte = predict(M, transpose(Matrix(df)))
-# Xr = reconstruct(M, Yte)
+Xr = transpose(reconstruct(M, Yte))
 
 df_PCA = df_full
 #go through PCA in detail and get basic idea, interpret, plot by word type of scatter, check loo against normalisation.
@@ -25,16 +25,15 @@ PCs = transpose(Yte)
 Plots.scatter(transpose(projection(M)),label = ["ELAN" "LAN" "N400" "EPNP" "P600" "PNP"],title="PCA Components")
 
 
-
 #ICA
 #scatter(Yte[1,:],Yte[2,:])
-# df_PCA[!,"PC_1"] = PCs[:,1]
-# df_PCA[!,"PC_2"] = PCs[:,2]
-# df_PCA[!,"PC_3"] = PCs[:,3]
-# df_PCA[!,"PC_4"] = PCs[:,4]
-# df_PCA[!,"PC_5"] = PCs[:,5]
-# df_PCA[!,"PC_6"] = PCs[:,6]
-# CSV.write("../../input/dfPCA.csv", df_PCA)
+df_PCA[!,"PC_1"] = Xr[:,1]
+df_PCA[!,"PC_2"] = Xr[:,2]
+df_PCA[!,"PC_3"] = Xr[:,3]
+df_PCA[!,"PC_4"] = Xr[:,4]
+df_PCA[!,"PC_5"] = Xr[:,5]
+df_PCA[!,"PC_6"] = Xr[:,6]
+CSV.write("../../input/dfPCA_3.csv", df_PCA)
 # df_PCA[!,"PC_1"] = (df_PCA[:,:PC_1] .- mean(df_PCA[:,:PC_1]))./std(df_PCA[:,:PC_1])
 # df_PCA[!,"PC_2"] = (df_PCA[:,:PC_2] .- mean(df_PCA[:,:PC_2]))./std(df_PCA[:,:PC_2])
 # df_PCA[!,"PC_3"] = (df_PCA[:,:PC_3] .- mean(df_PCA[:,:PC_3]))./std(df_PCA[:,:PC_3])
