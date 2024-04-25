@@ -84,14 +84,8 @@ enc2    = Dense(L1, L2, leakyrelu)
 dec3    = Dense(L2, L1, leakyrelu)
 dec4    = Dense(L1, d)
 m = Chain(enc1, enc2, dec3, dec4) |> device
-m2 = Chain( Dense(d, L1, leakyrelu),
-            Dense(L1, L2, leakyrelu),
-                Parallel(vcat,
-                    Chain(Dense(L2, L1, leakyrelu) ,Dense(L1, d)),
-                    Chain(Dense(L2, IL1, leakyrelu),Dense(IL1, IL2, leakyrelu),Dense(IL2, words, leakyrelu))))
-loss(x) = Flux.Losses.mse(m(x), x)
 
-loss2(model, x, y,scale) = scale*Flux.Losses.mse(model(x)[1:6,:], x) + (1-scale)*Flux.Losses.mse(model(x)[7:17,:], y) 
+loss(x) = Flux.Losses.mse(m(x), x)
 
 loss(data_sample)
 

@@ -26,7 +26,7 @@ data_PC4 = Matrix(select(PCA_4, ([:"ELAN", :"LAN",:"N400",:"EPNP",:"P600",:"PNP"
 
 device = cpu # where will the calculations be performed?
 L1, L2 = 5, 4 # layer dimensions
-IL1,IL2,words = 3, 4,11
+IL1,IL2,words = 3, 5,11
 
 wtProp = 2
 η = 0.01 # learning rate for ADAM optimization algorithm
