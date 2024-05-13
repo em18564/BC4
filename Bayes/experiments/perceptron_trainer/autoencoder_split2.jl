@@ -24,7 +24,7 @@ L1, L2 = 5, 4 # layer dimensions
 IL1,IL2,words = 3, 5,11
 
 wtProp = 2
-η = 0.01 # learning rate for ADAM optimization algorithm
+η = 0.005 # learning rate for ADAM optimization algorithm
 batch_size = 5000; # batch size for optimization
 
 function lookup(x)
@@ -54,23 +54,35 @@ dl, d = get_data(batch_size)
 
 function train!(model_loss, model_params, opt, loader, epochs = 1000)
     train_steps = 0
+    losses = zeros(epochs,3)
     "Start training for total $(epochs) epochs" |> println
     for epoch = 1:epochs
         print("Epoch $(epoch): ")
-        ℒ = 0
+        ℒ  = 0
+        ℒ1 = 0
+        ℒ2 = 0
         for (x,y) in loader
             loss, back = Flux.pullback(model_params) do
                 model_loss(x,y,epoch/epochs |> device)
+            end
+            aenc_loss, _ = Flux.pullback(model_params) do
+                model_loss(x,y,0 |> device)
+            end
+            word_loss, _ = Flux.pullback(model_params) do
+                model_loss(x,y,1 |> device)
             end
             grad = back(1f0)
             Flux.Optimise.update!(opt, model_params, grad)
             train_steps += 1
             ℒ += loss
+            ℒ1 += aenc_loss
+            ℒ2 += word_loss
         end
-        println("ℒ = $ℒ")
+        losses[epoch,:] = [ℒ,ℒ1,ℒ2]
+        println("ℒ = $ℒ, ℒ_autoencoder = $ℒ1, ℒ_wordtype = $ℒ2")
     end
     "Total train steps: $train_steps" |> println
-
+    return losses
 end
 data_sample = dl |> first |> device;
 
@@ -78,10 +90,22 @@ enc = Chain(Dense(d, L1, leakyrelu),Dense(L1, L2, leakyrelu))
 dec = Chain(Dense(L2, L1, leakyrelu) ,Dense(L1, d))
 o_d = Chain(Dense(IL1, IL2, leakyrelu),Dense(IL2, words, leakyrelu))
 
-function model!(x)
-    x1 = enc(x)
-    x2 = dec(x1)
-    return x2
+function m(x)
+    h    = enc(x)
+    aenc = dec(h)
+    word = o_d(h[1:IL1,:])
+    return aenc,word
+end
+
+function acc(x,y)
+    pred = argmax.(eachcol(m(x)[2]))
+    act  = argmax.(eachcol(y))
+    sums = sum.(eachrow(Ytr))
+    a = 0
+    for i in range(1,length(pred))
+        a+= pred[i]==act[i]
+    end
+    return a/length(pred),a/(sums[2]+sums[6]+sums[10])
 end
 # m = Chain( Dense(d, L1, leakyrelu),
 #             Dense(L1, L2, leakyrelu),
@@ -89,23 +113,11 @@ end
 #                     Chain(Dense(L2, L1, leakyrelu) ,Dense(L1, d)),
 #                     Chain(Dense(L2, IL1, leakyrelu),Dense(IL1, IL2, leakyrelu),Dense(IL2, words, leakyrelu))))
 
-# loss(x, y,scale) = (1-scale)*Flux.Losses.mse(m(x)[1:6,:], x) + (scale)*Flux.Losses.mse(m(x)[7:17,:], y) 
-struct AutoEncoderWord
-    auto
-    words
-  end
-  
-@functor AutoEncoderWord
-  
-function AutoEncoderWord()
-  auto = Chain(enc,dec)
-    
-  words_1 = enc
-  words = o_d(words_1[1:3])
-    
-  AutoEncoderWord(auto,words)
-end
+loss(x, y,scale) = (1-scale)*Flux.Losses.mse(m(x)[1], x) + 10*(scale)*Flux.Losses.mse(m(x)[2], y) 
+
 
 opt = ADAM(η)
-ps = Flux.params(model!) # parameters
-# train!(loss, ps, opt, dl, 5000)
+ps = Flux.params(enc,dec,o_d) # parameters
+losses = train!(loss, ps, opt, dl, 1000)
+
+

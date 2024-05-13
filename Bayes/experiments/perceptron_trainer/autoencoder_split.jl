@@ -94,4 +94,4 @@ loss(x, y,scale) = (1-scale)*Flux.Losses.mse(m(x)[1:6,:], x) + (scale)*Flux.Loss
 
 opt = ADAM(η)
 ps = Flux.params(m) # parameters
-train!(loss, ps, opt, dl, 5000)
+# train!(loss, ps, opt, dl, 5000)
