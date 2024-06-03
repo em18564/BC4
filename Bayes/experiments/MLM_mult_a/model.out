@@ -1,0 +1,633 @@
+Running on host compute082.bc4.acrc.priv
+Time is Fri May 31 15:43:48 BST 2024
+Directory is /user/home/em18564/BC4/Bayes/experiments/MLM_mult_a
+Slurm job ID is 10000388
+This job runs on the following machines:
+compute082
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+Precompiling project...
+    MacroTools Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/MacroTools/38lnR_4RpdW.ji.pidfile)
+    ChainRulesCore Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/ChainRulesCore/G6ax7_4RpdW.ji.pidfile)
+    LoggingExtras Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/LoggingExtras/9fRHf_4RpdW.ji.pidfile)
+    WoodburyMatrices Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/WoodburyMatrices/LdtKf_4RpdW.ji.pidfile)
+    RelocatableFolders Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/RelocatableFolders/Yg3O9_4RpdW.ji.pidfile)
+    OpenSSL_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/OpenSSL_jll/M3X35_4RpdW.ji.pidfile)
+    Graphite2_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Graphite2_jll/XMuhG_4RpdW.ji.pidfile)
+    Libmount_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Libmount_jll/04u4y_4RpdW.ji.pidfile)
+  ✓ OffsetArrays → OffsetArraysAdaptExt
+  ✓ TableTraits
+  ✓ TranscodingStreams
+  ✓ UnicodeFun
+  ✓ EpollShim_jll
+  ✓ LLVMOpenMP_jll
+    Xorg_libXau_jll Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_libXau_jll/S8Fsv_4RpdW.ji.pidfile)
+  ✓ RecipesBase
+  ✓ Bzip2_jll
+    IntelOpenMP_jll Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/IntelOpenMP_jll/3Hg0P_4RpdW.ji.pidfile)
+  ✓ libpng_jll
+  ✓ Xorg_libICE_jll
+    LAME_jll Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/LAME_jll/SFEUf_4RpdW.ji.pidfile)
+    LERC_jll Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/LERC_jll/0PXNr_4RpdW.ji.pidfile)
+  ✓ libfdk_aac_jll
+    fzf_jll Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/fzf_jll/kEuMt_4RpdW.ji.pidfile)
+  ✓ StaticArrays
+  ✓ ChainRulesCore
+  ✓ MacroTools
+  ✓ WoodburyMatrices
+  ✓ LoggingExtras
+  ✓ RelocatableFolders
+  ✓ OpenSSL_jll
+  ✓ JpegTurbo_jll
+  ✓ XZ_jll
+  ✓ Ogg_jll
+  ✓ mtdev_jll
+  ✓ gperf_jll
+  ✓ Xorg_libXdmcp_jll
+  ✓ oneTBB_jll
+  ✓ Xorg_libXau_jll
+  ✓ x265_jll
+    LZO_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/LZO_jll/dUj3l_4RpdW.ji.pidfile)
+  ✓ libaom_jll
+    Opus_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Opus_jll/vFQVB_4RpdW.ji.pidfile)
+    Xorg_xtrans_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_xtrans_jll/xYA3D_4RpdW.ji.pidfile)
+    libevdev_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/libevdev_jll/ycIBu_4RpdW.ji.pidfile)
+  ✓ LERC_jll
+    Libiconv_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Libiconv_jll/ujTCF_4RpdW.ji.pidfile)
+  ✓ IntelOpenMP_jll
+  ✓ Arpack_jll
+  ✓ Zstd_jll
+    Libffi_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Libffi_jll/y4lM8_4RpdW.ji.pidfile)
+    MKL_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/MKL_jll/DHEix_4RpdW.ji.pidfile)
+    Libgpg_error_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Libgpg_error_jll/oMDEk_4RpdW.ji.pidfile)
+  ✓ Expat_jll
+  ✓ fzf_jll
+    Xorg_libpthread_stubs_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_libpthread_stubs_jll/Ef0AA_4RpdW.ji.pidfile)
+  ✓ OpenSSL
+  ✓ FFTW_jll
+  ✓ FriBidi_jll
+    FixedPointNumbers Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/FixedPointNumbers/Ple2W_4RpdW.ji.pidfile)
+  ✓ Libuuid_jll
+  ✓ Libgpg_error_jll
+  ✓ Tables
+  ✓ Parsers
+  ✓ Distances
+  ✓ TranscodingStreams → TestExt
+  ✓ Graphite2_jll
+  ✓ Libmount_jll
+  ✓ Pixman_jll
+  ✓ Xorg_libSM_jll
+  ✓ FreeType2_jll
+  ✓ LZO_jll
+  ✓ LAME_jll
+  ✓ StaticArrays → StaticArraysStatisticsExt
+  ✓ Adapt → AdaptStaticArraysExt
+  ✓ AbstractFFTs → AbstractFFTsChainRulesCoreExt
+  ✓ ChainRulesCore → ChainRulesCoreSparseArraysExt
+  ✓ Xorg_xtrans_jll
+  ✓ libevdev_jll
+  ✓ AxisAlgorithms
+  ✓ Opus_jll
+  ✓ Libiconv_jll
+  ✓ Libffi_jll
+  ✓ Xorg_libpthread_stubs_jll
+    TableOperations Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/TableOperations/5GGWt_4RpdW.ji.pidfile)
+  ✓ x264_jll
+  ✓ Wayland_protocols_jll
+  ✓ libvorbis_jll
+  ✓ FixedPointNumbers
+  ✓ eudev_jll
+  ✓ JLFzf
+  ✓ CodecZlib
+  ✓ Libtiff_jll
+  ✓ LogExpFunctions → LogExpFunctionsChainRulesCoreExt
+  ✓ Libgcrypt_jll
+  ✓ XML2_jll
+  ✓ Arpack
+  ✓ Fontconfig_jll
+  ✓ Distances → DistancesSparseArraysExt
+  ✓ AbstractFFTs → AbstractFFTsTestExt
+  ✓ StaticArrays → StaticArraysChainRulesCoreExt
+  ✓ Latexify
+  ✓ Ratios → RatiosFixedPointNumbersExt
+  ✓ libinput_jll
+  ✓ JSON
+  ✓ Unitful
+  ✓ Gettext_jll
+  ✓ Distances → DistancesChainRulesCoreExt
+  ✓ XSLT_jll
+    Xorg_libxcb_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1991222, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_libxcb_jll/n4mZf_4RpdW.ji.pidfile)
+  ✓ Wayland_jll
+  ✓ SpecialFunctions → SpecialFunctionsChainRulesCoreExt
+  ✓ ColorTypes
+  ✓ MultivariateStats
+    ColorVectorSpace Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1991092, pidfile: /user/home/em18564/.julia/compiled/v1.10/ColorVectorSpace/7uC4N_4RpdW.ji.pidfile)
+  ✓ Glib_jll
+  ✓ UnitfulLatexify
+  ✓ Interpolations
+  ✓ HTTP
+  ✓ NearestNeighbors
+  ✓ StatsFuns → StatsFunsChainRulesCoreExt
+  ✓ TableOperations
+  ✓ Distributions → DistributionsTestExt
+    DistributionsChainRulesCoreExt Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/DistributionsChainRulesCoreExt/uFTmV_4RpdW.ji.pidfile)
+  ✓ Clustering
+  ✓ Colors
+  ✓ Interpolations → InterpolationsUnitfulExt
+  ✓ Widgets
+  ✓ Xorg_libxcb_jll
+    Xorg_xcb_util_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_xcb_util_jll/oHgey_4RpdW.ji.pidfile)
+    Xorg_libX11_jll Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_libX11_jll/KzQhU_4RpdW.ji.pidfile)
+  ✓ ColorVectorSpace
+  ✓ ColorVectorSpace → SpecialFunctionsExt
+    ColorSchemes Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/ColorSchemes/EO5fj_4RpdW.ji.pidfile)
+  ✓ Xorg_libX11_jll
+  ✓ Xorg_xcb_util_jll
+    Xorg_libXrender_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_libXrender_jll/izQY6_4RpdW.ji.pidfile)
+    Xorg_libXext_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_libXext_jll/H6ltV_4RpdW.ji.pidfile)
+    Xorg_libXfixes_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_libXfixes_jll/dilDp_4RpdW.ji.pidfile)
+    Xorg_libxkbfile_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_libxkbfile_jll/PAhQT_4RpdW.ji.pidfile)
+  ✓ Xorg_xcb_util_renderutil_jll
+  ✓ Xorg_xcb_util_keysyms_jll
+  ✓ Xorg_xcb_util_image_jll
+  ✓ Xorg_xcb_util_wm_jll
+    Xorg_xcb_util_cursor_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Xorg_xcb_util_cursor_jll/XVAgT_4RpdW.ji.pidfile)
+  ✓ MKL_jll
+    FFTW Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/FFTW/PvIn2_4RpdW.ji.pidfile)
+  ✓ Distributions → DistributionsChainRulesCoreExt
+  ✓ Xorg_libxkbfile_jll
+  ✓ Xorg_libXfixes_jll
+  ✓ Xorg_libXext_jll
+  ✓ Xorg_libXrender_jll
+  ✓ Xorg_xcb_util_cursor_jll
+  ✓ Xorg_xkbcomp_jll
+  ✓ Libglvnd_jll
+  ✓ Xorg_libXinerama_jll
+  ✓ Xorg_libXi_jll
+  ✓ Xorg_libXcursor_jll
+  ✓ Xorg_libXrandr_jll
+  ✓ Cairo_jll
+  ✓ Xorg_xkeyboard_config_jll
+  ✓ GLFW_jll
+  ✓ ColorSchemes
+    PlotUtils Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1991737, pidfile: /user/home/em18564/.julia/compiled/v1.10/PlotUtils/YveHG_4RpdW.ji.pidfile)
+  ✓ HarfBuzz_jll
+  ✓ xkbcommon_jll
+  ✓ libass_jll
+    FFMPEG_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1991757, pidfile: /user/home/em18564/.julia/compiled/v1.10/FFMPEG_jll/uSD0T_4RpdW.ji.pidfile)
+  ✓ PlotUtils
+    PlotThemes Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/PlotThemes/QxsMm_4RpdW.ji.pidfile)
+    RecipesPipeline Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/RecipesPipeline/QQIne_4RpdW.ji.pidfile)
+  ✓ Vulkan_Loader_jll
+  ✓ FFTW
+    KernelDensity Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/KernelDensity/4QyGx_4RpdW.ji.pidfile)
+  ✓ Qt6Base_jll
+  ✓ RecipesPipeline
+  ✓ PlotThemes
+  ✓ FFMPEG_jll
+    FFMPEG Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/FFMPEG/TGvga_4RpdW.ji.pidfile)
+    GR_jll Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1991754, pidfile: /user/home/em18564/.julia/compiled/v1.10/GR_jll/jV9xf_4RpdW.ji.pidfile)
+  ✓ KernelDensity
+  ✓ GR_jll
+  ✓ FFMPEG
+  ✓ GR
+    Plots Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Plots/ld3vC_4RpdW.ji.pidfile)
+  ✓ Plots
+    UnitfulExt Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/UnitfulExt/4ishe_4RpdW.ji.pidfile)
+  ✓ Plots → UnitfulExt
+  ✓ StatsPlots
+  144 dependencies successfully precompiled in 274 seconds. 73 already precompiled.
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+Precompiling project...
+    PrettyTables Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/PrettyTables/kRdcL_4RpdW.ji.pidfile)
+    LLVM Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1993717, pidfile: /user/home/em18564/.julia/compiled/v1.10/LLVM/e8NBy_4RpdW.ji.pidfile)
+    ForwardDiff Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1993720, pidfile: /user/home/em18564/.julia/compiled/v1.10/ForwardDiff/k0ETY_4RpdW.ji.pidfile)
+  ✓ IntervalSets → IntervalSetsRecipesBaseExt
+  ✓ StructArrays → StructArraysGPUArraysCoreExt
+  ✓ Accessors → AccessorsIntervalSetsExt
+  ✓ SplittablesBase
+  ✓ Accessors → AccessorsStructArraysExt
+    AccessorsStaticArraysExt Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/AccessorsStaticArraysExt/l4BXL_4RpdW.ji.pidfile)
+  ✓ StructArrays → StructArraysSparseArraysExt
+    ChainRules Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/ChainRules/AzGmQ_4RpdW.ji.pidfile)
+  ✓ MCMCDiagnosticTools
+  ✓ ForwardDiff
+  ✓ ForwardDiff → ForwardDiffStaticArraysExt
+  ✓ Accessors → AccessorsStaticArraysExt
+  ✓ Accessors → AccessorsUnitfulExt
+  ✓ BangBang
+  ✓ BangBang → BangBangChainRulesCoreExt
+  ✓ BangBang → BangBangStaticArraysExt
+  ✓ BangBang → BangBangStructArraysExt
+  ✓ Roots
+  ✓ BangBang → BangBangTablesExt
+  ✓ Roots → RootsForwardDiffExt
+  ✓ MicroCollections
+    Transducers Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Transducers/cATK6_4RpdW.ji.pidfile)
+  ✓ PrettyTables
+  ✓ LLVM
+  ✓ UnsafeAtomicsLLVM
+    KernelAbstractions Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/KernelAbstractions/aywHT_4RpdW.ji.pidfile)
+  ✓ Transducers
+    AbstractMCMC Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1994147, pidfile: /user/home/em18564/.julia/compiled/v1.10/AbstractMCMC/5x8OI_4RpdW.ji.pidfile)
+  ✓ KernelAbstractions
+  ✓ NNlib
+    Tracker Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Tracker/cI3wW_4RpdW.ji.pidfile)
+  ✓ ChainRules
+    Bijectors Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/Bijectors/39uFz_4RpdW.ji.pidfile)
+    DistributionsAD Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/DistributionsAD/mhHYG_4RpdW.ji.pidfile)
+  ✓ ArrayInterface → ArrayInterfaceChainRulesExt
+  ✓ ArrayInterface → ArrayInterfaceGPUArraysCoreExt
+  ✓ ArrayInterface → ArrayInterfaceStaticArraysCoreExt
+  ✓ Tracker
+    TrackerPDMatsExt Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/TrackerPDMatsExt/92PsH_4RpdW.ji.pidfile)
+    LogDensityProblemsADTrackerExt Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/LogDensityProblemsADTrackerExt/ir3za_4RpdW.ji.pidfile)
+    ArrayInterfaceTrackerExt Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/ArrayInterfaceTrackerExt/g0WHg_4RpdW.ji.pidfile)
+  ✓ AbstractMCMC
+    AdvancedMH Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/AdvancedMH/MTkce_4RpdW.ji.pidfile)
+    MCMCChains Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/MCMCChains/QRkwo_4RpdW.ji.pidfile)
+  ✓ SSMProblems
+    AdvancedPS Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/AdvancedPS/zbq5j_4RpdW.ji.pidfile)
+  ✓ AbstractPPL
+  ✓ Bijectors
+    BijectorsTrackerExt Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/BijectorsTrackerExt/nMndE_4RpdW.ji.pidfile)
+  ✓ DistributionsAD
+  ✓ ArrayInterface → ArrayInterfaceTrackerExt
+  ✓ DistributionsAD → DistributionsADTrackerExt
+  ✓ DistributionsAD → DistributionsADForwardDiffExt
+  ✓ SymbolicIndexingInterface
+  ✓ Tracker → TrackerPDMatsExt
+  ✓ EllipticalSliceSampling
+  ✓ SciMLOperators
+  ✓ RecursiveArrayTools
+    RecursiveArrayToolsForwardDiffExt Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/RecursiveArrayToolsForwardDiffExt/hFOID_4RpdW.ji.pidfile)
+  ✓ Bijectors → BijectorsTrackerExt
+  ✓ Bijectors → BijectorsForwardDiffExt
+  ✓ AdvancedMH
+  ✓ MCMCChains
+    AdvancedMHMCMCChainsExt Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/AdvancedMHMCMCChainsExt/TfQIQ_4RpdW.ji.pidfile)
+  ✓ AdvancedPS
+    AdvancedPSLibtaskExt Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/AdvancedPSLibtaskExt/6qsTp_4RpdW.ji.pidfile)
+  ✓ Bijectors → BijectorsDistributionsADExt
+    AdvancedVI Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/AdvancedVI/W5I48_4RpdW.ji.pidfile)
+  ✓ LogDensityProblemsAD → LogDensityProblemsADTrackerExt
+  ✓ RecursiveArrayTools → RecursiveArrayToolsForwardDiffExt
+  ✓ LogDensityProblemsAD → LogDensityProblemsADADTypesExt
+  ✓ LogDensityProblemsAD → LogDensityProblemsADForwardDiffExt
+    DynamicPPL Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1994532, pidfile: /user/home/em18564/.julia/compiled/v1.10/DynamicPPL/2PWyN_4RpdW.ji.pidfile)
+  ✓ AdvancedHMC
+  ✓ AdvancedHMC → AdvancedHMCMCMCChainsExt
+  ✓ AdvancedMH → AdvancedMHMCMCChainsExt
+  ✓ AdvancedPS → AdvancedPSLibtaskExt
+  ✓ AdvancedMH → AdvancedMHForwardDiffExt
+  ✓ AdvancedMH → AdvancedMHStructArraysExt
+  ✓ RecursiveArrayTools → RecursiveArrayToolsTrackerExt
+  ✓ SciMLBase
+  ✓ SciMLBase → SciMLBaseChainRulesCoreExt
+  ✓ AdvancedVI
+  ✓ DynamicPPL
+    DynamicPPLZygoteRulesExt Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/DynamicPPLZygoteRulesExt/Tm39V_4RpdW.ji.pidfile)
+  ✓ DynamicPPL → DynamicPPLZygoteRulesExt
+  ✓ DynamicPPL → DynamicPPLMCMCChainsExt
+  ✓ DynamicPPL → DynamicPPLChainRulesCoreExt
+  ✓ DynamicPPL → DynamicPPLForwardDiffExt
+    Turing Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/Turing/gm4QC_4RpdW.ji.pidfile)
+  ✓ Turing
+  69 dependencies successfully precompiled in 142 seconds. 296 already precompiled.
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+Precompiling project...
+    DataFrames Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/DataFrames/AR9oZ_4RpdW.ji.pidfile)
+  ✓ DataFrames
+  ✓ Latexify → DataFramesExt
+  ✓ BangBang → BangBangDataFramesExt
+  ✓ Transducers → TransducersDataFramesExt
+  4 dependencies successfully precompiled in 36 seconds. 370 already precompiled. 1 skipped during auto due to previous errors.
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+Precompiling project...
+    TransducersDataFramesExt Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/TransducersDataFramesExt/u4UET_4RpdW.ji.pidfile)
+  ✓ FiniteDiff → FiniteDiffStaticArraysExt
+  ✓ NLSolversBase
+  ✓ LineSearches
+    Optim Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Optim/R5uoh_4RpdW.ji.pidfile)
+  ✓ Transducers → TransducersDataFramesExt
+  ✓ Optim
+  ✓ Turing → TuringOptimExt
+  6 dependencies successfully precompiled in 22 seconds. 378 already precompiled.
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+Precompiling project...
+  ✓ BitTwiddlingConvenienceFunctions
+  ✓ Git
+    Documenter Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/Documenter/sHGjf_4RpdW.ji.pidfile)
+  ✓ CPUSummary
+  ✓ HostCPUFeatures
+  ✓ ParetoSmoothedImportanceSampling
+  ✓ StaticArrayInterface
+  ✓ StructuralCausalModels
+  ✓ StaticArrayInterface → StaticArrayInterfaceStaticArraysExt
+  ✓ StaticArrayInterface → StaticArrayInterfaceOffsetArraysExt
+  ✓ LayoutPointers
+    VectorizationBase Being precompiled by another machine (hostname: compute081.bc4.acrc.priv, pid: 1987267, pidfile: /user/home/em18564/.julia/compiled/v1.10/VectorizationBase/Dto5m_4RpdW.ji.pidfile)
+  ✓ VectorizationBase
+    SLEEFPirates Being precompiled by another machine (hostname: compute083.bc4.acrc.priv, pid: 1989886, pidfile: /user/home/em18564/.julia/compiled/v1.10/SLEEFPirates/EjaJG_4RpdW.ji.pidfile)
+  ✓ SLEEFPirates
+    MonteCarloMeasurements Being precompiled by another machine (hostname: compute080.bc4.acrc.priv, pid: 1980372, pidfile: /user/home/em18564/.julia/compiled/v1.10/MonteCarloMeasurements/tHYBD_4RpdW.ji.pidfile)
+  ✓ MonteCarloMeasurements
+  ✓ RecursiveArrayTools → RecursiveArrayToolsMonteCarloMeasurementsExt
+  ✓ Documenter
+  ✓ StatisticalRethinking
+  16 dependencies successfully precompiled in 68 seconds. 397 already precompiled.
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.0007690429687500001
+┌ Info: Found initial step size
+└   ϵ = 0.0013671875000000001
+┌ Info: Found initial step size
+└   ϵ = 0.00078125
+┌ Info: Found initial step size
+└   ϵ = 0.00078125
+Sampling (4 threads)  25%|███████▌                      |  ETA: 4:33:59
+Sampling (4 threads)  50%|███████████████               |  ETA: 1:31:20
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 0:30:27
+Sampling (4 threads) 100%|██████████████████████████████| Time: 1:31:19
+Sampling (4 threads) 100%|██████████████████████████████| Time: 1:31:19
+Chains MCMC chain (250×65×4 Array{Float64, 3}):
+
+Iterations        = 126:1:375
+Number of chains  = 4
+Samples per chain = 250
+Wall duration     = 5468.0 seconds
+Compute duration  = 19477.31 seconds
+parameters        = σ_w[1], σ_w[2], ρ_w[1, 1], ρ_w[2, 1], ρ_w[1, 2], ρ_w[2, 2], ab_w[1, 1], ab_w[2, 1], ab_w[1, 2], ab_w[2, 2], σ_p[1], σ_p[2], ρ_p[1, 1], ρ_p[2, 1], ρ_p[1, 2], ρ_p[2, 2], ab_p[1, 1], ab_p[2, 1], ab_p[1, 2], ab_p[2, 2], ab_p[1, 3], ab_p[2, 3], ab_p[1, 4], ab_p[2, 4], ab_p[1, 5], ab_p[2, 5], ab_p[1, 6], ab_p[2, 6], ab_p[1, 7], ab_p[2, 7], ab_p[1, 8], ab_p[2, 8], ab_p[1, 9], ab_p[2, 9], ab_p[1, 10], ab_p[2, 10], ab_p[1, 11], ab_p[2, 11], ab_p[1, 12], ab_p[2, 12], σ_e[1], σ_e[2], ρ_e[1, 1], ρ_e[2, 1], ρ_e[1, 2], ρ_e[2, 2], ab_e[1, 1], ab_e[2, 1], ab_e[1, 2], ab_e[2, 2], a, b, σ
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+   parameters      mean       std      mcse    ess_bulk    ess_tail      rhat   ess_per_sec
+       Symbol   Float64   Float64   Float64     Float64     Float64   Float64       Float64
+
+       σ_w[1]    0.6515    0.6545    0.0490    128.7732    347.8516    1.0332        0.0066
+       σ_w[2]    1.3812    1.5566    0.5936     11.2716     11.6132    1.2902        0.0006
+    ρ_w[1, 1]    1.0000    0.0000       NaN         NaN         NaN       NaN           NaN
+    ρ_w[2, 1]   -0.0079    0.4567    0.0580     70.2423    334.9848    1.0477        0.0036
+    ρ_w[1, 2]   -0.0079    0.4567    0.0580     70.2423    334.9848    1.0477        0.0036
+    ρ_w[2, 2]    1.0000    0.0000    0.0000   1041.5143         NaN    1.0028        0.0535
+   ab_w[1, 1]    0.2169    0.6947    0.1910     11.1143     22.4246    1.2817        0.0006
+   ab_w[2, 1]   -0.3064    0.7331    0.1973     14.4544     49.8065    1.2226        0.0007
+   ab_w[1, 2]    0.0958    0.5126    0.0510     72.5765    265.8598    1.0463        0.0037
+   ab_w[2, 2]    0.9097    2.1481    0.7970      7.7849     11.6153    1.4838        0.0004
+       σ_p[1]    1.0092    0.5552    0.1489     11.6406     21.3424    1.2718        0.0006
+       σ_p[2]    1.5121    1.0450    0.3391     13.5804     26.2887    1.3104        0.0007
+    ρ_p[1, 1]    1.0000    0.0000       NaN         NaN         NaN       NaN           NaN
+    ρ_p[2, 1]    0.0016    0.7575    0.3633      6.2037     13.7905    1.7785        0.0003
+    ρ_p[1, 2]    0.0016    0.7575    0.3633      6.2037     13.7905    1.7785        0.0003
+    ρ_p[2, 2]    1.0000    0.0000    0.0000   1001.6357   1001.0893    1.0014        0.0514
+   ab_p[1, 1]   -0.2738    0.8157    0.3391      6.9227     18.5299    1.6301        0.0004
+   ab_p[2, 1]    0.5721    1.0185    0.4063      6.1371     21.7047    1.8091        0.0003
+   ab_p[1, 2]   -0.1301    0.5919    0.1983      9.2915     23.7006    1.3635        0.0005
+   ab_p[2, 2]    1.2370    2.0049    0.8368      5.6740     29.4336    1.9926        0.0003
+   ab_p[1, 3]   -0.3576    1.2792    0.5531      6.3825     22.9657    1.7366        0.0003
+   ab_p[2, 3]    0.6307    1.2074    0.4970      5.9625     21.8557    1.8520        0.0003
+   ab_p[1, 4]    0.0903    0.7270    0.2727      7.2907     43.3613    1.5546        0.0004
+   ab_p[2, 4]   -0.3725    0.7909    0.2470      8.9928     41.1593    1.3980        0.0005
+   ab_p[1, 5]   -0.0451    0.3504    0.0296    129.8099    135.9404    1.0574        0.0067
+   ab_p[2, 5]    0.2167    0.6288    0.2047     10.5754     27.9931    1.3021        0.0005
+   ab_p[1, 6]   -0.5380    1.9152    0.8457      6.2386     23.0483    1.7794        0.0003
+   ab_p[2, 6]    1.9206    3.0338    1.2953      5.6445     38.8085    1.9965        0.0003
+   ab_p[1, 7]   -0.0547    0.3726    0.0497     68.5913     46.9626    1.0759        0.0035
+   ab_p[2, 7]    0.1333    0.6510    0.2074     14.6833     14.9090    1.2090        0.0008
+   ab_p[1, 8]    0.1431    0.7178    0.2694      7.3309     41.3066    1.5522        0.0004
+   ab_p[2, 8]    0.3350    0.7554    0.2783      7.8389     60.0787    1.4767        0.0004
+   ab_p[1, 9]    0.0418    0.4909    0.1232     17.0010     60.6515    1.1681        0.0009
+   ab_p[2, 9]   -0.2554    0.5886    0.1696     10.6940     47.7550    1.3111        0.0005
+  ab_p[1, 10]    0.0366    0.5800    0.1913      9.1400     35.8680    1.3788        0.0005
+  ab_p[2, 10]   -1.0269    1.6488    0.6457      6.5473     29.7859    1.7172        0.0003
+  ab_p[1, 11]    0.5896    2.3547    1.0416      6.0754     34.2795    1.8231        0.0003
+  ab_p[2, 11]   -2.1109    3.2106    1.3411      5.9470     29.2535    1.8852        0.0003
+  ab_p[1, 12]    0.3118    1.3966    0.6029      6.1563     43.0221    1.7928        0.0003
+  ab_p[2, 12]   -0.8793    1.3853    0.5433      6.6165     24.5629    1.6901        0.0003
+       σ_e[1]    0.7531    0.6117    0.0806     37.0294    205.0456    1.0824        0.0019
+       σ_e[2]    0.6071    0.5998    0.0809     20.5904     53.9458    1.1502        0.0011
+    ρ_e[1, 1]    1.0000    0.0000       NaN         NaN         NaN       NaN           NaN
+    ρ_e[2, 1]    0.0125    0.3766    0.0172    483.6217    431.4470    1.0804        0.0248
+    ρ_e[1, 2]    0.0125    0.3766    0.0172    483.6217    431.4470    1.0804        0.0248
+    ρ_e[2, 2]    1.0000    0.0000    0.0000   1138.5085         NaN    0.9991        0.0585
+   ab_e[1, 1]   -0.2424    0.4258    0.1755      6.5111     32.1227    1.7023        0.0003
+   ab_e[2, 1]    0.1218    0.4935    0.1747      5.9444     57.2002    1.9435        0.0003
+   ab_e[1, 2]    0.2688    0.5247    0.2061      7.6832     24.9330    1.5133        0.0004
+   ab_e[2, 2]    0.1446    0.5119    0.1820      6.4430     70.1803    1.7899        0.0003
+            a    0.2976    1.0154    0.4120      7.4866     34.8364    1.5509        0.0004
+            b    0.2462    0.7164    0.1033     53.7246     21.4116    1.0986        0.0028
+            σ   10.9512   33.6387    8.7156    125.3337     14.5434    1.0681        0.0064
+
+Quantiles
+   parameters      2.5%     25.0%     50.0%     75.0%      97.5%
+       Symbol   Float64   Float64   Float64   Float64    Float64
+
+       σ_w[1]    0.0617    0.2120    0.4457    0.8625     2.4874
+       σ_w[2]    0.1429    0.4691    0.8653    1.5310     6.7719
+    ρ_w[1, 1]    1.0000    1.0000    1.0000    1.0000     1.0000
+    ρ_w[2, 1]   -0.8014   -0.3702   -0.0341    0.3372     0.8360
+    ρ_w[1, 2]   -0.8014   -0.3702   -0.0341    0.3372     0.8360
+    ρ_w[2, 2]    1.0000    1.0000    1.0000    1.0000     1.0000
+   ab_w[1, 1]   -1.1224   -0.0805    0.1229    0.4331     1.7197
+   ab_w[2, 1]   -1.9465   -0.6873   -0.2392    0.1773     1.0140
+   ab_w[1, 2]   -0.8425   -0.1279    0.0347    0.2937     1.1273
+   ab_w[2, 2]   -1.3251   -0.0829    0.3362    1.0193     8.4137
+       σ_p[1]    0.2832    0.5641    0.8734    1.3230     2.2165
+       σ_p[2]    0.2547    0.6673    1.2936    2.1060     4.0904
+    ρ_p[1, 1]    1.0000    1.0000    1.0000    1.0000     1.0000
+    ρ_p[2, 1]   -0.9566   -0.7683   -0.0453    0.7814     0.9241
+    ρ_p[1, 2]   -0.9566   -0.7683   -0.0453    0.7814     0.9241
+    ρ_p[2, 2]    1.0000    1.0000    1.0000    1.0000     1.0000
+   ab_p[1, 1]   -1.6749   -0.7569   -0.4475    0.0089     1.7189
+   ab_p[2, 1]   -0.9894   -0.0579    0.3405    1.0174     3.0513
+   ab_p[1, 2]   -1.2450   -0.4538   -0.2012    0.2484     1.3019
+   ab_p[2, 2]   -2.0610   -0.1577    1.0088    2.4826     5.3358
+   ab_p[1, 3]   -2.3974   -1.1634   -0.6820    0.2524     2.6622
+   ab_p[2, 3]   -1.1209   -0.2249    0.3704    1.1947     3.6534
+   ab_p[1, 4]   -1.5800   -0.2881    0.1977    0.5337     1.3928
+   ab_p[2, 4]   -2.1905   -0.8047   -0.2622    0.1945     0.9050
+   ab_p[1, 5]   -0.7991   -0.2342   -0.0503    0.1514     0.6995
+   ab_p[2, 5]   -0.7338   -0.1141    0.0800    0.4341     1.9073
+   ab_p[1, 6]   -3.4883   -1.7768   -1.0602    0.2812     3.8361
+   ab_p[2, 6]   -2.9275   -0.2540    1.6784    3.8295     8.0182
+   ab_p[1, 7]   -0.7765   -0.2544   -0.0751    0.1054     0.7953
+   ab_p[2, 7]   -0.9158   -0.2652    0.0220    0.3318     1.8411
+   ab_p[1, 8]   -1.6234   -0.0911    0.2636    0.5220     1.4190
+   ab_p[2, 8]   -0.8708   -0.1765    0.1658    0.6655     2.2806
+   ab_p[1, 9]   -1.1690   -0.1563    0.0470    0.3389     0.9451
+   ab_p[2, 9]   -1.6371   -0.5878   -0.1716    0.1190     0.7655
+  ab_p[1, 10]   -1.2060   -0.2441    0.0806    0.3604     1.1433
+  ab_p[2, 10]   -4.2646   -2.2695   -1.0128    0.3172     1.9090
+  ab_p[1, 11]   -4.7054   -0.1476    1.1694    2.1101     4.1702
+  ab_p[2, 11]   -7.6019   -4.5142   -2.0963    0.0634     3.4835
+  ab_p[1, 12]   -2.9341   -0.0953    0.6094    1.1580     2.6243
+  ab_p[2, 12]   -3.6125   -1.9114   -0.8577    0.0013     1.6323
+       σ_e[1]    0.1721    0.3351    0.5690    0.8942     2.4014
+       σ_e[2]    0.0900    0.2434    0.3955    0.7520     2.3043
+    ρ_e[1, 1]    1.0000    1.0000    1.0000    1.0000     1.0000
+    ρ_e[2, 1]   -0.7153   -0.2497    0.0112    0.2954     0.7190
+    ρ_e[1, 2]   -0.7153   -0.2497    0.0112    0.2954     0.7190
+    ρ_e[2, 2]    1.0000    1.0000    1.0000    1.0000     1.0000
+   ab_e[1, 1]   -1.1036   -0.4745   -0.2952    0.1766     0.5069
+   ab_e[2, 1]   -0.8136   -0.0241    0.1299    0.2524     1.1611
+   ab_e[1, 2]   -0.6489   -0.2066    0.3394    0.5600     1.3140
+   ab_e[2, 2]   -0.8046   -0.0703    0.1596    0.3214     1.2950
+            a   -2.1185   -0.2666    0.5342    0.9873     1.9399
+            b   -1.0506   -0.2472    0.1912    0.6846     1.6972
+            σ    4.2224    4.2421    4.2533    4.2659   164.4474
+
