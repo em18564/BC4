@@ -63,7 +63,7 @@ function train!(model_loss, model_params, opt, loader, epochs = 1000)
         ℒ2 = 0
         for (x,y) in loader
             loss, back = Flux.pullback(model_params) do
-                model_loss(x,y,epoch/epochs |> device)
+                model_loss(x,y,epoch/epochs |> device) #change 0 to epoch/epochs for partial learning!
             end
             aenc_loss, _ = Flux.pullback(model_params) do
                 model_loss(x,y,0 |> device)
