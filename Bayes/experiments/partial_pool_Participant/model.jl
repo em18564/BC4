@@ -93,6 +93,6 @@ df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
 mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,df_modified.EPNP,ζ)
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
-serialize("output/out.jls",m)
+serialize("output/out"*args[1]*".jls",m)
 
 # Highest Density Interval
