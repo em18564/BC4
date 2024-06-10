@@ -1,0 +1,1091 @@
+Running on host highmem15.bc4.acrc.priv
+Time is Thu Jun 6 19:39:10 BST 2024
+Directory is /user/home/em18564/BC4/Bayes/experiments/partial_pool_Participant
+Slurm job ID is 10026979
+This job runs on the following machines:
+highmem15
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.0013671875000000001
+┌ Info: Found initial step size
+└   ϵ = 0.00146484375
+┌ Info: Found initial step size
+└   ϵ = 0.0125
+┌ Info: Found initial step size
+└   ϵ = 0.0125
+Sampling (4 threads)  25%|███████▌                      |  ETA: 14:07:23
+Sampling (4 threads)  50%|███████████████               |  ETA: 4:42:28
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:34:09
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:04:56
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:04:56
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.001513671875
+┌ Info: Found initial step size
+└   ϵ = 0.0013671875000000001
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+Sampling (4 threads)  25%|███████▌                      |  ETA: 12:57:49
+Sampling (4 threads)  50%|███████████████               |  ETA: 4:51:22
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:43:04
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:20:59
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:21:00
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.001513671875
+┌ Info: Found initial step size
+└   ϵ = 0.0013671875000000001
+┌ Info: Found initial step size
+└   ϵ = 0.0013671875000000001
+┌ Info: Found initial step size
+└   ϵ = 0.003125
+Sampling (4 threads)  25%|███████▌                      |  ETA: 11:43:03
+Sampling (4 threads)  50%|███████████████               |  ETA: 3:54:21
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:38:48
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:40:52
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:40:53
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.0015380859375000002
+┌ Info: Found initial step size
+└   ϵ = 0.00146484375
+┌ Info: Found initial step size
+└   ϵ = 0.0125
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+Sampling (4 threads)  25%|███████▌                      |  ETA: 12:35:51
+Sampling (4 threads)  50%|███████████████               |  ETA: 4:30:58
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:36:42
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:10:46
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:10:46
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.00146484375
+┌ Info: Found initial step size
+└   ϵ = 0.00302734375
+┌ Info: Found initial step size
+└   ϵ = 0.003125
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+Sampling (4 threads)  25%|███████▌                      |  ETA: 12:14:51
+Sampling (4 threads)  50%|███████████████               |  ETA: 4:12:17
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:32:11
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:03:00
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:03:00
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.0030761718750000003
+┌ Info: Found initial step size
+└   ϵ = 0.003125
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+Sampling (4 threads)  25%|███████▌                      |  ETA: 14:04:30
+Sampling (4 threads)  50%|███████████████               |  ETA: 4:41:30
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:34:39
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:45:33
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:45:33
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.0013671875000000001
+┌ Info: Found initial step size
+└   ϵ = 0.0125
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+┌ Info: Found initial step size
+└   ϵ = 0.00078125
+Sampling (4 threads)  25%|███████▌                      |  ETA: 13:16:58
+Sampling (4 threads)  50%|███████████████               |  ETA: 4:25:40
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:36:42
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:13:50
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:13:51
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.0013671875000000001
+┌ Info: Found initial step size
+└   ϵ = 0.0013671875000000001
+┌ Info: Found initial step size
+└   ϵ = 0.0125
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+Sampling (4 threads)  25%|███████▌                      |  ETA: 15:39:40
+Sampling (4 threads)  50%|███████████████               |  ETA: 5:13:14
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:49:01
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:31:49
+Sampling (4 threads) 100%|██████████████████████████████| Time: 5:31:50
