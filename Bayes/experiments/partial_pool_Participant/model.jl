@@ -73,8 +73,12 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
     b_e_epnp = ab_e[2,1]
 
 
-    a_t ~ Normal(0,ζ)
-    b_t ~ Normal(0,ζ)
+    σ_t ~ filldist(Exponential(ζ), 2)
+    ρ_t ~ LKJ(2, 2)
+    Σ_t = Symmetric(Diagonal(σ_t) * ρ_t * Diagonal(σ_t))
+    ab_t ~ filldist(MvNormal([0,0], Σ_t),NUM_WORDS)
+    a_t = ab_w[1,word.+1]
+    b_t = ab_w[2,word.+1]
 
 
     μ_epnp = @. a_w + a_p_w + a_e_epnp + a_t + ((b_w + b_p_w + b_e_epnp + b_t) * surprisal)
