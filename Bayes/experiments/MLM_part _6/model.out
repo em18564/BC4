@@ -49,3 +49,4 @@ compute409
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+slurmstepd: error: *** JOB 10016833 ON compute409 CANCELLED AT 2024-06-12T16:54:52 DUE TO TIME LIMIT ***
