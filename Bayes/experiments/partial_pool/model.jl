@@ -13,7 +13,8 @@ Pkg.add("Optim")
 Pkg.add("StatisticalRethinking")
 Pkg.add("MCMCDiagnosticTools")
 Pkg.add("Serialization")
-
+Pkg.add("ParetoSmooth")
+Pkg.add("JLD2")
 
 using Random
 using StatsBase
@@ -31,6 +32,8 @@ using StatisticalRethinking
 using MCMCDiagnosticTools
 using Serialization
 using LinearAlgebra
+using ParetoSmooth
+using JLD2
 NUM_SENTENCES = 205
 NUM_PARTICIPANTS = 12
 NUM_WORDS = 1931
@@ -62,8 +65,8 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
     ρ_t ~ LKJ(2, 2)
     Σ_t = Symmetric(Diagonal(σ_t) * ρ_t * Diagonal(σ_t))
     ab_t ~ filldist(MvNormal([0,0], Σ_t),NUM_WORDS)
-    a_t = ab_w[1,word.+1]
-    b_t = ab_w[2,word.+1]
+    a_t = ab_t[1,Int.(word)]
+    b_t = ab_t[2,Int.(word)]
 
 
     μ_epnp = @. a_w + a_p + a_e_epnp + a_t + ((b_w + b_p + b_e_epnp + b_t) * surprisal)
@@ -83,5 +86,10 @@ mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modi
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
 serialize("output/out"*args[1]*".jls",m)
+ps1   = psis_loo(mod,m)
+print(ps1.estimates[1])
+jldsave("output/outjld"*args[1]*".jls",m)
+
+
 
 # Highest Density Interval
