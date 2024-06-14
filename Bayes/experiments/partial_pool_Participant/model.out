@@ -1,9 +1,9 @@
-Running on host highmem16.bc4.acrc.priv
-Time is Wed Jun 12 17:47:23 BST 2024
+Running on host compute169.bc4.acrc.priv
+Time is Thu Jun 13 15:36:47 BST 2024
 Directory is /user/home/em18564/BC4/Bayes/experiments/partial_pool_Participant
-Slurm job ID is 10047810
+Slurm job ID is 10050100
 This job runs on the following machines:
-highmem16
+compute169
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
@@ -88,178 +88,334 @@ highmem16
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
-│   exception =
-│    LoadError: UndefVarError: `TuringOptimExt` not defined
-│    Stacktrace:
-│      [1] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│      [2] include(x::String)
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
-│      [3] top-level scope
-│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
-│      [4] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│      [5] include(x::String)
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
-│      [6] top-level scope
-│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
-│      [7] eval
-│        @ ./boot.jl:385 [inlined]
-│      [8] eval
-│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
-│      [9] (::StatisticalRethinking.var"#3#12")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
-│     [10] macro expansion
-│        @ timing.jl:395 [inlined]
-│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
-│     [12] (::StatisticalRethinking.var"#2#11")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
-│     [13] withpath(f::Any, path::String)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
-│     [14] (::StatisticalRethinking.var"#1#10")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
-│     [15] listenpkg(f::Any, pkg::Base.PkgId)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
-│     [16] macro expansion
-│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
-│     [17] __init__()
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
-│     [18] run_module_init(mod::Module, i::Int64)
-│        @ Base ./loading.jl:1134
-│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
-│        @ Base ./loading.jl:1122
-│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
-│        @ Base ./loading.jl:1067
-│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
-│        @ Base ./loading.jl:1581
-│     [22] _require(pkg::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1938
-│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1812
-│     [24] #invoke_in_world#3
-│        @ ./essentials.jl:926 [inlined]
-│     [25] invoke_in_world
-│        @ ./essentials.jl:923 [inlined]
-│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1803
-│     [27] macro expansion
-│        @ ./loading.jl:1790 [inlined]
-│     [28] macro expansion
-│        @ ./lock.jl:267 [inlined]
-│     [29] __require(into::Module, mod::Symbol)
-│        @ Base ./loading.jl:1753
-│     [30] #invoke_in_world#3
-│        @ ./essentials.jl:926 [inlined]
-│     [31] invoke_in_world
-│        @ ./essentials.jl:923 [inlined]
-│     [32] require(into::Module, mod::Symbol)
-│        @ Base ./loading.jl:1746
-│     [33] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│     [34] exec_options(opts::Base.JLOptions)
-│        @ Base ./client.jl:318
-│     [35] _start()
-│        @ Base ./client.jl:552
-│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
-│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
-└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
-Sampling (4 threads)   0%|                              |  ETA: N/A
-Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:15
-ERROR: LoadError: TaskFailedException
-
-    nested task error: TaskFailedException
-    
-        nested task error: BoundsError: attempt to access 2×2 Matrix{Float64} at index [1, [2.0, 3.0, 4.0, 5.0, 7.0, 8.0, 9.0, 10.0, 12.0, 13.0  …  1922.0, 1923.0, 1924.0, 1925.0, 1926.0, 1927.0, 1928.0, 1929.0, 1930.0, 1931.0]]
-        Stacktrace:
-          [1] throw_boundserror(A::Matrix{Float64}, I::Tuple{Int64, Vector{Float64}})
-            @ Base ./abstractarray.jl:737
-          [2] checkbounds
-            @ ./abstractarray.jl:702 [inlined]
-          [3] _getindex
-            @ ./multidimensional.jl:888 [inlined]
-          [4] getindex
-            @ ./abstractarray.jl:1291 [inlined]
-          [5] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, ePNP::Vector{Float64}, ζ::Float64)
-            @ Main ~/BC4/Bayes/experiments/partial_pool_Participant/model.jl:80
-          [6] _evaluate!!
-            @ ~/.julia/packages/DynamicPPL/E4kDs/src/model.jl:963 [inlined]
-          [7] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/E4kDs/src/model.jl:952
-          [8] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/E4kDs/src/model.jl:887
-          [9] evaluate!!
-            @ ~/.julia/packages/DynamicPPL/E4kDs/src/model.jl:900 [inlined]
-         [10] Model
-            @ ~/.julia/packages/DynamicPPL/E4kDs/src/model.jl:860 [inlined]
-         [11] VarInfo
-            @ ~/.julia/packages/DynamicPPL/E4kDs/src/varinfo.jl:129 [inlined]
-         [12] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/E4kDs/src/sampler.jl:80 [inlined]
-         [13] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/E4kDs/src/sampler.jl:71 [inlined]
-         [14] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{nothing, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/E4kDs/src/sampler.jl:103
-         [15] step
-            @ ~/.julia/packages/DynamicPPL/E4kDs/src/sampler.jl:99 [inlined]
-         [16] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:130 [inlined]
-         [17] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:16 [inlined]
-         [18] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{nothing, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
-            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:120
-         [19] mcmcsample
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:98 [inlined]
-         [20] #sample#30
-            @ ~/.julia/packages/Turing/IyijE/src/mcmc/hmc.jl:117 [inlined]
-         [21] sample
-            @ ~/.julia/packages/Turing/IyijE/src/mcmc/hmc.jl:86 [inlined]
-         [22] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{nothing, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
-            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:390
-    
-    ...and 3 more exceptions.
-    
-    Stacktrace:
-     [1] sync_end(c::Channel{Any})
-       @ Base ./task.jl:448
-     [2] macro expansion
-       @ ./task.jl:480 [inlined]
-     [3] (::AbstractMCMC.var"#36#49"{Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{nothing, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, Int64, Int64})()
-       @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:364
-Stacktrace:
-  [1] sync_end(c::Channel{Any})
-    @ Base ./task.jl:448
-  [2] macro expansion
-    @ ./task.jl:480 [inlined]
-  [3] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:342 [inlined]
-  [4] macro expansion
-    @ ~/.julia/packages/ProgressLogging/6KXlp/src/ProgressLogging.jl:328 [inlined]
-  [5] (::AbstractMCMC.var"#34#47"{Bool, String, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{nothing, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, UnitRange{Int64}, Int64, Int64})()
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:12
-  [6] with_logstate(f::Function, logstate::Any)
-    @ Base.CoreLogging ./logging.jl:515
-  [7] with_logger(f::Function, logger::LoggingExtras.TeeLogger{Tuple{LoggingExtras.EarlyFilteredLogger{TerminalLoggers.TerminalLogger, AbstractMCMC.var"#1#3"{Module}}, LoggingExtras.EarlyFilteredLogger{ConsoleLogger, AbstractMCMC.var"#2#4"{Module}}}})
-    @ Base.CoreLogging ./logging.jl:627
-  [8] with_progresslogger(f::Function, _module::Module, logger::ConsoleLogger)
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:36
-  [9] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:11 [inlined]
- [10] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{nothing, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ::MCMCThreads, N::Int64, nchains::Int64; progress::Bool, progressname::String, initial_params::Nothing, initial_state::Nothing, kwargs::@Kwargs{chain_type::UnionAll})
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:336
- [11] sample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{nothing, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ensemble::MCMCThreads, N::Int64, n_chains::Int64; chain_type::Type, progress::Bool, kwargs::@Kwargs{})
-    @ Turing.Inference ~/.julia/packages/Turing/IyijE/src/mcmc/Inference.jl:302
- [12] sample
-    @ ~/.julia/packages/Turing/IyijE/src/mcmc/Inference.jl:291 [inlined]
- [13] #sample#6
-    @ ~/.julia/packages/Turing/IyijE/src/mcmc/Inference.jl:287 [inlined]
- [14] sample
-    @ ~/.julia/packages/Turing/IyijE/src/mcmc/Inference.jl:278 [inlined]
- [15] #sample#5
-    @ ~/.julia/packages/Turing/IyijE/src/mcmc/Inference.jl:274 [inlined]
- [16] sample(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :ePNP, :ζ), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64}, Tuple{}, DynamicPPL.DefaultContext}, alg::NUTS{AutoForwardDiff{nothing, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}, ensemble::MCMCThreads, N::Int64, n_chains::Int64)
-    @ Turing.Inference ~/.julia/packages/Turing/IyijE/src/mcmc/Inference.jl:266
- [17] top-level scope
-    @ ~/BC4/Bayes/experiments/partial_pool_Participant/model.jl:98
-in expression starting at /user/home/em18564/BC4/Bayes/experiments/partial_pool_Participant/model.jl:98
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+slurmstepd: error: *** JOB 10050419 ON compute205 CANCELLED AT 2024-06-13T21:34:35 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10050420 ON compute224 CANCELLED AT 2024-06-13T21:35:06 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10050421 ON compute131 CANCELLED AT 2024-06-13T21:35:36 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10050426 ON compute500 CANCELLED AT 2024-06-13T21:36:06 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10050424 ON compute431 CANCELLED AT 2024-06-13T21:36:06 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10050427 ON compute505 CANCELLED AT 2024-06-13T21:36:06 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10050425 ON compute443 CANCELLED AT 2024-06-13T21:36:06 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10050423 ON compute362 CANCELLED AT 2024-06-13T21:36:06 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10050422 ON compute130 CANCELLED AT 2024-06-13T21:36:06 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10050100 ON compute169 CANCELLED AT 2024-06-13T21:37:06 DUE TO TIME LIMIT ***
