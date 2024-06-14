@@ -51,7 +51,7 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 end
 
 chain = deserialize("output/out.jls")
-df = CSV.read("../../input/dfHierarchical.csv", DataFrame)
+df = CSV.read("../../../input/dfHierarchical.csv", DataFrame)
 df_modified_1 = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
 df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
 mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.Tags,df_modified.EPNP)

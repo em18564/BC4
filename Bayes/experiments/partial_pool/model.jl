@@ -61,12 +61,10 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
     a_e_epnp = ab_e[1,1]
     b_e_epnp = ab_e[2,1]
 
-    σ_t ~ filldist(Exponential(ζ), 2)
-    ρ_t ~ LKJ(2, 2)
-    Σ_t = Symmetric(Diagonal(σ_t) * ρ_t * Diagonal(σ_t))
-    ab_t ~ filldist(MvNormal([0,0], Σ_t),NUM_WORDS)
-    a_t = ab_t[1,Int.(word)]
-    b_t = ab_t[2,Int.(word)]
+    a_ts ~ filldist(Normal(0,ζ),NUM_WORDS)
+    b_ts ~ filldist(Normal(0,ζ),NUM_WORDS)
+    a_t = a_ts[Int.(word)]
+    b_t = a_ts[Int.(word)]
 
 
     μ_epnp = @. a_w + a_p + a_e_epnp + a_t + ((b_w + b_p + b_e_epnp + b_t) * surprisal)
