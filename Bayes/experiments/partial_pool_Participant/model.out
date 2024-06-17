@@ -1,7 +1,7 @@
 Running on host compute177.bc4.acrc.priv
-Time is Sat Jun 15 00:01:56 BST 2024
+Time is Mon Jun 17 14:52:13 BST 2024
 Directory is /user/home/em18564/BC4/Bayes/experiments/partial_pool_Participant
-Slurm job ID is 10055076
+Slurm job ID is 10059271
 This job runs on the following machines:
 compute177
    Resolving package versions...
@@ -49,13 +49,3 @@ compute177
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-slurmstepd: error: *** JOB 10055422 ON highmem16 CANCELLED AT 2024-06-15T04:12:11 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10055423 ON highmem17 CANCELLED AT 2024-06-15T04:12:11 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10055427 ON highmem11 CANCELLED AT 2024-06-15T04:20:11 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10055428 ON compute321 CANCELLED AT 2024-06-15T04:25:10 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10055429 ON compute520 CANCELLED AT 2024-06-15T04:25:10 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10055430 ON compute261 CANCELLED AT 2024-06-15T04:26:10 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10055438 ON highmem12 CANCELLED AT 2024-06-15T05:20:11 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10055440 ON highmem14 CANCELLED AT 2024-06-15T05:24:11 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10055442 ON highmem13 CANCELLED AT 2024-06-15T05:32:11 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10055076 ON compute177 CANCELLED AT 2024-06-15T06:02:13 DUE TO TIME LIMIT ***

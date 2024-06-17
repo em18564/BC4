@@ -35,8 +35,8 @@ using LinearAlgebra
 using ParetoSmooth
 using JLD2
 NUM_SENTENCES = 205
-NUM_PARTICIPANTS = 12
-NUM_WORDS = 1931
+NUM_PARTICIPANTS = 8
+NUM_WORDS = 800
 NUM_TYPES = 2
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 @model function model(participant,word,surprisal,tags,ePNP,	ζ) #NGRAM surprisal LOO
