@@ -1,9 +1,9 @@
-Running on host compute223.bc4.acrc.priv
-Time is Thu Jun 13 15:33:18 BST 2024
+Running on host highmem10.bc4.acrc.priv
+Time is Fri Jun 14 22:11:56 BST 2024
 Directory is /user/home/em18564/BC4/Bayes/experiments/partial_pool
-Slurm job ID is 10050096
+Slurm job ID is 10055421
 This job runs on the following machines:
-compute223
+highmem10
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
@@ -94,13 +94,9 @@ compute223
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-slurmstepd: error: *** JOB 10050098 ON highmem16 CANCELLED AT 2024-06-13T18:18:02 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10050097 ON highmem15 CANCELLED AT 2024-06-13T18:18:02 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10050099 ON highmem17 CANCELLED AT 2024-06-13T18:18:02 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10050105 ON compute095 CANCELLED AT 2024-06-13T18:24:31 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10050107 ON compute321 CANCELLED AT 2024-06-13T18:25:31 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10050108 ON compute520 CANCELLED AT 2024-06-13T18:25:31 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10050246 ON compute434 CANCELLED AT 2024-06-13T20:22:04 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10050245 ON compute231 CANCELLED AT 2024-06-13T20:22:04 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10050408 ON compute432 CANCELLED AT 2024-06-13T21:33:05 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 10050096 ON compute223 CANCELLED AT 2024-06-13T21:33:36 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10055087 ON compute261 CANCELLED AT 2024-06-14T22:24:05 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10055088 ON compute321 CANCELLED AT 2024-06-14T22:24:05 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10055089 ON compute520 CANCELLED AT 2024-06-14T22:24:05 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10055324 ON compute177 CANCELLED AT 2024-06-15T00:00:05 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10055421 ON highmem10 CANCELLED AT 2024-06-15T04:12:11 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10055074 ON highmem15 CANCELLED AT 2024-06-15T04:12:11 DUE TO TIME LIMIT ***
