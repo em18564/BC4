@@ -213,3 +213,337 @@ Stacktrace:
  [9] top-level scope
    @ ~/BC4/Bayes/experiments/partial_pool/model.jl:89
 in expression starting at /user/home/em18564/BC4/Bayes/experiments/partial_pool/model.jl:89
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.003125
+┌ Info: Found initial step size
+└   ϵ = 0.025
+Sampling (4 threads)  25%|███████▌                      |  ETA: 10:26:59
+Sampling (4 threads)  50%|███████████████               |  ETA: 3:29:41
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:10:49
+Sampling (4 threads) 100%|██████████████████████████████| Time: 3:42:21
+Sampling (4 threads) 100%|██████████████████████████████| Time: 3:42:22
+[ Info: No source provided for samples; variables are assumed to be from a Markov Chain. If the samples are independent, specify this with keyword argument `source=:other`.
+ERROR: LoadError: ArgumentError: Unsupported Compressor
+Supported Compressors are 
+	JLD2.ShuffleFilter
+	CodecBzip2.Bzip2Compressor
+	CodecLz4.LZ4FrameCompressor
+	CodecZlib.ZlibCompressor
+Stacktrace:
+ [1] verify_compressor
+   @ ~/.julia/packages/JLD2/twZ5D/src/compression.jl:77 [inlined]
+ [2] jldopen(fname::String, wr::Bool, create::Bool, truncate::Bool, iotype::Type{JLD2.MmapIO}; fallback::Type{IOStream}, compress::Chains{Float64, AxisArrays.AxisArray{Float64, 3, Array{Float64, 3}, Tuple{AxisArrays.Axis{:iter, StepRange{Int64, Int64}}, AxisArrays.Axis{:var, Vector{Symbol}}, AxisArrays.Axis{:chain, UnitRange{Int64}}}}, Missing, @NamedTuple{parameters::Vector{Symbol}, internals::Vector{Symbol}}, @NamedTuple{varname_to_symbol::OrderedCollections.OrderedDict{AbstractPPL.VarName, Symbol}, start_time::Vector{Float64}, stop_time::Vector{Float64}}}, mmaparrays::Bool, typemap::Dict{String, Any}, parallel_read::Bool)
+   @ JLD2 ~/.julia/packages/JLD2/twZ5D/src/JLD2.jl:320
+ [3] jldopen
+   @ ~/.julia/packages/JLD2/twZ5D/src/JLD2.jl:312 [inlined]
+ [4] #jldopen#14
+   @ ~/.julia/packages/JLD2/twZ5D/src/JLD2.jl:455 [inlined]
+ [5] jldopen
+   @ ~/.julia/packages/JLD2/twZ5D/src/JLD2.jl:449 [inlined]
+ [6] jldsave(filename::String, compress::Chains{Float64, AxisArrays.AxisArray{Float64, 3, Array{Float64, 3}, Tuple{AxisArrays.Axis{:iter, StepRange{Int64, Int64}}, AxisArrays.Axis{:var, Vector{Symbol}}, AxisArrays.Axis{:chain, UnitRange{Int64}}}}, Missing, @NamedTuple{parameters::Vector{Symbol}, internals::Vector{Symbol}}, @NamedTuple{varname_to_symbol::OrderedCollections.OrderedDict{AbstractPPL.VarName, Symbol}, start_time::Vector{Float64}, stop_time::Vector{Float64}}}, iotype::Type{JLD2.MmapIO}; kwargs::@Kwargs{})
+   @ JLD2 ~/.julia/packages/JLD2/twZ5D/src/loadsave.jl:272
+ [7] jldsave
+   @ ~/.julia/packages/JLD2/twZ5D/src/loadsave.jl:269 [inlined]
+ [8] jldsave(filename::String, compress::Chains{Float64, AxisArrays.AxisArray{Float64, 3, Array{Float64, 3}, Tuple{AxisArrays.Axis{:iter, StepRange{Int64, Int64}}, AxisArrays.Axis{:var, Vector{Symbol}}, AxisArrays.Axis{:chain, UnitRange{Int64}}}}, Missing, @NamedTuple{parameters::Vector{Symbol}, internals::Vector{Symbol}}, @NamedTuple{varname_to_symbol::OrderedCollections.OrderedDict{AbstractPPL.VarName, Symbol}, start_time::Vector{Float64}, stop_time::Vector{Float64}}})
+   @ JLD2 ~/.julia/packages/JLD2/twZ5D/src/loadsave.jl:269
+ [9] top-level scope
+   @ ~/BC4/Bayes/experiments/partial_pool/model.jl:89
+in expression starting at /user/home/em18564/BC4/Bayes/experiments/partial_pool/model.jl:89
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.0054687500000000005
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.003125
+Sampling (4 threads)  25%|███████▌                      |  ETA: 11:32:19
+Sampling (4 threads)  50%|███████████████               |  ETA: 3:50:46
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:17:00
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:02:46
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:02:47
+[ Info: No source provided for samples; variables are assumed to be from a Markov Chain. If the samples are independent, specify this with keyword argument `source=:other`.
+ERROR: LoadError: ArgumentError: Unsupported Compressor
+Supported Compressors are 
+	JLD2.ShuffleFilter
+	CodecBzip2.Bzip2Compressor
+	CodecLz4.LZ4FrameCompressor
+	CodecZlib.ZlibCompressor
+Stacktrace:
+ [1] verify_compressor
+   @ ~/.julia/packages/JLD2/twZ5D/src/compression.jl:77 [inlined]
+ [2] jldopen(fname::String, wr::Bool, create::Bool, truncate::Bool, iotype::Type{JLD2.MmapIO}; fallback::Type{IOStream}, compress::Chains{Float64, AxisArrays.AxisArray{Float64, 3, Array{Float64, 3}, Tuple{AxisArrays.Axis{:iter, StepRange{Int64, Int64}}, AxisArrays.Axis{:var, Vector{Symbol}}, AxisArrays.Axis{:chain, UnitRange{Int64}}}}, Missing, @NamedTuple{parameters::Vector{Symbol}, internals::Vector{Symbol}}, @NamedTuple{varname_to_symbol::OrderedCollections.OrderedDict{AbstractPPL.VarName, Symbol}, start_time::Vector{Float64}, stop_time::Vector{Float64}}}, mmaparrays::Bool, typemap::Dict{String, Any}, parallel_read::Bool)
+   @ JLD2 ~/.julia/packages/JLD2/twZ5D/src/JLD2.jl:320
+ [3] jldopen
+   @ ~/.julia/packages/JLD2/twZ5D/src/JLD2.jl:312 [inlined]
+ [4] #jldopen#14
+   @ ~/.julia/packages/JLD2/twZ5D/src/JLD2.jl:455 [inlined]
+ [5] jldopen
+   @ ~/.julia/packages/JLD2/twZ5D/src/JLD2.jl:449 [inlined]
+ [6] jldsave(filename::String, compress::Chains{Float64, AxisArrays.AxisArray{Float64, 3, Array{Float64, 3}, Tuple{AxisArrays.Axis{:iter, StepRange{Int64, Int64}}, AxisArrays.Axis{:var, Vector{Symbol}}, AxisArrays.Axis{:chain, UnitRange{Int64}}}}, Missing, @NamedTuple{parameters::Vector{Symbol}, internals::Vector{Symbol}}, @NamedTuple{varname_to_symbol::OrderedCollections.OrderedDict{AbstractPPL.VarName, Symbol}, start_time::Vector{Float64}, stop_time::Vector{Float64}}}, iotype::Type{JLD2.MmapIO}; kwargs::@Kwargs{})
+   @ JLD2 ~/.julia/packages/JLD2/twZ5D/src/loadsave.jl:272
+ [7] jldsave
+   @ ~/.julia/packages/JLD2/twZ5D/src/loadsave.jl:269 [inlined]
+ [8] jldsave(filename::String, compress::Chains{Float64, AxisArrays.AxisArray{Float64, 3, Array{Float64, 3}, Tuple{AxisArrays.Axis{:iter, StepRange{Int64, Int64}}, AxisArrays.Axis{:var, Vector{Symbol}}, AxisArrays.Axis{:chain, UnitRange{Int64}}}}, Missing, @NamedTuple{parameters::Vector{Symbol}, internals::Vector{Symbol}}, @NamedTuple{varname_to_symbol::OrderedCollections.OrderedDict{AbstractPPL.VarName, Symbol}, start_time::Vector{Float64}, stop_time::Vector{Float64}}})
+   @ JLD2 ~/.julia/packages/JLD2/twZ5D/src/loadsave.jl:269
+ [9] top-level scope
+   @ ~/BC4/Bayes/experiments/partial_pool/model.jl:89
+in expression starting at /user/home/em18564/BC4/Bayes/experiments/partial_pool/model.jl:89
+slurmstepd: error: *** JOB 10059179 ON highmem16 CANCELLED AT 2024-06-17T19:14:22 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10059180 ON highmem17 CANCELLED AT 2024-06-17T19:14:22 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10059176 ON highmem12 CANCELLED AT 2024-06-17T19:14:22 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10059261 ON highmem11 CANCELLED AT 2024-06-17T20:46:55 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10059262 ON compute321 CANCELLED AT 2024-06-17T20:48:25 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10059144 ON compute261 CANCELLED AT 2024-06-17T20:51:56 DUE TO TIME LIMIT ***
