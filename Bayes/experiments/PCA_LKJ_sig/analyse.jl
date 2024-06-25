@@ -21,12 +21,12 @@ function HDI(data)
     m = mean(data)
     return m,l,u
 end
-chn = deserialize("output/out1.jls")
+chn = deserialize("output/out6.jls")
 ess_rhat_df = DataFrame(ess_rhat(chn))
 xs = ess_rhat_df[!,"rhat"]
 ys = ess_rhat_df[!,"ess"]
 Plots.scatter(xs, ys, xlabel = "rhat", ylabel = "ess", legend=false)
-Plots.savefig("output/essRhat1.png")
+Plots.savefig("output/essRhat6.png")
 # #df = CSV.read("savedData/df_2.csv", DataFrame)
 # chn = deserialize("output/out1.jls")
 # chn_ss = DataFrame(summarystats(chn))
@@ -49,7 +49,7 @@ p = PlotlyJS.plot(box(
     lowerfence=[l1, l2],
     upperfence=[u1, u2]
 ))
-PlotlyJS.savefig(p,"output/dif1.png")
+PlotlyJS.savefig(p,"output/dif6.png")
 # density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
 # savefig("output2/dif1.png")
 
