@@ -1,9 +1,16 @@
-Running on host highmem15.bc4.acrc.priv
-Time is Tue Jun 25 15:13:17 BST 2024
+Running on host highmem13.bc4.acrc.priv
+Running on host highmem16.bc4.acrc.priv
+Time is Wed Jun 26 15:34:45 BST 2024
+Time is Wed Jun 26 15:34:45 BST 2024
 Directory is /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig
-Slurm job ID is 10070863
+Directory is /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig
+Slurm job ID is 10073308
+Slurm job ID is 10073010
 This job runs on the following machines:
-highmem15
+This job runs on the following machines:
+highmem13
+highmem16
+    Updating registry at `~/.julia/registries/General.toml`
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
@@ -46,234 +53,187 @@ highmem15
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
+│   exception =
+│    LoadError: UndefVarError: `TuringOptimExt` not defined
+│    Stacktrace:
+│      [1] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [2] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [3] top-level scope
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+│      [4] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│      [5] include(x::String)
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
+│      [6] top-level scope
+│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
+│      [7] eval
+│        @ ./boot.jl:385 [inlined]
+│      [8] eval
+│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
+│      [9] (::StatisticalRethinking.var"#3#12")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
+│     [10] macro expansion
+│        @ timing.jl:395 [inlined]
+│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
+│     [12] (::StatisticalRethinking.var"#2#11")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
+│     [13] withpath(f::Any, path::String)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
+│     [14] (::StatisticalRethinking.var"#1#10")()
+│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
+│     [15] listenpkg(f::Any, pkg::Base.PkgId)
+│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
+│     [16] macro expansion
+│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
+│     [17] __init__()
+│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
+│     [18] run_module_init(mod::Module, i::Int64)
+│        @ Base ./loading.jl:1134
+│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
+│        @ Base ./loading.jl:1122
+│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1067
+│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1581
+│     [22] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1938
+│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1812
+│     [24] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [25] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1803
+│     [27] macro expansion
+│        @ ./loading.jl:1790 [inlined]
+│     [28] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [29] __require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1753
+│     [30] #invoke_in_world#3
+│        @ ./essentials.jl:926 [inlined]
+│     [31] invoke_in_world
+│        @ ./essentials.jl:923 [inlined]
+│     [32] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1746
+│     [33] include(mod::Module, _path::String)
+│        @ Base ./Base.jl:495
+│     [34] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:318
+│     [35] _start()
+│        @ Base ./client.jl:552
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
+│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
+└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:13
+ERROR: LoadError: TaskFailedException
+
+    nested task error: TaskFailedException
+    
+        nested task error: DomainError with -0.4109559994941464:
+        Normal: the condition σ >= zero(σ) is not satisfied.
+        Stacktrace:
+          [1] #371
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:37 [inlined]
+          [2] check_args
+            @ ~/.julia/packages/Distributions/ji8PW/src/utils.jl:89 [inlined]
+          [3] #Normal#370
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:37 [inlined]
+          [4] Normal
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:36 [inlined]
+          [5] macro expansion
+            @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:72 [inlined]
+          [6] macro expansion
+            @ ~/.julia/packages/DynamicPPL/rXg4T/src/compiler.jl:555 [inlined]
+          [7] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
+            @ Main ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:70
+          [8] _evaluate!!
+            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:963 [inlined]
+          [9] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
+            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:952
+         [10] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
+            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:887
+         [11] evaluate!!
+            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:900 [inlined]
+         [12] Model
+            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:860 [inlined]
+         [13] VarInfo
+            @ ~/.julia/packages/DynamicPPL/rXg4T/src/varinfo.jl:129 [inlined]
+         [14] default_varinfo
+            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:80 [inlined]
+         [15] default_varinfo
+            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:71 [inlined]
+         [16] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
+            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:103
+         [17] step
+            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:99 [inlined]
+         [18] macro expansion
+            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:130 [inlined]
+         [19] macro expansion
+            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:16 [inlined]
+         [20] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
+            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:120
+         [21] mcmcsample
+            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:98 [inlined]
+         [22] #sample#29
+            @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:117 [inlined]
+         [23] sample
+            @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:86 [inlined]
+         [24] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
+            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:390
+    
+    ...and 3 more exceptions.
+    
+    Stacktrace:
+     [1] sync_end(c::Channel{Any})
+       @ Base ./task.jl:448
+     [2] macro expansion
+       @ ./task.jl:480 [inlined]
+     [3] (::AbstractMCMC.var"#36#49"{Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, Int64, Int64})()
+       @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:364
+Stacktrace:
+  [1] sync_end(c::Channel{Any})
+    @ Base ./task.jl:448
+  [2] macro expansion
+    @ ./task.jl:480 [inlined]
+  [3] macro expansion
+    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:342 [inlined]
+  [4] macro expansion
+    @ ~/.julia/packages/ProgressLogging/6KXlp/src/ProgressLogging.jl:328 [inlined]
+  [5] (::AbstractMCMC.var"#34#47"{Bool, String, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, UnitRange{Int64}, Int64, Int64})()
+    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:12
+  [6] with_logstate(f::Function, logstate::Any)
+    @ Base.CoreLogging ./logging.jl:515
+  [7] with_logger(f::Function, logger::LoggingExtras.TeeLogger{Tuple{LoggingExtras.EarlyFilteredLogger{TerminalLoggers.TerminalLogger, AbstractMCMC.var"#1#3"{Module}}, LoggingExtras.EarlyFilteredLogger{ConsoleLogger, AbstractMCMC.var"#2#4"{Module}}}})
+    @ Base.CoreLogging ./logging.jl:627
+  [8] with_progresslogger(f::Function, _module::Module, logger::ConsoleLogger)
+    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:36
+  [9] macro expansion
+    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:11 [inlined]
+ [10] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ::MCMCThreads, N::Int64, nchains::Int64; progress::Bool, progressname::String, initial_params::Nothing, initial_state::Nothing, kwargs::@Kwargs{chain_type::UnionAll})
+    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:336
+ [11] sample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ensemble::MCMCThreads, N::Int64, n_chains::Int64; chain_type::Type, progress::Bool, kwargs::@Kwargs{})
+    @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:258
+ [12] sample
+    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:247 [inlined]
+ [13] #sample#5
+    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:243 [inlined]
+ [14] sample
+    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:234 [inlined]
+ [15] #sample#4
+    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:230 [inlined]
+ [16] sample(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, alg::NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}, ensemble::MCMCThreads, N::Int64, n_chains::Int64)
+    @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:222
+ [17] top-level scope
+    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:91
+in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:91
+    Updating registry at `~/.julia/registries/General.toml`
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
@@ -399,56 +359,56 @@ ERROR: LoadError: TaskFailedException
 
     nested task error: TaskFailedException
     
-        nested task error: MethodError: no method matching +(::Float64, ::Vector{Float64})
-        For element-wise addition, use broadcasting with dot syntax: scalar .+ array
-        
-        Closest candidates are:
-          +(::Any, ::Any, !Matched::Any, !Matched::Any...)
-           @ Base operators.jl:587
-          +(!Matched::ChainRulesCore.ZeroTangent, ::Any)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:99
-          +(::Any, !Matched::ChainRulesCore.NoTangent)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:60
-          ...
-        
+        nested task error: DomainError with -0.029501973288334184:
+        Normal: the condition σ >= zero(σ) is not satisfied.
         Stacktrace:
-          [1] macro expansion
+          [1] #371
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:37 [inlined]
+          [2] check_args
+            @ ~/.julia/packages/Distributions/ji8PW/src/utils.jl:89 [inlined]
+          [3] #Normal#370
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:37 [inlined]
+          [4] Normal
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:36 [inlined]
+          [5] macro expansion
+            @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:72 [inlined]
+          [6] macro expansion
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/compiler.jl:555 [inlined]
-          [2] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
+          [7] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
             @ Main ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:70
-          [3] _evaluate!!
+          [8] _evaluate!!
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:963 [inlined]
-          [4] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
+          [9] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
             @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:952
-          [5] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
+         [10] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
             @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:887
-          [6] evaluate!!
+         [11] evaluate!!
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:900 [inlined]
-          [7] Model
+         [12] Model
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:860 [inlined]
-          [8] VarInfo
+         [13] VarInfo
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/varinfo.jl:129 [inlined]
-          [9] default_varinfo
+         [14] default_varinfo
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:80 [inlined]
-         [10] default_varinfo
+         [15] default_varinfo
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:71 [inlined]
-         [11] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
+         [16] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
             @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:103
-         [12] step
+         [17] step
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:99 [inlined]
-         [13] macro expansion
+         [18] macro expansion
             @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:130 [inlined]
-         [14] macro expansion
+         [19] macro expansion
             @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:16 [inlined]
-         [15] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
+         [20] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
             @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:120
-         [16] mcmcsample
+         [21] mcmcsample
             @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:98 [inlined]
-         [17] #sample#29
+         [22] #sample#29
             @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:117 [inlined]
-         [18] sample
+         [23] sample
             @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:86 [inlined]
-         [19] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
+         [24] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
             @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:390
     
     ...and 3 more exceptions.
@@ -494,8 +454,101 @@ Stacktrace:
  [16] sample(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, alg::NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}, ensemble::MCMCThreads, N::Int64, n_chains::Int64)
     @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:222
  [17] top-level scope
-    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
-in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
+    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:91
+in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:91
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+    Updating registry at `~/.julia/registries/General.toml`
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
@@ -616,61 +669,61 @@ in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_si
 │    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
 └ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
 Sampling (4 threads)   0%|                              |  ETA: N/A
-Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:12
+Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:13
 ERROR: LoadError: TaskFailedException
 
     nested task error: TaskFailedException
     
-        nested task error: MethodError: no method matching +(::Float64, ::Vector{Float64})
-        For element-wise addition, use broadcasting with dot syntax: scalar .+ array
-        
-        Closest candidates are:
-          +(::Any, ::Any, !Matched::Any, !Matched::Any...)
-           @ Base operators.jl:587
-          +(!Matched::ChainRulesCore.ZeroTangent, ::Any)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:99
-          +(::Any, !Matched::ChainRulesCore.NoTangent)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:60
-          ...
-        
+        nested task error: DomainError with -2.019953879547947:
+        Normal: the condition σ >= zero(σ) is not satisfied.
         Stacktrace:
-          [1] macro expansion
+          [1] #371
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:37 [inlined]
+          [2] check_args
+            @ ~/.julia/packages/Distributions/ji8PW/src/utils.jl:89 [inlined]
+          [3] #Normal#370
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:37 [inlined]
+          [4] Normal
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:36 [inlined]
+          [5] macro expansion
+            @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:72 [inlined]
+          [6] macro expansion
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/compiler.jl:555 [inlined]
-          [2] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
+          [7] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
             @ Main ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:70
-          [3] _evaluate!!
+          [8] _evaluate!!
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:963 [inlined]
-          [4] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
+          [9] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
             @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:952
-          [5] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
+         [10] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
             @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:887
-          [6] evaluate!!
+         [11] evaluate!!
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:900 [inlined]
-          [7] Model
+         [12] Model
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:860 [inlined]
-          [8] VarInfo
+         [13] VarInfo
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/varinfo.jl:129 [inlined]
-          [9] default_varinfo
+         [14] default_varinfo
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:80 [inlined]
-         [10] default_varinfo
+         [15] default_varinfo
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:71 [inlined]
-         [11] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
+         [16] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
             @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:103
-         [12] step
+         [17] step
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:99 [inlined]
-         [13] macro expansion
+         [18] macro expansion
             @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:130 [inlined]
-         [14] macro expansion
+         [19] macro expansion
             @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:16 [inlined]
-         [15] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
+         [20] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
             @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:120
-         [16] mcmcsample
+         [21] mcmcsample
             @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:98 [inlined]
-         [17] #sample#29
+         [22] #sample#29
             @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:117 [inlined]
-         [18] sample
+         [23] sample
             @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:86 [inlined]
-         [19] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
+         [24] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
             @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:390
     
     ...and 3 more exceptions.
@@ -716,8 +769,9 @@ Stacktrace:
  [16] sample(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, alg::NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}, ensemble::MCMCThreads, N::Int64, n_chains::Int64)
     @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:222
  [17] top-level scope
-    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
-in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
+    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:91
+in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:91
+    Updating registry at `~/.julia/registries/General.toml`
    Resolving package versions...
   No Changes to `~/.julia/environments/v1.10/Project.toml`
   No Changes to `~/.julia/environments/v1.10/Manifest.toml`
@@ -838,61 +892,61 @@ in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_si
 │    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
 └ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
 Sampling (4 threads)   0%|                              |  ETA: N/A
-Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:12
+Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:13
 ERROR: LoadError: TaskFailedException
 
     nested task error: TaskFailedException
     
-        nested task error: MethodError: no method matching +(::Float64, ::Vector{Float64})
-        For element-wise addition, use broadcasting with dot syntax: scalar .+ array
-        
-        Closest candidates are:
-          +(::Any, ::Any, !Matched::Any, !Matched::Any...)
-           @ Base operators.jl:587
-          +(!Matched::ChainRulesCore.ZeroTangent, ::Any)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:99
-          +(::Any, !Matched::ChainRulesCore.NoTangent)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:60
-          ...
-        
+        nested task error: DomainError with -0.1922785570028633:
+        Normal: the condition σ >= zero(σ) is not satisfied.
         Stacktrace:
-          [1] macro expansion
+          [1] #371
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:37 [inlined]
+          [2] check_args
+            @ ~/.julia/packages/Distributions/ji8PW/src/utils.jl:89 [inlined]
+          [3] #Normal#370
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:37 [inlined]
+          [4] Normal
+            @ ~/.julia/packages/Distributions/ji8PW/src/univariate/continuous/normal.jl:36 [inlined]
+          [5] macro expansion
+            @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:72 [inlined]
+          [6] macro expansion
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/compiler.jl:555 [inlined]
-          [2] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
+          [7] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
             @ Main ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:70
-          [3] _evaluate!!
+          [8] _evaluate!!
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:963 [inlined]
-          [4] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
+          [9] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
             @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:952
-          [5] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
+         [10] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
             @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:887
-          [6] evaluate!!
+         [11] evaluate!!
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:900 [inlined]
-          [7] Model
+         [12] Model
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:860 [inlined]
-          [8] VarInfo
+         [13] VarInfo
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/varinfo.jl:129 [inlined]
-          [9] default_varinfo
+         [14] default_varinfo
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:80 [inlined]
-         [10] default_varinfo
+         [15] default_varinfo
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:71 [inlined]
-         [11] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
+         [16] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
             @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:103
-         [12] step
+         [17] step
             @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:99 [inlined]
-         [13] macro expansion
+         [18] macro expansion
             @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:130 [inlined]
-         [14] macro expansion
+         [19] macro expansion
             @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:16 [inlined]
-         [15] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
+         [20] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
             @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:120
-         [16] mcmcsample
+         [21] mcmcsample
             @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:98 [inlined]
-         [17] #sample#29
+         [22] #sample#29
             @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:117 [inlined]
-         [18] sample
+         [23] sample
             @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:86 [inlined]
-         [19] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
+         [24] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
             @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:390
     
     ...and 3 more exceptions.
@@ -938,671 +992,5 @@ Stacktrace:
  [16] sample(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, alg::NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}, ensemble::MCMCThreads, N::Int64, n_chains::Int64)
     @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:222
  [17] top-level scope
-    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
-in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
-│   exception =
-│    LoadError: UndefVarError: `TuringOptimExt` not defined
-│    Stacktrace:
-│      [1] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│      [2] include(x::String)
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
-│      [3] top-level scope
-│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
-│      [4] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│      [5] include(x::String)
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
-│      [6] top-level scope
-│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
-│      [7] eval
-│        @ ./boot.jl:385 [inlined]
-│      [8] eval
-│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
-│      [9] (::StatisticalRethinking.var"#3#12")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
-│     [10] macro expansion
-│        @ timing.jl:395 [inlined]
-│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
-│     [12] (::StatisticalRethinking.var"#2#11")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
-│     [13] withpath(f::Any, path::String)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
-│     [14] (::StatisticalRethinking.var"#1#10")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
-│     [15] listenpkg(f::Any, pkg::Base.PkgId)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
-│     [16] macro expansion
-│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
-│     [17] __init__()
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
-│     [18] run_module_init(mod::Module, i::Int64)
-│        @ Base ./loading.jl:1134
-│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
-│        @ Base ./loading.jl:1122
-│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
-│        @ Base ./loading.jl:1067
-│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
-│        @ Base ./loading.jl:1581
-│     [22] _require(pkg::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1938
-│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1812
-│     [24] #invoke_in_world#3
-│        @ ./essentials.jl:926 [inlined]
-│     [25] invoke_in_world
-│        @ ./essentials.jl:923 [inlined]
-│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1803
-│     [27] macro expansion
-│        @ ./loading.jl:1790 [inlined]
-│     [28] macro expansion
-│        @ ./lock.jl:267 [inlined]
-│     [29] __require(into::Module, mod::Symbol)
-│        @ Base ./loading.jl:1753
-│     [30] #invoke_in_world#3
-│        @ ./essentials.jl:926 [inlined]
-│     [31] invoke_in_world
-│        @ ./essentials.jl:923 [inlined]
-│     [32] require(into::Module, mod::Symbol)
-│        @ Base ./loading.jl:1746
-│     [33] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│     [34] exec_options(opts::Base.JLOptions)
-│        @ Base ./client.jl:318
-│     [35] _start()
-│        @ Base ./client.jl:552
-│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
-│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
-└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
-Sampling (4 threads)   0%|                              |  ETA: N/A
-Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:12
-ERROR: LoadError: TaskFailedException
-
-    nested task error: TaskFailedException
-    
-        nested task error: MethodError: no method matching +(::Float64, ::Vector{Float64})
-        For element-wise addition, use broadcasting with dot syntax: scalar .+ array
-        
-        Closest candidates are:
-          +(::Any, ::Any, !Matched::Any, !Matched::Any...)
-           @ Base operators.jl:587
-          +(!Matched::ChainRulesCore.ZeroTangent, ::Any)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:99
-          +(::Any, !Matched::ChainRulesCore.NoTangent)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:60
-          ...
-        
-        Stacktrace:
-          [1] macro expansion
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/compiler.jl:555 [inlined]
-          [2] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
-            @ Main ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:70
-          [3] _evaluate!!
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:963 [inlined]
-          [4] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:952
-          [5] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:887
-          [6] evaluate!!
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:900 [inlined]
-          [7] Model
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:860 [inlined]
-          [8] VarInfo
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/varinfo.jl:129 [inlined]
-          [9] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:80 [inlined]
-         [10] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:71 [inlined]
-         [11] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:103
-         [12] step
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:99 [inlined]
-         [13] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:130 [inlined]
-         [14] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:16 [inlined]
-         [15] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
-            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:120
-         [16] mcmcsample
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:98 [inlined]
-         [17] #sample#29
-            @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:117 [inlined]
-         [18] sample
-            @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:86 [inlined]
-         [19] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
-            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:390
-    
-    ...and 3 more exceptions.
-    
-    Stacktrace:
-     [1] sync_end(c::Channel{Any})
-       @ Base ./task.jl:448
-     [2] macro expansion
-       @ ./task.jl:480 [inlined]
-     [3] (::AbstractMCMC.var"#36#49"{Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, Int64, Int64})()
-       @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:364
-Stacktrace:
-  [1] sync_end(c::Channel{Any})
-    @ Base ./task.jl:448
-  [2] macro expansion
-    @ ./task.jl:480 [inlined]
-  [3] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:342 [inlined]
-  [4] macro expansion
-    @ ~/.julia/packages/ProgressLogging/6KXlp/src/ProgressLogging.jl:328 [inlined]
-  [5] (::AbstractMCMC.var"#34#47"{Bool, String, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, UnitRange{Int64}, Int64, Int64})()
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:12
-  [6] with_logstate(f::Function, logstate::Any)
-    @ Base.CoreLogging ./logging.jl:515
-  [7] with_logger(f::Function, logger::LoggingExtras.TeeLogger{Tuple{LoggingExtras.EarlyFilteredLogger{TerminalLoggers.TerminalLogger, AbstractMCMC.var"#1#3"{Module}}, LoggingExtras.EarlyFilteredLogger{ConsoleLogger, AbstractMCMC.var"#2#4"{Module}}}})
-    @ Base.CoreLogging ./logging.jl:627
-  [8] with_progresslogger(f::Function, _module::Module, logger::ConsoleLogger)
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:36
-  [9] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:11 [inlined]
- [10] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ::MCMCThreads, N::Int64, nchains::Int64; progress::Bool, progressname::String, initial_params::Nothing, initial_state::Nothing, kwargs::@Kwargs{chain_type::UnionAll})
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:336
- [11] sample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ensemble::MCMCThreads, N::Int64, n_chains::Int64; chain_type::Type, progress::Bool, kwargs::@Kwargs{})
-    @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:258
- [12] sample
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:247 [inlined]
- [13] #sample#5
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:243 [inlined]
- [14] sample
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:234 [inlined]
- [15] #sample#4
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:230 [inlined]
- [16] sample(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, alg::NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}, ensemble::MCMCThreads, N::Int64, n_chains::Int64)
-    @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:222
- [17] top-level scope
-    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
-in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
-│   exception =
-│    LoadError: UndefVarError: `TuringOptimExt` not defined
-│    Stacktrace:
-│      [1] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│      [2] include(x::String)
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
-│      [3] top-level scope
-│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
-│      [4] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│      [5] include(x::String)
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
-│      [6] top-level scope
-│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
-│      [7] eval
-│        @ ./boot.jl:385 [inlined]
-│      [8] eval
-│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
-│      [9] (::StatisticalRethinking.var"#3#12")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
-│     [10] macro expansion
-│        @ timing.jl:395 [inlined]
-│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
-│     [12] (::StatisticalRethinking.var"#2#11")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
-│     [13] withpath(f::Any, path::String)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
-│     [14] (::StatisticalRethinking.var"#1#10")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
-│     [15] listenpkg(f::Any, pkg::Base.PkgId)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
-│     [16] macro expansion
-│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
-│     [17] __init__()
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
-│     [18] run_module_init(mod::Module, i::Int64)
-│        @ Base ./loading.jl:1134
-│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
-│        @ Base ./loading.jl:1122
-│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
-│        @ Base ./loading.jl:1067
-│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
-│        @ Base ./loading.jl:1581
-│     [22] _require(pkg::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1938
-│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1812
-│     [24] #invoke_in_world#3
-│        @ ./essentials.jl:926 [inlined]
-│     [25] invoke_in_world
-│        @ ./essentials.jl:923 [inlined]
-│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1803
-│     [27] macro expansion
-│        @ ./loading.jl:1790 [inlined]
-│     [28] macro expansion
-│        @ ./lock.jl:267 [inlined]
-│     [29] __require(into::Module, mod::Symbol)
-│        @ Base ./loading.jl:1753
-│     [30] #invoke_in_world#3
-│        @ ./essentials.jl:926 [inlined]
-│     [31] invoke_in_world
-│        @ ./essentials.jl:923 [inlined]
-│     [32] require(into::Module, mod::Symbol)
-│        @ Base ./loading.jl:1746
-│     [33] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│     [34] exec_options(opts::Base.JLOptions)
-│        @ Base ./client.jl:318
-│     [35] _start()
-│        @ Base ./client.jl:552
-│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
-│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
-└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
-Sampling (4 threads)   0%|                              |  ETA: N/A
-Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:12
-ERROR: LoadError: TaskFailedException
-
-    nested task error: TaskFailedException
-    
-        nested task error: MethodError: no method matching +(::Float64, ::Vector{Float64})
-        For element-wise addition, use broadcasting with dot syntax: scalar .+ array
-        
-        Closest candidates are:
-          +(::Any, ::Any, !Matched::Any, !Matched::Any...)
-           @ Base operators.jl:587
-          +(!Matched::ChainRulesCore.ZeroTangent, ::Any)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:99
-          +(::Any, !Matched::ChainRulesCore.NoTangent)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:60
-          ...
-        
-        Stacktrace:
-          [1] macro expansion
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/compiler.jl:555 [inlined]
-          [2] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
-            @ Main ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:70
-          [3] _evaluate!!
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:963 [inlined]
-          [4] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:952
-          [5] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:887
-          [6] evaluate!!
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:900 [inlined]
-          [7] Model
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:860 [inlined]
-          [8] VarInfo
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/varinfo.jl:129 [inlined]
-          [9] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:80 [inlined]
-         [10] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:71 [inlined]
-         [11] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:103
-         [12] step
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:99 [inlined]
-         [13] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:130 [inlined]
-         [14] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:16 [inlined]
-         [15] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
-            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:120
-         [16] mcmcsample
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:98 [inlined]
-         [17] #sample#29
-            @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:117 [inlined]
-         [18] sample
-            @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:86 [inlined]
-         [19] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
-            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:390
-    
-    ...and 3 more exceptions.
-    
-    Stacktrace:
-     [1] sync_end(c::Channel{Any})
-       @ Base ./task.jl:448
-     [2] macro expansion
-       @ ./task.jl:480 [inlined]
-     [3] (::AbstractMCMC.var"#36#49"{Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, Int64, Int64})()
-       @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:364
-Stacktrace:
-  [1] sync_end(c::Channel{Any})
-    @ Base ./task.jl:448
-  [2] macro expansion
-    @ ./task.jl:480 [inlined]
-  [3] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:342 [inlined]
-  [4] macro expansion
-    @ ~/.julia/packages/ProgressLogging/6KXlp/src/ProgressLogging.jl:328 [inlined]
-  [5] (::AbstractMCMC.var"#34#47"{Bool, String, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, UnitRange{Int64}, Int64, Int64})()
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:12
-  [6] with_logstate(f::Function, logstate::Any)
-    @ Base.CoreLogging ./logging.jl:515
-  [7] with_logger(f::Function, logger::LoggingExtras.TeeLogger{Tuple{LoggingExtras.EarlyFilteredLogger{TerminalLoggers.TerminalLogger, AbstractMCMC.var"#1#3"{Module}}, LoggingExtras.EarlyFilteredLogger{ConsoleLogger, AbstractMCMC.var"#2#4"{Module}}}})
-    @ Base.CoreLogging ./logging.jl:627
-  [8] with_progresslogger(f::Function, _module::Module, logger::ConsoleLogger)
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:36
-  [9] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:11 [inlined]
- [10] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ::MCMCThreads, N::Int64, nchains::Int64; progress::Bool, progressname::String, initial_params::Nothing, initial_state::Nothing, kwargs::@Kwargs{chain_type::UnionAll})
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:336
- [11] sample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ensemble::MCMCThreads, N::Int64, n_chains::Int64; chain_type::Type, progress::Bool, kwargs::@Kwargs{})
-    @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:258
- [12] sample
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:247 [inlined]
- [13] #sample#5
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:243 [inlined]
- [14] sample
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:234 [inlined]
- [15] #sample#4
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:230 [inlined]
- [16] sample(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, alg::NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}, ensemble::MCMCThreads, N::Int64, n_chains::Int64)
-    @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:222
- [17] top-level scope
-    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
-in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-   Resolving package versions...
-  No Changes to `~/.julia/environments/v1.10/Project.toml`
-  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
-┌ Warning: Error requiring `Turing` from `StatisticalRethinking`
-│   exception =
-│    LoadError: UndefVarError: `TuringOptimExt` not defined
-│    Stacktrace:
-│      [1] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│      [2] include(x::String)
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
-│      [3] top-level scope
-│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
-│      [4] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│      [5] include(x::String)
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1
-│      [6] top-level scope
-│        @ ~/.julia/packages/Requires/Z8rfN/src/Requires.jl:40
-│      [7] eval
-│        @ ./boot.jl:385 [inlined]
-│      [8] eval
-│        @ ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:1 [inlined]
-│      [9] (::StatisticalRethinking.var"#3#12")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:101
-│     [10] macro expansion
-│        @ timing.jl:395 [inlined]
-│     [11] err(f::Any, listener::Module, modname::String, file::String, line::Any)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:47
-│     [12] (::StatisticalRethinking.var"#2#11")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:100
-│     [13] withpath(f::Any, path::String)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:37
-│     [14] (::StatisticalRethinking.var"#1#10")()
-│        @ StatisticalRethinking ~/.julia/packages/Requires/Z8rfN/src/require.jl:99
-│     [15] listenpkg(f::Any, pkg::Base.PkgId)
-│        @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:20
-│     [16] macro expansion
-│        @ ~/.julia/packages/Requires/Z8rfN/src/require.jl:98 [inlined]
-│     [17] __init__()
-│        @ StatisticalRethinking ~/.julia/packages/StatisticalRethinking/Bzph1/src/StatisticalRethinking.jl:31
-│     [18] run_module_init(mod::Module, i::Int64)
-│        @ Base ./loading.jl:1134
-│     [19] register_restored_modules(sv::Core.SimpleVector, pkg::Base.PkgId, path::String)
-│        @ Base ./loading.jl:1122
-│     [20] _include_from_serialized(pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector{Any})
-│        @ Base ./loading.jl:1067
-│     [21] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
-│        @ Base ./loading.jl:1581
-│     [22] _require(pkg::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1938
-│     [23] __require_prelocked(uuidkey::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1812
-│     [24] #invoke_in_world#3
-│        @ ./essentials.jl:926 [inlined]
-│     [25] invoke_in_world
-│        @ ./essentials.jl:923 [inlined]
-│     [26] _require_prelocked(uuidkey::Base.PkgId, env::String)
-│        @ Base ./loading.jl:1803
-│     [27] macro expansion
-│        @ ./loading.jl:1790 [inlined]
-│     [28] macro expansion
-│        @ ./lock.jl:267 [inlined]
-│     [29] __require(into::Module, mod::Symbol)
-│        @ Base ./loading.jl:1753
-│     [30] #invoke_in_world#3
-│        @ ./essentials.jl:926 [inlined]
-│     [31] invoke_in_world
-│        @ ./essentials.jl:923 [inlined]
-│     [32] require(into::Module, mod::Symbol)
-│        @ Base ./loading.jl:1746
-│     [33] include(mod::Module, _path::String)
-│        @ Base ./Base.jl:495
-│     [34] exec_options(opts::Base.JLOptions)
-│        @ Base ./client.jl:318
-│     [35] _start()
-│        @ Base ./client.jl:552
-│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing_optim_sample.jl:3
-│    in expression starting at /user/home/em18564/.julia/packages/StatisticalRethinking/Bzph1/src/require/turing/turing.jl:7
-└ @ Requires ~/.julia/packages/Requires/Z8rfN/src/require.jl:51
-Sampling (4 threads)   0%|                              |  ETA: N/A
-Sampling (4 threads) 100%|██████████████████████████████| Time: 0:00:15
-ERROR: LoadError: TaskFailedException
-
-    nested task error: TaskFailedException
-    
-        nested task error: MethodError: no method matching +(::Float64, ::Vector{Float64})
-        For element-wise addition, use broadcasting with dot syntax: scalar .+ array
-        
-        Closest candidates are:
-          +(::Any, ::Any, !Matched::Any, !Matched::Any...)
-           @ Base operators.jl:587
-          +(!Matched::ChainRulesCore.ZeroTangent, ::Any)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:99
-          +(::Any, !Matched::ChainRulesCore.NoTangent)
-           @ ChainRulesCore ~/.julia/packages/ChainRulesCore/I1EbV/src/tangent_arithmetic.jl:60
-          ...
-        
-        Stacktrace:
-          [1] macro expansion
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/compiler.jl:555 [inlined]
-          [2] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.ThreadSafeVarInfo{DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, Vector{Base.RefValue{Float64}}}, __context__::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64})
-            @ Main ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:70
-          [3] _evaluate!!
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:963 [inlined]
-          [4] evaluate_threadsafe!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:952
-          [5] evaluate!!(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, varinfo::DynamicPPL.UntypedVarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}, Vector{Set{DynamicPPL.Selector}}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromUniform, DynamicPPL.DefaultContext, TaskLocalRNG})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:887
-          [6] evaluate!!
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:900 [inlined]
-          [7] Model
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/model.jl:860 [inlined]
-          [8] VarInfo
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/varinfo.jl:129 [inlined]
-          [9] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:80 [inlined]
-         [10] default_varinfo
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:71 [inlined]
-         [11] step(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, spl::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}; initial_params::Nothing, kwargs::@Kwargs{nadapts::Int64})
-            @ DynamicPPL ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:103
-         [12] step
-            @ ~/.julia/packages/DynamicPPL/rXg4T/src/sampler.jl:99 [inlined]
-         [13] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:130 [inlined]
-         [14] macro expansion
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:16 [inlined]
-         [15] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, N::Int64; progress::Bool, progressname::String, callback::Nothing, discard_initial::Int64, thinning::Int64, chain_type::Type, initial_state::Nothing, kwargs::@Kwargs{nadapts::Int64, initial_params::Nothing})
-            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:120
-         [16] mcmcsample
-            @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:98 [inlined]
-         [17] #sample#29
-            @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:117 [inlined]
-         [18] sample
-            @ ~/.julia/packages/Turing/hbbFY/src/mcmc/hmc.jl:86 [inlined]
-         [19] (::AbstractMCMC.var"#37#50"{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, TaskLocalRNG, UnitRange{Int64}, Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Vector{Any}, Vector{UInt64}})()
-            @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:390
-    
-    ...and 3 more exceptions.
-    
-    Stacktrace:
-     [1] sync_end(c::Channel{Any})
-       @ Base ./task.jl:448
-     [2] macro expansion
-       @ ./task.jl:480 [inlined]
-     [3] (::AbstractMCMC.var"#36#49"{Bool, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, Int64, Int64})()
-       @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:364
-Stacktrace:
-  [1] sync_end(c::Channel{Any})
-    @ Base ./task.jl:448
-  [2] macro expansion
-    @ ./task.jl:480 [inlined]
-  [3] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:342 [inlined]
-  [4] macro expansion
-    @ ~/.julia/packages/ProgressLogging/6KXlp/src/ProgressLogging.jl:328 [inlined]
-  [5] (::AbstractMCMC.var"#34#47"{Bool, String, Nothing, Nothing, @Kwargs{chain_type::UnionAll}, Int64, Int64, Vector{Any}, Vector{UInt64}, Vector{DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}}, Vector{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}}, Vector{TaskLocalRNG}, UnitRange{Int64}, Int64, Int64})()
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:12
-  [6] with_logstate(f::Function, logstate::Any)
-    @ Base.CoreLogging ./logging.jl:515
-  [7] with_logger(f::Function, logger::LoggingExtras.TeeLogger{Tuple{LoggingExtras.EarlyFilteredLogger{TerminalLoggers.TerminalLogger, AbstractMCMC.var"#1#3"{Module}}, LoggingExtras.EarlyFilteredLogger{ConsoleLogger, AbstractMCMC.var"#2#4"{Module}}}})
-    @ Base.CoreLogging ./logging.jl:627
-  [8] with_progresslogger(f::Function, _module::Module, logger::ConsoleLogger)
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:36
-  [9] macro expansion
-    @ ~/.julia/packages/AbstractMCMC/YrmkI/src/logging.jl:11 [inlined]
- [10] mcmcsample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ::MCMCThreads, N::Int64, nchains::Int64; progress::Bool, progressname::String, initial_params::Nothing, initial_state::Nothing, kwargs::@Kwargs{chain_type::UnionAll})
-    @ AbstractMCMC ~/.julia/packages/AbstractMCMC/YrmkI/src/sample.jl:336
- [11] sample(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, sampler::DynamicPPL.Sampler{NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}}, ensemble::MCMCThreads, N::Int64, n_chains::Int64; chain_type::Type, progress::Bool, kwargs::@Kwargs{})
-    @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:258
- [12] sample
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:247 [inlined]
- [13] #sample#5
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:243 [inlined]
- [14] sample
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:234 [inlined]
- [15] #sample#4
-    @ ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:230 [inlined]
- [16] sample(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}}, Tuple{}, DynamicPPL.DefaultContext}, alg::NUTS{AutoForwardDiff{0, Nothing}, (), AdvancedHMC.DiagEuclideanMetric}, ensemble::MCMCThreads, N::Int64, n_chains::Int64)
-    @ Turing.Inference ~/.julia/packages/Turing/hbbFY/src/mcmc/Inference.jl:222
- [17] top-level scope
-    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
-in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:90
+    @ ~/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:91
+in expression starting at /user/home/em18564/BC4/Bayes/experiments/PCA_LKJ_VN_sig/model.jl:91
