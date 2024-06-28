@@ -64,9 +64,8 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 
     μ = @. a_w + a_p + a_e + ((b_w + b_p + b_e) * surprisal)
 
-    σ1 ~ Normal(0,1)
-    σ2 ~ Normal(0,1)
-    σ  ~ Exponential(σ1 + σ2 * surprisal)
+    σ ~ truncated(Cauchy(0., 20.); lower = 0)
+
     for i in eachindex(PCA)
       PCA[i] ~ Normal(μ[i],σ)
       end
@@ -86,7 +85,7 @@ df_modified.fullTag = df_modified.fullTag./2
 df_modified.fullTag = Int64.(df_modified.fullTag.+1)
 dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4, :PC_5, :PC_6]]
 
-mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
+mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,shuffle(df_modified.fullTag),dfPCA[:,pc])
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
 serialize("output/out"*args[1]*".jls",m)

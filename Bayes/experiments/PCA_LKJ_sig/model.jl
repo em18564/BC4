@@ -64,12 +64,11 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 
     μ = @. a_w + a_p + a_e + ((b_w + b_p + b_e) * surprisal)
 
-    σ1 ~ truncated(Cauchy(0., 10.); lower = 0)
-    σ2 ~ truncated(Cauchy(0., 10.); lower = 0)
-
+    σ1 ~ Normal(0,1)
+    σ2 ~ Normal(0,1)
     for i in eachindex(PCA)
-      sig    ~  Normal(0,1)
-      PCA[i] ~ Normal(μ[i] + sig * (σ1 + σ2*surprisal[i]),0)
+      σ  ~ Exponential(σ1 + σ2 * surprisal[i])
+      PCA[i] ~ Normal(μ[i],σ)
       end
 end
 args = map(x->string(x), ARGS)

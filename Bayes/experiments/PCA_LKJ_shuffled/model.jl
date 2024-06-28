@@ -44,8 +44,8 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
   ρ_w ~ LKJ(2, 2)
   Σ_w = Symmetric(Diagonal(σ_w) * ρ_w * Diagonal(σ_w))
   ab_w ~ filldist(MvNormal([0,0], Σ_w),NUM_TYPES)
-  a_w = ab_w[1,tags]
-  b_w = ab_w[2,tags]
+  a_w = ab_w[1,tags.+1]
+  b_w = ab_w[2,tags.+1]
 
 
     σ_p ~ filldist(Exponential(), 2)
@@ -64,29 +64,21 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 
     μ = @. a_w + a_p + a_e + ((b_w + b_p + b_e) * surprisal)
 
-    σ1 ~ Normal(0,1)
-    σ2 ~ Normal(0,1)
-    σ  ~ Exponential(σ1 + σ2 * surprisal)
+    σ ~ truncated(Cauchy(0., 20.); lower = 0)
+
     for i in eachindex(PCA)
       PCA[i] ~ Normal(μ[i],σ)
       end
 end
 args = map(x->string(x), ARGS)
 pc   = parse(Int,args[1])
-dfTags   = CSV.read("../../input/full_tags.csv", DataFrame).tags
-df       = CSV.read("../../input/dfPCANorm.csv", DataFrame)
-df[!,"fullTag"] = dfTags
-df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
-df_modified = subset(df_modified, :Word => ByRow(<(NUM_WORDS)))
-df_modified   = subset(df_modified, :fullTag => ByRow((>=(7))))
-df_modified   = subset(df_modified, :fullTag => ByRow((<=(9))))
-df_modified   = subset(df_modified, :fullTag => ByRow((!=(8))))
-df_modified.fullTag = df_modified.fullTag.-7
-df_modified.fullTag = df_modified.fullTag./2
-df_modified.fullTag = Int64.(df_modified.fullTag.+1)
+df   = CSV.read("../../input/dfPCANorm.csv", DataFrame)
+df_modified_1 = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
+df_modified = subset(df_modified_1, :Word => ByRow(<(NUM_WORDS)))
+
 dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4, :PC_5, :PC_6]]
 
-mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
+mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,shuffle(df_modified.Tags),dfPCA[:,pc])
 m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
 serialize("output/out"*args[1]*".jls",m)
