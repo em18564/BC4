@@ -98,7 +98,7 @@ trace2 = box(
 )
 data = [trace1, trace2]
 
-layout = Layout(;title=attr(text="97% HDI for noun/verb (shuffled)",font=attr(size=25),x=0.5),yaxis=attr(title="Posterior Effect"),
+layout = Layout(;title=attr(text="97% HDI for noun/verb (shuffled)",font=attr(size=25),x=0.5),yaxis=attr(title="Posterior Effect",range=[-0.15,0.15]),
                     boxmode="group")
 p1 = PlotlyJS.plot(data, layout)
 PlotlyJS.savefig(p1,"output/diffullCol1.png",width=4*150, height=3*150, scale=10)
