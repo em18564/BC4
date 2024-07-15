@@ -185,7 +185,6 @@ function plotHDIs(input1,input2,title)
     return data1,data2,layout
     #PlotlyJS.savefig(p2,"output/diffullCol2.png",width=4*150, height=3*150, scale=10)
 end
-
 d1a,d2a,layout = plotHDIs(1,2,"adjective/noun")
 p1a     = PlotlyJS.plot(d1a, layout)
 p2a     = PlotlyJS.plot(d2a, layout)
