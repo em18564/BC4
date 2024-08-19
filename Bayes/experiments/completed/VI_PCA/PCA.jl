@@ -8,13 +8,13 @@ using DataFrames
 
 using Serialization
 using MultivariateStats
-using Plots
+using PlotlyJS
 #using PlotlyJS
 
-df_full = CSV.read("../../input/dfHierarchical.csv", DataFrame)
+df_full = CSV.read("../../../input/dfHierarchical.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
 df_labels = Vector(df_full[:, :Tags])
-M = fit(PCA, transpose(Matrix(df)); maxoutdim=3)
+M = fit(PCA, transpose(Matrix(df)); maxoutdim=6)
 Yte = predict(M, transpose(Matrix(df)))
 Xr = transpose(reconstruct(M, Yte))
 
@@ -22,7 +22,7 @@ df_PCA = df_full
 #go through PCA in detail and get basic idea, interpret, plot by word type of scatter, check loo against normalisation.
 PCs = transpose(Yte)
 
-Plots.scatter(transpose(projection(M)),label = ["ELAN" "LAN" "N400" "EPNP" "P600" "PNP"],title="PCA Components")
+#Plots.scatter(transpose(projection(M)),label = ["ELAN" "LAN" "N400" "EPNP" "P600" "PNP"],title="PCA Components")
 
 
 #ICA
@@ -33,7 +33,7 @@ df_PCA[!,"PC_3"] = Xr[:,3]
 df_PCA[!,"PC_4"] = Xr[:,4]
 df_PCA[!,"PC_5"] = Xr[:,5]
 df_PCA[!,"PC_6"] = Xr[:,6]
-CSV.write("../../input/dfPCA_3.csv", df_PCA)
+#CSV.write("../../input/dfPCA_3.csv", df_PCA)
 # df_PCA[!,"PC_1"] = (df_PCA[:,:PC_1] .- mean(df_PCA[:,:PC_1]))./std(df_PCA[:,:PC_1])
 # df_PCA[!,"PC_2"] = (df_PCA[:,:PC_2] .- mean(df_PCA[:,:PC_2]))./std(df_PCA[:,:PC_2])
 # df_PCA[!,"PC_3"] = (df_PCA[:,:PC_3] .- mean(df_PCA[:,:PC_3]))./std(df_PCA[:,:PC_3])
@@ -48,12 +48,21 @@ CSV.write("../../input/dfPCA_3.csv", df_PCA)
 # scatter(cont[1,:],cont[2,:])
 # scatter!(func[1,:],func[2,:])
 
-
+ratios = [150,350,400,500,600,650]/650 * 255
 function dPrime(i)
     return (mean(cont[i,:]) - mean(func[i,:]))/var([cont[i,:]; func[i,:]])
 end
 
-
+ls = loadings(M)
+pcs = ["PC1","PC2","PC3","PC4","PC5","PC6"]
+PlotlyJS.plot([
+    PlotlyJS.bar(x=pcs, y=ls[1,:], name="ELAN", marker_color="#C5C5C5"),
+    PlotlyJS.bar(x=pcs, y=ls[2,:], name="LAN", marker_color="#767676"),
+    PlotlyJS.bar(x=pcs, y=ls[3,:], name="N400", marker_color="#636363"),
+    PlotlyJS.bar(x=pcs, y=ls[4,:], name="EPNP", marker_color="#3B3B3B"),
+    PlotlyJS.bar(x=pcs, y=ls[5,:], name="P600", marker_color="#141414"),
+    PlotlyJS.bar(x=pcs, y=ls[6,:], name="PNP", marker_color="#000000")
+    ], Layout(yaxis_title_text="Principal Component Loadings",barmode="group"))
 # ELAN = Yte[1,:]
 # LAN  = Yte[2,:]
 # N400 = Yte[3,:]

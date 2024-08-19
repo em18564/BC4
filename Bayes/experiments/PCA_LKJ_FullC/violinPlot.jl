@@ -42,8 +42,8 @@ chn_df6 = DataFrame(chn6)
 
 d = zeros(6,2,4,1000)
 vd = []
-for i in range(1,2)
-    for j in range(1,4)
+for j in range(1,4)
+    for i in range(1,2)
         d[1,i,j,:] = chn_df1[:,"ab_w["*string(i)*","*string(j)*"]"]
         d[2,i,j,:] = chn_df2[:,"ab_w["*string(i)*","*string(j)*"]"]
         d[3,i,j,:] = chn_df3[:,"ab_w["*string(i)*","*string(j)*"]"]
@@ -59,7 +59,7 @@ df = DataFrame( data     = vd,
                 AB       = repeat(vcat(fill("Intercept",6000),fill("Gradient",6000)),4),
                 WordType = vcat(fill("Adjective",12000),fill("Noun",12000),fill("Verb",12000),fill("Adverb",12000)))
 df.PCWT = string.(df.WordType, " ",  df.PCA)
-dfI = subset(df, :AB => ByRow((==("Gradient"))))
+dfI = subset(df, :AB => ByRow((==("Intercept"))))
 # df = DataFrame(data         = vcat(difd1,difd2,difd3,difd4)
 #               ,group        = vcat(fill("Δa_w",length(difd1)),fill("Δb_w",length(difd2)),fill("Δa_w ",length(difd3)),fill("Δb_w ",length(difd4)))
 #               ,ERP   = vcat(fill("EPNP",length(difd1)+length(difd2)),fill("PNP",length(difd3)+length(difd4)),))

@@ -185,25 +185,22 @@ function plotHDIs(input1,input2,title)
     return data1,data2,layout
     #PlotlyJS.savefig(p2,"output/diffullCol2.png",width=4*150, height=3*150, scale=10)
 end
-d1a,d2a,layout = plotHDIs(1,2,"adjective/noun")
-p1a     = PlotlyJS.plot(d1a, layout)
-p2a     = PlotlyJS.plot(d2a, layout)
-PlotlyJS.savefig(p1a,"output/diffullColAN1.png",width=4*150, height=3*150, scale=10)
-PlotlyJS.savefig(p2a,"output/diffullColAN2.png",width=4*150, height=3*150, scale=10)
-d1b,d2b,layout = plotHDIs(1,3,"adjective/verb")
-p1b     = PlotlyJS.plot(d1b, layout)
-p2b     = PlotlyJS.plot(d2b, layout)
-PlotlyJS.savefig(p1b,"output/diffullColAV1.png",width=4*150, height=3*150, scale=10)
-PlotlyJS.savefig(p2b,"output/diffullColAV2.png",width=4*150, height=3*150, scale=10)
-d1c,d2c,layout = plotHDIs(2,3,"noun/verb")
-p1c     = PlotlyJS.plot(d1c, layout)
-p2c     = PlotlyJS.plot(d2c, layout)
-PlotlyJS.savefig(p1c,"output/diffullColNV1.png",width=4*150, height=3*150, scale=10)
-PlotlyJS.savefig(p2c,"output/diffullColNV2.png",width=4*150, height=3*150, scale=10)
+
+function savePlots(input1,input2,title)
+    d1a,d2a,layout = plotHDIs(input1,input2,title)
+    p1a     = PlotlyJS.plot(d1a, layout)
+    p2a     = PlotlyJS.plot(d2a, layout)
+    PlotlyJS.savefig(p1a,"output/diffullCol"* title *"1.png",width=4*150, height=3*150, scale=10)
+    PlotlyJS.savefig(p2a,"output/diffullCol"* title *"2.png",width=4*150, height=3*150, scale=10)
+end
+savePlots(1,2,"adjective-noun")
+savePlots(1,3,"adjective-verb")
+savePlots(2,3,"noun-verb")
+savePlots(1,4,"adjective-adverb")
+savePlots(2,4,"noun-adverb")
+savePlots(3,4,"verb-adverb")
 
 
-fulltrace1 = [p2a p2b p2c]
-relayout!(fulltrace1,width=8*150,boxmode="group")
 
 # density(chn_df[!,"ab_w[2,2]"]-chn_df[!,"ab_w[2,1]"],label = "Difference",xaxis="Posterior Effect")
 # savefig("output2/dif1.png")
