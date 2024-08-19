@@ -62,7 +62,7 @@ PlotlyJS.plot([
     PlotlyJS.bar(x=pcs, y=ls[4,:], name="EPNP", marker_color="#3B3B3B"),
     PlotlyJS.bar(x=pcs, y=ls[5,:], name="P600", marker_color="#141414"),
     PlotlyJS.bar(x=pcs, y=ls[6,:], name="PNP", marker_color="#000000")
-    ], Layout(yaxis_title_text="Principal Component Loadings",barmode="group"))
+    ], Layout(yaxis_title_text="Principal Component Loadings",barmode="group",font=attr(size=40)))
 # ELAN = Yte[1,:]
 # LAN  = Yte[2,:]
 # N400 = Yte[3,:]
