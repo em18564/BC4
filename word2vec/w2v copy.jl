@@ -34,13 +34,6 @@ function getMean(arr)
     return mean(vals)
 end
 
-function getVals(arr)
-    vals = get_vector_mod.(arr)
-    filter!(x->x!=nothing, vals)
-    return vals
-end
-
-
 m_v  = getMean(df_v)
 m_n  = getMean(df_n)
 m_av = getMean(df_av)
@@ -68,33 +61,13 @@ o1 = cos_sims(ds1)
 o2 = cos_sims(ds2)
 types = ["Adjective","Noun","Verb","Adverb","Function"]
 
-vecs = rand(100,100).-1/2
-outs = zeros(100)
-for i in range(1,100)
-    a = rand((1:100))
-    b = rand((1:100))
-    outs[i] = cosine_dist(vecs[a,:],vecs[b,:])
+function plot_ds(data)
+    PlotlyJS.plot([
+        PlotlyJS.bar(x=types, y=data[1,:], name="Adjective", marker_color="#3D9970"),
+        PlotlyJS.bar(x=types, y=data[2,:], name="Noun", marker_color="#FF4136"),
+        PlotlyJS.bar(x=types, y=data[3,:], name="Verb", marker_color="#FF851B"),
+        PlotlyJS.bar(x=types, y=data[4,:], name="Adverb", marker_color="#4040FF"),
+        PlotlyJS.bar(x=types, y=data[5,:], name="Function", marker_color="#7D0DC3")
+        ], Layout(yaxis_title_text="Cosine Distance",barmode="group",font=attr(size=40)))
 end
-
-function avg_cos_nv()
-    out = zeros(100,100)
-    vs = getVals(df_v)[1:100,:]
-    ns = getVals(df_n)[1:100,:]
-
-    for i in range(1,100)
-        for j in range(1,100)
-            out[i,j] = cosine_dist(vs[i],ns[j])
-        end
-    end
-    return out
-end
-# function plot_ds(data)
-#     PlotlyJS.plot([
-#         PlotlyJS.bar(x=types, y=data[1,:], name="Adjective", marker_color="#3D9970"),
-#         PlotlyJS.bar(x=types, y=data[2,:], name="Noun", marker_color="#FF4136"),
-#         PlotlyJS.bar(x=types, y=data[3,:], name="Verb", marker_color="#FF851B"),
-#         PlotlyJS.bar(x=types, y=data[4,:], name="Adverb", marker_color="#4040FF"),
-#         PlotlyJS.bar(x=types, y=data[5,:], name="Function", marker_color="#7D0DC3")
-#         ], Layout(yaxis_title_text="Cosine Distance",barmode="group",font=attr(size=40)))
-# end
-#plot_ds(o2)
+plot_ds(o2)
