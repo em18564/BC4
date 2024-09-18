@@ -3,7 +3,7 @@ using Makie
 
 topoplot(rand(10), rand(Point2f, 10); contours=(color=:white, linewidth=2), label_scatter=true, bounding_geometry=Rect)
 data, positions = TopoPlots.example_data()
-proj = deserialize("proj2.jls")
+proj = deserialize("proj1.jls")
 eeg_topoplot(data[:, 340, 1]; positions=positions)
 
 pos2 = [Point(0.5,0.5),

@@ -8,8 +8,8 @@ using DataFrames
 
 using Serialization
 using MultivariateStats
-using PlotlyJS
 #using PlotlyJS
+using Plots
 
 df_full = CSV.read("../../../input/dfHierarchical.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
@@ -55,14 +55,18 @@ end
 
 ls = loadings(M)
 pcs = ["PC1","PC2","PC3","PC4","PC5","PC6"]
-PlotlyJS.plot([
-    PlotlyJS.bar(x=pcs, y=ls[1,:], name="ELAN", marker_color="#C5C5C5"),
-    PlotlyJS.bar(x=pcs, y=ls[2,:], name="LAN", marker_color="#767676"),
-    PlotlyJS.bar(x=pcs, y=ls[3,:], name="N400", marker_color="#636363"),
-    PlotlyJS.bar(x=pcs, y=ls[4,:], name="EPNP", marker_color="#3B3B3B"),
-    PlotlyJS.bar(x=pcs, y=ls[5,:], name="P600", marker_color="#141414"),
-    PlotlyJS.bar(x=pcs, y=ls[6,:], name="PNP", marker_color="#000000")
-    ], Layout(yaxis_title_text="Principal Component Loadings",barmode="group",font=attr(size=40)))
+# PlotlyJS.plot([
+#     PlotlyJS.bar(x=pcs, y=ls[1,:], name="ELAN", marker_color="#C5C5C5"),
+#     PlotlyJS.bar(x=pcs, y=ls[2,:], name="LAN", marker_color="#767676"),
+#     PlotlyJS.bar(x=pcs, y=ls[3,:], name="N400", marker_color="#636363"),
+#     PlotlyJS.bar(x=pcs, y=ls[4,:], name="EPNP", marker_color="#3B3B3B"),
+#     PlotlyJS.bar(x=pcs, y=ls[5,:], name="P600", marker_color="#141414"),
+#     PlotlyJS.bar(x=pcs, y=ls[6,:], name="PNP", marker_color="#000000")
+#     ], Layout(yaxis_title_text="Principal Component Loadings",barmode="group",font=attr(size=40)))
+
+v = (principalvars(M)./var(M))*100
+p = Plots.plot(pcs,v,ylim=(0,100),ylabel="% of variance explained",xlabel = "Principal Component",legend=false)
+savefig(p,"variance.png")
 # ELAN = Yte[1,:]
 # LAN  = Yte[2,:]
 # N400 = Yte[3,:]
