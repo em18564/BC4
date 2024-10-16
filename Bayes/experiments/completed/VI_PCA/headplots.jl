@@ -1,9 +1,10 @@
-using TopoPlots, CairoMakie,Serialization#, GLMakie 
+using TopoPlots, CairoMakie,Serialization,MultivariateStats#, GLMakie 
 using Makie
 
 topoplot(rand(10), rand(Point2f, 10); contours=(color=:white, linewidth=2), label_scatter=true, bounding_geometry=Rect)
 data, positions = TopoPlots.example_data()
-proj = deserialize("proj1.jls")
+#proj = deserialize("proj3.jls")
+lds = deserialize("loadings.jls")
 eeg_topoplot(data[:, 340, 1]; positions=positions)
 
 pos2 = [Point(0.5,0.5),
@@ -29,9 +30,9 @@ n400=[      1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0,
 epnp=[      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
 p600=[      1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
 pnp =[      1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-vars = [ 54.9, 15.7, 5.5, 4.5, 2.4, 1.9]
 
-
+erps = [elan lan n400 epnp p600 pnp]
+proj = [erps*lds[:,1] erps*lds[:,2] erps*lds[:,3] erps*lds[:,4] erps*lds[:,5] erps*lds[:,6]]
 
 function reorder(input)
         output = [input[32],input[34],input[28],input[30],input[31],input[29],input[27],input[18],input[20],input[22],
@@ -42,7 +43,7 @@ function reorder(input)
 end
 function plotComponent(f,val)
         x = append!([0.0,0.0],proj[:,val])
-        return eeg_topoplot(f[2, val],reorder(x); positions=pos,axis=(type=Axis, title="Component " * string(val) * " (" * string(vars[val]) * "%)",aspect=DataAspect(),))
+        return eeg_topoplot(f[2, val],reorder(x); positions=pos,axis=(type=Axis, title="Component " * string(val),aspect=DataAspect(),))
 end
 
 function eegPlots(f = Figure(size = (1200, 400)))

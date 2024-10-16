@@ -9,7 +9,7 @@ using DataFrames
 using Serialization
 using MultivariateStats
 #using PlotlyJS
-using Plots
+#using Plots
 
 df_full = CSV.read("../../../input/dfHierarchical.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
@@ -54,6 +54,7 @@ function dPrime(i)
 end
 
 ls = loadings(M)
+CSV.write("loadings.csv", ls)
 pcs = ["PC1","PC2","PC3","PC4","PC5","PC6"]
 # PlotlyJS.plot([
 #     PlotlyJS.bar(x=pcs, y=ls[1,:], name="ELAN", marker_color="#C5C5C5"),
@@ -65,8 +66,8 @@ pcs = ["PC1","PC2","PC3","PC4","PC5","PC6"]
 #     ], Layout(yaxis_title_text="Principal Component Loadings",barmode="group",font=attr(size=40)))
 
 v = (principalvars(M)./var(M))*100
-p = Plots.plot(pcs,v,ylim=(0,100),ylabel="% of variance explained",xlabel = "Principal Component",legend=false)
-savefig(p,"variance.png")
+#p = Plots.plot(pcs,v,ylim=(0,100),ylabel="% of variance explained",xlabel = "Principal Component",legend=false)
+#savefig(p,"variance.png")
 # ELAN = Yte[1,:]
 # LAN  = Yte[2,:]
 # N400 = Yte[3,:]
