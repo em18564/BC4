@@ -1,9 +1,38 @@
-using Flux,Transformers
-using Transformers.TextEncoders
-using Transformers.HuggingFace
-textencoder, bert_model = hgf"bert-base-uncased"
-text1 = "Peter Piper picked a peck of pickled peppers"
-text2 = "Fuzzy Wuzzy was a bear"
-
-text = [[ text1, text2 ]] # 1 batch of contiguous sentences
-sample = encode(textencoder, text) # tokenize + pre-process (add special tokens + truncate / padding + one-hot encode)
+using Word2Vec,CSV,DataFrames,Statistics,Distances,PlotlyJS,Serialization
+aj = open("data/avg_aj.txt") do f
+    readlines(f) |> (s->parse.(Float64, s))
+end
+av = open("data/avg_av.txt") do f
+    readlines(f) |> (s->parse.(Float64, s))
+end
+f = open("data/avg_f.txt") do f
+    readlines(f) |> (s->parse.(Float64, s))
+end
+n = open("data/avg_n.txt") do f
+    readlines(f) |> (s->parse.(Float64, s))
+end
+v = open("data/avg_v.txt") do f
+    readlines(f) |> (s->parse.(Float64, s))
+end
+ds1 = [aj,n,v,av,f]
+function cos_sims(data)
+    out = zeros(5,5)
+    for i in range(1,5)
+        for j in range(1,5)
+            out[i,j] = cosine_dist(data[i],data[j])  # 1 - dot(x, y) / (norm(x) * norm(y))
+        end
+    end
+    return out
+end
+o1 = cos_sims(ds1)
+types = ["Adjective","Noun","Verb","Adverb","Function"]
+function plot_ds(data)
+        PlotlyJS.plot([
+            PlotlyJS.bar(x=types, y=data[1,:], name="Adjective", marker_color="#3D9970"),
+            PlotlyJS.bar(x=types, y=data[2,:], name="Noun", marker_color="#FF4136"),
+            PlotlyJS.bar(x=types, y=data[3,:], name="Verb", marker_color="#FF851B"),
+            PlotlyJS.bar(x=types, y=data[4,:], name="Adverb", marker_color="#4040FF"),
+            PlotlyJS.bar(x=types, y=data[5,:], name="Function", marker_color="#7D0DC3")
+            ], Layout(yaxis_title_text="Cosine Distance",barmode="group",font=attr(size=40)))
+    end
+plot_ds(o1)

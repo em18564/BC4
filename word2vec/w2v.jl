@@ -1,4 +1,4 @@
-using Word2Vec,CSV,DataFrames,Statistics,Distances,PlotlyJS
+using Word2Vec,CSV,DataFrames,Statistics,Distances,PlotlyJS,Serialization
 #word2vec("text8", "text8-vec.txt", verbose=true)
 model = wordvectors("text8-vec.txt")
 df   = CSV.read("../Bayes/input/df_WithWords.csv", DataFrame)
@@ -19,7 +19,31 @@ df_un  = unique(df_n)
 df_uav = unique(df_av)
 df_uaj = unique(df_aj)
 df_uf  = unique(df_f)
-
+io = open("data/df_v.txt", "w") do io
+    for x in df_v
+      println(io, x)
+    end
+end
+io = open("data/df_n.txt", "w") do io
+    for x in df_n
+      println(io, x)
+    end
+end
+io = open("data/df_av.txt", "w") do io
+    for x in df_av
+      println(io, x)
+    end
+end
+io = open("data/df_aj.txt", "w") do io
+    for x in df_aj
+      println(io, x)
+    end
+end
+io = open("data/df_f.txt", "w") do io
+    for x in df_f
+      println(io, x)
+    end
+end
 function get_vector_mod(word::String)
     try
         get_vector(model,word)
