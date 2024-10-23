@@ -16,8 +16,9 @@ url = 'https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz'
 # %%
 
 dataset = tf.keras.utils.get_file('aclImdb_v1.tar.gz', url,
-                                  untar=True, cache_dir='.',
+                                  cache_dir='.',
                                   cache_subdir='')
+# %%
 
 dataset_dir = os.path.join(os.path.dirname(dataset), 'aclImdb')
 
@@ -233,6 +234,15 @@ print(f'Sequence Outputs Values:{bert_results["sequence_output"][0, :12]}')
 
 
 # %%
+f = open('data/df_fullSents.txt', 'r')
+fullSents = [line.rstrip() for line in f]
+f.close()
+
+
+
+
+
+
 fi1 = open('data/df_n.txt', 'r')
 n = [line.rstrip() for line in fi1]
 fi1.close()
@@ -254,29 +264,68 @@ av = [line.rstrip() for line in fi5]
 fi5.close()
 
 # %%
-def get_avg_array(arr):
+def get_array(arr):
     ns = []
     for x in arr:
         try:
-            ns.append(bert_model(bert_preprocess_model([x]))["pooled_output"])
-        except:
+            ns.append(bert_model(bert_preprocess_model(x.split()))["pooled_output"])
+        except Exception as e:
+            print(e)
             continue
-
-    return sum(ns)/len(ns)
+    return ns
     
 # %%
-avg_n = get_avg_array(n)
-avg_v = get_avg_array(v)
-avg_f = get_avg_array(f)
-avg_aj = get_avg_array(aj)
-avg_av = get_avg_array(av)
+sent_vals = get_array(fullSents)
+# %%
+def find_wt_vals():
+   nArr  = []
+   vArr  = []
+   fArr  = []
+   ajArr = []
+   avArr = []
+   for i,sent in enumerate(fullSents):
+      if(len(sent.split())-len(sent_vals[i])!=0):
+        raise ValueError("mismatched length")
+      for j,word in enumerate(sent.split()):
+        if word in n:
+           nArr.append(sent_vals[i][j])
+           print("N  ",word)
+        elif word in v:
+           vArr.append(sent_vals[i][j])
+           print("V  ",word)
+        elif word in f:
+           fArr.append(sent_vals[i][j])
+           print("F  ",word)
+        elif word in aj:
+           ajArr.append(sent_vals[i][j])
+           print("AJ ",word)
+        elif word in av:
+           avArr.append(sent_vals[i][j])
+           print("AV ",word)
+        else:
+           raise ValueError("unknown word")
+   return nArr,vArr,fArr,ajArr,avArr
+
+# %%
+nArr,vArr,fArr,ajArr,avArr = find_wt_vals()
+# %%
+
+def arr_avg(arr): return sum(arr)/len(arr)
+
+avg_n = arr_avg(nArr)
+avg_v = arr_avg(vArr)
+avg_f = arr_avg(fArr)
+avg_aj = arr_avg(ajArr)
+avg_av = arr_avg(avArr)
 
 # %%
 import numpy as np
-np.savetxt("data/avg_n.txt",avg_n.numpy()[0])
-np.savetxt("data/avg_v.txt",avg_v.numpy()[0])
-np.savetxt("data/avg_f.txt",avg_f.numpy()[0])
-np.savetxt("data/avg_aj.txt",avg_aj.numpy()[0])
-np.savetxt("data/avg_av.txt",avg_av.numpy()[0])
+np.savetxt("data/avg_n2.txt",avg_n.numpy())
+np.savetxt("data/avg_v2.txt",avg_v.numpy())
+np.savetxt("data/avg_f2.txt",avg_f.numpy())
+np.savetxt("data/avg_aj2.txt",avg_aj.numpy())
+np.savetxt("data/avg_av2.txt",avg_av.numpy())
+
+# # %%
 
 # %%

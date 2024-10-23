@@ -1,17 +1,17 @@
 using Word2Vec,CSV,DataFrames,Statistics,Distances,PlotlyJS,Serialization
-aj = open("data/avg_aj.txt") do f
+aj = open("data/avg_aj2.txt") do f
     readlines(f) |> (s->parse.(Float64, s))
 end
-av = open("data/avg_av.txt") do f
+av = open("data/avg_av2.txt") do f
     readlines(f) |> (s->parse.(Float64, s))
 end
-f = open("data/avg_f.txt") do f
+f = open("data/avg_f2.txt") do f
     readlines(f) |> (s->parse.(Float64, s))
 end
-n = open("data/avg_n.txt") do f
+n = open("data/avg_n2.txt") do f
     readlines(f) |> (s->parse.(Float64, s))
 end
-v = open("data/avg_v.txt") do f
+v = open("data/avg_v2.txt") do f
     readlines(f) |> (s->parse.(Float64, s))
 end
 ds1 = [aj,n,v,av,f]
