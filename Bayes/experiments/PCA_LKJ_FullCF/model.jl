@@ -14,7 +14,7 @@ Pkg.add("StatisticalRethinking")
 Pkg.add("MCMCDiagnosticTools")
 Pkg.add("Serialization")
 Pkg.add("LinearAlgebra")
-
+# %%
 
 using Random
 using StatsBase
@@ -32,9 +32,9 @@ using StatisticalRethinking
 using MCMCDiagnosticTools
 using Serialization
 using LinearAlgebra
-
+# %%
 NUM_SENTENCES = 205
-NUM_PARTICIPANTS = 24
+NUM_PARTICIPANTS = 8
 NUM_WORDS = 1931
 NUM_TYPES = 5
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
@@ -70,15 +70,21 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
       PCA[i] ~ Normal(μ[i],σ)
       end
 end
-args = map(x->string(x), ARGS)
-pc   = parse(Int,args[1])
+#args = map(x->string(x), ARGS)
+#pc   = parse(Int,args[1])
 dfTags   = CSV.read("../../input/full_tags.csv", DataFrame).tags
-df       = CSV.read("../../input/dfPCANorm.csv", DataFrame)
+df       = CSV.read("../../input/dfPCANorm_corrected.csv", DataFrame)
+#%%
 df[!,"fullTag"] = dfTags
 df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
 df_modified = subset(df_modified, :Word => ByRow(<(NUM_WORDS)))
-
+#%%
+#c = vcat( subset(df_modified, :fullTag => ByRow((==(0)))),
+          # subset(df_modified, :fullTag => ByRow((==(5)))),
+          # subset(df_modified, :fullTag => ByRow((==(9)))),
+          # subset(df_modified, :fullTag => ByRow((==(2)))))
 adj = subset(df_modified, :fullTag => ByRow((==(0))))
+adj.fullTag .= 0
 noun = subset(df_modified, :fullTag => ByRow((==(5))))
 noun.fullTag .= 1
 verb = subset(df_modified, :fullTag => ByRow((==(9))))
@@ -91,15 +97,23 @@ f = vcat( subset(df_modified, :fullTag => ByRow((==(6)))),
           subset(df_modified, :fullTag => ByRow((==(1)))),
           subset(df_modified, :fullTag => ByRow((==(8)))),
           subset(df_modified, :fullTag => ByRow((==(3)))))
+#c.fullTag .= 0
 f.fullTag .= 4
+# %%
+# for p in range(1,NUM_PARTICIPANTS)
+#   for t in range(1,NUM_TYPES)
 
+#   end
+# end
+# %%
 df_modified = vcat(adj,noun,verb,adv,f)
-
-dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4, :PC_5, :PC_6]]
-
-mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
-m = sample(mod, NUTS(), MCMCThreads(), 250,4)
-display(m)
-serialize("output/out"*args[1]*".jls",m)
+# %%
+dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4]]
+for pc in range(1,4)
+  mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
+  m = sample(mod, NUTS(), MCMCThreads(), 250,4)
+  display(m)
+  serialize("output/out"*string(pc)*".jls",m)
+end
 
 # Highest Density Interval

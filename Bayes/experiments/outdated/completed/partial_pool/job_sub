@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#SBATCH --job-name P_Pool
+#SBATCH --nodes 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --cpus-per-task 4
+#SBATCH --time=06:00:0
+#SBATCH --output model.out
+#SBATCH --account=cosc029104
+#SBATCH --partition=veryshort
+#SBATCH --array 1-10
+
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo Slurm job ID is $SLURM_JOB_ID
+echo This job runs on the following machines:
+echo `echo $SLURM_JOB_NODELIST | uniq`
+OMP_DISPLAY_ENV=true
+# Run the executable
+julia ../../input/setup.jl
+julia model.jl ${SLURM_ARRAY_TASK_ID} > model-${SLURM_ARRAY_TASK_ID}.out

@@ -1,0 +1,238 @@
+Running on host compute520.bc4.acrc.priv
+Time is Tue Jan 23 15:06:47 GMT 2024
+Directory is /user/home/em18564/BC4/Bayes/experiments/ePNP_noCov_WL
+Slurm job ID is 12232755
+This job runs on the following machines:
+compute520
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.8/Project.toml`
+  No Changes to `~/.julia/environments/v1.8/Manifest.toml`
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.003125
+┌ Info: Found initial step size
+└   ϵ = 0.000390625
+┌ Info: Found initial step size
+└   ϵ = 0.003125
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+Sampling (4 threads)  25%|███████▌                      |  ETA: 2:22:18
+Sampling (4 threads)  50%|███████████████               |  ETA: 0:47:26
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 0:17:30
+Sampling (4 threads) 100%|██████████████████████████████| Time: 0:55:30
+Sampling (4 threads) 100%|██████████████████████████████| Time: 0:55:30
+Chains MCMC chain (250×68×4 Array{Float64, 3}):
+
+Iterations        = 126:1:375
+Number of chains  = 4
+Samples per chain = 250
+Wall duration     = 3313.15 seconds
+Compute duration  = 12055.31 seconds
+parameters        = a_w_s[1], a_w_s[2], b_w_s[1], b_w_s[2], a_p_s[1], a_p_s[2], a_p_s[3], a_p_s[4], a_p_s[5], a_p_s[6], a_p_s[7], a_p_s[8], a_p_s[9], a_p_s[10], a_p_s[11], a_p_s[12], a_p_s[13], a_p_s[14], a_p_s[15], a_p_s[16], a_p_s[17], a_p_s[18], a_p_s[19], a_p_s[20], a_p_s[21], a_p_s[22], a_p_s[23], a_p_s[24], b_p_s[1], b_p_s[2], b_p_s[3], b_p_s[4], b_p_s[5], b_p_s[6], b_p_s[7], b_p_s[8], b_p_s[9], b_p_s[10], b_p_s[11], b_p_s[12], b_p_s[13], b_p_s[14], b_p_s[15], b_p_s[16], b_p_s[17], b_p_s[18], b_p_s[19], b_p_s[20], b_p_s[21], b_p_s[22], b_p_s[23], b_p_s[24], a_e, b_e, c_w, σ
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters      mean       std   naive_se      mcse        ess      rhat   ess_per_sec
+      Symbol   Float64   Float64    Float64   Float64    Float64   Float64       Float64
+
+    a_w_s[1]    0.0715    0.6167     0.0195    0.0745    55.4735    1.0763        0.0046
+    a_w_s[2]    0.0319    0.6168     0.0195    0.0744    55.2558    1.0764        0.0046
+    b_w_s[1]   -0.1317    0.2934     0.0093    0.0189   201.7111    1.0187        0.0167
+    b_w_s[2]    0.0773    0.2970     0.0094    0.0194   195.4819    1.0181        0.0162
+    a_p_s[1]   -0.7228    0.2397     0.0076    0.0245    45.7082    1.0661        0.0038
+    a_p_s[2]    0.3273    0.2352     0.0074    0.0251    40.9851    1.0792        0.0034
+    a_p_s[3]   -0.5538    0.2386     0.0075    0.0252    42.1816    1.0765        0.0035
+    a_p_s[4]    0.6272    0.2478     0.0078    0.0257    34.8264    1.0842        0.0029
+    a_p_s[5]   -0.0689    0.2371     0.0075    0.0249    37.3386    1.0812        0.0031
+    a_p_s[6]   -1.1613    0.2459     0.0078    0.0258    34.2343    1.0836        0.0028
+    a_p_s[7]    0.1323    0.2395     0.0076    0.0245    39.3932    1.0753        0.0033
+    a_p_s[8]    0.7093    0.2411     0.0076    0.0250    37.0227    1.0862        0.0031
+    a_p_s[9]   -0.4970    0.2340     0.0074    0.0242    41.6776    1.0758        0.0035
+   a_p_s[10]   -0.3507    0.2349     0.0074    0.0247    40.0947    1.0740        0.0033
+   a_p_s[11]    0.2448    0.2411     0.0076    0.0248    44.5575    1.0759        0.0037
+   a_p_s[12]   -0.0648    0.2365     0.0075    0.0243    45.5209    1.0699        0.0038
+   a_p_s[13]    0.3014    0.2415     0.0076    0.0244    43.0480    1.0722        0.0036
+   a_p_s[14]    0.2117    0.2404     0.0076    0.0250    41.4110    1.0775        0.0034
+   a_p_s[15]   -0.2868    0.2369     0.0075    0.0241    41.4186    1.0747        0.0034
+   a_p_s[16]   -0.0521    0.2387     0.0075    0.0252    34.8622    1.0860        0.0029
+   a_p_s[17]   -0.1570    0.2420     0.0077    0.0246    44.1685    1.0723        0.0037
+   a_p_s[18]   -0.3596    0.2410     0.0076    0.0248    55.6327    1.0686        0.0046
+   a_p_s[19]    0.3731    0.2375     0.0075    0.0248    34.0670    1.0871        0.0028
+   a_p_s[20]    0.1926    0.2369     0.0075    0.0247    46.7486    1.0784        0.0039
+   a_p_s[21]    1.2163    0.2390     0.0076    0.0247    38.5493    1.0809        0.0032
+   a_p_s[22]   -0.0954    0.2414     0.0076    0.0256    33.9905    1.0871        0.0028
+   a_p_s[23]   -0.2414    0.2435     0.0077    0.0245    35.9447    1.0763        0.0030
+   a_p_s[24]    0.1776    0.2423     0.0077    0.0248    46.5109    1.0776        0.0039
+    b_p_s[1]    0.1027    0.1498     0.0047    0.0072   404.3927    1.0092        0.0335
+    b_p_s[2]    0.5871    0.1455     0.0046    0.0078   343.8989    1.0120        0.0285
+    b_p_s[3]    0.0491    0.1474     0.0047    0.0078   378.1361    1.0139        0.0314
+    b_p_s[4]   -0.1740    0.1506     0.0048    0.0086   316.1080    1.0097        0.0262
+    b_p_s[5]    0.0129    0.1442     0.0046    0.0082   281.4230    1.0111        0.0233
+    b_p_s[6]    0.4342    0.1479     0.0047    0.0078   309.7605    1.0133        0.0257
+    b_p_s[7]   -0.0082    0.1448     0.0046    0.0072   409.0873    1.0074        0.0339
+    b_p_s[8]    0.1227    0.1488     0.0047    0.0078   353.3074    1.0107        0.0293
+    b_p_s[9]   -0.2602    0.1473     0.0047    0.0075   434.2672    1.0086        0.0360
+   b_p_s[10]   -0.4972    0.1479     0.0047    0.0087   221.6682    1.0175        0.0184
+   b_p_s[11]   -0.8351    0.1435     0.0045    0.0074   424.1205    1.0066        0.0352
+   b_p_s[12]   -0.3746    0.1459     0.0046    0.0081   316.0077    1.0093        0.0262
+   b_p_s[13]    0.0502    0.1497     0.0047    0.0079   388.3852    1.0056        0.0322
+   b_p_s[14]    0.1363    0.1473     0.0047    0.0070   433.4100    1.0090        0.0360
+   b_p_s[15]    0.4141    0.1461     0.0046    0.0077   363.6889    1.0079        0.0302
+   b_p_s[16]    0.1272    0.1501     0.0047    0.0083   409.4924    1.0106        0.0340
+   b_p_s[17]    0.2650    0.1498     0.0047    0.0080   411.5790    1.0100        0.0341
+   b_p_s[18]   -0.2475    0.1483     0.0047    0.0076   371.2134    1.0124        0.0308
+   b_p_s[19]   -0.3028    0.1439     0.0046    0.0077   415.7591    1.0105        0.0345
+   b_p_s[20]   -0.2638    0.1490     0.0047    0.0078   435.5491    1.0071        0.0361
+   b_p_s[21]    0.1930    0.1435     0.0045    0.0071   438.7616    1.0077        0.0364
+   b_p_s[22]    0.2784    0.1549     0.0049    0.0074   413.4737    1.0140        0.0343
+   b_p_s[23]    0.3061    0.1491     0.0047    0.0075   415.6388    1.0064        0.0345
+   b_p_s[24]    0.0842    0.1494     0.0047    0.0072   391.4310    1.0074        0.0325
+         a_e   -0.0109    0.6451     0.0204    0.0814    50.0240    1.0718        0.0041
+         b_e    0.0126    0.2952     0.0093    0.0222   128.0813    1.0321        0.0106
+         c_w    0.3745    0.0306     0.0010    0.0010   984.9942    0.9991        0.0817
+           σ    4.7047    0.0162     0.0005    0.0005   880.8398    1.0001        0.0731
+
+Quantiles
+  parameters      2.5%     25.0%     50.0%     75.0%     97.5%
+      Symbol   Float64   Float64   Float64   Float64   Float64
+
+    a_w_s[1]   -1.0581   -0.3561    0.0088    0.4592    1.3665
+    a_w_s[2]   -1.1221   -0.3892   -0.0234    0.4139    1.3299
+    b_w_s[1]   -0.7118   -0.3348   -0.1403    0.0673    0.4756
+    b_w_s[2]   -0.4897   -0.1176    0.0690    0.2853    0.6729
+    a_p_s[1]   -1.1858   -0.8896   -0.7147   -0.5517   -0.2534
+    a_p_s[2]   -0.1285    0.1659    0.3268    0.4985    0.7584
+    a_p_s[3]   -1.0101   -0.7274   -0.5472   -0.3783   -0.1133
+    a_p_s[4]    0.1526    0.4463    0.6261    0.8024    1.1008
+    a_p_s[5]   -0.5005   -0.2344   -0.0738    0.0934    0.3845
+    a_p_s[6]   -1.6313   -1.3439   -1.1576   -0.9851   -0.7020
+    a_p_s[7]   -0.3476   -0.0282    0.1392    0.2910    0.5765
+    a_p_s[8]    0.2364    0.5359    0.7202    0.8826    1.1664
+    a_p_s[9]   -0.9486   -0.6565   -0.4934   -0.3267   -0.0691
+   a_p_s[10]   -0.8116   -0.5111   -0.3448   -0.1912    0.1060
+   a_p_s[11]   -0.2082    0.0804    0.2396    0.4130    0.7049
+   a_p_s[12]   -0.5024   -0.2340   -0.0795    0.1165    0.3902
+   a_p_s[13]   -0.1740    0.1318    0.2990    0.4715    0.7735
+   a_p_s[14]   -0.2458    0.0403    0.2040    0.3799    0.6742
+   a_p_s[15]   -0.7610   -0.4421   -0.2904   -0.1210    0.1665
+   a_p_s[16]   -0.5154   -0.2238   -0.0508    0.1111    0.3896
+   a_p_s[17]   -0.6395   -0.3195   -0.1476    0.0109    0.2929
+   a_p_s[18]   -0.8129   -0.5322   -0.3541   -0.1809    0.0902
+   a_p_s[19]   -0.0708    0.1980    0.3803    0.5434    0.8174
+   a_p_s[20]   -0.2648    0.0253    0.1922    0.3616    0.6195
+   a_p_s[21]    0.7584    1.0529    1.2190    1.3795    1.6517
+   a_p_s[22]   -0.5797   -0.2623   -0.0935    0.0697    0.3592
+   a_p_s[23]   -0.7025   -0.4132   -0.2278   -0.0684    0.2063
+   a_p_s[24]   -0.2975    0.0056    0.1844    0.3442    0.6458
+    b_p_s[1]   -0.1925    0.0022    0.1022    0.2002    0.4083
+    b_p_s[2]    0.3003    0.4867    0.5912    0.6739    0.8776
+    b_p_s[3]   -0.2188   -0.0496    0.0423    0.1474    0.3411
+    b_p_s[4]   -0.4654   -0.2828   -0.1788   -0.0708    0.1135
+    b_p_s[5]   -0.2658   -0.0830    0.0085    0.1040    0.2941
+    b_p_s[6]    0.1597    0.3361    0.4254    0.5308    0.7472
+    b_p_s[7]   -0.2995   -0.1072   -0.0029    0.0844    0.2675
+    b_p_s[8]   -0.1686    0.0197    0.1227    0.2206    0.4102
+    b_p_s[9]   -0.5480   -0.3578   -0.2585   -0.1563    0.0176
+   b_p_s[10]   -0.7604   -0.5945   -0.5022   -0.4017   -0.1920
+   b_p_s[11]   -1.0858   -0.9376   -0.8421   -0.7409   -0.5490
+   b_p_s[12]   -0.6389   -0.4783   -0.3752   -0.2790   -0.0764
+   b_p_s[13]   -0.2349   -0.0538    0.0459    0.1470    0.3437
+   b_p_s[14]   -0.1589    0.0410    0.1352    0.2392    0.4281
+   b_p_s[15]    0.1341    0.3127    0.4159    0.5120    0.6873
+   b_p_s[16]   -0.1692    0.0234    0.1269    0.2224    0.4272
+   b_p_s[17]   -0.0157    0.1598    0.2656    0.3637    0.5529
+   b_p_s[18]   -0.5321   -0.3427   -0.2540   -0.1503    0.0462
+   b_p_s[19]   -0.5647   -0.3961   -0.3136   -0.2089    0.0022
+   b_p_s[20]   -0.5311   -0.3688   -0.2667   -0.1677    0.0424
+   b_p_s[21]   -0.0958    0.1048    0.1989    0.2841    0.4733
+   b_p_s[22]   -0.0240    0.1734    0.2749    0.3854    0.5881
+   b_p_s[23]    0.0211    0.1993    0.3009    0.4095    0.5962
+   b_p_s[24]   -0.1898   -0.0195    0.0774    0.1877    0.3734
+         a_e   -1.4285   -0.4363    0.0611    0.4379    1.0609
+         b_e   -0.5806   -0.1694    0.0254    0.2088    0.6143
+         c_w    0.3139    0.3540    0.3739    0.3951    0.4356
+           σ    4.6737    4.6929    4.7051    4.7163    4.7344
+
