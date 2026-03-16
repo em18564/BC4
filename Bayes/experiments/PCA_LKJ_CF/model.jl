@@ -1,35 +1,35 @@
 import Pkg
 Pkg.add("Random")
-Pkg.add("StatsBase")
+#Pkg.add("StatsBase")
 Pkg.add("Distributions")
-Pkg.add("StatsPlots")
-Pkg.add("StatsFuns")
-Pkg.add("Logging")
+#Pkg.add("StatsPlots")
+#Pkg.add("StatsFuns")
+#Pkg.add("Logging")
 
 Pkg.add("Turing")
 Pkg.add("CSV")
 Pkg.add("DataFrames")
-Pkg.add("Optim")
-Pkg.add("StatisticalRethinking")
-Pkg.add("MCMCDiagnosticTools")
+#Pkg.add("Optim")
+#Pkg.add("StatisticalRethinking")
+#Pkg.add("MCMCDiagnosticTools")
 Pkg.add("Serialization")
 Pkg.add("LinearAlgebra")
 # %%
 
 using Random
-using StatsBase
+# using StatsBase
 using Distributions
-using StatsPlots
-using StatsFuns
-using Logging
+# using StatsPlots
+# using StatsFuns
+# using Logging
 
 using Turing
 using CSV
 using DataFrames
-using Optim
-using StatisticalRethinking
+#using Optim
+# using StatisticalRethinking
 
-using MCMCDiagnosticTools
+# using MCMCDiagnosticTools
 using Serialization
 using LinearAlgebra
 # %%
@@ -72,6 +72,7 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 end
 args = map(x->string(x), ARGS)
 pc   = parse(Int,args[1])
+# %%
 dfTags   = CSV.read("../../input/full_tags.csv", DataFrame).tags
 df       = CSV.read("../../input/dfPCANorm_corrected.csv", DataFrame)
 #%%
