@@ -1,18 +1,468 @@
-cpu-bind=MASK - bp1-compute015, task  0  0 [4129466]: mask 0x3000000300 set
+cpu-bind=MASK - bp1-compute015, task  0  0 [4129707]: mask 0x3000000300 set
+cpu-bind=MASK - bp1-compute015, task  0  0 [4129708]: mask 0xc000000c00 set
 Running on host bp1-compute015
-Time is Mon Mar 16 17:38:02 GMT 2026
+Time is Mon Mar 16 17:43:24 GMT 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF
-Slurm job ID is 16342897
+Slurm job ID is 16342908
+This job runs on the following machines:
+Running on host bp1-compute015
+Time is Mon Mar 16 17:43:24 GMT 2026
+bp1-compute015
+Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF
+Slurm job ID is 16342911
 This job runs on the following machines:
 bp1-compute015
-/tmp/slurmd/job16342897/slurm_script: line 21: julia: command not found
-cpu-bind=MASK - bp1-compute015, task  0  0 [4129467]: mask 0xc000000c00 set
-/tmp/slurmd/job16342897/slurm_script: line 22: julia: command not found
-Running on host bp1-compute015
-Time is Mon Mar 16 17:38:02 GMT 2026
+Running on host bp1-compute019
+Running on host bp1-compute019
+Time is Mon Mar 16 17:43:24 GMT 2026
+Time is Mon Mar 16 17:43:24 GMT 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF
-Slurm job ID is 16342894
+Slurm job ID is 16342909
+Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF
 This job runs on the following machines:
-bp1-compute015
-/tmp/slurmd/job16342894/slurm_script: line 21: julia: command not found
-/tmp/slurmd/job16342894/slurm_script: line 22: julia: command not found
+Slurm job ID is 16342910
+This job runs on the following machines:
+bp1-compute019
+bp1-compute019
+  Installing known registries into `~/.julia`
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+    Updating `~/.julia/environments/v1.10/Project.toml`
+  [9a3f8284] + Random
+    Updating `~/.julia/environments/v1.10/Manifest.toml`
+  [9a3f8284] + Random
+  [ea8e919c] + SHA v0.7.0
+   Resolving package versions...
+   Installed PtrArrays ─ v1.4.0
+    Updating `~/.julia/environments/v1.10/Project.toml`
+  [2913bbd2] + StatsBase v0.34.10
+    Updating `~/.julia/environments/v1.10/Manifest.toml`
+  [66dad0bd] + AliasTables v1.1.3
+  [9a962f9c] + DataAPI v1.16.0
+  [864edb3b] + DataStructures v0.19.3
+  [ffbed154] + DocStringExtensions v0.9.5
+  [92d709cd] + IrrationalConstants v0.2.6
+  [2ab3a3ac] + LogExpFunctions v0.3.29
+  [e1d29d7a] + Missings v1.2.0
+  [bac558e1] + OrderedCollections v1.8.1
+  [43287f4e] + PtrArrays v1.4.0
+  [a2af1166] + SortingAlgorithms v1.2.2
+  [82ae8749] + StatsAPI v1.8.0
+  [2913bbd2] + StatsBase v0.34.10
+  [56f22d72] + Artifacts
+  [8f399da3] + Libdl
+  [37e2e46d] + LinearAlgebra
+  [de0858da] + Printf
+  [9e88b42a] + Serialization
+  [2f01184e] + SparseArrays v1.10.0
+  [10745b16] + Statistics v1.10.0
+  [4ec0a83e] + Unicode
+  [e66e0078] + CompilerSupportLibraries_jll v1.1.1+0
+  [4536629a] + OpenBLAS_jll v0.3.23+4
+  [bea87d4a] + SuiteSparse_jll v7.2.1+1
+  [8e850b90] + libblastrampoline_jll v5.8.0+1
+Precompiling project...
+    IrrationalConstants Being precompiled by another process (pid: 4129736, pidfile: /user/home/em18564/.julia/compiled/v1.10/IrrationalConstants/ukdUG_4RpdW.ji.pidfile)
+    PtrArrays Being precompiled by another process (pid: 4129736, pidfile: /user/home/em18564/.julia/compiled/v1.10/PtrArrays/y1ds7_4RpdW.ji.pidfile)
+    DataAPI Being precompiled by another process (pid: 4129736, pidfile: /user/home/em18564/.julia/compiled/v1.10/DataAPI/3a8mN_4RpdW.ji.pidfile)
+    StatsAPI Being precompiled by another process (pid: 4129736, pidfile: /user/home/em18564/.julia/compiled/v1.10/StatsAPI/Rf3YC_4RpdW.ji.pidfile)
+    CompilerSupportLibraries_jll Being precompiled by another process (pid: 4129736, pidfile: /user/home/em18564/.julia/compiled/v1.10/CompilerSupportLibraries_jll/iCwSB_4RpdW.ji.pidfile)
+    OrderedCollections Being precompiled by another process (pid: 4129736, pidfile: /user/home/em18564/.julia/compiled/v1.10/OrderedCollections/LtT3J_4RpdW.ji.pidfile)
+  ✓ DocStringExtensions
+  ✓ StatsAPI
+  ✓ PtrArrays
+  ✓ DataAPI
+  ✓ CompilerSupportLibraries_jll
+    AliasTables Being precompiled by another process (pid: 4129736, pidfile: /user/home/em18564/.julia/compiled/v1.10/AliasTables/C6bK3_4RpdW.ji.pidfile)
+  ✓ OrderedCollections
+  ✓ IrrationalConstants
+    LogExpFunctions Being precompiled by another process (pid: 4129736, pidfile: /user/home/em18564/.julia/compiled/v1.10/LogExpFunctions/cmCYR_4RpdW.ji.pidfile)
+  ✓ Missings
+  ✓ AliasTables
+  ✓ LogExpFunctions
+  ✓ Statistics
+  ✓ DataStructures
+  ✓ SortingAlgorithms
+  ✓ StatsBase
+  14 dependencies successfully precompiled in 8 seconds. 2 already precompiled.
+   Resolving package versions...
+   Installed Rmath ─────────────────── v0.9.0
+ERROR: LoadError: Error when installing package FillArrays:
+IOError: readdir("/user/home/em18564/.julia/packages/FillArrays/Ksvco/benchmark"): no such file or directory (ENOENT)
+Stacktrace:
+ [1] try_yieldto(undo::typeof(Base.ensure_rescheduled))
+   @ Base ./task.jl:931
+ [2] wait()
+   @ Base ./task.jl:995
+ [3] wait(c::Base.GenericCondition{ReentrantLock}; first::Bool)
+   @ Base ./condition.jl:130
+ [4] wait
+   @ ./condition.jl:125 [inlined]
+ [5] take_unbuffered(c::Channel{Tuple{String, Vector{String}, Vector{String}}})
+   @ Base ./channels.jl:494
+ [6] take!
+   @ ./channels.jl:471 [inlined]
+ [7] iterate(c::Channel{Tuple{String, Vector{String}, Vector{String}}}, state::Nothing)
+   @ Base ./channels.jl:613
+ [8] set_readonly(path::String)
+   @ Pkg /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/utils.jl:59
+ [9] (::Pkg.Operations.var"#47#52"{Bool, Pkg.Types.Context, Tuple{SubString{String}, Dict{Base.UUID, Base.SHA1}}, Channel{Any}, Channel{@NamedTuple{pkg::Pkg.Types.PackageEntry, urls::Set{String}, path::String}}})()
+   @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:854
+Stacktrace:
+  [1] pkgerror(::String, ::Vararg{String})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
+  [2] macro expansion
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:874 [inlined]
+  [3] macro expansion
+    @ ./task.jl:479 [inlined]
+  [4] download_source(ctx::Pkg.Types.Context; readonly::Bool)
+    @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:815
+  [5] download_source
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:791 [inlined]
+  [6] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}, new_git::Set{Base.UUID}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform)
+    @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1390
+  [7] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1377 [inlined]
+  [8] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform, kwargs::@Kwargs{io::IOStream})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:278
+  [9] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:159
+ [10] add(pkgs::Vector{Pkg.Types.PackageSpec})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
+ [11] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+ [12] add(pkg::String)
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
+ [13] top-level scope
+    @ ~/bayesian/BC4/Bayes/input/setup.jl:4
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/input/setup.jl:4
+  Installing known registries into `~/.julia`
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+    Updating `~/.julia/environments/v1.10/Project.toml`
+  [9a3f8284] + Random
+    Updating `~/.julia/environments/v1.10/Manifest.toml`
+  [9a3f8284] + Random
+  [ea8e919c] + SHA v0.7.0
+   Resolving package versions...
+   Installed DataAPI ───────────── v1.16.0
+   Installed StatsAPI ──────────── v1.8.0
+   Installed IrrationalConstants ─ v0.2.6
+   Installed OrderedCollections ── v1.8.1
+   Installed AliasTables ───────── v1.1.3
+   Installed SortingAlgorithms ─── v1.2.2
+   Installed LogExpFunctions ───── v0.3.29
+   Installed StatsBase ─────────── v0.34.10
+   Installed Missings ──────────── v1.2.0
+   Installed DocStringExtensions ─ v0.9.5
+   Installed DataStructures ────── v0.19.3
+   Installed PtrArrays ─────────── v1.4.0
+    Updating `~/.julia/environments/v1.10/Project.toml`
+  [2913bbd2] + StatsBase v0.34.10
+    Updating `~/.julia/environments/v1.10/Manifest.toml`
+  [66dad0bd] + AliasTables v1.1.3
+  [9a962f9c] + DataAPI v1.16.0
+  [864edb3b] + DataStructures v0.19.3
+  [ffbed154] + DocStringExtensions v0.9.5
+  [92d709cd] + IrrationalConstants v0.2.6
+  [2ab3a3ac] + LogExpFunctions v0.3.29
+  [e1d29d7a] + Missings v1.2.0
+  [bac558e1] + OrderedCollections v1.8.1
+  [43287f4e] + PtrArrays v1.4.0
+  [a2af1166] + SortingAlgorithms v1.2.2
+  [82ae8749] + StatsAPI v1.8.0
+  [2913bbd2] + StatsBase v0.34.10
+  [56f22d72] + Artifacts
+  [8f399da3] + Libdl
+  [37e2e46d] + LinearAlgebra
+  [de0858da] + Printf
+  [9e88b42a] + Serialization
+  [2f01184e] + SparseArrays v1.10.0
+  [10745b16] + Statistics v1.10.0
+  [4ec0a83e] + Unicode
+  [e66e0078] + CompilerSupportLibraries_jll v1.1.1+0
+  [4536629a] + OpenBLAS_jll v0.3.23+4
+  [bea87d4a] + SuiteSparse_jll v7.2.1+1
+  [8e850b90] + libblastrampoline_jll v5.8.0+1
+Precompiling project...
+    DocStringExtensions Being precompiled by another process (pid: 4129734, pidfile: /user/home/em18564/.julia/compiled/v1.10/DocStringExtensions/KRdZs_4RpdW.ji.pidfile)
+    Statistics Being precompiled by another process (pid: 4129734, pidfile: /user/home/em18564/.julia/compiled/v1.10/Statistics/ERcPL_4RpdW.ji.pidfile)
+  ✓ StatsAPI
+  ✓ PtrArrays
+  ✓ DataAPI
+  ✓ CompilerSupportLibraries_jll
+  ✓ DocStringExtensions
+    Missings Being precompiled by another process (pid: 4129734, pidfile: /user/home/em18564/.julia/compiled/v1.10/Missings/wLfgT_4RpdW.ji.pidfile)
+  ✓ OrderedCollections
+    DataStructures Being precompiled by another process (pid: 4129734, pidfile: /user/home/em18564/.julia/compiled/v1.10/DataStructures/xKiwJ_4RpdW.ji.pidfile)
+  ✓ IrrationalConstants
+  ✓ Missings
+  ✓ AliasTables
+  ✓ LogExpFunctions
+  ✓ Statistics
+  ✓ DataStructures
+    SortingAlgorithms Being precompiled by another process (pid: 4129734, pidfile: /user/home/em18564/.julia/compiled/v1.10/SortingAlgorithms/6dCmw_4RpdW.ji.pidfile)
+  ✓ SortingAlgorithms
+    StatsBase Being precompiled by another process (pid: 4129734, pidfile: /user/home/em18564/.julia/compiled/v1.10/StatsBase/EZjIG_4RpdW.ji.pidfile)
+  ✓ StatsBase
+  14 dependencies successfully precompiled in 9 seconds. 2 already precompiled.
+   Resolving package versions...
+ERROR: LoadError: Error when installing package FillArrays:
+IOError: rm("/user/home/em18564/.julia/packages/FillArrays/Ksvco"): directory not empty (ENOTEMPTY)
+Stacktrace:
+ [1] uv_error
+   @ ./libuv.jl:100 [inlined]
+ [2] rm(path::String; force::Bool, recursive::Bool)
+   @ Base.Filesystem ./file.jl:307
+ [3] rm
+   @ ./file.jl:273 [inlined]
+ [4] checkfor_mv_cp_cptree(src::String, dst::String, txt::String; force::Bool)
+   @ Base.Filesystem ./file.jl:332
+ [5] checkfor_mv_cp_cptree
+   @ ./file.jl:318 [inlined]
+ [6] #mv#15
+   @ ./file.jl:427 [inlined]
+ [7] mv
+   @ ./file.jl:426 [inlined]
+ [8] install_archive(urls::Vector{Pair{String, Bool}}, hash::Base.SHA1, version_path::String; io::IOStream)
+   @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:654
+ [9] (::Pkg.Operations.var"#47#52"{Bool, Pkg.Types.Context, Tuple{SubString{String}, Dict{Base.UUID, Base.SHA1}}, Channel{Any}, Channel{@NamedTuple{pkg::Pkg.Types.PackageEntry, urls::Set{String}, path::String}}})()
+   @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:852
+Stacktrace:
+  [1] pkgerror(::String, ::Vararg{String})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
+  [2] macro expansion
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:874 [inlined]
+  [3] macro expansion
+    @ ./task.jl:479 [inlined]
+  [4] download_source(ctx::Pkg.Types.Context; readonly::Bool)
+    @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:815
+  [5] download_source
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:791 [inlined]
+  [6] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}, new_git::Set{Base.UUID}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform)
+    @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1390
+  [7] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1377 [inlined]
+  [8] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform, kwargs::@Kwargs{io::IOStream})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:278
+  [9] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:159
+ [10] add(pkgs::Vector{Pkg.Types.PackageSpec})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
+ [11] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+ [12] add(pkg::String)
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
+ [13] top-level scope
+    @ ~/bayesian/BC4/Bayes/input/setup.jl:4
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/input/setup.jl:4
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+Stacktrace:
+  [1] pkgerror(::String, ::Vararg{String})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
+  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
+  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
+  [4] read_manifest(f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
+  [5] Pkg.Types.EnvCache(env::Nothing)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
+  [6] EnvCache
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
+  [7] Context
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
+  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
+  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
+ [10] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+ [11] add(pkg::String)
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
+ [12] top-level scope
+    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF/model.jl:3
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF/model.jl:3
+  Installing known registries into `~/.julia`
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+Stacktrace:
+  [1] pkgerror(::String, ::Vararg{String})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
+  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
+  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
+  [4] read_manifest(f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
+  [5] Pkg.Types.EnvCache(env::Nothing)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
+  [6] EnvCache
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
+  [7] #show_update#167
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2436 [inlined]
+  [8] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}, new_git::Set{Base.UUID}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform)
+    @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1398
+  [9] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1377 [inlined]
+ [10] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform, kwargs::@Kwargs{io::IOStream})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:278
+ [11] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:159
+ [12] add(pkgs::Vector{Pkg.Types.PackageSpec})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
+ [13] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+ [14] add(pkg::String)
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
+ [15] top-level scope
+    @ ~/bayesian/BC4/Bayes/input/setup.jl:4
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/input/setup.jl:4
+  Installing known registries into `~/.julia`
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+Stacktrace:
+  [1] pkgerror(::String, ::Vararg{String})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
+  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
+  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
+  [4] read_manifest(f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
+  [5] Pkg.Types.EnvCache(env::Nothing)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
+  [6] EnvCache
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
+  [7] #show_update#167
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2436 [inlined]
+  [8] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}, new_git::Set{Base.UUID}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform)
+    @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1398
+  [9] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1377 [inlined]
+ [10] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform, kwargs::@Kwargs{io::IOStream})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:278
+ [11] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:159
+ [12] add(pkgs::Vector{Pkg.Types.PackageSpec})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
+ [13] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+ [14] add(pkg::String)
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
+ [15] top-level scope
+    @ ~/bayesian/BC4/Bayes/input/setup.jl:4
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/input/setup.jl:4
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+  No Changes to `~/.julia/environments/v1.10/Project.toml`
+  No Changes to `~/.julia/environments/v1.10/Manifest.toml`
+   Resolving package versions...
+ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+Stacktrace:
+  [1] pkgerror(::String, ::Vararg{String})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
+  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
+  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
+  [4] read_manifest(f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
+  [5] Pkg.Types.EnvCache(env::Nothing)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
+  [6] EnvCache
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
+  [7] #show_update#167
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2436 [inlined]
+  [8] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}, new_git::Set{Base.UUID}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform)
+    @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1398
+  [9] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1377 [inlined]
+ [10] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform, kwargs::@Kwargs{io::IOStream})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:278
+ [11] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:159
+ [12] add(pkgs::Vector{Pkg.Types.PackageSpec})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
+ [13] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+ [14] add(pkg::String)
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
+ [15] top-level scope
+    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF/model.jl:4
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF/model.jl:4
+ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+Stacktrace:
+  [1] pkgerror(::String, ::Vararg{String})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
+  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
+  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
+  [4] read_manifest(f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
+  [5] Pkg.Types.EnvCache(env::Nothing)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
+  [6] EnvCache
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
+  [7] Context
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
+  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
+  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
+ [10] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+ [11] add(pkg::String)
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
+ [12] top-level scope
+    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF/model.jl:2
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF/model.jl:2
+ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+Stacktrace:
+  [1] pkgerror(::String, ::Vararg{String})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
+  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
+  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
+  [4] read_manifest(f_or_io::String)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
+  [5] Pkg.Types.EnvCache(env::Nothing)
+    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
+  [6] EnvCache
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
+  [7] Context
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
+  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
+  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
+ [10] add
+    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+ [11] add(pkg::String)
+    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
+ [12] top-level scope
+    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF/model.jl:2
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_FullCF/model.jl:2
