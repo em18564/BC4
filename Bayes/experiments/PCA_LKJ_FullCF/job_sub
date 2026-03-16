@@ -1,14 +1,14 @@
 #!/bin/bash
 
-#SBATCH --job-name PCA
+#SBATCH --job-name PCA_LKJ_fullCF
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
-#SBATCH --time=06:00:0
+#SBATCH --time=3-00:00:00
 #SBATCH --output model.out
-#SBATCH --account=cosc029104
-#SBATCH --partition=veryshort
-#SBATCH --array 1-6
+#SBATCH --account=PHPH039284
+#SBATCH --partition=short
+#SBATCH --array 1-4
 
 echo Running on host `hostname`
 echo Time is `date`
@@ -19,4 +19,4 @@ echo `echo $SLURM_JOB_NODELIST | uniq`
 OMP_DISPLAY_ENV=true
 # Run the executable
 julia ../../input/setup.jl
-julia model.jl ${SLURM_ARRAY_TASK_ID} > model-${SLURM_ARRAY_TASK_ID}.out
+julia model.jl --threads 4 ${SLURM_ARRAY_TASK_ID} > model-${SLURM_ARRAY_TASK_ID}.out

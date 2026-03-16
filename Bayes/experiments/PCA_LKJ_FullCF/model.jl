@@ -34,7 +34,7 @@ using Serialization
 using LinearAlgebra
 # %%
 NUM_SENTENCES = 205
-NUM_PARTICIPANTS = 8
+NUM_PARTICIPANTS = 23
 NUM_WORDS = 1931
 NUM_TYPES = 5
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
@@ -70,8 +70,8 @@ NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
       PCA[i] ~ Normal(μ[i],σ)
       end
 end
-#args = map(x->string(x), ARGS)
-#pc   = parse(Int,args[1])
+args = map(x->string(x), ARGS)
+pc   = parse(Int,args[1])
 dfTags   = CSV.read("../../input/full_tags.csv", DataFrame).tags
 df       = CSV.read("../../input/dfPCANorm_corrected.csv", DataFrame)
 #%%
@@ -109,11 +109,9 @@ f.fullTag .= 4
 df_modified = vcat(adj,noun,verb,adv,f)
 # %%
 dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4]]
-for pc in range(1,4)
-  mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
-  m = sample(mod, NUTS(), MCMCThreads(), 250,4)
-  display(m)
-  serialize("output/out"*string(pc)*".jls",m)
-end
+mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
+m = sample(mod, NUTS(), MCMCThreads(), 250,4)
+display(m)
+serialize("output/out"*string(pc)*".jls",m)
 
 # Highest Density Interval
