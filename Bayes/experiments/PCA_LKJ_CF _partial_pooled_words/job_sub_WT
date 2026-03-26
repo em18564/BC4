@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name PCA_LKJ_CF
+#SBATCH --job-name WT_model
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
@@ -18,4 +18,4 @@ echo This job runs on the following machines:
 echo `echo $SLURM_JOB_NODELIST | uniq`
 OMP_DISPLAY_ENV=true
 # Run the executable
-julia model.jl --threads 4 --depwarn=error ${SLURM_ARRAY_TASK_ID} > model-${SLURM_ARRAY_TASK_ID}.out
+julia model_withWT.jl --threads 4 --depwarn=error ${SLURM_ARRAY_TASK_ID} > model-${SLURM_ARRAY_TASK_ID}.out
