@@ -9,7 +9,7 @@
 #SBATCH --account=PHPH039284
 #SBATCH --partition=short
 #SBATCH --array 1-4
-module add languages/julia/1.10.3
+module load languages/julia/1.10.3
 echo Running on host `hostname`
 echo Time is `date`
 echo Directory is `pwd`
