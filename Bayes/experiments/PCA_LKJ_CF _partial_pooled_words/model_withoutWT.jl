@@ -36,10 +36,11 @@ using LinearAlgebra
 # args = map(x->string(x), ARGS)
 # pc   = parse(Int,args[1])
 # %%
-NUM_WORDS = 600
+output_folder = "output_withoutWT"
+NUM_WORDS = 400
 NUM_TYPES = 11
 NUM_ERP = 4 # ELAN, LAN, N400, EPNP, P600, PNP
-NUM_PARTICIPANTS = 3
+NUM_PARTICIPANTS = 5
 
 
 dfTags   = CSV.read("../../input/full_tags.csv", DataFrame).tags
@@ -59,12 +60,13 @@ NUM_UNIQUE_WORDS = maximum(df_modified.innerUniqueWordId)
 @model function model(participant,word,surprisal,tags,PCA)
 
 
-  σ_w ~ filldist(Exponential(), 2)
-  ρ_w ~ LKJ(2, 2)
-  Σ_w = Symmetric(Diagonal(σ_w) * ρ_w * Diagonal(σ_w))
-  ab_w ~ filldist(MvNormal([0,0], Σ_w),NUM_UNIQUE_WORDS)
-  a_w = ab_w[1,word]
-  b_w = ab_w[2,word]
+  σ_aw ~ Exponential(2)
+  a_ws ~ filldist(Normal(0, σ_aw),NUM_UNIQUE_WORDS)
+  σ_bw ~ Exponential(2)
+  b_ws ~ filldist(Normal(0, σ_bw),NUM_UNIQUE_WORDS)
+
+  a_w = a_ws[word]
+  b_w = b_ws[word]
 
 
 
@@ -97,12 +99,12 @@ end
 # pc   = parse(Int,args[1])
 
 
-CSV.write("output_withoutWT/usedDF.csv",df_modified)
+CSV.write(output_folder*"/usedDF.csv",df_modified)
 for pc in range(1,4)
   mod = model(df_modified.Participant,df_modified.uniqueWordId,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
   m   = sample(mod, NUTS(), MCMCThreads(), 250,4)
   display(m)
-  serialize("output_withoutWT/out"*string(pc)*".jls",m)
+  serialize(output_folder*"/out"*string(pc)*".jls",m)
 end
 
 
