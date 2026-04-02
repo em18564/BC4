@@ -9,7 +9,7 @@
 #SBATCH --account=PHPH039284
 #SBATCH --partition=short
 #SBATCH --array 1-4
-module add languages/julia/1.10.3
+module load languages/julia/1.10.3
 echo Running on host `hostname`
 echo Time is `date`
 echo Directory is `pwd`
@@ -18,4 +18,4 @@ echo This job runs on the following machines:
 echo `echo $SLURM_JOB_NODELIST | uniq`
 OMP_DISPLAY_ENV=true
 # Run the executable
-julia model_withoutWT.jl --threads 4 --depwarn=error ${SLURM_ARRAY_TASK_ID} > model-${SLURM_ARRAY_TASK_ID}.out
+julia model_withoutWTLKJ.jl --threads 4 --depwarn=error ${SLURM_ARRAY_TASK_ID} > model-${SLURM_ARRAY_TASK_ID}.out

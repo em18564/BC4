@@ -1,20 +1,11 @@
-import Pkg
-Pkg.add("Random")
-#Pkg.add("StatsBase")
-Pkg.add("Distributions")
-#Pkg.add("StatsPlots")
-#Pkg.add("StatsFuns")
-#Pkg.add("Logging")
-
-Pkg.add("Turing")
-Pkg.add("CSV")
-Pkg.add("DataFrames")
-#Pkg.add("Optim")
-#Pkg.add("StatisticalRethinking")
-#Pkg.add("MCMCDiagnosticTools")
-Pkg.add("Serialization")
-Pkg.add("LinearAlgebra")
-# %%
+# import Pkg
+# Pkg.add("Random")
+# Pkg.add("Distributions")
+# Pkg.add("Turing")
+# Pkg.add("CSV")
+# Pkg.add("DataFrames")
+# Pkg.add("Serialization")
+# Pkg.add("LinearAlgebra")
 
 using Random
 # using StatsBase
@@ -36,11 +27,11 @@ using LinearAlgebra
 # args = map(x->string(x), ARGS)
 # pc   = parse(Int,args[1])
 # %%
-output_folder = "noLKJ_allWords_2Part/output_withoutWT"
+output_folder = "noLKJ/output_withoutWT_10"
 NUM_WORDS = 1931
 NUM_TYPES = 11
 NUM_ERP = 4 # ELAN, LAN, N400, EPNP, P600, PNP
-NUM_PARTICIPANTS = 2
+NUM_PARTICIPANTS = 10
 
 
 dfTags   = CSV.read("../../input/full_tags.csv", DataFrame).tags
@@ -92,17 +83,15 @@ NUM_UNIQUE_WORDS = maximum(df_modified.innerUniqueWordId)
 
 end
 
-# args = map(x->string(x), ARGS)
-# pc   = parse(Int,args[1])
+args = map(x->string(x), ARGS)
+pc   = parse(Int,args[1])
 
 
 CSV.write(output_folder*"/usedDF.csv",df_modified)
-for pc in range(1,4)
-  mod = model(df_modified.Participant,df_modified.uniqueWordId,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
-  m   = sample(mod, NUTS(), MCMCThreads(), 250,4)
-  display(m)
-  serialize(output_folder*"/out"*string(pc)*".jls",m)
-end
+mod = model(df_modified.Participant,df_modified.uniqueWordId,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
+m   = sample(mod, NUTS(), MCMCThreads(), 250,4)
+display(m)
+serialize(output_folder*"/out"*string(pc)*".jls",m)
 
 
 

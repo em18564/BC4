@@ -36,11 +36,11 @@ using LinearAlgebra
 # args = map(x->string(x), ARGS)
 # pc   = parse(Int,args[1])
 # %%
-output_folder = "noLKJ_allWords_6Part/output_withWT"
-NUM_WORDS = 500
+output_folder = "noLKJ/output_withWT_10"
+NUM_WORDS = 1931
 NUM_TYPES = 11
 NUM_ERP = 4 # ELAN, LAN, N400, EPNP, P600, PNP
-NUM_PARTICIPANTS = 3
+NUM_PARTICIPANTS = 10
 
 
 dfTags   = CSV.read("../../input/full_tags.csv", DataFrame).tags
