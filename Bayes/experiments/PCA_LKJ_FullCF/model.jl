@@ -1,3 +1,5 @@
+import Pkg
+Pkg.instantiate()
 using Random
 # using StatsBase
 using Distributions
