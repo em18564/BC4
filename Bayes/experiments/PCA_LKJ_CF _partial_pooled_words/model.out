@@ -1,278 +1,69 @@
-cpu-bind=MASK - bp1-compute016, task  0  0 [268721]: mask 0xc000000c set
-cpu-bind=MASK - bp1-compute016, task  0  0 [268722]: mask 0x3000000300 set
-cpu-bind=MASK - bp1-compute016, task  0  0 [268725]: mask 0xc000000c00000 set
-cpu-bind=MASK - bp1-compute016, task  0  0 [268719]: mask 0x30000003 set
-cpu-bind=MASK - bp1-compute016, task  0  0 [268720]: mask 0x300000030 set
-cpu-bind=MASK - bp1-compute016, task  0  0 [268723]: mask 0xc000000c00 set
-cpu-bind=MASK - bp1-compute016, task  0  0 [268724]: mask 0xc000000c0 set
-   Resolving package versions...
-    Updating `~/.julia/environments/v1.10/Project.toml`
-  [9a3f8284] + Random
-    Updating `~/.julia/environments/v1.10/Manifest.toml`
-  [9a3f8284] + Random
-  [ea8e919c] + SHA v0.7.0
-   Resolving package versions...
-ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
-Stacktrace:
-  [1] pkgerror(::String, ::Vararg{String})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
-  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
-  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
-  [4] read_manifest(f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
-  [5] Pkg.Types.EnvCache(env::Nothing)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
-  [6] EnvCache
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
-  [7] #show_update#167
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2436 [inlined]
-  [8] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}, new_git::Set{Base.UUID}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform)
-    @ Pkg.Operations /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1398
-  [9] add
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1377 [inlined]
- [10] add(ctx::Pkg.Types.Context, pkgs::Vector{Pkg.Types.PackageSpec}; preserve::Pkg.Types.PreserveLevel, platform::Base.BinaryPlatforms.Platform, kwargs::@Kwargs{io::IOStream})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:278
- [11] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:159
- [12] add(pkgs::Vector{Pkg.Types.PackageSpec})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
- [13] add
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
- [14] add(pkg::String)
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
- [15] top-level scope
-    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withWT.jl:4
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withWT.jl:4
-Running on host bp1-compute016
-Running on host bp1-compute016
-Time is Thu Mar 26 16:59:43 GMT 2026
-Time is Thu Mar 26 16:59:43 GMT 2026
+cpu-bind=MASK - bp1-compute086, task  0  0 [4130323]: mask 0x9000009 set
+Running on host bp1-compute062
+Time is Thu Apr 2 19:04:37 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words
+Slurm job ID is 16554676
+This job runs on the following machines:
+bp1-compute062
+Running on host bp1-compute062
+Time is Thu Apr 2 19:04:37 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words
-Slurm job ID is 16497490
-Slurm job ID is 16497487
+Slurm job ID is 16554675
 This job runs on the following machines:
-This job runs on the following machines:
-Running on host bp1-compute016
-Running on host bp1-compute016
-bp1-compute016
-Running on host bp1-compute016
-Time is Thu Mar 26 16:59:43 GMT 2026
-Time is Thu Mar 26 16:59:43 GMT 2026
-Time is Thu Mar 26 16:59:43 GMT 2026
-bp1-compute016
+bp1-compute062
+Running on host bp1-compute086
+Running on host bp1-compute086
+Time is Thu Apr 2 19:04:37 BST 2026
+Time is Thu Apr 2 19:04:37 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words
-Slurm job ID is 16497489
-This job runs on the following machines:
+Slurm job ID is 16554677
 Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words
-Slurm job ID is 16497491
 This job runs on the following machines:
-Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words
-Slurm job ID is 16497484
+Slurm job ID is 16554674
 This job runs on the following machines:
-bp1-compute016
-bp1-compute016
-bp1-compute016
-Running on host bp1-compute016
-Time is Thu Mar 26 16:59:43 GMT 2026
-Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words
-Slurm job ID is 16497486
-This job runs on the following machines:
-bp1-compute016
-Running on host bp1-compute016
-Time is Thu Mar 26 16:59:43 GMT 2026
-Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words
-Slurm job ID is 16497488
-This job runs on the following machines:
-bp1-compute016
-ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+bp1-compute086
+bp1-compute086
+ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--threads"
 Stacktrace:
-  [1] pkgerror(::String, ::Vararg{String})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
-  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
-  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
-  [4] read_manifest(f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
-  [5] Pkg.Types.EnvCache(env::Nothing)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
-  [6] EnvCache
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
-  [7] Context
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
-  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
-  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
- [10] add
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
- [11] add(pkg::String)
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
- [12] top-level scope
-    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWT.jl:2
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWT.jl:2
-ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+ [1] tryparse_internal(::Type{Int64}, s::String, startpos::Int64, endpos::Int64, base_::Int64, raise::Bool)
+   @ Base ./parse.jl:143
+ [2] parse(::Type{Int64}, s::String; base::Nothing)
+   @ Base ./parse.jl:254
+ [3] parse(::Type{Int64}, s::String)
+   @ Base ./parse.jl:253
+ [4] top-level scope
+   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWTLKJ.jl:87
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWTLKJ.jl:87
+ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--threads"
 Stacktrace:
-  [1] pkgerror(::String, ::Vararg{String})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
-  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
-  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
-  [4] read_manifest(f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
-  [5] Pkg.Types.EnvCache(env::Nothing)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
-  [6] EnvCache
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
-  [7] Context
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
-  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
-  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
- [10] add
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
- [11] add(pkg::String)
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
- [12] top-level scope
-    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withWT.jl:2
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withWT.jl:2
-ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+ [1] tryparse_internal(::Type{Int64}, s::String, startpos::Int64, endpos::Int64, base_::Int64, raise::Bool)
+   @ Base ./parse.jl:143
+ [2] parse(::Type{Int64}, s::String; base::Nothing)
+   @ Base ./parse.jl:254
+ [3] parse(::Type{Int64}, s::String)
+   @ Base ./parse.jl:253
+ [4] top-level scope
+   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWTLKJ.jl:87
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWTLKJ.jl:87
+ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--threads"
 Stacktrace:
-  [1] pkgerror(::String, ::Vararg{String})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
-  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
-  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
-  [4] read_manifest(f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
-  [5] Pkg.Types.EnvCache(env::Nothing)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
-  [6] EnvCache
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
-  [7] Context
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
-  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
-  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
- [10] add
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
- [11] add(pkg::String)
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
- [12] top-level scope
-    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWT.jl:2
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWT.jl:2
-ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
+ [1] tryparse_internal(::Type{Int64}, s::String, startpos::Int64, endpos::Int64, base_::Int64, raise::Bool)
+   @ Base ./parse.jl:143
+ [2] parse(::Type{Int64}, s::String; base::Nothing)
+   @ Base ./parse.jl:254
+ [3] parse(::Type{Int64}, s::String)
+   @ Base ./parse.jl:253
+ [4] top-level scope
+   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWTLKJ.jl:87
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWTLKJ.jl:87
+ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--threads"
 Stacktrace:
-  [1] pkgerror(::String, ::Vararg{String})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
-  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
-  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
-  [4] read_manifest(f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
-  [5] Pkg.Types.EnvCache(env::Nothing)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
-  [6] EnvCache
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
-  [7] Context
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
-  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
-  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
- [10] add
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
- [11] add(pkg::String)
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
- [12] top-level scope
-    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withWT.jl:2
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withWT.jl:2
-ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
-Stacktrace:
-  [1] pkgerror(::String, ::Vararg{String})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
-  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
-  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
-  [4] read_manifest(f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
-  [5] Pkg.Types.EnvCache(env::Nothing)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
-  [6] EnvCache
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
-  [7] Context
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
-  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
-  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
- [10] add
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
- [11] add(pkg::String)
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
- [12] top-level scope
-    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withWT.jl:2
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withWT.jl:2
-ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
-Stacktrace:
-  [1] pkgerror(::String, ::Vararg{String})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
-  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
-  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
-  [4] read_manifest(f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
-  [5] Pkg.Types.EnvCache(env::Nothing)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
-  [6] EnvCache
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
-  [7] Context
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
-  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
-  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
- [10] add
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
- [11] add(pkg::String)
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
- [12] top-level scope
-    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWT.jl:2
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWT.jl:2
-ERROR: LoadError: `QuadGK=1fd47b50-473d-5c70-9696-f719f8f3bcdc` depends on `Enzyme=7da242da-08ed-463a-9acd-ee780be4f1d9`, but no such entry exists in the manifest.
-Stacktrace:
-  [1] pkgerror(::String, ::Vararg{String})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70
-  [2] validate_manifest(julia_version::VersionNumber, manifest_format::VersionNumber, stage1::Dict{String, Vector{Pkg.Types.Stage1}}, other::Dict{String, Any})
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:135
-  [3] Pkg.Types.Manifest(raw::Dict{String, Any}, f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:203
-  [4] read_manifest(f_or_io::String)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/manifest.jl:222
-  [5] Pkg.Types.EnvCache(env::Nothing)
-    @ Pkg.Types /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:378
-  [6] EnvCache
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:356 [inlined]
-  [7] Context
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/Types.jl:406 [inlined]
-  [8] add(pkgs::Vector{Pkg.Types.PackageSpec}; io::IOStream, kwargs::@Kwargs{})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:150
-  [9] add(pkgs::Vector{Pkg.Types.PackageSpec})
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
- [10] add
-    @ /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
- [11] add(pkg::String)
-    @ Pkg.API /software/local/languages/julia-1.10.3/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
- [12] top-level scope
-    @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWT.jl:2
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWT.jl:2
+ [1] tryparse_internal(::Type{Int64}, s::String, startpos::Int64, endpos::Int64, base_::Int64, raise::Bool)
+   @ Base ./parse.jl:143
+ [2] parse(::Type{Int64}, s::String; base::Nothing)
+   @ Base ./parse.jl:254
+ [3] parse(::Type{Int64}, s::String)
+   @ Base ./parse.jl:253
+ [4] top-level scope
+   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWTLKJ.jl:87
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF _partial_pooled_words/model_withoutWTLKJ.jl:87
