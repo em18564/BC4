@@ -1,5 +1,5 @@
-# import Pkg
-# Pkg.add("Random")
+import Pkg
+Pkg.instantiate()
 # Pkg.add("Distributions")
 # Pkg.add("Turing")
 # Pkg.add("CSV")
