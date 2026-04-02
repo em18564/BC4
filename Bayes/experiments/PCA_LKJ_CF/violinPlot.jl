@@ -15,6 +15,7 @@ using MCMCChains
 using Serialization
 using PlotlyJS
 using Images, FileIO
+using Measures
 # using Plots
 # using Gadfly
 # import Cairo, Fontconfig
@@ -30,10 +31,10 @@ function HDI(data)
 end
 
 #df = CSV.read("savedData/df_2.csv", DataFrame)
-chn1 = deserialize("output/out1.jls")
-chn2 = deserialize("output/out2.jls")
-chn3 = deserialize("output/out3.jls")
-chn4 = deserialize("output/out4.jls")
+chn1 = deserialize("output_10/out1.jls")
+chn2 = deserialize("output_10/out2.jls")
+chn3 = deserialize("output_10/out3.jls")
+chn4 = deserialize("output_10/out4.jls")
 chn_df1 = DataFrames.DataFrame(chn1)
 chn_df2 = DataFrames.DataFrame(chn2)
 chn_df3 = DataFrames.DataFrame(chn3)
@@ -245,15 +246,54 @@ end
 # draw(PNG("violinCov.png", 8inch, 8inch, dpi=300), vio)
 
 # %%
-gr(size=(1600,350), dpi=600)
+gr(size=(1800,800), dpi=600)
 chns = [chn1,chn2,chn3,chn4]
 plts = []
+colNames = String.(Vector(DataFrames.DataFrame(summarystats(chns[1]; append_chains=true)).parameters))
+
+as    = vcat(   findall(x -> startswith(x, "ab_w[1"), colNames),
+                findall(x -> startswith(x, "ab_p[1"), colNames),
+                findall(x -> startswith(x, "ab_e[1"), colNames))
+alabs = vcat(   filter(x -> startswith(x, "ab_w[1"), colNames),
+                filter(x -> startswith(x, "ab_p[1"), colNames),
+                filter(x -> startswith(x, "ab_e[1"), colNames))
+alabs = map(x -> startswith(x, "ab_w") ? "Word-type" :
+                 startswith(x, "ab_p") ? "Participant" : 
+                 startswith(x, "ab_e") ? "Intercept" : x, alabs)
+bs    = vcat(   findall(x -> startswith(x, "ab_w[2"), colNames),
+                findall(x -> startswith(x, "ab_p[2"), colNames),
+                findall(x -> startswith(x, "ab_e[2"), colNames))
+blabs = vcat(   filter(x -> startswith(x, "ab_w[2"), colNames),
+                filter(x -> startswith(x, "ab_p[2"), colNames),
+                filter(x -> startswith(x, "ab_e[2"), colNames))
+blabs = map(x -> startswith(x, "ab_w") ? "Word-type" :
+                 startswith(x, "ab_p") ? "Participant" : 
+                 startswith(x, "ab_e") ? "Intercept" : x, blabs)
+σs    = vcat(   findall(x -> startswith(x, "σ"), colNames),
+                findall(x -> startswith(x, "ρ"), colNames))
+σlabs = vcat(   filter(x -> startswith(x, "σ"), colNames),
+                filter(x -> startswith(x, "ρ"), colNames))
+σlabs = map(x -> startswith(x, "σ_w") ? "Word-type" :
+                 startswith(x, "σ_p") ? "Participant" : 
+                 startswith(x, "σ_e") ? "Intercept" :
+                 startswith(x, "ρ") ? "LKJ" : x, σlabs)
+
 for i in range(1,4)
-    push!(plts,Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"],xlabel = "R-hat",ylabel = "ess",title="PC " * string(i)))
+
+    myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][as],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][as],xlabel = "R-hat",ylabel = "ess (as)",title="PC " * string(i),group=alabs)
+    push!(plts,myplot)
+    myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][bs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][bs],xlabel = "R-hat",ylabel = "ess (bs)",group=blabs)
+    push!(plts,myplot)
+    myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][σs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][σs],xlabel = "R-hat",ylabel = "ess (σs)",group=σlabs)
+    push!(plts,myplot)
 end
 
-essRhat = Plots.plot(plts[1],plts[2],plts[3],plts[4],layout=@layout grid(1,6))
-Plots.savefig(essRhat,"output/essRhat.png")
+essRhat = Plots.plot(   plts[1],plts[4],plts[7],plts[10],
+                        plts[2],plts[5],plts[8],plts[11],
+                        plts[3],plts[6],plts[9],plts[12]
+                        ,layout=grid(3,4),left_margin=15mm,bottom_margin=15mm
+                        ,plot_title="EssRhat of 10 participants with Content & Function")
+Plots.savefig(essRhat,"output_10/essRhat.png")
 
 
 #%%
