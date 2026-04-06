@@ -1,18 +1,32 @@
-cpu-bind=MASK - bp1-compute095, task  0  0 [1350999]: mask 0x6000006000 set
-cpu-bind=MASK - bp1-compute095, task  0  0 [1351000]: mask 0x1080001080 set
-Running on host bp1-compute095
-Time is Thu Apr 2 19:05:08 BST 2026
+cpu-bind=MASK - bp1-compute062, task  0  0 [2624375]: mask 0x300000300 set
+cpu-bind=MASK - bp1-compute062, task  0  0 [2624377]: mask 0x30000030 set
+cpu-bind=MASK - bp1-compute062, task  0  0 [2624376]: mask 0xc00000c0 set
+cpu-bind=MASK - bp1-compute062, task  0  0 [2624378]: mask 0x3000003 set
+Running on host bp1-compute062
+Running on host bp1-compute062
+Time is Thu Apr 2 19:12:11 BST 2026
+Time is Thu Apr 2 19:12:11 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF
-Slurm job ID is 16554682
+Slurm job ID is 16554693
 This job runs on the following machines:
-bp1-compute095
-Running on host bp1-compute095
-Time is Thu Apr 2 19:05:08 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF
-Slurm job ID is 16554685
+Slurm job ID is 16554695
 This job runs on the following machines:
-bp1-compute095
-ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--threads"
+bp1-compute062
+bp1-compute062
+Running on host bp1-compute062
+Time is Thu Apr 2 19:12:11 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF
+Slurm job ID is 16554696
+This job runs on the following machines:
+Running on host bp1-compute062
+bp1-compute062
+Time is Thu Apr 2 19:12:11 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF
+Slurm job ID is 16554694
+This job runs on the following machines:
+bp1-compute062
+ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--depwarn=error"
 Stacktrace:
  [1] tryparse_internal(::Type{Int64}, s::String, startpos::Int64, endpos::Int64, base_::Int64, raise::Bool)
    @ Base ./parse.jl:143
@@ -21,9 +35,9 @@ Stacktrace:
  [3] parse(::Type{Int64}, s::String)
    @ Base ./parse.jl:253
  [4] top-level scope
-   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:58
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:58
-ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--threads"
+   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:59
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:59
+ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--depwarn=error"
 Stacktrace:
  [1] tryparse_internal(::Type{Int64}, s::String, startpos::Int64, endpos::Int64, base_::Int64, raise::Bool)
    @ Base ./parse.jl:143
@@ -32,9 +46,9 @@ Stacktrace:
  [3] parse(::Type{Int64}, s::String)
    @ Base ./parse.jl:253
  [4] top-level scope
-   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:58
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:58
-ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--threads"
+   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:59
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:59
+ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--depwarn=error"
 Stacktrace:
  [1] tryparse_internal(::Type{Int64}, s::String, startpos::Int64, endpos::Int64, base_::Int64, raise::Bool)
    @ Base ./parse.jl:143
@@ -43,9 +57,9 @@ Stacktrace:
  [3] parse(::Type{Int64}, s::String)
    @ Base ./parse.jl:253
  [4] top-level scope
-   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:58
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:58
-ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--threads"
+   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:59
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:59
+ERROR: LoadError: ArgumentError: invalid base 10 digit '-' in "--depwarn=error"
 Stacktrace:
  [1] tryparse_internal(::Type{Int64}, s::String, startpos::Int64, endpos::Int64, base_::Int64, raise::Bool)
    @ Base ./parse.jl:143
@@ -54,5 +68,5 @@ Stacktrace:
  [3] parse(::Type{Int64}, s::String)
    @ Base ./parse.jl:253
  [4] top-level scope
-   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:58
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:58
+   @ ~/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:59
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/experiments/PCA_LKJ_CF/model.jl:59
