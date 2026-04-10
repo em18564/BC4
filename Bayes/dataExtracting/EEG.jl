@@ -1,7 +1,7 @@
 using MAT
 using CSV
 using DataFrames
-using TextAnalysis, TextModels
+using TextAnalysis
 df_old = CSV.read("dfPCA.csv", DataFrame)
 
 
