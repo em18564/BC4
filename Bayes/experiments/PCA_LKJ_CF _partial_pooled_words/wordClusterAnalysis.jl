@@ -22,13 +22,13 @@ using DataStructures
 # using Gadfly
 # import Cairo, Fontconfig
 # %%
+folder = "PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withoutWT_10"
 
-
-df = CSV.read("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withWT/usedDF.csv",DataFrame)
-chn1 = deserialize("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withWT/out1.jls")
-chn2 = deserialize("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withWT/out2.jls")
-chn3 = deserialize("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withWT/out3.jls")
-chn4 = deserialize("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withWT/out4.jls")
+df = CSV.read(folder*"/usedDF.csv",DataFrame)
+chn1 = deserialize(folder*"/out1.jls")
+chn2 = deserialize(folder*"/out2.jls")
+chn3 = deserialize(folder*"/out3.jls")
+chn4 = deserialize(folder*"/out4.jls")
 chn_df1 = DataFrames.DataFrame(chn1)
 chn_df2 = DataFrames.DataFrame(chn2)
 chn_df3 = DataFrames.DataFrame(chn3)
@@ -89,7 +89,7 @@ essRhat = Plots.plot(   plts[1],plts[4],plts[7],plts[10],
                         plts[3],plts[6],plts[9],plts[12]
                         ,layout=grid(3,4),left_margin=15mm,bottom_margin=15mm
                         ,plot_title="EssRhat partially pooled with word type (262 unique words, 3 participants)")
-Plots.savefig(essRhat,"PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withWT/essRhat.png")
+Plots.savefig(essRhat,folder*"/essRhat.png")
 
 
 
@@ -109,11 +109,11 @@ Plots.savefig(essRhat,"PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withWT/essR
 
 # %%
 
-df = CSV.read("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withoutWT/usedDF.csv",DataFrame)
-chn1 = deserialize("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withoutWT/out1.jls")
-chn2 = deserialize("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withoutWT/out2.jls")
-chn3 = deserialize("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withoutWT/out3.jls")
-chn4 = deserialize("PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withoutWT/out4.jls")
+df = CSV.read(folder*"/usedDF.csv",DataFrame)
+chn1 = deserialize(folder*"/out1.jls")
+chn2 = deserialize(folder*"/out2.jls")
+chn3 = deserialize(folder*"/out3.jls")
+chn4 = deserialize(folder*"/out4.jls")
 chn_df1 = DataFrames.DataFrame(chn1)
 chn_df2 = DataFrames.DataFrame(chn2)
 chn_df3 = DataFrames.DataFrame(chn3)
@@ -165,8 +165,8 @@ essRhat = Plots.plot(   plts[1],plts[4],plts[7],plts[10],
                         plts[2],plts[5],plts[8],plts[11],
                         plts[3],plts[6],plts[9],plts[12]
                         ,layout=grid(3,4),left_margin=15mm,bottom_margin=15mm
-                        ,plot_title="EssRhat partially pooled without word type (262 unique words, 3 participants)")
-Plots.savefig(essRhat,"PCA_LKJ_CF _partial_pooled_words/noLKJ/output_withoutWT/essRhat.png")
+                        ,plot_title="EssRhat partially pooled without word type (all words, 10 participants)")
+Plots.savefig(essRhat,folder*"/essRhat.png")
 
 
 
@@ -191,7 +191,7 @@ wordDataset = DataFrame(word=1:uwords,  a1=df1[2:2+uwords-1,:].mean,b1=df1[uword
 
 x = transpose(Matrix(wordDataset)[:,2:9])
 y = Matrix(wordDataset)[:,1]
-nclusters = 2
+nclusters = 6
 R = kmeans(x, nclusters; maxiter=200, display=:iter)
 a = assignments(R) # get the assignments of points to clusters
 c = counts(R) # get the cluster sizes

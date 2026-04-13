@@ -31,10 +31,10 @@ function HDI(data)
 end
 
 #df = CSV.read("savedData/df_2.csv", DataFrame)
-chn1 = deserialize("output_10/out1.jls")
-chn2 = deserialize("output_10/out2.jls")
-chn3 = deserialize("output_10/out3.jls")
-chn4 = deserialize("output_10/out4.jls")
+chn1 = deserialize("output/out1.jls")
+chn2 = deserialize("output/out2.jls")
+chn3 = deserialize("output/out3.jls")
+chn4 = deserialize("output/out4.jls")
 chn_df1 = DataFrames.DataFrame(chn1)
 chn_df2 = DataFrames.DataFrame(chn2)
 chn_df3 = DataFrames.DataFrame(chn3)
@@ -280,11 +280,11 @@ blabs = map(x -> startswith(x, "ab_w") ? "Word-type" :
 
 for i in range(1,4)
 
-    myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][as],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][as],xlabel = "R-hat",ylabel = "ess (as)",title="PC " * string(i),group=alabs)
+    myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][as],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][as],xlabel = "R-hat",ylabel = "ess (as)",title="PC " * string(i),group=alabs,ylim=(0,1050))
     push!(plts,myplot)
-    myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][bs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][bs],xlabel = "R-hat",ylabel = "ess (bs)",group=blabs)
+    myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][bs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][bs],xlabel = "R-hat",ylabel = "ess (bs)",group=blabs,ylim=(0,1050))
     push!(plts,myplot)
-    myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][σs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][σs],xlabel = "R-hat",ylabel = "ess (σs)",group=σlabs)
+    myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][σs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][σs],xlabel = "R-hat",ylabel = "ess (σs)",group=σlabs,ylim=(0,1050))
     push!(plts,myplot)
 end
 
@@ -292,8 +292,8 @@ essRhat = Plots.plot(   plts[1],plts[4],plts[7],plts[10],
                         plts[2],plts[5],plts[8],plts[11],
                         plts[3],plts[6],plts[9],plts[12]
                         ,layout=grid(3,4),left_margin=15mm,bottom_margin=15mm
-                        ,plot_title="EssRhat of 10 participants with Content & Function")
-Plots.savefig(essRhat,"output_10/essRhat.png")
+                        ,plot_title="EssRhat of all participants with Content & Function")
+Plots.savefig(essRhat,"output/essRhat.png")
 
 
 #%%
