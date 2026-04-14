@@ -24,6 +24,7 @@ chainLength = 1000
 noChains = 4
 wordTypes = ["Adjective","Noun","Verb","Adverb","Function"]
 cols = ["#3D9970", "#FF4136", "#FF851B","#4040FF","#7D0DC3"]
+folder = "output_noLKJ"
 function HDI(data)
     l = percentile(data,1.5)
     u = percentile(data,98.5)
@@ -32,10 +33,10 @@ function HDI(data)
 end
 
 #df = CSV.read("savedData/df_2.csv", DataFrame)
-chn1 = deserialize("output/out1.jls")
-chn2 = deserialize("output/out2.jls")
-chn3 = deserialize("output/out3.jls")
-chn4 = deserialize("output/out4.jls")
+chn1 = deserialize(folder*"/out1.jls")
+chn2 = deserialize(folder*"/out2.jls")
+chn3 = deserialize(folder*"/out3.jls")
+chn4 = deserialize(folder*"/out4.jls")
 chn_df1 = DataFrames.DataFrame(chn1)
 chn_df2 = DataFrames.DataFrame(chn2)
 chn_df3 = DataFrames.DataFrame(chn3)
@@ -43,15 +44,18 @@ chn_df4 = DataFrames.DataFrame(chn4)
 
 d = zeros(4,2,length(wordTypes),chainLength)
 vd = []
-for j in range(1,length(wordTypes))
-    for i in range(1,2)
-        d[1,i,j,:] = chn_df1[:,"ab_w["*string(i)*", "*string(j)*"]"]
-        d[2,i,j,:] = chn_df2[:,"ab_w["*string(i)*", "*string(j)*"]"]
-        d[3,i,j,:] = chn_df3[:,"ab_w["*string(i)*", "*string(j)*"]"]
-        d[4,i,j,:] = chn_df4[:,"ab_w["*string(i)*", "*string(j)*"]"]
-        global vd = vcat(vd, d[1,i,j,:],d[2,i,j,:],d[3,i,j,:],d[4,i,j,:])
-    end
+for i in range(1,length(wordTypes))
+    d[1,1,i,:] = chn_df1[:,"a_ws["*string(i)*"]"]
+    d[2,1,i,:] = chn_df2[:,"a_ws["*string(i)*"]"]
+    d[3,1,i,:] = chn_df3[:,"a_ws["*string(i)*"]"]
+    d[4,1,i,:] = chn_df4[:,"a_ws["*string(i)*"]"]
+    d[1,2,i,:] = chn_df1[:,"b_ws["*string(i)*"]"]
+    d[2,2,i,:] = chn_df2[:,"b_ws["*string(i)*"]"]
+    d[3,2,i,:] = chn_df3[:,"b_ws["*string(i)*"]"]
+    d[4,2,i,:] = chn_df4[:,"b_ws["*string(i)*"]"]
+    global vd = vcat(vd, d[1,1,i,:],d[2,1,i,:],d[3,1,i,:],d[4,2,i,:],d[1,2,i,:],d[2,2,i,:],d[3,2,i,:],d[4,2,i,:])
 end
+
 wt = fill(wordTypes[1],Int(length(vd)/length(wordTypes)))
 for i in range(2,length(wordTypes))
     wt = vcat(wt,fill(wordTypes[i],Int(length(vd)/length(wordTypes))))
@@ -94,15 +98,15 @@ function violin_grouped(data)
         append!(ys,[subset(data, :WordType => ByRow((==(type))))[:,:data]])
     end
     days = data[:,:PCA]
-    # y_adj = subset(data, :WordType => ByRow((==("Adjective"))))[:,:data]
-    # y_nou = subset(data, :WordType => ByRow((==("Noun"))))[:,:data]
-    # y_ver = subset(data, :WordType => ByRow((==("Verb"))))[:,:data]
-    # y_adv = subset(data, :WordType => ByRow((==("Adverb"))))[:,:data]
-    # y_fun = subset(data, :WordType => ByRow((==("Function"))))[:,:data]
+    y_adj = subset(data, :WordType => ByRow((==("Adjective"))))[:,:data]
+    y_nou = subset(data, :WordType => ByRow((==("Noun"))))[:,:data]
+    y_ver = subset(data, :WordType => ByRow((==("Verb"))))[:,:data]
+    y_adv = subset(data, :WordType => ByRow((==("Adverb"))))[:,:data]
+    y_fun = subset(data, :WordType => ByRow((==("Function"))))[:,:data]
 
     colors = cols
     names = wordTypes
-    #ys = (y_adj, y_nou, y_ver,y_adv,y_fun)
+    ys = (y_adj, y_nou, y_ver,y_adv,y_fun)
     if data[1,:PCA] == "PC1"
         layout = Layout(
         yaxis=attr(title="Intercept Posterior"),
@@ -243,14 +247,14 @@ function fullSubPlots()
     p
 
 end
-PlotlyJS.savefig(subplots(df1),"output/i1.png",width=415,height=850)
+PlotlyJS.savefig(subplots(df1),folder*"//i1.png",width=415,height=850)
 for i in 2:4
-    PlotlyJS.savefig(subplots(dfs[i]),"output/i"*string(i)*".png",width=365,height=850)
+    PlotlyJS.savefig(subplots(dfs[i]),folder*"//i"*string(i)*".png",width=365,height=850)
 end
 
-PlotlyJS.savefig(subplots(dfg1),"output/g1.png",width=415,height=850)
+PlotlyJS.savefig(subplots(dfg1),folder*"//g1.png",width=415,height=850)
 for i in 2:4
-    PlotlyJS.savefig(subplots(dfsg[i]),"output/g"*string(i)*".png",width=365,height=850)
+    PlotlyJS.savefig(subplots(dfsg[i]),folder*"//g"*string(i)*".png",width=365,height=850)
 end
 # vio = Gadfly.plot(  Theme(major_label_font_size=17pt,key_title_font_size=16pt,key_label_font_size=14pt,minor_label_font_size=14pt,background_color = "ghostwhite",default_color="grey",boxplot_spacing=70px),Guide.ylabel("Posterior Difference (with 97% HCI)"),Guide.title("Posterior Difference with full Covariance"),Guide.xlabel("Posterior"),
 #                     layer(df1, x=:WordType,y=:data,color=:WordType,Geom.violin));
@@ -263,32 +267,29 @@ chns = [chn1,chn2,chn3,chn4]
 plts = []
 colNames = String.(Vector(DataFrames.DataFrame(summarystats(chns[1]; append_chains=true)).parameters))
 
-as    = vcat(   findall(x -> startswith(x, "ab_w[1"), colNames),
-                findall(x -> startswith(x, "ab_p[1"), colNames),
-                findall(x -> startswith(x, "ab_e[1"), colNames))
-alabs = vcat(   filter(x -> startswith(x, "ab_w[1"), colNames),
-                filter(x -> startswith(x, "ab_p[1"), colNames),
-                filter(x -> startswith(x, "ab_e[1"), colNames))
-alabs = map(x -> startswith(x, "ab_w") ? "Word-type" :
-                 startswith(x, "ab_p") ? "Participant" : 
-                 startswith(x, "ab_e") ? "Intercept" : x, alabs)
-bs    = vcat(   findall(x -> startswith(x, "ab_w[2"), colNames),
-                findall(x -> startswith(x, "ab_p[2"), colNames),
-                findall(x -> startswith(x, "ab_e[2"), colNames))
-blabs = vcat(   filter(x -> startswith(x, "ab_w[2"), colNames),
-                filter(x -> startswith(x, "ab_p[2"), colNames),
-                filter(x -> startswith(x, "ab_e[2"), colNames))
-blabs = map(x -> startswith(x, "ab_w") ? "Word-type" :
-                 startswith(x, "ab_p") ? "Participant" : 
-                 startswith(x, "ab_e") ? "Intercept" : x, blabs)
-σs    = vcat(   findall(x -> startswith(x, "σ"), colNames),
-                findall(x -> startswith(x, "ρ"), colNames))
-σlabs = vcat(   filter(x -> startswith(x, "σ"), colNames),
-                filter(x -> startswith(x, "ρ"), colNames))
+as    = vcat(   findall(x -> startswith(x, "a_ws"), colNames),
+                findall(x -> startswith(x, "a_ps"), colNames),
+                findall(x -> startswith(x, "a_e"), colNames))
+alabs = vcat(   filter(x -> startswith(x, "a_ws"), colNames),
+                filter(x -> startswith(x, "a_ps"), colNames),
+                filter(x -> startswith(x, "a_e"), colNames))
+alabs = map(x -> startswith(x, "a_ws") ? "Word-type" :
+                 startswith(x, "a_ps") ? "Participant" : 
+                 startswith(x, "a_e") ? "Intercept" : x, alabs)
+bs    = vcat(   findall(x -> startswith(x, "b_ws"), colNames),
+                findall(x -> startswith(x, "b_ps"), colNames),
+                findall(x -> startswith(x, "b_e"), colNames))
+blabs = vcat(   filter(x -> startswith(x, "b_ws"), colNames),
+                filter(x -> startswith(x, "b_ps"), colNames),
+                filter(x -> startswith(x, "b_e"), colNames))
+blabs = map(x -> startswith(x, "b_ws") ? "Word-type" :
+                 startswith(x, "b_ps") ? "Participant" : 
+                 startswith(x, "b_e") ? "Intercept" : x, blabs)
+σs    = vcat(   findall(x -> startswith(x, "σ"), colNames))
+σlabs = vcat(   filter(x -> startswith(x, "σ"), colNames))
 σlabs = map(x -> startswith(x, "σ_w") ? "Word-type" :
                  startswith(x, "σ_p") ? "Participant" : 
-                 startswith(x, "σ_e") ? "Intercept" :
-                 startswith(x, "ρ") ? "LKJ" : x, σlabs)
+                 startswith(x, "σ_e") ? "Intercept" : x, σlabs)
 
 for i in range(1,4)
 
@@ -304,17 +305,17 @@ essRhat = Plots.plot(   plts[1],plts[4],plts[7],plts[10],
                         plts[2],plts[5],plts[8],plts[11],
                         plts[3],plts[6],plts[9],plts[12]
                         ,layout=grid(3,4),left_margin=15mm,bottom_margin=15mm
-                        ,plot_title="EssRhat of all participants with Noun Verb Adj Adv & Func")
-Plots.savefig(essRhat,"output/essRhat.png")
+                        ,plot_title="EssRhat of all participants with Content & Function")
+Plots.savefig(essRhat,folder*"/essRhat.png")
 
 #%%
-img = load("output/g1.png")
+img = load(folder*"//g1.png")
 for i in range(2,4)
-    img = hcat(img,load("output/g"*string(i)*".png"))
+    img = hcat(img,load(folder*"//g"*string(i)*".png"))
 end
-img2 = load("output/g1.png")
+img2 = load(folder*"//g1.png")
 for i in range(2,4)
-    img2 = hcat(img2,load("output/i"*string(i)*".png"))
+    img2 = hcat(img2,load(folder*"//i"*string(i)*".png"))
 end
-Images.save("output/gradient.png",img)
-Images.save("output/intercept.png",img2)
+Images.save(folder*"//gradient.png",img)
+Images.save(folder*"//intercept.png",img2)
