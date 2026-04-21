@@ -21,7 +21,7 @@ using Measures
 # import Cairo, Fontconfig
 # %%
 chainLength = 1000
-noChains = 4
+noChains = 1
 wordTypes = ["Adjective","Noun","Verb","Adverb","Function"]
 cols = ["#3D9970", "#FF4136", "#FF851B","#4040FF","#7D0DC3"]
 folder = "output_noLKJ"
@@ -31,7 +31,7 @@ function HDI(data)
     m = mean(data)
     return m,l,u
 end
-
+# %%
 #df = CSV.read("savedData/df_2.csv", DataFrame)
 chn1 = deserialize(folder*"/out1.jls")
 chn2 = deserialize(folder*"/out2.jls")
@@ -41,19 +41,19 @@ chn_df1 = DataFrames.DataFrame(chn1)
 chn_df2 = DataFrames.DataFrame(chn2)
 chn_df3 = DataFrames.DataFrame(chn3)
 chn_df4 = DataFrames.DataFrame(chn4)
-
-d = zeros(4,2,length(wordTypes),chainLength)
+# %%
+d = zeros(1,2,length(wordTypes),chainLength)
 vd = []
 for i in range(1,length(wordTypes))
     d[1,1,i,:] = chn_df1[:,"a_ws["*string(i)*"]"]
-    d[2,1,i,:] = chn_df2[:,"a_ws["*string(i)*"]"]
-    d[3,1,i,:] = chn_df3[:,"a_ws["*string(i)*"]"]
-    d[4,1,i,:] = chn_df4[:,"a_ws["*string(i)*"]"]
+    # d[2,1,i,:] = chn_df2[:,"a_ws["*string(i)*"]"]
+    # d[3,1,i,:] = chn_df3[:,"a_ws["*string(i)*"]"]
+    # d[4,1,i,:] = chn_df4[:,"a_ws["*string(i)*"]"]
     d[1,2,i,:] = chn_df1[:,"b_ws["*string(i)*"]"]
-    d[2,2,i,:] = chn_df2[:,"b_ws["*string(i)*"]"]
-    d[3,2,i,:] = chn_df3[:,"b_ws["*string(i)*"]"]
-    d[4,2,i,:] = chn_df4[:,"b_ws["*string(i)*"]"]
-    global vd = vcat(vd, d[1,1,i,:],d[2,1,i,:],d[3,1,i,:],d[4,2,i,:],d[1,2,i,:],d[2,2,i,:],d[3,2,i,:],d[4,2,i,:])
+    # d[2,2,i,:] = chn_df2[:,"b_ws["*string(i)*"]"]
+    # d[3,2,i,:] = chn_df3[:,"b_ws["*string(i)*"]"]
+    # d[4,2,i,:] = chn_df4[:,"b_ws["*string(i)*"]"]
+    global vd = vcat(vd, d[1,1,i,:],d[1,2,i,:])
 end
 
 wt = fill(wordTypes[1],Int(length(vd)/length(wordTypes)))
@@ -61,7 +61,7 @@ for i in range(2,length(wordTypes))
     wt = vcat(wt,fill(wordTypes[i],Int(length(vd)/length(wordTypes))))
 end
 df = DataFrames.DataFrame( data     = vd,
-                PCA      = repeat(vcat(fill("PC1",chainLength),fill("PC2",chainLength),fill("PC3",chainLength),fill("PC4",chainLength)),Int(length(vd)/(noChains*chainLength))),
+                PCA      = repeat(vcat(fill("PC1",chainLength))),
                 AB       = repeat(vcat(fill("Intercept",(noChains*chainLength)),fill("Gradient",(noChains*chainLength))),length(wordTypes)),
                 WordType = wt)
 df.PCWT = string.(df.WordType, " ",  df.PCA)

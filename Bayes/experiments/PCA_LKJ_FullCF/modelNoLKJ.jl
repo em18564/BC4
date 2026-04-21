@@ -18,42 +18,41 @@ using Serialization
 using LinearAlgebra
 # %%
 NUM_SENTENCES = 205
-NUM_PARTICIPANTS = 23
+NUM_PARTICIPANTS = 5
 NUM_WORDS = 1931
 NUM_TYPES = 5
 NUM_ERP = 6 # ELAN, LAN, N400, EPNP, P600, PNP
 @model function model(participant,word,surprisal,tags,PCA)
 
-  σ_aw ~ Exponential()
-  a_ws ~ filldist(Normal(0, σ_aw),NUM_TYPES)
-  σ_bw ~ Exponential()
-  b_ws ~ filldist(Normal(0, σ_bw),NUM_TYPES)
+  σ_aw ~ truncated(Normal(0,1); lower = 0)
+  a_ws ~ filldist(Normal(0, 1),NUM_TYPES)
+  σ_bw ~ truncated(Normal(0,1); lower = 0)
+  b_ws ~ filldist(Normal(0, 1),NUM_TYPES)
   a_w = a_ws[tags.+1]
   b_w = b_ws[tags.+1]
 
-
-  σ_ap ~ Exponential()
-  a_ps ~ filldist(Normal(0, σ_ap),NUM_PARTICIPANTS)
-  σ_bp ~ Exponential()
-  b_ps ~ filldist(Normal(0, σ_bp),NUM_PARTICIPANTS)
+  σ_ap ~ truncated(Normal(0,1); lower = 0)
+  a_ps ~ filldist(Normal(0, 1),NUM_PARTICIPANTS)
+  σ_bp ~ truncated(Normal(0,1); lower = 0)
+  b_ps ~ filldist(Normal(0, 1),NUM_PARTICIPANTS)
   a_p = a_ps[participant.+1]
   b_p = b_ps[participant.+1]
 
-  σ_ae ~ Exponential()
-  a_e  ~ Normal(0,σ_ae)
-  σ_be ~ Exponential()
-  b_e  ~ Normal(0,σ_be)
+  a_e  ~ Normal(0,1)
+  b_e  ~ Normal(0,1)
 
-  μ = @. a_w + a_p + a_e + ((b_w + b_p + b_e) * surprisal)
+  μ = @. a_w*σ_aw + a_p*σ_ap + a_e + ((b_w*σ_bw + b_p*σ_bp + b_e) * surprisal)
 
-  σ ~ truncated(Cauchy(0., 20.); lower = 0)
-
+  σ ~ truncated(Cauchy(0., 1.); lower = 0)
   for i in eachindex(PCA)
     PCA[i] ~ Normal(μ[i],σ)
   end
 end
-args = map(x->string(x), ARGS)
-pc   = parse(Int,args[1])
+
+# args = map(x->string(x), ARGS)
+
+# pc   = parse(Int,args[1])
+pc = 1
 dfTags   = CSV.read("../../input/full_tags.csv", DataFrame).tags
 df       = CSV.read("../../input/dfPCANorm_corrected.csv", DataFrame)
 #%%
