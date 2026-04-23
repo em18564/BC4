@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name PCA_LKJ_fullCF
+#SBATCH --job-name e_t_e
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
