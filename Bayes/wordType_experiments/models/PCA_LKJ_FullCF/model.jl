@@ -52,11 +52,11 @@ mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modi
 
 if(pc == 1)
   #wait for all other PCs to finish before greating plots
-  local is_waiting = true
+  is_waiting = true
   while(is_waiting)
     if(isfile(output_loc*"/out1.jls") && isfile(output_loc*"/out2.jls") && isfile(output_loc*"/out3.jls") && isfile(output_loc*"/out4.jls"))
       plotGraphs(output_loc,wordTypes,cols) 
-      local is_waiting=false
+      is_waiting=false
     else
       print("Waiting for other PCs to complete")
       sleep(30)
