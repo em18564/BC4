@@ -1,0 +1,13 @@
+Chains MCMC chain (250×47×4 Array{Float64, 3}):
+
+Iterations        = 126:1:375
+Number of chains  = 4
+Samples per chain = 250
+Wall duration     = 62.91 seconds
+Compute duration  = 242.17 seconds
+parameters        = σ_w[1], σ_w[2], ρ_w[1, 1], ρ_w[2, 1], ρ_w[1, 2], ρ_w[2, 2], ab_w[1, 1], ab_w[2, 1], ab_w[1, 2], ab_w[2, 2], ab_w[1, 3], ab_w[2, 3], ab_w[1, 4], ab_w[2, 4], ab_w[1, 5], ab_w[2, 5], σ_p[1], σ_p[2], ρ_p[1, 1], ρ_p[2, 1], ρ_p[1, 2], ρ_p[2, 2], ab_p[1, 1], ab_p[2, 1], ab_p[1, 2], ab_p[2, 2], σ_e[1], σ_e[2], ρ_e[1, 1], ρ_e[2, 1], ρ_e[1, 2], ρ_e[2, 2], ab_e[1, 1], ab_e[2, 1], σ
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Use `describe(chains)` for summary statistics and quantiles.
+
+Waiting for other PCs to completeplotting graphs
