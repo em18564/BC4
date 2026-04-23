@@ -20,7 +20,7 @@ echo Directory is `pwd`
 echo Slurm job ID is $SLURM_JOB_ID
 echo This job runs on the following machines:
 echo `echo $SLURM_JOB_NODELIST | uniq`
-echo vars = 'echo $NUM_PARTICIPANTS $NUM_WORDS $TYPE_STRUCTURE'
+echo vars = `echo $NUM_PARTICIPANTS $NUM_WORDS $TYPE_STRUCTURE`
 OMP_DISPLAY_ENV=true
 # Run the executable
 mkdir -p output
