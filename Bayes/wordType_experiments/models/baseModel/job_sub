@@ -9,9 +9,9 @@
 #SBATCH --account=PHPH039284
 #SBATCH --partition=short
 #SBATCH --array 1-4
-NUM_PARTICIPANTS = 23
-NUM_WORDS = 1931
-TYPE_STRUCTURE = "FullCF"
+export NUM_PARTICIPANTS = 2
+export NUM_WORDS = 100
+export TYPE_STRUCTURE = "FullCF"
 
 module add languages/julia/1.10.3
 echo Running on host `hostname`
@@ -20,6 +20,7 @@ echo Directory is `pwd`
 echo Slurm job ID is $SLURM_JOB_ID
 echo This job runs on the following machines:
 echo `echo $SLURM_JOB_NODELIST | uniq`
+echo vars = $NUM_PARTICIPANTS $NUM_WORDS $TYPE_STRUCTURE
 OMP_DISPLAY_ENV=true
 # Run the executable
 mkdir -p output
