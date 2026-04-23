@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#SBATCH --job-name PCA_LKJ_fullCF
+#SBATCH --nodes 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --cpus-per-task 4
+#SBATCH --time=3-00:00:00
+#SBATCH --output model.out
+#SBATCH --account=PHPH039284
+#SBATCH --partition=short
+#SBATCH --array 1-4
+NUM_PARTICIPANTS = 23
+NUM_WORDS = 1931
+TYPE_STRUCTURE = "FullCF"
+
+module add languages/julia/1.10.3
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo Slurm job ID is $SLURM_JOB_ID
+echo This job runs on the following machines:
+echo `echo $SLURM_JOB_NODELIST | uniq`
+OMP_DISPLAY_ENV=true
+# Run the executable
+julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} $NUM_PARTICIPANTS $NUM_WORDS $TYPE_STRUCTURE > model-${SLURM_ARRAY_TASK_ID}.out
