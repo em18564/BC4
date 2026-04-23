@@ -45,7 +45,7 @@ d = zeros(1,2,length(wordTypes),chainLength)
 vd = []
 for j in range(1,length(wordTypes))
     for i in range(1,2)
-        d[1,i,j,:] = chn_df1[:,"ab_w["*string(i)*", "*string(j)*"]"]
+        d[1,i,j,:] = chn_df1[:,"a["*string(i)*", "*string(j)*"]"]
         # d[2,i,j,:] = chn_df2[:,"ab_w["*string(i)*", "*string(j)*"]"]
         # d[3,i,j,:] = chn_df3[:,"ab_w["*string(i)*", "*string(j)*"]"]
         # d[4,i,j,:] = chn_df4[:,"ab_w["*string(i)*", "*string(j)*"]"]

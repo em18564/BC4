@@ -9,8 +9,8 @@
 #SBATCH --account=PHPH039284
 #SBATCH --partition=short
 #SBATCH --array 1-4
-NUM_PARTICIPANTS = 23
-NUM_WORDS = 1931
+NUM_PARTICIPANTS = 2
+NUM_WORDS = 100
 TYPE_STRUCTURE = "FullCF"
 
 module add languages/julia/1.10.3
@@ -22,4 +22,5 @@ echo This job runs on the following machines:
 echo `echo $SLURM_JOB_NODELIST | uniq`
 OMP_DISPLAY_ENV=true
 # Run the executable
-julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} $NUM_PARTICIPANTS $NUM_WORDS $TYPE_STRUCTURE > model-${SLURM_ARRAY_TASK_ID}.out
+mkdir output
+julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} $NUM_PARTICIPANTS $NUM_WORDS $TYPE_STRUCTURE > output/model-${SLURM_ARRAY_TASK_ID}.out
