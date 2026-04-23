@@ -38,9 +38,9 @@ if (!isdir(output_loc))
 end
 
 mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc])
-#m = sample(mod, NUTS(), MCMCThreads(), 250,4)
-#display(m)
-#serialize(output_loc*"/out"*string(pc)*".jls",m)
+m = sample(mod, NUTS(), MCMCThreads(), 250,4)
+display(m)
+serialize(output_loc*"/out"*string(pc)*".jls",m)
 
 
 if(pc == 1)
