@@ -41,14 +41,14 @@ m = sample(mod, NUTS(), MCMCThreads(), 250,4)
 display(m)
 serialize(output_loc*"/out"*string(pc)*".jls",m)
 
-
 if(pc == 1)
   #wait for all other PCs to finish before greating plots
-  is_waiting = true
+  global is_waiting = true
   while(is_waiting)
     if(isfile(output_loc*"/out1.jls") && isfile(output_loc*"/out2.jls") && isfile(output_loc*"/out3.jls") && isfile(output_loc*"/out4.jls"))
+      print("plotting graphs")
       plotGraphs(output_loc,wordTypes,cols) 
-      is_waiting=false
+      global is_waiting=false
     else
       print("Waiting for other PCs to complete")
       sleep(30)

@@ -187,10 +187,27 @@ function plotGraphs(outputDir,wordTypes,cols)
     vd = []
     for j in range(1,length(wordTypes))
         for i in range(1,2)
-            d[1,i,j,:] = chn_df1[:,"ab_w["*string(i)*", "*string(j)*"]"]
-            d[2,i,j,:] = chn_df2[:,"ab_w["*string(i)*", "*string(j)*"]"]
-            d[3,i,j,:] = chn_df3[:,"ab_w["*string(i)*", "*string(j)*"]"]
-            d[4,i,j,:] = chn_df4[:,"ab_w["*string(i)*", "*string(j)*"]"]
+            try
+                d[1,i,j,:] = chn_df1[:,"ab_w["*string(i)*", "*string(j)*"]"]
+                d[2,i,j,:] = chn_df2[:,"ab_w["*string(i)*", "*string(j)*"]"]
+                d[3,i,j,:] = chn_df3[:,"ab_w["*string(i)*", "*string(j)*"]"]
+                d[4,i,j,:] = chn_df4[:,"ab_w["*string(i)*", "*string(j)*"]"]
+            catch
+                if(i==1)
+                    d[1,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
+                    d[2,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
+                    d[3,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
+                    d[4,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
+                else
+                    d[1,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
+                    d[2,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
+                    d[3,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
+                    d[4,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
+                end
+
+
+            end
+
             vd = vcat(vd, d[1,i,j,:],d[2,i,j,:],d[3,i,j,:],d[4,i,j,:])
         end
     end
@@ -250,22 +267,40 @@ function essRhat(chns,outputDir)
 
     as    = vcat(   findall(x -> startswith(x, "ab_w[1"), colNames),
                     findall(x -> startswith(x, "ab_p[1"), colNames),
-                    findall(x -> startswith(x, "ab_e[1"), colNames))
+                    findall(x -> startswith(x, "ab_e[1"), colNames),
+                    findall(x -> startswith(x, "a_w"), colNames),
+                    findall(x -> startswith(x, "a_p"), colNames),
+                    findall(x -> startswith(x, "a_e"), colNames))
     alabs = vcat(   filter(x -> startswith(x, "ab_w[1"), colNames),
                     filter(x -> startswith(x, "ab_p[1"), colNames),
-                    filter(x -> startswith(x, "ab_e[1"), colNames))
+                    filter(x -> startswith(x, "ab_e[1"), colNames),
+                    filter(x -> startswith(x, "a_w"), colNames),
+                    filter(x -> startswith(x, "a_p"), colNames),
+                    filter(x -> startswith(x, "a_e"), colNames))
     alabs = map(x -> startswith(x, "ab_w") ? "Word-type" :
                     startswith(x, "ab_p") ? "Participant" : 
-                    startswith(x, "ab_e") ? "Intercept" : x, alabs)
+                    startswith(x, "ab_e") ? "Intercept" :
+                    startswith(x, "a_w") ? "Word-type" :
+                    startswith(x, "a_p") ? "Participant" : 
+                    startswith(x, "a_e") ? "Intercept" : x, alabs)
     bs    = vcat(   findall(x -> startswith(x, "ab_w[2"), colNames),
                     findall(x -> startswith(x, "ab_p[2"), colNames),
-                    findall(x -> startswith(x, "ab_e[2"), colNames))
+                    findall(x -> startswith(x, "ab_e[2"), colNames),
+                    findall(x -> startswith(x, "b_w"), colNames),
+                    findall(x -> startswith(x, "b_p"), colNames),
+                    findall(x -> startswith(x, "b_e"), colNames))
     blabs = vcat(   filter(x -> startswith(x, "ab_w[2"), colNames),
                     filter(x -> startswith(x, "ab_p[2"), colNames),
-                    filter(x -> startswith(x, "ab_e[2"), colNames))
+                    filter(x -> startswith(x, "ab_e[2"), colNames),
+                    filter(x -> startswith(x, "b_w"), colNames),
+                    filter(x -> startswith(x, "b_p"), colNames),
+                    filter(x -> startswith(x, "b_e"), colNames))
     blabs = map(x -> startswith(x, "ab_w") ? "Word-type" :
                     startswith(x, "ab_p") ? "Participant" : 
-                    startswith(x, "ab_e") ? "Intercept" : x, blabs)
+                    startswith(x, "ab_e") ? "Intercept" : 
+                    startswith(x, "b_w") ? "Word-type" :
+                    startswith(x, "b_p") ? "Participant" : 
+                    startswith(x, "b_e") ? "Intercept" : x, blabs)
     σs    = vcat(   findall(x -> startswith(x, "σ"), colNames),
                     findall(x -> startswith(x, "ρ"), colNames))
     σlabs = vcat(   filter(x -> startswith(x, "σ"), colNames),
