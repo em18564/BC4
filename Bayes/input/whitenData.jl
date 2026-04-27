@@ -1,3 +1,4 @@
+# %%
 import Pkg
 Pkg.instantiate()
 using Random
@@ -14,4 +15,10 @@ using Plots
 using PlotlyJS
 using Images, FileIO
 using Measures
-using Dates
+
+
+# %%
+dfTags   = CSV.read("full_tags.csv", DataFrame).tags
+df       = CSV.read("dfPCANorm_corrected.csv", DataFrame)
+
+df.Participant.+=1

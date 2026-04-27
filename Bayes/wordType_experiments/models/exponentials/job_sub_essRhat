@@ -1,0 +1,30 @@
+#!/bin/bash
+#SBATCH --job-name essRhats
+#SBATCH --nodes 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --cpus-per-task 4
+#SBATCH --time=3-00:00:00
+#SBATCH --output model.out
+#SBATCH --account=PHPH039284
+#SBATCH --partition=short
+#SBATCH --array 1-1600                #make sure to do 4*square number
+export NUM_PARTICIPANTS=12    # half dataset
+export NUM_WORDS=1931
+export TYPE_STRUCTURE="FullCF"
+export IS_PLOTTING=1
+export ANALYSE_ESS_RHAT=1
+export MIN_EXP=0.1                  #Use min_exp and min_cauchy if only running 4 tasks
+export MAX_EXP=3
+export MIN_CAUCHY=0.1
+export MAX_CAUCHY=3
+module add languages/julia/1.10.3
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo Slurm job ID is $SLURM_JOB_ID
+echo This job runs on the following machines:
+echo `echo $SLURM_JOB_NODELIST | uniq`
+OMP_DISPLAY_ENV=true
+# Run the executable
+mkdir -p output
+julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out

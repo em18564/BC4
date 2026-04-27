@@ -1,8 +1,36 @@
+rangeVals = 1.0
+
+
+
 function HDI(data)
     l = percentile(data,1.5)
     u = percentile(data,98.5)
     m = mean(data)
     return m,l,u
+end
+
+
+
+function concludeAndPlot(m,output_loc,pc,wordTypes,cols)
+
+
+    if(pc == 1)
+    #wait for all other PCs to finish before greating plots
+    global is_waiting = true
+    while(is_waiting)
+        if(isfile(output_loc*"/out1.jls") && isfile(output_loc*"/out2.jls") && isfile(output_loc*"/out3.jls") && isfile(output_loc*"/out4.jls"))
+        print("plotting graphs")
+        plotGraphs(output_loc,wordTypes,cols) 
+        global is_waiting=false
+        else
+        print("Waiting for other PCs to complete")
+        sleep(30)
+        end
+        
+    end
+    end
+
+
 end
 
 
@@ -66,10 +94,10 @@ function HDIs(data,wordTypes,cols)
     ldifs = zeros(length(wordTypes),length(wordTypes))
     udifs = zeros(length(wordTypes),length(wordTypes))
     if data[1,:PCA] == "PC1"
-        layout = Layout(yaxis=attr(title="97% HDI Difference",range=[-0.3,0.3]),
+        layout = Layout(yaxis=attr(title="97% HDI Difference",range=[-rangeVals,rangeVals]),
                         boxmode="group")
     else
-        layout = Layout(yaxis=attr(range=[-0.3,0.3]),
+        layout = Layout(yaxis=attr(range=[-rangeVals,rangeVals]),
                         boxmode="group")
     end
 
@@ -113,8 +141,8 @@ function subplots(data,wordTypes,cols)
 
     
     p.plot.layout["xaxis2"] = attr(range=(-0.5, 0.5), constrain="domain")
-    p.plot.layout["yaxis2"] = attr(range=(-0.35, 0.35), constrain="domain",zeroline=true,zerolinewidth=1,zerolinecolor = "#000000")
-    p.plot.layout["yaxis1"] = attr(range=(-0.25, 0.25), constrain="domain",zeroline=true,zerolinewidth=1,zerolinecolor = "#000000")
+    p.plot.layout["yaxis2"] = attr(range=(-rangeVals, rangeVals), constrain="domain",zeroline=true,zerolinewidth=1,zerolinecolor = "#000000")
+    p.plot.layout["yaxis1"] = attr(range=(-rangeVals, rangeVals), constrain="domain",zeroline=true,zerolinewidth=1,zerolinecolor = "#000000")
 
     p.plot.layout["font"]   = attr(size=22)
 
@@ -313,11 +341,11 @@ function essRhat(chns,outputDir)
 
     for i in range(1,4)
 
-        myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][as],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][as],xlabel = "R-hat",ylabel = "ess (as)",title="PC " * string(i),group=alabs)
+        myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][as],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][as],xlabel = "R-hat",ylabel = "ess (as)",title="PC " * string(i),group=alabs,ylims=(0,1200),xlims=(.99,1.25))
         push!(plts,myplot)
-        myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][bs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][bs],xlabel = "R-hat",ylabel = "ess (bs)",group=blabs)
+        myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][bs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][bs],xlabel = "R-hat",ylabel = "ess (bs)",group=blabs,ylims=(0,1200),xlims=(.99,1.25))
         push!(plts,myplot)
-        myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][σs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][σs],xlabel = "R-hat",ylabel = "ess (σs)",group=σlabs)
+        myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][σs],DataFrames.DataFrame(summarystats(chns[1]; append_chains=true))[:,"ess_bulk"][σs],xlabel = "R-hat",ylabel = "ess (σs)",group=σlabs,ylims=(0,1200),xlims=(.99,1.25))
         push!(plts,myplot)
     end
 
