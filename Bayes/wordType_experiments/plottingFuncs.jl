@@ -1,6 +1,115 @@
 rangeVals = 1.0
 
 
+#%%
+
+function essRhatHeatmaps(folderLoc)
+    expParams    = []
+    cauchyParams = []
+    essScores    = [[],[],[],[]]
+    rhatScores   = [[],[],[],[]]
+    label = []
+    for (root, _, files) in walkdir(folderLoc)
+        if(folderLoc!=root)
+            foldername = replace(root,folderLoc*"\\" => "" )
+            index = findfirst("_",foldername)[1]
+            push!(expParams,foldername[1:index-1])
+            push!(cauchyParams,foldername[index+1:length(foldername)])
+
+            for i in range(1,4)
+                filename = "score"*string(i)*".csv" 
+                if(filename in files)
+                    s = CSV.read(joinpath.(root, filename),DataFrame)
+                    push!(essScores[i],s.ess)
+                    push!(rhatScores[i],s.rhat)
+                    label = s.label
+                else
+                    push!(essScores[i],zeros(8))
+                    push!(rhatScores[i],zeros(8))
+                end
+            end
+            
+        end
+        
+        #print(joinpath.(root, files),"\n") # files is a Vector{String}, can be empty
+    end
+    es = hcat(  mapreduce(permutedims, vcat, essScores[1]),
+                mapreduce(permutedims, vcat, essScores[2]),
+                mapreduce(permutedims, vcat, essScores[3]),
+                mapreduce(permutedims, vcat, essScores[4]))
+    rh = hcat(  mapreduce(permutedims, vcat, rhatScores[1]),
+                mapreduce(permutedims, vcat, rhatScores[2]),
+                mapreduce(permutedims, vcat, rhatScores[3]),
+                mapreduce(permutedims, vcat, rhatScores[4]))
+    colNames = []
+    for i in range(1,4)
+        colNames = vcat(colNames,[x*"_"*string(i) for x in label])
+    end
+    df = DataFrames.DataFrame(ExponentialParam=expParams,CauchyParam=cauchyParams)
+    for i in range(1,length(colNames))
+        df[!,"ess_"*colNames[i]] =es[:,i]
+        df[!,"rhat_"*colNames[i]]=rh[:,i]
+    end
+    return df
+end
+
+
+
+df =essRhatHeatmaps("models/exponentials/output_FullCF_12_1931")
+#%%
+section = "ess_Overall"
+xlabs = unique(df.ExponentialParam)
+ylabs = unique(df.CauchyParam)
+data = zeros(4,length(xlabs),length(ylabs))
+for row in eachrow(df)
+    this_x = findall(x->x==row.ExponentialParam, xlabs)[1]
+    this_y = findall(x->x==row.CauchyParam, ylabs)[1]
+    for i in range(1,4)
+        data[i,this_x,this_y] = row[section*"_"*string(i)]
+
+    end
+end
+for i in range(1,length(xlabs))
+    if(length(xlabs[i])>4)
+        xlabs[i]=xlabs[i][1:4]
+    end
+end
+for i in range(1,length(ylabs))
+    if(length(ylabs[i])>4)
+        ylabs[i]=ylabs[i][1:4]
+    end
+end
+p = []
+for i in range(1,4)
+        if i == 1
+            hm = Plots.heatmap(xlabs,
+            ylabs, data[i,:,:],
+            xlabel="ess mean", ylabel="cauchy variance",
+            left_margin=30mm,
+            bottom_margin=20mm, legend = :none)
+        elseif(i==4)
+            hm = Plots.heatmap(xlabs,
+            ylabs, data[i,:,:],
+            xlabel="ess mean", ylabel="cauchy variance",
+            bottom_margin=20mm)
+        else
+            hm = Plots.heatmap(xlabs,
+            ylabs, data[i,:,:],
+            xlabel="ess mean", ylabel="cauchy variance",
+            bottom_margin=20mm, legend = :none)
+        end
+        
+        push!(p,hm)
+end
+gr(size=(3500,500), dpi=600)
+l = @layout [a b c d]
+Plots.plot(p[1],p[2],p[3],p[4]; layout = l,plot_title=section,
+            top_margin=10mm)
+
+
+#%%
+
+
 
 function HDI(data)
     l = percentile(data,1.5)
