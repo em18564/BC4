@@ -2,7 +2,7 @@ rangeVals = 1.0
 
 
 #%%
-
+include("setup.jl")
 function essRhatDataFrame(folderLoc)
     expParams    = []
     cauchyParams = []
@@ -81,8 +81,10 @@ maxRhat = maximum([maximum(rhat) for rhat in rhatData])
 minRhat = minimum([minimum(rhat) for rhat in rhatData])
 
 # %%
-function essRhatHeatmaps(section,xlabs,ylabs,min,max)
-    print(min,max,"\n")
+function essRhatHeatmaps(section,xlabs,ylabs,min,max,sectionTitle)
+    Plots.scalefontsizes()
+    Plots.scalefontsizes(2)
+    print(min,"-",max,"\n")
     for i in range(1,length(xlabs))
         if(length(xlabs[i])>4)
             xlabs[i]=xlabs[i][1:4]
@@ -99,39 +101,46 @@ function essRhatHeatmaps(section,xlabs,ylabs,min,max)
             if i == 1
                 hm = Plots.heatmap(xlabs,
                 ylabs, section[i,:,:],
-                xlabel="ess mean", ylabel="cauchy variance",
+                xlabel="half-cauchy variance", ylabel="exponential mean",
                 left_margin=30mm,
                 bottom_margin=20mm,
-                right_margin=20mm,
+                right_margin=10mm,
                 legend = :none,
-                clims = (min,max))
+                clims = (min,max),
+                title = "PC " * string(i))
             else
                 hm = Plots.heatmap(xlabs,
                 ylabs, section[i,:,:],
-                xlabel="ess mean", ylabel="cauchy variance",
-                right_margin=20mm,
+                xlabel="half-cauchy variance",
+                right_margin=10mm,
                 bottom_margin=20mm, legend = :none,
-                clims = (min,max))
+                clims = (min,max),
+                title = "PC " * string(i))
             end
             
             push!(p,hm)
     end
-    labs = (1:10:101, string.(range(min,max,101)))
+    labs = (1:10:101, string.(range(min,max,11)))
     for i in range(1,length(labs[2]))
-        if length(labs[2][i])>3
-            labs[2][i] = labs[2][i][1:5]
+        if length(labs[2][i])>6
+            labs[2][i] = labs[2][i][1:6]
         end
     end
-    push!(p,Plots.heatmap(range(min,max,101).*ones(101,1), legend=:none, xticks=:none,bottom_margin=20mm,right_margin=20mm, yticks=labs))
-    gr(size=(3500,1000), dpi=600)
+    push!(p,Plots.heatmap((0:0.01:1).*ones(101,1), legend=:none, xticks=:none,bottom_margin=20mm,right_margin=20mm,left_margin=20mm, yticks=labs))
     l = @layout [a{0.24w} b{0.24w} c{0.24w} d{0.24w} e]
-    return Plots.plot(p[1],p[2],p[3],p[4], p[5]; layout = l,plot_title=section,
+    myPlot = Plots.plot(p[1],p[2],p[3],p[4], p[5]; layout = l,plot_title=sectionTitle,
                 top_margin=10mm)
+    gr(size=(4000,1000), dpi=600)
+    
+    return myPlot
 
 end
+essPlots  = [essRhatHeatmaps(innerEssData[1],xlabs,ylabs,minEss,maxEss,innerEssData[2]) for innerEssData in zip(essData,essSections)]
+rhatPlots = [essRhatHeatmaps(innerRhatData[1],xlabs,ylabs,minRhat,maxRhat,innerRhatData[2]) for innerRhatData in zip(rhatData,rhatSections)]
+
+
+
 # %%
-essPlots  = [essRhatHeatmaps(innerEssData,xlabs,ylabs,minEss,maxEss) for innerEssData in essData]
-rhatPlots = [essRhatHeatmaps(innerRhatData,xlabs,ylabs,minRhat,maxRhat) for innerRhatData in rhatData]
 # %%
 for essPlot in zip(essSections,essPlots)
     Plots.savefig(essPlot[2],"figs/"*essPlot[1]*".png")
@@ -140,9 +149,16 @@ for rhatPlot in zip(rhatSections,rhatPlots)
     Plots.savefig(rhatPlot[2],"figs/"*rhatPlot[1]*".png")
 end
 #%%
-for a in zip(["1","2","3"],["a","b","c"])
-    print(a,"\n")
-end
+
+df.essAvg = (df.ess_Overall_1+df.ess_Overall_2+df.ess_Overall_3+df.ess_Overall_4)/4
+df.rhatAvg = (df.rhat_Overall_1+df.rhat_Overall_2+df.rhat_Overall_3+df.rhat_Overall_4)/4
+
+essMax  = findmax(df.essAvg)
+rhatMin = findmin(df.rhatAvg)
+
+df[df.essAvg.==essMax[1],:]
+
+
 #%%
 
 
