@@ -1,8 +1,0 @@
-cpu-bind=MASK - bp1-compute154, task  0  0 [2582304]: mask 0x2200000022000000 set
-Running on host bp1-compute154
-Time is Sat Apr 25 07:59:48 BST 2026
-Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/halfNorms_widerThet
-Slurm job ID is 16958395
-This job runs on the following machines:
-bp1-compute154
-slurmstepd: error: *** JOB 16958395 ON bp1-compute154 CANCELLED AT 2026-04-27T15:37:26 ***

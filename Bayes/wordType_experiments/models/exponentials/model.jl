@@ -1,7 +1,7 @@
 include("../../typeStructures.jl")
 include("../../model_master.jl")
-include("../../setup.jl")
 include("../../plottingFuncs.jl")
+include("../../setup.jl")
 
 @model function model(participant,word,surprisal,tags,PCA,ExpMean,cauchyMean)
 

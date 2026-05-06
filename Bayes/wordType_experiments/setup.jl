@@ -15,3 +15,6 @@ using PlotlyJS
 using Images, FileIO
 using Measures
 using Dates
+using Clustering
+using StatsPlots
+using Distances
