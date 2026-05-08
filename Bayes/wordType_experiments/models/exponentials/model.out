@@ -1,39 +1,25 @@
-cpu-bind=MASK - bp1-compute082, task  0  0 [22385]: mask 0x60000060 set
-Running on host bp1-compute082
-Time is Thu May 7 13:27:33 BST 2026
+cpu-bind=MASK - bp1-compute096, task  0  0 [232790]: mask 0x804000804000 set
+Running on host bp1-compute104
+Time is Fri May 8 12:58:52 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/exponentials
-Slurm job ID is 17203898
+Slurm job ID is 17229905
 This job runs on the following machines:
-bp1-compute082
-slurmstepd: error: *** JOB 17203485 ON bp1-compute059 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203486 ON bp1-compute061 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203417 ON bp1-compute016 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203410 ON bp1-compute015 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203487 ON bp1-compute101 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203420 ON bp1-compute017 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203898 ON bp1-compute082 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203408 ON bp1-compute015 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203402 ON bp1-compute019 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203422 ON bp1-compute017 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203414 ON bp1-compute016 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203489 ON bp1-compute056 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203403 ON bp1-compute019 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203488 ON bp1-compute055 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203400 ON bp1-compute019 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203418 ON bp1-compute016 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203407 ON bp1-compute015 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203401 ON bp1-compute019 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203425 ON bp1-compute017 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203419 ON bp1-compute017 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203404 ON bp1-compute019 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203406 ON bp1-compute015 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203415 ON bp1-compute016 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203416 ON bp1-compute016 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203423 ON bp1-compute017 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203409 ON bp1-compute015 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203413 ON bp1-compute016 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203421 ON bp1-compute017 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203424 ON bp1-compute017 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203412 ON bp1-compute016 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203405 ON bp1-compute015 CANCELLED AT 2026-05-07T13:29:50 ***
-slurmstepd: error: *** JOB 17203411 ON bp1-compute015 CANCELLED AT 2026-05-07T13:29:50 ***
+bp1-compute104
+Running on host bp1-compute104
+Time is Fri May 8 12:58:52 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/exponentials
+Slurm job ID is 17229904
+This job runs on the following machines:
+bp1-compute104
+Running on host bp1-compute094
+Time is Fri May 8 12:58:53 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/exponentials
+Slurm job ID is 17229902
+This job runs on the following machines:
+bp1-compute094
+Running on host bp1-compute096
+Time is Fri May 8 12:58:53 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/exponentials
+Slurm job ID is 17229903
+This job runs on the following machines:
+bp1-compute096
