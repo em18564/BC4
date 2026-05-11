@@ -24,7 +24,7 @@ include("../../setup.jl")
 
   μ = @. a_w*σ_aw + a_p*σ_ap + a_e + ((b_w*σ_bw + b_p*σ_bp + b_e) * surprisal)
 
-  σ ~ truncated(Cauchy(0., cauchyMean); lower = 0)
+  σ ~ truncated(Cauchy(0., cauchyMean); lower = 0) # cauchy dispertion
   for i in eachindex(PCA)
     PCA[i] ~ Normal(μ[i],σ)
   end

@@ -5,6 +5,38 @@ include("typeStructures.jl")
 include("model_master.jl")
 include("plottingFuncs.jl")
 
+# 0 Adj
+# 1 Adp
+# 2 Adv
+# 3 Conj
+# 4 Det
+# 5 Noun
+# 6 Num
+# 7 Pron
+# 8 Prt
+# 9 Verb
+
+# %%
+dfTags   = CSV.read("../input/full_tags.csv", DataFrame)
+replace!(dfTags.tags, 10 => 5)
+CSV.write("../input/full_tags.csv", dfTags)
+# %%
+dfTags   = CSV.read("../input/full_tags.csv", DataFrame)
+wordEncodings = Dict(   0=>"Adjective",1=>"Adposition",2=>"Adverb",
+                        3=>"Conjunction",4=>"Determiner",5=>"Noun",6=>"Numeral",
+                        7=>"Pronoun",8=>"Particle",9=>"Verb")
+tags = dfTags[dfTags.Participant.==1,:].tags
+x = [wordEncodings[i] for i in range(0,9)]
+y = [counter(tags)[i] for i in range(0,9)]
+
+# %%
+color_vec = [palette(:tab10)[i] for i in range(1,10)]
+
+p = PlotlyJS.plot(
+    PlotlyJS.bar(x=x, y=y, marker_color=color_vec),
+    Layout(title_text="Frequency plot of word types")
+)
+PlotlyJS.savefig(p,"figs/fx.png")
 
 # %% 
 function essRhatDataFrame(folderLoc)
@@ -59,7 +91,7 @@ end
 
 
 
-df =essRhatDataFrame("models/exponentials/output_FullCF_12_1931")
+df =essRhatDataFrame("models/exponentials/output_FullCF_23_1931")
 # %%
 function getSectionData(section,df,xlabs,ylabs)
     data = zeros(4,length(xlabs),length(ylabs))
@@ -254,3 +286,56 @@ hc = hclust(distances, linkage=:single)
 xlabs = [wordTypes[i] for i in hc.order]
 Plots.plot(hc,xticks=(1:5,xlabs))
 Plots.savefig("figs/dendrogram.png")
+
+
+# %%
+dfTags   = CSV.read("../input/full_tags.csv", DataFrame).tags
+df       = CSV.read("../input/dfPCANorm_corrected.csv", DataFrame)
+df[!,"fullTag"] = dfTags#
+
+NUM_TYPES,df_modified,wordTypes,cols = processTypeStructure(df,"FullCF")
+df_modified.Participant= df_modified.Participant.+1
+df_modified.fullTag= df_modified.fullTag.+1
+
+seenData = subset(df_modified, :Participant => ByRow(<(13)))
+unseenData = subset(df_modified, :Participant => ByRow(>=(13)))
+#%%
+function m(mydf, paramName)
+    return mydf[string.(mydf.parameters).==paramName,"mean"]
+end
+
+function mod(mydf,participant,tag,surprisal)
+    a_w  = m(mydf,"a_ws["*string(tag)*"]")[1]
+    a_p  = m(mydf,"a_ps["*string(participant)*"]")[1]
+    a_e  = m(mydf,"a_e")[1]
+
+    b_w  = m(mydf,"b_ws["*string(tag)*"]")[1]
+    b_p  = m(mydf,"b_ps["*string(participant)*"]")[1]
+    b_e  = m(mydf,"b_e")[1]
+
+    σ_aw = m(mydf,"σ_aw")[1]
+    σ_ap = m(mydf,"σ_ap")[1]
+    σ_bw = m(mydf,"σ_bw")[1]
+    σ_bp = m(mydf,"σ_bp")[1]
+
+    return a_w*σ_aw + a_p*σ_ap + a_e + ((b_w*σ_bw + b_p*σ_bp + b_e) * surprisal)
+end
+score = 0
+for row in eachrow(unseenData)
+    PCS = [row.PC_1,row.PC_2,row.PC_3,row.PC_4]
+    predictedTags = zeros(4,5)
+    for j in range(1,4)
+        for tag in range(1,5)
+            predictedTags[j,tag] =mod(ssdfs[j],row.Participant,tag,row.Surprisal)
+        end
+        
+    end
+    predTagsDists = zeros(5)
+    for tag in range(1,5)
+        predTagsDists[tag] = cosine_dist(PCS,predictedTags[:,tag])
+    end
+    if(row.fullTag==findmin(predTagsDists)[2])
+        score+=1
+    end
+end
+print(score/nrow(unseenData))
