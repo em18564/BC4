@@ -56,7 +56,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         wordTypes = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
                         "Pronoun","Particle","Verb"]
-        cols = ["#3D9970", "#FF4136", "#FF851B","#4040FF","#7D0DC3"]
+        cols = [palette(:tab10)[i] for i in range(1,10)]
 
     else()
         throw("Illegal type structure")

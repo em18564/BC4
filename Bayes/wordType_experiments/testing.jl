@@ -137,7 +137,7 @@ function essRhatHeatmaps(section,xlabs,ylabs,min,max,sectionTitle)
             if i == 1
                 hm = Plots.heatmap(xlabs,
                 ylabs, section[i,:,:],
-                xlabel="half-cauchy variance", ylabel="exponential mean",
+                xlabel="exponential mean", ylabel="half-cauchy dispertion",
                 left_margin=30mm,
                 bottom_margin=20mm,
                 right_margin=10mm,
@@ -147,7 +147,7 @@ function essRhatHeatmaps(section,xlabs,ylabs,min,max,sectionTitle)
             else
                 hm = Plots.heatmap(xlabs,
                 ylabs, section[i,:,:],
-                xlabel="half-cauchy variance",
+                xlabel="exponential mean",
                 right_margin=10mm,
                 bottom_margin=20mm, legend = :none,
                 clims = (min,max),
@@ -197,32 +197,36 @@ df[df.essAvg.==essMax[1],:]
 # %%
 col1 = unique(df.ExponentialParam)
 xs1 = round.(parse.(Float64,unique(df.ExponentialParam)),digits=2)
-y = [mean(df[df.ExponentialParam.==x,:].essAvg) for x in col]
+y = [mean(df[df.ExponentialParam.==x,:].essAvg) for x in col1]
 Plots.plot(xs1,y,label="Exponential ESS Avg")
+Plots.savefig("figs/essLinePlot1.png")
+
 col2 = unique(df.CauchyParam)
 xs2 = round.(parse.(Float64,unique(df.CauchyParam)),digits=2)
-y = [mean(df[df.CauchyParam.==x,:].essAvg) for x in col]
-Plots.plot!(xs2,y,label="Cauchy ESS Avg")
-Plots.savefig("figs/essLinePlot.png")
+y = [mean(df[df.CauchyParam.==x,:].essAvg) for x in col2]
+Plots.plot(xs2,y,label="Cauchy ESS Avg")
+Plots.savefig("figs/essLinePlot2.png")
 
-y = [mean(df[df.ExponentialParam.==x,:].rhatAvg) for x in col]
+y = [mean(df[df.ExponentialParam.==x,:].rhatAvg) for x in col1]
 Plots.plot(xs1,y,label="Exponential Rhat Avg")
-y = [mean(df[df.CauchyParam.==x,:].rhatAvg) for x in col]
-Plots.plot!(xs2,y,label="Cauchy Rhat Avg")
-Plots.savefig("figs/rhatLinePlot.png")
+Plots.savefig("figs/rhatLinePlot1.png")
+
+y = [mean(df[df.CauchyParam.==x,:].rhatAvg) for x in col2]
+Plots.plot(xs2,y,label="Cauchy Rhat Avg")
+Plots.savefig("figs/rhatLinePlot2.png")
 
 
 # %%
-Plots.heatmap(xs2,xs1,
-                xlabel="half-cauchy variance",
-                ylabel="exponential mean",
+Plots.heatmap(sort(xs2),sort(xs1),
+                xlabel="exponential mean",
+                ylabel="half-cauchy dispertion",
                 transpose(reshape(df.essAvg,(20,20))),
                 title = "Overall Ess Avg")
 Plots.savefig("figs/overallEssAvg.png")
 
 Plots.heatmap(xs2,xs1,
-                xlabel="half-cauchy variance",
-                ylabel="exponential mean",
+                xlabel="exponential mean",
+                ylabel="half-cauchy dispertion",
                 transpose(reshape(df.rhatAvg,(20,20))),
                 title = "Overall Rhat Avg")
 Plots.savefig("figs/overallRhatAvg.png")
