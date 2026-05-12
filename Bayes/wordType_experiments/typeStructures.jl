@@ -33,7 +33,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         df_modified = vcat(adj,noun,verb,adv,f)
         wordTypes = ["Adjective","Noun","Verb","Adverb","Function"]
         cols = [palette(:tab10)[i] for i in range(1,10)]
-    elseif(TYPE_STRUCTURE = "CF")
+    elseif(TYPE_STRUCTURE == "CF")
         c = vcat( subset(df_modified, :fullTag => ByRow((==(0)))),
           subset(df_modified, :fullTag => ByRow((==(5)))),
           subset(df_modified, :fullTag => ByRow((==(9)))),
@@ -51,7 +51,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         wordTypes = ["Content","Function"]
         cols = ["#3D9970", "#7D0DC3"]
 
-    elseif(TYPE_STRUCTURE = "Full")
+    elseif(TYPE_STRUCTURE == "Full")
         NUM_TYPES = 10
         wordTypes = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",

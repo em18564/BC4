@@ -7,13 +7,15 @@
 #SBATCH --output model.out
 #SBATCH --account=PHPH039284
 #SBATCH --partition=short
+#SBATCH --array 1-4               #make sure to do 4*square number
+
 export NUM_PARTICIPANTS=23    
 export NUM_WORDS=1931
 export TYPE_STRUCTURE="Full"
 export IS_PLOTTING=1
 export ANALYSE_ESS_RHAT=0
-export MIN_EXP=0.17                 #Use min_exp and min_cauchy if only running 4 tasks
-export MAX_EXP=0.17
+export MIN_EXP=0.5                #Use min_exp and min_cauchy if only running 4 tasks
+export MAX_EXP=0.5
 export MIN_CAUCHY=1
 export MAX_CAUCHY=1
 module add languages/julia/1.10.3

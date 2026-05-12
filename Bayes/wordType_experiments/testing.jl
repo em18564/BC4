@@ -88,10 +88,66 @@ function essRhatDataFrame(folderLoc)
     end
     return df
 end
+function essRhatDataFrameSpecifyFilename(folderLoc,filenames)
+    expParams    = []
+    cauchyParams = []
+    essScores    = [[],[],[],[]]
+    rhatScores   = [[],[],[],[]]
+    label = []
+    for filename in filenames
+        for (root, _, files) in walkdir(folderLoc)
+            if(folderLoc!=root)
+                foldername = replace(root,folderLoc*"\\" => "" )
+                if foldername == filename
+                    index = findfirst("_",foldername)[1]
+                    push!(expParams,foldername[1:index-1])
+                    push!(cauchyParams,foldername[index+1:length(foldername)])
 
+                    for i in range(1,4)
+                        filename = "score"*string(i)*".csv" 
+                        if(filename in files)
+                            s = CSV.read(joinpath.(root, filename),DataFrame)
+                            push!(essScores[i],s.ess)
+                            push!(rhatScores[i],s.rhat)
+                            label = s.label
+                        else
+                            push!(essScores[i],zeros(8))
+                            push!(rhatScores[i],zeros(8))
+                        end
+                    end
+                end
+            end
+        end
+        
+        #print(joinpath.(root, files),"\n") # files is a Vector{String}, can be empty
+    end
+    es = hcat(  mapreduce(permutedims, vcat, essScores[1]),
+                mapreduce(permutedims, vcat, essScores[2]),
+                mapreduce(permutedims, vcat, essScores[3]),
+                mapreduce(permutedims, vcat, essScores[4]))
+    rh = hcat(  mapreduce(permutedims, vcat, rhatScores[1]),
+                mapreduce(permutedims, vcat, rhatScores[2]),
+                mapreduce(permutedims, vcat, rhatScores[3]),
+                mapreduce(permutedims, vcat, rhatScores[4]))
+    colNames = []
+    for i in range(1,4)
+        colNames = vcat(colNames,[x*"_"*string(i) for x in label])
+    end
+    df = DataFrames.DataFrame(ExponentialParam=expParams,CauchyParam=cauchyParams)
+    for i in range(1,length(colNames))
+        df[!,"ess_"*colNames[i]] =es[:,i]
+        df[!,"rhat_"*colNames[i]]=rh[:,i]
+    end
+    return df
+end
+filenames = []
+for i in range(0.5,20,10)
+    for j in range(0.5,20,10)
+        push!(filenames,string(i)*"_"*string(j))
+    end
+end
 
-
-df =essRhatDataFrame("models/exponentials/output_FullCF_23_1931")
+df =essRhatDataFrameSpecifyFilename("models/exponentials/output_FullCF_12_1931",filenames)
 # %%
 function getSectionData(section,df,xlabs,ylabs)
     data = zeros(4,length(xlabs),length(ylabs))
@@ -136,7 +192,7 @@ function essRhatHeatmaps(section,xlabs,ylabs,min,max,sectionTitle)
     for i in range(1,4)
             if i == 1
                 hm = Plots.heatmap(xlabs,
-                ylabs, section[i,:,:],
+                ylabs, transpose(section[i,:,:]),
                 xlabel="exponential mean", ylabel="half-cauchy dispertion",
                 left_margin=30mm,
                 bottom_margin=20mm,
@@ -146,7 +202,7 @@ function essRhatHeatmaps(section,xlabs,ylabs,min,max,sectionTitle)
                 title = "PC " * string(i))
             else
                 hm = Plots.heatmap(xlabs,
-                ylabs, section[i,:,:],
+                ylabs, transpose(section[i,:,:]),
                 xlabel="exponential mean",
                 right_margin=10mm,
                 bottom_margin=20mm, legend = :none,
@@ -166,7 +222,7 @@ function essRhatHeatmaps(section,xlabs,ylabs,min,max,sectionTitle)
     l = @layout [a{0.24w} b{0.24w} c{0.24w} d{0.24w} e]
     myPlot = Plots.plot(p[1],p[2],p[3],p[4], p[5]; layout = l,plot_title=sectionTitle,
                 top_margin=10mm)
-    gr(size=(4000,1000), dpi=600)
+    gr(size=(4400,1200), dpi=600)
     
     return myPlot
 
@@ -199,35 +255,33 @@ col1 = unique(df.ExponentialParam)
 xs1 = round.(parse.(Float64,unique(df.ExponentialParam)),digits=2)
 y = [mean(df[df.ExponentialParam.==x,:].essAvg) for x in col1]
 Plots.plot(xs1,y,label="Exponential ESS Avg")
-Plots.savefig("figs/essLinePlot1.png")
 
 col2 = unique(df.CauchyParam)
 xs2 = round.(parse.(Float64,unique(df.CauchyParam)),digits=2)
 y = [mean(df[df.CauchyParam.==x,:].essAvg) for x in col2]
-Plots.plot(xs2,y,label="Cauchy ESS Avg")
-Plots.savefig("figs/essLinePlot2.png")
+Plots.plot!(xs2,y,label="Cauchy ESS Avg")
+Plots.savefig("figs/essLinePlot.png")
 
 y = [mean(df[df.ExponentialParam.==x,:].rhatAvg) for x in col1]
 Plots.plot(xs1,y,label="Exponential Rhat Avg")
-Plots.savefig("figs/rhatLinePlot1.png")
 
 y = [mean(df[df.CauchyParam.==x,:].rhatAvg) for x in col2]
-Plots.plot(xs2,y,label="Cauchy Rhat Avg")
-Plots.savefig("figs/rhatLinePlot2.png")
+Plots.plot!(xs2,y,label="Cauchy Rhat Avg")
+Plots.savefig("figs/rhatLinePlot.png")
 
 
 # %%
 Plots.heatmap(sort(xs2),sort(xs1),
                 xlabel="exponential mean",
                 ylabel="half-cauchy dispertion",
-                transpose(reshape(df.essAvg,(20,20))),
+                (reshape(df.essAvg,(10,10))),
                 title = "Overall Ess Avg")
 Plots.savefig("figs/overallEssAvg.png")
 
 Plots.heatmap(xs2,xs1,
                 xlabel="exponential mean",
                 ylabel="half-cauchy dispertion",
-                transpose(reshape(df.rhatAvg,(20,20))),
+                (reshape(df.rhatAvg,(10,10))),
                 title = "Overall Rhat Avg")
 Plots.savefig("figs/overallRhatAvg.png")
 
