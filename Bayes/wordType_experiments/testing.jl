@@ -222,7 +222,7 @@ function essRhatHeatmaps(section,xlabs,ylabs,min,max,sectionTitle)
     l = @layout [a{0.24w} b{0.24w} c{0.24w} d{0.24w} e]
     myPlot = Plots.plot(p[1],p[2],p[3],p[4], p[5]; layout = l,plot_title=sectionTitle,
                 top_margin=10mm)
-    gr(size=(4400,1200), dpi=600)
+    gr(size=(4400,1200), dpi=300)
     
     return myPlot
 
@@ -293,10 +293,11 @@ Plots.savefig("figs/overallRhatAvg.png")
 
 
 
-outputDir="models/exponentials/output_FullCF_12_1931/0.1_0.8631578947368421"
-outputDir2="models/halfNorms/output_FullCF_23_1931"
-wordTypes = ["Adjective","Noun","Verb","Adverb","Function"]
-cols = ["#3D9970", "#FF4136", "#FF851B","#4040FF","#7D0DC3"]
+outputDir="models/exponentials/output_Full_23_1931"
+wordTypes = ["Adjective","Adposition","Adverb",
+                        "Conjunction","Determiner","Noun","Numeral",
+                        "Pronoun","Particle","Verb"]
+cols = [palette(:tab10)[i] for i in range(1,10)]
 chn1 = deserialize(outputDir*"/out1.jls")
 chn2 = deserialize(outputDir*"/out2.jls")
 chn3 = deserialize(outputDir*"/out3.jls")
@@ -317,12 +318,12 @@ plotGraphs(outputDir,wordTypes,cols)
 
 # %%
 ssdfs = [ss_df1,ss_df2,ss_df3,ss_df4]
-wi = zeros(4,5)
-wg = zeros(4,5)
+wi = zeros(4,10)
+wg = zeros(4,10)
 for i in range(1,length(ssdfs))
-    wordsInt  = [ssdfs[i][string.(ss_df1.parameters).=="a_ws["*string(w)*"]","mean"] for w in range(1,5)]
-    wordsGrad = [ssdfs[i][string.(ss_df1.parameters).=="b_ws["*string(w)*"]","mean"] for w in range(1,5)]
-    for j in range(1,5)
+    wordsInt  = [ssdfs[i][string.(ss_df1.parameters).=="a_ws["*string(w)*"]","mean"] for w in range(1,10)]
+    wordsGrad = [ssdfs[i][string.(ss_df1.parameters).=="b_ws["*string(w)*"]","mean"] for w in range(1,10)]
+    for j in range(1,10)
         wi[i,j] = wordsInt[j][1]
         wg[i,j] = wordsGrad[j][1]
     end
@@ -330,10 +331,10 @@ end
 wordVals = vcat(wi,wg)
 
 
-distances = zeros(5,5)
+distances = zeros(10,10)
 
-for i in range(1,5)
-    for j in range(1,5)
+for i in range(1,10)
+    for j in range(1,10)
         distances[i,j] = cosine_dist(wordVals[:,i],wordVals[:,j])
     end
 end
@@ -342,8 +343,9 @@ end
 # %%
 hc = hclust(distances, linkage=:single)
 xlabs = [wordTypes[i] for i in hc.order]
-Plots.plot(hc,xticks=(1:5,xlabs))
-Plots.savefig("figs/dendrogram.png")
+Plots.plot(hc,xticks=(1:10,xlabs))
+gr(size=(1600,600), dpi=300)
+Plots.savefig("figs/dendrogram_10.png")
 
 
 # %%

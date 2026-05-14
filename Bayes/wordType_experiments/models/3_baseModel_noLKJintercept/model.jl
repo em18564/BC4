@@ -5,29 +5,32 @@ include("../../setup.jl")
 
 @model function model(participant,word,surprisal,tags,PCA,ExpMean,cauchyMean)
 
-  σ_aw ~ Exponential(0.5)
-  a_ws ~ filldist(Normal(0, 1),NUM_TYPES)
-  σ_bw ~ Exponential(0.5)
-  b_ws ~ filldist(Normal(0, 1),NUM_TYPES)
-  a_w = a_ws[tags.+1]
-  b_w = b_ws[tags.+1]
+  σ_w ~ filldist(Exponential(), 2)
+  ρ_w ~ LKJ(2, 2)
+  Σ_w = Symmetric(Diagonal(σ_w) * ρ_w * Diagonal(σ_w))
+  ab_w ~ filldist(MvNormal([0,0], Σ_w),NUM_TYPES)
+  a_w = ab_w[1,tags.+1]
+  b_w = ab_w[2,tags.+1]
 
-  σ_ap ~ Exponential(0.5)
-  a_ps ~ filldist(Normal(0, 1),NUM_PARTICIPANTS)
-  σ_bp ~ Exponential(0.5)
-  b_ps ~ filldist(Normal(0, 1),NUM_PARTICIPANTS)
-  a_p = a_ps[participant.+1]
-  b_p = b_ps[participant.+1]
+  σ_p ~ filldist(Exponential(), 2)
+  ρ_p ~ LKJ(2, 2)
+  Σ_p = Symmetric(Diagonal(σ_p) * ρ_p * Diagonal(σ_p))
+  ab_p ~ filldist(MvNormal([0,0], Σ_p),NUM_PARTICIPANTS)
+  a_p = ab_p[1,participant.+1]
+  b_p = ab_p[2,participant.+1]
 
-  a_e  ~ Normal(0,0.5)
-  b_e  ~ Normal(0,0.5)
 
-  μ = @. a_w*σ_aw + a_p*σ_ap + a_e + ((b_w*σ_bw + b_p*σ_bp + b_e) * surprisal)
+  a_e ~ Normal(0,1)
+  b_e ~ Normal(0,1)
 
-  σ ~ truncated(Cauchy(0., 1); lower = 0) # cauchy dispertion
+  μ = @. a_w + a_p + a_e + ((b_w + b_p + b_e) * surprisal)
+
+  σ ~ truncated(Cauchy(0., 1.); lower = 0)
+
   for i in eachindex(PCA)
     PCA[i] ~ Normal(μ[i],σ)
   end
+  
 end
 
 
