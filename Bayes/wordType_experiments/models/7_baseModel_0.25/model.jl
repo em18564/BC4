@@ -5,16 +5,16 @@ include("../../setup.jl")
 
 @model function model(participant,word,surprisal,tags,PCA,ExpMean,cauchyMean)
 
-  σ_aw ~ Exponential(0.5)
+  σ_aw ~ Exponential(0.25)
   a_ws ~ filldist(Normal(0, 1),NUM_TYPES)
-  σ_bw ~ Exponential(0.5)
+  σ_bw ~ Exponential(0.25)
   b_ws ~ filldist(Normal(0, 1),NUM_TYPES)
   a_w = a_ws[tags.+1]
   b_w = b_ws[tags.+1]
 
-  σ_ap ~ Exponential(0.5)
+  σ_ap ~ Exponential(0.25)
   a_ps ~ filldist(Normal(0, 1),NUM_PARTICIPANTS)
-  σ_bp ~ Exponential(0.5)
+  σ_bp ~ Exponential(0.25)
   b_ps ~ filldist(Normal(0, 1),NUM_PARTICIPANTS)
   a_p = a_ps[participant.+1]
   b_p = b_ps[participant.+1]
