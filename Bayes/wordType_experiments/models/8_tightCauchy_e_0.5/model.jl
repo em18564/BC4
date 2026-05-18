@@ -19,8 +19,8 @@ include("../../setup.jl")
   a_p = a_ps[participant.+1]
   b_p = b_ps[participant.+1]
 
-  a_e  ~ Normal(0,1)
-  b_e  ~ Normal(0,1)
+  a_e  ~ Normal(0,0.5)
+  b_e  ~ Normal(0,0.5)
 
     μ = @. a_w*σ_aw + a_p*σ_ap + a_e + ((b_w*σ_bw + b_p*σ_bp + b_e) * surprisal)
 
