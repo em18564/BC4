@@ -293,59 +293,9 @@ Plots.savefig("figs/overallRhatAvg.png")
 
 
 
-outputDir="models/exponentials/output_Full_23_1931"
-wordTypes = ["Adjective","Adposition","Adverb",
-                        "Conjunction","Determiner","Noun","Numeral",
-                        "Pronoun","Particle","Verb"]
-cols = [palette(:tab10)[i] for i in range(1,10)]
-chn1 = deserialize(outputDir*"/out1.jls")
-chn2 = deserialize(outputDir*"/out2.jls")
-chn3 = deserialize(outputDir*"/out3.jls")
-chn4 = deserialize(outputDir*"/out4.jls")
-chn_df1 = DataFrames.DataFrame(chn1)
-chn_df2 = DataFrames.DataFrame(chn2)
-chn_df3 = DataFrames.DataFrame(chn3)
-chn_df4 = DataFrames.DataFrame(chn4)
-ss_df1  = DataFrames.DataFrame(summarystats(chn1))
-ss_df2  = DataFrames.DataFrame(summarystats(chn2))
-ss_df3  = DataFrames.DataFrame(summarystats(chn3))
-ss_df4  = DataFrames.DataFrame(summarystats(chn4))
-show(stdout,"text/plain",summarystats(chn1))
-
-# %%
-
-plotGraphs(outputDir,wordTypes,cols)
-
-# %%
-ssdfs = [ss_df1,ss_df2,ss_df3,ss_df4]
-wi = zeros(4,10)
-wg = zeros(4,10)
-for i in range(1,length(ssdfs))
-    wordsInt  = [ssdfs[i][string.(ss_df1.parameters).=="a_ws["*string(w)*"]","mean"] for w in range(1,10)]
-    wordsGrad = [ssdfs[i][string.(ss_df1.parameters).=="b_ws["*string(w)*"]","mean"] for w in range(1,10)]
-    for j in range(1,10)
-        wi[i,j] = wordsInt[j][1]
-        wg[i,j] = wordsGrad[j][1]
-    end
-end
-wordVals = vcat(wi,wg)
 
 
-distances = zeros(10,10)
 
-for i in range(1,10)
-    for j in range(1,10)
-        distances[i,j] = cosine_dist(wordVals[:,i],wordVals[:,j])
-    end
-end
-
-
-# %%
-hc = hclust(distances, linkage=:single)
-xlabs = [wordTypes[i] for i in hc.order]
-Plots.plot(hc,xticks=(1:10,xlabs))
-gr(size=(1600,600), dpi=300)
-Plots.savefig("figs/dendrogram_10.png")
 
 
 # %%
