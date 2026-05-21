@@ -1,855 +1,378 @@
-cpu-bind=MASK - bp1-compute069, task  0  0 [945588]: mask 0x600000600000 set
-cpu-bind=MASK - bp1-compute069, task  0  0 [945587]: mask 0x180000180000 set
-Running on host bp1-compute069
-Running on host bp1-compute069
-Time is Tue May 19 14:05:22 BST 2026
-Time is Tue May 19 14:05:22 BST 2026
-Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised
-Slurm job ID is 17401683
+cpu-bind=MASK - bp1-compute101, task  0  0 [3317686]: mask 0x600000600000 set
+cpu-bind=MASK - bp1-compute100, task  0  0 [2017008]: mask 0x220000220 set
+Running on host bp1-compute100
+Time is Thu May 21 15:36:08 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling
+Slurm job ID is 17420437
 This job runs on the following machines:
-Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised
-Slurm job ID is 17401682
+bp1-compute100
+Running on host bp1-compute101
+Running on host bp1-compute101
+Running on host bp1-compute101
+Time is Thu May 21 15:36:09 BST 2026
+Time is Thu May 21 15:36:09 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling
+Slurm job ID is 17420370
 This job runs on the following machines:
-bp1-compute069
-bp1-compute069
-Sampling (4 threads)   0%|                              |  ETA: N/A
-┌ Info: Found initial step size
-└   ϵ = 0.0001953125
-┌ Info: Found initial step size
-└   ϵ = 0.000390625
-┌ Info: Found initial step size
-└   ϵ = 0.00625
-┌ Info: Found initial step size
-└   ϵ = 0.0015625
-Sampling (4 threads)   0%|▏                             |  ETA: 2:41:51
-Sampling (4 threads)   1%|▎                             |  ETA: 1:20:36
-Sampling (4 threads)   2%|▌                             |  ETA: 0:53:28
-Sampling (4 threads)   2%|▋                             |  ETA: 0:56:08
-Sampling (4 threads)   2%|▊                             |  ETA: 0:44:40
-Sampling (4 threads)   3%|▉                             |  ETA: 0:37:02
-Sampling (4 threads)   4%|█                             |  ETA: 0:31:35
-Sampling (4 threads)   4%|█▎                            |  ETA: 1:05:00
-Sampling (4 threads)   4%|█▍                            |  ETA: 0:57:28
-Sampling (4 threads)   5%|█▌                            |  ETA: 0:51:27
-Sampling (4 threads)   6%|█▋                            |  ETA: 1:25:10
-Sampling (4 threads)   6%|█▊                            |  ETA: 1:17:39
-Sampling (4 threads)   6%|██                            |  ETA: 1:43:40
-Sampling (4 threads)   7%|██▏                           |  ETA: 1:35:44
-Sampling (4 threads)   8%|██▎                           |  ETA: 1:28:53
-Sampling (4 threads)   8%|██▍                           |  ETA: 1:50:36
-Sampling (4 threads)   8%|██▌                           |  ETA: 1:43:32
-Sampling (4 threads)   9%|██▊                           |  ETA: 1:37:15
-Sampling (4 threads)  10%|██▉                           |  ETA: 1:49:02
-Sampling (4 threads)  10%|███                           |  ETA: 1:43:00
-Sampling (4 threads)  10%|███▏                          |  ETA: 2:02:25
-Sampling (4 threads)  11%|███▎                          |  ETA: 1:56:12
-Sampling (4 threads)  12%|███▌                          |  ETA: 1:50:32
-Sampling (4 threads)  12%|███▋                          |  ETA: 2:08:21
-Sampling (4 threads)  12%|███▊                          |  ETA: 2:02:31
-Sampling (4 threads)  13%|███▉                          |  ETA: 1:57:08
-Sampling (4 threads)  14%|████                          |  ETA: 1:52:09
-Sampling (4 threads)  14%|████▎                         |  ETA: 2:06:42
-Sampling (4 threads)  14%|████▍                         |  ETA: 2:01:38
-Sampling (4 threads)  15%|████▌                         |  ETA: 1:56:53
-Sampling (4 threads)  16%|████▋                         |  ETA: 2:04:27
-Sampling (4 threads)  16%|████▊                         |  ETA: 1:59:51
-Sampling (4 threads)  16%|█████                         |  ETA: 2:04:28
-Sampling (4 threads)  17%|█████▏                        |  ETA: 2:00:05
-Sampling (4 threads)  18%|█████▎                        |  ETA: 1:55:57
-Sampling (4 threads)  18%|█████▍                        |  ETA: 1:58:02
-Sampling (4 threads)  18%|█████▌                        |  ETA: 1:54:09
-Sampling (4 threads)  19%|█████▊                        |  ETA: 2:04:25
-Sampling (4 threads)  20%|█████▉                        |  ETA: 2:00:29
-Sampling (4 threads)  20%|██████                        |  ETA: 1:56:44
-Sampling (4 threads)  20%|██████▏                       |  ETA: 2:00:18
-Sampling (4 threads)  21%|██████▎                       |  ETA: 1:56:42
-Sampling (4 threads)  22%|██████▌                       |  ETA: 2:00:58
-Sampling (4 threads)  22%|██████▋                       |  ETA: 1:57:28
-Sampling (4 threads)  22%|██████▊                       |  ETA: 1:54:07
-Sampling (4 threads)  23%|██████▉                       |  ETA: 1:58:09
-Sampling (4 threads)  24%|███████                       |  ETA: 1:54:53
-Sampling (4 threads)  24%|███████▎                      |  ETA: 1:51:45
-Sampling (4 threads)  24%|███████▍                      |  ETA: 1:52:43
-Sampling (4 threads)  25%|███████▌                      |  ETA: 1:49:44
-Sampling (4 threads)  26%|███████▋                      |  ETA: 1:51:23
-Sampling (4 threads)  26%|███████▊                      |  ETA: 1:48:30
-Sampling (4 threads)  26%|████████                      |  ETA: 1:50:16
-Sampling (4 threads)  27%|████████▏                     |  ETA: 1:47:29
-Sampling (4 threads)  28%|████████▎                     |  ETA: 1:44:48
-Sampling (4 threads)  28%|████████▍                     |  ETA: 1:48:32
-Sampling (4 threads)  28%|████████▌                     |  ETA: 1:45:53
-Sampling (4 threads)  29%|████████▊                     |  ETA: 1:43:20
-Sampling (4 threads)  30%|████████▉                     |  ETA: 1:43:27
-Sampling (4 threads)  30%|█████████                     |  ETA: 1:41:01
-Sampling (4 threads)  30%|█████████▏                    |  ETA: 1:42:05
-Sampling (4 threads)  31%|█████████▎                    |  ETA: 1:39:43
-Sampling (4 threads)  32%|█████████▌                    |  ETA: 1:37:25
-Sampling (4 threads)  32%|█████████▋                    |  ETA: 1:42:12
-Sampling (4 threads)  32%|█████████▊                    |  ETA: 1:39:53
-Sampling (4 threads)  33%|█████████▉                    |  ETA: 1:37:39
-Sampling (4 threads)  34%|██████████                    |  ETA: 1:40:34
-Sampling (4 threads)  34%|██████████▎                   |  ETA: 1:38:21
-Sampling (4 threads)  34%|██████████▍                   |  ETA: 1:36:11
-Sampling (4 threads)  35%|██████████▌                   |  ETA: 1:34:06
-Sampling (4 threads)  36%|██████████▋                   |  ETA: 1:36:27
-Sampling (4 threads)  36%|██████████▊                   |  ETA: 1:34:22
-Sampling (4 threads)  36%|███████████                   |  ETA: 1:32:21
-Sampling (4 threads)  37%|███████████▏                  |  ETA: 1:34:56
-Sampling (4 threads)  38%|███████████▎                  |  ETA: 1:32:55
-Sampling (4 threads)  38%|███████████▍                  |  ETA: 1:30:58
-Sampling (4 threads)  38%|███████████▌                  |  ETA: 1:31:32
-Sampling (4 threads)  39%|███████████▊                  |  ETA: 1:29:37
-Sampling (4 threads)  40%|███████████▉                  |  ETA: 1:29:48
-Sampling (4 threads)  40%|████████████                  |  ETA: 1:27:56
-Sampling (4 threads)  40%|████████████▏                 |  ETA: 1:30:01
-Sampling (4 threads)  41%|████████████▎                 |  ETA: 1:28:10
-Sampling (4 threads)  42%|████████████▌                 |  ETA: 1:26:22
-Sampling (4 threads)  42%|████████████▋                 |  ETA: 1:24:36
-Sampling (4 threads)  42%|████████████▊                 |  ETA: 1:26:09
-Sampling (4 threads)  43%|████████████▉                 |  ETA: 1:24:24
-Sampling (4 threads)  44%|█████████████                 |  ETA: 1:22:42
-Sampling (4 threads)  44%|█████████████▎                |  ETA: 1:24:21
-Sampling (4 threads)  44%|█████████████▍                |  ETA: 1:22:39
-Sampling (4 threads)  45%|█████████████▌                |  ETA: 1:21:00
-Sampling (4 threads)  46%|█████████████▋                |  ETA: 1:21:41
-Sampling (4 threads)  46%|█████████████▊                |  ETA: 1:20:03
-Sampling (4 threads)  46%|██████████████                |  ETA: 1:18:27
-Sampling (4 threads)  47%|██████████████▏               |  ETA: 1:19:50
-Sampling (4 threads)  48%|██████████████▎               |  ETA: 1:18:15
-Sampling (4 threads)  48%|██████████████▍               |  ETA: 1:16:42
-Sampling (4 threads)  48%|██████████████▌               |  ETA: 1:16:20
-Sampling (4 threads)  49%|██████████████▊               |  ETA: 1:14:49
-Sampling (4 threads)  50%|██████████████▉               |  ETA: 1:15:19
-Sampling (4 threads)  50%|███████████████               |  ETA: 1:13:50
-Sampling (4 threads)  50%|███████████████▏              |  ETA: 1:14:16
-Sampling (4 threads)  51%|███████████████▎              |  ETA: 1:12:47
-Sampling (4 threads)  52%|███████████████▌              |  ETA: 1:12:44
-Sampling (4 threads)  52%|███████████████▋              |  ETA: 1:11:18
-Sampling (4 threads)  52%|███████████████▊              |  ETA: 1:09:53
-Sampling (4 threads)  53%|███████████████▉              |  ETA: 1:10:27
-Sampling (4 threads)  54%|████████████████              |  ETA: 1:09:03
-Sampling (4 threads)  54%|████████████████▎             |  ETA: 1:07:41
-Sampling (4 threads)  55%|████████████████▍             |  ETA: 1:07:47
-Sampling (4 threads)  55%|████████████████▌             |  ETA: 1:06:25
-Sampling (4 threads)  56%|████████████████▋             |  ETA: 1:06:41
-Sampling (4 threads)  56%|████████████████▊             |  ETA: 1:05:21
-Sampling (4 threads)  56%|█████████████████             |  ETA: 1:04:02
-Sampling (4 threads)  57%|█████████████████▏            |  ETA: 1:04:49
-Sampling (4 threads)  57%|█████████████████▎            |  ETA: 1:03:30
-Sampling (4 threads)  58%|█████████████████▍            |  ETA: 1:02:13
-Sampling (4 threads)  58%|█████████████████▌            |  ETA: 1:02:28
-Sampling (4 threads)  59%|█████████████████▊            |  ETA: 1:01:11
-Sampling (4 threads)  60%|█████████████████▉            |  ETA: 1:01:15
-Sampling (4 threads)  60%|██████████████████            |  ETA: 0:59:59
-Sampling (4 threads)  60%|██████████████████▏           |  ETA: 0:58:45
-Sampling (4 threads)  61%|██████████████████▎           |  ETA: 0:58:36
-Sampling (4 threads)  62%|██████████████████▌           |  ETA: 0:57:23
-Sampling (4 threads)  62%|██████████████████▋           |  ETA: 0:57:14
-Sampling (4 threads)  62%|██████████████████▊           |  ETA: 0:56:02
-Sampling (4 threads)  63%|██████████████████▉           |  ETA: 0:56:28
-Sampling (4 threads)  64%|███████████████████           |  ETA: 0:55:16
-Sampling (4 threads)  64%|███████████████████▎          |  ETA: 0:54:05
-Sampling (4 threads)  64%|███████████████████▍          |  ETA: 0:52:55
-Sampling (4 threads)  65%|███████████████████▌          |  ETA: 0:52:55
-Sampling (4 threads)  66%|███████████████████▋          |  ETA: 0:51:46
-Sampling (4 threads)  66%|███████████████████▊          |  ETA: 0:51:44
-Sampling (4 threads)  66%|████████████████████          |  ETA: 0:50:35
-Sampling (4 threads)  67%|████████████████████▏         |  ETA: 0:50:11
-Sampling (4 threads)  68%|████████████████████▎         |  ETA: 0:49:03
-Sampling (4 threads)  68%|████████████████████▍         |  ETA: 0:48:33
-Sampling (4 threads)  68%|████████████████████▌         |  ETA: 0:47:27
-Sampling (4 threads)  69%|████████████████████▊         |  ETA: 0:47:12
-Sampling (4 threads)  70%|████████████████████▉         |  ETA: 0:46:06
-Sampling (4 threads)  70%|█████████████████████         |  ETA: 0:45:38
-Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 0:44:34
-Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 0:44:23
-Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 0:43:18
-Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 0:42:15
-Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 0:41:56
-Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 0:40:53
-Sampling (4 threads)  74%|██████████████████████        |  ETA: 0:39:52
-Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 0:39:35
-Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 0:38:33
-Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 0:38:23
-Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 0:37:22
-Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 0:36:21
-Sampling (4 threads)  76%|███████████████████████       |  ETA: 0:35:22
-Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 0:35:06
-Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 0:34:07
-Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 0:33:09
-Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 0:32:51
-Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 0:31:53
-Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 0:30:56
-Sampling (4 threads)  80%|████████████████████████      |  ETA: 0:29:59
-Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:29:39
-Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:28:42
-Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:27:47
-Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:27:20
-Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:26:25
-Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:25:30
-Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:25:04
-Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:24:09
-Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:23:16
-Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:22:23
-Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:21:54
-Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:21:01
-Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:20:28
-Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:19:35
-Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:18:44
-Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:17:53
-Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:17:22
-Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:16:31
-Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:15:41
-Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:15:00
-Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:14:11
-Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:13:28
-Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:12:43
-Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:11:58
-Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:11:14
-Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:10:27
-Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:09:43
-Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:08:59
-Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:08:13
-Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:07:30
-Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:06:45
-Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:05:59
-Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:05:15
-Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:04:31
-Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:03:45
-Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:03:00
-Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:02:15
-Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:01:30
-Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:00:45
-Sampling (4 threads) 100%|██████████████████████████████| Time: 2:33:05
-Sampling (4 threads) 100%|██████████████████████████████| Time: 2:33:06
-Sampling (4 threads)   0%|                              |  ETA: N/A
-┌ Info: Found initial step size
-└   ϵ = 0.0125
-┌ Info: Found initial step size
-└   ϵ = 0.003125
-┌ Info: Found initial step size
-└   ϵ = 0.000390625
-┌ Info: Found initial step size
-└   ϵ = 0.0001953125
-Sampling (4 threads)   0%|▏                             |  ETA: 2:45:15
-Sampling (4 threads)   1%|▎                             |  ETA: 1:22:17
-Sampling (4 threads)   2%|▌                             |  ETA: 0:54:35
-Sampling (4 threads)   2%|▋                             |  ETA: 0:42:00
-Sampling (4 threads)   2%|▊                             |  ETA: 0:33:26
-Sampling (4 threads)   3%|▉                             |  ETA: 0:29:06
-Sampling (4 threads)   4%|█                             |  ETA: 0:24:49
-Sampling (4 threads)   4%|█▎                            |  ETA: 0:24:16
-Sampling (4 threads)   4%|█▍                            |  ETA: 0:21:28
-Sampling (4 threads)   5%|█▌                            |  ETA: 0:40:59
-Sampling (4 threads)   6%|█▋                            |  ETA: 0:37:04
-Sampling (4 threads)   6%|█▊                            |  ETA: 1:15:50
-Sampling (4 threads)   6%|██                            |  ETA: 1:09:38
-Sampling (4 threads)   7%|██▏                           |  ETA: 1:04:18
-Sampling (4 threads)   8%|██▎                           |  ETA: 1:41:29
-Sampling (4 threads)   8%|██▍                           |  ETA: 1:34:38
-Sampling (4 threads)   8%|██▌                           |  ETA: 1:28:35
-Sampling (4 threads)   9%|██▊                           |  ETA: 1:52:42
-Sampling (4 threads)  10%|██▉                           |  ETA: 1:46:10
-Sampling (4 threads)  10%|███                           |  ETA: 1:40:19
-Sampling (4 threads)  10%|███▏                          |  ETA: 1:47:55
-Sampling (4 threads)  11%|███▎                          |  ETA: 1:42:26
-Sampling (4 threads)  12%|███▌                          |  ETA: 1:57:17
-Sampling (4 threads)  12%|███▋                          |  ETA: 1:51:45
-Sampling (4 threads)  12%|███▊                          |  ETA: 2:12:39
-Sampling (4 threads)  13%|███▉                          |  ETA: 2:06:49
-Sampling (4 threads)  14%|████                          |  ETA: 2:01:26
-Sampling (4 threads)  14%|████▎                         |  ETA: 1:56:25
-Sampling (4 threads)  14%|████▍                         |  ETA: 2:16:24
-Sampling (4 threads)  15%|████▌                         |  ETA: 2:11:05
-Sampling (4 threads)  16%|████▋                         |  ETA: 2:06:07
-Sampling (4 threads)  16%|████▊                         |  ETA: 2:17:10
-Sampling (4 threads)  16%|█████                         |  ETA: 2:12:13
-Sampling (4 threads)  17%|█████▏                        |  ETA: 2:07:33
-Sampling (4 threads)  18%|█████▎                        |  ETA: 2:17:58
-Sampling (4 threads)  18%|█████▍                        |  ETA: 2:13:20
-Sampling (4 threads)  18%|█████▌                        |  ETA: 2:08:56
-Sampling (4 threads)  19%|█████▊                        |  ETA: 2:20:44
-Sampling (4 threads)  20%|█████▉                        |  ETA: 2:16:17
-Sampling (4 threads)  20%|██████                        |  ETA: 2:12:03
-Sampling (4 threads)  20%|██████▏                       |  ETA: 2:17:31
-Sampling (4 threads)  21%|██████▎                       |  ETA: 2:13:23
-Sampling (4 threads)  22%|██████▌                       |  ETA: 2:09:28
-Sampling (4 threads)  22%|██████▋                       |  ETA: 2:13:06
-Sampling (4 threads)  22%|██████▊                       |  ETA: 2:09:19
-Sampling (4 threads)  23%|██████▉                       |  ETA: 2:12:32
-Sampling (4 threads)  24%|███████                       |  ETA: 2:08:52
-Sampling (4 threads)  24%|███████▎                      |  ETA: 2:13:26
-Sampling (4 threads)  24%|███████▍                      |  ETA: 2:09:51
-Sampling (4 threads)  25%|███████▌                      |  ETA: 2:06:24
-Sampling (4 threads)  26%|███████▋                      |  ETA: 2:13:11
-Sampling (4 threads)  26%|███████▊                      |  ETA: 2:09:44
-Sampling (4 threads)  26%|████████                      |  ETA: 2:06:26
-Sampling (4 threads)  27%|████████▏                     |  ETA: 2:10:37
-Sampling (4 threads)  28%|████████▎                     |  ETA: 2:07:22
-Sampling (4 threads)  28%|████████▍                     |  ETA: 2:04:13
-Sampling (4 threads)  28%|████████▌                     |  ETA: 2:06:12
-Sampling (4 threads)  29%|████████▊                     |  ETA: 2:03:09
-Sampling (4 threads)  30%|████████▉                     |  ETA: 2:04:21
-Sampling (4 threads)  30%|█████████                     |  ETA: 2:01:24
-Sampling (4 threads)  30%|█████████▏                    |  ETA: 2:05:35
-Sampling (4 threads)  31%|█████████▎                    |  ETA: 2:02:41
-Sampling (4 threads)  32%|█████████▌                    |  ETA: 1:59:51
-Sampling (4 threads)  32%|█████████▋                    |  ETA: 2:04:51
-Sampling (4 threads)  32%|█████████▊                    |  ETA: 2:02:01
-Sampling (4 threads)  33%|█████████▉                    |  ETA: 1:59:17
-Sampling (4 threads)  34%|██████████                    |  ETA: 1:56:38
-Sampling (4 threads)  34%|██████████▎                   |  ETA: 2:00:11
-Sampling (4 threads)  34%|██████████▍                   |  ETA: 1:57:33
-Sampling (4 threads)  35%|██████████▌                   |  ETA: 1:54:59
-Sampling (4 threads)  36%|██████████▋                   |  ETA: 1:58:39
-Sampling (4 threads)  36%|██████████▊                   |  ETA: 1:56:06
-Sampling (4 threads)  36%|███████████                   |  ETA: 1:53:37
-Sampling (4 threads)  37%|███████████▏                  |  ETA: 1:55:10
-Sampling (4 threads)  38%|███████████▎                  |  ETA: 1:52:44
-Sampling (4 threads)  38%|███████████▍                  |  ETA: 1:50:21
-Sampling (4 threads)  38%|███████████▌                  |  ETA: 1:53:50
-Sampling (4 threads)  39%|███████████▊                  |  ETA: 1:51:27
-Sampling (4 threads)  40%|███████████▉                  |  ETA: 1:49:08
-Sampling (4 threads)  40%|████████████                  |  ETA: 1:51:25
-Sampling (4 threads)  40%|████████████▏                 |  ETA: 1:49:08
-Sampling (4 threads)  41%|████████████▎                 |  ETA: 1:46:53
-Sampling (4 threads)  42%|████████████▌                 |  ETA: 1:49:28
-Sampling (4 threads)  42%|████████████▋                 |  ETA: 1:47:14
-Sampling (4 threads)  42%|████████████▊                 |  ETA: 1:45:04
-Sampling (4 threads)  43%|████████████▉                 |  ETA: 1:42:56
-Sampling (4 threads)  44%|█████████████                 |  ETA: 1:44:56
-Sampling (4 threads)  44%|█████████████▎                |  ETA: 1:42:50
-Sampling (4 threads)  44%|█████████████▍                |  ETA: 1:40:46
-Sampling (4 threads)  45%|█████████████▌                |  ETA: 1:43:04
-Sampling (4 threads)  46%|█████████████▋                |  ETA: 1:41:01
-Sampling (4 threads)  46%|█████████████▊                |  ETA: 1:39:00
-Sampling (4 threads)  46%|██████████████                |  ETA: 1:40:51
-Sampling (4 threads)  47%|██████████████▏               |  ETA: 1:38:50
-Sampling (4 threads)  48%|██████████████▎               |  ETA: 1:36:52
-Sampling (4 threads)  48%|██████████████▍               |  ETA: 1:37:06
-Sampling (4 threads)  48%|██████████████▌               |  ETA: 1:35:10
-Sampling (4 threads)  49%|██████████████▊               |  ETA: 1:35:19
-Sampling (4 threads)  50%|██████████████▉               |  ETA: 1:33:26
-Sampling (4 threads)  50%|███████████████               |  ETA: 1:33:32
-Sampling (4 threads)  50%|███████████████▏              |  ETA: 1:31:41
-Sampling (4 threads)  51%|███████████████▎              |  ETA: 1:32:29
-Sampling (4 threads)  52%|███████████████▌              |  ETA: 1:30:39
-Sampling (4 threads)  52%|███████████████▋              |  ETA: 1:28:52
-Sampling (4 threads)  52%|███████████████▊              |  ETA: 1:30:11
-Sampling (4 threads)  53%|███████████████▉              |  ETA: 1:28:23
-Sampling (4 threads)  54%|████████████████              |  ETA: 1:26:38
-Sampling (4 threads)  54%|████████████████▎             |  ETA: 1:24:54
-Sampling (4 threads)  55%|████████████████▍             |  ETA: 1:25:56
-Sampling (4 threads)  55%|████████████████▌             |  ETA: 1:24:13
-Sampling (4 threads)  56%|████████████████▋             |  ETA: 1:22:32
-Sampling (4 threads)  56%|████████████████▊             |  ETA: 1:23:33
-Sampling (4 threads)  56%|█████████████████             |  ETA: 1:21:53
-Sampling (4 threads)  57%|█████████████████▏            |  ETA: 1:20:14
-Sampling (4 threads)  57%|█████████████████▎            |  ETA: 1:20:51
-Sampling (4 threads)  58%|█████████████████▍            |  ETA: 1:19:12
-Sampling (4 threads)  58%|█████████████████▌            |  ETA: 1:17:36
-Sampling (4 threads)  59%|█████████████████▊            |  ETA: 1:18:23
-Sampling (4 threads)  60%|█████████████████▉            |  ETA: 1:16:47
-Sampling (4 threads)  60%|██████████████████            |  ETA: 1:15:12
-Sampling (4 threads)  60%|██████████████████▏           |  ETA: 1:15:58
-Sampling (4 threads)  61%|██████████████████▎           |  ETA: 1:14:23
-Sampling (4 threads)  62%|██████████████████▌           |  ETA: 1:12:50
-Sampling (4 threads)  62%|██████████████████▋           |  ETA: 1:11:19
-Sampling (4 threads)  62%|██████████████████▊           |  ETA: 1:12:01
-Sampling (4 threads)  63%|██████████████████▉           |  ETA: 1:10:29
-Sampling (4 threads)  64%|███████████████████           |  ETA: 1:08:59
-Sampling (4 threads)  64%|███████████████████▎          |  ETA: 1:09:12
-Sampling (4 threads)  64%|███████████████████▍          |  ETA: 1:07:43
-Sampling (4 threads)  65%|███████████████████▌          |  ETA: 1:06:15
-Sampling (4 threads)  66%|███████████████████▋          |  ETA: 1:06:37
-Sampling (4 threads)  66%|███████████████████▊          |  ETA: 1:05:09
-Sampling (4 threads)  66%|████████████████████          |  ETA: 1:03:42
-Sampling (4 threads)  67%|████████████████████▏         |  ETA: 1:04:02
-Sampling (4 threads)  68%|████████████████████▎         |  ETA: 1:02:36
-Sampling (4 threads)  68%|████████████████████▍         |  ETA: 1:01:11
-Sampling (4 threads)  68%|████████████████████▌         |  ETA: 0:59:47
-Sampling (4 threads)  69%|████████████████████▊         |  ETA: 0:59:55
-Sampling (4 threads)  70%|████████████████████▉         |  ETA: 0:58:31
-Sampling (4 threads)  70%|█████████████████████         |  ETA: 0:58:35
-Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 0:57:12
-Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 0:55:50
-Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 0:54:29
-Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 0:54:27
-Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 0:53:06
-Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 0:52:31
-Sampling (4 threads)  74%|██████████████████████        |  ETA: 0:51:11
-Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 0:50:35
-Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 0:49:17
-Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 0:48:57
-Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 0:47:39
-Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 0:46:22
-Sampling (4 threads)  76%|███████████████████████       |  ETA: 0:45:07
-Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 0:45:05
-Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 0:43:49
-Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 0:42:34
-Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 0:42:12
-Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 0:40:58
-Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 0:39:44
-Sampling (4 threads)  80%|████████████████████████      |  ETA: 0:39:01
-Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:37:48
-Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:37:03
-Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:35:52
-Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:35:17
-Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:34:06
-Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:32:55
-Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:32:26
-Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:31:16
-Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:30:07
-Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:28:58
-Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:28:21
-Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:27:13
-Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:26:35
-Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:25:27
-Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:24:20
-Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:23:13
-Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:22:32
-Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:21:26
-Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:20:20
-Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:19:38
-Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:18:33
-Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:17:28
-Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:16:41
-Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:15:37
-Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:14:33
-Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:13:39
-Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:12:37
-Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:11:42
-Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:10:40
-Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:09:44
-Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:08:43
-Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:07:42
-Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:06:45
-Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:05:47
-Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:04:50
-Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:03:53
-Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:02:55
-Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:01:57
-Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:00:59
-Sampling (4 threads) 100%|██████████████████████████████| Time: 3:16:39
-Sampling (4 threads) 100%|██████████████████████████████| Time: 3:16:39
-Sampling (4 threads)   0%|                              |  ETA: N/A
-┌ Info: Found initial step size
-└   ϵ = 0.00625
-┌ Info: Found initial step size
-└   ϵ = 0.000390625
-┌ Info: Found initial step size
-└   ϵ = 0.003125
-┌ Info: Found initial step size
-└   ϵ = 0.000390625
-Sampling (4 threads)   0%|▏                             |  ETA: 2:33:33
-Sampling (4 threads)   1%|▎                             |  ETA: 1:16:28
-Sampling (4 threads)   2%|▌                             |  ETA: 0:50:43
-Sampling (4 threads)   2%|▋                             |  ETA: 1:16:30
-Sampling (4 threads)   2%|▊                             |  ETA: 1:00:54
-Sampling (4 threads)   3%|▉                             |  ETA: 0:50:29
-Sampling (4 threads)   4%|█                             |  ETA: 2:11:58
-Sampling (4 threads)   4%|█▎                            |  ETA: 1:54:52
-Sampling (4 threads)   4%|█▍                            |  ETA: 1:41:34
-Sampling (4 threads)   5%|█▌                            |  ETA: 2:26:44
-Sampling (4 threads)   6%|█▋                            |  ETA: 2:12:42
-Sampling (4 threads)   6%|█▊                            |  ETA: 2:45:27
-Sampling (4 threads)   6%|██                            |  ETA: 2:31:55
-Sampling (4 threads)   7%|██▏                           |  ETA: 2:20:18
-Sampling (4 threads)   8%|██▎                           |  ETA: 2:46:08
-Sampling (4 threads)   8%|██▍                           |  ETA: 2:34:55
-Sampling (4 threads)   8%|██▌                           |  ETA: 2:54:36
-Sampling (4 threads)   9%|██▊                           |  ETA: 2:44:00
-Sampling (4 threads)  10%|██▉                           |  ETA: 2:34:31
-Sampling (4 threads)  10%|███                           |  ETA: 2:45:37
-Sampling (4 threads)  10%|███▏                          |  ETA: 2:36:51
-Sampling (4 threads)  11%|███▎                          |  ETA: 2:52:15
-Sampling (4 threads)  12%|███▌                          |  ETA: 2:43:50
-Sampling (4 threads)  12%|███▋                          |  ETA: 2:36:07
-Sampling (4 threads)  12%|███▊                          |  ETA: 2:29:01
-Sampling (4 threads)  13%|███▉                          |  ETA: 2:38:33
-Sampling (4 threads)  14%|████                          |  ETA: 2:31:48
-Sampling (4 threads)  14%|████▎                         |  ETA: 2:48:43
-Sampling (4 threads)  14%|████▍                         |  ETA: 2:41:57
-Sampling (4 threads)  15%|████▌                         |  ETA: 2:35:38
-Sampling (4 threads)  16%|████▋                         |  ETA: 2:46:40
-Sampling (4 threads)  16%|████▊                         |  ETA: 2:40:30
-Sampling (4 threads)  16%|█████                         |  ETA: 2:34:43
-Sampling (4 threads)  17%|█████▏                        |  ETA: 2:44:34
-Sampling (4 threads)  18%|█████▎                        |  ETA: 2:38:54
-Sampling (4 threads)  18%|█████▍                        |  ETA: 2:33:33
-Sampling (4 threads)  18%|█████▌                        |  ETA: 2:40:21
-Sampling (4 threads)  19%|█████▊                        |  ETA: 2:35:11
-Sampling (4 threads)  20%|█████▉                        |  ETA: 2:30:16
-Sampling (4 threads)  20%|██████                        |  ETA: 2:38:38
-Sampling (4 threads)  20%|██████▏                       |  ETA: 2:33:47
-Sampling (4 threads)  21%|██████▎                       |  ETA: 2:29:11
-Sampling (4 threads)  22%|██████▌                       |  ETA: 2:38:08
-Sampling (4 threads)  22%|██████▋                       |  ETA: 2:33:33
-Sampling (4 threads)  22%|██████▊                       |  ETA: 2:29:11
-Sampling (4 threads)  23%|██████▉                       |  ETA: 2:33:43
-Sampling (4 threads)  24%|███████                       |  ETA: 2:29:28
-Sampling (4 threads)  24%|███████▎                      |  ETA: 2:25:24
-Sampling (4 threads)  24%|███████▍                      |  ETA: 2:28:48
-Sampling (4 threads)  25%|███████▌                      |  ETA: 2:24:52
-Sampling (4 threads)  26%|███████▋                      |  ETA: 2:21:05
-Sampling (4 threads)  26%|███████▊                      |  ETA: 2:26:08
-Sampling (4 threads)  26%|████████                      |  ETA: 2:22:24
-Sampling (4 threads)  27%|████████▏                     |  ETA: 2:18:49
-Sampling (4 threads)  28%|████████▎                     |  ETA: 2:22:54
-Sampling (4 threads)  28%|████████▍                     |  ETA: 2:19:23
-Sampling (4 threads)  28%|████████▌                     |  ETA: 2:15:59
-Sampling (4 threads)  29%|████████▊                     |  ETA: 2:12:42
-Sampling (4 threads)  30%|████████▉                     |  ETA: 2:16:12
-Sampling (4 threads)  30%|█████████                     |  ETA: 2:12:59
-Sampling (4 threads)  30%|█████████▏                    |  ETA: 2:15:57
-Sampling (4 threads)  31%|█████████▎                    |  ETA: 2:12:47
-Sampling (4 threads)  32%|█████████▌                    |  ETA: 2:09:44
-Sampling (4 threads)  32%|█████████▋                    |  ETA: 2:10:41
-Sampling (4 threads)  32%|█████████▊                    |  ETA: 2:07:44
-Sampling (4 threads)  33%|█████████▉                    |  ETA: 2:12:27
-Sampling (4 threads)  34%|██████████                    |  ETA: 2:09:30
-Sampling (4 threads)  34%|██████████▎                   |  ETA: 2:06:38
-Sampling (4 threads)  34%|██████████▍                   |  ETA: 2:03:52
-Sampling (4 threads)  35%|██████████▌                   |  ETA: 2:07:18
-Sampling (4 threads)  36%|██████████▋                   |  ETA: 2:04:33
-Sampling (4 threads)  36%|██████████▊                   |  ETA: 2:01:52
-Sampling (4 threads)  36%|███████████                   |  ETA: 2:04:59
-Sampling (4 threads)  37%|███████████▏                  |  ETA: 2:02:20
-Sampling (4 threads)  38%|███████████▎                  |  ETA: 2:03:29
-Sampling (4 threads)  38%|███████████▍                  |  ETA: 2:00:53
-Sampling (4 threads)  38%|███████████▌                  |  ETA: 1:58:21
-Sampling (4 threads)  39%|███████████▊                  |  ETA: 2:00:22
-Sampling (4 threads)  40%|███████████▉                  |  ETA: 1:57:52
-Sampling (4 threads)  40%|████████████                  |  ETA: 1:55:26
-Sampling (4 threads)  40%|████████████▏                 |  ETA: 1:56:09
-Sampling (4 threads)  41%|████████████▎                 |  ETA: 1:53:46
-Sampling (4 threads)  42%|████████████▌                 |  ETA: 1:55:11
-Sampling (4 threads)  42%|████████████▋                 |  ETA: 1:52:51
-Sampling (4 threads)  42%|████████████▊                 |  ETA: 1:50:33
-Sampling (4 threads)  43%|████████████▉                 |  ETA: 1:52:51
-Sampling (4 threads)  44%|█████████████                 |  ETA: 1:50:35
-Sampling (4 threads)  44%|█████████████▎                |  ETA: 1:48:21
-Sampling (4 threads)  44%|█████████████▍                |  ETA: 1:49:23
-Sampling (4 threads)  45%|█████████████▌                |  ETA: 1:47:12
-Sampling (4 threads)  46%|█████████████▋                |  ETA: 1:45:03
-Sampling (4 threads)  46%|█████████████▊                |  ETA: 1:46:23
-Sampling (4 threads)  46%|██████████████                |  ETA: 1:44:16
-Sampling (4 threads)  47%|██████████████▏               |  ETA: 1:46:41
-Sampling (4 threads)  48%|██████████████▎               |  ETA: 1:44:34
-Sampling (4 threads)  48%|██████████████▍               |  ETA: 1:42:30
-Sampling (4 threads)  48%|██████████████▌               |  ETA: 1:40:28
-Sampling (4 threads)  49%|██████████████▊               |  ETA: 1:41:34
-Sampling (4 threads)  50%|██████████████▉               |  ETA: 1:39:34
-Sampling (4 threads)  50%|███████████████               |  ETA: 1:40:44
-Sampling (4 threads)  50%|███████████████▏              |  ETA: 1:38:44
-Sampling (4 threads)  51%|███████████████▎              |  ETA: 1:36:47
-Sampling (4 threads)  52%|███████████████▌              |  ETA: 1:37:22
-Sampling (4 threads)  52%|███████████████▋              |  ETA: 1:35:27
-Sampling (4 threads)  52%|███████████████▊              |  ETA: 1:33:33
-Sampling (4 threads)  53%|███████████████▉              |  ETA: 1:33:46
-Sampling (4 threads)  54%|████████████████              |  ETA: 1:31:54
-Sampling (4 threads)  54%|████████████████▎             |  ETA: 1:32:43
-Sampling (4 threads)  55%|████████████████▍             |  ETA: 1:30:52
-Sampling (4 threads)  55%|████████████████▌             |  ETA: 1:29:03
-Sampling (4 threads)  56%|████████████████▋             |  ETA: 1:30:04
-Sampling (4 threads)  56%|████████████████▊             |  ETA: 1:28:15
-Sampling (4 threads)  56%|█████████████████             |  ETA: 1:26:29
-Sampling (4 threads)  57%|█████████████████▏            |  ETA: 1:27:29
-Sampling (4 threads)  57%|█████████████████▎            |  ETA: 1:25:43
-Sampling (4 threads)  58%|█████████████████▍            |  ETA: 1:23:59
-Sampling (4 threads)  58%|█████████████████▌            |  ETA: 1:22:16
-Sampling (4 threads)  59%|█████████████████▊            |  ETA: 1:23:04
-Sampling (4 threads)  60%|█████████████████▉            |  ETA: 1:21:22
-Sampling (4 threads)  60%|██████████████████            |  ETA: 1:19:42
-Sampling (4 threads)  60%|██████████████████▏           |  ETA: 1:20:26
-Sampling (4 threads)  61%|██████████████████▎           |  ETA: 1:18:46
-Sampling (4 threads)  62%|██████████████████▌           |  ETA: 1:17:08
-Sampling (4 threads)  62%|██████████████████▋           |  ETA: 1:17:16
-Sampling (4 threads)  62%|██████████████████▊           |  ETA: 1:15:38
-Sampling (4 threads)  63%|██████████████████▉           |  ETA: 1:14:02
-Sampling (4 threads)  64%|███████████████████           |  ETA: 1:13:46
-Sampling (4 threads)  64%|███████████████████▎          |  ETA: 1:12:12
-Sampling (4 threads)  64%|███████████████████▍          |  ETA: 1:11:59
-Sampling (4 threads)  65%|███████████████████▌          |  ETA: 1:10:25
-Sampling (4 threads)  66%|███████████████████▋          |  ETA: 1:10:42
-Sampling (4 threads)  66%|███████████████████▊          |  ETA: 1:09:09
-Sampling (4 threads)  66%|████████████████████          |  ETA: 1:07:37
-Sampling (4 threads)  67%|████████████████████▏         |  ETA: 1:06:07
-Sampling (4 threads)  68%|████████████████████▎         |  ETA: 1:06:21
-Sampling (4 threads)  68%|████████████████████▍         |  ETA: 1:04:51
-Sampling (4 threads)  68%|████████████████████▌         |  ETA: 1:03:22
-Sampling (4 threads)  69%|████████████████████▊         |  ETA: 1:03:34
-Sampling (4 threads)  70%|████████████████████▉         |  ETA: 1:02:05
-Sampling (4 threads)  70%|█████████████████████         |  ETA: 1:00:38
-Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 0:59:12
-Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 0:59:25
-Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 0:57:59
-Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 0:56:35
-Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 0:56:57
-Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 0:55:32
-Sampling (4 threads)  74%|██████████████████████        |  ETA: 0:54:08
-Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 0:52:45
-Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 0:52:25
-Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 0:51:03
-Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 0:50:45
-Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 0:49:24
-Sampling (4 threads)  76%|███████████████████████       |  ETA: 0:48:03
-Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 0:46:43
-Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 0:46:14
-Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 0:44:55
-Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 0:44:07
-Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 0:42:49
-Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 0:42:07
-Sampling (4 threads)  80%|████████████████████████      |  ETA: 0:40:50
-Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:40:00
-Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:38:44
-Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:37:29
-Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:36:38
-Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:35:24
-Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:34:39
-Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:33:26
-Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:32:39
-Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:31:26
-Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:30:38
-Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:29:27
-Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:28:49
-Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:27:38
-Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:26:27
-Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:25:18
-Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:24:37
-Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:23:28
-Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:22:19
-Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:21:31
-Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:20:22
-Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:19:15
-Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:18:25
-Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:17:18
-Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:16:11
-Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:15:20
-Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:14:14
-Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:13:09
-Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:12:15
-Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:11:10
-Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:10:06
-Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:09:06
-Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:08:04
-Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:07:05
-Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:06:04
-Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:05:04
-Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:04:04
-Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:03:04
-Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:02:04
-Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:01:02
-Sampling (4 threads) 100%|██████████████████████████████| Time: 3:29:39
-Sampling (4 threads) 100%|██████████████████████████████| Time: 3:29:39
-GKS: cannot open display - headless operation mode active
-Sampling (4 threads)   0%|                              |  ETA: N/A
-┌ Info: Found initial step size
-└   ϵ = 0.0015625
-┌ Info: Found initial step size
-└   ϵ = 0.003125
-┌ Info: Found initial step size
-└   ϵ = 0.003125
-┌ Info: Found initial step size
-└   ϵ = 0.00078125
-Sampling (4 threads)   0%|▏                             |  ETA: 2:25:31
-Sampling (4 threads)   1%|▎                             |  ETA: 1:12:29
-Sampling (4 threads)   2%|▌                             |  ETA: 0:48:05
-Sampling (4 threads)   2%|▋                             |  ETA: 0:41:49
-Sampling (4 threads)   2%|▊                             |  ETA: 0:33:17
-Sampling (4 threads)   3%|▉                             |  ETA: 0:27:35
-Sampling (4 threads)   4%|█                             |  ETA: 0:50:50
-Sampling (4 threads)   4%|█▎                            |  ETA: 0:44:15
-Sampling (4 threads)   4%|█▍                            |  ETA: 1:37:23
-Sampling (4 threads)   5%|█▌                            |  ETA: 1:27:12
-Sampling (4 threads)   6%|█▋                            |  ETA: 1:18:51
-Sampling (4 threads)   6%|█▊                            |  ETA: 2:09:46
-Sampling (4 threads)   6%|██                            |  ETA: 1:59:09
-Sampling (4 threads)   7%|██▏                           |  ETA: 1:50:03
-Sampling (4 threads)   8%|██▎                           |  ETA: 1:42:09
-Sampling (4 threads)   8%|██▍                           |  ETA: 2:11:35
-Sampling (4 threads)   8%|██▌                           |  ETA: 2:03:10
-Sampling (4 threads)   9%|██▊                           |  ETA: 2:28:01
-Sampling (4 threads)  10%|██▉                           |  ETA: 2:19:28
-Sampling (4 threads)  10%|███                           |  ETA: 2:11:45
-Sampling (4 threads)  10%|███▏                          |  ETA: 2:04:47
-Sampling (4 threads)  11%|███▎                          |  ETA: 2:22:26
-Sampling (4 threads)  12%|███▌                          |  ETA: 2:15:29
-Sampling (4 threads)  12%|███▋                          |  ETA: 2:30:02
-Sampling (4 threads)  12%|███▊                          |  ETA: 2:23:13
-Sampling (4 threads)  13%|███▉                          |  ETA: 2:29:54
-Sampling (4 threads)  14%|████                          |  ETA: 2:23:31
-Sampling (4 threads)  14%|████▎                         |  ETA: 2:17:35
-Sampling (4 threads)  14%|████▍                         |  ETA: 2:28:43
-Sampling (4 threads)  15%|████▌                         |  ETA: 2:22:56
-Sampling (4 threads)  16%|████▋                         |  ETA: 2:17:30
-Sampling (4 threads)  16%|████▊                         |  ETA: 2:22:30
-Sampling (4 threads)  16%|█████                         |  ETA: 2:17:22
-Sampling (4 threads)  17%|█████▏                        |  ETA: 2:27:47
-Sampling (4 threads)  18%|█████▎                        |  ETA: 2:22:41
-Sampling (4 threads)  18%|█████▍                        |  ETA: 2:17:53
-Sampling (4 threads)  18%|█████▌                        |  ETA: 2:21:47
-Sampling (4 threads)  19%|█████▊                        |  ETA: 2:17:12
-Sampling (4 threads)  20%|█████▉                        |  ETA: 2:23:20
-Sampling (4 threads)  20%|██████                        |  ETA: 2:18:53
-Sampling (4 threads)  20%|██████▏                       |  ETA: 2:14:39
-Sampling (4 threads)  21%|██████▎                       |  ETA: 2:17:55
-Sampling (4 threads)  22%|██████▌                       |  ETA: 2:13:52
-Sampling (4 threads)  22%|██████▋                       |  ETA: 2:16:02
-Sampling (4 threads)  22%|██████▊                       |  ETA: 2:12:09
-Sampling (4 threads)  23%|██████▉                       |  ETA: 2:13:11
-Sampling (4 threads)  24%|███████                       |  ETA: 2:09:30
-Sampling (4 threads)  24%|███████▎                      |  ETA: 2:05:59
-Sampling (4 threads)  24%|███████▍                      |  ETA: 2:08:33
-Sampling (4 threads)  25%|███████▌                      |  ETA: 2:05:08
-Sampling (4 threads)  26%|███████▋                      |  ETA: 2:12:01
-Sampling (4 threads)  26%|███████▊                      |  ETA: 2:08:36
-Sampling (4 threads)  26%|████████                      |  ETA: 2:05:20
-Sampling (4 threads)  27%|████████▏                     |  ETA: 2:08:45
-Sampling (4 threads)  28%|████████▎                     |  ETA: 2:05:32
-Sampling (4 threads)  28%|████████▍                     |  ETA: 2:02:27
-Sampling (4 threads)  28%|████████▌                     |  ETA: 2:07:46
-Sampling (4 threads)  29%|████████▊                     |  ETA: 2:04:42
-Sampling (4 threads)  30%|████████▉                     |  ETA: 2:01:43
-Sampling (4 threads)  30%|█████████                     |  ETA: 1:58:50
-Sampling (4 threads)  30%|█████████▏                    |  ETA: 2:01:23
-Sampling (4 threads)  31%|█████████▎                    |  ETA: 1:58:34
-Sampling (4 threads)  32%|█████████▌                    |  ETA: 1:58:55
-Sampling (4 threads)  32%|█████████▋                    |  ETA: 1:56:12
-Sampling (4 threads)  32%|█████████▊                    |  ETA: 1:56:01
-Sampling (4 threads)  33%|█████████▉                    |  ETA: 1:53:25
-Sampling (4 threads)  34%|██████████                    |  ETA: 1:55:26
-Sampling (4 threads)  34%|██████████▎                   |  ETA: 1:52:53
-Sampling (4 threads)  34%|██████████▍                   |  ETA: 1:56:30
-Sampling (4 threads)  35%|██████████▌                   |  ETA: 1:53:57
-Sampling (4 threads)  36%|██████████▋                   |  ETA: 1:51:29
-Sampling (4 threads)  36%|██████████▊                   |  ETA: 1:49:05
-Sampling (4 threads)  36%|███████████                   |  ETA: 1:51:23
-Sampling (4 threads)  37%|███████████▏                  |  ETA: 1:49:01
-Sampling (4 threads)  38%|███████████▎                  |  ETA: 1:46:43
-Sampling (4 threads)  38%|███████████▍                  |  ETA: 1:48:47
-Sampling (4 threads)  38%|███████████▌                  |  ETA: 1:46:30
-Sampling (4 threads)  39%|███████████▊                  |  ETA: 1:44:17
-Sampling (4 threads)  40%|███████████▉                  |  ETA: 1:44:57
-Sampling (4 threads)  40%|████████████                  |  ETA: 1:42:47
-Sampling (4 threads)  40%|████████████▏                 |  ETA: 1:43:28
-Sampling (4 threads)  41%|████████████▎                 |  ETA: 1:41:21
-Sampling (4 threads)  42%|████████████▌                 |  ETA: 1:43:05
-Sampling (4 threads)  42%|████████████▋                 |  ETA: 1:40:59
-Sampling (4 threads)  42%|████████████▊                 |  ETA: 1:38:56
-Sampling (4 threads)  43%|████████████▉                 |  ETA: 1:40:52
-Sampling (4 threads)  44%|█████████████                 |  ETA: 1:38:50
-Sampling (4 threads)  44%|█████████████▎                |  ETA: 1:36:51
-Sampling (4 threads)  44%|█████████████▍                |  ETA: 1:37:32
-Sampling (4 threads)  45%|█████████████▌                |  ETA: 1:35:35
-Sampling (4 threads)  46%|█████████████▋                |  ETA: 1:36:45
-Sampling (4 threads)  46%|█████████████▊                |  ETA: 1:34:49
-Sampling (4 threads)  46%|██████████████                |  ETA: 1:32:56
-Sampling (4 threads)  47%|██████████████▏               |  ETA: 1:35:00
-Sampling (4 threads)  48%|██████████████▎               |  ETA: 1:33:07
-Sampling (4 threads)  48%|██████████████▍               |  ETA: 1:31:16
-Sampling (4 threads)  48%|██████████████▌               |  ETA: 1:32:52
-Sampling (4 threads)  49%|██████████████▊               |  ETA: 1:31:01
-Sampling (4 threads)  50%|██████████████▉               |  ETA: 1:29:13
-Sampling (4 threads)  50%|███████████████               |  ETA: 1:30:25
-Sampling (4 threads)  50%|███████████████▏              |  ETA: 1:28:38
-Sampling (4 threads)  51%|███████████████▎              |  ETA: 1:26:52
-Sampling (4 threads)  52%|███████████████▌              |  ETA: 1:28:20
-Sampling (4 threads)  52%|███████████████▋              |  ETA: 1:26:35
-Sampling (4 threads)  52%|███████████████▊              |  ETA: 1:24:52
-Sampling (4 threads)  53%|███████████████▉              |  ETA: 1:24:35
-Sampling (4 threads)  54%|████████████████              |  ETA: 1:22:54
-Sampling (4 threads)  54%|████████████████▎             |  ETA: 1:23:02
-Sampling (4 threads)  55%|████████████████▍             |  ETA: 1:21:23
-Sampling (4 threads)  55%|████████████████▌             |  ETA: 1:20:31
-Sampling (4 threads)  56%|████████████████▋             |  ETA: 1:18:54
-Sampling (4 threads)  56%|████████████████▊             |  ETA: 1:19:25
-Sampling (4 threads)  56%|█████████████████             |  ETA: 1:17:49
-Sampling (4 threads)  57%|█████████████████▏            |  ETA: 1:17:58
-Sampling (4 threads)  57%|█████████████████▎            |  ETA: 1:16:23
-Sampling (4 threads)  58%|█████████████████▍            |  ETA: 1:14:50
-Sampling (4 threads)  58%|█████████████████▌            |  ETA: 1:15:44
-Sampling (4 threads)  59%|█████████████████▊            |  ETA: 1:14:12
-Sampling (4 threads)  60%|█████████████████▉            |  ETA: 1:12:40
-Sampling (4 threads)  60%|██████████████████            |  ETA: 1:13:08
-Sampling (4 threads)  60%|██████████████████▏           |  ETA: 1:11:37
-Sampling (4 threads)  61%|██████████████████▎           |  ETA: 1:12:10
-Sampling (4 threads)  62%|██████████████████▌           |  ETA: 1:10:40
-Sampling (4 threads)  62%|██████████████████▋           |  ETA: 1:09:11
-Sampling (4 threads)  62%|██████████████████▊           |  ETA: 1:07:43
-Sampling (4 threads)  63%|██████████████████▉           |  ETA: 1:08:17
-Sampling (4 threads)  64%|███████████████████           |  ETA: 1:06:50
-Sampling (4 threads)  64%|███████████████████▎          |  ETA: 1:05:24
-Sampling (4 threads)  64%|███████████████████▍          |  ETA: 1:05:21
-Sampling (4 threads)  65%|███████████████████▌          |  ETA: 1:03:56
-Sampling (4 threads)  66%|███████████████████▋          |  ETA: 1:02:32
-Sampling (4 threads)  66%|███████████████████▊          |  ETA: 1:02:35
-Sampling (4 threads)  66%|████████████████████          |  ETA: 1:01:12
-Sampling (4 threads)  67%|████████████████████▏         |  ETA: 0:59:51
-Sampling (4 threads)  68%|████████████████████▎         |  ETA: 1:00:13
-Sampling (4 threads)  68%|████████████████████▍         |  ETA: 0:58:52
-Sampling (4 threads)  68%|████████████████████▌         |  ETA: 0:57:31
-Sampling (4 threads)  69%|████████████████████▊         |  ETA: 0:57:41
-Sampling (4 threads)  70%|████████████████████▉         |  ETA: 0:56:21
-Sampling (4 threads)  70%|█████████████████████         |  ETA: 0:55:02
-Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 0:54:36
-Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 0:53:18
-Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 0:52:45
-Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 0:51:28
-Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 0:51:24
-Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 0:50:07
-Sampling (4 threads)  74%|██████████████████████        |  ETA: 0:48:51
-Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 0:48:40
-Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 0:47:25
-Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 0:46:10
-Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 0:45:43
-Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 0:44:29
-Sampling (4 threads)  76%|███████████████████████       |  ETA: 0:43:17
-Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 0:43:01
-Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 0:41:49
-Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 0:40:37
-Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 0:40:32
-Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 0:39:20
-Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 0:38:09
-Sampling (4 threads)  80%|████████████████████████      |  ETA: 0:37:00
-Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:37:02
-Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:35:51
-Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:34:42
-Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:34:23
-Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:33:13
-Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:32:05
-Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:30:57
-Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:30:29
-Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:29:21
-Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:28:14
-Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:27:42
-Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:26:35
-Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:25:29
-Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:24:50
-Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:23:44
-Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:22:39
-Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:21:35
-Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:20:59
-Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:19:55
-Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:18:52
-Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:18:09
-Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:17:06
-Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:16:03
-Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:15:08
-Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:14:10
-Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:13:17
-Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:12:23
-Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:11:22
-Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:10:29
-Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:09:33
-Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:08:36
-Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:07:39
-Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:06:41
-Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:05:44
-Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:04:46
-Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:03:49
-Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:02:52
-Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:01:55
-Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:00:58
-Sampling (4 threads) 100%|██████████████████████████████| Time: 3:12:58
-Sampling (4 threads) 100%|██████████████████████████████| Time: 3:12:58
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling
+Slurm job ID is 17420439
+This job runs on the following machines:
+Time is Thu May 21 15:36:09 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling
+Slurm job ID is 17420438
+This job runs on the following machines:
+bp1-compute101
+bp1-compute101
+bp1-compute101
+ERROR: LoadError: MethodError: no method matching Normal(::Vector{Float64}, ::Int64)
+
+Closest candidates are:
+  Normal(!Matched::Integer, ::Integer; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:43
+  Normal(!Matched::T, ::T; check_args) where T<:Real
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:36
+  Normal(!Matched::Real, ::Real; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:42
+
+Stacktrace:
+  [1] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, __context__::DynamicPPL.DebugUtils.DebugContext{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64}, ExpMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:16
+  [2] _evaluate!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:913 [inlined]
+  [3] evaluate_threadunsafe!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:886 [inlined]
+  [4] check_model_and_trace(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}; varinfo::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}, error_on_failure::Bool, kwargs::@Kwargs{})
+    @ DynamicPPL.DebugUtils ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:468
+  [5] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:451 [inlined]
+  [6] #check_model_and_trace#6
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:449 [inlined]
+  [7] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:448 [inlined]
+  [8] check_model
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:494 [inlined]
+  [9] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:4 [inlined]
+ [10] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:7 [inlined]
+ [11] #sample#103
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:55 [inlined]
+ [12] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:45 [inlined]
+ [13] #sample#102
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:40 [inlined]
+ [14] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:32 [inlined]
+ [15] runModel(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, df_modified::DataFrame, dfPCA::DataFrame, pc::Int64, NUM_PARTICIPANTS::Int64, NUM_WORDS::Int64, TYPE_STRUCTURE::String, NUM_TYPES::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, isPlotting::Int64, analyseEssRhat::Int64, output_loc::String, expMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:61
+ [16] top-level scope
+    @ ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+ERROR: LoadError: MethodError: no method matching Normal(::Vector{Float64}, ::Int64)
+
+Closest candidates are:
+  Normal(!Matched::Integer, ::Integer; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:43
+  Normal(!Matched::T, ::T; check_args) where T<:Real
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:36
+  Normal(!Matched::Real, ::Real; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:42
+
+Stacktrace:
+  [1] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, __context__::DynamicPPL.DebugUtils.DebugContext{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64}, ExpMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:16
+  [2] _evaluate!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:913 [inlined]
+  [3] evaluate_threadunsafe!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:886 [inlined]
+  [4] check_model_and_trace(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}; varinfo::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}, error_on_failure::Bool, kwargs::@Kwargs{})
+    @ DynamicPPL.DebugUtils ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:468
+  [5] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:451 [inlined]
+  [6] #check_model_and_trace#6
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:449 [inlined]
+  [7] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:448 [inlined]
+  [8] check_model
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:494 [inlined]
+  [9] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:4 [inlined]
+ [10] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:7 [inlined]
+ [11] #sample#103
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:55 [inlined]
+ [12] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:45 [inlined]
+ [13] #sample#102
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:40 [inlined]
+ [14] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:32 [inlined]
+ [15] runModel(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, df_modified::DataFrame, dfPCA::DataFrame, pc::Int64, NUM_PARTICIPANTS::Int64, NUM_WORDS::Int64, TYPE_STRUCTURE::String, NUM_TYPES::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, isPlotting::Int64, analyseEssRhat::Int64, output_loc::String, expMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:61
+ [16] top-level scope
+    @ ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+ERROR: LoadError: MethodError: no method matching Normal(::Vector{Float64}, ::Int64)
+
+Closest candidates are:
+  Normal(!Matched::Integer, ::Integer; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:43
+  Normal(!Matched::T, ::T; check_args) where T<:Real
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:36
+  Normal(!Matched::Real, ::Real; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:42
+
+Stacktrace:
+  [1] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, __context__::DynamicPPL.DebugUtils.DebugContext{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64}, ExpMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:16
+  [2] _evaluate!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:913 [inlined]
+  [3] evaluate_threadunsafe!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:886 [inlined]
+  [4] check_model_and_trace(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}; varinfo::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}, error_on_failure::Bool, kwargs::@Kwargs{})
+    @ DynamicPPL.DebugUtils ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:468
+  [5] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:451 [inlined]
+  [6] #check_model_and_trace#6
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:449 [inlined]
+  [7] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:448 [inlined]
+  [8] check_model
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:494 [inlined]
+  [9] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:4 [inlined]
+ [10] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:7 [inlined]
+ [11] #sample#103
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:55 [inlined]
+ [12] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:45 [inlined]
+ [13] #sample#102
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:40 [inlined]
+ [14] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:32 [inlined]
+ [15] runModel(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, df_modified::DataFrame, dfPCA::DataFrame, pc::Int64, NUM_PARTICIPANTS::Int64, NUM_WORDS::Int64, TYPE_STRUCTURE::String, NUM_TYPES::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, isPlotting::Int64, analyseEssRhat::Int64, output_loc::String, expMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:61
+ [16] top-level scope
+    @ ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+ERROR: LoadError: MethodError: no method matching Normal(::Vector{Float64}, ::Int64)
+
+Closest candidates are:
+  Normal(!Matched::Integer, ::Integer; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:43
+  Normal(!Matched::T, ::T; check_args) where T<:Real
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:36
+  Normal(!Matched::Real, ::Real; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:42
+
+Stacktrace:
+  [1] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, __context__::DynamicPPL.DebugUtils.DebugContext{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64}, ExpMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:16
+  [2] _evaluate!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:913 [inlined]
+  [3] evaluate_threadunsafe!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:886 [inlined]
+  [4] check_model_and_trace(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}; varinfo::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}, error_on_failure::Bool, kwargs::@Kwargs{})
+    @ DynamicPPL.DebugUtils ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:468
+  [5] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:451 [inlined]
+  [6] #check_model_and_trace#6
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:449 [inlined]
+  [7] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:448 [inlined]
+  [8] check_model
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:494 [inlined]
+  [9] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:4 [inlined]
+ [10] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:7 [inlined]
+ [11] #sample#103
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:55 [inlined]
+ [12] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:45 [inlined]
+ [13] #sample#102
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:40 [inlined]
+ [14] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:32 [inlined]
+ [15] runModel(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, df_modified::DataFrame, dfPCA::DataFrame, pc::Int64, NUM_PARTICIPANTS::Int64, NUM_WORDS::Int64, TYPE_STRUCTURE::String, NUM_TYPES::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, isPlotting::Int64, analyseEssRhat::Int64, output_loc::String, expMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:61
+ [16] top-level scope
+    @ ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+ERROR: LoadError: MethodError: no method matching Normal(::Vector{Float64}, ::Int64)
+
+Closest candidates are:
+  Normal(!Matched::Integer, ::Integer; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:43
+  Normal(!Matched::T, ::T; check_args) where T<:Real
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:36
+  Normal(!Matched::Real, ::Real; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:42
+
+Stacktrace:
+  [1] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, __context__::DynamicPPL.DebugUtils.DebugContext{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64}, ExpMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:16
+  [2] _evaluate!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:913 [inlined]
+  [3] evaluate_threadunsafe!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:886 [inlined]
+  [4] check_model_and_trace(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}; varinfo::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}, error_on_failure::Bool, kwargs::@Kwargs{})
+    @ DynamicPPL.DebugUtils ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:468
+  [5] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:451 [inlined]
+  [6] #check_model_and_trace#6
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:449 [inlined]
+  [7] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:448 [inlined]
+  [8] check_model
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:494 [inlined]
+  [9] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:4 [inlined]
+ [10] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:7 [inlined]
+ [11] #sample#103
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:55 [inlined]
+ [12] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:45 [inlined]
+ [13] #sample#102
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:40 [inlined]
+ [14] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:32 [inlined]
+ [15] runModel(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, df_modified::DataFrame, dfPCA::DataFrame, pc::Int64, NUM_PARTICIPANTS::Int64, NUM_WORDS::Int64, TYPE_STRUCTURE::String, NUM_TYPES::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, isPlotting::Int64, analyseEssRhat::Int64, output_loc::String, expMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:61
+ [16] top-level scope
+    @ ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+ERROR: LoadError: MethodError: no method matching Normal(::Vector{Float64}, ::Int64)
+
+Closest candidates are:
+  Normal(!Matched::Integer, ::Integer; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:43
+  Normal(!Matched::T, ::T; check_args) where T<:Real
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:36
+  Normal(!Matched::Real, ::Real; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:42
+
+Stacktrace:
+  [1] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, __context__::DynamicPPL.DebugUtils.DebugContext{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64}, ExpMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:16
+  [2] _evaluate!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:913 [inlined]
+  [3] evaluate_threadunsafe!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:886 [inlined]
+  [4] check_model_and_trace(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}; varinfo::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}, error_on_failure::Bool, kwargs::@Kwargs{})
+    @ DynamicPPL.DebugUtils ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:468
+  [5] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:451 [inlined]
+  [6] #check_model_and_trace#6
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:449 [inlined]
+  [7] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:448 [inlined]
+  [8] check_model
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:494 [inlined]
+  [9] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:4 [inlined]
+ [10] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:7 [inlined]
+ [11] #sample#103
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:55 [inlined]
+ [12] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:45 [inlined]
+ [13] #sample#102
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:40 [inlined]
+ [14] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:32 [inlined]
+ [15] runModel(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, df_modified::DataFrame, dfPCA::DataFrame, pc::Int64, NUM_PARTICIPANTS::Int64, NUM_WORDS::Int64, TYPE_STRUCTURE::String, NUM_TYPES::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, isPlotting::Int64, analyseEssRhat::Int64, output_loc::String, expMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:61
+ [16] top-level scope
+    @ ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+ERROR: LoadError: MethodError: no method matching Normal(::Vector{Float64}, ::Int64)
+
+Closest candidates are:
+  Normal(!Matched::Integer, ::Integer; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:43
+  Normal(!Matched::T, ::T; check_args) where T<:Real
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:36
+  Normal(!Matched::Real, ::Real; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:42
+
+Stacktrace:
+  [1] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, __context__::DynamicPPL.DebugUtils.DebugContext{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64}, ExpMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:16
+  [2] _evaluate!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:913 [inlined]
+  [3] evaluate_threadunsafe!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:886 [inlined]
+  [4] check_model_and_trace(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}; varinfo::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}, error_on_failure::Bool, kwargs::@Kwargs{})
+    @ DynamicPPL.DebugUtils ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:468
+  [5] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:451 [inlined]
+  [6] #check_model_and_trace#6
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:449 [inlined]
+  [7] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:448 [inlined]
+  [8] check_model
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:494 [inlined]
+  [9] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:4 [inlined]
+ [10] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:7 [inlined]
+ [11] #sample#103
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:55 [inlined]
+ [12] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:45 [inlined]
+ [13] #sample#102
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:40 [inlined]
+ [14] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:32 [inlined]
+ [15] runModel(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, df_modified::DataFrame, dfPCA::DataFrame, pc::Int64, NUM_PARTICIPANTS::Int64, NUM_WORDS::Int64, TYPE_STRUCTURE::String, NUM_TYPES::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, isPlotting::Int64, analyseEssRhat::Int64, output_loc::String, expMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:61
+ [16] top-level scope
+    @ ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+ERROR: LoadError: MethodError: no method matching Normal(::Vector{Float64}, ::Int64)
+
+Closest candidates are:
+  Normal(!Matched::Integer, ::Integer; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:43
+  Normal(!Matched::T, ::T; check_args) where T<:Real
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:36
+  Normal(!Matched::Real, ::Real; check_args)
+   @ Distributions ~/.julia/packages/Distributions/xMnxM/src/univariate/continuous/normal.jl:42
+
+Stacktrace:
+  [1] model(__model__::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, __varinfo__::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, __context__::DynamicPPL.DebugUtils.DebugContext{DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}}, participant::Vector{Int64}, word::Vector{Float64}, surprisal::Vector{Float64}, tags::Vector{Int64}, PCA::Vector{Float64}, ExpMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:16
+  [2] _evaluate!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:913 [inlined]
+  [3] evaluate_threadunsafe!!
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/model.jl:886 [inlined]
+  [4] check_model_and_trace(rng::TaskLocalRNG, model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}; varinfo::DynamicPPL.VarInfo{DynamicPPL.Metadata{Dict{AbstractPPL.VarName, Int64}, Vector{Distribution}, Vector{AbstractPPL.VarName}, Vector{Real}}, Float64}, context::DynamicPPL.SamplingContext{DynamicPPL.SampleFromPrior, DynamicPPL.DefaultContext, TaskLocalRNG}, error_on_failure::Bool, kwargs::@Kwargs{})
+    @ DynamicPPL.DebugUtils ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:468
+  [5] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:451 [inlined]
+  [6] #check_model_and_trace#6
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:449 [inlined]
+  [7] check_model_and_trace
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:448 [inlined]
+  [8] check_model
+    @ ~/.julia/packages/DynamicPPL/cjQWO/src/debug_utils.jl:494 [inlined]
+  [9] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:4 [inlined]
+ [10] _check_model
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:7 [inlined]
+ [11] #sample#103
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:55 [inlined]
+ [12] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:45 [inlined]
+ [13] #sample#102
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:40 [inlined]
+ [14] sample
+    @ ~/.julia/packages/Turing/lQ4FK/src/mcmc/abstractmcmc.jl:32 [inlined]
+ [15] runModel(model::DynamicPPL.Model{typeof(model), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64}, Tuple{}, DynamicPPL.DefaultContext}, df_modified::DataFrame, dfPCA::DataFrame, pc::Int64, NUM_PARTICIPANTS::Int64, NUM_WORDS::Int64, TYPE_STRUCTURE::String, NUM_TYPES::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, isPlotting::Int64, analyseEssRhat::Int64, output_loc::String, expMean::Float64, cauchyMean::Float64)
+    @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:61
+ [16] top-level scope
+    @ ~/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/9_partial_pooling/model.jl:47
