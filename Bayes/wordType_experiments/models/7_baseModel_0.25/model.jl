@@ -22,7 +22,7 @@ include("../../setup.jl")
   a_e  ~ Normal(0,0.25)
   b_e  ~ Normal(0,0.25)
 
-    μ = @. a_w*σ_aw + a_p*σ_ap + a_e + ((b_w*σ_bw + b_p*σ_bp + b_e) * surprisal)
+  μ = @. a_w*σ_aw + a_p*σ_ap + a_e + ((b_w*σ_bw + b_p*σ_bp + b_e) * surprisal)
 
   σ ~ truncated(Cauchy(0., 1.); lower = 0)
 
