@@ -16,8 +16,8 @@ include("../../setup.jl")
   σ_bw ~ Exponential(0.5)
   a_ws ~ filldist(Normal(0, 1), NUM_UNIQUE_WORDS)
   b_ws ~ filldist(Normal(0, 1), NUM_UNIQUE_WORDS)
-  a_w = a_ws[word.+1].*σ_aw
-  b_w = b_ws[word.+1].*σ_bw
+  a_w = a_ws[word].*σ_aw
+  b_w = b_ws[word].*σ_bw
 
   σ_ap ~ Exponential(0.5)
   a_ps ~ filldist(Normal(0, 1),NUM_PARTICIPANTS)
@@ -43,7 +43,7 @@ end
 timeStart = now()
 df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean = createVariables()
 NUM_UNIQUE_WORDS = maximum(df_modified.uniqueWordId)
-mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc],expMean,cauchyMean)
+mod=model(df_modified.Participant,df_modified.uniqueWordId,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc],expMean,cauchyMean)
 runModel(mod,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean)
 
 print("\ntime taken", now()-timeStart)
