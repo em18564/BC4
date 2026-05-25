@@ -23,3 +23,11 @@ bp1-compute058
 Slurm job ID is 17421838
 This job runs on the following machines:
 bp1-compute056
+slurmstepd: error: *** JOB 17421775 ON bp1-compute015 CANCELLED AT 2026-05-24T17:23:11 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 17421777 ON bp1-compute016 CANCELLED AT 2026-05-24T17:23:11 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 17421776 ON bp1-compute015 CANCELLED AT 2026-05-24T17:23:11 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 17421774 ON bp1-compute016 CANCELLED AT 2026-05-24T17:23:11 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 17421838 ON bp1-compute056 CANCELLED AT 2026-05-24T17:26:11 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 17421839 ON bp1-compute058 CANCELLED AT 2026-05-24T17:26:11 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 17421778 ON bp1-compute058 CANCELLED AT 2026-05-24T17:26:11 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 17421840 ON bp1-compute058 CANCELLED AT 2026-05-24T17:26:11 DUE TO TIME LIMIT ***
