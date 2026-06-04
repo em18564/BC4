@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name 10
+#SBATCH --job-name 10_4_800
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
@@ -9,8 +9,8 @@
 #SBATCH --partition=short
 #SBATCH --array 1-4               #make sure to do 4*square number
 
-export NUM_PARTICIPANTS=23    
-export NUM_WORDS=1931
+export NUM_PARTICIPANTS=4    
+export NUM_WORDS=800
 export TYPE_STRUCTURE="FullCF"
 export IS_PLOTTING=1
 export ANALYSE_ESS_RHAT=0

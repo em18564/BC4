@@ -10,7 +10,7 @@ using SkipNan
 
 
 outputDirs=["1_baseModel", "2_baseModel_lowerCauchy", "3_baseModel_noLKJintercept",
-            "4_baseModel_noLKJ","6_baseModel_renormalised_0.5",
+            "4_baseModel_noLKJ","6_baseModel_renormalised_0.5","6_baseModel_renormalised_1",
             "7_baseModel_0.25","8_tightCauchy_e_0.5","8_tightCauchy_e_0.25","8_tightCauchy_e_1"]
 function getessRhats(outputName)
     outputDir = "models/"*outputName*"/output_FullCF_23_1931"

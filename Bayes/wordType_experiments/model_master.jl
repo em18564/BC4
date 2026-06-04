@@ -9,12 +9,10 @@ end
 
 
 
-function createVariables()
-    args = map(x->string(x), ARGS)
+function createVariables(args = map(x->string(x), ARGS))
     arrayId = parse(Int,args[1])
     maxArrayId = parse(Int,args[2])
     pc   = customMod(arrayId,4)
-
     NUM_PARTICIPANTS = parse(Int,args[3])
     NUM_WORDS = parse(Int,args[4])
     TYPE_STRUCTURE = args[5]
@@ -38,10 +36,15 @@ function createVariables()
         expMean = expVals[expId]
         cauchyMean = cauchyVals[cauchyId]
     end
-
-    
-    dfTags   = CSV.read("../../../input/full_tags.csv", DataFrame).tags
-    df       = CSV.read("../../../input/dfPCANorm_corrected.csv", DataFrame)
+    df = DataFrames.DataFrame()
+    dfTags = DataFrames.DataFrame()
+    try
+        dfTags   = CSV.read("../../../input/full_tags.csv", DataFrame).tags
+        df       = CSV.read("../../../input/dfPCANorm_corrected.csv", DataFrame)
+    catch
+        dfTags   = CSV.read("../input/full_tags.csv", DataFrame).tags
+        df       = CSV.read("../input/dfPCANorm_corrected.csv", DataFrame)
+    end
     df[!,"fullTag"] = dfTags
     df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
     df_modified = subset(df_modified, :Word => ByRow(<(NUM_WORDS)))
