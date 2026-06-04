@@ -1,114 +1,25 @@
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258222]: mask 0xc000000c0000 set
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258224]: mask 0x300000030000 set
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258223]: mask 0x30000003000 set
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258226]: mask 0x3000000300 set
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258225]: mask 0xc000000c0 set
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258217]: mask 0xc000000c00 set
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258218]: mask 0xc000000c set
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258219]: mask 0x300000030 set
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258220]: mask 0xc000000c000 set
-cpu-bind=MASK - bp1-compute017, task  0  0 [3258221]: mask 0x30000003 set
-Running on host bp1-compute017
-Running on host bp1-compute017
-Running on host bp1-compute017
-Time is Thu Jun 4 14:20:25 BST 2026
-Time is Thu Jun 4 14:20:25 BST 2026
-Time is Thu Jun 4 14:20:25 BST 2026
+cpu-bind=MASK - bp1-compute082, task  0  0 [959973]: mask 0xa00000a00 set
+Running on host bp1-compute084
+Time is Thu Jun 4 16:36:48 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Slurm job ID is 17587250
+Slurm job ID is 17589331
 This job runs on the following machines:
+bp1-compute084
+Running on host bp1-compute083
+Time is Thu Jun 4 16:36:49 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Slurm job ID is 17587242
+Slurm job ID is 17589334
 This job runs on the following machines:
-Running on host bp1-compute017
+bp1-compute083
+Running on host bp1-compute083
+Time is Thu Jun 4 16:36:49 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Slurm job ID is 17587252
+Slurm job ID is 17589333
 This job runs on the following machines:
-Time is Thu Jun 4 14:20:25 BST 2026
-Running on host bp1-compute017
-Running on host bp1-compute017
-Running on host bp1-compute017
-Running on host bp1-compute017
+bp1-compute083
+Running on host bp1-compute082
+Time is Thu Jun 4 16:36:49 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Slurm job ID is 17587246
+Slurm job ID is 17589332
 This job runs on the following machines:
-Time is Thu Jun 4 14:20:25 BST 2026
-Time is Thu Jun 4 14:20:25 BST 2026
-Time is Thu Jun 4 14:20:25 BST 2026
-Time is Thu Jun 4 14:20:25 BST 2026
-Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Slurm job ID is 17587248
-This job runs on the following machines:
-Running on host bp1-compute017
-Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Running on host bp1-compute017
-Slurm job ID is 17587245
-This job runs on the following machines:
-Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Slurm job ID is 17587253
-This job runs on the following machines:
-Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Slurm job ID is 17587251
-This job runs on the following machines:
-Time is Thu Jun 4 14:20:25 BST 2026
-Time is Thu Jun 4 14:20:25 BST 2026
-Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Slurm job ID is 17587247
-This job runs on the following machines:
-Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1
-Slurm job ID is 17587249
-This job runs on the following machines:
-bp1-compute017
-bp1-compute017
-bp1-compute017
-bp1-compute017
-bp1-compute017
-bp1-compute017
-bp1-compute017
-bp1-compute017
-bp1-compute017
-bp1-compute017
-ERROR: LoadError: UndefVarError: `verdadp` not defined
-Stacktrace:
- [1] processTypeStructure(df_modified::DataFrame, TYPE_STRUCTURE::String)
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/typeStructures.jl:81
- [2] createVariables(args::Vector{String})
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:51
- [3] createVariables()
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:13
- [4] top-level scope
-   @ ~/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1/model.jl:10
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1/model.jl:10
-ERROR: LoadError: UndefVarError: `verdadp` not defined
-Stacktrace:
- [1] processTypeStructure(df_modified::DataFrame, TYPE_STRUCTURE::String)
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/typeStructures.jl:81
- [2] createVariables(args::Vector{String})
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:51
- [3] createVariables()
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:13
- [4] top-level scope
-   @ ~/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1/model.jl:10
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1/model.jl:10
-ERROR: LoadError: UndefVarError: `verdadp` not defined
-Stacktrace:
- [1] processTypeStructure(df_modified::DataFrame, TYPE_STRUCTURE::String)
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/typeStructures.jl:81
- [2] createVariables(args::Vector{String})
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:51
- [3] createVariables()
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:13
- [4] top-level scope
-   @ ~/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1/model.jl:10
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1/model.jl:10
-ERROR: LoadError: UndefVarError: `verdadp` not defined
-Stacktrace:
- [1] processTypeStructure(df_modified::DataFrame, TYPE_STRUCTURE::String)
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/typeStructures.jl:81
- [2] createVariables(args::Vector{String})
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:51
- [3] createVariables()
-   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:13
- [4] top-level scope
-   @ ~/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1/model.jl:10
-in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/6_baseModel_renormalised_1/model.jl:10
+bp1-compute082
