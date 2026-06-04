@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name 6_1
+#SBATCH --job-name 11
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
@@ -14,8 +14,8 @@ export NUM_WORDS=1931
 export TYPE_STRUCTURE="FullCF"
 export IS_PLOTTING=1
 export ANALYSE_ESS_RHAT=0
-export MIN_EXP=0.5                #Use min_exp and min_cauchy if only running 4 tasks
-export MAX_EXP=0.5
+export MIN_EXP=1               #Use min_exp and min_cauchy if only running 4 tasks
+export MAX_EXP=1
 export MIN_CAUCHY=1
 export MAX_CAUCHY=1
 module add languages/julia/1.10.3
