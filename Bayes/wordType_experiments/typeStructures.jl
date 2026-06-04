@@ -78,7 +78,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
                 subset(df_modified, :fullTag => ByRow((==(7)))),
                 subset(df_modified, :fullTag => ByRow((==(8)))))
         f.fullTag .= 3
-        df_modified = vcat(noun,numeral,verdadp,f)
+        df_modified = vcat(noun,numeral,verbadp,f)
         wordTypes = ["Noun","Numeral","Verb/Adposition","NewFunction"]
         cols = [palette(:tab10)[i] for i in range(1,4)]
     else()
