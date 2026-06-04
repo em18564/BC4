@@ -2,8 +2,8 @@
 @model function model_11(participant,word,surprisal,tags,PCA,ExpMean,cauchyMean,NUM_TYPES,NUM_PARTICIPANTS)
 
   σ_w ~ filldist(Exponential(1), 2)
-  ρ_w ~ LKJ(2, 2)
-  L_w = cholesky(Symmetric(Diagonal(σ_w) * ρ_w * Diagonal(σ_w))).L
+  Lcorr_w ~ LKJCholesky(2, 2)
+  L_w = Diagonal(σ_w) * Matrix(Lcorr_w.L)
   z_ab_w ~ filldist(MvNormal([0.0,0.0], I(2)), NUM_TYPES)
   ab_w = L_w * z_ab_w
   a_w = ab_w[1,tags.+1]
@@ -11,8 +11,8 @@
 
 
   σ_p ~ filldist(Exponential(1), 2)
-  ρ_p ~ LKJ(2, 2)
-  L_p = cholesky(Symmetric(Diagonal(σ_p) * ρ_p * Diagonal(σ_p))).L
+  Lcorr_p ~ LKJCholesky(2, 2)
+  L_p = Diagonal(σ_p) * Matrix(Lcorr_p.L)
   z_ab_p ~ filldist(MvNormal([0.0,0.0], I(2)), NUM_PARTICIPANTS)
   ab_p = L_p * z_ab_p
   a_p = ab_p[1,participant.+1]

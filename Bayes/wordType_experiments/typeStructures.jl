@@ -32,7 +32,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         f.fullTag .= 4
         df_modified = vcat(adj,noun,verb,adv,f)
         wordTypes = ["Adjective","Noun","Verb","Adverb","Function"]
-        cols = [palette(:tab10)[i] for i in range(1,10)]
+        cols = [palette(:tab10)[i] for i in range(1,5)]
     elseif(TYPE_STRUCTURE == "CF")
         c = vcat( subset(df_modified, :fullTag => ByRow((==(0)))),
           subset(df_modified, :fullTag => ByRow((==(5)))),
@@ -58,6 +58,29 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
                         "Pronoun","Particle","Verb"]
         cols = [palette(:tab10)[i] for i in range(1,10)]
 
+    elseif(TYPE_STRUCTURE == "DendroCustom")
+        NUM_TYPES = 4
+
+        noun = subset(df_modified, :fullTag => ByRow((==(5))))
+        noun.fullTag .= 0
+
+        numeral = subset(df_modified, :fullTag => ByRow((==(6))))
+        numeral.fullTag .= 1
+
+        verbadp = vcat( subset(df_modified, :fullTag => ByRow((==(9)))),
+                        subset(df_modified, :fullTag => ByRow((==(1)))))
+        verbadp.fullTag .= 2
+
+        f = vcat( subset(df_modified, :fullTag => ByRow((==(0)))),
+                subset(df_modified, :fullTag => ByRow((==(2)))),
+                subset(df_modified, :fullTag => ByRow((==(3)))),
+                subset(df_modified, :fullTag => ByRow((==(4)))),
+                subset(df_modified, :fullTag => ByRow((==(7)))),
+                subset(df_modified, :fullTag => ByRow((==(8)))))
+        f.fullTag .= 3
+        df_modified = vcat(noun,numeral,verdadp,f)
+        wordTypes = ["Noun","Numeral","Verb/Adposition","NewFunction"]
+        cols = [palette(:tab10)[i] for i in range(1,4)]
     else()
         throw("Illegal type structure")
     end
