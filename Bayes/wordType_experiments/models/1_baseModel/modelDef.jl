@@ -1,6 +1,6 @@
 @model function model_1(participant,word,surprisal,tags,PCA,ExpMean,cauchyMean,NUM_TYPES,NUM_PARTICIPANTS)
 
-  σ_w ~ filldist(Exponential(), 2)
+  σ_w ~ filldist(Exponential(1), 2)
   ρ_w ~ LKJ(2, 2)
   Σ_w = Symmetric(Diagonal(σ_w) * ρ_w * Diagonal(σ_w))
   ab_w ~ filldist(MvNormal([0,0], Σ_w),NUM_TYPES)

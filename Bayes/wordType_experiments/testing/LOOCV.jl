@@ -50,49 +50,28 @@ end
 fullScores = deserialize("psis.jls")
 
 # %%
+gr(size=(1050,500), dpi=300)
 
 
 data = [[fullScores[i][j].estimates[1,1] for i in 1:10].±[fullScores[i][j].estimates[1,2] for i in 1:10] for j in 1:4]
 
-l = @layout [a b; c d]
+l = @layout [[grid(2,2)] b{0.27w}]
 
 ps = [Plots.plot(
     1:10,
     data[j],
     legend=false,
-    marker=:o) for j in 1:4]
+    marker=:o,
+    ylabel="cv_elpd score",
+    xlabel="model number",
+    bottom_margin=4mm,
+    left_margin=5mm) for j in 1:4]
 
-Plots.plot(ps[1],ps[2],ps[3],ps[4],layout=l)
+p2 = Plots.plot(axis=([], false), margin=0Plots.cm)
+
+ftr = text(join([string(o)*": "*outputDirs[o]*"\n" for o in eachindex(outputDirs)]), :black, :left, 10)
+annotate!(0, 0.8, ftr)
+Plots.plot(ps[1],ps[2],ps[3],ps[4],p2,layout=l,plot_title="CV_ELPD scores of 10 models")
+Plots.savefig("figs/modelComparison/CV_ELPD.png")
 # %%
 
-
-# %%
-X = rand(1.0:100.0, 30)
-# True data-generating model is second-order polynomial!
-Y = @. 3.0 + 2.0 * X + 0.05 * X^2 + rand(Normal(0, 40))
-Xₜ = StatsBase.standardize(ZScoreTransform, X)
-Yₜ = StatsBase.standardize(ZScoreTransform, Y)
-
-@model function test(X, Y, o) # 'o' is for 'order'
-    σ ~ Exponential(1)
-    α ~ Normal(0, 1)
-    β ~ MvNormal(o, 1)
-    μ = α .+ sum(β .* [X.^i for i in 1:o])
-    Y ~ MvNormal(μ, σ)
-end
-
-# PSIS_LOO
-score1 = psis_loo(test(Xₜ, Yₜ, 1), sample(test(Xₜ, Yₜ, 1), NUTS(), 1_000))
-score2 = psis_loo(test(Xₜ, Yₜ, 2), sample(test(Xₜ, Yₜ, 2), NUTS(), 1_000))
-score3 = psis_loo(test(Xₜ, Yₜ, 3), sample(test(Xₜ, Yₜ, 3), NUTS(), 1_000))
-score4 = psis_loo(test(Xₜ, Yₜ, 4), sample(test(Xₜ, Yₜ, 4), NUTS(), 1_000))
-
-plot(
-    1:4,
-    # get the :cv_elpd and :naive_lpd values for each model
-    [[eval(Symbol("score$i")).estimates[1,1] for i in 1:4] [eval(Symbol("score$i")).estimates[2,1] for i in 1:4]],
-    labels=["cv_elpd" "naive_lpd"],
-    legend=:topleft,
-    marker=:o
-)
-# %%

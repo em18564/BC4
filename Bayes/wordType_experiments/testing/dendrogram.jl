@@ -24,7 +24,6 @@ using MathOptInterface,Clp
 # 9 Verb
 #%% 
 
-prob = repeat([1.0/length(chn_df1[!,"a_ws[1]"])], length(chn_df1[!,"a_ws[1]"]))
 
 
 outputDir="models/exponentials/output_Full_23_1931"
@@ -45,6 +44,7 @@ ss_df2  = DataFrames.DataFrame(summarystats(chn2))
 ss_df3  = DataFrames.DataFrame(summarystats(chn3))
 ss_df4  = DataFrames.DataFrame(summarystats(chn4))
 show(stdout,"text/plain",summarystats(chn1))
+prob = repeat([1.0/length(chn_df1[!,"a_ws[1]"])], length(chn_df1[!,"a_ws[1]"]))
 
 
 # %%
@@ -81,15 +81,16 @@ for i in range(1,length(ssdfs))
         wg_dist[i,j] = wordsDistGrad[j]
         wi_samples[i,j] = chndfs[i][!,"a_ws["*string(j)*"]"]
         wg_samples[i,j] = chndfs[i][!,"b_ws["*string(j)*"]"]
-        wi_samps2[i,j]  = chndfs[i][!,"a_ws["*string(j)*"]"].*chndfs[i][!,"σ_aw["*string(j)*"]"]
-        wi_samps2[i,j]  = chndfs[i][!,"a_ws["*string(j)*"]"].*chndfs[i][!,"σ_bw["*string(j)*"]"]
+        wi_samps2[i,j]  = chndfs[i][!,"a_ws["*string(j)*"]"].*chndfs[i][!,"σ_aw"]
+        wg_samps2[i,j]  = chndfs[i][!,"b_ws["*string(j)*"]"].*chndfs[i][!,"σ_bw"]
     end
 end
-dists = vcat(wi_dist,wg_dist)
-samples = vcat(wi_samples,wg_samples)
-wordVals = vcat(wi,wg)
+dists        = vcat(wi_dist,wg_dist)
+samples      = vcat(wi_samples,wg_samples)
+wordVals     = vcat(wi,wg)
 wordVals_std = vcat(wistd,wgstd)
-wordVals_w = zeros(8,10)
+wordVals_w   = zeros(8,10)
+samps_2      = vcat(wi_samps2,wg_samps2)
 
 # %%
 function whiten(row)
@@ -182,27 +183,31 @@ for i in range(1,length(types))
     ylab3 = ""
     ylab4 = ""
     ylab5 = ""
+    ylab6 = ""
     if i == 1
         ylab1 = "base"
         ylab2 = "whitened"
         ylab3 = "wasserstein distance (of normals)"
         ylab4 = "wasserstein distance (of DiscreteNonParametric data)"
         ylab5 = "wasserstein distance (of raw sampled data)"
+        ylab6 = "wasserstein distance (of raw sampled data * sigma w)"
     end
     d1 = dendrogram(cosdist(wordVals),t,ylab1,"")
     d2 = dendrogram(cosdist(wordVals_w),t,ylab2,"")
     d3 = dendrogram(wasDist(wordVals,wordVals_std),t,ylab3,String(t))
     d4 = dendrogram(wasDist2(dists),t,ylab4,String(t))
     d5 = dendrogram(wasDist3(samples),t,ylab5,String(t))
-    ds = vcat(ds,d1,d2,d3,d4,d5)
+    d6 = dendrogram(wasDist3(samps_2),t,ylab6,String(t))
+    ds = vcat(ds,d1,d2,d3,d4,d5,d6)
 end
 gr(size=(5000,3200), dpi=300)
 
-p = Plots.plot( ds[1],ds[6], ds[11],ds[16],
-                ds[2],ds[7], ds[12],ds[17],
-                ds[3],ds[8], ds[13],ds[18],
-                ds[4],ds[9], ds[14],ds[19],
-                ds[5],ds[10],ds[15],ds[20],
-            layout = grid(5, 4))
+p = Plots.plot( ds[1],ds[7], ds[13],ds[19],
+                ds[2],ds[8], ds[14],ds[20],
+                ds[3],ds[9], ds[15],ds[21],
+                ds[4],ds[10],ds[16],ds[22],
+                ds[5],ds[11],ds[17],ds[23],
+                ds[6],ds[12],ds[18],ds[24],
+            layout = grid(6, 4))
 
 Plots.savefig(p,"figs/wordType/fullDendrogram.png")
