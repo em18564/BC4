@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name 6_1
+#SBATCH --job-name CF
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
@@ -11,7 +11,7 @@
 
 export NUM_PARTICIPANTS=23    
 export NUM_WORDS=1931
-export TYPE_STRUCTURE="FullCF"
+export TYPE_STRUCTURE="CF"
 export IS_PLOTTING=1
 export ANALYSE_ESS_RHAT=0
 export MIN_EXP=1               #Use min_exp and min_cauchy if only running 4 tasks
