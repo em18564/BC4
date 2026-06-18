@@ -211,3 +211,30 @@ p = Plots.plot( ds[1],ds[7], ds[13],ds[19],
             layout = grid(6, 4))
 
 Plots.savefig(p,"figs/wordType/fullDendrogram.png")
+
+
+
+
+# %%
+
+using OptimalTransport
+using Distances
+
+# Samples (d × n convention)
+X = randn(3, 100)
+Y = randn(3, 120)
+
+a = fill(1/size(X,2), size(X,2))
+b = fill(1/size(Y,2), size(Y,2))
+
+# Cost matrix
+C = pairwise(SqEuclidean(), X, Y,dims=2)
+
+# Earth Mover's Distance (W₂² cost)
+γ = emd(a, b, C)
+
+cost = sum(γ .* C)
+
+W2 = sqrt(cost)
+
+println(W2)
