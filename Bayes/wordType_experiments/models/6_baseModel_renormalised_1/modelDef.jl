@@ -6,7 +6,7 @@
   σ_bw ~ Exponential(1)
   b_ws ~ filldist(Normal(0, 1),NUM_TYPES)
   a_w = a_ws[tags.+1].*σ_aw
-  b_w = b_ws[tags.+1].*σ_aw
+  b_w = b_ws[tags.+1].*σ_bw
 
   σ_ap ~ Exponential(1)
   a_ps ~ filldist(Normal(0, 1),NUM_PARTICIPANTS)
