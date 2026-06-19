@@ -8,6 +8,7 @@ using SkipNan
 using ExactOptimalTransport,OptimalTransport
 using KernelDensity
 
+using SlicedWasserstein
 
 
 
@@ -159,6 +160,21 @@ function wasDist3(data)
 end
 
 
+function slicedWasDist(data)
+    dist = zeros(10,10)
+    for i in range(1,10)
+        for j in range(1,10)
+            μ = DiscreteMeasure(transpose(stack(data[:,i])))
+            ν = DiscreteMeasure(transpose(stack(data[:,j])))
+            sot = SOT(μ, ν)
+            dist[i,j] = sqrt(sot)
+            dist[j,i] = dist[i,j]
+        end
+    end
+    return dist
+end
+
+
 
 function dendrogram(distances,link,ylab,xlab)
     
@@ -183,58 +199,35 @@ for i in range(1,length(types))
     ylab3 = ""
     ylab4 = ""
     ylab5 = ""
-    ylab6 = ""
     if i == 1
         ylab1 = "base"
         ylab2 = "whitened"
         ylab3 = "wasserstein distance (of normals)"
-        ylab4 = "wasserstein distance (of DiscreteNonParametric data)"
-        ylab5 = "wasserstein distance (of raw sampled data)"
-        ylab6 = "wasserstein distance (of raw sampled data * sigma w)"
+        ylab4 = "wasserstein distance (of raw sampled data * sigma w)"
+        ylab5 = "sliced-wasserstein distance"
     end
     d1 = dendrogram(cosdist(wordVals),t,ylab1,"")
     d2 = dendrogram(cosdist(wordVals_w),t,ylab2,"")
     d3 = dendrogram(wasDist(wordVals,wordVals_std),t,ylab3,String(t))
-    d4 = dendrogram(wasDist2(dists),t,ylab4,String(t))
-    d5 = dendrogram(wasDist3(samples),t,ylab5,String(t))
-    d6 = dendrogram(wasDist3(samps_2),t,ylab6,String(t))
-    ds = vcat(ds,d1,d2,d3,d4,d5,d6)
+    d4 = dendrogram(wasDist3(samps_2),t,ylab4,String(t))
+    d5 = dendrogram(slicedWasDist(samps_2),t,ylab5,String(t))
+    ds = vcat(ds,d1,d2,d3,d4,d5)
 end
+# %%
 gr(size=(5000,3200), dpi=300)
 
-p = Plots.plot( ds[1],ds[7], ds[13],ds[19],
-                ds[2],ds[8], ds[14],ds[20],
-                ds[3],ds[9], ds[15],ds[21],
-                ds[4],ds[10],ds[16],ds[22],
-                ds[5],ds[11],ds[17],ds[23],
-                ds[6],ds[12],ds[18],ds[24],
-            layout = grid(6, 4))
+p = Plots.plot( ds[1],ds[6], ds[11],ds[16],
+                ds[2],ds[7], ds[12],ds[17],
+                ds[3],ds[8], ds[13],ds[18],
+                ds[4],ds[9], ds[14],ds[19],
+                ds[5],ds[10],ds[15],ds[20],
+            layout = grid(5, 4))
 
 Plots.savefig(p,"figs/wordType/fullDendrogram.png")
 
 
 
 
-# %%
 
-using OptimalTransport
-using Distances
 
-# Samples (d × n convention)
-X = randn(3, 100)
-Y = randn(3, 120)
 
-a = fill(1/size(X,2), size(X,2))
-b = fill(1/size(Y,2), size(Y,2))
-
-# Cost matrix
-C = pairwise(SqEuclidean(), X, Y,dims=2)
-
-# Earth Mover's Distance (W₂² cost)
-γ = emd(a, b, C)
-
-cost = sum(γ .* C)
-
-W2 = sqrt(cost)
-
-println(W2)
