@@ -27,7 +27,7 @@ using MathOptInterface,Clp
 
 
 
-outputDir="models/exponentials/output_Full_23_1931"
+outputDir="models/6_baseModel_renormalised_1/output_Full_23_1931"
 wordTypes = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
                         "Pronoun","Particle","Verb"]
@@ -187,7 +187,7 @@ function dendrogram(distances,link,ylab,xlab)
                 right_margin=10mm,
                 left_margin=30mm,
                 bottom_margin=20mm,
-                top_margin=10mm)
+                top_margin=10mm,size=(900,500))
 
 end
 types = [:single,:average,:complete,:ward]
@@ -214,14 +214,14 @@ for i in range(1,length(types))
     ds = vcat(ds,d1,d2,d3,d4,d5)
 end
 # %%
-gr(size=(5000,3200), dpi=300)
+
 
 p = Plots.plot( ds[1],ds[6], ds[11],ds[16],
                 ds[2],ds[7], ds[12],ds[17],
                 ds[3],ds[8], ds[13],ds[18],
                 ds[4],ds[9], ds[14],ds[19],
                 ds[5],ds[10],ds[15],ds[20],
-            layout = grid(5, 4))
+            layout = grid(5, 4),size=(5000,4000))
 
 Plots.savefig(p,"figs/wordType/fullDendrogram.png")
 
