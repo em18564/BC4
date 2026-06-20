@@ -224,10 +224,33 @@ p = Plots.plot( ds[1],ds[6], ds[11],ds[16],
             layout = grid(5, 4),size=(5000,4000))
 
 Plots.savefig(p,"figs/wordType/fullDendrogram.png")
+# %%
+# distances = slicedWasDist(samps_2)
+
+#dendrogram(slicedWasDist(samps_2),:ward,"Sliced-Wasserstein L2 distance","Word-type")
 
 
+function splitTree(data,structure,quantity)
+    if typeof(structure) == Int64
+        samps = sample(1:1000,quantity)
+        return [data[i,structure][samps] for i in 1:8]
+
+    else
+        d1 = splitTree(data,structure[1],Int64(quantity/2))
+        d2 = splitTree(data,structure[2],Int64(quantity/2)) # FIX THIS splitTree(samps_2,[1,[2,[4,[5,6]]]],1000)
+        return [vcat(d1[i],d2[i]) for i in 1:8]
+    end
+end
 
 
+function shrinkTree(data,structure,n)
+    sortedData = []
+    for i in eachindex(structure)
+        curData = splitTree(data,structure[i],1000)
+    end
 
+    hc      = hclust(data, linkage=:ward)
+    hc.merges[1,1]
+end
 
-
+#shrinkTree(samps_2,[1,2,3,4,5,6,7,8,9,10],length(samps_2))
