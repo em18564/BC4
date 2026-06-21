@@ -9,20 +9,20 @@ using ExactOptimalTransport,OptimalTransport
 using KernelDensity
 
 using SlicedWasserstein
+using PhyloTrees
 
-
-
+# %%
 using MathOptInterface,Clp
-# 0 Adj
-# 1 Adp
-# 2 Adv
-# 3 Conj
-# 4 Det
-# 5 Noun
-# 6 Num
-# 7 Pron
-# 8 Prt
-# 9 Verb
+# 1 Adj
+# 2 Adp
+# 3 Adv
+# 4 Conj
+# 5 Det
+# 6 Noun
+# 7 Num
+# 8 Pron
+# 9 Prt
+# 10 Verb
 #%% 
 
 
@@ -161,9 +161,10 @@ end
 
 
 function slicedWasDist(data)
-    dist = zeros(10,10)
-    for i in range(1,10)
-        for j in range(1,10)
+    n = length(data[1,:])
+    dist = zeros(n,n)
+    for i in range(1,n)
+        for j in range(1,n)
             μ = DiscreteMeasure(transpose(stack(data[:,i])))
             ν = DiscreteMeasure(transpose(stack(data[:,j])))
             sot = SOT(μ, ν)
@@ -236,21 +237,98 @@ function splitTree(data,structure,quantity)
         return [data[i,structure][samps] for i in 1:8]
 
     else
-        d1 = splitTree(data,structure[1],Int64(quantity/2))
-        d2 = splitTree(data,structure[2],Int64(quantity/2)) # FIX THIS splitTree(samps_2,[1,[2,[4,[5,6]]]],1000)
+        d1 = splitTree(data,structure[1],Int64(floor(quantity/2)))
+        d2 = splitTree(data,structure[2],Int64(ceil(quantity/2)))
         return [vcat(d1[i],d2[i]) for i in 1:8]
     end
 end
+function editStructure(structure,clustPos,clusterDistance,structureWithDistance)
+    clustPosSorted = [min(clustPos[1],clustPos[2]),max(clustPos[1],clustPos[2])]
+    clust          = [structure[clustPosSorted[1]],structure[clustPosSorted[2]]]
+    clustDist      = [structureWithDistance[clustPosSorted[1]],structureWithDistance[clustPosSorted[2]]]
+    newStructure   = []
+    newStructureWithDistances = []
+    
+    for item in structure
+        push!(newStructure,item)
+    end
 
+    for item in structureWithDistance
+        push!(newStructureWithDistances,item)
+    end
 
-function shrinkTree(data,structure,n)
+    deleteat!(newStructure,clustPosSorted[1])
+    deleteat!(newStructure,clustPosSorted[2]-1)
+
+    deleteat!(newStructureWithDistances,clustPosSorted[1])
+    deleteat!(newStructureWithDistances,clustPosSorted[2]-1)
+
+    push!(newStructureWithDistances,(clusterDistance,clustDist))
+    push!(newStructure,clust)
+    return newStructure,newStructureWithDistances
+end
+
+function shrinkTree(data,structure=[1,2,3,4,5,6,7,8,9,10],structureWithDistance=structure)
     sortedData = []
     for i in eachindex(structure)
         curData = splitTree(data,structure[i],1000)
+        push!(sortedData,curData)
     end
-
-    hc      = hclust(data, linkage=:ward)
-    hc.merges[1,1]
+    sortedData = stack(sortedData)
+    distances = slicedWasDist(sortedData)
+    hc        = hclust(distances, linkage=:ward)
+    clustPos  = [-hc.merges[1,1],-hc.merges[1,2]]
+    newStructure,newStructureWithDistances = editStructure(structure,clustPos,hc.heights[1],structureWithDistance)
+    if length(newStructure) == 1
+        return newStructure,newStructureWithDistances
+    else
+        return shrinkTree(data,newStructure,newStructureWithDistances)
+    end
 end
 
-#shrinkTree(samps_2,[1,2,3,4,5,6,7,8,9,10],length(samps_2))
+structure,structure_d = shrinkTree(samps_2)
+
+# %%
+using Phylo
+using Plots
+
+
+function traverseTree(structure)
+    tree = NamedBinaryTree()
+    createnode!(tree, "root")
+    return traverseTree(tree,structure[1],"root")
+end
+function traverseTree(tree,structure,node)
+    b1 = structure[2][1]
+    b2 = structure[2][2]
+    dist = structure[1]
+    if typeof(b1) == Int64
+        word =  wordTypes[b1]
+        createnode!(tree,word)
+        createbranch!(tree, node, word,dist)
+    else
+        innerBranch = node * "_b1"
+        createnode!(tree,innerBranch)
+        createbranch!(tree, node, innerBranch, dist-b1[1])
+        traverseTree(tree,b1,innerBranch)
+    end
+
+    if typeof(b2) == Int64
+        word =  wordTypes[b2]
+        createnode!(tree,word)
+        createbranch!(tree, node, word,dist)
+    else
+        innerBranch = node * "_b2"
+        createnode!(tree,innerBranch)
+        createbranch!(tree, node, innerBranch, dist-b2[1])
+        traverseTree(tree,b2,innerBranch)
+    end
+
+    return tree
+end
+
+tree = traverseTree(structure_d)
+
+
+plt = Plots.plot(tree, treetype=:dendrogram)
+Plots.savefig(plt,"figs/wordType/dendro_joined.png")
