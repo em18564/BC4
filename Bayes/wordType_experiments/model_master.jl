@@ -39,10 +39,10 @@ function createVariables(args = map(x->string(x), ARGS))
     df = DataFrames.DataFrame()
     dfTags = DataFrames.DataFrame()
     try
-        dfTags   = CSV.read("../../../input/full_tags.csv", DataFrame).tags
+        dfTags   = CSV.read("../../../input/full_tags.csv", DataFrame).newTags
         df       = CSV.read("../../../input/dfPCANorm_corrected.csv", DataFrame)
     catch
-        dfTags   = CSV.read("../input/full_tags.csv", DataFrame).tags
+        dfTags   = CSV.read("../input/full_tags.csv", DataFrame).newTags
         df       = CSV.read("../input/dfPCANorm_corrected.csv", DataFrame)
     end
     df[!,"fullTag"] = dfTags
