@@ -67,6 +67,25 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
                         "Conjunction","Determiner","Noun","Numeral", 
                         "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
         df_modified.fullTag.= max.(df_modified.fullTag.-1,0)
+        words = vcat(   subset(df_modified, :fullTag => ByRow((==(0)))),
+                        subset(df_modified, :fullTag => ByRow((==(1)))),
+                        subset(df_modified, :fullTag => ByRow((==(2)))),
+                        subset(df_modified, :fullTag => ByRow((==(3)))),
+                        subset(df_modified, :fullTag => ByRow((==(4)))),
+                        subset(df_modified, :fullTag => ByRow((==(5)))),
+                        subset(df_modified, :fullTag => ByRow((==(6)))),
+                        subset(df_modified, :fullTag => ByRow((==(7)))),
+                        subset(df_modified, :fullTag => ByRow((==(8)))))
+
+        adp1  = subset(df_modified, :fullTag => ByRow((==(10))))
+        adp2  = subset(df_modified, :fullTag => ByRow((==(11))))
+        adp3  = subset(df_modified, :fullTag => ByRow((==(12))))
+
+        adp1.fullTag.=9
+        adp2.fullTag.=10
+        adp3.fullTag.=11
+
+        df_modified = vcat(words,adp1,adp2,adp3)
         cols = [palette(:default)[i] for i in range(1,NUM_TYPES)]
 
     elseif(TYPE_STRUCTURE == "DendroCustom")
