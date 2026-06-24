@@ -27,6 +27,9 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
                 subset(df_modified, :fullTag => ByRow((==(4)))),
                 subset(df_modified, :fullTag => ByRow((==(7)))),
                 subset(df_modified, :fullTag => ByRow((==(1)))),
+                subset(df_modified, :fullTag => ByRow((==(11)))),
+                subset(df_modified, :fullTag => ByRow((==(12)))),
+                subset(df_modified, :fullTag => ByRow((==(13)))),
                 subset(df_modified, :fullTag => ByRow((==(8)))),
                 subset(df_modified, :fullTag => ByRow((==(3)))))
         f.fullTag .= 4
@@ -42,6 +45,9 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
                 subset(df_modified, :fullTag => ByRow((==(4)))),
                 subset(df_modified, :fullTag => ByRow((==(7)))),
                 subset(df_modified, :fullTag => ByRow((==(1)))),
+                subset(df_modified, :fullTag => ByRow((==(11)))),
+                subset(df_modified, :fullTag => ByRow((==(12)))),
+                subset(df_modified, :fullTag => ByRow((==(13)))),
                 subset(df_modified, :fullTag => ByRow((==(8)))),
                 subset(df_modified, :fullTag => ByRow((==(3)))))
         c.fullTag .= 0
@@ -50,13 +56,18 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         NUM_TYPES = 2
         wordTypes = ["Content","Function"]
         cols = ["#3D9970", "#7D0DC3"]
-
     elseif(TYPE_STRUCTURE == "Full")
-        NUM_TYPES = 10
-        wordTypes = ["Adjective","Adposition","Adverb",
-                        "Conjunction","Determiner","Noun","Numeral",
-                        "Pronoun","Particle","Verb"]
-        cols = [palette(:tab10)[i] for i in range(1,10)]
+
+        throw("need to reimpliment")
+
+
+    elseif(TYPE_STRUCTURE == "FullADP")
+        NUM_TYPES = 12
+        wordTypes = ["Adjective","Adverb",
+                        "Conjunction","Determiner","Noun","Numeral", 
+                        "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
+        df_modified.fullTag.= max.(df_modified.fullTag.-1,0)
+        cols = [palette(:default)[i] for i in range(1,NUM_TYPES)]
 
     elseif(TYPE_STRUCTURE == "DendroCustom")
         NUM_TYPES = 4
@@ -68,7 +79,10 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         numeral.fullTag .= 1
 
         verbadp = vcat( subset(df_modified, :fullTag => ByRow((==(9)))),
-                        subset(df_modified, :fullTag => ByRow((==(1)))))
+                        subset(df_modified, :fullTag => ByRow((==(1)))),
+                        subset(df_modified, :fullTag => ByRow((==(11)))),
+                        subset(df_modified, :fullTag => ByRow((==(12)))),
+                        subset(df_modified, :fullTag => ByRow((==(13)))))
         verbadp.fullTag .= 2
 
         f = vcat( subset(df_modified, :fullTag => ByRow((==(0)))),
