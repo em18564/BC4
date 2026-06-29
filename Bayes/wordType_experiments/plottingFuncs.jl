@@ -1,6 +1,5 @@
 rangeVals = 3.0
 
-
 function HDI(data)
     l = percentile(data,1.5)
     u = percentile(data,98.5)
@@ -18,11 +17,11 @@ function concludeAndPlot(m,output_loc,pc,wordTypes,cols)
     global is_waiting = true
     while(is_waiting)
         if(isfile(output_loc*"/out1.jls") && isfile(output_loc*"/out2.jls") && isfile(output_loc*"/out3.jls") && isfile(output_loc*"/out4.jls"))
-        print("plotting graphs")
+        println("plotting graphs")
         plotGraphs(output_loc,wordTypes,cols) 
         global is_waiting=false
         else
-        print("Waiting for other PCs to complete")
+        println("Waiting for other PCs to complete")
         sleep(30)
         end
         
@@ -199,7 +198,12 @@ end
 function plotGraphs(outputDir,wordTypes,cols)
     chainLength = 1000
     noPCS = 4
-        
+    includeSigma = true
+    if includeSigma
+        global rangeVals = 0.5
+    else
+        global rangeVals = 3.0
+    end
     #df = CSV.read("savedData/df_2.csv", DataFrame)
     chn1 = deserialize(outputDir*"/out1.jls")
     chn2 = deserialize(outputDir*"/out2.jls")
@@ -209,41 +213,54 @@ function plotGraphs(outputDir,wordTypes,cols)
     chn_df2 = DataFrames.DataFrame(chn2)
     chn_df3 = DataFrames.DataFrame(chn3)
     chn_df4 = DataFrames.DataFrame(chn4)
+    chn_dfs = [chn_df1, chn_df2, chn_df3, chn_df4]
+
 
     d = zeros(4,2,length(wordTypes),chainLength)
     vd = []
     for j in range(1,length(wordTypes))
         for i in range(1,2)
             try
-                d[1,i,j,:] = chn_df1[:,"ab_w["*string(i)*", "*string(j)*"]"]
-                d[2,i,j,:] = chn_df2[:,"ab_w["*string(i)*", "*string(j)*"]"]
-                d[3,i,j,:] = chn_df3[:,"ab_w["*string(i)*", "*string(j)*"]"]
-                d[4,i,j,:] = chn_df4[:,"ab_w["*string(i)*", "*string(j)*"]"]
-            catch
-                if(i==1)
-                    d[1,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
-                    d[2,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
-                    d[3,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
-                    d[4,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
-                else
-                    d[1,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
-                    d[2,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
-                    d[3,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
-                    d[4,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
+                for chn_dfId in eachindex(chn_dfs)
+                    chn_df = chn_dfs[chn_dfId]
+                    sigs  = [Diagonal([chn_df[:,"σ_w[1]"][innerI], chn_df[:,"σ_w[2]"][innerI]]) * Matrix([  chn_df[:,"Lcorr_w.L[1, 1]"][innerI] chn_df[:,"Lcorr_w.L[2, 1]"][innerI];
+                                                                                                chn_df[:,"Lcorr_w.L[2, 1]"][innerI] chn_df[:,"Lcorr_w.L[2, 2]"][innerI]]) for innerI in range(1,chainLength)]       
+                                                                                                                                                                            
+                    z_abs = [reduce(vcat,[[chn_df[:,"z_ab_w[1, "*string(innerJ)*"]"][innerI] chn_df[:,"z_ab_w[2, "*string(innerJ)*"]"][innerI]] for innerJ in eachindex(wordTypes)]) for innerI in range(1,chainLength)]
+                    ab_ws = reshape(reduce(hcat, [sigs[innerI]*transpose(z_abs[innerI]) for innerI in range(1,chainLength)]),2,5,:)
+                    if includeSigma
+                        d[chn_dfId,i,j,:] = ab_ws[i,j,:]
+                    else
+                        d[chn_dfId,i,j,:]  = chn_df[:,"z_ab_w["*string(i)*", "*string(j)*"]"]
+                    end
                 end
 
-
+            catch
+                if i==1
+                    d[1,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
+                    d[2,i,j,:] = chn_df2[:,"a_ws["*string(j)*"]"]
+                    d[3,i,j,:] = chn_df3[:,"a_ws["*string(j)*"]"]
+                    d[4,i,j,:] = chn_df4[:,"a_ws["*string(j)*"]"]
+                else
+                    d[1,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
+                    d[2,i,j,:] = chn_df2[:,"b_ws["*string(j)*"]"]
+                    d[3,i,j,:] = chn_df3[:,"b_ws["*string(j)*"]"]
+                    d[4,i,j,:] = chn_df4[:,"b_ws["*string(j)*"]"]
+                end
             end
-
             vd = vcat(vd, d[1,i,j,:],d[2,i,j,:],d[3,i,j,:],d[4,i,j,:])
         end
     end
+                
+ 
+            
+
     wt = fill(wordTypes[1],Int(length(vd)/length(wordTypes)))
     for i in range(2,length(wordTypes))
         wt = vcat(wt,fill(wordTypes[i],Int(length(vd)/length(wordTypes))))
     end
     df = DataFrames.DataFrame( data     = vd,
-                    PCA      = repeat(vcat(fill("PC1",chainLength),fill("PC2",chainLength),fill("PC3",chainLength),fill("PC4",chainLength)),Int(length(vd)/(noPCS*chainLength))),
+                    PCA      = repeat(reduce(vcat,([fill("PC"*string(i),chainLength) for i in range(1,noPCS)])),Int(length(vd)/(noPCS*chainLength))),
                     AB       = repeat(vcat(fill("Intercept",(noPCS*chainLength)),fill("Gradient",(noPCS*chainLength))),length(wordTypes)),
                     WordType = wt)
     df.PCWT = string.(df.WordType, " ",  df.PCA)
@@ -251,30 +268,23 @@ function plotGraphs(outputDir,wordTypes,cols)
     # df = DataFrame(data         = vcat(difd1,difd2,difd3,difd4)
     #               ,group        = vcat(fill("Δa_w",length(difd1)),fill("Δb_w",length(difd2)),fill("Δa_w ",length(difd3)),fill("Δb_w ",length(difd4)))
     #               ,ERP   = vcat(fill("EPNP",length(difd1)+length(difd2)),fill("PNP",length(difd3)+length(difd4)),))
-    df1 = subset(dfI, :PCA => ByRow((==("PC1"))))
-    df2 = subset(dfI, :PCA => ByRow((==("PC2"))))
-    df3 = subset(dfI, :PCA => ByRow((==("PC3"))))
-    df4 = subset(dfI, :PCA => ByRow((==("PC4"))))
+
 
 
     dfG = subset(df, :AB => ByRow((==("Gradient"))))
     # df = DataFrame(data         = vcat(difd1,difd2,difd3,difd4)
     #               ,group        = vcat(fill("Δa_w",length(difd1)),fill("Δb_w",length(difd2)),fill("Δa_w ",length(difd3)),fill("Δb_w ",length(difd4)))
     #               ,ERP   = vcat(fill("EPNP",length(difd1)+length(difd2)),fill("PNP",length(difd3)+length(difd4)),))
-    dfg1 = subset(dfG, :PCA => ByRow((==("PC1"))))
-    dfg2 = subset(dfG, :PCA => ByRow((==("PC2"))))
-    dfg3 = subset(dfG, :PCA => ByRow((==("PC3"))))
-    dfg4 = subset(dfG, :PCA => ByRow((==("PC4"))))
 
-    dfs = [df1,df2,df3,df4]
-    dfsg = [dfg1,dfg2,dfg3,dfg4]
-    
-    PlotlyJS.savefig(subplots(df1,wordTypes,cols),outputDir*"/i1.png",width=415,height=850)
+
+    dfs  = [subset(dfI, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
+    dfsg = [subset(dfG, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
+    PlotlyJS.savefig(subplots(dfs[1],wordTypes,cols),outputDir*"/i1.png",width=415,height=850)
     for i in 2:4
         PlotlyJS.savefig(subplots(dfs[i],wordTypes,cols),outputDir*"/i"*string(i)*".png",width=365,height=850)
     end
 
-    PlotlyJS.savefig(subplots(dfg1,wordTypes,cols),outputDir*"/g1.png",width=415,height=850)
+    PlotlyJS.savefig(subplots(dfsg[1],wordTypes,cols),outputDir*"/g1.png",width=415,height=850)
     for i in 2:4
         PlotlyJS.savefig(subplots(dfsg[i],wordTypes,cols),outputDir*"/g"*string(i)*".png",width=365,height=850)
     end

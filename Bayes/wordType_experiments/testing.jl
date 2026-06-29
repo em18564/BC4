@@ -16,6 +16,26 @@ include("plottingFuncs.jl")
 # 8 Prt
 # 9 Verb
 
+try
+    for i in range(1,5)
+        println
+    end
+catch
+
+end
+
+
+for chn_dfId in eachindex(chn_dfs)
+                    chn_df = chn_dfs[chn_dfId]
+                    sigs  = [Diagonal([chn_df[:,"σ_w[1]"][innerI], chn_df[:,"σ_w[2]"][innerI]]) * Matrix([  chn_df[:,"Lcorr_w.L[1, 1]"][innerI] chn_df[:,"Lcorr_w.L[2, 1]"][innerI];
+                                                                                                chn_df[:,"Lcorr_w.L[2, 1]"][innerI] chn_df[:,"Lcorr_w.L[2, 2]"][innerI]]) for innerI in range(1,chainLength)]       
+                                                                                                                                                                            
+                    z_abs = [reduce(vcat,[[chn_df[:,"z_ab_w[1, "*string(innerJ)*"]"][innerI] chn_df[:,"z_ab_w[2, "*string(innerJ)*"]"][innerI]] for innerJ in eachindex(wordTypes)]) for innerI in range(1,chainLength)]
+                    ab_ws = reshape(reduce(hcat, [sigs[innerI]*transpose(z_abs[innerI]) for innerI in range(1,chainLength)]),2,5,:)
+
+                    d[chn_dfId,i,j,:] = ab_ws[j,i,:]
+                end
+
 # %%
 dfTags   = CSV.read("../input/full_tags.csv", DataFrame)
 replace!(dfTags.tags, 10 => 5)
