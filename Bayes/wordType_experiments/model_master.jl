@@ -12,17 +12,24 @@ end
 function createVariables(args = map(x->string(x), ARGS))
     arrayId = parse(Int,args[1])
     maxArrayId = parse(Int,args[2])
-    pc   = customMod(arrayId,4)
+    
+    
     NUM_PARTICIPANTS = parse(Int,args[3])
     NUM_WORDS = parse(Int,args[4])
     TYPE_STRUCTURE = args[5]
     isPlotting = parse(Int,args[6])
     analyseEssRhat = parse(Int,args[7])
+    if analyseEssRhat>1
+        pc   = customMod(arrayId,6)
+    else
+        pc   = customMod(arrayId,4)
+    end
     min_exp = parse(Float64,args[8])
     max_exp = parse(Float64,args[9])
     min_cauchy = parse(Float64,args[10])
     max_cauchy = parse(Float64,args[11])
-    if (maxArrayId == 4)
+    
+    if (maxArrayId == 4 || analyseEssRhat>1)
         expMean = min_exp
         cauchyMean = min_cauchy
     else
@@ -38,20 +45,53 @@ function createVariables(args = map(x->string(x), ARGS))
     end
     df = DataFrames.DataFrame()
     dfTags = DataFrames.DataFrame()
-    try
-        dfTags   = CSV.read("../../../input/full_tags.csv", DataFrame).newTags
-        df       = CSV.read("../../../input/dfPCANorm_corrected.csv", DataFrame)
-    catch
-        dfTags   = CSV.read("../input/full_tags.csv", DataFrame).newTags
-        df       = CSV.read("../input/dfPCANorm_corrected.csv", DataFrame)
-    end
-    df[!,"fullTag"] = dfTags
-    df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
-    df_modified = subset(df_modified, :Word => ByRow(<(NUM_WORDS)))
-    NUM_TYPES,df_modified,wordTypes,cols = processTypeStructure(df_modified,TYPE_STRUCTURE)
-    dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4]]
 
-    output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS)
+    tagVal = 4
+    if analyseEssRhat>10
+        analyseEssRhat = 0
+        try
+            dfTags   = CSV.read("../../../input/full_tags.csv", DataFrame).newTags
+            df       = CSV.read("../../../input/dfHierarchicalNorm.csv", DataFrame)
+        catch
+            dfTags   = CSV.read("../input/full_tags.csv", DataFrame).newTags
+            df       = CSV.read("../input/dfHierarchicalNorm.csv", DataFrame)
+        end
+        df[!,"fullTag"] = dfTags
+        df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
+        df_modified = subset(df_modified, :Word => ByRow(<(NUM_WORDS)))
+        NUM_TYPES,df_modified,wordTypes,cols = processTypeStructure(df_modified,TYPE_STRUCTURE)
+        dfPCA = df_modified[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
+        output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS) * "_NOPCA"
+
+    else
+
+
+        try
+            dfTags   = CSV.read("../../../input/full_tags.csv", DataFrame).newTags
+            df       = CSV.read("../../../input/dfPCANorm_corrected_6.csv", DataFrame)
+        catch
+            dfTags   = CSV.read("../input/full_tags.csv", DataFrame).newTags
+            df       = CSV.read("../input/dfPCANorm_corrected_"*string(tagVal)*".csv", DataFrame)
+        end
+        df[!,"fullTag"] = dfTags
+        df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
+        df_modified = subset(df_modified, :Word => ByRow(<(NUM_WORDS)))
+        NUM_TYPES,df_modified,wordTypes,cols = processTypeStructure(df_modified,TYPE_STRUCTURE)
+
+        if analyseEssRhat>1
+            analyseEssRhat = 0
+            dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4, :PC_5, :PC_6]]
+            output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS) * "_6PCA"
+        else
+            dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4]]
+            output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS)
+        end
+        
+
+        
+    end
+    
+    
     if (!isdir(output_loc))
         mkdir(output_loc)
     end

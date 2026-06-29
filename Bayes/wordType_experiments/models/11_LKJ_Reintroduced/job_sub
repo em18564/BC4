@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name 11
+#SBATCH --job-name LKJ
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
@@ -7,13 +7,13 @@
 #SBATCH --output model.out
 #SBATCH --account=PHPH039284
 #SBATCH --partition=short
-#SBATCH --array 1-4               #make sure to do 4*square number
+#SBATCH --array 1-6               #make sure to do 4*square number
 
 export NUM_PARTICIPANTS=23    
 export NUM_WORDS=1931
-export TYPE_STRUCTURE="FullCF"
+export TYPE_STRUCTURE="FullADP"
 export IS_PLOTTING=1
-export ANALYSE_ESS_RHAT=0
+export ANALYSE_ESS_RHAT=2
 export MIN_EXP=1               #Use min_exp and min_cauchy if only running 4 tasks
 export MAX_EXP=1
 export MIN_CAUCHY=1

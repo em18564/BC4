@@ -27,11 +27,17 @@ using MathOptInterface,Clp
 
 
 
-outputDir="models/6_baseModel_renormalised_1/output_Full_23_1931"
-wordTypes = ["Adjective","Adposition","Adverb",
+outputDir="models/6_baseModel_renormalised_1/output_FullADP_23_1931"
+
+                    
+wordTypes_old = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
                         "Pronoun","Particle","Verb"]
-cols = [palette(:tab10)[i] for i in range(1,10)]
+
+wordTypes = ["Adjective","Adverb",
+            "Conjunction","Determiner","Noun","Numeral", 
+            "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
+cols = [palette(:default)[i] for i in range(1,length(wordTypes))]
 chn1 = deserialize(outputDir*"/out1.jls")
 chn2 = deserialize(outputDir*"/out2.jls")
 chn3 = deserialize(outputDir*"/out3.jls")
@@ -51,29 +57,29 @@ prob = repeat([1.0/length(chn_df1[!,"a_ws[1]"])], length(chn_df1[!,"a_ws[1]"]))
 # %%
 chndfs  = [chn_df1, chn_df2, chn_df3, chn_df4]
 ssdfs   = [ss_df1,  ss_df2,  ss_df3,  ss_df4]
-wi      = zeros(4,10)
-wg      = zeros(4,10)
-wistd   = zeros(4,10)
-wgstd   = zeros(4,10)
-wi_dist = Array{DiscreteNonParametric}(undef,4,10)
-wg_dist = Array{DiscreteNonParametric}(undef,4,10)
-wi_samples = Array{Vector}(undef,4,10)
-wg_samples = Array{Vector}(undef,4,10)
-wi_samps2  = Array{Vector}(undef,4,10)
-wg_samps2  = Array{Vector}(undef,4,10)
+wi      = zeros(4,length(wordTypes))
+wg      = zeros(4,length(wordTypes))
+wistd   = zeros(4,length(wordTypes))
+wgstd   = zeros(4,length(wordTypes))
+wi_dist = Array{DiscreteNonParametric}(undef,4,length(wordTypes))
+wg_dist = Array{DiscreteNonParametric}(undef,4,length(wordTypes))
+wi_samples = Array{Vector}(undef,4,length(wordTypes))
+wg_samples = Array{Vector}(undef,4,length(wordTypes))
+wi_samps2  = Array{Vector}(undef,4,length(wordTypes))
+wg_samps2  = Array{Vector}(undef,4,length(wordTypes))
 function wasserstein_samples(x, y)
     x = sort(x)
     y = sort(y)
     return mean(abs.(x .- y))
 end
 for i in range(1,length(ssdfs))
-    wordsInt      = [ssdfs[i][string.(ss_df1.parameters).=="a_ws["*string(w)*"]","mean"] for w in range(1,10)]
-    wordsGrad     = [ssdfs[i][string.(ss_df1.parameters).=="b_ws["*string(w)*"]","mean"] for w in range(1,10)]
-    wordsIntstd   = [ssdfs[i][string.(ss_df1.parameters).=="a_ws["*string(w)*"]","std"] for w in range(1,10)]
-    wordsGradstd  = [ssdfs[i][string.(ss_df1.parameters).=="b_ws["*string(w)*"]","std"] for w in range(1,10)]
-    wordsDistInt  = [DiscreteNonParametric(chndfs[i][!,"a_ws["*string(w)*"]"],prob) for w in range(1,10)]
-    wordsDistGrad = [DiscreteNonParametric(chndfs[i][!,"b_ws["*string(w)*"]"],prob) for w in range(1,10)]
-    for j in range(1,10)
+    wordsInt      = [ssdfs[i][string.(ss_df1.parameters).=="a_ws["*string(w)*"]","mean"] for w in range(1,length(wordTypes))]
+    wordsGrad     = [ssdfs[i][string.(ss_df1.parameters).=="b_ws["*string(w)*"]","mean"] for w in range(1,length(wordTypes))]
+    wordsIntstd   = [ssdfs[i][string.(ss_df1.parameters).=="a_ws["*string(w)*"]","std"] for w in range(1,length(wordTypes))]
+    wordsGradstd  = [ssdfs[i][string.(ss_df1.parameters).=="b_ws["*string(w)*"]","std"] for w in range(1,length(wordTypes))]
+    wordsDistInt  = [DiscreteNonParametric(chndfs[i][!,"a_ws["*string(w)*"]"],prob) for w in range(1,length(wordTypes))]
+    wordsDistGrad = [DiscreteNonParametric(chndfs[i][!,"b_ws["*string(w)*"]"],prob) for w in range(1,length(wordTypes))]
+    for j in range(1,length(wordTypes))
         wi[i,j] = wordsInt[j][1]
         wg[i,j] = wordsGrad[j][1]
         wistd[i,j] = wordsIntstd[j][1]
@@ -90,7 +96,7 @@ dists        = vcat(wi_dist,wg_dist)
 samples      = vcat(wi_samples,wg_samples)
 wordVals     = vcat(wi,wg)
 wordVals_std = vcat(wistd,wgstd)
-wordVals_w   = zeros(8,10)
+wordVals_w   = zeros(8,length(wordTypes))
 samps_2      = vcat(wi_samps2,wg_samps2)
 
 # %%
@@ -103,9 +109,9 @@ end
 
 
 function cosdist(data)
-    dist = zeros(10,10)
-    for i in range(1,10)
-        for j in range(1,10)
+    dist = zeros(length(wordTypes),length(wordTypes))
+    for i in range(1,length(wordTypes))
+        for j in range(1,length(wordTypes))
             dist[i,j] = cosine_dist(data[:,i],data[:,j])
         end
     end
@@ -116,9 +122,9 @@ end
 
 
 function wasDist(data,datastd)
-    dist = zeros(10,10)
-    for i in range(1,10)
-        for j in range(1,10)
+    dist = zeros(length(wordTypes),length(wordTypes))
+    for i in range(1,length(wordTypes))
+        for j in range(1,length(wordTypes))
             wasdists = zeros(8)
             for distr in range(1,8)
                 wasdists[distr]=wasserstein(Normal(data[distr,i],datastd[distr,i]),Normal(data[distr,j],datastd[distr,j]))
@@ -132,9 +138,9 @@ end
 
 function wasDist2(data)
     weights = fill(1/8, 8)
-    dist = zeros(10,10)
-    for i in range(1,10)
-        for j in range(1,10)
+    dist = zeros(length(wordTypes),length(wordTypes))
+    for i in range(1,length(wordTypes))
+        for j in range(1,length(wordTypes))
             wasdists = [wasserstein(a,b) for a in data[:,i], b in data[:,j]]
             optimizer = MathOptInterface.instantiate(Clp.Optimizer; with_cache_type=Float64)
             dist[i,j] = emd2(weights, weights, wasdists, optimizer)
@@ -147,9 +153,9 @@ end
 
 function wasDist3(data)
     weights = fill(1/8, 8)
-    dist = zeros(10,10)
-    for i in range(1,10)
-        for j in range(1,10)
+    dist = zeros(length(wordTypes),length(wordTypes))
+    for i in range(1,length(wordTypes))
+        for j in range(1,length(wordTypes))
             wasdists = [wasserstein_samples(a,b) for a in data[:,i], b in data[:,j]]
             optimizer = MathOptInterface.instantiate(Clp.Optimizer; with_cache_type=Float64)
             dist[i,j] = emd2(weights, weights, wasdists, optimizer)
@@ -182,7 +188,7 @@ function dendrogram(distances,link,ylab,xlab)
     hc = hclust(distances, linkage=link)
     xlabs = [wordTypes[i] for i in hc.order]
     
-    return Plots.plot(hc,xticks=(1:10,xlabs),
+    return Plots.plot(hc,xticks=(1:length(wordTypes),xlabs),
                 ylabel=ylab,
                 xlabel=xlab,
                 right_margin=10mm,
@@ -268,7 +274,7 @@ function editStructure(structure,clustPos,clusterDistance,structureWithDistance)
     return newStructure,newStructureWithDistances
 end
 
-function shrinkTree(data,structure=[1,2,3,4,5,6,7,8,9,10],structureWithDistance=structure)
+function shrinkTree(data,structure=collect(1:length(wordTypes)),structureWithDistance=structure)
     sortedData = []
     for i in eachindex(structure)
         curData = splitTree(data,structure[i],1000)
@@ -320,7 +326,7 @@ function traverseTree(tree,structure,node)
     else
         innerBranch = node * "_b2"
         createnode!(tree,innerBranch)
-        createbranch!(tree, node, innerBranch, dist-b2[1])
+        createbranch!(tree, node, innerBranch, abs(dist-b2[1]))
         traverseTree(tree,b2,innerBranch)
     end
 
@@ -331,4 +337,4 @@ tree = traverseTree(structure_d)
 
 
 plt = Plots.plot(tree, treetype=:dendrogram)
-Plots.savefig(plt,"figs/wordType/dendro_joined.png")
+Plots.savefig(plt,"figs/wordType/dendro_joined_ADP.png")
