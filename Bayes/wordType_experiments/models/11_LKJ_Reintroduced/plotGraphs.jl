@@ -5,17 +5,16 @@ include("../../plottingFuncs.jl")
 
 
 
-df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,noPCA = createVariables()
+df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS = createVariables()
 
 output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS)
-
 if(pc == 1)
   #wait for all other PCs to finish before greating plots
   global is_waiting = true
   while(is_waiting)
-    if(reduce(&,[isfile(output_loc*"/out"*string(i)*".jls") for i in range(1,noPCA)]))
+    if(reduce(&,[isfile(output_loc*"/out"*string(i)*".jls") for i in range(1,noPCS)]))
       print("plotting graphs")
-      plotGraphs(output_loc,wordTypes,cols,noPCA) 
+      plotGraphs(output_loc,wordTypes,cols,noPCS) 
       global is_waiting=false
     else
       print("Waiting for other PCs to complete")
