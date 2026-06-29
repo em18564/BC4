@@ -9,17 +9,17 @@ end
 
 
 
-function concludeAndPlot(m,output_loc,pc,wordTypes,cols)
+function concludeAndPlot(m,output_loc,pc,wordTypes,cols,noPCS)
 
 
     if(pc == 1)
     #wait for all other PCs to finish before greating plots
     global is_waiting = true
     while(is_waiting)
-        if(isfile(output_loc*"/out1.jls") && isfile(output_loc*"/out2.jls") && isfile(output_loc*"/out3.jls") && isfile(output_loc*"/out4.jls"))
-        println("plotting graphs")
-        plotGraphs(output_loc,wordTypes,cols) 
-        global is_waiting=false
+        if(reduce(&,[isfile(output_loc*"/out"*string(i)*".jls") for i in range(1,noPCS)]))
+            println("plotting graphs")
+            plotGraphs(output_loc,wordTypes,cols,noPCS) 
+            global is_waiting=false
         else
         println("Waiting for other PCs to complete")
         sleep(30)
@@ -195,9 +195,8 @@ end
 
 
 
-function plotGraphs(outputDir,wordTypes,cols)
+function plotGraphs(outputDir,wordTypes,cols,noPCS)
     chainLength = 1000
-    noPCS = 4
     includeSigma = true
     if includeSigma
         global rangeVals = 0.5
@@ -205,22 +204,16 @@ function plotGraphs(outputDir,wordTypes,cols)
         global rangeVals = 3.0
     end
     #df = CSV.read("savedData/df_2.csv", DataFrame)
-    chn1 = deserialize(outputDir*"/out1.jls")
-    chn2 = deserialize(outputDir*"/out2.jls")
-    chn3 = deserialize(outputDir*"/out3.jls")
-    chn4 = deserialize(outputDir*"/out4.jls")
-    chn_df1 = DataFrames.DataFrame(chn1)
-    chn_df2 = DataFrames.DataFrame(chn2)
-    chn_df3 = DataFrames.DataFrame(chn3)
-    chn_df4 = DataFrames.DataFrame(chn4)
-    chn_dfs = [chn_df1, chn_df2, chn_df3, chn_df4]
+    chns = [deserialize(outputDir*"/out"*string(i)*".jls") for i in range(1,noPCS)]
+    chn_dfs = [DataFrames.DataFrame(chn) for chn in chns]
 
 
-    d = zeros(4,2,length(wordTypes),chainLength)
+    d = zeros(noPCS,2,length(wordTypes),chainLength)
     vd = []
     for j in range(1,length(wordTypes))
         for i in range(1,2)
             try
+                # _________________OPTION 1__LKJ REINTRODUCED_________________________
                 for chn_dfId in eachindex(chn_dfs)
                     chn_df = chn_dfs[chn_dfId]
                     sigs  = [Diagonal([chn_df[:,"σ_w[1]"][innerI], chn_df[:,"σ_w[2]"][innerI]]) * Matrix([  chn_df[:,"Lcorr_w.L[1, 1]"][innerI] chn_df[:,"Lcorr_w.L[2, 1]"][innerI];
@@ -236,19 +229,31 @@ function plotGraphs(outputDir,wordTypes,cols)
                 end
 
             catch
-                if i==1
-                    d[1,i,j,:] = chn_df1[:,"a_ws["*string(j)*"]"]
-                    d[2,i,j,:] = chn_df2[:,"a_ws["*string(j)*"]"]
-                    d[3,i,j,:] = chn_df3[:,"a_ws["*string(j)*"]"]
-                    d[4,i,j,:] = chn_df4[:,"a_ws["*string(j)*"]"]
-                else
-                    d[1,i,j,:] = chn_df1[:,"b_ws["*string(j)*"]"]
-                    d[2,i,j,:] = chn_df2[:,"b_ws["*string(j)*"]"]
-                    d[3,i,j,:] = chn_df3[:,"b_ws["*string(j)*"]"]
-                    d[4,i,j,:] = chn_df4[:,"b_ws["*string(j)*"]"]
+                try
+                    # _________________OPTION 2__NO LKJ_________________________
+                    
+                    for pc in range(1,noPCS)
+                        if i==1
+                            d[pc,i,j,:] = chn_dfs[pc][:,"a_ws["*string(j)*"]"]
+                        else
+                            d[pc,i,j,:] = chn_dfs[pc][:,"a_ws["*string(j)*"]"]
+                        end
+                    end
+                    
+                catch
+                    # _________________OPTION 3__ORIGINAL LKJ_________________________
+                    for pc in range(1,noPCS)
+                        d[pc,i,j,:] = chn_dfs[pc][:,"ab_w["*string(i)*", "*string(j)*"]"]
+                    end
+
                 end
+                
             end
-            vd = vcat(vd, d[1,i,j,:],d[2,i,j,:],d[3,i,j,:],d[4,i,j,:])
+
+            for pc in range(1,noPCS)
+                vd = vcat(vd, d[pc,i,j,:])
+            end
+            
         end
     end
                 
@@ -280,12 +285,12 @@ function plotGraphs(outputDir,wordTypes,cols)
     dfs  = [subset(dfI, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
     dfsg = [subset(dfG, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
     PlotlyJS.savefig(subplots(dfs[1],wordTypes,cols),outputDir*"/i1.png",width=415,height=850)
-    for i in 2:4
+    for i in 2:noPCS
         PlotlyJS.savefig(subplots(dfs[i],wordTypes,cols),outputDir*"/i"*string(i)*".png",width=365,height=850)
     end
 
     PlotlyJS.savefig(subplots(dfsg[1],wordTypes,cols),outputDir*"/g1.png",width=415,height=850)
-    for i in 2:4
+    for i in 2:noPCS
         PlotlyJS.savefig(subplots(dfsg[i],wordTypes,cols),outputDir*"/g"*string(i)*".png",width=365,height=850)
     end
     # vio = Gadfly.plot(  Theme(major_label_font_size=17pt,key_title_font_size=16pt,key_label_font_size=14pt,minor_label_font_size=14pt,background_color = "ghostwhite",default_color="grey",boxplot_spacing=70px),Guide.ylabel("Posterior Difference (with 97% HCI)"),Guide.title("Posterior Difference with full Covariance"),Guide.xlabel("Posterior"),
@@ -294,23 +299,26 @@ function plotGraphs(outputDir,wordTypes,cols)
     # draw(PNG("violinCov.png", 8inch, 8inch, dpi=300), vio)
 
 
-    essRhat([chn1,chn2,chn3,chn4],outputDir)
-    combinePlots(outputDir)
+    essRhat(chns,outputDir)
+    combinePlots(outputDir,noPCS)
 end
 
 function essRhat(chns,outputDir)
     gr(size=(1800,800), dpi=600)
     colNames = String.(Vector(DataFrames.DataFrame(summarystats(chns[1]; append_chains=true)).parameters))
-
     as    = vcat(   findall(x -> startswith(x, "ab_w[1"), colNames),
                     findall(x -> startswith(x, "ab_p[1"), colNames),
                     findall(x -> startswith(x, "ab_e[1"), colNames),
+                    findall(x -> startswith(x, "z_ab_w[1"), colNames),
+                    findall(x -> startswith(x, "z_ab_p[1"), colNames),
                     findall(x -> startswith(x, "a_w"), colNames),
                     findall(x -> startswith(x, "a_p"), colNames),
                     findall(x -> startswith(x, "a_e"), colNames))
     alabs = vcat(   filter(x -> startswith(x, "ab_w[1"), colNames),
                     filter(x -> startswith(x, "ab_p[1"), colNames),
                     filter(x -> startswith(x, "ab_e[1"), colNames),
+                    filter(x -> startswith(x, "z_ab_w[1"), colNames),
+                    filter(x -> startswith(x, "z_ab_p[1"), colNames),
                     filter(x -> startswith(x, "a_w"), colNames),
                     filter(x -> startswith(x, "a_p"), colNames),
                     filter(x -> startswith(x, "a_e"), colNames))
@@ -319,16 +327,22 @@ function essRhat(chns,outputDir)
                     startswith(x, "ab_e") ? "Intercept" :
                     startswith(x, "a_w") ? "Word-type" :
                     startswith(x, "a_p") ? "Participant" : 
+                    startswith(x, "z_ab_w") ? "Word-type" : 
+                    startswith(x, "z_ab_p") ? "Participant" : 
                     startswith(x, "a_e") ? "Intercept" : x, alabs)
     bs    = vcat(   findall(x -> startswith(x, "ab_w[2"), colNames),
                     findall(x -> startswith(x, "ab_p[2"), colNames),
                     findall(x -> startswith(x, "ab_e[2"), colNames),
+                    findall(x -> startswith(x, "z_ab_w[2"), colNames),
+                    findall(x -> startswith(x, "z_ab_p[2"), colNames),
                     findall(x -> startswith(x, "b_w"), colNames),
                     findall(x -> startswith(x, "b_p"), colNames),
                     findall(x -> startswith(x, "b_e"), colNames))
     blabs = vcat(   filter(x -> startswith(x, "ab_w[2"), colNames),
                     filter(x -> startswith(x, "ab_p[2"), colNames),
                     filter(x -> startswith(x, "ab_e[2"), colNames),
+                    filter(x -> startswith(x, "z_ab_w[2"), colNames),
+                    filter(x -> startswith(x, "z_ab_p[2"), colNames),
                     filter(x -> startswith(x, "b_w"), colNames),
                     filter(x -> startswith(x, "b_p"), colNames),
                     filter(x -> startswith(x, "b_e"), colNames))
@@ -337,18 +351,43 @@ function essRhat(chns,outputDir)
                     startswith(x, "ab_e") ? "Intercept" : 
                     startswith(x, "b_w") ? "Word-type" :
                     startswith(x, "b_p") ? "Participant" : 
+                    startswith(x, "z_ab_w") ? "Word-type" : 
+                    startswith(x, "z_ab_p") ? "Participant" : 
                     startswith(x, "b_e") ? "Intercept" : x, blabs)
     σs    = vcat(   findall(x -> startswith(x, "σ"), colNames),
-                    findall(x -> startswith(x, "ρ"), colNames))
+                    findall(x -> startswith(x, "ρ"), colNames),
+                    findall(x -> startswith(x, "Lcorr_w"), colNames),
+                    findall(x -> startswith(x, "Lcorr_p"), colNames))
     σlabs = vcat(   filter(x -> startswith(x, "σ"), colNames),
-                    filter(x -> startswith(x, "ρ"), colNames))
+                    filter(x -> startswith(x, "ρ"), colNames),
+                    filter(x -> startswith(x, "Lcorr_w"), colNames),
+                    filter(x -> startswith(x, "Lcorr_p"), colNames))
     σlabs = map(x -> startswith(x, "σ_w") ? "Word-type" :
                     startswith(x, "σ_p") ? "Participant" : 
                     startswith(x, "σ_e") ? "Intercept" :
+                    startswith(x, "Lcorr") ? "LKJ" :
                     startswith(x, "ρ") ? "LKJ" : x, σlabs)
     plts = []
+    if length(colNames) != length(as) + length(bs)  + length(σs) 
+        println("POTENTIAL MISSING COLUMN FOR ESSRHAT")
+        println("Overall = ", length(colNames))
+        println(colNames)
+        println("a = ", length(as))
+        println(as)
+        println("b = ", length(bs))
+        println(bs)
+        println("σ = ", length(σs))
+        println(σs)
 
-    for i in range(1,4)
+        println("Missing: " )
+        full = vcat(as,bs,σs)
+        for i in range(1,length(colNames))
+            if !(i in full)
+                println(colNames[i])
+            end
+        end
+    end
+    for i in range(1,length(chns))
 
         myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][as],DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"ess_bulk"][as],xlabel = "R-hat",ylabel = "ess (as)",title="PC " * string(i),group=alabs,ylims=(0,1200),xlims=(.99,1.25))
         push!(plts,myplot)
@@ -357,23 +396,22 @@ function essRhat(chns,outputDir)
         myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][σs],DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"ess_bulk"][σs],xlabel = "R-hat",ylabel = "ess (σs)",group=σlabs,ylims=(0,1200),xlims=(.99,1.25))
         push!(plts,myplot)
     end
-
-    essRhat = Plots.plot(   plts[1],plts[4],plts[7],plts[10],
-                            plts[2],plts[5],plts[8],plts[11],
-                            plts[3],plts[6],plts[9],plts[12]
-                            ,layout=grid(3,4),left_margin=15mm,bottom_margin=15mm
+    r = reshape(plts,3,:)
+    reshapedPlots = reduce(vcat,[r[i,:] for i in range(1,length(r[:,1]))])
+    essRhat = Plots.plot(   (reshapedPlots[i] for i in range(1,length(reshapedPlots)))...;
+                             layout=grid(3,length(chns)),left_margin=15mm,bottom_margin=15mm
                             ,plot_title="EssRhat of 8 participants with Noun Verb Adj Adv & Func")
     Plots.savefig(essRhat,outputDir*"/essRhat.png")
 end
 
 
-function combinePlots(outputDir)
+function combinePlots(outputDir,noPCS)
     img = load(outputDir*"/g1.png")
-    for i in range(2,4)
+    for i in range(2,noPCS)
         img = hcat(img,load(outputDir*"/g"*string(i)*".png"))
     end
     img2 = load(outputDir*"/g1.png")
-    for i in range(2,4)
+    for i in range(2,noPCS)
         img2 = hcat(img2,load(outputDir*"/i"*string(i)*".png"))
     end
     Images.save(outputDir*"/gradient.png",img)

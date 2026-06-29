@@ -12,7 +12,7 @@ end
 function createVariables(args = map(x->string(x), ARGS))
     arrayId = parse(Int,args[1])
     maxArrayId = parse(Int,args[2])
-    
+    noPCS = 4
     
     NUM_PARTICIPANTS = parse(Int,args[3])
     NUM_WORDS = parse(Int,args[4])
@@ -62,6 +62,7 @@ function createVariables(args = map(x->string(x), ARGS))
         NUM_TYPES,df_modified,wordTypes,cols = processTypeStructure(df_modified,TYPE_STRUCTURE)
         dfPCA = df_modified[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
         output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS) * "_NOPCA"
+        noPCS = 6
 
     else
 
@@ -81,6 +82,7 @@ function createVariables(args = map(x->string(x), ARGS))
         if analyseEssRhat>1
             analyseEssRhat = 0
             dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4, :PC_5, :PC_6]]
+            noPCS = 6
             output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS) * "_6PCA"
         else
             dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4]]
@@ -95,12 +97,12 @@ function createVariables(args = map(x->string(x), ARGS))
     if (!isdir(output_loc))
         mkdir(output_loc)
     end
-    return df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean
+    return df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS
 end
 
 
 
-function runModel(model,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean)
+function runModel(model,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS)
     m = sample(model, NUTS(), MCMCThreads(), 250,4)
     display(m)
     
@@ -120,7 +122,7 @@ function runModel(model,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TY
     end
 
     if(isPlotting==1)
-        concludeAndPlot(m,output_loc,pc,wordTypes,cols)
+        concludeAndPlot(m,output_loc,pc,wordTypes,cols,noPCS)
     end
 end
 
