@@ -155,3 +155,27 @@ function essRhatScore(pc,expMean,cauchyMean,output_loc)
     CSV.write(output_loc*"/score"*string(pc)*".csv",score)
     CSV.write(output_loc*"/params"*string(pc)*".csv",params)
 end
+
+
+
+function plotExistingModelGraphs()
+    
+    df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS = createVariables()
+    println(output_loc)
+    if(pc == 1)
+    #wait for all other PCs to finish before greating plots
+        global is_waiting = true
+        while(is_waiting)
+            if(reduce(&,[isfile(output_loc*"/out"*string(i)*".jls") for i in range(1,noPCS)]))
+                println("plotting graphs")
+                plotGraphs(output_loc,wordTypes,cols,noPCS) 
+                global is_waiting=false
+            else
+                println("Waiting for other PCs to complete")
+                sleep(30)
+            end
+            
+        end
+    end
+
+end

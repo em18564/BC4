@@ -220,7 +220,7 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS)
                                                                                                 chn_df[:,"Lcorr_w.L[2, 1]"][innerI] chn_df[:,"Lcorr_w.L[2, 2]"][innerI]]) for innerI in range(1,chainLength)]       
                                                                                                                                                                             
                     z_abs = [reduce(vcat,[[chn_df[:,"z_ab_w[1, "*string(innerJ)*"]"][innerI] chn_df[:,"z_ab_w[2, "*string(innerJ)*"]"][innerI]] for innerJ in eachindex(wordTypes)]) for innerI in range(1,chainLength)]
-                    ab_ws = reshape(reduce(hcat, [sigs[innerI]*transpose(z_abs[innerI]) for innerI in range(1,chainLength)]),2,5,:)
+                    ab_ws = reshape(reduce(hcat, [sigs[innerI]*transpose(z_abs[innerI]) for innerI in range(1,chainLength)]),2,length(wordTypes),:)
                     if includeSigma
                         d[chn_dfId,i,j,:] = ab_ws[i,j,:]
                     else
