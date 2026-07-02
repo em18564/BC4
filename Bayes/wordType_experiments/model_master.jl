@@ -72,7 +72,7 @@ function createVariables(args = map(x->string(x), ARGS))
             df       = CSV.read("../../../input/dfPCANorm_corrected_6.csv", DataFrame)
         catch
             dfTags   = CSV.read("../input/full_tags.csv", DataFrame).newTags
-            df       = CSV.read("../input/dfPCANorm_corrected_"*string(tagVal)*".csv", DataFrame)
+            df       = CSV.read("../input/dfPCANorm_corrected_6.csv", DataFrame)
         end
         df[!,"fullTag"] = dfTags
         df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))

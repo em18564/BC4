@@ -50014,3 +50014,4 @@ word2vec/aclImdb/train/urls_pos.txt
 word2vec/aclImdb/train/urls_unsup.txt
 Bayes/wordType_experiments/psis.jls
 Bayes/wordType_experiments/psis2.jls
+Bayes/wordType_experiments/psis3.jls

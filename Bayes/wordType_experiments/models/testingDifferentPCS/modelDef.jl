@@ -1,5 +1,5 @@
 
-@model function model_6_1(participant,word,surprisal,tags,PCA,ExpMean,cauchyMean,NUM_TYPES,NUM_PARTICIPANTS)
+@model function model_12(participant,word,surprisal,tags,PCA,ExpMean,cauchyMean,NUM_TYPES,NUM_PARTICIPANTS)
 
   σ_aw ~ Exponential(1)
   a_ws ~ filldist(Normal(0, 1),NUM_TYPES)
