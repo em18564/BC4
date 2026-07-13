@@ -114,6 +114,34 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         df_modified = vcat(noun,numeral,verbadp,f)
         wordTypes = ["Noun","Numeral","Verb/Adposition","NewFunction"]
         cols = [palette(:tab10)[i] for i in range(1,4)]
+    elseif(TYPE_STRUCTURE == "NoNum")
+        NUM_TYPES = 11
+        wordTypes = ["Adjective","Adverb",
+                        "Conjunction","Determiner","Noun",
+                        "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
+        df_modified.fullTag.= max.(df_modified.fullTag.-1,0)
+        wordsPreNum= vcat(  subset(df_modified, :fullTag => ByRow((==(0)))),
+                            subset(df_modified, :fullTag => ByRow((==(1)))),
+                            subset(df_modified, :fullTag => ByRow((==(2)))),
+                            subset(df_modified, :fullTag => ByRow((==(3)))),
+                            subset(df_modified, :fullTag => ByRow((==(4)))))
+
+        wordsPostNum= vcat( subset(df_modified, :fullTag => ByRow((==(6)))),
+                            subset(df_modified, :fullTag => ByRow((==(7)))),
+                            subset(df_modified, :fullTag => ByRow((==(8)))))
+        
+        wordsPostNum.fullTag = wordsPostNum.fullTag.-1
+
+        adp1  = subset(df_modified, :fullTag => ByRow((==(10))))
+        adp2  = subset(df_modified, :fullTag => ByRow((==(11))))
+        adp3  = subset(df_modified, :fullTag => ByRow((==(12))))
+
+        adp1.fullTag.=8
+        adp2.fullTag.=9
+        adp3.fullTag.=10
+
+        df_modified = vcat(wordsPreNum,wordsPostNum,adp1,adp2,adp3)
+        cols = [palette(:default)[i] for i in range(1,NUM_TYPES)]
     else()
         throw("Illegal type structure")
     end

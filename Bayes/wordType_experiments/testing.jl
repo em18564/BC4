@@ -41,16 +41,18 @@ dfTags   = CSV.read("../input/full_tags.csv", DataFrame)
 replace!(dfTags.tags, 10 => 5)
 CSV.write("../input/full_tags.csv", dfTags)
 # %%
+using Counters
 dfTags   = CSV.read("../input/full_tags.csv", DataFrame)
-wordEncodings = Dict(   0=>"Adjective",1=>"Adposition",2=>"Adverb",
+wordEncodings = Dict(   0=>"Adjective",2=>"Adverb",
                         3=>"Conjunction",4=>"Determiner",5=>"Noun",6=>"Numeral",
-                        7=>"Pronoun",8=>"Particle",9=>"Verb")
-tags = dfTags[dfTags.Participant.==1,:].tags
-x = [wordEncodings[i] for i in range(0,9)]
-y = [counter(tags)[i] for i in range(0,9)]
+                        7=>"Pronoun",8=>"Particle",9=>"Verb",11=>"Adposition (lex)",12=>"Adposition (sub)",13=>"Adposition (syn)")
+newTags = dfTags[dfTags.Participant.==1,:].newTags
+k = [0,2,3,4,5,6,7,8,9,11,12,13]
+x = [wordEncodings[i] for i in k]
+y = [counter(newTags)[i] for i in k]
 
 # %%
-color_vec = [palette(:tab10)[i] for i in range(1,10)]
+color_vec = [palette(:default)[i] for i in k.+1]
 
 p = PlotlyJS.plot(
     PlotlyJS.bar(x=x, y=y, marker_color=color_vec),
