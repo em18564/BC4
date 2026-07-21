@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name PC_6_1000
+#SBATCH --job-name NoNum_6_1000
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 4
@@ -11,8 +11,8 @@
 
 export NUM_PARTICIPANTS=23    
 export NUM_WORDS=1931
-export TYPE_STRUCTURE="FullADP"
-export IS_PLOTTING=1
+export TYPE_STRUCTURE="NoNum"
+export IS_PLOTTING=11
 export ANALYSE_ESS_RHAT=2      # >1 for 6pca, >10 for nopca
 export MIN_EXP=1               #Use min_exp and min_cauchy if only running 4 tasks
 export MAX_EXP=1

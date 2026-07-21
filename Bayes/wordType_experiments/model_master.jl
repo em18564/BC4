@@ -18,6 +18,11 @@ function createVariables(args = map(x->string(x), ARGS))
     NUM_WORDS = parse(Int,args[4])
     TYPE_STRUCTURE = args[5]
     isPlotting = parse(Int,args[6])
+    noInChain = 250
+    if isPlotting>1
+        isPlotting = 1
+        noInChain  = 1000
+    end
     analyseEssRhat = parse(Int,args[7])
     if analyseEssRhat>1
         pc   = customMod(arrayId,6)
@@ -93,17 +98,17 @@ function createVariables(args = map(x->string(x), ARGS))
         
     end
     
-    
+    output_loc = output_loc*"_"*string(noInChain)
     if (!isdir(output_loc))
         mkdir(output_loc)
     end
-    return df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS
+    return df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS,noInChain
 end
 
 
 
-function runModel(model,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS)
-    m = sample(model, NUTS(), MCMCThreads(), 250,4)
+function runModel(model,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS,noInChain=1000)
+    m = sample(model, NUTS(), MCMCThreads(), noInChain,4)
     display(m)
     
     
