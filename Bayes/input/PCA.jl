@@ -13,26 +13,28 @@ using Plots
 # %%
 
 
+means = []
+stds  = []
 
-
-
-for i in range(1,6)
-    df_full = CSV.read("dfHierarchical.csv", DataFrame)
-    M = fit(PCA, transpose(Matrix(df)); maxoutdim=i)
-    Yte = predict(M, transpose(Matrix(df)))
-    Xr = transpose(reconstruct(M, Yte))
-    df_PCA = df_full
-    PCs = transpose(Yte)
-    df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
-    df_labels = Vector(df_full[:, :Tags])
-    for j in range(1,i)
-        pcLab = "PC_"*string(j)
-        df_PCA[!,pcLab] = Yte[j,:]
-        df_PCA[!,pcLab] = (df_PCA[:,pcLab] .- mean(df_PCA[:,pcLab]))./std(df_PCA[:,pcLab])
-    end
-    CSV.write("dfPCANorm_corrected_"*string(i)*".csv", df_PCA)
+df = CSV.read("dfHierarchical.csv", DataFrame)
+dfData = df[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
+M = fit(PCA, transpose(Matrix(dfData)); maxoutdim=6)
+Yte = predict(M, transpose(Matrix(dfData)))
+Xr = transpose(reconstruct(M, Yte))
+df_PCA = df
+PCs = transpose(Yte)
+df_labels = Vector(df[:, :Tags])
+for j in range(1,6)
+    pcLab = "PC_"*string(j)
+    df_PCA[!,pcLab] = Yte[j,:]
+    push!(means,mean(df_PCA[:,pcLab]))
+    push!(stds,std(df_PCA[:,pcLab]))
+    df_PCA[!,pcLab] = (df_PCA[:,pcLab] .- mean(df_PCA[:,pcLab]))./std(df_PCA[:,pcLab])
+    
 end
+#CSV.write("dfPCANorm_corrected_"*string(i)*".csv", df_PCA)
 
+CSV.write("meanAndStdInfo.csv",DataFrames.DataFrame(mean=means,std=stds))
 
 
 #Plots.scatter(transpose(projection(M)),label = ["ELAN" "LAN" "N400" "EPNP" "P600" "PNP"],title="PCA Components")
