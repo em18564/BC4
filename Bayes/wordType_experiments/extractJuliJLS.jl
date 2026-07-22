@@ -5,12 +5,12 @@ include("typeStructures.jl")
 include("model_master.jl")
 include("plottingFuncs.jl")
 #using SkipNan
-using ExactOptimalTransport,OptimalTransport
-using KernelDensity
+#using ExactOptimalTransport,OptimalTransport
+#using KernelDensity
 
-using SlicedWasserstein
-using PhyloTrees
-using Phylo
+#using SlicedWasserstein
+#using PhyloTrees
+#using Phylo
 # 1 Adj
 # 2 Adp
 # 3 Adv
