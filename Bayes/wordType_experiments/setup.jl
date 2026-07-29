@@ -11,7 +11,7 @@ using StatsBase
 using StatsFuns
 using Logging
 using Plots
-using PlotlyJS
+#using PlotlyJS
 using Images, FileIO
 using Measures
 using Dates

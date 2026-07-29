@@ -21,38 +21,63 @@ using Phylo
 # 8 Pron
 # 9 Prt
 # 10 Verb
-#%% 
 meanAndStdInfo = CSV.read("../input/meanAndStdInfo.csv",DataFrame)
-outputDir="models/testingDifferentPCS/output_FullADP_23_1931_6PCA"                  
+outputDirs =[   "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_250",
+                "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_1000",
+                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_250",
+                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_1000"]     
+                
 wordTypes_old = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
                         "Pronoun","Particle","Verb"]
 wordTypes = ["Adjective","Adverb",
             "Conjunction","Determiner","Noun","Numeral", 
             "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
+
+wordTypesNoNum = ["Adjective","Adverb",
+            "Conjunction","Determiner","Noun", 
+            "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
 cols = [palette(:default)[i] for i in range(1,length(wordTypes))]
-chn1 = deserialize(outputDir*"/out1.jls")
-chn2 = deserialize(outputDir*"/out2.jls")
-chn3 = deserialize(outputDir*"/out3.jls")
-chn4 = deserialize(outputDir*"/out4.jls")
-chn5 = deserialize(outputDir*"/out5.jls")
-chn6 = deserialize(outputDir*"/out6.jls")
-chn_df1 = DataFrames.DataFrame(chn1)
-chn_df2 = DataFrames.DataFrame(chn2)
-chn_df3 = DataFrames.DataFrame(chn3)
-chn_df4 = DataFrames.DataFrame(chn4)
-chn_df5 = DataFrames.DataFrame(chn5)
-chn_df6 = DataFrames.DataFrame(chn6)
-ss_df1  = DataFrames.DataFrame(summarystats(chn1))
-ss_df2  = DataFrames.DataFrame(summarystats(chn2))
-ss_df3  = DataFrames.DataFrame(summarystats(chn3))
-ss_df4  = DataFrames.DataFrame(summarystats(chn4))
-ss_df5  = DataFrames.DataFrame(summarystats(chn5))
-ss_df6  = DataFrames.DataFrame(summarystats(chn6))
-show(stdout,"text/plain",summarystats(chn1))
-prob = repeat([1.0/length(chn_df1[!,"a_ws[1]"])], length(chn_df1[!,"a_ws[1]"]))
-chndfs  = [chn_df1, chn_df2, chn_df3, chn_df4, chn_df5, chn_df6]
-ssdfs   = [ss_df1,  ss_df2,  ss_df3,  ss_df4,  ss_df5,  ss_df6 ]
+
+
+# chn1 = deserialize(outputDir*"/out1.jls")
+# chn2 = deserialize(outputDir*"/out2.jls")
+# chn3 = deserialize(outputDir*"/out3.jls")
+# chn4 = deserialize(outputDir*"/out4.jls")
+# chn5 = deserialize(outputDir*"/out5.jls")
+# chn6 = deserialize(outputDir*"/out6.jls")
+# chn_df1 = DataFrames.DataFrame(chn1)
+# chn_df2 = DataFrames.DataFrame(chn2)
+# chn_df3 = DataFrames.DataFrame(chn3)
+# chn_df4 = DataFrames.DataFrame(chn4)
+# chn_df5 = DataFrames.DataFrame(chn5)
+# chn_df6 = DataFrames.DataFrame(chn6)
+# ss_df1  = DataFrames.DataFrame(summarystats(chn1))
+# ss_df2  = DataFrames.DataFrame(summarystats(chn2))
+# ss_df3  = DataFrames.DataFrame(summarystats(chn3))
+# ss_df4  = DataFrames.DataFrame(summarystats(chn4))
+# ss_df5  = DataFrames.DataFrame(summarystats(chn5))
+# ss_df6  = DataFrames.DataFrame(summarystats(chn6))
+# show(stdout,"text/plain",summarystats(chn1))
+# chndfs  = [chn_df1, chn_df2, chn_df3, chn_df4, chn_df5, chn_df6]
+# ssdfs   = [ss_df1,  ss_df2,  ss_df3,  ss_df4,  ss_df5,  ss_df6 ]
+
+
+full_chndfs = []
+full_ssdfs  = []
+
+for od in outputDirs
+    chndfs = []
+    ssdfs  = []
+    for i in range(1,6)
+        push!(chndfs,CSV.read(od*"/chndf_"*string(i),DataFrame))
+        push!(ssdfs,CSV.read(od*"/ssdf_"*string(i),DataFrame))
+    end
+    push!(full_chndfs,chndfs)
+    push!(full_ssdfs,ssdfs)
+end
+prob = repeat([1.0/length(full_chndfs[1][1][!,"a_ws[1]"])], length(full_chndfs[1][1][!,"a_ws[1]"]))
+
 
 # %%
 function wasserstein_samples(x, y)
@@ -62,36 +87,36 @@ function wasserstein_samples(x, y)
 end
 
 
-function getDataFromFirstXchains(noChains)
+function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt)
     innerChndfs = chndfs[1:noChains]
     innerSsdfs  = ssdfs[1:noChains]
-    wi      = zeros(noChains,length(wordTypes))
-    wg      = zeros(noChains,length(wordTypes))
-    wistd   = zeros(noChains,length(wordTypes))
-    wgstd   = zeros(noChains,length(wordTypes))
-    wi_dist = Array{DiscreteNonParametric}(undef,noChains,length(wordTypes))
-    wg_dist = Array{DiscreteNonParametric}(undef,noChains,length(wordTypes))
-    wi_samples = Array{Vector}(undef,noChains,length(wordTypes))
-    wg_samples = Array{Vector}(undef,noChains,length(wordTypes))
-    wi_samps2  = Array{Vector}(undef,noChains,length(wordTypes))
-    wg_samps2  = Array{Vector}(undef,noChains,length(wordTypes))
-    wi_samps3  = Array{Vector}(undef,noChains,length(wordTypes))
-    wg_samps3  = Array{Vector}(undef,noChains,length(wordTypes))
+    # wi      = zeros(noChains,length(wordTypes))
+    # wg      = zeros(noChains,length(wordTypes))
+    # wistd   = zeros(noChains,length(wordTypes))
+    # wgstd   = zeros(noChains,length(wordTypes))
+    # wi_dist = Array{DiscreteNonParametric}(undef,noChains,length(wordTypes))
+    # wg_dist = Array{DiscreteNonParametric}(undef,noChains,length(wordTypes))
+    wi_samples = Array{Vector}(undef,noChains,length(wt))
+    wg_samples = Array{Vector}(undef,noChains,length(wt))
+    wi_samps2  = Array{Vector}(undef,noChains,length(wt))
+    wg_samps2  = Array{Vector}(undef,noChains,length(wt))
+    wi_samps3  = Array{Vector}(undef,noChains,length(wt))
+    wg_samps3  = Array{Vector}(undef,noChains,length(wt))
 
     for i in range(1,length(innerSsdfs))
-        wordsInt      = [innerSsdfs[i][string.(ss_df1.parameters).=="a_ws["*string(w)*"]","mean"] for w in range(1,length(wordTypes))]
-        wordsGrad     = [innerSsdfs[i][string.(ss_df1.parameters).=="b_ws["*string(w)*"]","mean"] for w in range(1,length(wordTypes))]
-        wordsIntstd   = [innerSsdfs[i][string.(ss_df1.parameters).=="a_ws["*string(w)*"]","std"] for w in range(1,length(wordTypes))]
-        wordsGradstd  = [innerSsdfs[i][string.(ss_df1.parameters).=="b_ws["*string(w)*"]","std"] for w in range(1,length(wordTypes))]
-        wordsDistInt  = [DiscreteNonParametric(innerChndfs[i][!,"a_ws["*string(w)*"]"],prob) for w in range(1,length(wordTypes))]
-        wordsDistGrad = [DiscreteNonParametric(innerChndfs[i][!,"b_ws["*string(w)*"]"],prob) for w in range(1,length(wordTypes))]
-        for j in range(1,length(wordTypes))
-            wi[i,j] = wordsInt[j][1]
-            wg[i,j] = wordsGrad[j][1]
-            wistd[i,j] = wordsIntstd[j][1]
-            wgstd[i,j] = wordsGradstd[j][1]
-            wi_dist[i,j] = wordsDistInt[j]
-            wg_dist[i,j] = wordsDistGrad[j]
+        # wordsInt      = [innerSsdfs[i][string.(ssdfs[i].parameters).=="a_ws["*string(w)*"]","mean"] for w in range(1,length(wordTypes))]
+        # wordsGrad     = [innerSsdfs[i][string.(ssdfs[i].parameters).=="b_ws["*string(w)*"]","mean"] for w in range(1,length(wordTypes))]
+        # wordsIntstd   = [innerSsdfs[i][string.(ssdfs[i].parameters).=="a_ws["*string(w)*"]","std"] for w in range(1,length(wordTypes))]
+        # wordsGradstd  = [innerSsdfs[i][string.(ssdfs[i].parameters).=="b_ws["*string(w)*"]","std"] for w in range(1,length(wordTypes))]
+        # wordsDistInt  = [DiscreteNonParametric(innerChndfs[i][!,"a_ws["*string(w)*"]"],prob) for w in range(1,length(wordTypes))]
+        # wordsDistGrad = [DiscreteNonParametric(innerChndfs[i][!,"b_ws["*string(w)*"]"],prob) for w in range(1,length(wordTypes))]
+        for j in range(1,length(wt))
+            # wi[i,j] = wordsInt[j][1]
+            # wg[i,j] = wordsGrad[j][1]
+            # wistd[i,j] = wordsIntstd[j][1]
+            # wgstd[i,j] = wordsGradstd[j][1]
+            # wi_dist[i,j] = wordsDistInt[j]
+            # wg_dist[i,j] = wordsDistGrad[j]
             wi_samples[i,j] = innerChndfs[i][!,"a_ws["*string(j)*"]"]
             wg_samples[i,j] = innerChndfs[i][!,"b_ws["*string(j)*"]"]
             wi_samps2[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]
@@ -101,25 +126,26 @@ function getDataFromFirstXchains(noChains)
             wg_samps3[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_bw"]*meanAndStdInfo.std[i]
         end
     end
-    dists        = vcat(wi_dist,wg_dist)
-    samples      = vcat(wi_samples,wg_samples)
-    wordVals     = vcat(wi,wg)
-    wordVals_std = vcat(wistd,wgstd)
-    wordVals_w   = zeros(2*noChains,length(wordTypes))
+    # dists        = vcat(wi_dist,wg_dist)
+    # samples      = vcat(wi_samples,wg_samples)
+    # wordVals     = vcat(wi,wg)
+    # wordVals_std = vcat(wistd,wgstd)
+    # wordVals_w   = zeros(2*noChains,length(wordTypes))
     samps_2      = vcat(wi_samps2,wg_samps2)
     samps_3      = vcat(wi_samps3,wg_samps3)
     return samps_2,samps_3
 end
 
-datasets = [getDataFromFirstXchains(x) for x in 1:6]
+datasets = vcat([[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypes) for x in 1:6] for i in range(1,2)],
+                [[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypesNoNum) for x in 1:6] for i in range(3,4)])
 
 # %%
-function whiten(row)
-    return (row.-mean(row))./std(row)
-end
-for i in range(1,8)
-    wordVals_w[i,:] = whiten(wordVals[i,:])
-end
+# function whiten(row)
+#     return (row.-mean(row))./std(row)
+# end
+# for i in range(1,8)
+#     wordVals_w[i,:] = whiten(wordVals[i,:])
+# end
 
 
 function cosdist(data)
@@ -199,7 +225,7 @@ end
 
 function splitTree(data,structure,quantity)
     if typeof(structure) == Int64
-        samps = sample(1:1000,quantity)
+        samps = sample(1:length(data[1]),quantity)
         return [data[i,structure][samps] for i in eachindex(data[:,1])]
 
     else
@@ -237,7 +263,7 @@ end
 function shrinkTree(data,structure=collect(1:length(wordTypes)),structureWithDistance=structure)
     sortedData = []
     for i in eachindex(structure)
-        curData = splitTree(data,structure[i],1000)
+        curData = splitTree(data,structure[i],length(data[1]))
         push!(sortedData,curData)
     end
     sortedData = stack(sortedData)
@@ -252,35 +278,35 @@ function shrinkTree(data,structure=collect(1:length(wordTypes)),structureWithDis
     end
 end
 
-function traverseTree(structure)
+function traverseTree(structure,innerWT)
     tree = NamedBinaryTree()
     createnode!(tree, "root")
-    return traverseTree(tree,structure[1],"root")
+    return traverseTree(tree,structure[1],"root",innerWT)
 end
-function traverseTree(tree,structure,node)
+function traverseTree(tree,structure,node,innerWT)
     b1 = structure[2][1]
     b2 = structure[2][2]
     dist = structure[1]
     if typeof(b1) == Int64
-        word =  wordTypes[b1]
+        word =  innerWT[b1]
         createnode!(tree,word)
         createbranch!(tree, node, word,dist)
     else
         innerBranch = node * "_b1"
         createnode!(tree,innerBranch)
         createbranch!(tree, node, innerBranch, dist-b1[1])
-        traverseTree(tree,b1,innerBranch)
+        traverseTree(tree,b1,innerBranch,innerWT)
     end
 
     if typeof(b2) == Int64
-        word =  wordTypes[b2]
+        word =  innerWT[b2]
         createnode!(tree,word)
         createbranch!(tree, node, word,dist)
     else
         innerBranch = node * "_b2"
         createnode!(tree,innerBranch)
         createbranch!(tree, node, innerBranch, abs(dist-b2[1]))
-        traverseTree(tree,b2,innerBranch)
+        traverseTree(tree,b2,innerBranch,innerWT)
     end
 
     return tree
@@ -341,51 +367,79 @@ end
 
 
 # %%
-structure,structure_d = shrinkTree(samps_2)
-tree = traverseTree(structure_d)
+structure,structure_d = shrinkTree(datasets[4][6][2],collect(1:length(wordTypesNoNum)))
+tree = traverseTree(structure_d,wordTypesNoNum)
 plt = Plots.plot(tree, treetype=:dendrogram)
-Plots.savefig(plt,"figs/wordType/dendro_joined_ADP.png")
+Plots.savefig(plt,"figs/wordType/dendro6NoNumUnwhitened.png")
 
 
-structure,structure_d = shrinkTree(samps_3)
-tree = traverseTree(structure_d)
-plt = Plots.plot(tree, treetype=:dendrogram)
-Plots.savefig(plt,"figs/wordType/dendro_joined_ADP_unwhitened.png")
+
 
 # %%
-plts = []
-for i in range(1,6)
-    println(i)
-    println("______")
-    println("First Struct")
-    _,structure_d   = shrinkTree(datasets[i][1])
-    println("Second Struct")
-    _,structure_d_uw = shrinkTree(datasets[i][2])
-    tree = traverseTree(structure_d)
-    tree_uw = traverseTree(structure_d_uw)
 
-    if i == 6
-        plt = Plots.plot(tree, treetype=:dendrogram,ylabel=string(i)*" Principal Components",xlabel="Whitened")
-        plt_uw = Plots.plot(tree_uw, treetype=:dendrogram,xlabel="Unwhitened")
+
+# %%
+experimentNames =["FullADP 250",
+                "FullADP 1000",
+                "NoNum 250",
+                "NoNum 1000"] 
+
+l = @layout [
+    a{0.05w}  grid(1,2)
+    a{0.05w}  grid(1,2)
+    a{0.05w}  grid(1,2)
+    a{0.05w}  grid(1,2)
+    a{0.05w}  grid(1,2)
+    a{0.05w}  grid(1,2)
+    _  b{0.475w,0.05h} b{0.475w,0.05h}
+    ]
+
+for experimentID in range(3,4)
+    println(experimentNames[experimentID])
+    ds = datasets[experimentID]
+    plts = []
+    if experimentID >2
+        innerWT = wordTypesNoNum
     else
-        plt = Plots.plot(tree, treetype=:dendrogram,ylabel=string(i)*" Principal Components")
-        plt_uw = Plots.plot(tree_uw, treetype=:dendrogram)
+        innerWT = wordTypes
     end
     
-    push!(plts,[plt,plt_uw])
+    for i in range(1,6)
+        println(i)
+        println("______")
+        println("First Struct")
+        _,structure_d   = shrinkTree(ds[i][1],collect(1:length(innerWT)))
+        println("Second Struct")
+        _,structure_d_uw = shrinkTree(ds[i][2],collect(1:length(innerWT)))
+        tree = traverseTree(structure_d,innerWT)
+        tree_uw = traverseTree(structure_d_uw,innerWT)
+        plt = Plots.plot(tree, treetype=:dendrogram)
+        plt_uw = Plots.plot(tree_uw, treetype=:dendrogram)
+
+        
+        push!(plts,[plt,plt_uw])
+    end
+    innerPlts = plts
+    plottingPlts = []
+    for i in eachindex(innerPlts)
+        p1 = plot(axis=([], false), margin=0Plots.cm)
+        ftr = text("With first "*string(i)*" PCs", :black,rotation = 90)
+        annotate!(1, 0.5, ftr)
+        push!(plottingPlts,p1)
+        push!(plottingPlts,innerPlts[i][1])
+        push!(plottingPlts,innerPlts[i][2])
+    end
+    p1 = plot(axis=([], false), margin=0Plots.cm)
+    ftr = text("Without Unwhitening", :black)
+    annotate!(0.5, 1, ftr)
+    push!(plottingPlts,p1)
+
+    p1 = plot(axis=([], false), margin=0Plots.cm)
+    ftr = text("Unwhitened", :black)
+    annotate!(0.5, 1, ftr)
+    push!(plottingPlts,p1)
+    finalPlot = plot((plottingPlts[i] for i in eachindex(plottingPlts))...; layout=l,size=(1200,2600))
+    Plots.savefig(finalPlot,"figs/"*experimentNames[experimentID])
 end
-
-# %%
-
-p = Plots.plot( ds[1],ds[6], ds[11],ds[16],
-                ds[2],ds[7], ds[12],ds[17],
-                ds[3],ds[8], ds[13],ds[18],
-                ds[4],ds[9], ds[14],ds[19],
-                ds[5],ds[10],ds[15],ds[20],
-            layout = grid(5, 4),size=(5000,4000))
-
-Plots.savefig(p,"figs/wordType/fullDendrogram_withUnwhitened.png")
-
-
 # %%
 
