@@ -1,9 +1,9 @@
 
 @model function model_14(participant,word,surprisal,tags,PCA,ExpMean,cauchyMean,NUM_TYPES,NUM_PARTICIPANTS)
-  ε1   ~ filldist(length(NUM_TYPES), 1.0)
-  ε2   ~ filldist(length(NUM_TYPES), 1.0)
-  ε3   ~ filldist(length(NUM_PARTICIPANTS), 1.0)
-  ε4   ~ filldist(length(NUM_PARTICIPANTS), 1.0)
+  ε1   ~ filldist(Normal(0, 1),length(NUM_TYPES))
+  ε2   ~ filldist(Normal(0, 1),length(NUM_TYPES))
+  ε3   ~ filldist(Normal(0, 1),length(NUM_PARTICIPANTS))
+  ε4   ~ filldist(Normal(0, 1),length(NUM_PARTICIPANTS))
   
   σ_aw ~ filldist(Exponential(1),NUM_TYPES)
   a_ws ~ filldist(Normal(0, 1),NUM_TYPES)
