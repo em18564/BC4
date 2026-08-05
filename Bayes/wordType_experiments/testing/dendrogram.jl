@@ -22,10 +22,10 @@ using Phylo
 # 9 Prt
 # 10 Verb
 meanAndStdInfo = CSV.read("../input/meanAndStdInfo.csv",DataFrame)
-outputDirs =[   "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_250",
-                "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_1000",
-                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_250",
-                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_1000"]     
+outputDirs =[   "models/Z_totallyPooled/output_FullADP_23_1931_6PCA_250",
+                "models/Z_totallyPooled/output_FullADP_23_1931_6PCA_1000",
+                "models/Z_totallyPooled/output_NoNum_23_1931_6PCA_250",
+                "models/Z_totallyPooled/output_NoNum_23_1931_6PCA_1000"]     
                 
 wordTypes_old = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
@@ -119,21 +119,21 @@ function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt)
             # wg_dist[i,j] = wordsDistGrad[j]
             wi_samples[i,j] = innerChndfs[i][!,"a_ws["*string(j)*"]"]
             wg_samples[i,j] = innerChndfs[i][!,"b_ws["*string(j)*"]"]
-            wi_samps2[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]
-            wg_samps2[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_bw"]
+            #wi_samps2[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]
+            #wg_samps2[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_bw"]
 
-            wi_samps3[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]*meanAndStdInfo.std[i]
-            wg_samps3[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_bw"]*meanAndStdInfo.std[i]
+            wi_samps3[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"]*meanAndStdInfo.std[i]
+            wg_samps3[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"]*meanAndStdInfo.std[i]
         end
     end
     # dists        = vcat(wi_dist,wg_dist)
-    # samples      = vcat(wi_samples,wg_samples)
+    samples      = vcat(wi_samples,wg_samples)
     # wordVals     = vcat(wi,wg)
     # wordVals_std = vcat(wistd,wgstd)
     # wordVals_w   = zeros(2*noChains,length(wordTypes))
-    samps_2      = vcat(wi_samps2,wg_samps2)
+    #samps_2      = vcat(wi_samps2,wg_samps2)
     samps_3      = vcat(wi_samps3,wg_samps3)
-    return samps_2,samps_3
+    return samples,wi_samps3
 end
 
 datasets = vcat([[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypes) for x in 1:6] for i in range(1,2)],
@@ -367,10 +367,10 @@ end
 
 
 # %%
-structure,structure_d = shrinkTree(datasets[4][6][2],collect(1:length(wordTypesNoNum)))
-tree = traverseTree(structure_d,wordTypesNoNum)
+structure,structure_d = shrinkTree(datasets[2][6][2],collect(1:length(wordTypes)))
+tree = traverseTree(structure_d,wordTypes)
 plt = Plots.plot(tree, treetype=:dendrogram)
-Plots.savefig(plt,"figs/wordType/dendro6NoNumUnwhitened.png")
+Plots.savefig(plt,"figs/totallyPooled/dendro6Unwhitened.png")
 
 
 
@@ -439,7 +439,7 @@ for experimentID in range(3,4)
     annotate!(0.5, 1, ftr)
     push!(plottingPlts,p1)
     finalPlot = plot((plottingPlts[i] for i in eachindex(plottingPlts))...; layout=l,size=(1200,2600))
-    Plots.savefig(finalPlot,"figs/"*experimentNames[experimentID])
+    Plots.savefig(finalPlot,"figs/totallyPooled/"*experimentNames[experimentID])
 end
 # %%
 

@@ -195,8 +195,8 @@ end
 
 
 
-function plotGraphs(outputDir,wordTypes,cols,noPCS)
-    chainLength = 1000
+function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
+    chainLength = noInChain*4
     includeSigma = true
     if includeSigma
         global rangeVals = 0.5
@@ -204,9 +204,15 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS)
         global rangeVals = 3.0
     end
     #df = CSV.read("savedData/df_2.csv", DataFrame)
-    chns = [deserialize(outputDir*"/out"*string(i)*".jls") for i in range(1,noPCS)]
-    chn_dfs = [DataFrames.DataFrame(chn) for chn in chns]
 
+    chn_dfs = []
+    ss_dfs  = []
+    for i in range(1,6)
+        push!(chn_dfs,CSV.read(outputDir*"/chndf_"*string(i),DataFrame))
+        push!(ss_dfs,CSV.read(outputDir*"/ssdf_"*string(i),DataFrame))
+    end
+
+    essRhat(chn_dfs,ss_dfs,outputDir)
 
     d = zeros(noPCS,2,length(wordTypes),chainLength)
     vd = []
@@ -236,7 +242,7 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS)
                         if i==1
                             d[pc,i,j,:] = chn_dfs[pc][:,"a_ws["*string(j)*"]"]
                         else
-                            d[pc,i,j,:] = chn_dfs[pc][:,"a_ws["*string(j)*"]"]
+                            d[pc,i,j,:] = chn_dfs[pc][:,"b_ws["*string(j)*"]"]
                         end
                     end
                     
@@ -298,14 +304,13 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS)
 
     # draw(PNG("violinCov.png", 8inch, 8inch, dpi=300), vio)
 
-
-    essRhat(chns,outputDir)
     combinePlots(outputDir,noPCS)
+
 end
 
-function essRhat(chns,outputDir)
+function essRhat(chn_dfs,ss_dfs,outputDir)
     gr(size=(1800,800), dpi=600)
-    colNames = String.(Vector(DataFrames.DataFrame(summarystats(chns[1]; append_chains=true)).parameters))
+    colNames = names(ss_dfs[1])
     as    = vcat(   findall(x -> startswith(x, "ab_w[1"), colNames),
                     findall(x -> startswith(x, "ab_p[1"), colNames),
                     findall(x -> startswith(x, "ab_e[1"), colNames),
@@ -387,19 +392,19 @@ function essRhat(chns,outputDir)
             end
         end
     end
-    for i in range(1,length(chns))
+    for i in range(1,length(ss_dfs))
 
-        myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][as],DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"ess_bulk"][as],xlabel = "R-hat",ylabel = "ess (as)",title="PC " * string(i),group=alabs,ylims=(0,1200),xlims=(.99,1.25))
+        myplot = Plots.scatter(ss_dfs[i][:,"rhat"][as],ss_dfs[i][:,"ess_bulk"][as],xlabel = "R-hat",ylabel = "ess (as)",title="PC " * string(i),group=alabs,ylims=(0,1200),xlims=(.99,1.25))
         push!(plts,myplot)
-        myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][bs],DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"ess_bulk"][bs],xlabel = "R-hat",ylabel = "ess (bs)",group=blabs,ylims=(0,1200),xlims=(.99,1.25))
+        myplot = Plots.scatter(ss_dfs[i][:,"rhat"][bs],ss_dfs[i][:,"ess_bulk"][bs],xlabel = "R-hat",ylabel = "ess (bs)",group=blabs,ylims=(0,1200),xlims=(.99,1.25))
         push!(plts,myplot)
-        myplot = Plots.scatter(DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"rhat"][σs],DataFrames.DataFrame(summarystats(chns[i]; append_chains=true))[:,"ess_bulk"][σs],xlabel = "R-hat",ylabel = "ess (σs)",group=σlabs,ylims=(0,1200),xlims=(.99,1.25))
+        myplot = Plots.scatter(ss_dfs[i][:,"rhat"][σs],ss_dfs[i][:,"ess_bulk"][σs],xlabel = "R-hat",ylabel = "ess (σs)",group=σlabs,ylims=(0,1200),xlims=(.99,1.25))
         push!(plts,myplot)
     end
     r = reshape(plts,3,:)
     reshapedPlots = reduce(vcat,[r[i,:] for i in range(1,length(r[:,1]))])
     essRhat = Plots.plot(   (reshapedPlots[i] for i in range(1,length(reshapedPlots)))...;
-                             layout=grid(3,length(chns)),left_margin=15mm,bottom_margin=15mm
+                             layout=grid(3,length(ss_dfs)),left_margin=15mm,bottom_margin=15mm
                             ,plot_title="EssRhat of 8 participants with Noun Verb Adj Adv & Func")
     Plots.savefig(essRhat,outputDir*"/essRhat.png")
 end

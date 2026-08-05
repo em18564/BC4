@@ -163,9 +163,9 @@ end
 
 
 
-function plotExistingModelGraphs()
+function plotExistingModelGraphs(args = map(x->string(x), ARGS))
     
-    df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS = createVariables()
+    df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS,noInChain = createVariables(args)
     println(output_loc)
     if(pc == 1)
     #wait for all other PCs to finish before greating plots
@@ -173,7 +173,7 @@ function plotExistingModelGraphs()
         while(is_waiting)
             if(reduce(&,[isfile(output_loc*"/out"*string(i)*".jls") for i in range(1,noPCS)]))
                 println("plotting graphs")
-                plotGraphs(output_loc,wordTypes,cols,noPCS) 
+                plotGraphs(output_loc,wordTypes,cols,noPCS,noInChain) 
                 global is_waiting=false
             else
                 println("Waiting for other PCs to complete")

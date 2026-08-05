@@ -49,7 +49,7 @@ function extractFiles(outputDir)
     ssdfs   = [ss_df1,  ss_df2,  ss_df3,  ss_df4,  ss_df5,  ss_df6 ]
     for i in eachindex(chndfs)
         CSV.write(outputDir*"/chndf_"*string(i),chndfs[i])
-        CSV.write(outputDir*"/ssdf_"*string(i),chndfs[i])
+        CSV.write(outputDir*"/ssdf_"*string(i),ssdfs[i])
     end
 end
 
