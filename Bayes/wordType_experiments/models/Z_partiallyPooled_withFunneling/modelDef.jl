@@ -3,16 +3,16 @@
 
   
   σ_aw ~ filldist(Exponential(1),NUM_TYPES)
-  a_ws ~ Normal.(0, σ_aw)
+  a_ws ~ arraydist(Normal.(0, σ_aw))
   σ_bw ~ filldist(Exponential(1),NUM_TYPES)
-  b_ws ~ Normal.(0, σ_bw)
+  b_ws ~ arraydist(Normal.(0, σ_bw))
   a_w = a_ws[tags.+1]
   b_w = b_ws[tags.+1]
 
   σ_ap ~ filldist(Exponential(1),NUM_PARTICIPANTS)
-  a_ps ~ Normal.(0, σ_ap)
+  a_ps ~ arraydist(Normal.(0, σ_ap))
   σ_bp ~ filldist(Exponential(1),NUM_PARTICIPANTS)
-  b_ps ~ Normal.(0, σ_bp)
+  b_ps ~ arraydist(Normal.(0, σ_bp))
   a_p = a_ps[participant.+1]
   b_p = b_ps[participant.+1]
 
