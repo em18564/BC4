@@ -310,7 +310,7 @@ end
 
 function essRhat(chn_dfs,ss_dfs,outputDir)
     gr(size=(1800,800), dpi=600)
-    colNames = names(ss_dfs[1])
+    colNames = ss_dfs[1].parameters
     as    = vcat(   findall(x -> startswith(x, "ab_w[1"), colNames),
                     findall(x -> startswith(x, "ab_p[1"), colNames),
                     findall(x -> startswith(x, "ab_e[1"), colNames),
