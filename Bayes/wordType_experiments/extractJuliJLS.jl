@@ -21,10 +21,10 @@ include("plottingFuncs.jl")
 # 8 Pron
 # 9 Prt
 # 10 Verb
-outputDirs =[   "models/Z_totallyPooled/output_FullADP_23_1931_6PCA_250",
-                "models/Z_totallyPooled/output_FullADP_23_1931_6PCA_1000",
-                "models/Z_totallyPooled/output_NoNum_23_1931_6PCA_250",
-                "models/Z_totallyPooled/output_NoNum_23_1931_6PCA_1000"]          
+outputDirs =[   "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_250",
+                "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_1000",
+                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_250",
+                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_1000"]          
 
 function extractFiles(outputDir)
     chn1 = deserialize(outputDir*"/out1.jls")
