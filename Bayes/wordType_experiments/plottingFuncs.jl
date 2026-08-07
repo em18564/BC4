@@ -35,13 +35,12 @@ end
 
 
 
-function violin_grouped(data,wordTypes,cols)
-    days = data[:,:PCA]
+function violin_grouped(data,columnTypes,columLabel,xLabel,x1,cols)
     ys = []
-    for type in wordTypes
-        append!(ys,[subset(data, :WordType => ByRow((==(type))))[:,:data]])
+    for type in unique(df.AB)
+        append!(ys,[subset(data, "AB" => ByRow((==(type))))[:,:data]])
     end
-    days = data[:,:PCA]
+    days = data.PCA
     # y_adj = subset(data, :WordType => ByRow((==("Adjective"))))[:,:data]
     # y_nou = subset(data, :WordType => ByRow((==("Noun"))))[:,:data]
     # y_ver = subset(data, :WordType => ByRow((==("Verb"))))[:,:data]
@@ -49,9 +48,9 @@ function violin_grouped(data,wordTypes,cols)
     # y_fun = subset(data, :WordType => ByRow((==("Function"))))[:,:data]
 
     colors = cols
-    names = wordTypes
+    names = ["Intercept", "Posterior"]
     #ys = (y_adj, y_nou, y_ver,y_adv,y_fun)
-    if data[1,:PCA] == "PC1"
+    if data[1,xLabel] ==  x1
         layout = Layout(
         yaxis=attr(title="Intercept Posterior"),
         violinmode="group"
@@ -240,9 +239,9 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
                     
                     for pc in range(1,noPCS)
                         if i==1
-                            d[pc,i,j,:] = chn_dfs[pc][:,"a_ws["*string(j)*"]"]
+                            d[pc,i,j,:] = chn_dfs[pc][:,"a_ws["*string(j)*"]"].*chn_dfs[pc][:,"σ_aw"]
                         else
-                            d[pc,i,j,:] = chn_dfs[pc][:,"b_ws["*string(j)*"]"]
+                            d[pc,i,j,:] = chn_dfs[pc][:,"b_ws["*string(j)*"]"].*chn_dfs[pc][:,"σ_bw"]
                         end
                     end
                     
@@ -264,8 +263,7 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
     end
                 
  
-            
-
+    
     wt = fill(wordTypes[1],Int(length(vd)/length(wordTypes)))
     for i in range(2,length(wordTypes))
         wt = vcat(wt,fill(wordTypes[i],Int(length(vd)/length(wordTypes))))
@@ -274,37 +272,52 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
                     PCA      = repeat(reduce(vcat,([fill("PC"*string(i),chainLength) for i in range(1,noPCS)])),Int(length(vd)/(noPCS*chainLength))),
                     AB       = repeat(vcat(fill("Intercept",(noPCS*chainLength)),fill("Gradient",(noPCS*chainLength))),length(wordTypes)),
                     WordType = wt)
-    df.PCWT = string.(df.WordType, " ",  df.PCA)
-    dfI = subset(df, :AB => ByRow((==("Intercept"))))
-    # df = DataFrame(data         = vcat(difd1,difd2,difd3,difd4)
-    #               ,group        = vcat(fill("Δa_w",length(difd1)),fill("Δb_w",length(difd2)),fill("Δa_w ",length(difd3)),fill("Δb_w ",length(difd4)))
-    #               ,ERP   = vcat(fill("EPNP",length(difd1)+length(difd2)),fill("PNP",length(difd3)+length(difd4)),))
+    
+
+    groupByWordCats = true      
+
+    # OPTION 1
+    if groupByWordCats
+        df.AB_PC = string.(df.AB, " ",  df.PCA)
+        pclabs = unique(df.AB_PC)
+        dfWTs = [subset(df, :WordType => ByRow((==(wt)))) for wt in wordTypes]
+        cols = reduce(vcat,([[col col*0.7] for col in palette(:default)[1:11]]))
+        
+    else
+        # OPTION 2
+        df.PCWT = string.(df.WordType, " ",  df.PCA)
+
+        dfI = subset(df, :AB => ByRow((==("Intercept"))))
+        # df = DataFrame(data         = vcat(difd1,difd2,difd3,difd4)
+        #               ,group        = vcat(fill("Δa_w",length(difd1)),fill("Δb_w",length(difd2)),fill("Δa_w ",length(difd3)),fill("Δb_w ",length(difd4)))
+        #               ,ERP   = vcat(fill("EPNP",length(difd1)+length(difd2)),fill("PNP",length(difd3)+length(difd4)),))
 
 
 
-    dfG = subset(df, :AB => ByRow((==("Gradient"))))
-    # df = DataFrame(data         = vcat(difd1,difd2,difd3,difd4)
-    #               ,group        = vcat(fill("Δa_w",length(difd1)),fill("Δb_w",length(difd2)),fill("Δa_w ",length(difd3)),fill("Δb_w ",length(difd4)))
-    #               ,ERP   = vcat(fill("EPNP",length(difd1)+length(difd2)),fill("PNP",length(difd3)+length(difd4)),))
+        dfG = subset(df, :AB => ByRow((==("Gradient"))))
+        # df = DataFrame(data         = vcat(difd1,difd2,difd3,difd4)
+        #               ,group        = vcat(fill("Δa_w",length(difd1)),fill("Δb_w",length(difd2)),fill("Δa_w ",length(difd3)),fill("Δb_w ",length(difd4)))
+        #               ,ERP   = vcat(fill("EPNP",length(difd1)+length(difd2)),fill("PNP",length(difd3)+length(difd4)),))
 
 
-    dfs  = [subset(dfI, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
-    dfsg = [subset(dfG, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
-    PlotlyJS.savefig(subplots(dfs[1],wordTypes,cols),outputDir*"/i1.png",width=415,height=850)
-    for i in 2:noPCS
-        PlotlyJS.savefig(subplots(dfs[i],wordTypes,cols),outputDir*"/i"*string(i)*".png",width=365,height=850)
+        dfs  = [subset(dfI, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
+        dfsg = [subset(dfG, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
+        PlotlyJS.savefig(subplots(dfs[1],wordTypes,cols),outputDir*"/i1.png",width=415,height=850)
+        for i in 2:noPCS
+            PlotlyJS.savefig(subplots(dfs[i],wordTypes,cols),outputDir*"/i"*string(i)*".png",width=365,height=850)
+        end
+
+        PlotlyJS.savefig(subplots(dfsg[1],wordTypes,cols),outputDir*"/g1.png",width=415,height=850)
+        for i in 2:noPCS
+            PlotlyJS.savefig(subplots(dfsg[i],wordTypes,cols),outputDir*"/g"*string(i)*".png",width=365,height=850)
+        end
+        # vio = Gadfly.plot(  Theme(major_label_font_size=17pt,key_title_font_size=16pt,key_label_font_size=14pt,minor_label_font_size=14pt,background_color = "ghostwhite",default_color="grey",boxplot_spacing=70px),Guide.ylabel("Posterior Difference (with 97% HCI)"),Guide.title("Posterior Difference with full Covariance"),Guide.xlabel("Posterior"),
+        #                     layer(df1, x=:WordType,y=:data,color=:WordType,Geom.violin));
+
+        # draw(PNG("violinCov.png", 8inch, 8inch, dpi=300), vio)
+
+        combinePlots(outputDir,noPCS)
     end
-
-    PlotlyJS.savefig(subplots(dfsg[1],wordTypes,cols),outputDir*"/g1.png",width=415,height=850)
-    for i in 2:noPCS
-        PlotlyJS.savefig(subplots(dfsg[i],wordTypes,cols),outputDir*"/g"*string(i)*".png",width=365,height=850)
-    end
-    # vio = Gadfly.plot(  Theme(major_label_font_size=17pt,key_title_font_size=16pt,key_label_font_size=14pt,minor_label_font_size=14pt,background_color = "ghostwhite",default_color="grey",boxplot_spacing=70px),Guide.ylabel("Posterior Difference (with 97% HCI)"),Guide.title("Posterior Difference with full Covariance"),Guide.xlabel("Posterior"),
-    #                     layer(df1, x=:WordType,y=:data,color=:WordType,Geom.violin));
-
-    # draw(PNG("violinCov.png", 8inch, 8inch, dpi=300), vio)
-
-    combinePlots(outputDir,noPCS)
 
 end
 
