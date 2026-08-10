@@ -24,7 +24,8 @@ include("plottingFuncs.jl")
 outputDirs =[   "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_250",
                 "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_1000",
                 "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_250",
-                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_1000"]          
+                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_1000",
+                "models/testingDifferentPCS/output_FullADP_23_1931_NOPCA"]          
 
 function extractFiles(outputDir)
     chn1 = deserialize(outputDir*"/out1.jls")
