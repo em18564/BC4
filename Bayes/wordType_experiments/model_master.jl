@@ -102,6 +102,7 @@ function createVariables(args = map(x->string(x), ARGS))
     if (!isdir(output_loc))
         mkdir(output_loc)
     end
+
     return df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS,noInChain
 end
 
