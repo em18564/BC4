@@ -21,7 +21,7 @@ include("plottingFuncs.jl")
 # 8 Pron
 # 9 Prt
 # 10 Verb
-outputDirs =[   "models/sampledSigmas/output_FullADP_23_1931_6PCA_250",
+outputDirs =[
                 "models/sampledSigmas/output_NoNum_23_1931_6PCA_250", 
                 "models/wordLen/output_FullADP_23_1931_6PCA_250",
                 "models/wordLen/output_NoNum_23_1931_6PCA_250"
