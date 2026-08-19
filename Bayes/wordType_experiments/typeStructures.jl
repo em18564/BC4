@@ -36,6 +36,30 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         df_modified = vcat(adj,noun,verb,adv,f)
         wordTypes = ["Adjective","Noun","Verb","Adverb","Function"]
         cols = [palette(:tab10)[i] for i in range(1,5)]
+    elseif(TYPE_STRUCTURE == "FullCFAdp")
+        NUM_TYPES = 6
+        adj = subset(df_modified, :fullTag => ByRow((==(0))))
+        adj.fullTag .= 0
+        noun = subset(df_modified, :fullTag => ByRow((==(5))))
+        noun.fullTag .= 1
+        verb = subset(df_modified, :fullTag => ByRow((==(9))))
+        verb.fullTag .= 2
+        adv = subset(df_modified, :fullTag => ByRow((==(2))))
+        adv.fullTag .= 3
+        f = vcat( subset(df_modified, :fullTag => ByRow((==(6)))),
+                subset(df_modified, :fullTag => ByRow((==(4)))),
+                subset(df_modified, :fullTag => ByRow((==(7)))),
+                subset(df_modified, :fullTag => ByRow((==(1)))),
+                subset(df_modified, :fullTag => ByRow((==(12)))),
+                subset(df_modified, :fullTag => ByRow((==(13)))),
+                subset(df_modified, :fullTag => ByRow((==(8)))),
+                subset(df_modified, :fullTag => ByRow((==(3)))))
+        f.fullTag .= 4
+        lexAdp = subset(df_modified, :fullTag => ByRow((==(11))))
+        lexAdp.fullTag .= 5
+        df_modified = vcat(adj,noun,verb,adv,f,lexAdp)
+        wordTypes = ["Adjective","Noun","Verb","Adverb","Function", "Lexical Adposition"]
+        cols = [palette(:tab10)[i] for i in range(1,6)]
     elseif(TYPE_STRUCTURE == "CF")
         c = vcat( subset(df_modified, :fullTag => ByRow((==(0)))),
           subset(df_modified, :fullTag => ByRow((==(5)))),
@@ -56,10 +80,53 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         NUM_TYPES = 2
         wordTypes = ["Content","Function"]
         cols = ["#3D9970", "#7D0DC3"]
+    elseif(TYPE_STRUCTURE == "CFAdp")
+        c = vcat( subset(df_modified, :fullTag => ByRow((==(0)))),
+          subset(df_modified, :fullTag => ByRow((==(5)))),
+          subset(df_modified, :fullTag => ByRow((==(9)))),
+          subset(df_modified, :fullTag => ByRow((==(11)))),
+          subset(df_modified, :fullTag => ByRow((==(2)))))
+        f = vcat( subset(df_modified, :fullTag => ByRow((==(6)))),
+                subset(df_modified, :fullTag => ByRow((==(4)))),
+                subset(df_modified, :fullTag => ByRow((==(7)))),
+                subset(df_modified, :fullTag => ByRow((==(1)))),
+
+                subset(df_modified, :fullTag => ByRow((==(12)))),
+                subset(df_modified, :fullTag => ByRow((==(13)))),
+                subset(df_modified, :fullTag => ByRow((==(8)))),
+                subset(df_modified, :fullTag => ByRow((==(3)))))
+        c.fullTag .= 0
+        f.fullTag .= 1
+        df_modified = vcat(c,f)
+        NUM_TYPES = 2
+        wordTypes = ["Content","Function"]
+        cols = ["#3D9970", "#7D0DC3"]
     elseif(TYPE_STRUCTURE == "Full")
+        NUM_TYPES = 10
+        wordTypes = ["Adjective","Adverb",
+                        "Conjunction","Determiner","Noun","Numeral", 
+                        "Pronoun","Particle","Verb","Adposition"]
+        df_modified.fullTag.= max.(df_modified.fullTag.-1,0)
+        words = vcat(   subset(df_modified, :fullTag => ByRow((==(0)))),
+                        subset(df_modified, :fullTag => ByRow((==(1)))),
+                        subset(df_modified, :fullTag => ByRow((==(2)))),
+                        subset(df_modified, :fullTag => ByRow((==(3)))),
+                        subset(df_modified, :fullTag => ByRow((==(4)))),
+                        subset(df_modified, :fullTag => ByRow((==(5)))),
+                        subset(df_modified, :fullTag => ByRow((==(6)))),
+                        subset(df_modified, :fullTag => ByRow((==(7)))),
+                        subset(df_modified, :fullTag => ByRow((==(8)))))
 
-        throw("need to reimpliment")
+        adp1  = subset(df_modified, :fullTag => ByRow((==(10))))
+        adp2  = subset(df_modified, :fullTag => ByRow((==(11))))
+        adp3  = subset(df_modified, :fullTag => ByRow((==(12))))
 
+        adp1.fullTag.=9
+        adp2.fullTag.=9
+        adp3.fullTag.=9
+
+        df_modified = vcat(words,vcat(adp1,adp2,adp3))
+        cols = [palette(:default)[i] for i in range(1,NUM_TYPES)]
 
     elseif(TYPE_STRUCTURE == "FullADP")
         NUM_TYPES = 12
@@ -84,6 +151,33 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         adp1.fullTag.=9
         adp2.fullTag.=10
         adp3.fullTag.=11
+
+        df_modified = vcat(words,adp1,adp2,adp3)
+        cols = [palette(:default)[i] for i in range(1,NUM_TYPES)]
+
+    elseif(TYPE_STRUCTURE == "FullTwoADP")
+        NUM_TYPES = 11
+        wordTypes = ["Adjective","Adverb",
+                        "Conjunction","Determiner","Noun","Numeral", 
+                        "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (other)"]
+        df_modified.fullTag.= max.(df_modified.fullTag.-1,0)
+        words = vcat(   subset(df_modified, :fullTag => ByRow((==(0)))),
+                        subset(df_modified, :fullTag => ByRow((==(1)))),
+                        subset(df_modified, :fullTag => ByRow((==(2)))),
+                        subset(df_modified, :fullTag => ByRow((==(3)))),
+                        subset(df_modified, :fullTag => ByRow((==(4)))),
+                        subset(df_modified, :fullTag => ByRow((==(5)))),
+                        subset(df_modified, :fullTag => ByRow((==(6)))),
+                        subset(df_modified, :fullTag => ByRow((==(7)))),
+                        subset(df_modified, :fullTag => ByRow((==(8)))))
+
+        adp1  = subset(df_modified, :fullTag => ByRow((==(10))))
+        adp2  = subset(df_modified, :fullTag => ByRow((==(11))))
+        adp3  = subset(df_modified, :fullTag => ByRow((==(12))))
+
+        adp1.fullTag.=9
+        adp2.fullTag.=10
+        adp3.fullTag.=10
 
         df_modified = vcat(words,adp1,adp2,adp3)
         cols = [palette(:default)[i] for i in range(1,NUM_TYPES)]

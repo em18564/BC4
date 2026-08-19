@@ -12,72 +12,72 @@ include("../model_master.jl")
 include("../plottingFuncs.jl")
 # %%
 # %%
-outputDirs=["1_baseModel", "2_baseModel_lowerCauchy", "3_baseModel_noLKJintercept",
-            "4_baseModel_noLKJ","6_baseModel_renormalised_0.5","6_baseModel_renormalised_1",
-            "7_baseModel_0.25","8_tightCauchy_e_0.5","8_tightCauchy_e_0.25","8_tightCauchy_e_1","11_LKJ_Reintroduced","testingDifferentPCS"]
+# outputDirs=["1_baseModel", "2_baseModel_lowerCauchy", "3_baseModel_noLKJintercept",
+#             "4_baseModel_noLKJ","6_baseModel_renormalised_0.5","6_baseModel_renormalised_1",
+#             "7_baseModel_0.25","8_tightCauchy_e_0.5","8_tightCauchy_e_0.25","8_tightCauchy_e_1","11_LKJ_Reintroduced","testingDifferentPCS"]
 
 
-# %%
-for outputDir in outputDirs
-    fullOD = "models/"*outputDir
-    include("../"*fullOD*"/modelDef.jl")
-end
-# %%
-funcs = [model_1,model_2,model_3,model_4,model_6_05,model_6_1,model_7,model_8_05,model_8_025,model_8_1]
-# %%
+# # %%
+# for outputDir in outputDirs
+#     fullOD = "models/"*outputDir
+#     include("../"*fullOD*"/modelDef.jl")
+# end
+# # %%
+# funcs = [model_1,model_2,model_3,model_4,model_6_05,model_6_1,model_7,model_8_05,model_8_025,model_8_1]
+# # %%
 
-function getPSISScores(modDir,model::Function)
-    outputDir = "models/"*modDir
-    params    = "/output_FullCF_23_1931"
-    chn1 = deserialize(outputDir*params*"/out1.jls")
-    chn2 = deserialize(outputDir*params*"/out2.jls")
-    chn3 = deserialize(outputDir*params*"/out3.jls")
-    chn4 = deserialize(outputDir*params*"/out4.jls")
-    chns = [chn1,chn2,chn3,chn4]
-    scores = []
-    for i in range(1,4)
-        df_modified, dfPCA, pc, NUM_PARTICIPANTS, NUM_WORDS,TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean = createVariables([string(i),"4","23","1931","FullCF","0","0","0.5","0.5","1","1"])
-        mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc],expMean,cauchyMean,NUM_TYPES,NUM_PARTICIPANTS)
-        push!(scores,psis_loo(mod, chns[i]))
-    end
-    return scores
-end
+# function getPSISScores(modDir,model::Function)
+#     outputDir = "models/"*modDir
+#     params    = "/output_FullCF_23_1931"
+#     chn1 = deserialize(outputDir*params*"/out1.jls")
+#     chn2 = deserialize(outputDir*params*"/out2.jls")
+#     chn3 = deserialize(outputDir*params*"/out3.jls")
+#     chn4 = deserialize(outputDir*params*"/out4.jls")
+#     chns = [chn1,chn2,chn3,chn4]
+#     scores = []
+#     for i in range(1,4)
+#         df_modified, dfPCA, pc, NUM_PARTICIPANTS, NUM_WORDS,TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean = createVariables([string(i),"4","23","1931","FullCF","0","0","0.5","0.5","1","1"])
+#         mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc],expMean,cauchyMean,NUM_TYPES,NUM_PARTICIPANTS)
+#         push!(scores,psis_loo(mod, chns[i]))
+#     end
+#     return scores
+# end
 
 
-# %%
-fullScores = []
-for i in eachindex(outputDirs)
-    push!(fullScores,getPSISScores(outputDirs[i],funcs[i]))
-end
-
-# %%
-
-fullScores = deserialize("psis.jls")
+# # %%
+# fullScores = []
+# for i in eachindex(outputDirs)
+#     push!(fullScores,getPSISScores(outputDirs[i],funcs[i]))
+# end
 
 # %%
-gr(size=(1050,500), dpi=300)
+
+#fullScores = deserialize("psis.jls")
+
+# %%
+# gr(size=(1050,500), dpi=300)
 
 
-data = [[fullScores[i][j].estimates[1,1] for i in 1:length(fullScores)].±[fullScores[i][j].estimates[1,2] for i in 1:length(fullScores)] for j in 1:4]
+# data = [[fullScores[i][j].estimates[1,1] for i in 1:length(fullScores)].±[fullScores[i][j].estimates[1,2] for i in 1:length(fullScores)] for j in 1:4]
 
-l = @layout [[grid(2,2)] b{0.27w}]
+# l = @layout [[grid(2,2)] b{0.27w}]
 
-ps = [Plots.plot(
-    1:10,
-    data[j],
-    legend=false,
-    marker=:o,
-    ylabel="cv_elpd score",
-    xlabel="model number",
-    bottom_margin=4mm,
-    left_margin=5mm) for j in 1:4]
+# ps = [Plots.plot(
+#     1:10,
+#     data[j],
+#     legend=false,
+#     marker=:o,
+#     ylabel="cv_elpd score",
+#     xlabel="model number",
+#     bottom_margin=4mm,
+#     left_margin=5mm) for j in 1:4]
 
-p2 = Plots.plot(axis=([], false), margin=0Plots.cm)
+# p2 = Plots.plot(axis=([], false), margin=0Plots.cm)
 
-ftr = text(join([string(o)*": "*outputDirs[o]*"\n" for o in eachindex(outputDirs)]), :black, :left, 10)
-annotate!(0, 0.8, ftr)
-Plots.plot(ps[1],ps[2],ps[3],ps[4],p2,layout=l,plot_title="CV_ELPD scores of 10 models")
-Plots.savefig("figs/modelComparison/CV_ELPD.png")
+# ftr = text(join([string(o)*": "*outputDirs[o]*"\n" for o in eachindex(outputDirs)]), :black, :left, 10)
+# annotate!(0, 0.8, ftr)
+# Plots.plot(ps[1],ps[2],ps[3],ps[4],p2,layout=l,plot_title="CV_ELPD scores of 10 models")
+# Plots.savefig("figs/modelComparison/CV_ELPD.png")
 # %%
 
 
@@ -85,14 +85,12 @@ Plots.savefig("figs/modelComparison/CV_ELPD.png")
 
 
 
-outputDirs2=["output_CF_23_1931", "output_DendroCustom_23_1931", "output_Full_23_1931",
-            "output_FullCF_23_1931"]
+outputDirs2=["testingDifferentPCS"]
 
-category=["CF", "DendroCustom", "Full",
-            "FullCF"]
+category=["CF", "FullCF", "NoNum","FullADP"]
 
-include("../models/6_baseModel_renormalised_1/modelDef.jl")
-function getPSISScores(modDir,model::Function, type,category,ANALYSE_ESS_RHAT)
+include("../models/testingDifferentPCS/modelDef.jl")
+function getPSISScores(modDir,model::Function, type,category,ANALYSE_ESS_RHAT,IS_PLOTTING)
     outputDir = "models/"*modDir
     params    = "/"*type
     chn1 = deserialize(outputDir*params*"/out1.jls")
@@ -104,7 +102,7 @@ function getPSISScores(modDir,model::Function, type,category,ANALYSE_ESS_RHAT)
     chns = [chn1,chn2,chn3,chn4,chn5,chn6]
     scores = []
     for i in range(1,6)
-        df_modified, dfPCA, pc, NUM_PARTICIPANTS, NUM_WORDS,TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean = createVariables([string(i),"4","23","1931",category,"0",ANALYSE_ESS_RHAT,"1","1","1","1"])
+        df_modified, dfPCA, pc, NUM_PARTICIPANTS, NUM_WORDS,TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean = createVariables([string(i),"4","23","1931",category,IS_PLOTTING,ANALYSE_ESS_RHAT,"1","1","1","1"])
         mod=model(df_modified.Participant,df_modified.Word,df_modified.Surprisal,df_modified.fullTag,dfPCA[:,pc],expMean,cauchyMean,NUM_TYPES,NUM_PARTICIPANTS)
         push!(scores,psis_loo(mod, chns[i]))
     end
@@ -114,19 +112,23 @@ end
 # %%
 
 fullScores = []
-push!(fullScores,getPSISScores("11_LKJ_Reintroduced",model_11,"output_FullADP_23_1931_6PCA","FullADP","2"))
 # %%
-push!(fullScores,getPSISScores("testingDifferentPCS",model_12,"output_FullADP_23_1931_6PCA","FullADP","2"))
-push!(fullScores,getPSISScores("11_LKJ_Reintroduced",model_11,"output_FullADP_23_1931_NOPCA","FullADP","11"))
-push!(fullScores,getPSISScores("testingDifferentPCS",model_12,"output_FullADP_23_1931_NOPCA","FullADP","11"))
-
+push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_CF_23_1931_6PCA_1000","CF","2","11"))
 # %%
-
-serialize("psis3.jls",fullScores)
-
+push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_FullCF_23_1931_6PCA_1000","FullCF","2","11"))
+# %%
+push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_NoNum_23_1931_6PCA_1000","NoNum","2","11"))
+# %%
+push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_FullADP_23_1931_6PCA_1000","FullADP","2","11"))
 
 # %%
 
+serialize("psis5.jls",fullScores)
+
+
+# %%
+fsold = deserialize("psis4.jls")
+# %%
 gr(size=(1200,500), dpi=300)
 
 
@@ -145,10 +147,10 @@ ps = [Plots.plot(
     left_margin=5mm) for j in 1:6]
 
 p2 = Plots.plot(axis=([], false), margin=0Plots.cm)
-outputDirs3 = ["LKJ 6PCA","No LKJ 6PCA","LKJ RAW","No LKJ RAW"]
+outputDirs3 = ["CF","FullCF","FullADP","NoNum"]
 ftr = text(join([string(o)*": "*outputDirs3[o]*"\n" for o in eachindex(outputDirs3)]), :black, :left, 10)
 annotate!(0, 0.8, ftr)
-Plots.plot(ps[1],ps[2],ps[3],ps[4],ps[5],ps[6],p2,layout=l,plot_title="CV_ELPD scores of 10 models")
+Plots.plot(ps[1],ps[2],ps[3],ps[4],ps[5],ps[6],p2,layout=l,plot_title="CV_ELPD scores of each PC")
 # %% 
 
-Plots.savefig("figs/modelComparison/CV_ELPD3.png")
+Plots.savefig("figs/modelComparison/CV_ELPD5.png")
