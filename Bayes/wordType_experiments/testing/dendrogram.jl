@@ -369,8 +369,33 @@ end
 # %%
 structure,structure_d = shrinkTree(datasets[4][6][2],collect(1:length(wordTypesNoNum)))
 tree = traverseTree(structure_d,wordTypesNoNum)
-plt = Plots.plot(tree, treetype=:dendrogram)
-Plots.savefig(plt,"figs/NoNum/dendro6UnwhitenedNoNum.png")
+# %%
+D = Dict()
+cols = palette(:default)[1:11]*0.85
+wordTypes = ["Adjective","Adverb",
+                "Conjunction","Determiner","Noun",
+                "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
+for wt in eachindex(wordTypes)
+    D[wordTypes[wt]] = cols[wt]
+end
+l = @layout [
+    a{0.8w} b{0.2w}
+]
+plt = Plots.plot(tree, treetype=:dendrogram,tipfont=(0,:white))
+plot!(size=(1200,1400))
+p2 = Plots.plot(axis=([], false), margin=0Plots.cm)
+leaves = getleaves(tree)
+initialOffset = 0.027
+scaleOffset = 0.09455
+for leaf in eachindex(leaves)
+    annotate!(-0.5, initialOffset+scaleOffset*(leaf-1), (leaves[leaf],D[leaves[leaf]], :left, 28))
+end
+
+
+together = Plots.plot(plt, p2; layout = l)
+together
+# %%
+Plots.savefig(together,"figs/NoNum/dendro6UnwhitenedNoNumCol.png")
 
 
 

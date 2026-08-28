@@ -32,12 +32,57 @@ function concludeAndPlot(m,output_loc,pc,wordTypes,cols,noPCS)
 end
 
 
+function violin_grouped(data,wordTypes,cols) # old version for doing by PC
+    days = data[:,:PCA]
+    ys = []
+    for type in wordTypes
+        append!(ys,[subset(data, :WordType => ByRow((==(type))))[:,:data]])
+    end
+    days = data[:,:PCA]
+    # y_adj = subset(data, :WordType => ByRow((==("Adjective"))))[:,:data]
+    # y_nou = subset(data, :WordType => ByRow((==("Noun"))))[:,:data]
+    # y_ver = subset(data, :WordType => ByRow((==("Verb"))))[:,:data]
+    # y_adv = subset(data, :WordType => ByRow((==("Adverb"))))[:,:data]
+    # y_fun = subset(data, :WordType => ByRow((==("Function"))))[:,:data]
 
+    colors = cols
+    names = wordTypes
+    #ys = (y_adj, y_nou, y_ver,y_adv,y_fun)
+    if data[1,:PCA] == "PC1"
+        layout = Layout(
+        yaxis=attr(title="Intercept Posterior"),
+        violinmode="group"
+    )
+        
+    else
+        layout = Layout(
+        violinmode="group"
+    )
+    end
+
+
+    if data[1,:PCA] == "PC6"
+        data = [
+        PlotlyJS.violin(
+            y=y, name=name, x=days, jitter=0, points="all",
+            marker=attr(symbol="line-ew", color=color, meanline_visible=true,width=0.1,showlegend=false)
+        ) for (y, name, color) in zip(ys, names, colors)
+    ]   
+    else
+data = [
+        PlotlyJS.violin(
+            y=y, name=name, x=days, jitter=0, points="all",
+            marker=attr(symbol="line-ew", color=color, meanline_visible=true,width=0.1,showlegend=false)
+        ) for (y, name, color) in zip(ys, names, colors)
+    ]
+    end
+    PlotlyJS.plot(data, layout)
+end
 
 
 function violin_grouped(data,columnTypes,columLabel,xLabel,x1,cols)
     ys = []
-    for type in unique(df.AB)
+    for type in unique(data.AB)
         append!(ys,[subset(data, "AB" => ByRow((==(type))))[:,:data]])
     end
     days = data.PCA
@@ -50,21 +95,33 @@ function violin_grouped(data,columnTypes,columLabel,xLabel,x1,cols)
     colors = cols
     names = ["Intercept", "Posterior"]
     #ys = (y_adj, y_nou, y_ver,y_adv,y_fun)
-    if data[1,xLabel] ==  x1
-        layout = Layout(
-        yaxis=attr(title="Intercept Posterior"),
-        violinmode="group"
+    # if data[1,xLabel] ==  x1
+        
+    # else
+    #     layout = Layout(
+    #     yaxis=attr(title="Intercept Posterior",font_size=30),
+    #     violinmode="group",
+    #     title=attr(text=data[1,xLabel], font_size=30,y=0.95,
+    #     x=0.5,
+    #     xanchor= "center",
+    #     yanchor= "top")
+    # )
+    # end
+    layout = Layout(
+        yaxis=attr(title="Intercept Posterior",range=(-rangeVals, rangeVals), constrain="domain",zeroline=true,zerolinewidth=1,zerolinecolor = "#000000"),
+        font=attr(size=25),
+        violinmode="group",
+        title=attr(text=data[1,xLabel], font_size=30,y=0.975,
+        x=0.5,
+        xanchor= "center",
+        yanchor= "top"),
+        violingap = 0.05,
+        violingroupgap = 0.1
     )
-    else
-        layout = Layout(
-        violinmode="group"
-    )
-    end
-    
     data = [
         PlotlyJS.violin(
             y=y, name=name, x=days, jitter=0, points="all",
-            marker=attr(symbol="line-ew", color=color, meanline_visible=true)
+            marker=attr(symbol="line-ew", color=color, meanline_visible=true,width=15)
         ) for (y, name, color) in zip(ys, names, colors)
     ]
     
@@ -81,7 +138,8 @@ function getBox(i,mdifs,ldifs,hdifs,wordTypes,cols)
         lowerfence = [ldifs[i,j] for j in range(1,length(wordTypes))],
         upperfence = [hdifs[i,j] for j in range(1,length(wordTypes))],
         marker_color=cols[i],
-        x = wordTypes
+        x = wordTypes,
+        showlegend=false
     )
 end
 
@@ -92,13 +150,16 @@ function HDIs(data,wordTypes,cols)
     udifs = zeros(length(wordTypes),length(wordTypes))
     if data[1,:PCA] == "PC1"
         layout = Layout(yaxis=attr(title="97% HDI Difference",range=[-rangeVals,rangeVals]),
-                        boxmode="group")
+                        boxmode="group",xaxis = attr(
+                                                    tickangle = 90
+                                                ))
     else
         layout = Layout(yaxis=attr(range=[-rangeVals,rangeVals]),
-                        boxmode="group")
+                        boxmode="group",xaxis = attr(
+                                                    tickangle = 90
+                                                ))
     end
 
-    
     for (i,w1) in pairs(wordTypes)
         for (j,w2) in pairs(wordTypes)
             dfw1 = subset(data, :WordType => ByRow((==(w1))))[:,:data]
@@ -120,28 +181,31 @@ function subplots(data,wordTypes,cols)
     p1]
     p.plot.layout.boxmode="group"
     p.plot.layout.violinmode="group"
-    p.plot.layout["showlegend"] = false
-    p.plot.layout["height"] = 850
-    p.plot.layout["violingap"] = 0
-    p.plot.layout["violingroupgap"] = 0.3
-    p.plot.layout["boxgroupgap"] = 0.25
+    if data[1,:PCA] != "PC6"
+        p.plot.layout["showlegend"] = false
+    end
+    p.plot.layout["height"] = 1450
+    p.plot.layout.grid = attr(rows=2, columns=1, rowgap=2)
+    # p.plot.layout["violingap"] = 0
+    # p.plot.layout["violingroupgap"] = 0
+    p.plot.layout["boxgroupgap"] = 0.15
     p.plot.layout["boxgap"] = 0.4
     if data[1,:PCA] == "PC1"
         p.plot.layout["margin"] =attr(l=55, r=5, b=15, t=15)
-        p.plot.layout["width"] = 415
+        p.plot.layout["width"] = 0.01
+
 
     else
         p.plot.layout["margin"] =attr(l=5, r=5, b=15, t=15)
-        p.plot.layout["width"] = 365
-
+        p.plot.layout["width"] = 0.01
     end
-
     
-    p.plot.layout["xaxis2"] = attr(range=(-0.5, 0.5), constrain="domain")
+    p.plot.layout["xaxis2"] = attr(range=(-0.35, 0.35), constrain="domain")
     p.plot.layout["yaxis2"] = attr(range=(-rangeVals, rangeVals), constrain="domain",zeroline=true,zerolinewidth=1,zerolinecolor = "#000000")
     p.plot.layout["yaxis1"] = attr(range=(-rangeVals, rangeVals), constrain="domain",zeroline=true,zerolinewidth=1,zerolinecolor = "#000000")
 
     p.plot.layout["font"]   = attr(size=22)
+    global p = p
 
 
     p
@@ -198,7 +262,7 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
     chainLength = noInChain*4
     includeSigma = true
     if includeSigma
-        global rangeVals = 0.5
+        global rangeVals = 0.225
     else
         global rangeVals = 3.0
     end
@@ -212,7 +276,8 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
     end
 
     essRhat(chn_dfs,ss_dfs,outputDir)
-
+    essRhatOverall(chn_dfs,ss_dfs,outputDir)
+    return # EARLY RETURN
     d = zeros(noPCS,2,length(wordTypes),chainLength)
     vd = []
     for j in range(1,length(wordTypes))
@@ -281,8 +346,13 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
         df.AB_PC = string.(df.AB, " ",  df.PCA)
         pclabs = unique(df.AB_PC)
         dfWTs = [subset(df, :WordType => ByRow((==(wt)))) for wt in wordTypes]
-        cols = reduce(vcat,([[col col*0.7] for col in palette(:default)[1:11]]))
+        cols = reduce(vcat,([[col; col*0.7] for col in palette(:default)[1:11]]))
+        for dfWt in eachindex(dfWTs)
+            p = violin_grouped(dfWTs[dfWt],pclabs,"AB_PC","WordType","Adjective",cols[2*dfWt-1:2*dfWt])
+            PlotlyJS.savefig(p,outputDir*"/"*"WT_"*string(dfWt)*".png",width=800,height=700)
+        end
         
+        global p = p
     else
         # OPTION 2
         df.PCWT = string.(df.WordType, " ",  df.PCA)
@@ -302,15 +372,23 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
 
         dfs  = [subset(dfI, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
         dfsg = [subset(dfG, :PCA => ByRow((==("PC"*string(i))))) for i in range(1,noPCS)]
-        PlotlyJS.savefig(subplots(dfs[1],wordTypes,cols),outputDir*"/i1.png",width=415,height=850)
-        for i in 2:noPCS
-            PlotlyJS.savefig(subplots(dfs[i],wordTypes,cols),outputDir*"/i"*string(i)*".png",width=365,height=850)
+        baseWidth = 550
+        offsetEnd = 240 # TWEAK THIS IF GRAPHS ARENT LINING UP
+        offsetBeginning = 50
+        PlotlyJS.savefig(subplots(dfs[1],wordTypes,cols),outputDir*"/i1.png",width=baseWidth+offsetBeginning,height=1450)
+        for i in 2:noPCS-1
+            PlotlyJS.savefig(subplots(dfs[i],wordTypes,cols),outputDir*"/i"*string(i)*".png",width=baseWidth,height=1450)
         end
+        PlotlyJS.savefig(subplots(dfs[6],wordTypes,cols),outputDir*"/i"*string(6)*".png",width=baseWidth+offsetEnd,height=1450)
 
-        PlotlyJS.savefig(subplots(dfsg[1],wordTypes,cols),outputDir*"/g1.png",width=415,height=850)
-        for i in 2:noPCS
-            PlotlyJS.savefig(subplots(dfsg[i],wordTypes,cols),outputDir*"/g"*string(i)*".png",width=365,height=850)
+
+
+        PlotlyJS.savefig(subplots(dfsg[1],wordTypes,cols),outputDir*"/g1.png",width=baseWidth+offsetBeginning,height=1450)
+        for i in 2:noPCS-1
+            PlotlyJS.savefig(subplots(dfsg[i],wordTypes,cols),outputDir*"/g"*string(i)*".png",width=baseWidth,height=1450)
         end
+        PlotlyJS.savefig(subplots(dfsg[6],wordTypes,cols),outputDir*"/g"*string(6)*".png",width=baseWidth+offsetEnd,height=1450)
+
         # vio = Gadfly.plot(  Theme(major_label_font_size=17pt,key_title_font_size=16pt,key_label_font_size=14pt,minor_label_font_size=14pt,background_color = "ghostwhite",default_color="grey",boxplot_spacing=70px),Guide.ylabel("Posterior Difference (with 97% HCI)"),Guide.title("Posterior Difference with full Covariance"),Guide.xlabel("Posterior"),
         #                     layer(df1, x=:WordType,y=:data,color=:WordType,Geom.violin));
 
@@ -421,6 +499,43 @@ function essRhat(chn_dfs,ss_dfs,outputDir)
                             ,plot_title="EssRhat of 8 participants with Noun Verb Adj Adv & Func")
     Plots.savefig(essRhat,outputDir*"/essRhat.png")
 end
+function essRhatOverall(chn_dfs,ss_dfs,outputDir)
+    theme(:ggplot2)
+    gr(size=(1000,800), dpi=600)
+    MyMarkSize = 4
+    MyMarkOpacity = 0.7
+    myMarkerStrokeWith = 0.5
+    myXlims=(.997,1.016)
+    myYlims=(0,9000)
+    myMainPlotXTicks = [1,1.005, 1.010, 1.015]
+    myMainPlotYTicks = 0:1000:9000
+    mySubPlotXTicks  = [1,1.015]
+    mySubPlotYTicks  = [0,3000,6000,9000]
+    default(titlefontsize=12, guidefontsize=12, tickfontsize=12, legendfontsize=12)
+    global gss_dfs = ss_dfs
+    x = ss_dfs[1][:,"rhat"]
+    y = ss_dfs[1][:,"ess_bulk"]
+    cols = cgrad(:balance,6,categorical=true)
+    myplot = Plots.scatter(x,y,xlabel = "R-hat",ylabel = "ess",ylims=myYlims,xlims=myXlims,label = "PC 1",ms=MyMarkSize,ma=MyMarkOpacity,c=cols[1],markerstrokewidth=myMarkerStrokeWith,legend=:topleft,xticks=myMainPlotXTicks,yticks=myMainPlotYTicks)
+    for i in range(2,length(ss_dfs))
+        x = ss_dfs[i][:,"rhat"]
+        y = ss_dfs[i][:,"ess_bulk"]
+        Plots.scatter!(x,y,xlabel = "R-hat",ylabel = "ess",label="PC "*string(i),ms=MyMarkSize,ma=MyMarkOpacity,c=cols[i],markerstrokewidth=myMarkerStrokeWith)
+
+    end
+    for i in range(1,length(ss_dfs))
+        x = ss_dfs[i][:,"rhat"]
+        y = ss_dfs[i][:,"ess_bulk"]
+        xpos = 0.48+0.3*((i-1)%2)
+        ypos = 0+0.3*floor((i-1)/2)
+
+        scatter!(x,y,ms=MyMarkSize,ma=MyMarkOpacity*0.5,c=cols[i],markerstrokewidth=myMarkerStrokeWith,inset = (1, bbox(xpos,ypos,0.2,0.2)),subplot=i+1)
+        covellipse!([mean(x),mean(y)], cov([x y]),showaxes=true, label="Covariance of PC " * string(i),fillalpha=MyMarkOpacity,c=cols[i],subplot=i+1,xlims=myXlims,ylims=myYlims,legend=false,xticks=mySubPlotXTicks,yticks=mySubPlotYTicks,minorticks=3)
+        annotate!(1.0065, 8000, text("PC " * string(i) * " Covariance", :center, 12, :black),subplot=i+1)
+
+    end
+    Plots.savefig(myplot,outputDir*"/essRhatOverall5.png")
+end
 
 
 function combinePlots(outputDir,noPCS)
@@ -428,10 +543,27 @@ function combinePlots(outputDir,noPCS)
     for i in range(2,noPCS)
         img = hcat(img,load(outputDir*"/g"*string(i)*".png"))
     end
-    img2 = load(outputDir*"/g1.png")
+    img2 = load(outputDir*"/i1.png")
     for i in range(2,noPCS)
         img2 = hcat(img2,load(outputDir*"/i"*string(i)*".png"))
     end
     Images.save(outputDir*"/gradient.png",img)
     Images.save(outputDir*"/intercept.png",img2)
+
+    img3 = load(outputDir*"/WT_1.png")
+    for i in range(2,4)
+        img3 = hcat(img3,load(outputDir*"/WT_"*string(i)*".png"))
+    end
+    img4 = load(outputDir*"/WT_5.png")
+    for i in range(6,8)
+        img4 = hcat(img4,load(outputDir*"/WT_"*string(i)*".png"))
+    end
+    img5 = load(outputDir*"/WT_9.png")
+    white_img = fill(RGB{N0f8}(1, 1, 1), size(img5))
+    for i in range(10,11)
+        img5 = hcat(img5,load(outputDir*"/WT_"*string(i)*".png"))
+    end
+    img5 = hcat(img5,white_img)
+    Images.save(outputDir*"/wts.png",vcat(img3,img4,img5))
+
 end

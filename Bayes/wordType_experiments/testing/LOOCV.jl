@@ -113,31 +113,39 @@ end
 
 fullScores = []
 # %%
-push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_CF_23_1931_6PCA_1000","CF","2","11"))
+push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_CFAdp_23_1931_6PCA_1000","CFAdp","2","11"))
+push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_Full_23_1931_6PCA_1000","Full","2","11"))
 # %%
-push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_FullCF_23_1931_6PCA_1000","FullCF","2","11"))
-# %%
-push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_NoNum_23_1931_6PCA_1000","NoNum","2","11"))
-# %%
-push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_FullADP_23_1931_6PCA_1000","FullADP","2","11"))
+push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_FullCFAdp_23_1931_6PCA_1000","FullCFAdp","2","11"))
+push!(fullScores,getPSISScores("testingDifferentPCS",model_12_1,"output_FullTwoADP_23_1931_6PCA_1000","FullTwoADP","2","11"))
 
 # %%
 
-serialize("psis5.jls",fullScores)
+serialize("psis7.jls",fullScores)
 
 
 # %%
 fsold = deserialize("psis4.jls")
+fsold2 = deserialize("psis5.jls")
+fsold3 = deserialize("psis6.jls")
 # %%
+fullScoresOld = fullScores
+# %%
+fullScores = [fsold ; fsold2 ; fsold3; fullScoresOld]
+# %% 
+
 gr(size=(1200,500), dpi=300)
 
 
-data = [[fullScores[i][j].estimates[1,1] for i in 1:length(fullScores)].±[fullScores[i][j].estimates[1,2] for i in 1:length(fullScores)] for j in 1:6]
-
+data = [[fullScores[i][j].estimates[1,3] for i in 1:length(fullScores)].±[fullScores[i][j].estimates[1,4] for i in 1:length(fullScores)] for j in 1:6]
+wordTypes = ["Adjective","Adverb",
+                        "Conjunction","Determiner","Noun",
+                        "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
+cols = palette(:default)[1:11]
 l = @layout [[grid(2,3)] b{0.27w}]
 
 ps = [Plots.plot(
-    1:4, 
+    1:8, 
     data[j],
     legend=false,
     marker=:o,
@@ -147,10 +155,10 @@ ps = [Plots.plot(
     left_margin=5mm) for j in 1:6]
 
 p2 = Plots.plot(axis=([], false), margin=0Plots.cm)
-outputDirs3 = ["CF","FullCF","FullADP","NoNum"]
+outputDirs3 = ["CF","FullCF","FullADP","NoNum","CF (With Adposition seperation)", "Full", "FullCFAdp", "Full (With two adposition cats)"]
 ftr = text(join([string(o)*": "*outputDirs3[o]*"\n" for o in eachindex(outputDirs3)]), :black, :left, 10)
 annotate!(0, 0.8, ftr)
-Plots.plot(ps[1],ps[2],ps[3],ps[4],ps[5],ps[6],p2,layout=l,plot_title="CV_ELPD scores of each PC")
+Plots.plot(ps[1],ps[2],ps[3],ps[4],ps[5],ps[6],p2,layout=l,plot_title="CV_ELPD mean scores of each PC")
 # %% 
 
-Plots.savefig("figs/modelComparison/CV_ELPD5.png")
+Plots.savefig("figs/modelComparison/CV_ELPD7.png")
