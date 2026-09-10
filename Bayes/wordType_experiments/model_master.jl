@@ -185,3 +185,22 @@ function plotExistingModelGraphs(args = map(x->string(x), ARGS))
     end
 
 end
+
+function renormaliseSurps(df_modified,NUM_TYPES)
+    fullSurps = []
+    for typeId in range(0,NUM_TYPES-1)
+        surps = df_modified[df_modified.fullTag.==typeId,"Surprisal"]
+        surps = ((surps.-mean(surps))./std(surps))
+        fullSurps = vcat(fullSurps,surps)
+    end
+    return fullSurps
+end
+
+function getWordIds(df_modified)
+    baseIds = sort(unique(df_modified.Word))
+    wordDict = Dict()
+    for i in eachindex(baseIds)
+        wordDict[baseIds[i]] = i
+    end
+    return [wordDict[word] for word in df_modified.Word]
+end
