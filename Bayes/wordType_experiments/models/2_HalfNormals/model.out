@@ -1,0 +1,42 @@
+cpu-bind=MASK - bp1-compute019, task  0  0 [30851]: mask 0x6000000600 set
+cpu-bind=MASK - bp1-compute019, task  0  0 [30852]: mask 0x820000082000 set
+cpu-bind=MASK - bp1-compute019, task  0  0 [30853]: mask 0x3000000300000 set
+cpu-bind=MASK - bp1-compute019, task  0  0 [30848]: mask 0x1800000180 set
+cpu-bind=MASK - bp1-compute019, task  0  0 [30849]: mask 0x18000001800 set
+cpu-bind=MASK - bp1-compute019, task  0  0 [30850]: mask 0x600000060 set
+Running on host bp1-compute019
+Running on host bp1-compute019
+Running on host bp1-compute019
+Running on host bp1-compute019
+Running on host bp1-compute019
+Time is Thu Sep 10 20:49:52 BST 2026
+Time is Thu Sep 10 20:49:52 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/2_HalfNormals
+Time is Thu Sep 10 20:49:52 BST 2026
+Time is Thu Sep 10 20:49:52 BST 2026
+Slurm job ID is 18905130
+This job runs on the following machines:
+Time is Thu Sep 10 20:49:52 BST 2026
+Running on host bp1-compute019
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/2_HalfNormals
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/2_HalfNormals
+Slurm job ID is 18905132
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/2_HalfNormals
+This job runs on the following machines:
+Slurm job ID is 18905133
+This job runs on the following machines:
+Slurm job ID is 18905131
+This job runs on the following machines:
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/2_HalfNormals
+Slurm job ID is 18905134
+This job runs on the following machines:
+Time is Thu Sep 10 20:49:52 BST 2026
+bp1-compute019
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/2_HalfNormals
+Slurm job ID is 18905135
+This job runs on the following machines:
+bp1-compute019
+bp1-compute019
+bp1-compute019
+bp1-compute019
+bp1-compute019

@@ -1,0 +1,17 @@
+Running on host bp1-compute072
+Time is Thu Sep 10 20:49:51 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
+Slurm job ID is 18905199
+This job runs on the following machines:
+bp1-compute072
+cpu-bind=MASK - bp1-compute072, task  0  0 [2430705]: mask 0xc00000c00000 set
+Running on host bp1-compute072
+Time is Thu Sep 10 20:49:51 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
+Slurm job ID is 18905201
+This job runs on the following machines:
+bp1-compute072
+/tmp/slurmd/job18905201/slurm_script: line 31: 2430754 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-11T09:53:59.183] error: Detected 1 oom_kill event in StepId=18905201.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18905202/slurm_script: line 31: 3745943 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-11T10:24:30.557] error: Detected 1 oom_kill event in StepId=18905202.batch. Some of the step tasks have been OOM Killed.

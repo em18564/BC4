@@ -1,0 +1,33 @@
+cpu-bind=MASK - bp1-compute019, task  0  0 [30855]: mask 0xc000000c000000 set
+cpu-bind=MASK - bp1-compute019, task  0  0 [30854]: mask 0xc000000c00000 set
+cpu-bind=MASK - bp1-compute019, task  0  0 [30856]: mask 0x30000003000000 set
+Running on host bp1-compute071
+Time is Thu Sep 10 20:49:51 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/3_participantSigmas
+Slurm job ID is 18905198
+This job runs on the following machines:
+Running on host bp1-compute071
+bp1-compute071
+Time is Thu Sep 10 20:49:51 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/3_participantSigmas
+Slurm job ID is 18905197
+This job runs on the following machines:
+bp1-compute071
+Running on host bp1-compute019
+Running on host bp1-compute019
+Running on host bp1-compute019
+Time is Thu Sep 10 20:49:52 BST 2026
+Time is Thu Sep 10 20:49:52 BST 2026
+Time is Thu Sep 10 20:49:52 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/3_participantSigmas
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/3_participantSigmas
+Slurm job ID is 18905139
+Slurm job ID is 18905138
+This job runs on the following machines:
+This job runs on the following machines:
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/3_participantSigmas
+Slurm job ID is 18905137
+This job runs on the following machines:
+bp1-compute019
+bp1-compute019
+bp1-compute019
