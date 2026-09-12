@@ -31,3 +31,9 @@ This job runs on the following machines:
 bp1-compute019
 bp1-compute019
 bp1-compute019
+[2026-09-12T18:29:40.992] error: *** JOB 18905139 ON bp1-compute019 CANCELLED AT 2026-09-12T18:29:40 DUE to SIGNAL Terminated ***
+[2026-09-12T18:29:41.236] error: *** JOB 18905198 ON bp1-compute071 CANCELLED AT 2026-09-12T18:29:41 DUE to SIGNAL Terminated ***
+[2026-09-12T18:29:41.395] error: *** JOB 18905138 ON bp1-compute019 CANCELLED AT 2026-09-12T18:29:41 DUE to SIGNAL Terminated ***
+[2026-09-12T18:29:41.556] error: *** JOB 18905136 ON bp1-compute072 CANCELLED AT 2026-09-12T18:29:41 DUE to SIGNAL Terminated ***
+[2026-09-12T18:29:41.786] error: *** JOB 18905197 ON bp1-compute071 CANCELLED AT 2026-09-12T18:29:41 DUE to SIGNAL Terminated ***
+[2026-09-12T18:29:41.800] error: *** JOB 18905137 ON bp1-compute019 CANCELLED AT 2026-09-12T18:29:41 DUE to SIGNAL Terminated ***

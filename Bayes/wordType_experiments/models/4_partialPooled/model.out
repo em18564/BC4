@@ -1,17 +1,24 @@
+cpu-bind=MASK - bp1-compute123, task  0  0 [1792361]: mask 0x5000005000 set
 Running on host bp1-compute072
-Time is Thu Sep 10 20:49:51 BST 2026
+Time is Fri Sep 11 13:40:39 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
-Slurm job ID is 18905199
+Slurm job ID is 18917757
 This job runs on the following machines:
 bp1-compute072
-cpu-bind=MASK - bp1-compute072, task  0  0 [2430705]: mask 0xc00000c00000 set
-Running on host bp1-compute072
-Time is Thu Sep 10 20:49:51 BST 2026
+Running on host bp1-compute123
+Time is Fri Sep 11 13:40:39 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
-Slurm job ID is 18905201
+Slurm job ID is 18917647
 This job runs on the following machines:
-bp1-compute072
-/tmp/slurmd/job18905201/slurm_script: line 31: 2430754 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
-[2026-09-11T09:53:59.183] error: Detected 1 oom_kill event in StepId=18905201.batch. Some of the step tasks have been OOM Killed.
-/tmp/slurmd/job18905202/slurm_script: line 31: 3745943 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
-[2026-09-11T10:24:30.557] error: Detected 1 oom_kill event in StepId=18905202.batch. Some of the step tasks have been OOM Killed.
+bp1-compute123
+/tmp/slurmd/job18917649/slurm_script: line 31: 3028304 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T04:31:36.710] error: Detected 1 oom_kill event in StepId=18917649.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18917648/slurm_script: line 31: 179154 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T05:42:45.818] error: Detected 1 oom_kill event in StepId=18917648.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18917650/slurm_script: line 31: 1279527 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T08:06:53.811] error: Detected 1 oom_kill event in StepId=18917650.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18917651/slurm_script: line 31: 1279526 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T09:20:33.124] error: Detected 1 oom_kill event in StepId=18917651.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18917647/slurm_script: line 31: 1792416 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T13:33:56.982] error: Detected 1 oom_kill event in StepId=18917647.batch. Some of the step tasks have been OOM Killed.
+[2026-09-12T18:30:08.809] error: *** JOB 18917757 ON bp1-compute072 CANCELLED AT 2026-09-12T18:30:08 DUE to SIGNAL Terminated ***
