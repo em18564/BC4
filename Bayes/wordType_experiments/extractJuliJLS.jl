@@ -50,8 +50,8 @@ function extractFiles(outputDir)
     chndfs  = [chn_df1, chn_df2, chn_df3, chn_df4, chn_df5, chn_df6]
     ssdfs   = [ss_df1,  ss_df2,  ss_df3,  ss_df4,  ss_df5,  ss_df6 ]
     for i in eachindex(chndfs)
-        CSV.write(outputDir*"/chndf_"*string(i),chndfs[i])
-        CSV.write(outputDir*"/ssdf_"*string(i),ssdfs[i])
+        CSV.write(outputDir*"/chndf_"*string(i),chndfs[i],delim=";")
+        CSV.write(outputDir*"/ssdf_"*string(i),ssdfs[i],delim=";")
     end
 end
 

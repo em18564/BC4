@@ -271,11 +271,17 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
     chn_dfs = []
     ss_dfs  = []
     for i in range(1,6)
-        push!(chn_dfs,CSV.read(outputDir*"/chndf_"*string(i),DataFrame))
-        push!(ss_dfs,CSV.read(outputDir*"/ssdf_"*string(i),DataFrame))
-    end
+        push!(chn_dfs,CSV.read(outputDir*"/chndf_"*string(i),DataFrame,delim=";"))
+        push!(ss_dfs,CSV.read(outputDir*"/ssdf_"*string(i),DataFrame,delim=";"))
 
-    essRhat(chn_dfs,ss_dfs,outputDir)
+        chn_dfs[i] = filter(row -> all(x -> !(x isa Number && isnan(x)), row), chn_dfs[i])
+        ss_dfs[i] = filter(row -> all(x -> !(x isa Number && isnan(x)), row), ss_dfs[i])
+
+    end
+    global testA = chn_dfs
+    global testB = ss_dfs
+    
+    #essRhat(chn_dfs,ss_dfs,outputDir)
     essRhatOverall(chn_dfs,ss_dfs,outputDir)
     return # EARLY RETURN
     d = zeros(noPCS,2,length(wordTypes),chainLength)
@@ -505,14 +511,28 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     MyMarkSize = 4
     MyMarkOpacity = 0.7
     myMarkerStrokeWith = 0.5
-    myXlims=(.997,1.016)
-    myYlims=(0,9000)
-    myMainPlotXTicks = [1,1.005, 1.010, 1.015]
-    myMainPlotYTicks = 0:1000:9000
-    mySubPlotXTicks  = [1,1.015]
-    mySubPlotYTicks  = [0,3000,6000,9000]
-    default(titlefontsize=12, guidefontsize=12, tickfontsize=12, legendfontsize=12)
     global ss_dfsTest = ss_dfs
+
+    maxRhat = maximum([maximum(ss_dfs[i][:,"rhat"]) for i in range(1,6)]) *1.001
+    maxEss  = maximum([maximum(ss_dfs[i][:,"ess_bulk"]) for i in range(1,6)]) *1.001
+    myXlims=(.997,maxRhat)
+    myYlims=(0,maxEss)
+    essStep = 250
+    if maxEss >2000
+        essStep = 500
+    end
+    if maxEss>4000
+        essStep = 1000
+    end
+    rhatStep = 0.005
+    if maxRhat>1.02
+        rhatStep = 0.01
+    end
+    myMainPlotXTicks = range(1,step=rhatStep,maxRhat - maxRhat%rhatStep)
+    myMainPlotYTicks = range(0,step=essStep,maxEss-maxEss%essStep)
+    # mySubPlotXTicks  = [1,1.015]
+    # mySubPlotYTicks  = [0,3000,6000,9000]
+    default(titlefontsize=12, guidefontsize=12, tickfontsize=12, legendfontsize=12)
     colNames = ss_dfs[1].parameters
     lexicalCatsA    = vcat( findall(x -> startswith(x, "ab_w[1"), colNames),
                             findall(x -> startswith(x, "z_ab_w[1"), colNames),
@@ -535,10 +555,13 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
                             findall(x -> startswith(x, "z_ab_p[2"), colNames),
                             findall(x -> startswith(x, "b_p"), colNames))
     
-    participantAσ   =       findall(x -> startswith(x, "σ_ap"), colNames)
-    participantBσ   =       findall(x -> startswith(x, "σ_bp"), colNames)
-
-    participants     = [participantA,participantB,participantAσ,participantBσ]
+    participantAσ   = vcat( findall(x -> startswith(x, "σ_ap"), colNames),
+                            findall(x -> startswith(x, "σ_p[1]"), colNames))
+    participantBσ   = vcat( findall(x -> startswith(x, "σ_bp"), colNames),
+                            findall(x -> startswith(x, "σ_p[2]"), colNames))
+    
+    #participantLKJ  = findall(x -> startswith(x, "ρ_p"), colNames)
+    participants     = [participantA,participantB,participantAσ,participantBσ]#,participantLKJ]
 
 
     offsetA         = vcat( findall(x -> startswith(x, "ab_e[1"), colNames),
@@ -553,7 +576,14 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
 
     offset          = [offsetA,offsetB,overallσ]
 
-    allCats = [lexicalCats,participants,offset]
+    γBase           = findall(x -> ==(x, "γ"), colNames)
+    γsParticipant   = vcat( findall(x -> startswith(x, "z_γp"), colNames))
+    γsigma          = findall(x -> ==(x, "σ_γp"), colNames)
+
+    participantSigmaConstruction = [γBase,γsParticipant,γsigma]
+
+
+    allCats = [lexicalCats,participants,participantSigmaConstruction,offset]
     
     flatAllCats = []
     for cat in allCats
@@ -567,7 +597,7 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
             println("ERROR: " * string(i) * " not found (" * colNames[i] *")")
         end
     end
-    colScheme = cgrad(:Paired_6,categorical = true)
+    colScheme = cgrad(:Paired_8,categorical = true)
 
     global gss_dfs = ss_dfs
     p=Plots.scatter([], [],layout=(2,4),label=false)
@@ -575,7 +605,41 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
         x = ss_dfs[i][:,"rhat"]
         y = ss_dfs[i][:,"ess_bulk"]
         for catId in eachindex(allCats)
+            plotLegend=true
             for innerCatId in eachindex(allCats[catId])
+                println("PC " * string(i) * ": " * "category " * string(catId) * " - subcategory " * string(innerCatId))
+                if plotLegend && i == 1
+                    if length(allCats[catId][innerCatId])>0
+                        if catId == 1
+                                Plots.scatter!([], label=" σ (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:xcross)
+                                Plots.scatter!([], label=" sample (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:circle)
+                                # if length(allCats[2][5])>0
+                                #     Plots.scatter!([], label=" LKJ prior (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:cross)
+                                # end 
+                                Plots.scatter!([], label=" Lexical Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[1],m=:rect,bg_inside=:white, margin = 5mm)
+                                Plots.scatter!([], label=" Lexical Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[2],m=:rect)
+                                Plots.scatter!([], grid=false, showaxis=false,subplot=8,bg_inside=:white,label=false)
+                        elseif catId == 2
+                                Plots.scatter!([], label=" Participant Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[3],m=:rect)
+                                Plots.scatter!([], label=" Participant Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[4],m=:rect)
+                        elseif catId == 3
+                                Plots.scatter!([], label=" γ Base", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[7],m=:rect)
+                                Plots.scatter!([], label=" γ Participant", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[8],m=:rect)
+                        elseif catId == 4
+                                Plots.scatter!([], label=" Offset Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[5],m=:rect)
+                                Plots.scatter!([], label=" Offset Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[6],m=:rect)
+                                if length(allCats[catId][3])>0
+                                    Plots.scatter!([], label=" Overall σ", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:black,m=:xcross)
+                                end
+                        end
+                        plotLegend=false
+                    end
+                    
+                end
+
+
+
+
                 myCol  = :black
                 myMark = :circle
                 if catId == 1
@@ -607,12 +671,30 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
                         #Asig
                         myMark = :xcross
                         myCol = colScheme[3]
-                    else
+                    elseif innerCatId == 4
                         #Bsig
                         myMark = :xcross
                         myCol = colScheme[4]
+                    elseif innerCatId == 5
+                        #LKJ Prior
+                        myMark = :cross
+                        myCol = colScheme[4]
                     end 
-                else
+                
+                elseif catId == 3
+                    #participantSigmaConstruction
+                    if innerCatId == 1
+                        #γBase
+                        myCol = colScheme[7]
+                    elseif innerCatId == 2
+                        #γParticipant
+                        myCol = colScheme[8]
+                    else
+                        #γsig
+                        myCol = colScheme[8]
+                        myMark = :xcross
+                    end 
+                elseif catId == 4
                     #offset
                     if innerCatId == 1
                         #A
@@ -634,18 +716,10 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
         end
         
     end
-    Plots.scatter!([], label=" Lexical Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[1],m=:rect,bg_inside=:white, margin = 5mm)
-    Plots.scatter!([], label=" Lexical Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[2],m=:rect)
-    Plots.scatter!([], label=" Participant Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[3],m=:rect)
-    Plots.scatter!([], label=" Participant Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[4],m=:rect)
-    Plots.scatter!([], label=" σ (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:black,m=:xcross)
-
-    Plots.scatter!([], label=" Offset Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[5],m=:circle)
-    Plots.scatter!([], label=" Offset Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[6],m=:circle)
-    Plots.scatter!([], label=" Overall σ", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:black,m=:xcross)
-    Plots.scatter!([], grid=false, showaxis=false,subplot=8,bg_inside=:white,label=false)
-
-    Plots.savefig(p,outputDir*"/essRhatOverall6.png")
+    println("got to save fig")
+    global myplot
+    myplot = p
+    #Plots.savefig(p,outputDir*"/essRhatOverall6.png")
 end
 
 function essRhatOverall_OLD(chn_dfs,ss_dfs,outputDir)
