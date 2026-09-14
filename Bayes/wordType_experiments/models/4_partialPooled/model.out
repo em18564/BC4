@@ -1,24 +1,50 @@
-cpu-bind=MASK - bp1-compute123, task  0  0 [1792361]: mask 0x5000005000 set
-Running on host bp1-compute072
-Time is Fri Sep 11 13:40:39 BST 2026
+cpu-bind=MASK - bp1-compute015, task  0  0 [1273508]: mask 0x880000088000 set
+cpu-bind=MASK - bp1-compute015, task  0  0 [1273520]: mask 0x30000003000000 set
+Running on host bp1-compute015
+Running on host bp1-compute015
+Running on host bp1-compute015
+Running on host bp1-compute015
+Running on host bp1-compute015
+Running on host bp1-compute015
+Time is Sat Sep 12 18:31:24 BST 2026
+Time is Sat Sep 12 18:31:24 BST 2026
+Time is Sat Sep 12 18:31:24 BST 2026
+Time is Sat Sep 12 18:31:24 BST 2026
+Time is Sat Sep 12 18:31:24 BST 2026
+Time is Sat Sep 12 18:31:24 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
-Slurm job ID is 18917757
-This job runs on the following machines:
-bp1-compute072
-Running on host bp1-compute123
-Time is Fri Sep 11 13:40:39 BST 2026
 Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
-Slurm job ID is 18917647
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
+Slurm job ID is 18939685
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
+Slurm job ID is 18939682
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
 This job runs on the following machines:
-bp1-compute123
-/tmp/slurmd/job18917649/slurm_script: line 31: 3028304 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
-[2026-09-12T04:31:36.710] error: Detected 1 oom_kill event in StepId=18917649.batch. Some of the step tasks have been OOM Killed.
-/tmp/slurmd/job18917648/slurm_script: line 31: 179154 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
-[2026-09-12T05:42:45.818] error: Detected 1 oom_kill event in StepId=18917648.batch. Some of the step tasks have been OOM Killed.
-/tmp/slurmd/job18917650/slurm_script: line 31: 1279527 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
-[2026-09-12T08:06:53.811] error: Detected 1 oom_kill event in StepId=18917650.batch. Some of the step tasks have been OOM Killed.
-/tmp/slurmd/job18917651/slurm_script: line 31: 1279526 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
-[2026-09-12T09:20:33.124] error: Detected 1 oom_kill event in StepId=18917651.batch. Some of the step tasks have been OOM Killed.
-/tmp/slurmd/job18917647/slurm_script: line 31: 1792416 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
-[2026-09-12T13:33:56.982] error: Detected 1 oom_kill event in StepId=18917647.batch. Some of the step tasks have been OOM Killed.
-[2026-09-12T18:30:08.809] error: *** JOB 18917757 ON bp1-compute072 CANCELLED AT 2026-09-12T18:30:08 DUE to SIGNAL Terminated ***
+Slurm job ID is 18939686
+Slurm job ID is 18939687
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/4_partialPooled
+This job runs on the following machines:
+This job runs on the following machines:
+Slurm job ID is 18939684
+This job runs on the following machines:
+This job runs on the following machines:
+Slurm job ID is 18939683
+This job runs on the following machines:
+bp1-compute015
+bp1-compute015
+bp1-compute015
+bp1-compute015
+bp1-compute015
+bp1-compute015
+/tmp/slurmd/job18939683/slurm_script: line 31: 1273627 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T21:51:06.940] error: Detected 1 oom_kill event in StepId=18939683.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18939682/slurm_script: line 31: 1273625 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T21:52:03.048] error: Detected 1 oom_kill event in StepId=18939682.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18939686/slurm_script: line 31: 1273628 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T22:25:29.469] error: Detected 1 oom_kill event in StepId=18939686.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18939687/slurm_script: line 31: 1273624 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T22:38:50.920] error: Detected 1 oom_kill event in StepId=18939687.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18939684/slurm_script: line 31: 1273623 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T22:56:25.004] error: Detected 1 oom_kill event in StepId=18939684.batch. Some of the step tasks have been OOM Killed.
+/tmp/slurmd/job18939685/slurm_script: line 31: 1273626 Killed                  julia --threads 4 model.jl ${SLURM_ARRAY_TASK_ID} ${SLURM_ARRAY_TASK_MAX} ${NUM_PARTICIPANTS} ${NUM_WORDS} ${TYPE_STRUCTURE} ${IS_PLOTTING} ${ANALYSE_ESS_RHAT} ${MIN_EXP} ${MAX_EXP} ${MIN_CAUCHY} ${MAX_CAUCHY} > output/model-${SLURM_ARRAY_TASK_ID}.out
+[2026-09-12T23:27:04.033] error: Detected 1 oom_kill event in StepId=18939685.batch. Some of the step tasks have been OOM Killed.
