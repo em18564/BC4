@@ -4,7 +4,9 @@ include("../../plottingFuncs.jl")
 include("../../setup.jl")
 include("modelDef.jl")
 
-
+using ReverseDiff,Memoization
+Turing.setadbackend(:reversediff)
+Turing.setrdcache(true) # Memoizes the tape to save memory and time
 
 timeStart = now()
 df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS,noInChain = createVariables()
