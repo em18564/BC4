@@ -22,10 +22,11 @@ include("plottingFuncs.jl")
 # 9 Prt
 # 10 Verb
 outputDirs =[
-                "models/testingDifferentPCS/output_CFAdp_23_1931_6PCA_1000", 
-                "models/testingDifferentPCS/output_FullCFAdp_23_1931_6PCA_1000", 
-                "models/testingDifferentPCS/output_FullTwoADP_23_1931_6PCA_1000", 
-                "models/testingDifferentPCS/output_Full_23_1931_6PCA_1000"
+                "models/2_HalfNormals/output_NoNum_23_1931_6PCA_250", 
+                "models/3_participantSigmas/output_NoNum_23_1931_6PCA_250", 
+                "models/4_partialPooled/output_NoNum_23_1931_6PCA_250", 
+                "models/5_noPartA/output_NoNum_23_1931_6PCA_250",
+                "models/6_LKJPart/output_NoNum_23_1931_6PCA_250"
 ]         
 
 function extractFiles(outputDir)

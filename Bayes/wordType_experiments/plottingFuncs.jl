@@ -501,6 +501,155 @@ function essRhat(chn_dfs,ss_dfs,outputDir)
 end
 function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     theme(:ggplot2)
+    gr(size=(1600,950), dpi=600)
+    MyMarkSize = 4
+    MyMarkOpacity = 0.7
+    myMarkerStrokeWith = 0.5
+    myXlims=(.997,1.016)
+    myYlims=(0,9000)
+    myMainPlotXTicks = [1,1.005, 1.010, 1.015]
+    myMainPlotYTicks = 0:1000:9000
+    mySubPlotXTicks  = [1,1.015]
+    mySubPlotYTicks  = [0,3000,6000,9000]
+    default(titlefontsize=12, guidefontsize=12, tickfontsize=12, legendfontsize=12)
+    global ss_dfsTest = ss_dfs
+    colNames = ss_dfs[1].parameters
+    lexicalCatsA    = vcat( findall(x -> startswith(x, "ab_w[1"), colNames),
+                            findall(x -> startswith(x, "z_ab_w[1"), colNames),
+                            findall(x -> startswith(x, "a_w"), colNames))
+
+    lexicalCatsB    = vcat( findall(x -> startswith(x, "ab_w[2"), colNames),
+                            findall(x -> startswith(x, "z_ab_w[2"), colNames),
+                            findall(x -> startswith(x, "b_w"), colNames))
+
+    lexicalCatsAσ   =       findall(x -> startswith(x, "σ_aw"), colNames)
+    lexicalCatsBσ   =       findall(x -> startswith(x, "σ_bw"), colNames)
+
+    lexicalCats     = [lexicalCatsA,lexicalCatsB,lexicalCatsAσ,lexicalCatsBσ]
+
+    participantA    = vcat( findall(x -> startswith(x, "ab_p[1"), colNames),
+                            findall(x -> startswith(x, "z_ab_p[1"), colNames),
+                            findall(x -> startswith(x, "a_p"), colNames))
+
+    participantB    = vcat( findall(x -> startswith(x, "ab_p[2"), colNames),
+                            findall(x -> startswith(x, "z_ab_p[2"), colNames),
+                            findall(x -> startswith(x, "b_p"), colNames))
+    
+    participantAσ   =       findall(x -> startswith(x, "σ_ap"), colNames)
+    participantBσ   =       findall(x -> startswith(x, "σ_bp"), colNames)
+
+    participants     = [participantA,participantB,participantAσ,participantBσ]
+
+
+    offsetA         = vcat( findall(x -> startswith(x, "ab_e[1"), colNames),
+                            findall(x -> startswith(x, "z_ab_e[1"), colNames),
+                            findall(x -> startswith(x, "a_e"), colNames))
+
+    offsetB         = vcat( findall(x -> startswith(x, "ab_e[2"), colNames),
+                            findall(x -> startswith(x, "z_ab_e[2"), colNames),
+                            findall(x -> startswith(x, "b_e"), colNames))
+
+    overallσ        = findall(x -> ==(x, "σ"), colNames)
+
+    offset          = [offsetA,offsetB,overallσ]
+
+    allCats = [lexicalCats,participants,offset]
+    
+    flatAllCats = []
+    for cat in allCats
+        for innercat in cat
+            flatAllCats = vcat(flatAllCats,innercat)
+        end
+    end
+    println(flatAllCats)
+    for i in range(1,length(colNames))
+        if !(i in flatAllCats)
+            println("ERROR: " * string(i) * " not found (" * colNames[i] *")")
+        end
+    end
+    colScheme = cgrad(:Paired_6,categorical = true)
+
+    global gss_dfs = ss_dfs
+    p=Plots.scatter([], [],layout=(2,4),label=false)
+    for i in range(1,6)
+        x = ss_dfs[i][:,"rhat"]
+        y = ss_dfs[i][:,"ess_bulk"]
+        for catId in eachindex(allCats)
+            for innerCatId in eachindex(allCats[catId])
+                myCol  = :black
+                myMark = :circle
+                if catId == 1
+                    #lexical
+                    if innerCatId == 1
+                        #A
+                        myCol = colScheme[1]
+                    elseif innerCatId == 2
+                        #B
+                        myCol = colScheme[2]
+                    elseif innerCatId == 3
+                        #Asig
+                        myMark = :xcross
+                        myCol = colScheme[1]
+                    else
+                        #Bsig
+                        myMark = :xcross
+                        myCol = colScheme[2]
+                    end 
+                elseif catId == 2
+                    #participant
+                    if innerCatId == 1
+                        #A
+                        myCol = colScheme[3]
+                    elseif innerCatId == 2
+                        #B
+                        myCol = colScheme[4]
+                    elseif innerCatId == 3
+                        #Asig
+                        myMark = :xcross
+                        myCol = colScheme[3]
+                    else
+                        #Bsig
+                        myMark = :xcross
+                        myCol = colScheme[4]
+                    end 
+                else
+                    #offset
+                    if innerCatId == 1
+                        #A
+                        myCol = colScheme[5]
+                    elseif innerCatId == 2
+                        #B
+                        myCol = colScheme[6]
+                    else
+                        #sig
+                        myMark = :xcross
+                    end 
+                end
+                plotVal = i
+                if i>3
+                    plotVal = i+1
+                end
+                Plots.scatter!(p,x[allCats[catId][innerCatId]], y[allCats[catId][innerCatId]], subplot=plotVal,c=myCol,m=myMark,label=false,title="\nPC " *string(i),xticks=myMainPlotXTicks,yticks=myMainPlotYTicks,ylims=myYlims,xlims=myXlims, margin = 5mm)
+            end
+        end
+        
+    end
+    Plots.scatter!([], label=" Lexical Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[1],m=:rect,bg_inside=:white, margin = 5mm)
+    Plots.scatter!([], label=" Lexical Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[2],m=:rect)
+    Plots.scatter!([], label=" Participant Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[3],m=:rect)
+    Plots.scatter!([], label=" Participant Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[4],m=:rect)
+    Plots.scatter!([], label=" σ (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:black,m=:xcross)
+
+    Plots.scatter!([], label=" Offset Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[5],m=:circle)
+    Plots.scatter!([], label=" Offset Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[6],m=:circle)
+    Plots.scatter!([], label=" Overall σ", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:black,m=:xcross)
+    Plots.scatter!([], grid=false, showaxis=false,subplot=8,bg_inside=:white,label=false)
+
+    Plots.savefig(p,outputDir*"/essRhatOverall6.png")
+end
+
+function essRhatOverall_OLD(chn_dfs,ss_dfs,outputDir)
+    theme(:ggplot2)
     gr(size=(1000,800), dpi=600)
     MyMarkSize = 4
     MyMarkOpacity = 0.7
@@ -512,6 +661,62 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     mySubPlotXTicks  = [1,1.015]
     mySubPlotYTicks  = [0,3000,6000,9000]
     default(titlefontsize=12, guidefontsize=12, tickfontsize=12, legendfontsize=12)
+    global ss_dfsTest = ss_dfs
+    colNames = ss_dfs[1].parameters
+    lexicalCatsA    = vcat( findall(x -> startswith(x, "ab_w[1"), colNames),
+                            findall(x -> startswith(x, "z_ab_w[1"), colNames),
+                            findall(x -> startswith(x, "a_w"), colNames))
+
+    lexicalCatsB    = vcat( findall(x -> startswith(x, "ab_w[2"), colNames),
+                            findall(x -> startswith(x, "z_ab_w[2"), colNames),
+                            findall(x -> startswith(x, "b_w"), colNames))
+
+    lexicalCatsAσ   =       findall(x -> startswith(x, "σ_aw"), colNames)
+    lexicalCatsBσ   =       findall(x -> startswith(x, "σ_bw"), colNames)
+
+    lexicalCats     = [lexicalCatsA,lexicalCatsB,lexicalCatsAσ,lexicalCatsBσ]
+
+    participantA    = vcat( findall(x -> startswith(x, "ab_p[1"), colNames),
+                            findall(x -> startswith(x, "z_ab_p[1"), colNames),
+                            findall(x -> startswith(x, "a_p"), colNames))
+
+    participantB    = vcat( findall(x -> startswith(x, "ab_p[2"), colNames),
+                            findall(x -> startswith(x, "z_ab_p[2"), colNames),
+                            findall(x -> startswith(x, "b_p"), colNames))
+    
+    participantAσ   =       findall(x -> startswith(x, "σ_ap"), colNames)
+    participantBσ   =       findall(x -> startswith(x, "σ_bp"), colNames)
+
+    participants     = [participantA,participantB,participantAσ,participantBσ]
+
+
+    offsetA         = vcat( findall(x -> startswith(x, "ab_e[1"), colNames),
+                            findall(x -> startswith(x, "z_ab_e[1"), colNames),
+                            findall(x -> startswith(x, "a_e"), colNames))
+
+    offsetB         = vcat( findall(x -> startswith(x, "ab_e[2"), colNames),
+                            findall(x -> startswith(x, "z_ab_e[2"), colNames),
+                            findall(x -> startswith(x, "b_e"), colNames))
+
+    overallσ        = findall(x -> ==(x, "σ"), colNames)
+
+    offset          = [offsetA,offsetB,overallσ]
+
+    allCats = [lexicalCats,participants,offset]
+    
+    flatAllCats = []
+    for cat in allCats
+        for innercat in cat
+            flatAllCats = vcat(flatAllCats,innercat)
+        end
+    end
+    println(flatAllCats)
+    for i in range(1,length(colNames))
+        if !(i in flatAllCats)
+            println("ERROR: " * string(i) * " not found (" * colNames[i] *")")
+        end
+    end
+
     global gss_dfs = ss_dfs
     x = ss_dfs[1][:,"rhat"]
     y = ss_dfs[1][:,"ess_bulk"]
@@ -536,8 +741,6 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     end
     Plots.savefig(myplot,outputDir*"/essRhatOverall5.png")
 end
-
-
 function combinePlots(outputDir,noPCS)
     img = load(outputDir*"/g1.png")
     for i in range(2,noPCS)
