@@ -560,8 +560,8 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     participantBσ   = vcat( findall(x -> startswith(x, "σ_bp"), colNames),
                             findall(x -> startswith(x, "σ_p[2]"), colNames))
     
-    #participantLKJ  = findall(x -> startswith(x, "ρ_p"), colNames)
-    participants     = [participantA,participantB,participantAσ,participantBσ]#,participantLKJ]
+    participantLKJ  = findall(x -> startswith(x, "ρ_p"), colNames)
+    participants     = [participantA,participantB,participantAσ,participantBσ, participantLKJ]
 
 
     offsetA         = vcat( findall(x -> startswith(x, "ab_e[1"), colNames),
@@ -613,9 +613,9 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
                         if catId == 1
                                 Plots.scatter!([], label=" σ (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:xcross)
                                 Plots.scatter!([], label=" sample (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:circle)
-                                # if length(allCats[2][5])>0
-                                #     Plots.scatter!([], label=" LKJ prior (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:cross)
-                                # end 
+                                if length(allCats[2][5])>0
+                                    Plots.scatter!([], label=" LKJ prior (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:diamond)
+                                end 
                                 Plots.scatter!([], label=" Lexical Intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[1],m=:rect,bg_inside=:white, margin = 5mm)
                                 Plots.scatter!([], label=" Lexical Gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[2],m=:rect)
                                 Plots.scatter!([], grid=false, showaxis=false,subplot=8,bg_inside=:white,label=false)
@@ -677,7 +677,7 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
                         myCol = colScheme[4]
                     elseif innerCatId == 5
                         #LKJ Prior
-                        myMark = :cross
+                        myMark = :diamond
                         myCol = colScheme[4]
                     end 
                 
@@ -719,7 +719,7 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     println("got to save fig")
     global myplot
     myplot = p
-    #Plots.savefig(p,outputDir*"/essRhatOverall6.png")
+    Plots.savefig(p,outputDir*"/essRhatOverall6.png")
 end
 
 function essRhatOverall_OLD(chn_dfs,ss_dfs,outputDir)

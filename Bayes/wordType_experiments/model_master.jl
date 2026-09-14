@@ -122,7 +122,10 @@ function runModel(model,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TY
     end
 
     serialize(output_loc*"/out"*string(pc)*".jls",m)
-
+    chn_df = DataFrames.DataFrame(m)
+    ss_df  = DataFrames.DataFrame(summarystats(m))
+    CSV.write(output_loc*"/chndf_"*string(pc),chn_df,delim=";")
+    CSV.write(output_loc*"/ssdf_"*string(pc),ss_df,delim=";")
     if(analyseEssRhat == 1)
         essRhatScore(pc,expMean,cauchyMean,output_loc)
     end
