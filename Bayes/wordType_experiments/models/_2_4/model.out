@@ -1,0 +1,1296 @@
+cpu-bind=MASK - bp1-compute013, task  0  0 [1135957]: mask 0x2000020200002 set
+Running on host bp1-compute013
+Time is Mon Sep 14 18:37:20 BST 2026
+Directory is /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/_2_4
+Slurm job ID is 18956007
+This job runs on the following machines:
+bp1-compute013
+Precompiling project...
+    DistributionsADReverseDiffExt Being precompiled by another process (pid: 4131417, pidfile: /user/home/em18564/.julia/compiled/v1.10/DistributionsADReverseDiffExt/hY00X_4RpdW.ji.pidfile)
+  ✗ DistributionsAD → DistributionsADReverseDiffExt
+  0 dependencies successfully precompiled in 79 seconds. 549 already precompiled.
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 9.765625e-5
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 9.765625e-5
+┌ Info: Found initial step size
+└   ϵ = 0.0001953125
+Sampling (4 threads)   0%|▏                             |  ETA: 2 days, 1:00:44
+Sampling (4 threads)   1%|▎                             |  ETA: 1 days, 0:23:06
+Sampling (4 threads)   2%|▌                             |  ETA: 1 days, 13:38:09
+Sampling (4 threads)   2%|▋                             |  ETA: 1 days, 4:05:01
+Sampling (4 threads)   2%|▊                             |  ETA: 1 days, 10:24:28
+Sampling (4 threads)   3%|▉                             |  ETA: 1 days, 4:31:34
+Sampling (4 threads)   4%|█                             |  ETA: 1 days, 0:19:30
+Sampling (4 threads)   4%|█▎                            |  ETA: 1 days, 4:41:48
+Sampling (4 threads)   4%|█▍                            |  ETA: 1 days, 1:22:31
+Sampling (4 threads)   5%|█▌                            |  ETA: 1 days, 4:05:29
+Sampling (4 threads)   6%|█▋                            |  ETA: 1 days, 1:24:11
+Sampling (4 threads)   6%|█▊                            |  ETA: 1 days, 2:22:48
+Sampling (4 threads)   6%|██                            |  ETA: 1 days, 0:13:16
+Sampling (4 threads)   7%|██▏                           |  ETA: 22:22:15
+Sampling (4 threads)   8%|██▎                           |  ETA: 21:35:52
+Sampling (4 threads)   8%|██▍                           |  ETA: 20:08:19
+Sampling (4 threads)   8%|██▌                           |  ETA: 18:51:03
+Sampling (4 threads)   9%|██▊                           |  ETA: 18:12:20
+Sampling (4 threads)  10%|██▉                           |  ETA: 17:09:10
+Sampling (4 threads)  10%|███                           |  ETA: 16:49:50
+Sampling (4 threads)  10%|███▏                          |  ETA: 15:56:24
+Sampling (4 threads)  11%|███▎                          |  ETA: 15:07:49
+Sampling (4 threads)  12%|███▌                          |  ETA: 14:48:09
+Sampling (4 threads)  12%|███▋                          |  ETA: 14:06:20
+Sampling (4 threads)  12%|███▊                          |  ETA: 13:27:52
+Sampling (4 threads)  13%|███▉                          |  ETA: 13:10:26
+Sampling (4 threads)  14%|████                          |  ETA: 12:36:47
+Sampling (4 threads)  14%|████▎                         |  ETA: 12:05:32
+Sampling (4 threads)  14%|████▍                         |  ETA: 11:53:07
+Sampling (4 threads)  15%|████▌                         |  ETA: 11:25:19
+Sampling (4 threads)  16%|████▋                         |  ETA: 10:59:18
+Sampling (4 threads)  16%|████▊                         |  ETA: 10:34:55
+Sampling (4 threads)  16%|█████                         |  ETA: 10:24:32
+Sampling (4 threads)  17%|█████▏                        |  ETA: 10:02:32
+Sampling (4 threads)  18%|█████▎                        |  ETA: 9:48:19
+Sampling (4 threads)  18%|█████▍                        |  ETA: 9:28:30
+Sampling (4 threads)  18%|█████▌                        |  ETA: 9:17:53
+Sampling (4 threads)  19%|█████▊                        |  ETA: 8:59:52
+Sampling (4 threads)  20%|█████▉                        |  ETA: 8:42:47
+Sampling (4 threads)  20%|██████                        |  ETA: 8:30:58
+Sampling (4 threads)  20%|██████▏                       |  ETA: 8:15:24
+Sampling (4 threads)  21%|██████▎                       |  ETA: 8:05:27
+Sampling (4 threads)  22%|██████▌                       |  ETA: 7:51:10
+Sampling (4 threads)  22%|██████▋                       |  ETA: 7:41:04
+Sampling (4 threads)  22%|██████▊                       |  ETA: 7:27:55
+Sampling (4 threads)  23%|██████▉                       |  ETA: 7:22:22
+Sampling (4 threads)  24%|███████                       |  ETA: 7:10:09
+Sampling (4 threads)  24%|███████▎                      |  ETA: 6:58:26
+Sampling (4 threads)  24%|███████▍                      |  ETA: 6:51:32
+Sampling (4 threads)  25%|███████▌                      |  ETA: 6:40:38
+Sampling (4 threads)  26%|███████▋                      |  ETA: 6:37:12
+Sampling (4 threads)  26%|███████▊                      |  ETA: 6:26:57
+Sampling (4 threads)  26%|████████                      |  ETA: 6:17:05
+Sampling (4 threads)  27%|████████▏                     |  ETA: 6:13:46
+Sampling (4 threads)  28%|████████▎                     |  ETA: 6:04:28
+Sampling (4 threads)  28%|████████▍                     |  ETA: 6:00:02
+Sampling (4 threads)  28%|████████▌                     |  ETA: 5:51:16
+Sampling (4 threads)  29%|████████▊                     |  ETA: 5:42:47
+Sampling (4 threads)  30%|████████▉                     |  ETA: 5:37:41
+Sampling (4 threads)  30%|█████████                     |  ETA: 5:29:42
+Sampling (4 threads)  30%|█████████▏                    |  ETA: 5:26:04
+Sampling (4 threads)  31%|█████████▎                    |  ETA: 5:18:30
+Sampling (4 threads)  32%|█████████▌                    |  ETA: 5:14:52
+Sampling (4 threads)  32%|█████████▋                    |  ETA: 5:07:41
+Sampling (4 threads)  32%|█████████▊                    |  ETA: 5:00:44
+Sampling (4 threads)  33%|█████████▉                    |  ETA: 4:58:59
+Sampling (4 threads)  34%|██████████                    |  ETA: 4:52:19
+Sampling (4 threads)  34%|██████████▎                   |  ETA: 4:45:51
+Sampling (4 threads)  34%|██████████▍                   |  ETA: 4:44:06
+Sampling (4 threads)  35%|██████████▌                   |  ETA: 4:37:54
+Sampling (4 threads)  36%|██████████▋                   |  ETA: 4:31:53
+Sampling (4 threads)  36%|██████████▊                   |  ETA: 4:30:06
+Sampling (4 threads)  36%|███████████                   |  ETA: 4:24:19
+Sampling (4 threads)  37%|███████████▏                  |  ETA: 4:18:42
+Sampling (4 threads)  38%|███████████▎                  |  ETA: 4:16:40
+Sampling (4 threads)  38%|███████████▍                  |  ETA: 4:11:16
+Sampling (4 threads)  38%|███████████▌                  |  ETA: 4:06:00
+Sampling (4 threads)  39%|███████████▊                  |  ETA: 4:04:09
+Sampling (4 threads)  40%|███████████▉                  |  ETA: 3:59:05
+Sampling (4 threads)  40%|████████████                  |  ETA: 3:54:08
+Sampling (4 threads)  40%|████████████▏                 |  ETA: 3:51:21
+Sampling (4 threads)  41%|████████████▎                 |  ETA: 3:46:36
+Sampling (4 threads)  42%|████████████▌                 |  ETA: 3:43:54
+Sampling (4 threads)  42%|████████████▋                 |  ETA: 3:39:21
+Sampling (4 threads)  42%|████████████▊                 |  ETA: 3:38:05
+Sampling (4 threads)  43%|████████████▉                 |  ETA: 3:33:40
+Sampling (4 threads)  44%|█████████████                 |  ETA: 3:29:22
+Sampling (4 threads)  44%|█████████████▎                |  ETA: 3:27:58
+Sampling (4 threads)  44%|█████████████▍                |  ETA: 3:23:48
+Sampling (4 threads)  45%|█████████████▌                |  ETA: 3:19:43
+Sampling (4 threads)  46%|█████████████▋                |  ETA: 3:15:44
+Sampling (4 threads)  46%|█████████████▊                |  ETA: 3:13:50
+Sampling (4 threads)  46%|██████████████                |  ETA: 3:09:59
+Sampling (4 threads)  47%|██████████████▏               |  ETA: 3:07:31
+Sampling (4 threads)  48%|██████████████▎               |  ETA: 3:03:48
+Sampling (4 threads)  48%|██████████████▍               |  ETA: 3:01:35
+Sampling (4 threads)  48%|██████████████▌               |  ETA: 2:57:59
+Sampling (4 threads)  49%|██████████████▊               |  ETA: 2:55:40
+Sampling (4 threads)  50%|██████████████▉               |  ETA: 2:52:12
+Sampling (4 threads)  50%|███████████████               |  ETA: 2:50:59
+Sampling (4 threads)  50%|███████████████▏              |  ETA: 2:47:36
+Sampling (4 threads)  51%|███████████████▎              |  ETA: 2:44:17
+Sampling (4 threads)  52%|███████████████▌              |  ETA: 2:43:03
+Sampling (4 threads)  52%|███████████████▋              |  ETA: 2:39:50
+Sampling (4 threads)  52%|███████████████▊              |  ETA: 2:36:39
+Sampling (4 threads)  53%|███████████████▉              |  ETA: 2:34:56
+Sampling (4 threads)  54%|████████████████              |  ETA: 2:31:51
+Sampling (4 threads)  54%|████████████████▎             |  ETA: 2:29:49
+Sampling (4 threads)  55%|████████████████▍             |  ETA: 2:26:50
+Sampling (4 threads)  55%|████████████████▌             |  ETA: 2:25:52
+Sampling (4 threads)  56%|████████████████▋             |  ETA: 2:22:57
+Sampling (4 threads)  56%|████████████████▊             |  ETA: 2:20:05
+Sampling (4 threads)  56%|█████████████████             |  ETA: 2:18:56
+Sampling (4 threads)  57%|█████████████████▏            |  ETA: 2:16:08
+Sampling (4 threads)  57%|█████████████████▎            |  ETA: 2:13:23
+Sampling (4 threads)  58%|█████████████████▍            |  ETA: 2:11:39
+Sampling (4 threads)  58%|█████████████████▌            |  ETA: 2:08:58
+Sampling (4 threads)  59%|█████████████████▊            |  ETA: 2:08:01
+Sampling (4 threads)  60%|█████████████████▉            |  ETA: 2:05:24
+Sampling (4 threads)  60%|██████████████████            |  ETA: 2:02:49
+Sampling (4 threads)  60%|██████████████████▏           |  ETA: 2:00:17
+Sampling (4 threads)  61%|██████████████████▎           |  ETA: 1:59:07
+Sampling (4 threads)  62%|██████████████████▌           |  ETA: 1:56:38
+Sampling (4 threads)  62%|██████████████████▋           |  ETA: 1:55:26
+Sampling (4 threads)  62%|██████████████████▊           |  ETA: 1:53:01
+Sampling (4 threads)  63%|██████████████████▉           |  ETA: 1:50:37
+Sampling (4 threads)  64%|███████████████████           |  ETA: 1:48:16
+Sampling (4 threads)  64%|███████████████████▎          |  ETA: 1:47:29
+Sampling (4 threads)  64%|███████████████████▍          |  ETA: 1:45:11
+Sampling (4 threads)  65%|███████████████████▌          |  ETA: 1:42:54
+Sampling (4 threads)  66%|███████████████████▋          |  ETA: 1:41:20
+Sampling (4 threads)  66%|███████████████████▊          |  ETA: 1:39:06
+Sampling (4 threads)  66%|████████████████████          |  ETA: 1:37:55
+Sampling (4 threads)  67%|████████████████████▏         |  ETA: 1:35:44
+Sampling (4 threads)  68%|████████████████████▎         |  ETA: 1:34:22
+Sampling (4 threads)  68%|████████████████████▍         |  ETA: 1:32:14
+Sampling (4 threads)  68%|████████████████████▌         |  ETA: 1:30:08
+Sampling (4 threads)  69%|████████████████████▊         |  ETA: 1:28:39
+Sampling (4 threads)  70%|████████████████████▉         |  ETA: 1:26:36
+Sampling (4 threads)  70%|█████████████████████         |  ETA: 1:25:10
+Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 1:23:09
+Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 1:21:42
+Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 1:19:44
+Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 1:18:14
+Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 1:16:19
+Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 1:14:56
+Sampling (4 threads)  74%|██████████████████████        |  ETA: 1:13:03
+Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 1:11:35
+Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 1:09:45
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:08:23
+Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 1:06:34
+Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 1:05:15
+Sampling (4 threads)  76%|███████████████████████       |  ETA: 1:03:29
+Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 1:02:06
+Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 1:00:21
+Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 0:59:11
+Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 0:57:28
+Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 0:55:46
+Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 0:54:37
+Sampling (4 threads)  80%|████████████████████████      |  ETA: 0:52:57
+Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:51:19
+Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:50:16
+Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:48:39
+Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:47:02
+Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:45:27
+Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:44:28
+Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:42:54
+Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:41:21
+Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:40:07
+Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:38:36
+Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:37:18
+Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:35:49
+Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:34:36
+Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:33:08
+Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:31:51
+Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:30:24
+Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:29:11
+Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:27:45
+Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:26:21
+Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:25:07
+Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:23:43
+Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:22:34
+Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:21:11
+Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:19:50
+Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:18:39
+Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:17:19
+Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:15:59
+Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:14:47
+Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:13:29
+Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:12:11
+Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:10:56
+Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:09:41
+Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:08:27
+Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:07:14
+Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:06:01
+Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:04:48
+Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:03:36
+Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:02:24
+Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:01:12
+Sampling (4 threads) 100%|██████████████████████████████| Time: 3:59:43
+Sampling (4 threads) 100%|██████████████████████████████| Time: 3:59:45
+Precompiling project...
+    DistributionsADReverseDiffExt Being precompiled by another process (pid: 4131417, pidfile: /user/home/em18564/.julia/compiled/v1.10/DistributionsADReverseDiffExt/hY00X_4RpdW.ji.pidfile)
+  ✗ DistributionsAD → DistributionsADReverseDiffExt
+  0 dependencies successfully precompiled in 92 seconds. 549 already precompiled.
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.0001953125
+┌ Info: Found initial step size
+└   ϵ = 9.765625e-5
+Sampling (4 threads)   0%|▏                             |  ETA: 1 days, 13:31:35
+Sampling (4 threads)   1%|▎                             |  ETA: 18:40:16
+Sampling (4 threads)   2%|▌                             |  ETA: 1 days, 10:42:24
+Sampling (4 threads)   2%|▋                             |  ETA: 1 days, 1:53:52
+Sampling (4 threads)   2%|▊                             |  ETA: 1 days, 8:10:06
+Sampling (4 threads)   3%|▉                             |  ETA: 1 days, 2:40:10
+Sampling (4 threads)   4%|█                             |  ETA: 1 days, 6:57:32
+Sampling (4 threads)   4%|█▎                            |  ETA: 1 days, 2:56:55
+Sampling (4 threads)   4%|█▍                            |  ETA: 1 days, 6:16:55
+Sampling (4 threads)   5%|█▌                            |  ETA: 1 days, 3:06:39
+Sampling (4 threads)   6%|█▋                            |  ETA: 1 days, 4:46:31
+Sampling (4 threads)   6%|█▊                            |  ETA: 1 days, 2:14:16
+Sampling (4 threads)   6%|██                            |  ETA: 1 days, 1:08:54
+Sampling (4 threads)   7%|██▏                           |  ETA: 23:13:37
+Sampling (4 threads)   8%|██▎                           |  ETA: 21:33:43
+Sampling (4 threads)   8%|██▍                           |  ETA: 20:39:00
+Sampling (4 threads)   8%|██▌                           |  ETA: 19:19:47
+Sampling (4 threads)   9%|██▊                           |  ETA: 18:26:48
+Sampling (4 threads)  10%|██▉                           |  ETA: 17:22:47
+Sampling (4 threads)  10%|███                           |  ETA: 16:49:12
+Sampling (4 threads)  10%|███▏                          |  ETA: 15:55:48
+Sampling (4 threads)  11%|███▎                          |  ETA: 15:07:16
+Sampling (4 threads)  12%|███▌                          |  ETA: 14:46:52
+Sampling (4 threads)  12%|███▋                          |  ETA: 14:05:07
+Sampling (4 threads)  12%|███▊                          |  ETA: 13:26:42
+Sampling (4 threads)  13%|███▉                          |  ETA: 12:51:14
+Sampling (4 threads)  14%|████                          |  ETA: 12:41:31
+Sampling (4 threads)  14%|████▎                         |  ETA: 12:10:04
+Sampling (4 threads)  14%|████▍                         |  ETA: 11:40:48
+Sampling (4 threads)  15%|████▌                         |  ETA: 11:29:33
+Sampling (4 threads)  16%|████▋                         |  ETA: 11:03:23
+Sampling (4 threads)  16%|████▊                         |  ETA: 10:38:51
+Sampling (4 threads)  16%|█████                         |  ETA: 10:15:48
+Sampling (4 threads)  17%|█████▏                        |  ETA: 10:09:42
+Sampling (4 threads)  18%|█████▎                        |  ETA: 9:48:43
+Sampling (4 threads)  18%|█████▍                        |  ETA: 9:39:48
+Sampling (4 threads)  18%|█████▌                        |  ETA: 9:20:41
+Sampling (4 threads)  19%|█████▊                        |  ETA: 9:02:35
+Sampling (4 threads)  20%|█████▉                        |  ETA: 8:45:24
+Sampling (4 threads)  20%|██████                        |  ETA: 8:38:28
+Sampling (4 threads)  20%|██████▏                       |  ETA: 8:22:39
+Sampling (4 threads)  21%|██████▎                       |  ETA: 8:15:25
+Sampling (4 threads)  22%|██████▌                       |  ETA: 8:00:50
+Sampling (4 threads)  22%|██████▋                       |  ETA: 7:46:55
+Sampling (4 threads)  22%|██████▊                       |  ETA: 7:33:37
+Sampling (4 threads)  23%|██████▉                       |  ETA: 7:29:39
+Sampling (4 threads)  24%|███████                       |  ETA: 7:17:14
+Sampling (4 threads)  24%|███████▎                      |  ETA: 7:11:18
+Sampling (4 threads)  24%|███████▍                      |  ETA: 6:59:43
+Sampling (4 threads)  25%|███████▌                      |  ETA: 6:48:36
+Sampling (4 threads)  26%|███████▋                      |  ETA: 6:44:19
+Sampling (4 threads)  26%|███████▊                      |  ETA: 6:33:53
+Sampling (4 threads)  26%|████████                      |  ETA: 6:29:05
+Sampling (4 threads)  27%|████████▏                     |  ETA: 6:19:17
+Sampling (4 threads)  28%|████████▎                     |  ETA: 6:09:50
+Sampling (4 threads)  28%|████████▍                     |  ETA: 6:07:26
+Sampling (4 threads)  28%|████████▌                     |  ETA: 5:58:29
+Sampling (4 threads)  29%|████████▊                     |  ETA: 5:49:50
+Sampling (4 threads)  30%|████████▉                     |  ETA: 5:47:18
+Sampling (4 threads)  30%|█████████                     |  ETA: 5:39:06
+Sampling (4 threads)  30%|█████████▏                    |  ETA: 5:31:09
+Sampling (4 threads)  31%|█████████▎                    |  ETA: 5:29:42
+Sampling (4 threads)  32%|█████████▌                    |  ETA: 5:22:07
+Sampling (4 threads)  32%|█████████▋                    |  ETA: 5:14:46
+Sampling (4 threads)  32%|█████████▊                    |  ETA: 5:12:39
+Sampling (4 threads)  33%|█████████▉                    |  ETA: 5:05:38
+Sampling (4 threads)  34%|██████████                    |  ETA: 4:58:49
+Sampling (4 threads)  34%|██████████▎                   |  ETA: 4:56:45
+Sampling (4 threads)  34%|██████████▍                   |  ETA: 4:50:14
+Sampling (4 threads)  35%|██████████▌                   |  ETA: 4:43:54
+Sampling (4 threads)  36%|██████████▋                   |  ETA: 4:42:11
+Sampling (4 threads)  36%|██████████▊                   |  ETA: 4:36:07
+Sampling (4 threads)  36%|███████████                   |  ETA: 4:30:12
+Sampling (4 threads)  37%|███████████▏                  |  ETA: 4:28:22
+Sampling (4 threads)  38%|███████████▎                  |  ETA: 4:22:41
+Sampling (4 threads)  38%|███████████▍                  |  ETA: 4:17:10
+Sampling (4 threads)  38%|███████████▌                  |  ETA: 4:16:00
+Sampling (4 threads)  39%|███████████▊                  |  ETA: 4:10:40
+Sampling (4 threads)  40%|███████████▉                  |  ETA: 4:05:28
+Sampling (4 threads)  40%|████████████                  |  ETA: 4:04:18
+Sampling (4 threads)  40%|████████████▏                 |  ETA: 3:59:16
+Sampling (4 threads)  41%|████████████▎                 |  ETA: 3:56:17
+Sampling (4 threads)  42%|████████████▌                 |  ETA: 3:51:28
+Sampling (4 threads)  42%|████████████▋                 |  ETA: 3:48:36
+Sampling (4 threads)  42%|████████████▊                 |  ETA: 3:43:58
+Sampling (4 threads)  43%|████████████▉                 |  ETA: 3:42:31
+Sampling (4 threads)  44%|█████████████                 |  ETA: 3:38:02
+Sampling (4 threads)  44%|█████████████▎                |  ETA: 3:33:39
+Sampling (4 threads)  44%|█████████████▍                |  ETA: 3:32:34
+Sampling (4 threads)  45%|█████████████▌                |  ETA: 3:28:19
+Sampling (4 threads)  46%|█████████████▋                |  ETA: 3:26:54
+Sampling (4 threads)  46%|█████████████▊                |  ETA: 3:22:46
+Sampling (4 threads)  46%|██████████████                |  ETA: 3:18:44
+Sampling (4 threads)  47%|██████████████▏               |  ETA: 3:14:47
+Sampling (4 threads)  48%|██████████████▎               |  ETA: 3:13:44
+Sampling (4 threads)  48%|██████████████▍               |  ETA: 3:09:53
+Sampling (4 threads)  48%|██████████████▌               |  ETA: 3:08:18
+Sampling (4 threads)  49%|██████████████▊               |  ETA: 3:04:34
+Sampling (4 threads)  50%|██████████████▉               |  ETA: 3:03:05
+Sampling (4 threads)  50%|███████████████               |  ETA: 2:59:28
+Sampling (4 threads)  50%|███████████████▏              |  ETA: 2:55:55
+Sampling (4 threads)  51%|███████████████▎              |  ETA: 2:54:41
+Sampling (4 threads)  52%|███████████████▌              |  ETA: 2:51:13
+Sampling (4 threads)  52%|███████████████▋              |  ETA: 2:49:21
+Sampling (4 threads)  52%|███████████████▊              |  ETA: 2:46:00
+Sampling (4 threads)  53%|███████████████▉              |  ETA: 2:44:27
+Sampling (4 threads)  54%|████████████████              |  ETA: 2:41:10
+Sampling (4 threads)  54%|████████████████▎             |  ETA: 2:39:41
+Sampling (4 threads)  55%|████████████████▍             |  ETA: 2:36:30
+Sampling (4 threads)  55%|████████████████▌             |  ETA: 2:33:22
+Sampling (4 threads)  56%|████████████████▋             |  ETA: 2:32:00
+Sampling (4 threads)  56%|████████████████▊             |  ETA: 2:28:57
+Sampling (4 threads)  56%|█████████████████             |  ETA: 2:27:19
+Sampling (4 threads)  57%|█████████████████▏            |  ETA: 2:24:21
+Sampling (4 threads)  57%|█████████████████▎            |  ETA: 2:22:57
+Sampling (4 threads)  58%|█████████████████▍            |  ETA: 2:20:03
+Sampling (4 threads)  58%|█████████████████▌            |  ETA: 2:17:12
+Sampling (4 threads)  59%|█████████████████▊            |  ETA: 2:16:02
+Sampling (4 threads)  60%|█████████████████▉            |  ETA: 2:13:15
+Sampling (4 threads)  60%|██████████████████            |  ETA: 2:10:30
+Sampling (4 threads)  60%|██████████████████▏           |  ETA: 2:09:12
+Sampling (4 threads)  61%|██████████████████▎           |  ETA: 2:06:31
+Sampling (4 threads)  62%|██████████████████▌           |  ETA: 2:03:52
+Sampling (4 threads)  62%|██████████████████▋           |  ETA: 2:02:33
+Sampling (4 threads)  62%|██████████████████▊           |  ETA: 1:59:58
+Sampling (4 threads)  63%|██████████████████▉           |  ETA: 1:58:46
+Sampling (4 threads)  64%|███████████████████           |  ETA: 1:56:14
+Sampling (4 threads)  64%|███████████████████▎          |  ETA: 1:54:53
+Sampling (4 threads)  64%|███████████████████▍          |  ETA: 1:52:24
+Sampling (4 threads)  65%|███████████████████▌          |  ETA: 1:49:58
+Sampling (4 threads)  66%|███████████████████▋          |  ETA: 1:48:50
+Sampling (4 threads)  66%|███████████████████▊          |  ETA: 1:46:27
+Sampling (4 threads)  66%|████████████████████          |  ETA: 1:45:02
+Sampling (4 threads)  67%|████████████████████▏         |  ETA: 1:42:42
+Sampling (4 threads)  68%|████████████████████▎         |  ETA: 1:40:24
+Sampling (4 threads)  68%|████████████████████▍         |  ETA: 1:39:04
+Sampling (4 threads)  68%|████████████████████▌         |  ETA: 1:36:48
+Sampling (4 threads)  69%|████████████████████▊         |  ETA: 1:35:40
+Sampling (4 threads)  70%|████████████████████▉         |  ETA: 1:33:27
+Sampling (4 threads)  70%|█████████████████████         |  ETA: 1:31:15
+Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 1:30:28
+Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 1:28:19
+Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 1:26:11
+Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 1:24:05
+Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 1:22:59
+Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 1:20:55
+Sampling (4 threads)  74%|██████████████████████        |  ETA: 1:19:43
+Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 1:17:41
+Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 1:15:41
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:14:21
+Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 1:12:23
+Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 1:11:10
+Sampling (4 threads)  76%|███████████████████████       |  ETA: 1:09:14
+Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 1:07:19
+Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 1:06:05
+Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 1:04:12
+Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 1:02:52
+Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 1:01:01
+Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 0:59:12
+Sampling (4 threads)  80%|████████████████████████      |  ETA: 0:57:23
+Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:55:55
+Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:54:21
+Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:52:50
+Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:51:19
+Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:49:40
+Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:48:16
+Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:46:37
+Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:45:11
+Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:43:42
+Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:42:08
+Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:40:42
+Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:39:06
+Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:37:40
+Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:36:13
+Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:34:47
+Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:33:17
+Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:31:52
+Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:30:19
+Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:28:55
+Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:27:29
+Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:26:04
+Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:24:40
+Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:23:16
+Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:21:51
+Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:20:29
+Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:19:05
+Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:17:42
+Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:16:18
+Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:14:56
+Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:13:33
+Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:12:12
+Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:10:50
+Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:09:28
+Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:08:06
+Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:06:44
+Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:05:23
+Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:04:02
+Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:02:42
+Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:01:21
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:30:32
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:30:33
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.003125
+┌ Info: Found initial step size
+└   ϵ = 0.000390625
+┌ Info: Found initial step size
+└   ϵ = 0.000390625
+┌ Info: Found initial step size
+└   ϵ = 0.0001953125
+Sampling (4 threads)   0%|▏                             |  ETA: 1 days, 5:51:51
+Sampling (4 threads)   1%|▎                             |  ETA: 14:51:31
+Sampling (4 threads)   2%|▌                             |  ETA: 1 days, 4:51:26
+Sampling (4 threads)   2%|▋                             |  ETA: 21:31:59
+Sampling (4 threads)   2%|▊                             |  ETA: 1 days, 4:40:10
+Sampling (4 threads)   3%|▉                             |  ETA: 23:46:07
+Sampling (4 threads)   4%|█                             |  ETA: 1 days, 3:43:46
+Sampling (4 threads)   4%|█▎                            |  ETA: 1 days, 0:08:15
+Sampling (4 threads)   4%|█▍                            |  ETA: 1 days, 3:45:44
+Sampling (4 threads)   5%|█▌                            |  ETA: 1 days, 0:51:19
+Sampling (4 threads)   6%|█▋                            |  ETA: 1 days, 2:19:40
+Sampling (4 threads)   6%|█▊                            |  ETA: 1 days, 0:00:22
+Sampling (4 threads)   6%|██                            |  ETA: 22:49:28
+Sampling (4 threads)   7%|██▏                           |  ETA: 21:04:51
+Sampling (4 threads)   8%|██▎                           |  ETA: 19:34:11
+Sampling (4 threads)   8%|██▍                           |  ETA: 18:43:16
+Sampling (4 threads)   8%|██▌                           |  ETA: 17:31:27
+Sampling (4 threads)   9%|██▊                           |  ETA: 17:00:41
+Sampling (4 threads)  10%|██▉                           |  ETA: 16:01:39
+Sampling (4 threads)  10%|███                           |  ETA: 15:08:31
+Sampling (4 threads)  10%|███▏                          |  ETA: 14:47:26
+Sampling (4 threads)  11%|███▎                          |  ETA: 14:02:22
+Sampling (4 threads)  12%|███▌                          |  ETA: 13:50:52
+Sampling (4 threads)  12%|███▋                          |  ETA: 13:11:45
+Sampling (4 threads)  12%|███▊                          |  ETA: 12:35:46
+Sampling (4 threads)  13%|███▉                          |  ETA: 12:27:51
+Sampling (4 threads)  14%|████                          |  ETA: 11:56:01
+Sampling (4 threads)  14%|████▎                         |  ETA: 11:26:27
+Sampling (4 threads)  14%|████▍                         |  ETA: 10:58:56
+Sampling (4 threads)  15%|████▌                         |  ETA: 10:55:21
+Sampling (4 threads)  16%|████▋                         |  ETA: 10:30:28
+Sampling (4 threads)  16%|████▊                         |  ETA: 10:27:03
+Sampling (4 threads)  16%|█████                         |  ETA: 10:04:26
+Sampling (4 threads)  17%|█████▏                        |  ETA: 9:43:08
+Sampling (4 threads)  18%|█████▎                        |  ETA: 9:33:15
+Sampling (4 threads)  18%|█████▍                        |  ETA: 9:13:57
+Sampling (4 threads)  18%|█████▌                        |  ETA: 9:05:52
+Sampling (4 threads)  19%|█████▊                        |  ETA: 8:48:15
+Sampling (4 threads)  20%|█████▉                        |  ETA: 8:40:48
+Sampling (4 threads)  20%|██████                        |  ETA: 8:24:38
+Sampling (4 threads)  20%|██████▏                       |  ETA: 8:20:51
+Sampling (4 threads)  21%|██████▎                       |  ETA: 8:05:51
+Sampling (4 threads)  22%|██████▌                       |  ETA: 7:51:33
+Sampling (4 threads)  22%|██████▋                       |  ETA: 7:55:00
+Sampling (4 threads)  22%|██████▊                       |  ETA: 7:41:28
+Sampling (4 threads)  23%|██████▉                       |  ETA: 7:28:32
+Sampling (4 threads)  24%|███████                       |  ETA: 7:29:38
+Sampling (4 threads)  24%|███████▎                      |  ETA: 7:17:24
+Sampling (4 threads)  24%|███████▍                      |  ETA: 7:05:39
+Sampling (4 threads)  25%|███████▌                      |  ETA: 7:04:25
+Sampling (4 threads)  26%|███████▋                      |  ETA: 6:53:19
+Sampling (4 threads)  26%|███████▊                      |  ETA: 6:42:39
+Sampling (4 threads)  26%|████████                      |  ETA: 6:38:36
+Sampling (4 threads)  27%|████████▏                     |  ETA: 6:28:33
+Sampling (4 threads)  28%|████████▎                     |  ETA: 6:24:45
+Sampling (4 threads)  28%|████████▍                     |  ETA: 6:15:16
+Sampling (4 threads)  28%|████████▌                     |  ETA: 6:06:08
+Sampling (4 threads)  29%|████████▊                     |  ETA: 6:03:34
+Sampling (4 threads)  30%|████████▉                     |  ETA: 5:54:53
+Sampling (4 threads)  30%|█████████                     |  ETA: 5:46:30
+Sampling (4 threads)  30%|█████████▏                    |  ETA: 5:44:16
+Sampling (4 threads)  31%|█████████▎                    |  ETA: 5:36:16
+Sampling (4 threads)  32%|█████████▌                    |  ETA: 5:28:32
+Sampling (4 threads)  32%|█████████▋                    |  ETA: 5:26:37
+Sampling (4 threads)  32%|█████████▊                    |  ETA: 5:19:14
+Sampling (4 threads)  33%|█████████▉                    |  ETA: 5:12:04
+Sampling (4 threads)  34%|██████████                    |  ETA: 5:10:09
+Sampling (4 threads)  34%|██████████▎                   |  ETA: 5:03:17
+Sampling (4 threads)  34%|██████████▍                   |  ETA: 4:56:38
+Sampling (4 threads)  35%|██████████▌                   |  ETA: 4:55:26
+Sampling (4 threads)  36%|██████████▋                   |  ETA: 4:49:02
+Sampling (4 threads)  36%|██████████▊                   |  ETA: 4:42:49
+Sampling (4 threads)  36%|███████████                   |  ETA: 4:41:20
+Sampling (4 threads)  37%|███████████▏                  |  ETA: 4:35:21
+Sampling (4 threads)  38%|███████████▎                  |  ETA: 4:29:31
+Sampling (4 threads)  38%|███████████▍                  |  ETA: 4:28:27
+Sampling (4 threads)  38%|███████████▌                  |  ETA: 4:22:50
+Sampling (4 threads)  39%|███████████▊                  |  ETA: 4:17:21
+Sampling (4 threads)  40%|███████████▉                  |  ETA: 4:15:50
+Sampling (4 threads)  40%|████████████                  |  ETA: 4:10:32
+Sampling (4 threads)  40%|████████████▏                 |  ETA: 4:05:23
+Sampling (4 threads)  41%|████████████▎                 |  ETA: 4:04:26
+Sampling (4 threads)  42%|████████████▌                 |  ETA: 3:59:26
+Sampling (4 threads)  42%|████████████▋                 |  ETA: 3:54:34
+Sampling (4 threads)  42%|████████████▊                 |  ETA: 3:52:59
+Sampling (4 threads)  43%|████████████▉                 |  ETA: 3:48:17
+Sampling (4 threads)  44%|█████████████                 |  ETA: 3:47:12
+Sampling (4 threads)  44%|█████████████▎                |  ETA: 3:42:37
+Sampling (4 threads)  44%|█████████████▍                |  ETA: 3:38:09
+Sampling (4 threads)  45%|█████████████▌                |  ETA: 3:36:53
+Sampling (4 threads)  46%|█████████████▋                |  ETA: 3:32:33
+Sampling (4 threads)  46%|█████████████▊                |  ETA: 3:28:18
+Sampling (4 threads)  46%|██████████████                |  ETA: 3:27:32
+Sampling (4 threads)  47%|██████████████▏               |  ETA: 3:23:24
+Sampling (4 threads)  48%|██████████████▎               |  ETA: 3:19:22
+Sampling (4 threads)  48%|██████████████▍               |  ETA: 3:17:51
+Sampling (4 threads)  48%|██████████████▌               |  ETA: 3:13:55
+Sampling (4 threads)  49%|██████████████▊               |  ETA: 3:12:29
+Sampling (4 threads)  50%|██████████████▉               |  ETA: 3:08:40
+Sampling (4 threads)  50%|███████████████               |  ETA: 3:04:56
+Sampling (4 threads)  50%|███████████████▏              |  ETA: 3:03:29
+Sampling (4 threads)  51%|███████████████▎              |  ETA: 2:59:51
+Sampling (4 threads)  52%|███████████████▌              |  ETA: 2:56:17
+Sampling (4 threads)  52%|███████████████▋              |  ETA: 2:55:31
+Sampling (4 threads)  52%|███████████████▊              |  ETA: 2:52:02
+Sampling (4 threads)  53%|███████████████▉              |  ETA: 2:48:37
+Sampling (4 threads)  54%|████████████████              |  ETA: 2:47:53
+Sampling (4 threads)  54%|████████████████▎             |  ETA: 2:44:33
+Sampling (4 threads)  55%|████████████████▍             |  ETA: 2:41:16
+Sampling (4 threads)  55%|████████████████▌             |  ETA: 2:39:34
+Sampling (4 threads)  56%|████████████████▋             |  ETA: 2:36:22
+Sampling (4 threads)  56%|████████████████▊             |  ETA: 2:34:18
+Sampling (4 threads)  56%|█████████████████             |  ETA: 2:31:12
+Sampling (4 threads)  57%|█████████████████▏            |  ETA: 2:29:15
+Sampling (4 threads)  57%|█████████████████▎            |  ETA: 2:26:14
+Sampling (4 threads)  58%|█████████████████▍            |  ETA: 2:25:21
+Sampling (4 threads)  58%|█████████████████▌            |  ETA: 2:22:24
+Sampling (4 threads)  59%|█████████████████▊            |  ETA: 2:19:29
+Sampling (4 threads)  60%|█████████████████▉            |  ETA: 2:18:27
+Sampling (4 threads)  60%|██████████████████            |  ETA: 2:15:36
+Sampling (4 threads)  60%|██████████████████▏           |  ETA: 2:12:48
+Sampling (4 threads)  61%|██████████████████▎           |  ETA: 2:11:04
+Sampling (4 threads)  62%|██████████████████▌           |  ETA: 2:08:20
+Sampling (4 threads)  62%|██████████████████▋           |  ETA: 2:06:49
+Sampling (4 threads)  62%|██████████████████▊           |  ETA: 2:04:09
+Sampling (4 threads)  63%|██████████████████▉           |  ETA: 2:01:32
+Sampling (4 threads)  64%|███████████████████           |  ETA: 1:59:45
+Sampling (4 threads)  64%|███████████████████▎          |  ETA: 1:57:11
+Sampling (4 threads)  64%|███████████████████▍          |  ETA: 1:55:20
+Sampling (4 threads)  65%|███████████████████▌          |  ETA: 1:52:50
+Sampling (4 threads)  66%|███████████████████▋          |  ETA: 1:51:06
+Sampling (4 threads)  66%|███████████████████▊          |  ETA: 1:48:40
+Sampling (4 threads)  66%|████████████████████          |  ETA: 1:47:07
+Sampling (4 threads)  67%|████████████████████▏         |  ETA: 1:44:44
+Sampling (4 threads)  68%|████████████████████▎         |  ETA: 1:43:24
+Sampling (4 threads)  68%|████████████████████▍         |  ETA: 1:41:04
+Sampling (4 threads)  68%|████████████████████▌         |  ETA: 1:38:45
+Sampling (4 threads)  69%|████████████████████▊         |  ETA: 1:37:28
+Sampling (4 threads)  70%|████████████████████▉         |  ETA: 1:35:13
+Sampling (4 threads)  70%|█████████████████████         |  ETA: 1:32:59
+Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 1:30:47
+Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 1:29:39
+Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 1:27:29
+Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 1:25:21
+Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 1:23:48
+Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 1:21:43
+Sampling (4 threads)  74%|██████████████████████        |  ETA: 1:20:25
+Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 1:18:22
+Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 1:16:20
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:14:48
+Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 1:12:49
+Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 1:11:16
+Sampling (4 threads)  76%|███████████████████████       |  ETA: 1:09:20
+Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 1:07:48
+Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 1:05:54
+Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 1:04:35
+Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 1:02:43
+Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 1:00:52
+Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 0:59:34
+Sampling (4 threads)  80%|████████████████████████      |  ETA: 0:57:45
+Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:55:58
+Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:54:34
+Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:52:49
+Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:51:20
+Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:49:37
+Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:48:10
+Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:46:28
+Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:44:55
+Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:43:27
+Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:41:56
+Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:40:24
+Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:38:55
+Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:37:22
+Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:35:52
+Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:34:21
+Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:32:55
+Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:31:28
+Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:30:00
+Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:28:33
+Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:27:08
+Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:25:43
+Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:24:18
+Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:22:54
+Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:21:32
+Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:20:07
+Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:18:46
+Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:17:23
+Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:16:02
+Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:14:44
+Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:13:27
+Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:12:07
+Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:10:48
+Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:09:28
+Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:08:08
+Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:06:48
+Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:05:27
+Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:04:06
+Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:02:44
+Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:01:22
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:34:29
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:34:29
+Precompiling project...
+    DistributionsADReverseDiffExt Being precompiled by another process (pid: 4131417, pidfile: /user/home/em18564/.julia/compiled/v1.10/DistributionsADReverseDiffExt/hY00X_4RpdW.ji.pidfile)
+  ✗ DistributionsAD → DistributionsADReverseDiffExt
+  0 dependencies successfully precompiled in 85 seconds. 549 already precompiled.
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.000390625
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+Sampling (4 threads)   0%|▏                             |  ETA: 3 days, 9:27:42
+Sampling (4 threads)   1%|▎                             |  ETA: 1 days, 16:31:41
+Sampling (4 threads)   2%|▌                             |  ETA: 1 days, 2:52:56
+Sampling (4 threads)   2%|▋                             |  ETA: 1 days, 21:14:15
+Sampling (4 threads)   2%|▊                             |  ETA: 1 days, 12:00:20
+Sampling (4 threads)   3%|▉                             |  ETA: 1 days, 5:51:02
+Sampling (4 threads)   4%|█                             |  ETA: 1 days, 12:59:46
+Sampling (4 threads)   4%|█▎                            |  ETA: 1 days, 8:12:14
+Sampling (4 threads)   4%|█▍                            |  ETA: 1 days, 4:28:35
+Sampling (4 threads)   5%|█▌                            |  ETA: 1 days, 6:31:12
+Sampling (4 threads)   6%|█▋                            |  ETA: 1 days, 3:35:58
+Sampling (4 threads)   6%|█▊                            |  ETA: 1 days, 2:06:29
+Sampling (4 threads)   6%|██                            |  ETA: 23:58:18
+Sampling (4 threads)   7%|██▏                           |  ETA: 23:46:19
+Sampling (4 threads)   8%|██▎                           |  ETA: 22:04:04
+Sampling (4 threads)   8%|██▍                           |  ETA: 21:11:02
+Sampling (4 threads)   8%|██▌                           |  ETA: 19:49:46
+Sampling (4 threads)   9%|██▊                           |  ETA: 19:05:56
+Sampling (4 threads)  10%|██▉                           |  ETA: 17:59:39
+Sampling (4 threads)  10%|███                           |  ETA: 17:00:01
+Sampling (4 threads)  10%|███▏                          |  ETA: 16:27:30
+Sampling (4 threads)  11%|███▎                          |  ETA: 15:37:21
+Sampling (4 threads)  12%|███▌                          |  ETA: 15:10:11
+Sampling (4 threads)  12%|███▋                          |  ETA: 14:27:20
+Sampling (4 threads)  12%|███▊                          |  ETA: 14:02:41
+Sampling (4 threads)  13%|███▉                          |  ETA: 13:25:39
+Sampling (4 threads)  14%|████                          |  ETA: 12:51:21
+Sampling (4 threads)  14%|████▎                         |  ETA: 12:33:42
+Sampling (4 threads)  14%|████▍                         |  ETA: 12:03:28
+Sampling (4 threads)  15%|████▌                         |  ETA: 11:35:16
+Sampling (4 threads)  16%|████▋                         |  ETA: 11:23:37
+Sampling (4 threads)  16%|████▊                         |  ETA: 10:58:20
+Sampling (4 threads)  16%|█████                         |  ETA: 10:34:35
+Sampling (4 threads)  17%|█████▏                        |  ETA: 10:24:09
+Sampling (4 threads)  18%|█████▎                        |  ETA: 10:02:40
+Sampling (4 threads)  18%|█████▍                        |  ETA: 9:42:23
+Sampling (4 threads)  18%|█████▌                        |  ETA: 9:31:57
+Sampling (4 threads)  19%|█████▊                        |  ETA: 9:13:29
+Sampling (4 threads)  20%|█████▉                        |  ETA: 9:03:10
+Sampling (4 threads)  20%|██████                        |  ETA: 8:46:18
+Sampling (4 threads)  20%|██████▏                       |  ETA: 8:35:44
+Sampling (4 threads)  21%|██████▎                       |  ETA: 8:20:17
+Sampling (4 threads)  22%|██████▌                       |  ETA: 8:15:29
+Sampling (4 threads)  22%|██████▋                       |  ETA: 8:01:09
+Sampling (4 threads)  22%|██████▊                       |  ETA: 7:47:26
+Sampling (4 threads)  23%|██████▉                       |  ETA: 7:42:38
+Sampling (4 threads)  24%|███████                       |  ETA: 7:29:51
+Sampling (4 threads)  24%|███████▎                      |  ETA: 7:17:36
+Sampling (4 threads)  24%|███████▍                      |  ETA: 7:14:58
+Sampling (4 threads)  25%|███████▌                      |  ETA: 7:03:27
+Sampling (4 threads)  26%|███████▋                      |  ETA: 6:52:22
+Sampling (4 threads)  26%|███████▊                      |  ETA: 6:48:04
+Sampling (4 threads)  26%|████████                      |  ETA: 6:37:39
+Sampling (4 threads)  27%|████████▏                     |  ETA: 6:27:38
+Sampling (4 threads)  28%|████████▎                     |  ETA: 6:25:26
+Sampling (4 threads)  28%|████████▍                     |  ETA: 6:15:56
+Sampling (4 threads)  28%|████████▌                     |  ETA: 6:06:46
+Sampling (4 threads)  29%|████████▊                     |  ETA: 5:57:56
+Sampling (4 threads)  30%|████████▉                     |  ETA: 5:56:09
+Sampling (4 threads)  30%|█████████                     |  ETA: 5:47:44
+Sampling (4 threads)  30%|█████████▏                    |  ETA: 5:39:35
+Sampling (4 threads)  31%|█████████▎                    |  ETA: 5:35:44
+Sampling (4 threads)  32%|█████████▌                    |  ETA: 5:28:01
+Sampling (4 threads)  32%|█████████▋                    |  ETA: 5:24:43
+Sampling (4 threads)  32%|█████████▊                    |  ETA: 5:17:23
+Sampling (4 threads)  33%|█████████▉                    |  ETA: 5:16:33
+Sampling (4 threads)  34%|██████████                    |  ETA: 5:09:30
+Sampling (4 threads)  34%|██████████▎                   |  ETA: 5:02:39
+Sampling (4 threads)  34%|██████████▍                   |  ETA: 4:56:01
+Sampling (4 threads)  35%|██████████▌                   |  ETA: 4:56:10
+Sampling (4 threads)  36%|██████████▋                   |  ETA: 4:49:44
+Sampling (4 threads)  36%|██████████▊                   |  ETA: 4:43:30
+Sampling (4 threads)  36%|███████████                   |  ETA: 4:42:48
+Sampling (4 threads)  37%|███████████▏                  |  ETA: 4:36:47
+Sampling (4 threads)  38%|███████████▎                  |  ETA: 4:30:55
+Sampling (4 threads)  38%|███████████▍                  |  ETA: 4:29:37
+Sampling (4 threads)  38%|███████████▌                  |  ETA: 4:23:58
+Sampling (4 threads)  39%|███████████▊                  |  ETA: 4:18:28
+Sampling (4 threads)  40%|███████████▉                  |  ETA: 4:18:07
+Sampling (4 threads)  40%|████████████                  |  ETA: 4:12:47
+Sampling (4 threads)  40%|████████████▏                 |  ETA: 4:07:35
+Sampling (4 threads)  41%|████████████▎                 |  ETA: 4:07:22
+Sampling (4 threads)  42%|████████████▌                 |  ETA: 4:02:19
+Sampling (4 threads)  42%|████████████▋                 |  ETA: 3:57:23
+Sampling (4 threads)  42%|████████████▊                 |  ETA: 3:52:35
+Sampling (4 threads)  43%|████████████▉                 |  ETA: 3:50:41
+Sampling (4 threads)  44%|█████████████                 |  ETA: 3:46:02
+Sampling (4 threads)  44%|█████████████▎                |  ETA: 3:43:55
+Sampling (4 threads)  44%|█████████████▍                |  ETA: 3:39:25
+Sampling (4 threads)  45%|█████████████▌                |  ETA: 3:39:02
+Sampling (4 threads)  46%|█████████████▋                |  ETA: 3:34:39
+Sampling (4 threads)  46%|█████████████▊                |  ETA: 3:30:22
+Sampling (4 threads)  46%|██████████████                |  ETA: 3:29:50
+Sampling (4 threads)  47%|██████████████▏               |  ETA: 3:25:40
+Sampling (4 threads)  48%|██████████████▎               |  ETA: 3:21:35
+Sampling (4 threads)  48%|██████████████▍               |  ETA: 3:20:13
+Sampling (4 threads)  48%|██████████████▌               |  ETA: 3:16:15
+Sampling (4 threads)  49%|██████████████▊               |  ETA: 3:12:22
+Sampling (4 threads)  50%|██████████████▉               |  ETA: 3:11:14
+Sampling (4 threads)  50%|███████████████               |  ETA: 3:07:27
+Sampling (4 threads)  50%|███████████████▏              |  ETA: 3:03:44
+Sampling (4 threads)  51%|███████████████▎              |  ETA: 3:02:22
+Sampling (4 threads)  52%|███████████████▌              |  ETA: 2:58:46
+Sampling (4 threads)  52%|███████████████▋              |  ETA: 2:57:38
+Sampling (4 threads)  52%|███████████████▊              |  ETA: 2:54:06
+Sampling (4 threads)  53%|███████████████▉              |  ETA: 2:50:39
+Sampling (4 threads)  54%|████████████████              |  ETA: 2:47:15
+Sampling (4 threads)  54%|████████████████▎             |  ETA: 2:46:25
+Sampling (4 threads)  55%|████████████████▍             |  ETA: 2:43:06
+Sampling (4 threads)  55%|████████████████▌             |  ETA: 2:42:17
+Sampling (4 threads)  56%|████████████████▋             |  ETA: 2:39:02
+Sampling (4 threads)  56%|████████████████▊             |  ETA: 2:35:51
+Sampling (4 threads)  56%|█████████████████             |  ETA: 2:33:56
+Sampling (4 threads)  57%|█████████████████▏            |  ETA: 2:30:49
+Sampling (4 threads)  57%|█████████████████▎            |  ETA: 2:30:05
+Sampling (4 threads)  58%|█████████████████▍            |  ETA: 2:27:03
+Sampling (4 threads)  58%|█████████████████▌            |  ETA: 2:24:03
+Sampling (4 threads)  59%|█████████████████▊            |  ETA: 2:22:45
+Sampling (4 threads)  60%|█████████████████▉            |  ETA: 2:19:50
+Sampling (4 threads)  60%|██████████████████            |  ETA: 2:16:57
+Sampling (4 threads)  60%|██████████████████▏           |  ETA: 2:15:58
+Sampling (4 threads)  61%|██████████████████▎           |  ETA: 2:13:09
+Sampling (4 threads)  62%|██████████████████▌           |  ETA: 2:10:22
+Sampling (4 threads)  62%|██████████████████▋           |  ETA: 2:07:38
+Sampling (4 threads)  62%|██████████████████▊           |  ETA: 2:06:49
+Sampling (4 threads)  63%|██████████████████▉           |  ETA: 2:04:08
+Sampling (4 threads)  64%|███████████████████           |  ETA: 2:01:30
+Sampling (4 threads)  64%|███████████████████▎          |  ETA: 2:00:26
+Sampling (4 threads)  64%|███████████████████▍          |  ETA: 1:57:51
+Sampling (4 threads)  65%|███████████████████▌          |  ETA: 1:55:18
+Sampling (4 threads)  66%|███████████████████▋          |  ETA: 1:54:08
+Sampling (4 threads)  66%|███████████████████▊          |  ETA: 1:51:38
+Sampling (4 threads)  66%|████████████████████          |  ETA: 1:49:10
+Sampling (4 threads)  67%|████████████████████▏         |  ETA: 1:48:16
+Sampling (4 threads)  68%|████████████████████▎         |  ETA: 1:45:51
+Sampling (4 threads)  68%|████████████████████▍         |  ETA: 1:44:37
+Sampling (4 threads)  68%|████████████████████▌         |  ETA: 1:42:14
+Sampling (4 threads)  69%|████████████████████▊         |  ETA: 1:39:52
+Sampling (4 threads)  70%|████████████████████▉         |  ETA: 1:37:33
+Sampling (4 threads)  70%|█████████████████████         |  ETA: 1:36:29
+Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 1:34:12
+Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 1:33:04
+Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 1:30:49
+Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 1:28:36
+Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 1:26:25
+Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 1:25:11
+Sampling (4 threads)  74%|██████████████████████        |  ETA: 1:23:02
+Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 1:21:37
+Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 1:19:31
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:17:26
+Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 1:16:09
+Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 1:14:06
+Sampling (4 threads)  76%|███████████████████████       |  ETA: 1:12:05
+Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 1:10:44
+Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 1:08:45
+Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 1:06:47
+Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 1:05:17
+Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 1:03:21
+Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 1:01:55
+Sampling (4 threads)  80%|████████████████████████      |  ETA: 1:00:01
+Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:58:10
+Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:56:41
+Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:54:51
+Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:53:26
+Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:51:38
+Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:49:51
+Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:48:24
+Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:46:39
+Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:45:18
+Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:43:34
+Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:42:11
+Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:40:30
+Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:38:49
+Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:37:10
+Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:35:44
+Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:34:11
+Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:32:41
+Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:31:14
+Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:29:45
+Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:28:17
+Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:26:50
+Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:25:23
+Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:23:56
+Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:22:30
+Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:21:04
+Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:19:39
+Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:18:13
+Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:16:47
+Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:15:21
+Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:13:56
+Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:12:30
+Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:11:06
+Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:09:42
+Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:08:18
+Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:06:54
+Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:05:33
+Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:04:10
+Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:02:47
+Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:01:24
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:39:36
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:39:37
+Precompiling project...
+  ✗ DistributionsAD → DistributionsADReverseDiffExt
+  0 dependencies successfully precompiled in 72 seconds. 549 already precompiled.
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.0125
+┌ Info: Found initial step size
+└   ϵ = 0.003125
+┌ Info: Found initial step size
+└   ϵ = 0.00078125
+Sampling (4 threads)   0%|▏                             |  ETA: 20:45:03
+Sampling (4 threads)   1%|▎                             |  ETA: 10:19:33
+Sampling (4 threads)   2%|▌                             |  ETA: 1 days, 4:39:10
+Sampling (4 threads)   2%|▋                             |  ETA: 21:22:50
+Sampling (4 threads)   2%|▊                             |  ETA: 1 days, 5:50:55
+Sampling (4 threads)   3%|▉                             |  ETA: 1 days, 0:44:46
+Sampling (4 threads)   4%|█                             |  ETA: 1 days, 5:05:22
+Sampling (4 threads)   4%|█▎                            |  ETA: 1 days, 1:19:17
+Sampling (4 threads)   4%|█▍                            |  ETA: 1 days, 4:50:59
+Sampling (4 threads)   5%|█▌                            |  ETA: 1 days, 1:49:44
+Sampling (4 threads)   6%|█▋                            |  ETA: 1 days, 3:39:16
+Sampling (4 threads)   6%|█▊                            |  ETA: 1 days, 1:12:57
+Sampling (4 threads)   6%|██                            |  ETA: 23:09:08
+Sampling (4 threads)   7%|██▏                           |  ETA: 23:48:09
+Sampling (4 threads)   8%|██▎                           |  ETA: 22:05:46
+Sampling (4 threads)   8%|██▍                           |  ETA: 20:36:11
+Sampling (4 threads)   8%|██▌                           |  ETA: 20:02:22
+Sampling (4 threads)   9%|██▊                           |  ETA: 18:49:22
+Sampling (4 threads)  10%|██▉                           |  ETA: 17:44:03
+Sampling (4 threads)  10%|███                           |  ETA: 17:21:44
+Sampling (4 threads)  10%|███▏                          |  ETA: 16:26:36
+Sampling (4 threads)  11%|███▎                          |  ETA: 15:36:30
+Sampling (4 threads)  12%|███▌                          |  ETA: 15:24:05
+Sampling (4 threads)  12%|███▋                          |  ETA: 14:40:34
+Sampling (4 threads)  12%|███▊                          |  ETA: 14:00:33
+Sampling (4 threads)  13%|███▉                          |  ETA: 13:23:36
+Sampling (4 threads)  14%|████                          |  ETA: 13:03:33
+Sampling (4 threads)  14%|████▎                         |  ETA: 12:31:12
+Sampling (4 threads)  14%|████▍                         |  ETA: 12:11:27
+Sampling (4 threads)  15%|████▌                         |  ETA: 11:42:56
+Sampling (4 threads)  16%|████▋                         |  ETA: 11:24:39
+Sampling (4 threads)  16%|████▊                         |  ETA: 10:59:20
+Sampling (4 threads)  16%|█████                         |  ETA: 10:48:59
+Sampling (4 threads)  17%|█████▏                        |  ETA: 10:26:07
+Sampling (4 threads)  18%|█████▎                        |  ETA: 10:04:34
+Sampling (4 threads)  18%|█████▍                        |  ETA: 9:58:19
+Sampling (4 threads)  18%|█████▌                        |  ETA: 9:38:36
+Sampling (4 threads)  19%|█████▊                        |  ETA: 9:19:55
+Sampling (4 threads)  20%|█████▉                        |  ETA: 9:10:38
+Sampling (4 threads)  20%|██████                        |  ETA: 8:53:32
+Sampling (4 threads)  20%|██████▏                       |  ETA: 8:37:16
+Sampling (4 threads)  21%|██████▎                       |  ETA: 8:31:17
+Sampling (4 threads)  22%|██████▌                       |  ETA: 8:16:14
+Sampling (4 threads)  22%|██████▋                       |  ETA: 8:01:52
+Sampling (4 threads)  22%|██████▊                       |  ETA: 7:56:47
+Sampling (4 threads)  23%|██████▉                       |  ETA: 7:43:25
+Sampling (4 threads)  24%|███████                       |  ETA: 7:30:37
+Sampling (4 threads)  24%|███████▎                      |  ETA: 7:22:45
+Sampling (4 threads)  24%|███████▍                      |  ETA: 7:10:51
+Sampling (4 threads)  25%|███████▌                      |  ETA: 7:06:11
+Sampling (4 threads)  26%|███████▋                      |  ETA: 6:55:03
+Sampling (4 threads)  26%|███████▊                      |  ETA: 6:44:20
+Sampling (4 threads)  26%|████████                      |  ETA: 6:38:06
+Sampling (4 threads)  27%|████████▏                     |  ETA: 6:28:04
+Sampling (4 threads)  28%|████████▎                     |  ETA: 6:22:21
+Sampling (4 threads)  28%|████████▍                     |  ETA: 6:12:56
+Sampling (4 threads)  28%|████████▌                     |  ETA: 6:09:09
+Sampling (4 threads)  29%|████████▊                     |  ETA: 6:00:15
+Sampling (4 threads)  30%|████████▉                     |  ETA: 5:51:39
+Sampling (4 threads)  30%|█████████                     |  ETA: 5:49:41
+Sampling (4 threads)  30%|█████████▏                    |  ETA: 5:41:30
+Sampling (4 threads)  31%|█████████▎                    |  ETA: 5:33:34
+Sampling (4 threads)  32%|█████████▌                    |  ETA: 5:33:45
+Sampling (4 threads)  32%|█████████▋                    |  ETA: 5:26:08
+Sampling (4 threads)  32%|█████████▊                    |  ETA: 5:18:46
+Sampling (4 threads)  33%|█████████▉                    |  ETA: 5:19:02
+Sampling (4 threads)  34%|██████████                    |  ETA: 5:11:55
+Sampling (4 threads)  34%|██████████▎                   |  ETA: 5:05:01
+Sampling (4 threads)  34%|██████████▍                   |  ETA: 5:02:28
+Sampling (4 threads)  35%|██████████▌                   |  ETA: 4:55:52
+Sampling (4 threads)  36%|██████████▋                   |  ETA: 4:54:55
+Sampling (4 threads)  36%|██████████▊                   |  ETA: 4:48:34
+Sampling (4 threads)  36%|███████████                   |  ETA: 4:42:23
+Sampling (4 threads)  37%|███████████▏                  |  ETA: 4:36:23
+Sampling (4 threads)  38%|███████████▎                  |  ETA: 4:35:27
+Sampling (4 threads)  38%|███████████▍                  |  ETA: 4:29:39
+Sampling (4 threads)  38%|███████████▌                  |  ETA: 4:24:00
+Sampling (4 threads)  39%|███████████▊                  |  ETA: 4:22:19
+Sampling (4 threads)  40%|███████████▉                  |  ETA: 4:16:53
+Sampling (4 threads)  40%|████████████                  |  ETA: 4:16:01
+Sampling (4 threads)  40%|████████████▏                 |  ETA: 4:10:45
+Sampling (4 threads)  41%|████████████▎                 |  ETA: 4:05:37
+Sampling (4 threads)  42%|████████████▌                 |  ETA: 4:04:49
+Sampling (4 threads)  42%|████████████▋                 |  ETA: 3:59:50
+Sampling (4 threads)  42%|████████████▊                 |  ETA: 3:54:59
+Sampling (4 threads)  43%|████████████▉                 |  ETA: 3:52:12
+Sampling (4 threads)  44%|█████████████                 |  ETA: 3:47:31
+Sampling (4 threads)  44%|█████████████▎                |  ETA: 3:47:12
+Sampling (4 threads)  44%|█████████████▍                |  ETA: 3:42:38
+Sampling (4 threads)  45%|█████████████▌                |  ETA: 3:38:11
+Sampling (4 threads)  46%|█████████████▋                |  ETA: 3:37:44
+Sampling (4 threads)  46%|█████████████▊                |  ETA: 3:33:24
+Sampling (4 threads)  46%|██████████████                |  ETA: 3:29:09
+Sampling (4 threads)  47%|██████████████▏               |  ETA: 3:28:16
+Sampling (4 threads)  48%|██████████████▎               |  ETA: 3:24:08
+Sampling (4 threads)  48%|██████████████▍               |  ETA: 3:20:05
+Sampling (4 threads)  48%|██████████████▌               |  ETA: 3:16:07
+Sampling (4 threads)  49%|██████████████▊               |  ETA: 3:15:12
+Sampling (4 threads)  50%|██████████████▉               |  ETA: 3:11:20
+Sampling (4 threads)  50%|███████████████               |  ETA: 3:09:13
+Sampling (4 threads)  50%|███████████████▏              |  ETA: 3:05:28
+Sampling (4 threads)  51%|███████████████▎              |  ETA: 3:03:42
+Sampling (4 threads)  52%|███████████████▌              |  ETA: 3:00:04
+Sampling (4 threads)  52%|███████████████▋              |  ETA: 2:58:00
+Sampling (4 threads)  52%|███████████████▊              |  ETA: 2:54:28
+Sampling (4 threads)  53%|███████████████▉              |  ETA: 2:52:40
+Sampling (4 threads)  54%|████████████████              |  ETA: 2:49:14
+Sampling (4 threads)  54%|████████████████▎             |  ETA: 2:47:50
+Sampling (4 threads)  55%|████████████████▍             |  ETA: 2:44:29
+Sampling (4 threads)  55%|████████████████▌             |  ETA: 2:41:12
+Sampling (4 threads)  56%|████████████████▋             |  ETA: 2:39:12
+Sampling (4 threads)  56%|████████████████▊             |  ETA: 2:36:00
+Sampling (4 threads)  56%|█████████████████             |  ETA: 2:35:21
+Sampling (4 threads)  57%|█████████████████▏            |  ETA: 2:32:13
+Sampling (4 threads)  57%|█████████████████▎            |  ETA: 2:29:08
+Sampling (4 threads)  58%|█████████████████▍            |  ETA: 2:28:49
+Sampling (4 threads)  58%|█████████████████▌            |  ETA: 2:25:47
+Sampling (4 threads)  59%|█████████████████▊            |  ETA: 2:22:49
+Sampling (4 threads)  60%|█████████████████▉            |  ETA: 2:21:19
+Sampling (4 threads)  60%|██████████████████            |  ETA: 2:18:25
+Sampling (4 threads)  60%|██████████████████▏           |  ETA: 2:17:27
+Sampling (4 threads)  61%|██████████████████▎           |  ETA: 2:14:36
+Sampling (4 threads)  62%|██████████████████▌           |  ETA: 2:11:47
+Sampling (4 threads)  62%|██████████████████▋           |  ETA: 2:09:02
+Sampling (4 threads)  62%|██████████████████▊           |  ETA: 2:08:01
+Sampling (4 threads)  63%|██████████████████▉           |  ETA: 2:05:18
+Sampling (4 threads)  64%|███████████████████           |  ETA: 2:02:38
+Sampling (4 threads)  64%|███████████████████▎          |  ETA: 2:01:27
+Sampling (4 threads)  64%|███████████████████▍          |  ETA: 1:58:50
+Sampling (4 threads)  65%|███████████████████▌          |  ETA: 1:56:16
+Sampling (4 threads)  66%|███████████████████▋          |  ETA: 1:54:54
+Sampling (4 threads)  66%|███████████████████▊          |  ETA: 1:52:23
+Sampling (4 threads)  66%|████████████████████          |  ETA: 1:51:05
+Sampling (4 threads)  67%|████████████████████▏         |  ETA: 1:48:36
+Sampling (4 threads)  68%|████████████████████▎         |  ETA: 1:46:10
+Sampling (4 threads)  68%|████████████████████▍         |  ETA: 1:45:01
+Sampling (4 threads)  68%|████████████████████▌         |  ETA: 1:42:38
+Sampling (4 threads)  69%|████████████████████▊         |  ETA: 1:40:16
+Sampling (4 threads)  70%|████████████████████▉         |  ETA: 1:39:02
+Sampling (4 threads)  70%|█████████████████████         |  ETA: 1:36:43
+Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 1:35:18
+Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 1:33:01
+Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 1:30:47
+Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 1:29:33
+Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 1:27:20
+Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 1:25:10
+Sampling (4 threads)  74%|██████████████████████        |  ETA: 1:23:54
+Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 1:21:46
+Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 1:19:39
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:18:41
+Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 1:16:36
+Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 1:14:32
+Sampling (4 threads)  76%|███████████████████████       |  ETA: 1:13:36
+Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 1:11:34
+Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 1:09:33
+Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 1:07:34
+Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 1:06:16
+Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 1:04:19
+Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 1:02:49
+Sampling (4 threads)  80%|████████████████████████      |  ETA: 1:00:54
+Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:59:01
+Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:57:38
+Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:55:46
+Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:53:56
+Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:52:28
+Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:50:40
+Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:49:15
+Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:47:29
+Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:45:43
+Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:44:17
+Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:42:33
+Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:41:10
+Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:39:28
+Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:37:47
+Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:36:17
+Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:34:46
+Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:33:11
+Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:31:43
+Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:30:11
+Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:28:43
+Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:27:16
+Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:25:49
+Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:24:21
+Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:22:53
+Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:21:23
+Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:19:57
+Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:18:31
+Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:17:06
+Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:15:39
+Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:14:13
+Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:12:46
+Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:11:19
+Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:09:53
+Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:08:31
+Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:07:07
+Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:05:42
+Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:04:18
+Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:02:52
+Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:01:26
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:48:50
+Sampling (4 threads) 100%|██████████████████████████████| Time: 4:48:51
+Sampling (4 threads)   0%|                              |  ETA: N/A
+┌ Info: Found initial step size
+└   ϵ = 0.00078125
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.00625
+┌ Info: Found initial step size
+└   ϵ = 0.0001953125
+Sampling (4 threads)   0%|▏                             |  ETA: 2 days, 15:51:56
+Sampling (4 threads)   1%|▎                             |  ETA: 1 days, 7:46:30
+Sampling (4 threads)   2%|▌                             |  ETA: 21:04:35
+Sampling (4 threads)   2%|▋                             |  ETA: 1 days, 13:20:31
+Sampling (4 threads)   2%|▊                             |  ETA: 1 days, 5:43:16
+Sampling (4 threads)   3%|▉                             |  ETA: 1 days, 0:38:26
+Sampling (4 threads)   4%|█                             |  ETA: 1 days, 9:31:10
+Sampling (4 threads)   4%|█▎                            |  ETA: 1 days, 5:10:39
+Sampling (4 threads)   4%|█▍                            |  ETA: 1 days, 1:48:01
+Sampling (4 threads)   5%|█▌                            |  ETA: 1 days, 3:37:20
+Sampling (4 threads)   6%|█▋                            |  ETA: 1 days, 0:58:44
+Sampling (4 threads)   6%|█▊                            |  ETA: 23:33:29
+Sampling (4 threads)   6%|██                            |  ETA: 21:37:49
+Sampling (4 threads)   7%|██▏                           |  ETA: 20:56:49
+Sampling (4 threads)   8%|██▎                           |  ETA: 19:26:43
+Sampling (4 threads)   8%|██▍                           |  ETA: 18:39:04
+Sampling (4 threads)   8%|██▌                           |  ETA: 17:27:31
+Sampling (4 threads)   9%|██▊                           |  ETA: 16:47:25
+Sampling (4 threads)  10%|██▉                           |  ETA: 15:49:09
+Sampling (4 threads)  10%|███                           |  ETA: 15:11:34
+Sampling (4 threads)  10%|███▏                          |  ETA: 14:23:20
+Sampling (4 threads)  11%|███▎                          |  ETA: 13:39:30
+Sampling (4 threads)  12%|███▌                          |  ETA: 13:14:20
+Sampling (4 threads)  12%|███▋                          |  ETA: 12:36:56
+Sampling (4 threads)  12%|███▊                          |  ETA: 12:14:14
+Sampling (4 threads)  13%|███▉                          |  ETA: 11:41:57
+Sampling (4 threads)  14%|████                          |  ETA: 11:23:31
+Sampling (4 threads)  14%|████▎                         |  ETA: 10:55:18
+Sampling (4 threads)  14%|████▍                         |  ETA: 10:41:59
+Sampling (4 threads)  15%|████▌                         |  ETA: 10:16:57
+Sampling (4 threads)  16%|████▋                         |  ETA: 9:53:33
+Sampling (4 threads)  16%|████▊                         |  ETA: 9:43:42
+Sampling (4 threads)  16%|█████                         |  ETA: 9:22:39
+Sampling (4 threads)  17%|█████▏                        |  ETA: 9:02:50
+Sampling (4 threads)  18%|█████▎                        |  ETA: 8:53:08
+Sampling (4 threads)  18%|█████▍                        |  ETA: 8:35:11
+Sampling (4 threads)  18%|█████▌                        |  ETA: 8:27:30
+Sampling (4 threads)  19%|█████▊                        |  ETA: 8:11:07
+Sampling (4 threads)  20%|█████▉                        |  ETA: 7:55:34
+Sampling (4 threads)  20%|██████                        |  ETA: 7:40:48
+Sampling (4 threads)  20%|██████▏                       |  ETA: 7:38:18
+Sampling (4 threads)  21%|██████▎                       |  ETA: 7:24:35
+Sampling (4 threads)  22%|██████▌                       |  ETA: 7:11:29
+Sampling (4 threads)  22%|██████▋                       |  ETA: 7:06:26
+Sampling (4 threads)  22%|██████▊                       |  ETA: 6:54:17
+Sampling (4 threads)  23%|██████▉                       |  ETA: 6:42:40
+Sampling (4 threads)  24%|███████                       |  ETA: 6:38:42
+Sampling (4 threads)  24%|███████▎                      |  ETA: 6:27:50
+Sampling (4 threads)  24%|███████▍                      |  ETA: 6:17:25
+Sampling (4 threads)  25%|███████▌                      |  ETA: 6:07:26
+Sampling (4 threads)  26%|███████▋                      |  ETA: 6:03:59
+Sampling (4 threads)  26%|███████▊                      |  ETA: 5:54:35
+Sampling (4 threads)  26%|████████                      |  ETA: 5:45:33
+Sampling (4 threads)  27%|████████▏                     |  ETA: 5:41:29
+Sampling (4 threads)  28%|████████▎                     |  ETA: 5:32:58
+Sampling (4 threads)  28%|████████▍                     |  ETA: 5:24:46
+Sampling (4 threads)  28%|████████▌                     |  ETA: 5:20:06
+Sampling (4 threads)  29%|████████▊                     |  ETA: 5:12:22
+Sampling (4 threads)  30%|████████▉                     |  ETA: 5:07:24
+Sampling (4 threads)  30%|█████████                     |  ETA: 5:00:08
+Sampling (4 threads)  30%|█████████▏                    |  ETA: 4:55:36
+Sampling (4 threads)  31%|█████████▎                    |  ETA: 4:48:44
+Sampling (4 threads)  32%|█████████▌                    |  ETA: 4:46:29
+Sampling (4 threads)  32%|█████████▋                    |  ETA: 4:39:57
+Sampling (4 threads)  32%|█████████▊                    |  ETA: 4:33:37
+Sampling (4 threads)  33%|█████████▉                    |  ETA: 4:31:17
+Sampling (4 threads)  34%|██████████                    |  ETA: 4:25:14
+Sampling (4 threads)  34%|██████████▎                   |  ETA: 4:19:22
+Sampling (4 threads)  34%|██████████▍                   |  ETA: 4:16:26
+Sampling (4 threads)  35%|██████████▌                   |  ETA: 4:10:51
+Sampling (4 threads)  36%|██████████▋                   |  ETA: 4:07:43
+Sampling (4 threads)  36%|██████████▊                   |  ETA: 4:02:23
+Sampling (4 threads)  36%|███████████                   |  ETA: 4:01:06
+Sampling (4 threads)  37%|███████████▏                  |  ETA: 3:55:58
+Sampling (4 threads)  38%|███████████▎                  |  ETA: 3:50:59
+Sampling (4 threads)  38%|███████████▍                  |  ETA: 3:49:15
+Sampling (4 threads)  38%|███████████▌                  |  ETA: 3:44:27
+Sampling (4 threads)  39%|███████████▊                  |  ETA: 3:39:46
+Sampling (4 threads)  40%|███████████▉                  |  ETA: 3:38:12
+Sampling (4 threads)  40%|████████████                  |  ETA: 3:33:42
+Sampling (4 threads)  40%|████████████▏                 |  ETA: 3:29:18
+Sampling (4 threads)  41%|████████████▎                 |  ETA: 3:25:00
+Sampling (4 threads)  42%|████████████▌                 |  ETA: 3:23:34
+Sampling (4 threads)  42%|████████████▋                 |  ETA: 3:19:26
+Sampling (4 threads)  42%|████████████▊                 |  ETA: 3:17:48
+Sampling (4 threads)  43%|████████████▉                 |  ETA: 3:13:48
+Sampling (4 threads)  44%|█████████████                 |  ETA: 3:09:53
+Sampling (4 threads)  44%|█████████████▎                |  ETA: 3:06:04
+Sampling (4 threads)  44%|█████████████▍                |  ETA: 3:04:51
+Sampling (4 threads)  45%|█████████████▌                |  ETA: 3:01:09
+Sampling (4 threads)  46%|█████████████▋                |  ETA: 2:59:53
+Sampling (4 threads)  46%|█████████████▊                |  ETA: 2:56:18
+Sampling (4 threads)  46%|██████████████                |  ETA: 2:52:47
+Sampling (4 threads)  47%|██████████████▏               |  ETA: 2:49:21
+Sampling (4 threads)  48%|██████████████▎               |  ETA: 2:48:17
+Sampling (4 threads)  48%|██████████████▍               |  ETA: 2:44:56
+Sampling (4 threads)  48%|██████████████▌               |  ETA: 2:41:40
+Sampling (4 threads)  49%|██████████████▊               |  ETA: 2:40:48
+Sampling (4 threads)  50%|██████████████▉               |  ETA: 2:37:37
+Sampling (4 threads)  50%|███████████████               |  ETA: 2:34:30
+Sampling (4 threads)  50%|███████████████▏              |  ETA: 2:32:36
+Sampling (4 threads)  51%|███████████████▎              |  ETA: 2:29:35
+Sampling (4 threads)  52%|███████████████▌              |  ETA: 2:27:36
+Sampling (4 threads)  52%|███████████████▋              |  ETA: 2:24:40
+Sampling (4 threads)  52%|███████████████▊              |  ETA: 2:22:53
+Sampling (4 threads)  53%|███████████████▉              |  ETA: 2:20:03
+Sampling (4 threads)  54%|████████████████              |  ETA: 2:18:10
+Sampling (4 threads)  54%|████████████████▎             |  ETA: 2:15:25
+Sampling (4 threads)  55%|████████████████▍             |  ETA: 2:14:23
+Sampling (4 threads)  55%|████████████████▌             |  ETA: 2:11:42
+Sampling (4 threads)  56%|████████████████▋             |  ETA: 2:09:04
+Sampling (4 threads)  56%|████████████████▊             |  ETA: 2:08:12
+Sampling (4 threads)  56%|█████████████████             |  ETA: 2:05:37
+Sampling (4 threads)  57%|█████████████████▏            |  ETA: 2:03:05
+Sampling (4 threads)  57%|█████████████████▎            |  ETA: 2:00:36
+Sampling (4 threads)  58%|█████████████████▍            |  ETA: 1:59:40
+Sampling (4 threads)  58%|█████████████████▌            |  ETA: 1:57:14
+Sampling (4 threads)  59%|█████████████████▊            |  ETA: 1:56:17
+Sampling (4 threads)  60%|█████████████████▉            |  ETA: 1:53:54
+Sampling (4 threads)  60%|██████████████████            |  ETA: 1:51:34
+Sampling (4 threads)  60%|██████████████████▏           |  ETA: 1:49:15
+Sampling (4 threads)  61%|██████████████████▎           |  ETA: 1:48:23
+Sampling (4 threads)  62%|██████████████████▌           |  ETA: 1:46:08
+Sampling (4 threads)  62%|██████████████████▋           |  ETA: 1:43:54
+Sampling (4 threads)  62%|██████████████████▊           |  ETA: 1:42:56
+Sampling (4 threads)  63%|██████████████████▉           |  ETA: 1:40:45
+Sampling (4 threads)  64%|███████████████████           |  ETA: 1:38:37
+Sampling (4 threads)  64%|███████████████████▎          |  ETA: 1:37:07
+Sampling (4 threads)  64%|███████████████████▍          |  ETA: 1:35:01
+Sampling (4 threads)  65%|███████████████████▌          |  ETA: 1:33:40
+Sampling (4 threads)  66%|███████████████████▋          |  ETA: 1:31:38
+Sampling (4 threads)  66%|███████████████████▊          |  ETA: 1:30:37
+Sampling (4 threads)  66%|████████████████████          |  ETA: 1:28:37
+Sampling (4 threads)  67%|████████████████████▏         |  ETA: 1:26:39
+Sampling (4 threads)  68%|████████████████████▎         |  ETA: 1:24:42
+Sampling (4 threads)  68%|████████████████████▍         |  ETA: 1:23:44
+Sampling (4 threads)  68%|████████████████████▌         |  ETA: 1:21:49
+Sampling (4 threads)  69%|████████████████████▊         |  ETA: 1:20:34
+Sampling (4 threads)  70%|████████████████████▉         |  ETA: 1:18:41
+Sampling (4 threads)  70%|█████████████████████         |  ETA: 1:16:51
+Sampling (4 threads)  70%|█████████████████████▏        |  ETA: 1:15:51
+Sampling (4 threads)  71%|█████████████████████▎        |  ETA: 1:14:02
+Sampling (4 threads)  72%|█████████████████████▌        |  ETA: 1:12:15
+Sampling (4 threads)  72%|█████████████████████▋        |  ETA: 1:11:18
+Sampling (4 threads)  72%|█████████████████████▊        |  ETA: 1:09:32
+Sampling (4 threads)  73%|█████████████████████▉        |  ETA: 1:07:49
+Sampling (4 threads)  74%|██████████████████████        |  ETA: 1:06:34
+Sampling (4 threads)  74%|██████████████████████▎       |  ETA: 1:04:52
+Sampling (4 threads)  74%|██████████████████████▍       |  ETA: 1:03:36
+Sampling (4 threads)  75%|██████████████████████▌       |  ETA: 1:01:56
+Sampling (4 threads)  76%|██████████████████████▋       |  ETA: 1:00:39
+Sampling (4 threads)  76%|██████████████████████▊       |  ETA: 0:59:01
+Sampling (4 threads)  76%|███████████████████████       |  ETA: 0:58:01
+Sampling (4 threads)  77%|███████████████████████▏      |  ETA: 0:56:25
+Sampling (4 threads)  78%|███████████████████████▎      |  ETA: 0:54:50
+Sampling (4 threads)  78%|███████████████████████▍      |  ETA: 0:53:16
+Sampling (4 threads)  78%|███████████████████████▌      |  ETA: 0:52:20
+Sampling (4 threads)  79%|███████████████████████▊      |  ETA: 0:50:48
+Sampling (4 threads)  80%|███████████████████████▉      |  ETA: 0:49:16
+Sampling (4 threads)  80%|████████████████████████      |  ETA: 0:48:14
+Sampling (4 threads)  80%|████████████████████████▏     |  ETA: 0:46:44
+Sampling (4 threads)  81%|████████████████████████▎     |  ETA: 0:45:15
+Sampling (4 threads)  82%|████████████████████████▌     |  ETA: 0:44:17
+Sampling (4 threads)  82%|████████████████████████▋     |  ETA: 0:42:50
+Sampling (4 threads)  82%|████████████████████████▊     |  ETA: 0:41:23
+Sampling (4 threads)  83%|████████████████████████▉     |  ETA: 0:40:14
+Sampling (4 threads)  84%|█████████████████████████     |  ETA: 0:38:49
+Sampling (4 threads)  84%|█████████████████████████▎    |  ETA: 0:37:47
+Sampling (4 threads)  84%|█████████████████████████▍    |  ETA: 0:36:23
+Sampling (4 threads)  85%|█████████████████████████▌    |  ETA: 0:35:00
+Sampling (4 threads)  86%|█████████████████████████▋    |  ETA: 0:33:39
+Sampling (4 threads)  86%|█████████████████████████▊    |  ETA: 0:32:39
+Sampling (4 threads)  86%|██████████████████████████    |  ETA: 0:31:18
+Sampling (4 threads)  87%|██████████████████████████▏   |  ETA: 0:29:58
+Sampling (4 threads)  88%|██████████████████████████▎   |  ETA: 0:28:42
+Sampling (4 threads)  88%|██████████████████████████▍   |  ETA: 0:27:29
+Sampling (4 threads)  88%|██████████████████████████▌   |  ETA: 0:26:19
+Sampling (4 threads)  89%|██████████████████████████▊   |  ETA: 0:25:10
+Sampling (4 threads)  90%|██████████████████████████▉   |  ETA: 0:23:59
+Sampling (4 threads)  90%|███████████████████████████   |  ETA: 0:22:49
+Sampling (4 threads)  90%|███████████████████████████▏  |  ETA: 0:21:38
+Sampling (4 threads)  91%|███████████████████████████▎  |  ETA: 0:20:28
+Sampling (4 threads)  92%|███████████████████████████▌  |  ETA: 0:19:17
+Sampling (4 threads)  92%|███████████████████████████▋  |  ETA: 0:18:07
+Sampling (4 threads)  92%|███████████████████████████▊  |  ETA: 0:16:58
+Sampling (4 threads)  93%|███████████████████████████▉  |  ETA: 0:15:50
+Sampling (4 threads)  94%|████████████████████████████  |  ETA: 0:14:41
+Sampling (4 threads)  94%|████████████████████████████▎ |  ETA: 0:13:32
+Sampling (4 threads)  94%|████████████████████████████▍ |  ETA: 0:12:23
+Sampling (4 threads)  95%|████████████████████████████▌ |  ETA: 0:11:14
+Sampling (4 threads)  96%|████████████████████████████▋ |  ETA: 0:10:06
+Sampling (4 threads)  96%|████████████████████████████▊ |  ETA: 0:08:57
+Sampling (4 threads)  96%|█████████████████████████████ |  ETA: 0:07:50
+Sampling (4 threads)  97%|█████████████████████████████▏|  ETA: 0:06:42
+Sampling (4 threads)  98%|█████████████████████████████▎|  ETA: 0:05:34
+Sampling (4 threads)  98%|█████████████████████████████▍|  ETA: 0:04:27
+Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:03:20
+Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:02:13
+Sampling (4 threads) 100%|█████████████████████████████▉|  ETA: 0:01:07
+Sampling (4 threads) 100%|██████████████████████████████| Time: 3:43:27
+Sampling (4 threads) 100%|██████████████████████████████| Time: 3:43:29
+ERROR: LoadError: MethodError: no method matching plotGraphs(::String, ::Vector{String}, ::Vector{RGB{Float64}}, ::Int64)
+
+Closest candidates are:
+  plotGraphs(::Any, ::Any, ::Any, ::Any, !Matched::Any)
+   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/plottingFuncs.jl:261
+
+Stacktrace:
+ [1] concludeAndPlot(m::Chains{Float64, AxisArray{Float64, 3, Array{Float64, 3}, Tuple{Axis{:iter, StepRange{Int64, Int64}}, Axis{:var, Vector{Symbol}}, Axis{:chain, UnitRange{Int64}}}}, Missing, @NamedTuple{parameters::Vector{Symbol}, internals::Vector{Symbol}}, @NamedTuple{varname_to_symbol::OrderedDict{AbstractPPL.VarName, Symbol}, start_time::Vector{Float64}, stop_time::Vector{Float64}, samplerstate::Vector{Nothing}}}, output_loc::String, pc::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, noPCS::Int64)
+   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/plottingFuncs.jl:21
+ [2] runModel(model::DynamicPPL.Model{typeof(model_exp), (:participant, :word, :surprisal, :tags, :PCA, :ExpMean, :cauchyMean, :NUM_TYPES, :NUM_PARTICIPANTS), (), (), Tuple{Vector{Int64}, Vector{Float64}, Vector{Float64}, Vector{Int64}, Vector{Float64}, Float64, Float64, Int64, Int64}, Tuple{}, DynamicPPL.DefaultContext}, df_modified::DataFrame, dfPCA::DataFrame, pc::Int64, NUM_PARTICIPANTS::Int64, NUM_WORDS::Int64, TYPE_STRUCTURE::String, NUM_TYPES::Int64, wordTypes::Vector{String}, cols::Vector{RGB{Float64}}, isPlotting::Int64, analyseEssRhat::Int64, output_loc::String, expMean::Float64, cauchyMean::Float64, noPCS::Int64, noInChain::Int64)
+   @ Main ~/bayesian/BC4/Bayes/wordType_experiments/model_master.jl:134
+ [3] top-level scope
+   @ ~/bayesian/BC4/Bayes/wordType_experiments/models/_2_4/model.jl:15
+in expression starting at /user/home/em18564/bayesian/BC4/Bayes/wordType_experiments/models/_2_4/model.jl:15
