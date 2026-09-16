@@ -549,18 +549,20 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
 
     participantA    = vcat( findall(x -> startswith(x, "ab_p[1"), colNames),
                             findall(x -> startswith(x, "z_ab_p[1"), colNames),
-                            findall(x -> startswith(x, "a_p"), colNames))
+                            findall(x -> startswith(x, "a_p"), colNames),
+                            findall(x -> startswith(x, "z_p[1"), colNames))
 
     participantB    = vcat( findall(x -> startswith(x, "ab_p[2"), colNames),
                             findall(x -> startswith(x, "z_ab_p[2"), colNames),
-                            findall(x -> startswith(x, "b_p"), colNames))
+                            findall(x -> startswith(x, "b_p"), colNames),
+                            findall(x -> startswith(x, "z_p[2"), colNames))
     
     participantAσ   = vcat( findall(x -> startswith(x, "σ_ap"), colNames),
                             findall(x -> startswith(x, "σ_p[1]"), colNames))
     participantBσ   = vcat( findall(x -> startswith(x, "σ_bp"), colNames),
                             findall(x -> startswith(x, "σ_p[2]"), colNames))
     
-    participantLKJ  = findall(x -> startswith(x, "ρ_p"), colNames)
+    participantLKJ  = findall(x -> startswith(x, "L_p.L"), colNames)
     participants     = [participantA,participantB,participantAσ,participantBσ, participantLKJ]
 
 
