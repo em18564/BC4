@@ -109,7 +109,7 @@ end
 
 
 function runModel(model,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS,noInChain=1000)
-    m = sample(model, NUTS(), MCMCThreads(), 1500,4; discard_initial=500, thinning=20)
+    m = sample(model, NUTS(), MCMCThreads(),4000,4;discard_initial=1000)
     display(m)
     
     
