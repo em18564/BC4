@@ -79,7 +79,13 @@ function createVariables(args = map(x->string(x), ARGS))
             dfTags   = CSV.read("../input/full_tags.csv", DataFrame).newTags
             df       = CSV.read("../input/dfPCANorm_corrected_6.csv", DataFrame)
         end
-        df[!,"fullTag"] = dfTags
+        if TYPE_STRUCTURE == "detSplit"
+            df       = CSV.read("../input/dfPCANorm_corrected_6_WithDetSplit.csv", DataFrame)
+            df[!,"fullTag"] = df.fullTagDetSplit
+        else
+            df[!,"fullTag"] = dfTags
+        end
+        
         df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
         df_modified = subset(df_modified, :Word => ByRow(<(NUM_WORDS)))
         NUM_TYPES,df_modified,wordTypes,cols = processTypeStructure(df_modified,TYPE_STRUCTURE)
@@ -97,7 +103,7 @@ function createVariables(args = map(x->string(x), ARGS))
 
         
     end
-    
+    noInChain = 2000
     output_loc = output_loc*"_"*string(noInChain)
     if (!isdir(output_loc))
         mkdir(output_loc)
@@ -109,7 +115,7 @@ end
 
 
 function runModel(model,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS,noInChain=1000)
-    m = sample(model, NUTS(), MCMCThreads(),4000,4;discard_initial=1000)
+    m = sample(model, NUTS(), MCMCThreads(),2000,4)
     display(m)
     
     

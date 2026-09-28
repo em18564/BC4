@@ -4,6 +4,7 @@ include("../setup.jl")
 include("../typeStructures.jl")
 include("../model_master.jl")
 include("../plottingFuncs.jl")
+# %%
 #using SkipNan
 using ExactOptimalTransport,OptimalTransport
 using KernelDensity
@@ -22,10 +23,7 @@ using Phylo
 # 9 Prt
 # 10 Verb
 meanAndStdInfo = CSV.read("../input/meanAndStdInfo.csv",DataFrame)
-outputDirs =[   "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_250",
-                "models/testingDifferentPCS/output_FullADP_23_1931_6PCA_1000",
-                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_250",
-                "models/testingDifferentPCS/output_NoNum_23_1931_6PCA_1000"]     
+outputDirs =[   "models/__1_burnin/output_NoNum_23_1931_6PCA_1000"]     
                 
 wordTypes_old = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
@@ -136,8 +134,7 @@ function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt)
     return samps_2,samps_3
 end
 
-datasets = vcat([[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypes) for x in 1:6] for i in range(1,2)],
-                [[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypesNoNum) for x in 1:6] for i in range(3,4)])
+datasets = vcat([[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypesNoNum) for x in 1:6] for i in range(1,1)])
 
 # %%
 # function whiten(row)
@@ -367,7 +364,7 @@ end
 
 
 # %%
-structure,structure_d = shrinkTree(datasets[4][6][2],collect(1:length(wordTypesNoNum)))
+structure,structure_d = shrinkTree(datasets[1][6][2],collect(1:length(wordTypesNoNum)))
 tree = traverseTree(structure_d,wordTypesNoNum)
 # %%
 D = Dict()
@@ -395,7 +392,7 @@ end
 together = Plots.plot(plt, p2; layout = l)
 together
 # %%
-Plots.savefig(together,"figs/NoNum/dendro6UnwhitenedNoNumCol.png")
+Plots.savefig(together,"figs/NoNum/test.png")
 
 
 

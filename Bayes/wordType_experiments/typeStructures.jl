@@ -236,6 +236,36 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
 
         df_modified = vcat(wordsPreNum,wordsPostNum,adp1,adp2,adp3)
         cols = [palette(:default)[i] for i in range(1,NUM_TYPES)]
+    elseif(TYPE_STRUCTURE == "detSplit")
+        NUM_TYPES = 12
+        wordTypes = ["Adjective","Adverb",
+                        "Conjunction","Determiner","Noun",
+                        "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)","Determiner (following verb)"]
+        df_modified.fullTag.= max.(df_modified.fullTag.-1,0)
+        wordsPreNum= vcat(  subset(df_modified, :fullTag => ByRow((==(0)))),
+                            subset(df_modified, :fullTag => ByRow((==(1)))),
+                            subset(df_modified, :fullTag => ByRow((==(2)))),
+                            subset(df_modified, :fullTag => ByRow((==(3)))),
+                            subset(df_modified, :fullTag => ByRow((==(4)))))
+
+        wordsPostNum= vcat( subset(df_modified, :fullTag => ByRow((==(6)))),
+                            subset(df_modified, :fullTag => ByRow((==(7)))),
+                            subset(df_modified, :fullTag => ByRow((==(8)))))
+        
+        wordsPostNum.fullTag = wordsPostNum.fullTag.-1
+
+        adp1  = subset(df_modified, :fullTag => ByRow((==(10))))
+        adp2  = subset(df_modified, :fullTag => ByRow((==(11))))
+        adp3  = subset(df_modified, :fullTag => ByRow((==(12))))
+
+        detFolVerb  = subset(df_modified, :fullTag => ByRow((==(20))))
+        adp1.fullTag.=8
+        adp2.fullTag.=9
+        adp3.fullTag.=10
+        detFolVerb.fullTag.= 11
+
+        df_modified = vcat(wordsPreNum,wordsPostNum,adp1,adp2,adp3,detFolVerb)
+        cols = [palette(:default)[i] for i in range(1,NUM_TYPES)]
     else()
         throw("Illegal type structure")
     end
