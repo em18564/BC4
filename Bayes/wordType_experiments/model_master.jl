@@ -80,7 +80,7 @@ function createVariables(args = map(x->string(x), ARGS))
             df       = CSV.read("../input/dfPCANorm_corrected_6.csv", DataFrame)
         end
         if TYPE_STRUCTURE == "detSplit"
-            df       = CSV.read("../input/dfPCANorm_corrected_6_WithDetSplit.csv", DataFrame)
+            df       = CSV.read("../../../input/dfPCANorm_corrected_6_WithDetSplit.csv", DataFrame)
             df[!,"fullTag"] = df.fullTagDetSplit
         else
             df[!,"fullTag"] = dfTags
