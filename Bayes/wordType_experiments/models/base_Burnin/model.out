@@ -890,3 +890,5 @@ Sampling (4 threads)  98%|██████████████████
 Sampling (4 threads)  98%|█████████████████████████████▌|  ETA: 0:42:23
 Sampling (4 threads)  99%|█████████████████████████████▊|  ETA: 0:28:28
 Sampling (4 threads) 100%|██████████████████████████████| Time: 1 days, 23:16:38
+[2026-09-25T16:42:58.492] error: *** JOB 19029674 ON bp1-compute126 CANCELLED AT 2026-09-25T16:42:58 DUE TO TIME LIMIT ***
+[2026-09-25T16:42:58.492] error: *** JOB 19029688 ON bp1-compute092 CANCELLED AT 2026-09-25T16:42:58 DUE TO TIME LIMIT ***
