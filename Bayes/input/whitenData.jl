@@ -31,3 +31,52 @@ for rowId in range(2,size(df)[1])
 end
 # %%
 CSV.write("dfPCANorm_corrected_6_WithDetSplit.csv",df)
+
+
+# %%
+sent                = CSV.File("sentences.csv", header=false) |> Tables.matrix
+df_with_words       = CSV.read("df_WithWords.csv",DataFrame)
+words               = df_with_words[df_with_words.Participant.==0,"realWord"]
+wordIds             = df_with_words[df_with_words.Participant.==0,"word"]
+wordTags            = df_with_words[df_with_words.Participant.==0,"tags"]
+
+
+restructureArray(wordArray) = [filter((i) -> i != "",[replace(innerword,"." => ""," "=>"") for innerword in split(innersent,",")[1:end]])
+                                for innersent in wordArray]
+
+r_sent              = restructureArray(sent)
+OnePartDF = subset(df,:Participant => ByRow(==(0)))
+sentenceId  = 1
+innerWordId = 1
+sentenceBuilder = ""
+foundDetSentence = false
+wordIds = Int.(OnePartDF.Word)
+fullsentences = []
+for wordId in eachindex(wordIds)[2:length(OnePartDF.Word)]
+    
+    if ((wordIds[wordId]-wordIds[wordId-1]) > 1)
+        if foundDetSentence
+            fullsentences = vcat(fullsentences,sentenceBuilder)
+        end
+        sentenceId  +=1
+        innerWordId = 1
+        sentenceBuilder = "("*r_sent[sentenceId][innerWordId] * ") "
+        foundDetSentence = false
+    end
+    if OnePartDF.fullTagDetSplit[wordId] == 4
+        sentenceBuilder = sentenceBuilder * "*" * (r_sent[sentenceId][innerWordId+1] * "* ")
+        foundDetSentence = true
+    elseif OnePartDF.fullTagDetSplit[wordId] == 20
+        sentenceBuilder = sentenceBuilder * "{" * (r_sent[sentenceId][innerWordId+1] * "} ")
+        foundDetSentence = true
+    else
+        sentenceBuilder = sentenceBuilder * (r_sent[sentenceId][innerWordId+1] * " ")
+    end
+
+    
+
+    innerWordId+=1
+end
+# %%
+
+CSV.write("determinerSentences.csv",Tables.table(string.(fullsentences)), header=false)

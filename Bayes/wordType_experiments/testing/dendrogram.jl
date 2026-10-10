@@ -23,11 +23,13 @@ using Phylo
 # 9 Prt
 # 10 Verb
 meanAndStdInfo = CSV.read("../input/meanAndStdInfo.csv",DataFrame)
-outputDirs =[   "models/__1_burnin/output_NoNum_23_1931_6PCA_1000"]     
+outputDirs =[   "models/__1/output_detSplit_23_1931_6PCA_2000"]     
                 
 wordTypes_old = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
                         "Pronoun","Particle","Verb"]
+
+
 wordTypes = ["Adjective","Adverb",
             "Conjunction","Determiner","Noun","Numeral", 
             "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
@@ -35,7 +37,10 @@ wordTypes = ["Adjective","Adverb",
 wordTypesNoNum = ["Adjective","Adverb",
             "Conjunction","Determiner","Noun", 
             "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
-cols = [palette(:default)[i] for i in range(1,length(wordTypes))]
+wordTypesNoNumDet = ["Adjective","Adverb",
+            "Conjunction","Determiner","Noun", 
+            "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)","Determiner (following verb)"]
+cols = [palette(:default)[i] for i in range(1,length(wordTypesNoNumDet))]
 
 
 # chn1 = deserialize(outputDir*"/out1.jls")
@@ -134,7 +139,7 @@ function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt)
     return samps_2,samps_3
 end
 
-datasets = vcat([[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypesNoNum) for x in 1:6] for i in range(1,1)])
+datasets = vcat([[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypesNoNumDet) for x in 1:6] for i in range(1,1)])
 
 # %%
 # function whiten(row)
@@ -364,16 +369,16 @@ end
 
 
 # %%
-structure,structure_d = shrinkTree(datasets[1][6][2],collect(1:length(wordTypesNoNum)))
-tree = traverseTree(structure_d,wordTypesNoNum)
+structure,structure_d = shrinkTree(datasets[1][6][2],collect(1:length(wordTypesNoNumDet)))
+tree = traverseTree(structure_d,wordTypesNoNumDet)
 # %%
 D = Dict()
-cols = palette(:default)[1:11]*0.85
+cols = palette(:default)[1:12]*0.85
 wordTypes = ["Adjective","Adverb",
                 "Conjunction","Determiner","Noun",
                 "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
-for wt in eachindex(wordTypes)
-    D[wordTypes[wt]] = cols[wt]
+for wt in eachindex(wordTypesNoNumDet)
+    D[wordTypesNoNumDet[wt]] = cols[wt]
 end
 l = @layout [
     a{0.8w} b{0.2w}
@@ -392,7 +397,7 @@ end
 together = Plots.plot(plt, p2; layout = l)
 together
 # %%
-Plots.savefig(together,"figs/NoNum/test.png")
+Plots.savefig(p,"figs/NoNum/test2.png")
 
 
 

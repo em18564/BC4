@@ -283,7 +283,6 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
     
     #essRhat(chn_dfs,ss_dfs,outputDir)
     essRhatOverall(chn_dfs,ss_dfs,outputDir)
-    return # EARLY RETURN
     d = zeros(noPCS,2,length(wordTypes),chainLength)
     vd = []
     for j in range(1,length(wordTypes))
@@ -352,7 +351,7 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
         df.AB_PC = string.(df.AB, " ",  df.PCA)
         pclabs = unique(df.AB_PC)
         dfWTs = [subset(df, :WordType => ByRow((==(wt)))) for wt in wordTypes]
-        cols = reduce(vcat,([[col; col*0.7] for col in palette(:default)[1:11]]))
+        cols = reduce(vcat,([[col; col*0.7] for col in palette(:default)[1:12]]))
         for dfWt in eachindex(dfWTs)
             p = violin_grouped(dfWTs[dfWt],pclabs,"AB_PC","WordType","Adjective",cols[2*dfWt-1:2*dfWt])
             PlotlyJS.savefig(p,outputDir*"/"*"WT_"*string(dfWt)*".png",width=800,height=700)

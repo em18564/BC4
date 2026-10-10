@@ -11,7 +11,6 @@ wordIds             = df_with_words[df_with_words.Participant.==0,"word"]
 wordTags            = df_with_words[df_with_words.Participant.==0,"tags"]
 
 
-# %%
 restructureArray(wordArray) = [filter((i) -> i != "",[replace(innerword,"." => ""," "=>"") for innerword in split(innersent,",")[2:end]])
                                 for innersent in wordArray]
 

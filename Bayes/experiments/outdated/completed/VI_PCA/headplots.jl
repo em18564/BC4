@@ -1,6 +1,7 @@
+# %%
 using TopoPlots, CairoMakie,Serialization,MultivariateStats#, GLMakie 
 using Makie
-
+# %%
 topoplot(rand(10), rand(Point2f, 10); contours=(color=:white, linewidth=2), label_scatter=true, bounding_geometry=Rect)
 data, positions = TopoPlots.example_data()
 #proj = deserialize("proj3.jls")
@@ -63,4 +64,11 @@ function eegPlots(f = Figure(size = (1200, 400)))
     end
 
 
-eegPlots()
+#eegPlots()
+# %%
+times = [150,350,400,500,600,650]
+using Measures
+maxVal = ceil(maximum([abs(maximum(lds)),abs(minimum(lds))]))
+Plots.plot(times,lds[:,:],xlims=[0,700],layout=6,legend=false,title=["PC1" "PC2" "PC3" "PC4" "PC5" "PC6"], size=(1200,600),xlabel="time from onset (ms)",ylabel="PC loading",margin=5mm,ylim=(-maxVal,maxVal))
+
+Plots.savefig("temporalLoadings.png")

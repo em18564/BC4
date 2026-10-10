@@ -1,4 +1,4 @@
-
+using ColorSchemes
 # 0 Adj
 # 1 Adp
 # 2 Adv
@@ -266,6 +266,137 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
 
         df_modified = vcat(wordsPreNum,wordsPostNum,adp1,adp2,adp3,detFolVerb)
         cols = [palette(:default)[i] for i in range(1,NUM_TYPES)]
+    
+    elseif(TYPE_STRUCTURE == "NounDetSplit_Old")
+        wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+                        "Particle",             "Verb",
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)",
+                        "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
+
+        NUM_TYPES   = length(wordTypes)
+
+        Adjective   = subset(df_modified, :fullTag => ByRow((==(0))))
+        Adverb      = subset(df_modified, :fullTag => ByRow((==(2))))
+        Conjunction = subset(df_modified, :fullTag => ByRow((==(3))))
+        Numeral     = subset(df_modified, :fullTag => ByRow((==(6))))
+        Pronoun     = subset(df_modified, :fullTag => ByRow((==(7))))
+        Particle    = subset(df_modified, :fullTag => ByRow((==(8))))
+        Verb        = subset(df_modified, :fullTag => ByRow((==(9))))
+
+        adp1        = subset(df_modified, :fullTag => ByRow((==(10))))
+        adp2        = subset(df_modified, :fullTag => ByRow((==(11))))
+        adp3        = subset(df_modified, :fullTag => ByRow((==(12))))
+
+
+        Determiner  = subset(df_modified, :fullTag => ByRow((==(4))))
+
+        det1        = subset(Determiner, :detTags => ByRow((==(1))))
+        det2        = subset(Determiner, :detTags => ByRow((==(2))))
+        det3        = vcat( subset(Determiner, :detTags => ByRow((==(3)))),
+                            subset(Determiner, :detTags => ByRow((==(4)))))
+
+        Noun        = subset(df_modified, :fullTag => ByRow((==(5))))
+
+        noun1       = subset(Noun, :nounTags => ByRow((==(1))))
+        noun2       = subset(Noun, :nounTags => ByRow((==(2))))
+        noun3       = vcat( subset(Noun, :nounTags => ByRow((==(3)))),
+                            subset(Noun, :nounTags => ByRow((==(4)))))
+
+
+
+        Adjective.fullTag   .= 0
+        Adverb.fullTag      .= 1
+        Conjunction.fullTag .= 2
+        Numeral.fullTag     .= 3
+        Pronoun.fullTag     .= 4
+        Particle.fullTag    .= 5
+        Verb.fullTag        .= 6
+        adp1.fullTag        .= 7
+        adp2.fullTag        .= 8
+        adp3.fullTag        .= 9
+        det1.fullTag        .= 10
+        det2.fullTag        .= 11
+        det3.fullTag        .= 12
+        noun1.fullTag       .= 13
+        noun2.fullTag       .= 14
+        noun3.fullTag       .= 15
+
+
+
+        df_modified = vcat(
+            Adjective,Adverb,Conjunction,Numeral,Pronoun,Particle,Verb,
+            adp1,adp2,adp3,
+            det1,det2,det3,
+            noun1,noun2,noun3)
+        cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
+
+    elseif(TYPE_STRUCTURE == "NounDetSplit_New")
+        wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+                        "Particle",             "Verb",
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)",
+                        "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
+
+        NUM_TYPES   = length(wordTypes)
+
+        Adjective   = subset(df_modified, :newBaseTags => ByRow((==(0))))
+        Adverb      = subset(df_modified, :newBaseTags => ByRow((==(2))))
+        Conjunction = subset(df_modified, :newBaseTags => ByRow((==(3))))
+        Numeral     = subset(df_modified, :newBaseTags => ByRow((==(6))))
+        Pronoun     = subset(df_modified, :newBaseTags => ByRow((==(7))))
+        Particle    = subset(df_modified, :newBaseTags => ByRow((==(8))))
+        Verb        = subset(df_modified, :newBaseTags => ByRow((==(9))))
+
+        Adposition  = subset(df_modified, :newBaseTags => ByRow((==(1))))
+
+        adp1        = subset(Adposition, :adpTags => ByRow((==(1))))
+        adp2        = subset(Adposition, :adpTags => ByRow((==(2))))
+        adp3        = subset(Adposition, :adpTags => ByRow((==(3))))
+
+
+        Determiner  = subset(df_modified, :newBaseTags => ByRow((==(4))))
+
+        det1        = subset(Determiner, :detTags => ByRow((==(1))))
+        det2        = subset(Determiner, :detTags => ByRow((==(2))))
+        det3        = vcat( subset(Determiner, :detTags => ByRow((==(3)))),
+                            subset(Determiner, :detTags => ByRow((==(4)))))
+
+        Noun        = subset(df_modified, :newBaseTags => ByRow((==(5))))
+
+        noun1       = subset(Noun, :nounTags => ByRow((==(1))))
+        noun2       = subset(Noun, :nounTags => ByRow((==(2))))
+        noun3       = vcat( subset(Noun, :nounTags => ByRow((==(3)))),
+                            subset(Noun, :nounTags => ByRow((==(4)))))
+
+
+
+        Adjective.fullTag   .= 0
+        Adverb.fullTag      .= 1
+        Conjunction.fullTag .= 2
+        Numeral.fullTag     .= 3
+        Pronoun.fullTag     .= 4
+        Particle.fullTag    .= 5
+        Verb.fullTag        .= 6
+        adp1.fullTag        .= 7
+        adp2.fullTag        .= 8
+        adp3.fullTag        .= 9
+        det1.fullTag        .= 10
+        det2.fullTag        .= 11
+        det3.fullTag        .= 12
+        noun1.fullTag       .= 13
+        noun2.fullTag       .= 14
+        noun3.fullTag       .= 15
+
+
+
+        df_modified = vcat(
+            Adjective,Adverb,Conjunction,Numeral,Pronoun,Particle,Verb,
+            adp1,adp2,adp3,
+            det1,det2,det3,
+            noun1,noun2,noun3)
+        cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
+
     else()
         throw("Illegal type structure")
     end

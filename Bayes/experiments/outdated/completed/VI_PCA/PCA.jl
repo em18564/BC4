@@ -11,17 +11,17 @@ using MultivariateStats
 #using PlotlyJS
 using Plots
 # %%
-df_full = CSV.read("../../../input/dfHierarchical.csv", DataFrame)
+df_full = CSV.read("../../../../input/dfHierarchical.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
 df_labels = Vector(df_full[:, :Tags])
-M = fit(PCA, transpose(Matrix(df)); maxoutdim=4)
+M = fit(PCA, transpose(Matrix(df)); maxoutdim=5)
 Yte = predict(M, transpose(Matrix(df)))
 Xr = transpose(reconstruct(M, Yte))
 
 df_PCA = df_full
 #go through PCA in detail and get basic idea, interpret, plot by word type of scatter, check loo against normalisation.
 PCs = transpose(Yte)
-
+l = loadings(M)
 #Plots.scatter(transpose(projection(M)),label = ["ELAN" "LAN" "N400" "EPNP" "P600" "PNP"],title="PCA Components")
 
 # %%
