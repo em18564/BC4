@@ -8,6 +8,7 @@
 #SBATCH --account=PHPH039284
 #SBATCH --partition=short
 #SBATCH --array 1-6               #make sure to do 4*square number
+#SBATCH --mem=8G
 
 export NUM_PARTICIPANTS=23    
 export NUM_WORDS=1931
