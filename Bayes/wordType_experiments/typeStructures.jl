@@ -334,7 +334,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
     elseif(TYPE_STRUCTURE == "NounDetSplit_New")
         wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
                         "Particle",             "Verb",
-                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)",
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)", "Adposition (Adverbial)",
                         "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (ID-Object)",
                         "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
 
@@ -353,6 +353,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         adp1        = subset(Adposition, :adpTags => ByRow((==(1))))
         adp2        = subset(Adposition, :adpTags => ByRow((==(2))))
         adp3        = subset(Adposition, :adpTags => ByRow((==(3))))
+        adp4        = subset(Adposition, :adpTags => ByRow((==(4))))
 
 
         Determiner  = subset(df_modified, :newBaseTags => ByRow((==(4))))
@@ -381,18 +382,19 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         adp1.fullTag        .= 7
         adp2.fullTag        .= 8
         adp3.fullTag        .= 9
-        det1.fullTag        .= 10
-        det2.fullTag        .= 11
-        det3.fullTag        .= 12
-        noun1.fullTag       .= 13
-        noun2.fullTag       .= 14
-        noun3.fullTag       .= 15
+        adp4.fullTag        .= 10
+        det1.fullTag        .= 11
+        det2.fullTag        .= 12
+        det3.fullTag        .= 13
+        noun1.fullTag       .= 14
+        noun2.fullTag       .= 15
+        noun3.fullTag       .= 16
 
 
 
         df_modified = vcat(
             Adjective,Adverb,Conjunction,Numeral,Pronoun,Particle,Verb,
-            adp1,adp2,adp3,
+            adp1,adp2,adp3,adp4,
             det1,det2,det3,
             noun1,noun2,noun3)
         cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
@@ -400,7 +402,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
     elseif(TYPE_STRUCTURE == "NewTags")
         wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
                         "Particle",             "Verb",
-                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)"]
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)", "Adposition (Adverbial)"]
 
         NUM_TYPES   = length(wordTypes)
 
@@ -417,6 +419,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         adp1        = subset(Adposition, :adpTags => ByRow((==(1))))
         adp2        = subset(Adposition, :adpTags => ByRow((==(2))))
         adp3        = subset(Adposition, :adpTags => ByRow((==(3))))
+        adp4        = subset(Adposition, :adpTags => ByRow((==(4))))
 
 
         Determiner  = subset(df_modified, :newBaseTags => ByRow((==(4))))
@@ -435,20 +438,18 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
         adp1.fullTag        .= 7
         adp2.fullTag        .= 8
         adp3.fullTag        .= 9
-        det1.fullTag        .= 10
-        det2.fullTag        .= 11
-        det3.fullTag        .= 12
-        noun1.fullTag       .= 13
-        noun2.fullTag       .= 14
-        noun3.fullTag       .= 15
+        adp4.fullTag        .= 10
+        Determiner.fullTag  .= 11
+        Noun.fullTag        .= 12
+
 
 
 
         df_modified = vcat(
             Adjective,Adverb,Conjunction,Numeral,Pronoun,Particle,Verb,
-            adp1,adp2,adp3,
-            det1,det2,det3,
-            noun1,noun2,noun3)
+            adp1,adp2,adp3,adp4,
+            Determiner,
+            Noun)
         cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
 
     else()

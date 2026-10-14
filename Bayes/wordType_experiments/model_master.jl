@@ -55,10 +55,10 @@ function createVariables(args = map(x->string(x), ARGS))
     if analyseEssRhat>10
         analyseEssRhat = 0
         try
-            dfTags   = CSV.read("../../../input/dfWithTagsReintigrated.csv", DataFrame)
+            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew.csv", DataFrame)
             df       = CSV.read("../../../input/dfHierarchicalNorm.csv", DataFrame)
         catch
-            dfTags   = CSV.read("../input/dfWithTagsReintigrated.csv", DataFrame)
+            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew.csv", DataFrame)
             df       = CSV.read("../input/dfHierarchicalNorm.csv", DataFrame)
         end
         df[!,"fullTag"]     = dfTags.newTags
@@ -78,10 +78,10 @@ function createVariables(args = map(x->string(x), ARGS))
 
 
         try
-            dfTags   = CSV.read("../../../input/dfWithTagsReintigrated.csv", DataFrame)
+            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew.csv", DataFrame)
             df       = CSV.read("../../../input/dfPCANorm_corrected_6.csv", DataFrame)
         catch
-            dfTags   = CSV.read("../input/dfWithTagsReintigrated.csv", DataFrame)
+            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew.csv", DataFrame)
             df       = CSV.read("../input/dfPCANorm_corrected_6.csv", DataFrame)
         end
         if TYPE_STRUCTURE == "detSplit"
@@ -115,7 +115,11 @@ function createVariables(args = map(x->string(x), ARGS))
     noInChain = 2000
     output_loc = output_loc*"_"*string(noInChain)
     if (!isdir(output_loc))
-        mkdir(output_loc)
+        try
+            mkdir(output_loc)
+        catch
+            println("caught mkdir error")
+        end
     end
 
     return df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS,noInChain
@@ -131,7 +135,11 @@ function runModel(model,df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TY
     if(analyseEssRhat==1)
         output_loc = output_loc * "/" * string(expMean) * "_" * string(cauchyMean)
         if (!isdir(output_loc))
-            mkdir(output_loc)
+            try
+                mkdir(output_loc)
+            catch
+                println("caught mkdir error")
+            end
         end
         
     end
