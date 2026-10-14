@@ -379,15 +379,15 @@ end
 
 
 # %%
-structure,structure_d = shrinkTree(datasets[1][1][2],collect(1:length(wordTypesNoNum))) # change to datasets[x][6][2]
+structure,structure_d = shrinkTree(datasets[1][6][2],collect(1:length(wordTypesNoNum))) # change to datasets[x][6][2]
 tree = traverseTree(structure_d,wordTypesNoNumDet)
 
 # %%
-structure,structure_d = shrinkTree(datasets[2][1][2],collect(1:length(wordTypesWithGram))) # change to datasets[x][6][2]
+structure,structure_d = shrinkTree(datasets[2][6][2],collect(1:length(wordTypesWithGram))) # change to datasets[x][6][2]
 tree = traverseTree(structure_d,wordTypesWithGram)
 
 # %%
-structure,structure_d = shrinkTree(datasets[3][1][2],collect(1:length(wordTypesWithGram))) # change to datasets[x][6][2]
+structure,structure_d = shrinkTree(datasets[3][6][2],collect(1:length(wordTypesWithGram))) # change to datasets[x][6][2]
 tree = traverseTree(structure_d,wordTypesWithGram)
 # %%
 D = Dict()
