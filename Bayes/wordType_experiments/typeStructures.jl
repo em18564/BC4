@@ -402,7 +402,9 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
     elseif(TYPE_STRUCTURE == "NewTags")
         wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
                         "Particle",             "Verb",
-                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)", "Adposition (Adverbial)"]
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)", "Adposition (Adverbial)",
+                        "Determiner",
+                        "Noun"]
 
         NUM_TYPES   = length(wordTypes)
 

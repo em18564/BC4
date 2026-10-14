@@ -55,10 +55,10 @@ function createVariables(args = map(x->string(x), ARGS))
     if analyseEssRhat>10
         analyseEssRhat = 0
         try
-            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew.csv", DataFrame)
+            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew2.csv", DataFrame)
             df       = CSV.read("../../../input/dfHierarchicalNorm.csv", DataFrame)
         catch
-            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew.csv", DataFrame)
+            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew2.csv", DataFrame)
             df       = CSV.read("../input/dfHierarchicalNorm.csv", DataFrame)
         end
         df[!,"fullTag"]     = dfTags.newTags
@@ -78,10 +78,10 @@ function createVariables(args = map(x->string(x), ARGS))
 
 
         try
-            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew.csv", DataFrame)
+            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew2.csv", DataFrame)
             df       = CSV.read("../../../input/dfPCANorm_corrected_6.csv", DataFrame)
         catch
-            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew.csv", DataFrame)
+            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew2.csv", DataFrame)
             df       = CSV.read("../input/dfPCANorm_corrected_6.csv", DataFrame)
         end
         if TYPE_STRUCTURE == "detSplit"
