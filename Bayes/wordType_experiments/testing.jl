@@ -60,11 +60,15 @@ function fxGraph(tags,encodings,filename,additionalTitle)
         Layout(title_text="Frequency plot of word types ("*additionalTitle*")",yaxis_range=[0, 500])
     )
     PlotlyJS.savefig(p,("figs/"*filename*".png"))
+    return y
 end
-fxGraph(dfTags[dfTags.Participant.==1,:].newBaseTags.+1, wordEncodings,"fx1","Overall")
-fxGraph(dfTags[dfTags.Participant.==1,:].nounTags, nounEncodings,"fx2","Noun")
-fxGraph(dfTags[dfTags.Participant.==1,:].adpTags, adpEncodings,"fx3","Adp")
-fxGraph(dfTags[dfTags.Participant.==1,:].detTags, detEncodings,"fx4","Det")
+ytot = fxGraph(dfTags[dfTags.Participant.==1,:].newBaseTags.+1, wordEncodings,"fx1","Overall")
+yn   = fxGraph(dfTags[dfTags.Participant.==1,:].nounTags, nounEncodings,"fx2","Noun")
+ya   = fxGraph(dfTags[dfTags.Participant.==1,:].adpTags, adpEncodings,"fx3","Adp")
+yd   = fxGraph(dfTags[dfTags.Participant.==1,:].detTags, detEncodings,"fx4","Det")
+# %%
+filtered = vcat(ytot[[1,3,4,7,8,9,10]],yn[[1,2]],yn[3]+yn[4],ya,yd[[1,2]],yd[3]+yd[4])
+
 # %%
 
 
