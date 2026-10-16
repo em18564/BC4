@@ -42,23 +42,31 @@ replace!(dfTags.tags, 10 => 5)
 CSV.write("../input/full_tags.csv", dfTags)
 # %%
 using Counters
-dfTags   = CSV.read("../input/full_tags.csv", DataFrame)
-wordEncodings = Dict(   0=>"Adjective",2=>"Adverb",
-                        3=>"Conjunction",4=>"Determiner",5=>"Noun",6=>"Numeral",
-                        7=>"Pronoun",8=>"Particle",9=>"Verb",11=>"Adposition (lex)",12=>"Adposition (sub)",13=>"Adposition (syn)")
-newTags = dfTags[dfTags.Participant.==1,:].newTags
-k = [0,2,3,4,5,6,7,8,9,11,12,13]
-x = [wordEncodings[i] for i in k]
-y = [counter(newTags)[i] for i in k]
+dfTags   = CSV.read("../input/dfWithTagsReintigratedNew2.csv", DataFrame)
+wordEncodings = Dict(   1=>"Adjective",2=>"Adposition",3=>"Adverb",
+                        4=>"Conjunction",5=>"Determiner",6=>"Noun",7=>"Numeral",
+                        8=>"Pronoun",9=>"Particle",10=>"Verb")
+nounEncodings = Dict(   1=>"Subject",2=>"Dir-Object",3=>"InDir-Object",4=>"InDir-Object")
+adpEncodings =  Dict(   1=>"Lex",    2=>"Sub",       3=>"Syn",         4=>"Adverbial")
+detEncodings =  Dict(   1=>"Subject",2=>"Dir-Object",3=>"InDir-Object",4=>"InDir-Object")
+function fxGraph(tags,encodings,filename,additionalTitle)
+    k = range(1,length(encodings))
+    x = [encodings[i] for i in k]
+    y = [counter(tags)[i] for i in k]
+    cols = [palette(ColorSchemes.viridis, length(y))[i] for i in range(1,length(y))]
 
+    p = PlotlyJS.plot(
+        PlotlyJS.bar(x=x, y=y, marker_color=cols,text=y, textposition="auto"), 
+        Layout(title_text="Frequency plot of word types ("*additionalTitle*")",yaxis_range=[0, 500])
+    )
+    PlotlyJS.savefig(p,("figs/"*filename*".png"))
+end
+fxGraph(dfTags[dfTags.Participant.==1,:].newBaseTags.+1, wordEncodings,"fx1","Overall")
+fxGraph(dfTags[dfTags.Participant.==1,:].nounTags, nounEncodings,"fx2","Noun")
+fxGraph(dfTags[dfTags.Participant.==1,:].adpTags, adpEncodings,"fx3","Adp")
+fxGraph(dfTags[dfTags.Participant.==1,:].detTags, detEncodings,"fx4","Det")
 # %%
-color_vec = [palette(:default)[i] for i in k.+1]
 
-p = PlotlyJS.plot(
-    PlotlyJS.bar(x=x, y=y, marker_color=color_vec),
-    Layout(title_text="Frequency plot of word types")
-)
-PlotlyJS.savefig(p,"figs/fx.png")
 
 # %% 
 function essRhatDataFrame(folderLoc)

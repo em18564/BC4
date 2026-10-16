@@ -23,16 +23,22 @@ using Phylo
 # 9 Prt
 # 10 Verb
 meanAndStdInfo = CSV.read("../input/meanAndStdInfo.csv",DataFrame)
-outputDirs =[   "models/__1/output_NoNum_23_1931_6PCA_2000","models/__1/output_NounDetSplit_Old_23_1931_6PCA_2000","models/__1/output_NounDetSplit_New_23_1931_6PCA_2000"]     
+outputDirs =[   "models/__1/output_NewTags_23_1931_6PCA_2000","models/__1/output_NounDetSplit_New_23_1931_6PCA_2000"]     
                 
 wordTypes_old = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
                         "Pronoun","Particle","Verb"]
 
-
-wordTypes = ["Adjective","Adverb",
-            "Conjunction","Determiner","Noun","Numeral", 
-            "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)"]
+wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+                        "Particle",             "Verb",
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)", "Adposition (Adverbial)",
+                        "Determiner",
+                        "Noun"]
+wordTypesWithGram = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+                        "Particle",             "Verb",
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)", "Adposition (Adverbial)",
+                        "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
 
 wordTypesNoNum = ["Adjective","Adverb",
             "Conjunction","Determiner","Noun", 
@@ -41,12 +47,6 @@ wordTypesNoNumDet = ["Adjective","Adverb",
             "Conjunction","Determiner","Noun", 
             "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)","Determiner (following verb)"]
 
-
-wordTypesWithGram = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
-                        "Particle",             "Verb",
-                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)",
-                        "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (ID-Object)",
-                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
 
 NUM_TYPES   = length(wordTypesWithGram)
 cols = [palette(:default)[i] for i in range(1,length(wordTypesNoNumDet))]
@@ -148,8 +148,8 @@ function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt)
     return samps_2,samps_3
 end
 
-datasets = vcat([[  getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypesNoNum) for x in 1:6] for i in range(1,1)],
-                    [[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypesWithGram) for x in 1:6] for i in range(2,3)]) #change x to x in 1:6
+datasets = vcat([[  getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypes) for x in 1:6] for i in range(1,1)],
+                    [[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypesWithGram) for x in 1:6] for i in range(2,2)]) #change x to x in 1:6
 
 # %%
 # function whiten(row)
@@ -379,8 +379,8 @@ end
 
 
 # %%
-structure,structure_d = shrinkTree(datasets[1][6][2],collect(1:length(wordTypesNoNum))) # change to datasets[x][6][2]
-tree = traverseTree(structure_d,wordTypesNoNumDet)
+structure,structure_d = shrinkTree(datasets[1][6][2],collect(1:length(wordTypes))) # change to datasets[x][6][2]
+tree = traverseTree(structure_d,wordTypes)
 
 # %%
 structure,structure_d = shrinkTree(datasets[2][6][2],collect(1:length(wordTypesWithGram))) # change to datasets[x][6][2]
