@@ -23,11 +23,14 @@ using Phylo
 # 9 Prt
 # 10 Verb
 meanAndStdInfo = CSV.read("../input/meanAndStdInfo.csv",DataFrame)
-outputDirs =[       "models/__1/output_NewTags_FX_23_1931_6PCA_2000",
+outputDirsOld =[       "models/__1/output_NewTags_FX_23_1931_6PCA_2000",
                     "models/__1/output_NounDetSplit_New_1Cuttof_23_1931_6PCA_2000",
                     "models/__1/output_NounDetSplit_New_2Cuttof_23_1931_6PCA_2000",
                     "models/__1/output_NounDetSplit_New_50Cuttof_23_1931_6PCA_2000",
-                    "models/__1/output_NounDetSplit_New_FX_23_1931_6PCA_2000",]     
+                    "models/__1/output_NounDetSplit_New_FX_23_1931_6PCA_2000",]  
+                
+                    
+outputDirs =["models/__1/output_NounDetSplit_New_50Cuttof_FX_23_1931_6PCA_"*string(i)*"_2000" for i in range(1,10)]  
                 
 wordTypes_old = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
@@ -81,8 +84,12 @@ wordTypes5 = [   "Adjective",            "Adverb",                   "Conjunctio
                         "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
 NUM_TYPES   = length(wordTypes5)
 cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
-wordTypes = [wordTypes1,wordTypes2,wordTypes3,wordTypes4,wordTypes5]
-
+wordTypes_old = [wordTypes1,wordTypes2,wordTypes3,wordTypes4,wordTypes5]
+wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                "Pronoun",
+                        "Verb",
+                        "Adposition (lex)",     "Adposition (Adverbial)", "Adposition (Sub/Syn)",
+                        "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
 # chn1 = deserialize(outputDir*"/out1.jls")
 # chn2 = deserialize(outputDir*"/out2.jls")
 # chn3 = deserialize(outputDir*"/out3.jls")
@@ -179,7 +186,7 @@ function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt)
     return samps_2,samps_3
 end
 
-datasets = vcat([[  getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypes[i]) for x in 1:6] for i in range(1,5)]) #change x to x in 1:6
+datasets = vcat([[  getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypes) for x in 1:6] for i in range(1,10)]) #change x to x in 1:6
 
 # %%
 # function whiten(row)
@@ -417,8 +424,17 @@ for i in range(1,5)
     Plots.savefig("figs/dendo/d_"*fileNames[i]*".png")
 end
 # %%
-structure,structure_d = shrinkTree(datasets[2][6][2],collect(1:length(wordTypesWithGram))) # change to datasets[x][6][2]
-tree = traverseTree(structure_d,wordTypesWithGram)
+myPlots = []
+for i in range(1,10)
+    structure,structure_d = shrinkTree(datasets[i][6][2],collect(1:length(wordTypes))) # change to datasets[x][6][2]
+    tree = traverseTree(structure_d,wordTypes)
+    p = Plots.plot(tree)
+    push!(myPlots,p)
+    Plots.savefig("figs/dendo/d_50Cutoff_"*string(i)*".png")
+end
+
+# %%
+Plots.plot(myPlots...,layout=(5,2))
 
 # %%
 structure,structure_d = shrinkTree(datasets[3][6][2],collect(1:length(wordTypesWithGram))) # change to datasets[x][6][2]

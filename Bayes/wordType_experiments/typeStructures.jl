@@ -721,11 +721,13 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
             adp1,adp4,adp23,
             det2,det3,
             noun1,noun2,noun3]
-        minCat = minimum([nrow(cat) for cat in cats])
+        minCat = minimum([minimum([nrow(subset(cat,:Participant =>ByRow(==(i))))  for i in range(0,23)]) for cat in cats])
         for catId in eachindex(cats)
-            rows = nrow(cats[catId])
+            rows     = minimum([nrow(subset(cats[catId],:Participant =>ByRow(==(i))))  for i in range(0,23)])
+            minLoc   = argmin([nrow(subset(cats[catId],:Participant =>ByRow(==(i))))  for i in range(0,23)])
             indicies = sample(1:rows, minCat, replace=false)
-            cats[catId] = cats[catId][indicies, :]
+            includedWords = subset(cats[catId],:Participant =>ByRow(==(minLoc))).Word[indicies]
+            cats[catId] = subset(cats[catId],:Word=>ByRow(in(includedWords)))
 
         end
         df_modified = cats[1]
