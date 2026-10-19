@@ -24,8 +24,12 @@ function createVariables(args = map(x->string(x), ARGS))
         noInChain  = 1000
     end
     analyseEssRhat = parse(Int,args[7])
+    modelCounter = ""
     if analyseEssRhat>1
         pc   = customMod(arrayId,6)
+        if maxArrayId>6
+            modelCounter = string(Int(ceil(arrayId/6)))
+        end
     else
         pc   = customMod(arrayId,4)
     end
@@ -103,7 +107,11 @@ function createVariables(args = map(x->string(x), ARGS))
             analyseEssRhat = 0
             dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4, :PC_5, :PC_6]]
             noPCS = 6
-            output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS) * "_6PCA"
+            if maxArrayId >6
+                output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS) * "_6PCA" * "_" * modelCounter
+            else
+                output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS) * "_6PCA"
+            end 
         else
             dfPCA = df_modified[:, [:PC_1, :PC_2, :PC_3, :PC_4]]
             output_loc = "output_" * TYPE_STRUCTURE * "_" * string(NUM_PARTICIPANTS) * "_" * string(NUM_WORDS)

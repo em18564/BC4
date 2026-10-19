@@ -664,6 +664,75 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
             det2,det3,
             noun1,noun2,noun3)
         cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
+    elseif(TYPE_STRUCTURE == "NounDetSplit_New_50Cuttof_FX")
+        wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                "Pronoun",
+                        "Verb",
+                        "Adposition (lex)",     "Adposition (Adverbial)", "Adposition (Sub/Syn)",
+                        "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
+
+        NUM_TYPES   = length(wordTypes)
+
+        Adjective   = subset(df_modified, :newBaseTags => ByRow((==(0))))
+        Adverb      = subset(df_modified, :newBaseTags => ByRow((==(2))))
+        Conjunction = subset(df_modified, :newBaseTags => ByRow((==(3))))
+        Pronoun     = subset(df_modified, :newBaseTags => ByRow((==(7))))
+        Verb        = subset(df_modified, :newBaseTags => ByRow((==(9))))
+
+        Adposition  = subset(df_modified, :newBaseTags => ByRow((==(1))))
+
+        adp1        = subset(Adposition, :adpTags => ByRow((==(1))))
+        adp4        = subset(Adposition, :adpTags => ByRow((==(4))))
+        adp23       = vcat( subset(Adposition, :adpTags => ByRow((==(2)))),
+                            subset(Adposition, :adpTags => ByRow((==(3)))))
+
+
+        Determiner  = subset(df_modified, :newBaseTags => ByRow((==(4))))
+
+        det2        = subset(Determiner, :detTags => ByRow((==(2))))
+        det3        = vcat( subset(Determiner, :detTags => ByRow((==(3)))),
+                            subset(Determiner, :detTags => ByRow((==(4)))))
+
+        Noun        = subset(df_modified, :newBaseTags => ByRow((==(5))))
+
+        noun1       = subset(Noun, :nounTags => ByRow((==(1))))
+        noun2       = subset(Noun, :nounTags => ByRow((==(2))))
+        noun3       = vcat( subset(Noun, :nounTags => ByRow((==(3)))),
+                            subset(Noun, :nounTags => ByRow((==(4)))))
+
+
+
+        Adjective.fullTag   .= 0
+        Adverb.fullTag      .= 1
+        Conjunction.fullTag .= 2
+        Pronoun.fullTag     .= 3
+        Verb.fullTag        .= 4
+        adp1.fullTag        .= 5
+        adp4.fullTag        .= 6
+        adp23.fullTag       .= 7
+        det2.fullTag        .= 8
+        det3.fullTag        .= 9
+        noun1.fullTag       .= 10
+        noun2.fullTag       .= 11
+        noun3.fullTag       .= 12
+
+
+        cats = [Adjective,Adverb,Conjunction,Pronoun,Verb,
+            adp1,adp4,adp23,
+            det2,det3,
+            noun1,noun2,noun3]
+        minCat = minimum([nrow(cat) for cat in cats])
+        for catId in eachindex(cats)
+            rows = nrow(cats[catId])
+            indicies = sample(1:rows, minCat, replace=false)
+            cats[catId] = cats[catId][indicies, :]
+
+        end
+        df_modified = cats[1]
+        for i in range(2,length(cats))
+            df_modified = vcat(df_modified,cats[i])
+        end
+        cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
     elseif(TYPE_STRUCTURE == "NewTags")
         wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
                         "Particle",             "Verb",

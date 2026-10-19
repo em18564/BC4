@@ -23,7 +23,11 @@ using Phylo
 # 9 Prt
 # 10 Verb
 meanAndStdInfo = CSV.read("../input/meanAndStdInfo.csv",DataFrame)
-outputDirs =[   "models/__1/output_NewTags_23_1931_6PCA_2000","models/__1/output_NounDetSplit_New_23_1931_6PCA_2000"]     
+outputDirs =[       "models/__1/output_NewTags_FX_23_1931_6PCA_2000",
+                    "models/__1/output_NounDetSplit_New_1Cuttof_23_1931_6PCA_2000",
+                    "models/__1/output_NounDetSplit_New_2Cuttof_23_1931_6PCA_2000",
+                    "models/__1/output_NounDetSplit_New_50Cuttof_23_1931_6PCA_2000",
+                    "models/__1/output_NounDetSplit_New_FX_23_1931_6PCA_2000",]     
                 
 wordTypes_old = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
@@ -46,11 +50,38 @@ wordTypesNoNum = ["Adjective","Adverb",
 wordTypesNoNumDet = ["Adjective","Adverb",
             "Conjunction","Determiner","Noun", 
             "Pronoun","Particle","Verb","Adposition (lex)", "Adposition (sub)", "Adposition (syn)","Determiner (following verb)"]
+wordTypes1 = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+                        "Particle",             "Verb",
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)", "Adposition (Adverbial)",
+                        "Determiner",
+                        "Noun"]
+
+wordTypes2 = [   "Adjective",            "Adverb",                   "Conjunction",                "Pronoun",
+                        "Particle",             "Verb",
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)", "Adposition (Adverbial)",
+                        "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)"]
 
 
-NUM_TYPES   = length(wordTypesWithGram)
-cols = [palette(:default)[i] for i in range(1,length(wordTypesNoNumDet))]
+wordTypes3 = [   "Adjective",            "Adverb",                   "Conjunction",                "Pronoun",
+                        "Particle",             "Verb",
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (Adverbial)",
+                        "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
 
+wordTypes4 = [   "Adjective",            "Adverb",                   "Conjunction",                "Pronoun",
+                        "Verb",
+                        "Adposition (lex)",     "Adposition (Adverbial)",
+                        "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
+wordTypes5 = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+                        "Particle",             "Verb",
+                        "Adposition (lex)",     "Adposition (sub)",         "Adposition (syn)", "Adposition (Adverbial)",
+                        "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
+NUM_TYPES   = length(wordTypes5)
+cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
+wordTypes = [wordTypes1,wordTypes2,wordTypes3,wordTypes4,wordTypes5]
 
 # chn1 = deserialize(outputDir*"/out1.jls")
 # chn2 = deserialize(outputDir*"/out2.jls")
@@ -148,8 +179,7 @@ function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt)
     return samps_2,samps_3
 end
 
-datasets = vcat([[  getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypes) for x in 1:6] for i in range(1,1)],
-                    [[getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypesWithGram) for x in 1:6] for i in range(2,2)]) #change x to x in 1:6
+datasets = vcat([[  getDataFromFirstXchains(x,full_chndfs[i],full_ssdfs[i],wordTypes[i]) for x in 1:6] for i in range(1,5)]) #change x to x in 1:6
 
 # %%
 # function whiten(row)
@@ -379,9 +409,13 @@ end
 
 
 # %%
-structure,structure_d = shrinkTree(datasets[1][6][2],collect(1:length(wordTypes))) # change to datasets[x][6][2]
-tree = traverseTree(structure_d,wordTypes)
-
+fileNames = ["FXBasic","1%","2%","over50","FXFull"]
+for i in range(1,5)
+    structure,structure_d = shrinkTree(datasets[i][6][2],collect(1:length(wordTypes[i]))) # change to datasets[x][6][2]
+    tree = traverseTree(structure_d,wordTypes[i])
+    p = Plots.plot(tree)
+    Plots.savefig("figs/dendo/d_"*fileNames[i]*".png")
+end
 # %%
 structure,structure_d = shrinkTree(datasets[2][6][2],collect(1:length(wordTypesWithGram))) # change to datasets[x][6][2]
 tree = traverseTree(structure_d,wordTypesWithGram)
