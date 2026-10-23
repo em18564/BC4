@@ -22,7 +22,7 @@ using Phylo
 # 8 Pron
 # 9 Prt
 # 10 Verb
-meanAndStdInfo = CSV.read("../input/meanAndStdInfo.csv",DataFrame)
+meanAndStdInfo = CSV.read("../../input/meanAndStdInfo.csv",DataFrame)
 outputDirsOld =[       "models/__1/output_NewTags_FX_23_1931_6PCA_2000",
                     "models/__1/output_NounDetSplit_New_1Cuttof_23_1931_6PCA_2000",
                     "models/__1/output_NounDetSplit_New_2Cuttof_23_1931_6PCA_2000",
@@ -31,7 +31,7 @@ outputDirsOld =[       "models/__1/output_NewTags_FX_23_1931_6PCA_2000",
                 
                     
 outputDirs =["models/__1/output_NounDetSplit_New_50Cuttof_FX_23_1931_6PCA_"*string(i)*"_2000" for i in range(1,10)]  
-                
+           
 wordTypes_old = ["Adjective","Adposition","Adverb",
                         "Conjunction","Determiner","Noun","Numeral",
                         "Pronoun","Particle","Verb"]
@@ -120,8 +120,8 @@ for od in outputDirs
     chndfs = []
     ssdfs  = []
     for i in range(1,6)
-        push!(chndfs,CSV.read(od*"/chndf_"*string(i),DataFrame))
-        push!(ssdfs,CSV.read(od*"/ssdf_"*string(i),DataFrame))
+        push!(chndfs,CSV.read("../"*od*"/chndf_"*string(i),DataFrame))
+        push!(ssdfs,CSV.read("../"*od*"/ssdf_"*string(i),DataFrame))
     end
     push!(full_chndfs,chndfs)
     push!(full_ssdfs,ssdfs)
@@ -343,7 +343,7 @@ function traverseTree(tree,structure,node,innerWT)
     else
         innerBranch = node * "_b1"
         createnode!(tree,innerBranch)
-        createbranch!(tree, node, innerBranch, dist-b1[1])
+        createbranch!(tree, node, innerBranch, abs(dist-b1[1]))
         traverseTree(tree,b1,innerBranch,innerWT)
     end
 
@@ -361,20 +361,20 @@ function traverseTree(tree,structure,node,innerWT)
     return tree
 end
 
-# function dendrogram(distances,link,ylab,xlab)
+function dendrogram(distances,link,wordTypes,ylab,xlab)
     
-#     hc = hclust(distances, linkage=link)
-#     xlabs = [wordTypes[i] for i in hc.order]
+    hc = hclust(distances, linkage=link)
+    xlabs = [wordTypes[i] for i in hc.order]
     
-#     return Plots.plot(hc,xticks=(1:length(wordTypes),xlabs),
-#                 ylabel=ylab,
-#                 xlabel=xlab,
-#                 right_margin=10mm,
-#                 left_margin=30mm,
-#                 bottom_margin=20mm,
-#                 top_margin=10mm,size=(900,500))
+    return Plots.plot(hc,xticks=(1:length(wordTypes),xlabs),
+                ylabel=ylab,
+                xlabel=xlab,
+                right_margin=10mm,
+                left_margin=30mm,
+                bottom_margin=20mm,
+                top_margin=10mm,size=(900,500))
 
-# end
+end
 # types = [:single,:average,:complete,:ward]
 # ds = []
 # for i in range(1,length(types))
@@ -537,4 +537,35 @@ for experimentID in range(3,4)
     Plots.savefig(finalPlot,"figs/totallyPooled/"*experimentNames[experimentID])
 end
 # %%
+od = "../models/__1/output_NounDetSplit_New_23_1931_6PCA_2000"
+chndfs = []
+ssdfs  = []
+for i in range(1,6)
+    push!(chndfs,CSV.read(od*"/chndf_"*string(i),DataFrame))
+    push!(ssdfs,CSV.read(od*"/ssdf_"*string(i),DataFrame))
+end
+
+prob = repeat([1.0/length(full_chndfs[1][1][!,"a_ws[1]"])], length(full_chndfs[1][1][!,"a_ws[1]"]))
+
+
+newDS = [  getDataFromFirstXchains(x,chndfs,ssdfs,wordTypesWithGram) for x in 1:6] #change x to x in 1:6
+
+fullDistances = []
+fullDataPoints    = []
+for i in range(1,size(newDS[6][2][1])[1])
+    N = size(newDS[6][2])[2]
+    distances = zeros((N,N))
+    dataPoints = []
+    for a in range(1,N)
+        aDraw = [newDS[6][2][pc,a][i] for pc in range(1,12)]
+        for b in range(1,N)
+            
+            bDraw = [newDS[6][2][pc,b][i] for pc in range(1,12)]
+            distances[a,b] = norm(bDraw-aDraw)
+        end
+        push!(dataPoints,aDraw)
+    end
+    push!(fullDataPoints,dataPoints)
+    push!(fullDistances,distances)
+end
 
