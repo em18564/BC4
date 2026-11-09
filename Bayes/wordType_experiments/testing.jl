@@ -42,16 +42,17 @@ replace!(dfTags.tags, 10 => 5)
 CSV.write("../input/full_tags.csv", dfTags)
 # %%
 using Counters
-dfTags   = CSV.read("../input/dfWithTagsReintigratedNew2.csv", DataFrame)
+dfTags   = CSV.read("../input/dfWithTagsReintigratedNew3.csv", DataFrame)
 wordEncodings = Dict(   1=>"Adjective",2=>"Adposition",3=>"Adverb",
                         4=>"Conjunction",5=>"Determiner",6=>"Noun",7=>"Numeral",
                         8=>"Pronoun",9=>"Particle",10=>"Verb")
 nounEncodings = Dict(   1=>"Subject",2=>"Dir-Object",3=>"InDir-Object",4=>"InDir-Object")
-adpEncodings =  Dict(   1=>"Lex",    2=>"Sub",       3=>"Syn",         4=>"Adverbial")
-detEncodings =  Dict(   1=>"Subject",2=>"Dir-Object",3=>"InDir-Object",4=>"InDir-Object")
+adpEncodings  = Dict(   1=>"Lex",    2=>"Sub",       3=>"Syn",         4=>"Adverbial")
+detEncodings  = Dict(   1=>"Subject",2=>"Dir-Object",3=>"InDir-Object",4=>"InDir-Object")
+verbEncodings = Dict(   1=>"Lex",    2=>"Aux")
 function fxGraph(tags,encodings,filename,additionalTitle)
     k = range(1,length(encodings))
-    x = [encodings[i] for i in k]
+    x = [encodings[i]  for i in k]
     y = [counter(tags)[i] for i in k]
     cols = [palette(ColorSchemes.viridis, length(y))[i] for i in range(1,length(y))]
 
@@ -62,13 +63,65 @@ function fxGraph(tags,encodings,filename,additionalTitle)
     PlotlyJS.savefig(p,("figs/"*filename*".png"))
     return y
 end
-ytot = fxGraph(dfTags[dfTags.Participant.==1,:].newBaseTags.+1, wordEncodings,"fx1","Overall")
-yn   = fxGraph(dfTags[dfTags.Participant.==1,:].nounTags, nounEncodings,"fx2","Noun")
-ya   = fxGraph(dfTags[dfTags.Participant.==1,:].adpTags, adpEncodings,"fx3","Adp")
-yd   = fxGraph(dfTags[dfTags.Participant.==1,:].detTags, detEncodings,"fx4","Det")
+ytot = fxGraph(dfTags[dfTags.Participant.==1,:].newBaseTags.+1, wordEncodings,  "fx1","Overall")
+yn   = fxGraph(dfTags[dfTags.Participant.==1,:].nounTags,       nounEncodings,        "fx2","Noun")
+ya   = fxGraph(dfTags[dfTags.Participant.==1,:].adpTags,        adpEncodings,          "fx3","Adp")
+yd   = fxGraph(dfTags[dfTags.Participant.==1,:].detTags,        detEncodings,          "fx4","Det")
+yv   = fxGraph(dfTags[dfTags.Participant.==1,:].verbTags,       verbEncodings,         "fx5","Verb")
 # %%
-filtered = vcat(ytot[[1,3,4,7,8,9,10]],yn[[1,2]],yn[3]+yn[4],ya,yd[[1,2]],yd[3]+yd[4])
+filtered = vcat(ytot[[1,3,4,7,8,9]],yv,ya,yd[[1,2]],yd[3]+yd[4],yn[[1,2]],yn[3]+yn[4])
+colIds = [
+            "#871a56","#a285ff",                                    # Adj Adv
+            "#ffe314","#f7bd7e","#ff5488","#f46200",                # Conj Num Prn Part
+            "#7e007f","#d730d9",                                    # Verbs (purples)
+            "#00bcc5","#017eed","#2400bb","#002b58",                # Adp (blueus)
+            "#72ff77","#72b800","#004617",                          # Dets (greens)
+            "#ff5e62","#be0016","#770014",                          # Nouns (reds)
+            
 
+                    ]
+colScheme = parse.(RGB, colIds)
+theme(:ggplot2)
+
+wordTypes = [           "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+                        "Particle",
+                        "Verb (Lex)", "Verb (Aux)",
+                        "Adposition (Lex)",     "Adposition (Sub)",         "Adposition (Syn)", "Adposition (Adv)",
+                        "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (ID-Object)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)"]
+ordering = [16,17,18,13,14,15,7,8,9,10,11,12,1,2,3,4,5,6]
+positions = vcat([1,2,3],[4.5,5.5,6.5],[8,9],[10.5,11.5,12.5,13.5],[15,16,17,18,19,20])
+default(
+    titlefont = 24,
+    guidefont = 24,     # x and y axis labels (xlabel/ylabel)
+    tickfont = 16,      # axis tick numbers
+    legendfont = 16
+)
+p = Plots.bar(positions ,
+                            filtered[ordering],
+                            xticks =(positions,wordTypes[ordering]),
+                            colour=colScheme[ordering],
+                            legend=false,
+                            size=(1800,1200),
+                            xminorticks=0,
+                            xrotation=45,
+                            bar_width = 0.9,
+                            ylim= (0,385),
+                            yticks = (range(0,350,8)),
+                            yminorticks=5,
+                            bg_inside   = "#E5ECF6",
+                            #background_color_legend = "#F4F7FB",
+                            lw=0,
+                            xlabel="Lexical Category",
+                            ylabel="Frequency",
+                            leftmargin=8mm,
+                            bottommargin=21mm,
+                            widen=false)
+perc = 100*filtered/sum(filtered)
+for i in eachindex(positions)
+    p = Plots.annotate!(positions[i],filtered[ordering[i]]+7,text(string(round(perc[ordering[i]],digits=1))*"%",:center,16))
+end
+Plots.savefig(p,"figs/fullfx.png")
 # %%
 
 

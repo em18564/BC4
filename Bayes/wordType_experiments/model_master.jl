@@ -59,10 +59,10 @@ function createVariables(args = map(x->string(x), ARGS))
     if analyseEssRhat>10
         analyseEssRhat = 0
         try
-            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew2.csv", DataFrame)
+            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew3.csv", DataFrame)
             df       = CSV.read("../../../input/dfHierarchicalNorm.csv", DataFrame)
         catch
-            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew2.csv", DataFrame)
+            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew3.csv", DataFrame)
             df       = CSV.read("../input/dfHierarchicalNorm.csv", DataFrame)
         end
         df[!,"fullTag"]     = dfTags.newTags
@@ -70,6 +70,7 @@ function createVariables(args = map(x->string(x), ARGS))
         df[!,"nounTags"]    = dfTags.nounTags
         df[!,"adpTags"]     = dfTags.adpTags
         df[!,"detTags"]     = dfTags.detTags
+        df[!,"verbTags"]    = dfTags.verbTags
 
         df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
         df_modified = subset(df_modified, :Word => ByRow(<(NUM_WORDS)))
@@ -82,10 +83,10 @@ function createVariables(args = map(x->string(x), ARGS))
 
 
         try
-            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew2.csv", DataFrame)
+            dfTags   = CSV.read("../../../input/dfWithTagsReintigratedNew3.csv", DataFrame)
             df       = CSV.read("../../../input/dfPCANorm_corrected_6.csv", DataFrame)
         catch
-            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew2.csv", DataFrame)
+            dfTags   = CSV.read("../input/dfWithTagsReintigratedNew3.csv", DataFrame)
             df       = CSV.read("../input/dfPCANorm_corrected_6.csv", DataFrame)
         end
         if TYPE_STRUCTURE == "detSplit"
@@ -97,6 +98,7 @@ function createVariables(args = map(x->string(x), ARGS))
             df[!,"nounTags"]    = dfTags.nounTags
             df[!,"adpTags"]     = dfTags.adpTags
             df[!,"detTags"]     = dfTags.detTags
+            df[!,"verbTags"]    = dfTags.verbTags
         end
         
         df_modified = subset(df, :Participant => ByRow(<(NUM_PARTICIPANTS)))
@@ -201,7 +203,6 @@ end
 function plotExistingModelGraphs(args = map(x->string(x), ARGS))
     
     df_modified, dfPCA, pc, NUM_PARTICIPANTS,  NUM_WORDS, TYPE_STRUCTURE, NUM_TYPES,wordTypes,cols,isPlotting,analyseEssRhat,output_loc,expMean,cauchyMean,noPCS,noInChain = createVariables(args)
-    println(output_loc)
     if(pc == 1)
     #wait for all other PCs to finish before greating plots
         global is_waiting = true

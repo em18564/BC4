@@ -14,7 +14,7 @@ using Plots
 df_full = CSV.read("../../../../input/dfHierarchical.csv", DataFrame)
 df = df_full[:, [:ELAN, :LAN, :N400, :EPNP, :P600, :PNP]]
 df_labels = Vector(df_full[:, :Tags])
-M = fit(PCA, transpose(Matrix(df)); maxoutdim=5)
+M = fit(PCA, transpose(Matrix(df)); maxoutdim=6)
 Yte = predict(M, transpose(Matrix(df)))
 Xr = transpose(reconstruct(M, Yte))
 

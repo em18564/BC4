@@ -14,7 +14,7 @@ sent                = CSV.File("sentences.csv", header=false) |> Tables.matrix
 df_with_words       = CSV.read("df_WithWords.csv",DataFrame)
 words               = df_with_words[df_with_words.Participant.==0,"realWord"]
 wordIds             = df_with_words[df_with_words.Participant.==0,"word"]
-wordTags            = fixedNouns.baseTags
+wordTags            = fixedNouns.newBaseTags
 
 
 restructureArray(wordArray) = [filter((i) -> i != "",[replace(innerword,"." => ""," "=>"") for innerword in split(innersent,",")[2:end]])
@@ -131,9 +131,10 @@ df_Old[!,"newBaseTags"] = fixedNouns.newBaseTags[indexes]
 df_Old[!,"nounTags"]    = fixedNouns.nounTags[indexes]
 df_Old[!,"adpTags"]     = fixedNouns.adpTags[indexes]
 df_Old[!,"detTags"]     = fixedNouns.detTags[indexes]
+df_Old[!,"verbTags"]    = fixedNouns.verbTags[indexes]
 # %%
 
-CSV.write("dfWithTagsReintigratedNew2.csv",df_Old)
+CSV.write("dfWithTagsReintigratedNew3.csv",df_Old)
 
 # %%
 fixedNouns.detTags=detTags
@@ -202,3 +203,10 @@ function constructSents(fullSents)
 end
 ds = constructSents(fullSents)
 CSV.write("sentencesWithWTs.csv", DataFrame(sent = ds); header = false)
+
+
+
+# %%
+
+verbs = CSV.File("verbTags.csv", header=false) |> Tables.matrix
+fixedNouns.verbTags =transpose(verbs)[:]

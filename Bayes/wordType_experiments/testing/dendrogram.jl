@@ -9,7 +9,7 @@ include("../plottingFuncs.jl")
 using ExactOptimalTransport,OptimalTransport
 using KernelDensity
 
-using SlicedWasserstein
+#using SlicedWasserstein
 using PhyloTrees
 using Phylo
 # 1 Adj
@@ -127,9 +127,6 @@ for od in outputDirs
     push!(full_ssdfs,ssdfs)
 end
 prob = repeat([1.0/length(full_chndfs[1][1][!,"a_ws[1]"])], length(full_chndfs[1][1][!,"a_ws[1]"]))
-
-
-# %%
 function wasserstein_samples(x, y)
     x = sort(x)
     y = sort(y)
@@ -137,7 +134,7 @@ function wasserstein_samples(x, y)
 end
 
 
-function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt)
+function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt,type=0)
     innerChndfs = chndfs[1:noChains]
     innerSsdfs  = ssdfs[1:noChains]
     # wi      = zeros(noChains,length(wordTypes))
@@ -169,11 +166,20 @@ function getDataFromFirstXchains(noChains,chndfs,ssdfs,wt)
             # wg_dist[i,j] = wordsDistGrad[j]
             #wi_samples[i,j] = innerChndfs[i][!,"a_ws["*string(j)*"]"]
             #wg_samples[i,j] = innerChndfs[i][!,"b_ws["*string(j)*"]"]
-            wi_samps2[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]
-            wg_samps2[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_bw"]
+            if type == 0
+                wi_samps2[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]
+                wg_samps2[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_bw"]
 
-            wi_samps3[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]*meanAndStdInfo.std[i]
-            wg_samps3[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]*meanAndStdInfo.std[i]
+                wi_samps3[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]*meanAndStdInfo.std[i]
+                wg_samps3[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]*meanAndStdInfo.std[i]
+            elseif type == 1
+                wi_samps2[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]
+                wg_samps2[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_bw"]
+
+                wi_samps3[i,j]  = innerChndfs[i][!,"a_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]*meanAndStdInfo.std[i]
+                wg_samps3[i,j]  = innerChndfs[i][!,"b_ws["*string(j)*"]"].*innerChndfs[i][!,"σ_aw"]*meanAndStdInfo.std[i]
+            end
+            
         end
     end
     # dists        = vcat(wi_dist,wg_dist)
@@ -537,7 +543,7 @@ for experimentID in range(3,4)
     Plots.savefig(finalPlot,"figs/totallyPooled/"*experimentNames[experimentID])
 end
 # %%
-od = "../models/__1/output_NounDetSplit_New_23_1931_6PCA_2000"
+od = "../models/__1_tightSig/output_NounDetSplit_New_23_1931_6PCA_2000"
 chndfs = []
 ssdfs  = []
 for i in range(1,6)
@@ -569,3 +575,69 @@ for i in range(1,size(newDS[6][2][1])[1])
     push!(fullDistances,distances)
 end
 
+# %%
+
+for i in range(1,6)
+    points = Matrix(chndfs[i][:,3:87])
+    n = names(chndfs[1])[3:87]
+    
+    for outer_x in range(0,4)
+        for outer_y in range(0,4)
+            plots = []
+            for inner_x in range(1,17)
+                x = outer_x*17 +inner_x
+                println(string(i)*":"*string(x)*"/"*string(w))
+                for inner_y in range(1,17)
+                    
+                    y = outer_y*17 +inner_y
+                    k = kde((points[:,x], points[:,y]))
+                    if x == y
+                        c = contourf(k.x, k.y, k.density,cbar=false,color=:plasma,title = n[x], ticks = false)
+                    else    
+                        c = contourf(k.x, k.y, k.density,cbar=false,title = n[x]*" - "*n[y], ticks = false,right_margin=10mm,bottom_margin=10mm)
+                    end
+                    
+                    push!(plots,c)
+                end
+            end
+            p = Plots.plot(plots...; layout=grid(17,17), size = (17*750, 17*750))
+            Plots.savefig(p,"figs/"*string(i)*"/contour_"*string(outer_x)*"-"*string(outer_y)*".png")
+        end
+    end    
+end
+
+
+
+
+# %%
+my_gradient = cgrad(:rainbow, scale = :log) 
+ticks = ([  1,9,19,27,
+            37,48,61,72,
+            85],
+            ["σ_aw","a_ws","σ_bw","b_ws",
+            "σ_ap","a_ps","σ_bp","b_ps",
+            "σ"])
+x = abs.(cor(Matrix(chndfs[1][:,3:87])))
+p = Plots.heatmap(x,color=my_gradient,xticks = ticks,size=(1200,1200))
+lines = [   1.5,
+            18.5,19.5,
+            36.5,37.5,
+            60.5,61.5,
+            84.5]
+for l in lines
+    p = Plots.plot!([1, 1200], [l, l], seriestype = :straightline,c=:black,legend=false)
+    p = Plots.plot!([l, l], [1, 1200], seriestype = :straightline,c=:black,legend=false)
+end
+for i in range(1,85)
+    for j in range(1,85)
+        if x[i, j]>0.8 && i!=j
+            a =(i,j,text(round(x[i, j], digits=2), 12, :black, :center))
+            p = annotate!(a, linecolor=:white)
+
+        end
+
+
+    end
+end
+
+Plots.savefig(p,"figs/heatmap.png")

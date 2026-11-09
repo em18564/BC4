@@ -50,8 +50,9 @@ baseDict = {
   "PART":   8,
 
   
-  "AUX":    9,
+  
   "VERB":   9,
+  "AUX":    9,
 }
 
 nounAdditionalDict = {
@@ -144,6 +145,7 @@ newtags = tags
 prevNoun = ""
 baseTags = []
 nounTags = []
+verbTags = []
 adpTags  = []
 words    = []
 for sent in sentences: 
@@ -152,14 +154,14 @@ for sent in sentences:
     offset = 0
     tagSentOld = ' ' * (maxLen+1)
     tagSentNew = ' ' * (maxLen+1)
-    print('(',splitSent[0],')', ' ' *(maxLen-len(splitSent[0])-2), end=' ',sep='')
+    #print('(',splitSent[0],')', ' ' *(maxLen-len(splitSent[0])-2), end=' ',sep='')
     for i in range(1,len(splitSent)):
         j = i+offset
         found = False
         while(not found):
             token =doc[j]
             if splitSent[i].startswith(token.text) or token.text.startswith(splitSent[i]):
-                print(splitSent[i],' ' *(maxLen-len(splitSent[i])), end=' ',sep='') #token.pos_, token.tag_, token.dep_,
+                #print(splitSent[i],' ' *(maxLen-len(splitSent[i])), end=' ',sep='') #token.pos_, token.tag_, token.dep_,
                 baseTags.append(baseDict[token.pos_])
                 # if(token.pos_ =="NOUN") or (token.pos_ =="PROPN"):
                 #     prevNoun = matchNounVal(token.dep_,doc,j,prevNoun)
@@ -185,7 +187,12 @@ for sent in sentences:
                 #         ans = input()
                 #         print(ans)
                 #     adpTags.append(adpAdditionalDict[ans])
-                            
+                if(token.pos_=="VERB"):
+                    verbTags.append(1)
+                elif(token.pos_=="AUX"):
+                    verbTags.append(2)
+                else:
+                    verbTags.append(0)                    
                 # else:
                 #     adpTags.append(0)
                 tag1 = inv_baseDict[finalDf.tags[counter]]
@@ -200,11 +207,11 @@ for sent in sentences:
             else:
                 offset+=1
             j+=1
-    print()
-    print(tagSentOld)
-    print(tagSentNew)
+    # print()
+    # print(tagSentOld)
+    # print(tagSentNew)
     
-    print("\n")
+    
 
 # %%
 with open("baseTags.csv", 'w', newline='') as myfile:
@@ -225,4 +232,8 @@ df.to_csv("fixedNouns.csv",index=False, header=True)
 df = pd.DataFrame({"baseTags":baseTags,"nounTags":nounTags,"adpTags":adpTags})
 df.to_csv("fixedDF2.csv",index=False, header=True)
 
+# %%
+with open("verbTags.csv", 'w', newline='') as myfile:
+     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+     wr.writerow(verbTags)
 # %%
