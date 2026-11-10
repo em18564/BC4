@@ -80,7 +80,7 @@ data = [
 end
 
 
-function violin_grouped(data,columnTypes,columLabel,xLabel,x1,cols)
+function violin_grouped(data,columnTypes,columLabel,xLabel,x1,cols,dpi)
     ys = []
     for type in unique(data.AB)
         append!(ys,[subset(data, "AB" => ByRow((==(type))))[:,:data]])
@@ -110,28 +110,37 @@ function violin_grouped(data,columnTypes,columLabel,xLabel,x1,cols)
     # end
     yaxtit = ""
     yTickText = repeat([""],13)
-    if (thisWordType == "Noun (Subject)" || thisWordType == "Adposition (lex)" || thisWordType == "Conjunction" )
+    if (thisWordType == "Noun (Subject)" || thisWordType == "Adposition (Lex)" || thisWordType == "Adjective" )
         yaxtit = "Intercept posterior"
         yTickText = range(-0.3,0.3,13)
     end
-
+    largeFontSize = 24*dpi
+    smallFontSize = 16*dpi
     layout = Layout(
         yaxis=attr(
-            title=yaxtit,
-            range=(-rangeVals, rangeVals),
-            constrain="domain",
-            zeroline=true,
-            zerolinewidth=1,
-            zerolinecolor = "#000000",
-            tickmode = "array",
-            tickvals = range(-0.3,0.3,13),
-            ticktext = yTickText),
-        font=attr(size=25),
+            title           = yaxtit,
+            range           = (-rangeVals, rangeVals),
+            constrain       = "domain",
+            zeroline        = true,
+            zerolinewidth   = 1,
+            zerolinecolor   = "#000000",
+            tickmode        = "array",
+            tickvals        = range(-0.3,0.3,13),
+            ticktext        = yTickText,
+            tickfont        = attr(size=smallFontSize),
+            titlefont       = attr(size=largeFontSize)),
+        xaxis = attr(
+            tickfont        = attr(size=smallFontSize),
+            titlefont       = attr(size=largeFontSize)
+            ),
         violinmode="group",
-        title=attr(text=thisWordType, font_size=30,y=0.975,
-        x=0.5,
-        xanchor= "center",
-        yanchor= "top"),
+        title=attr(
+            text=thisWordType,
+            y=0.975,
+            x=0.5,
+            xanchor= "center",
+            yanchor= "top",
+            font   =attr(size=largeFontSize)),
         violingap = 0.05,
         violingroupgap = 0.1,
         legend=attr(
@@ -139,9 +148,14 @@ function violin_grouped(data,columnTypes,columLabel,xLabel,x1,cols)
             y=0.97,      
             xanchor="right",
             yanchor="top",
-            bgcolor="rgba(255, 255, 255, 0.6)"
+            bgcolor="rgba(255, 255, 255, 0.6)",
+
+            font=attr(
+                size=smallFontSize,
+            )
+            
         ),
-        margin=attr(l=10,r=10,t=50,b=20),
+        margin=attr(l=10,r=10,t=72,b=10),
     )
     data = [
         PlotlyJS.violin(
@@ -308,6 +322,9 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
     
     #essRhat(chn_dfs,ss_dfs,outputDir)
     essRhatOverall(chn_dfs,ss_dfs,outputDir)
+
+    #return true #EARLY RETURN
+
     d = zeros(noPCS,2,length(wordTypes),chainLength)
     vd = []
     for j in range(1,length(wordTypes))
@@ -375,23 +392,35 @@ function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
         df.AB_PC = string.(df.AB, " ",  df.PCA)
         pclabs = unique(df.AB_PC)
         dfWTs = [subset(df, :WordType => ByRow((==(wt)))) for wt in wordTypes]
+        # colIds = [
+        #     "#7e007f","#a285ff",              #Adj Adv
+        #     "#242500","#ffe83b","#ff6694","#f46200","#ffc1b0",     #Conj Num Prn Part
+        #     "#00bcc5","#017eed","#2400bb","#002b58",    #Adp (blueus)
+        #     "#72ff77","#72b800","#004617",       # Dets (greens)
+        #     "#ff5e62","#be0016","#770014",       # Nouns (reds)
+        #             ]
         colIds = [
-            "#7e007f","#a285ff",              #Adj Adv
-            "#242500","#ffe83b","#ff6694","#f46200","#ffc1b0",     #Conj Num Prn Part
-            "#00bcc5","#017eed","#2400bb","#002b58",    #Adp (blueus)
-            "#72ff77","#72b800","#004617",       # Dets (greens)
-            "#ff5e62","#be0016","#770014",       # Nouns (reds)
+            "#871a56","#a285ff",                                    # Adj Adv
+            "#ffe314","#f7bd7e","#ff5488","#f46200",                # Conj Num Prn Part
+            "#7e007f","#d730d9",                                    # Verbs (purples)
+            "#00bcc5","#017eed","#2400bb","#002b58",                # Adp (blueus)
+            "#72ff77","#72b800","#004617",                          # Dets (greens)
+            "#ff5e62","#be0016","#770014",                          # Nouns (reds)
+            
+
                     ]
         colScheme = parse.(RGB, colIds)
         cols = reduce(vcat,([[col; col*0.7] for col in colScheme[1:length(wordTypes)]]))
         for dfWt in eachindex(dfWTs)
-            p = violin_grouped(dfWTs[dfWt],pclabs,"AB_PC","WordType","Adjective",cols[2*dfWt-1:2*dfWt])
-            if (dfWt == 15 || dfWt == 8 || dfWt == 3)
-                w = 768
+            dpi = 2
+            p = violin_grouped(dfWTs[dfWt],pclabs,"AB_PC","WordType","Adjective",cols[2*dfWt-1:2*dfWt],dpi)
+            if (dfWt == 16 || dfWt == 9 || dfWt == 1)
+                w = 509
             else
-                w = 700
+                w = 464
             end
-            PlotlyJS.savefig(p,outputDir*"/"*"WT_"*string(dfWt)*".png",width=w,height=700)
+            
+            PlotlyJS.savefig(p,outputDir*"/"*"WT_"*string(dfWt)*".png",width=dpi*w,height=dpi*450, scale=1)
         end
         combinePlots(outputDir,noPCS)
         global p = p
@@ -547,7 +576,12 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     MyMarkOpacity = 0.7
     myMarkerStrokeWith = 0.5
     global ss_dfsTest = ss_dfs
-
+    default(
+        titlefont = 24,
+        guidefont = 24,     # x and y axis labels (xlabel/ylabel)
+        tickfont = 16,      # axis tick numbers
+        legendfont = 16
+    )
     maxRhat = maximum([maximum(ss_dfs[i][:,"rhat"]) for i in range(1,6)]) *1.001
     maxEss  = maximum([maximum(ss_dfs[i][:,"ess_bulk"]) for i in range(1,6)]) *1.001
     myXlims=(.999,maxRhat)
@@ -559,7 +593,7 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     if maxEss>4000
         essStep = 2000
     end
-    rhatStep = 0.002
+    rhatStep = 0.005
     if maxRhat>1.02
         rhatStep = 0.01
     end
@@ -568,7 +602,6 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     myMainPlotYTicks = (myMainPlotYTicksVals,string.(Int.(myMainPlotYTicksVals)))
     # mySubPlotXTicks  = [1,1.015]
     # mySubPlotYTicks  = [0,3000,6000,9000]
-    default(titlefontsize=12, guidefontsize=12, tickfontsize=12, legendfontsize=12)
     colNames = ss_dfs[1].parameters
     lexicalCatsA    = vcat( findall(x -> startswith(x, "ab_w[1"), colNames),
                             findall(x -> startswith(x, "z_ab_w[1"), colNames),
@@ -638,7 +671,7 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     colScheme = cgrad(:Paired_8,categorical = true)
 
     global gss_dfs = ss_dfs
-    p=Plots.scatter([], [],layout=(2,4),label=false,size=(1550,800))
+    p=Plots.scatter([], [],layout=(grid(2,4)),label=false,size=(2000,1200), dpi = 300)
     for i in range(1,6)
         x = ss_dfs[i][:,"rhat"]
         y = ss_dfs[i][:,"ess_bulk"]
@@ -649,14 +682,15 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
                 if plotLegend && i == 1
                     if length(allCats[catId][innerCatId])>0
                         if catId == 1
-                                Plots.scatter!([], label=" σ (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:xcross)
+                                Plots.scatter!([], label=" σ (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:xcross,
+                                background_color_legend = "#E5ECF6",left_margin=-10mm)
                                 Plots.scatter!([], label=" sample (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:circle)
                                 if length(allCats[2][5])>0
                                     Plots.scatter!([], label=" LKJ prior (relative to colour)", grid=false, showaxis=false,subplot=4,legend=:topleft,c=:grey,m=:diamond)
                                 end 
-                                Plots.scatter!([], label=" Lexical intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[1],m=:rect,bg_inside=:white, margin = 5mm)
-                                Plots.scatter!([], label=" Lexical gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[2],m=:rect)
-                                Plots.scatter!([], grid=false, showaxis=false,subplot=8,bg_inside=:white,label=false)
+                                Plots.scatter!([], label=" Lexical intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[5],m=:rect,bg_inside=:white, margin = 15mm,left_margin=0mm)
+                                Plots.scatter!([], label=" Lexical gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[6],m=:rect)
+                                Plots.scatter!([], grid=false, showaxis=false,subplot=8,bg_inside=:white,label=false,left_margin=-10mm)
                         elseif catId == 2
                                 Plots.scatter!([], label=" Participant intercept", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[3],m=:rect)
                                 Plots.scatter!([], label=" Participant gradient", grid=false, showaxis=false,subplot=4,legend=:topleft,c=colScheme[4],m=:rect)
@@ -684,18 +718,18 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
                     #lexical
                     if innerCatId == 1
                         #A
-                        myCol = colScheme[1]
+                        myCol = colScheme[5]
                     elseif innerCatId == 2
                         #B
-                        myCol = colScheme[2]
+                        myCol = colScheme[6]
                     elseif innerCatId == 3
                         #Asig
                         myMark = :xcross
-                        myCol = colScheme[1]
+                        myCol = colScheme[5]
                     else
                         #Bsig
                         myMark = :xcross
-                        myCol = colScheme[2]
+                        myCol = colScheme[6]
                     end 
                 elseif catId == 2
                     #participant
@@ -749,19 +783,25 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
                 if i>3
                     plotVal = i+1
                 end
+                if i == 1 || i == 4
+                    lm = 10mm
+                else
+                    lm = 30mm
+                end
                 Plots.scatter!(     p,
                                     x[allCats[catId][innerCatId]],
                                     y[allCats[catId][innerCatId]],
                                     subplot=plotVal,c=myCol,m=myMark,
                                     label=false,title="\nPC " *string(i),xticks=myMainPlotXTicks,yticks=myMainPlotYTicks,ylims=myYlims,xlims=myXlims,
-                                    leftmargin = 10mm,
-                                    rightmargin = 0mm,
-                                    bottommargin = 5mm,
-                                    topmargin    = 5mm,
+                                    leftmargin = lm,
+                                    rightmargin = -15mm,
+                                    bottommargin = 10mm,
+                                    topmargin    = 10mm,
                                     xlabel="R-hat",
                                     ylabel="Effective Sample Size",
                                     yminorticks = 4,
-                                    xminorticks = 4)
+                                    xminorticks = 5,
+                                    bg_inside   = "#E5ECF6")
             end
         end
         
@@ -882,27 +922,27 @@ function combinePlots(outputDir,noPCS)
 
 
 
-    img1 = load(outputDir*"/WT_15.png")
-    for i in range(16,17)
+    img1 = load(outputDir*"/WT_16.png")
+    for i in range(17,18)
         img1 = hcat(img1,load(outputDir*"/WT_"*string(i)*".png"))
     end
-    for i in range(12,14)
+    for i in range(13,15)
         img1 = hcat(img1,load(outputDir*"/WT_"*string(i)*".png"))
     end
-    img2 = load(outputDir*"/WT_8.png")
-    for i in range(9,11)
+    img2 = load(outputDir*"/WT_9.png")
+    for i in range(10,12)
         img2 = hcat(img2,load(outputDir*"/WT_"*string(i)*".png"))
     end
-    for i in range(1,2)
+    for i in range(7,8)
         img2 = hcat(img2,load(outputDir*"/WT_"*string(i)*".png"))
     end
-    img3 = load(outputDir*"/WT_3.png")
-    smallerImg = load(outputDir*"/WT_4.png")
-    white_img = fill(RGB{N0f8}(1, 1, 1), size(smallerImg))
-    for i in range(4,7)
+    img3 = load(outputDir*"/WT_1.png")
+    #smallerImg = load(outputDir*"/WT_4.png")
+    #white_img = fill(RGB{N0f8}(1, 1, 1), size(smallerImg))
+    for i in range(2,6)
         img3 = hcat(img3,load(outputDir*"/WT_"*string(i)*".png"))
     end
-    img3 = hcat(img3,white_img)
+    #img3 = hcat(img3,white_img)
     Images.save(outputDir*"/wts.png",vcat(img1,img2,img3))
 
 end

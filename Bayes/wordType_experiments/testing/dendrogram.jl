@@ -543,7 +543,12 @@ for experimentID in range(3,4)
     Plots.savefig(finalPlot,"figs/totallyPooled/"*experimentNames[experimentID])
 end
 # %%
-od = "../models/__1_tightSig/output_NounDetSplit_New_23_1931_6PCA_2000"
+od = "../models/__1_tightSig/output_NounDetSplit_New_VerbSplit_23_1931_6PCA_2000"
+#od = "../models/__1_tightSig/output_SimpleTags_23_1931_6PCA_2000"
+# wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+#                         "Particle",             "Verb",                     "Adposition",                    "Determiner",
+#                         "Noun"]
+# wordTypesShort = wordTypes
 chndfs = []
 ssdfs  = []
 for i in range(1,6)
@@ -554,7 +559,7 @@ end
 prob = repeat([1.0/length(full_chndfs[1][1][!,"a_ws[1]"])], length(full_chndfs[1][1][!,"a_ws[1]"]))
 
 
-newDS = [  getDataFromFirstXchains(x,chndfs,ssdfs,wordTypesWithGram) for x in 1:6] #change x to x in 1:6
+newDS = [  getDataFromFirstXchains(x,chndfs,ssdfs,wordTypes) for x in 1:6] #change x to x in 1:6
 
 fullDistances = []
 fullDataPoints    = []

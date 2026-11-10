@@ -25,7 +25,8 @@ p1 = groupedbar(name, transpose(l), group = ctg,
            yminorticks = 5,
            lw=0,
            title="(a)",
-           widen=false)
+           widen=false,
+           dpi=300)
 #savefig("PCALoadings.png")
 varExp = (principalvars(M)./var(M))
 cumVar = [sum(varExp[1:i]) for i in 1:length(varExp)]
@@ -40,7 +41,8 @@ p2     = bar(name2,varExp,xlabel = "Principal Component", ylabel = "Explainded V
            yminorticks = 0,
            colour=:darkblue,
            title="(b)",
-           widen=false)
+           widen=false,
+           dpi=300)
 for i in eachindex(varExp)
     p2     = annotate!(i-0.5, varExp[i] +0.025, text(string(round(varExp[i]*100,digits=1))*"%", :center, 16))
 end
@@ -51,6 +53,18 @@ p2      = plot!(name2,cumVar,marker=:circle,labels="Cumulative Explained Varianc
                     colour=:red,markersize=7)
 
 
-plot(p1, p2, layout = (2, 1),size=(1800,2200), left_margin = 15mm,right_margin=10mm)
+plot(p1, p2, layout = (2, 1),size=(1800,2200), left_margin = 15mm,right_margin=10mm,dpi=300)
 savefig("PCALoadings.png")
+
+
+# plot(p1, p2, layout = (2, 1),size=(1800,2200), left_margin = 15mm,right_margin=10mm,dpi=300)
+# savefig("PCALoadings.png")
+
+p1 = title!(p1,"")
+plot(p1,size=(1800,1100), left_margin = 15mm,right_margin=10mm,bottom_margin=10mm,dpi=300)
+savefig("PCALoadings1.png")
+p2 = title!(p2,"")
+plot(p2,size=(1800,1100), left_margin = 15mm,right_margin=10mm,bottom_margin=10mm,dpi=300)
+savefig("PCALoadings2.png")
+
 # %%

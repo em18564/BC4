@@ -116,7 +116,8 @@ p = Plots.bar(positions ,
                             ylabel="Frequency",
                             leftmargin=8mm,
                             bottommargin=21mm,
-                            widen=false)
+                            widen=false,
+                            dpi=300)
 perc = 100*filtered/sum(filtered)
 for i in eachindex(positions)
     p = Plots.annotate!(positions[i],filtered[ordering[i]]+7,text(string(round(perc[ordering[i]],digits=1))*"%",:center,16))
