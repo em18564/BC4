@@ -593,7 +593,7 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
     if maxEss>4000
         essStep = 2000
     end
-    rhatStep = 0.005
+    rhatStep = 0.002
     if maxRhat>1.02
         rhatStep = 0.01
     end
@@ -800,7 +800,7 @@ function essRhatOverall(chn_dfs,ss_dfs,outputDir)
                                     xlabel="R-hat",
                                     ylabel="Effective Sample Size",
                                     yminorticks = 4,
-                                    xminorticks = 5,
+                                    xminorticks = 2,
                                     bg_inside   = "#E5ECF6")
             end
         end

@@ -548,7 +548,16 @@ od = "../models/__1_tightSig/output_NounDetSplit_New_VerbSplit_23_1931_6PCA_2000
 # wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
 #                         "Particle",             "Verb",                     "Adposition",                    "Determiner",
 #                         "Noun"]
-# wordTypesShort = wordTypes
+# 
+
+# wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+#                         "Particle",
+#                         "Verb (Lex)", "Verb (Aux)",
+#                         "Adposition (Lex)",     "Adposition (Sub)",         "Adposition (Syn)", "Adposition (Adv)",
+#                         "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (Prep)",       "Determiner (AdvMod)",
+#                         "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",     "Noun (Prep)",       "Noun (AdvMod)"]
+
+wordTypesShort = wordTypes
 chndfs = []
 ssdfs  = []
 for i in range(1,6)
