@@ -1000,6 +1000,47 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
             Adjective,Adverb,Conjunction,Numeral,Pronoun,Particle,Verb,
             Adposition,Determiner,Noun)
         cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
+
+    elseif(TYPE_STRUCTURE == "SimplerTags")
+        wordTypes = [   "Adjective",            "Adverb",                   
+                        "Verb",                 "Noun",         "Function"]
+
+        NUM_TYPES   = length(wordTypes)
+
+        Adjective   = subset(df_modified, :newBaseTags => ByRow((==(0))))
+        Adverb      = subset(df_modified, :newBaseTags => ByRow((==(2))))
+        Conjunction = subset(df_modified, :newBaseTags => ByRow((==(3))))
+        Numeral     = subset(df_modified, :newBaseTags => ByRow((==(6))))
+        Pronoun     = subset(df_modified, :newBaseTags => ByRow((==(7))))
+        Particle    = subset(df_modified, :newBaseTags => ByRow((==(8))))
+        Verb        = subset(df_modified, :newBaseTags => ByRow((==(9))))
+        Adposition  = subset(df_modified, :newBaseTags => ByRow((==(1))))
+        Determiner  = subset(df_modified, :newBaseTags => ByRow((==(4))))
+        Noun        = subset(df_modified, :newBaseTags => ByRow((==(5))))
+
+
+
+        Adjective.fullTag   .= 0
+        Adverb.fullTag      .= 1
+        Verb.fullTag        .= 2
+        Noun.fullTag        .= 3
+
+
+
+        Conjunction.fullTag .= 4
+        Numeral.fullTag     .= 4
+        Pronoun.fullTag     .= 4
+        Particle.fullTag    .= 4
+        Adposition.fullTag  .= 4
+        Determiner.fullTag  .= 4
+
+
+
+
+        df_modified = vcat(
+            Adjective,Adverb,Verb,Noun,Conjunction,Numeral,Pronoun,Particle,
+            Adposition,Determiner)
+        cols = [palette(ColorSchemes.viridis, NUM_TYPES)[i] for i in range(1,NUM_TYPES)]
     elseif(TYPE_STRUCTURE == "NewTags_FX")
         wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
                         "Particle",             "Verb",
