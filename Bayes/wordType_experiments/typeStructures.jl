@@ -485,6 +485,78 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
                     "#ff5e62","#be0016","#770014",                          # Nouns (reds)
                 ]
         cols = parse.(RGB, colIds)
+
+
+    elseif(TYPE_STRUCTURE == "Custom5Split")
+        wordTypes = [   "Noun",             "Adjective",            "Adverb / Adposition (Adv)",          "Determiner (IO) / Numeral",        "Verb / Function"]
+
+        NUM_TYPES   = length(wordTypes)
+
+        Adjective   = subset(df_modified, :newBaseTags => ByRow((==(0))))
+        Adverb      = subset(df_modified, :newBaseTags => ByRow((==(2))))
+        Conjunction = subset(df_modified, :BaseTags => ByRow((==(3))))
+        Numeral     = subset(df_modified, :newBaseTags => ByRow((==(6))))
+        Pronoun     = subset(df_modified, :newBaseTags => ByRow((==(7))))
+        Particle    = subset(df_modified, :newBaseTags => ByRow((==(8))))
+
+
+        Verb        = subset(df_modified, :newBaseTags => ByRow((==(9))))
+
+        Adposition  = subset(df_modified, :newBaseTags => ByRow((==(1))))
+
+        adp1        = subset(Adposition, :adpTags => ByRow((==(1))))
+        adp2        = subset(Adposition, :adpTags => ByRow((==(2))))
+        adp3        = subset(Adposition, :adpTags => ByRow((==(3))))
+        adp4        = subset(Adposition, :adpTags => ByRow((==(4))))
+
+
+        Determiner  = subset(df_modified, :newBaseTags => ByRow((==(4))))
+
+        det1        = subset(Determiner, :detTags => ByRow((==(1))))
+        det2        = subset(Determiner, :detTags => ByRow((==(2))))
+        det3        = vcat( subset(Determiner, :detTags => ByRow((==(3)))),
+                            subset(Determiner, :detTags => ByRow((==(4)))))
+
+        Noun        = subset(df_modified, :newBaseTags => ByRow((==(5))))
+
+        Noun.fullTag        .= 0
+
+        Adjective.fullTag   .= 1
+
+        Adverb.fullTag      .= 2
+        adp4.fullTag        .= 2
+
+        det3.fullTag        .= 3
+        Numeral.fullTag     .= 3
+
+        
+        Verb.fullTag        .= 4
+        Conjunction.fullTag .= 4
+        Pronoun.fullTag     .= 4
+        Particle.fullTag    .= 4
+        adp1.fullTag        .= 4
+        adp2.fullTag        .= 4
+        adp3.fullTag        .= 4
+        det1.fullTag        .= 4
+        det2.fullTag        .= 4
+        
+
+
+
+
+        df_modified = vcat(
+            Noun,Adjective,Adverb,adp4,det3,Numeral,Verb,Conjunction,Pronoun,Particle,adp1,adp2,adp3,det1,det2)
+
+        
+        colIds = [
+                    "#871a56","#a285ff",                                    # Adj Adv
+                    "#ffe314","#f7bd7e","#ff5488","#f46200",                # Conj Num Prn Part
+                    "#7e007f","#d730d9",                                    # Verbs (purples)
+                    "#00bcc5","#017eed","#2400bb","#002b58",                # Adp (blueus)
+                    "#72ff77","#72b800","#004617",                          # Dets (greens)
+                    "#ff5e62","#be0016","#770014",                          # Nouns (reds)
+                ]
+        cols = parse.(RGB, colIds)
     elseif(TYPE_STRUCTURE == "CompletelyFull")
         wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
                         "Particle",
