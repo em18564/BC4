@@ -494,7 +494,7 @@ function processTypeStructure(df_modified,TYPE_STRUCTURE)
 
         Adjective   = subset(df_modified, :newBaseTags => ByRow((==(0))))
         Adverb      = subset(df_modified, :newBaseTags => ByRow((==(2))))
-        Conjunction = subset(df_modified, :BaseTags => ByRow((==(3))))
+        Conjunction = subset(df_modified, :newBaseTags => ByRow((==(3))))
         Numeral     = subset(df_modified, :newBaseTags => ByRow((==(6))))
         Pronoun     = subset(df_modified, :newBaseTags => ByRow((==(7))))
         Particle    = subset(df_modified, :newBaseTags => ByRow((==(8))))
