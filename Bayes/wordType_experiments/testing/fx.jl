@@ -42,7 +42,7 @@ replace!(dfTags.tags, 10 => 5)
 CSV.write("../input/full_tags.csv", dfTags)
 # %%
 using Counters
-dfTags   = CSV.read("../input/dfWithTagsReintigratedNew3.csv", DataFrame)
+dfTags   = CSV.read("../../input/dfWithTagsReintigratedNew3.csv", DataFrame)
 wordEncodings = Dict(   1=>"Adjective",2=>"Adposition",3=>"Adverb",
                         4=>"Conjunction",5=>"Determiner",6=>"Noun",7=>"Numeral",
                         8=>"Pronoun",9=>"Particle",10=>"Verb")

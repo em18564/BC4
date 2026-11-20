@@ -550,14 +550,17 @@ od = "../models/__1_tightSig/output_NounDetSplit_New_VerbSplit_23_1931_6PCA_2000
 #                         "Noun"]
 # 
 
-# wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
-#                         "Particle",
-#                         "Verb (Lex)", "Verb (Aux)",
-#                         "Adposition (Lex)",     "Adposition (Sub)",         "Adposition (Syn)", "Adposition (Adv)",
-#                         "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (Prep)",       "Determiner (AdvMod)",
-#                         "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",     "Noun (Prep)",       "Noun (AdvMod)"]
+wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+                        "Particle",
+                        "Verb (Lex)", "Verb (Aux)",
+                        "Adposition (Lex)",     "Adposition (Sub)",         "Adposition (Syn)", "Adposition (Adv)",
+                        "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (Prep)",
+                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)"]
 
-wordTypesShort = wordTypes
+# wordTypes = [   "Adjective",            "Adverb",                   
+#                         "Verb",                 "Noun",         "Function"]
+
+# wordTypesShort = wordTypes
 chndfs = []
 ssdfs  = []
 for i in range(1,6)
@@ -570,22 +573,27 @@ prob = repeat([1.0/length(full_chndfs[1][1][!,"a_ws[1]"])], length(full_chndfs[1
 
 newDS = [  getDataFromFirstXchains(x,chndfs,ssdfs,wordTypes) for x in 1:6] #change x to x in 1:6
 
-fullDistances = []
-fullDataPoints    = []
+fullDistances      = []
+fullDataPoints     = []
+fullDataPoints2    = []
 for i in range(1,size(newDS[6][2][1])[1])
     N = size(newDS[6][2])[2]
     distances = zeros((N,N))
     dataPoints = []
+    dataPoints2 = []
     for a in range(1,N)
         aDraw = [newDS[6][2][pc,a][i] for pc in range(1,12)]
+        aDraw2 = [newDS[6][1][pc,a][i] for pc in range(1,12)]
         for b in range(1,N)
             
             bDraw = [newDS[6][2][pc,b][i] for pc in range(1,12)]
             distances[a,b] = norm(bDraw-aDraw)
         end
         push!(dataPoints,aDraw)
+        push!(dataPoints2,aDraw2)
     end
     push!(fullDataPoints,dataPoints)
+    push!(fullDataPoints2,dataPoints2)
     push!(fullDistances,distances)
 end
 

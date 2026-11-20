@@ -92,15 +92,17 @@ for link in linkages
 end
 # %%
 default(
-        titlefont = 24,
+        titlefont = 30,
         guidefont = 24,     # x and y axis labels (xlabel/ylabel)
         tickfont = 16,      # axis tick numbers
         legendfont = 16
     )
+smallerWidth  = 0.08
+smallerWidth2 = 0.13
 listOfDistsAndAssign = [coClusterMatrix(fullDataPoints,k) for k in range(2,length(wordTypes)-1)]
 l = @layout [
-    a{0.3h}
-    grid(4,4,widths=[0.2,0.29,0.29,0.22])
+    a{0.52h}
+    grid(2,8,widths=vcat(smallerWidth,repeat([(1-smallerWidth-smallerWidth2)/6],6),smallerWidth2))
 ]
 listOfDists = [listOfDistsAndAssign[i][1] for i in range(1,length(listOfDistsAndAssign))]
 innerAssignments = [listOfDistsAndAssign[i][2] for i in range(1,length(listOfDistsAndAssign))]
@@ -115,20 +117,31 @@ Plots.plot(     tree,
                 left_margin=5mm,
                 bottom_margin=25mm,
                 top_margin=10mm,
-                xrotation =45)
+                xrotation =45,
+                legendfont=24,
+                tickfont=24)
 
-Plots.savefig("overall_full.png")
+Plots.savefig("figs/dend_simple.png")
 listOfPlots = [Plots.plot(      tree,
                                 xticks=(1:length(wordTypes),wordTypes[tree.order]),
                                 yticks=range(0,1.6,9),
                                 ylims =(0,1.65),
-                                xrotation=90,bottom_margin=10mm,left_margin=20mm,right_margin=20mm,title="Pooled Clusters",ylabel="Co-Association Distance")]
+                                xrotation=90,bottom_margin=45mm,left_margin=20mm,right_margin=20mm,title="Consolidated Clustering of All Ks",ylabel="Co-Association Distance")]
 for dist in eachindex(listOfDists)
     tree = hclust(listOfDists[dist], linkage=:ward)
-    push!(listOfPlots,Plots.plot(tree,xticks=(1:length(wordTypes),wordTypesShort[tree.order]),xrotation=90,bottom_margin=10mm,right_margin=5mm,title = string(dist+1)*" clusters",yaxis=false))
+    push!(listOfPlots,Plots.plot(   tree,
+                                    xticks=(1:length(wordTypes),
+                                    wordTypesShort[tree.order]),
+                                    xrotation=90,
+                                    bottom_margin=20mm,
+                                    top_margin = 10mm,
+                                    left_margin = -21mm,
+                                    right_margin = -21mm,
+                                    title ="K = "*string(dist+1),
+                                    yaxis=false))
 end
-Plots.plot(listOfPlots...; layout=l, size = (1800, 2500))
-Plots.savefig("combClust_full.png")
+Plots.plot(listOfPlots...; layout=l, size = (3761, 2000),right_margin=10mm)
+Plots.savefig("figs/dend_full.png")
 
 
 # %%
