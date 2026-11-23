@@ -121,7 +121,7 @@ Plots.plot(     tree,
                 legendfont=24,
                 tickfont=24)
 
-Plots.savefig("figs/dend_simple.png")
+Plots.savefig("figs/dend_simple_resorted.png")
 listOfPlots = [Plots.plot(      tree,
                                 xticks=(1:length(wordTypes),wordTypes[tree.order]),
                                 yticks=range(0,1.6,9),
@@ -141,7 +141,7 @@ for dist in eachindex(listOfDists)
                                     yaxis=false))
 end
 Plots.plot(listOfPlots...; layout=l, size = (3761, 2000),right_margin=10mm)
-Plots.savefig("figs/dend_full.png")
+Plots.savefig("figs/dend_full_resorted.png")
 
 
 # %%
