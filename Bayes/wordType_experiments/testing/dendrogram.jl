@@ -543,24 +543,27 @@ for experimentID in range(3,4)
     Plots.savefig(finalPlot,"figs/totallyPooled/"*experimentNames[experimentID])
 end
 # %%
-od = "../models/__1_tightSig/output_NounDetSplit_New_VerbSplit_23_1931_6PCA_2000"
-#od = "../models/__1_tightSig/output_SimpleTags_23_1931_6PCA_2000"
-# wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
-#                         "Particle",             "Verb",                     "Adposition",                    "Determiner",
-#                         "Noun"]
-# 
-
+#od = "../models/__1_tightSig/output_Custom5Split_23_1931_6PCA_2000"
+od = "../models/__1_tightSig/output_SimpleTags_23_1931_6PCA_2000"
+#od = "../models/__1_tightSig/output_SimplerTags_23_1931_6PCA_2000"
+#od = "../models/__1_tightSig/output_NounDetSplit_New_VerbSplit_23_1931_6PCA_2000"
 wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
-                        "Particle",
-                        "Verb (Lex)", "Verb (Aux)",
-                        "Adposition (Lex)",     "Adposition (Sub)",         "Adposition (Syn)", "Adposition (Adv)",
-                        "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (Prep)",
-                        "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)"]
+                        "Particle",             "Verb",                     "Adposition",                    "Determiner",
+                        "Noun"]
+# 
+#wordTypes = [   "Noun",             "Adjective",            "Adverb / Adposition (Adv)",          "Determiner (IO) / Numeral",        "Verb / Function"]
+
+# wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+#                         "Particle",
+#                         "Verb (Lex)", "Verb (Aux)",
+#                         "Adposition (Lex)",     "Adposition (Sub)",         "Adposition (Syn)", "Adposition (Adv)",
+#                         "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (Prep)",
+#                         "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)"]
 
 # wordTypes = [   "Adjective",            "Adverb",                   
-#                         "Verb",                 "Noun",         "Function"]
+#                          "Verb",                 "Noun",         "Function"]
 
-# wordTypesShort = wordTypes
+wordTypesShort = wordTypes
 chndfs = []
 ssdfs  = []
 for i in range(1,6)

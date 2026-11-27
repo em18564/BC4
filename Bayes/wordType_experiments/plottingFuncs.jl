@@ -298,6 +298,8 @@ end
 
 
 function plotGraphs(outputDir,wordTypes,cols,noPCS,noInChain)
+
+    noInChain = 250
     chainLength = noInChain*4
     includeSigma = true
     if includeSigma

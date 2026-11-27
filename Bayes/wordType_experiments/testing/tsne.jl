@@ -44,26 +44,27 @@ StatsPlots.theme(:ggplot2)
 allData = stack(stack(fullDataPoints))
 reshape(permutedims(allData[:, :, 1:500], (3, 1, 2)),
                500, size(allData, 1)*size(allData, 2))
-wordTypesWithGramShort = [
-    "Adj"
-    "Adv"
-    "Con"
-    "Num"
-    "Pron"
-    "Part"
-    "Verb Lex"
-    "Verb Aux"
-    "Adp Lex"
-    "Adp Sub"
-    "Adp Syn"
-    "Adp Adv"
-    "Det S"
-    "Det DO"
-    "Det IO"
-    "Nou S"
-    "Nou DO"
-    "Nou IO"
-]
+# wordTypesWithGramShort = [
+#     "Adj"
+#     "Adv"
+#     "Con"
+#     "Num"
+#     "Pron"
+#     "Part"
+#     "Verb Lex"
+#     "Verb Aux"
+#     "Adp Lex"
+#     "Adp Sub"
+#     "Adp Syn"
+#     "Adp Adv"
+#     "Det S"
+#     "Det DO"
+#     "Det IO"
+#     "Nou S"
+#     "Nou DO"
+#     "Nou IO"
+# ]
+wordTypesWithGramShort = wordTypes
 a = StatsBase.mean(allData,dims=3)[:,:,1]#
 b = StatsBase.std(allData,dims=3)[:,:,1]
 comb = fit(PCA, a; maxoutdim=3)
@@ -71,9 +72,9 @@ comb2 = fit(PCA, b; maxoutdim=3)
 xs = predict(comb,a)[1,:]
 stdxs = predict(comb2,b)[1,:]
 stdys = predict(comb2,b)[2,:]
-stdzs = predict(comb2,b)[3,:]
+#stdzs = predict(comb2,b)[3,:]
 ys = predict(comb,a)[2,:]
-zs = predict(comb,a)[3,:]
+#zs = predict(comb,a)[3,:]
 plt = Plots.scatter(xs,ys,legend=false)
 for i in eachindex(wordTypesWithGramShort)
     plt = annotate!(xs[i], ys[i]-0.03, text(wordTypesWithGramShort[i], :center, 5),camera = (5, 15))
@@ -141,55 +142,67 @@ cols = parse.(RGB, colIds)
 
 means = predict(M,a)
 vars  = predict(M,b)
-plt = Plots.scatter()
-for i in eachindex(wordTypesWithGramShort)
-    θ = range(0, 2π, length = 100)
-    ellipse_x = means[1,i] .+ 1.0 * vars[1,i] .* cos.(θ)
-    ellipse_y = means[2,i] .+ 1.0 * vars[2,i] .* sin.(θ)
-    plt = Plots.plot!(ellipse_x, ellipse_y, seriestype=:shape, fillalpha=0.3, c=cols[i],lw=0)
+function plotPCAGraph(M,x,y)
+    plt = Plots.scatter()
+    for i in eachindex(wordTypesWithGramShort)
+        θ = range(0, 2π, length = 100)
+        ellipse_x = means[x,i] .+ 1.0 * vars[x,i] .* cos.(θ)
+        ellipse_y = means[y,i] .+ 1.0 * vars[y,i] .* sin.(θ)
+        plt = Plots.plot!(ellipse_x, ellipse_y, seriestype=:shape, fillalpha=0.3, c=cols[i],lw=0)
+    end
+
+    mapping = Dict(
+        1=> weighted_color_mean(0.5,cols[1],cols[2]),
+        2=> weighted_color_mean(0.5,cols[1],cols[2]),
+        7=> weighted_color_mean(0.5,cols[7],cols[8]),
+        8=> weighted_color_mean(0.5,cols[7],cols[8]),
+        16=>cols[17],
+        17=>cols[17],
+        18=>cols[17],
+    )
+
+    # for i in eachindex(wordTypesWithGramShort)
+        
+    #     if i in keys(mapping)
+    #         θ = range(0, 2π, length = 100)
+    #         ellipse_x = means[1,i] .+ 1.0 * vars[1,i] .* cos.(θ)
+    #         ellipse_y = means[2,i] .+ 1.0 * vars[2,i] .* sin.(θ)
+    #         plt = Plots.plot!(ellipse_x, ellipse_y, seriestype=:shape, fillalpha=0.0, linecolor=mapping[i]*0.5,lw=1.5)
+    #     end
+        
+    # end
+
+
+    for i in eachindex(wordTypesWithGramShort)
+        plt = annotate!(means[x,i]+0.015, means[y,i]+0.015, text(wordTypesWithGramShort[i], :left, 16,rotation =45))
+    end
+    plt = Plots.scatter!(   means[x,:],
+                            means[y,:],
+                            legend=false,
+                            size=(1700,1700),
+                            xlims=(-1.75,1.05),
+                            #xlims=(-1.65,1.15),
+                            #ylims=(-1.5,1.3),
+                            ylims=(-1,1.8),
+                            xticks=range(-1.5,1,6),
+                            yticks=range(-1.5,1,6),
+                            xminorticks=5,
+                            yminorticks=5,
+                            xlabel="PC"*string(x)*" of Posterior Samples ("*string(round(100*principalvars(M)[x]/var(M),digits=1))*"% Variance)",
+                            ylabel="PC"*string(y)*" of Posterior Samples ("*string(round(100*principalvars(M)[y]/var(M),digits=1))*"% Variance)",
+                            c=:black,
+                            left_margin=7mm,
+                            bg_inside   = "#E5ECF6")
+
+    return plt
 end
 
-mapping = Dict(
-    1=> weighted_color_mean(0.5,cols[1],cols[2]),
-    2=> weighted_color_mean(0.5,cols[1],cols[2]),
-    7=> weighted_color_mean(0.5,cols[7],cols[8]),
-    8=> weighted_color_mean(0.5,cols[7],cols[8]),
-    16=>cols[17],
-    17=>cols[17],
-    18=>cols[17],
-)
-
-# for i in eachindex(wordTypesWithGramShort)
-    
-#     if i in keys(mapping)
-#         θ = range(0, 2π, length = 100)
-#         ellipse_x = means[1,i] .+ 1.0 * vars[1,i] .* cos.(θ)
-#         ellipse_y = means[2,i] .+ 1.0 * vars[2,i] .* sin.(θ)
-#         plt = Plots.plot!(ellipse_x, ellipse_y, seriestype=:shape, fillalpha=0.0, linecolor=mapping[i]*0.5,lw=1.5)
-#     end
-    
-# end
-for i in eachindex(wordTypesWithGramShort)
-    plt = annotate!(means[1,i]+0.015, means[2,i]+0.015, text(wordTypesWithGramShort[i], :left, 16,rotation =45))
-end
-plt = Plots.scatter!(   means[1,:],
-                        means[2,:],
-                        legend=false,
-                        size=(1700,1700),
-                        xlims=(-1.75,1.05),
-                        ylims=(-1.5,1.3),
-                        xticks=range(-1.5,1,6),
-                        yticks=range(-1.5,1,6),
-                        xminorticks=5,
-                        yminorticks=5,
-                        xlabel="PC1 of Posterior Samples (37.8% Variance)",
-                        ylabel="PC2 of Posterior Samples (29.7% Variance)",
-                        c=:black,
-                        left_margin=7mm,
-                        bg_inside   = "#E5ECF6")
-
-plt
-Plots.savefig("PCofSamples1.png")
+p1 = plotPCAGraph(M,1,2)
+p2 = plotPCAGraph(M,3,2)
+p3 = plotPCAGraph(M,1,3)
+# %%
+Plots.plot([p1,p2,p3]...,layout=4)
+Plots.savefig("PCofSamplesdefault.png")
 
 
 # %%

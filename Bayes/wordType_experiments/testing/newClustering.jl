@@ -9,33 +9,33 @@ using Random
 #adjustedFullDataPoints = [vcat(fullDataPoints[i][5:length(wordTypes)],fullDataPoints[i][1:4]) for i in eachindex(fullDataPoints)]
 linkages = [:single,:average,:complete,:ward]
 
-wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
-                "Particle",
-                "Verb (Lex)", "Verb (Aux)",
-                "Adposition (Lex)",     "Adposition (Sub)",         "Adposition (Syn)", "Adposition (Adv)",
-                "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (ID-Object)",
-                "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
+# wordTypes = [   "Adjective",            "Adverb",                   "Conjunction",                  "Numeral",                  "Pronoun",
+#                 "Particle",
+#                 "Verb (Lex)", "Verb (Aux)",
+#                 "Adposition (Lex)",     "Adposition (Sub)",         "Adposition (Syn)", "Adposition (Adv)",
+#                 "Determiner (Subject)", "Determiner (D-Object)",    "Determiner (ID-Object)",
+#                 "Noun (Subject)",       "Noun (D-Object)",          "Noun (ID-Object)",]
 
-wordTypesShort = [
-    "Adj"
-    "Adv"
-    "Con"
-    "Num"
-    "Pron"
-    "Part"
-    "Verb Lex"
-    "Verb Aux"
-    "Adp Lex"
-    "Adp Sub"
-    "Adp Syn"
-    "Adp Adv"
-    "Det S"
-    "Det DO"
-    "Det IO"
-    "Nou S"
-    "Nou DO"
-    "Nou IO"
-]
+# wordTypesShort = [
+#     "Adj"
+#     "Adv"
+#     "Con"
+#     "Num"
+#     "Pron"
+#     "Part"
+#     "Verb Lex"
+#     "Verb Aux"
+#     "Adp Lex"
+#     "Adp Sub"
+#     "Adp Syn"
+#     "Adp Adv"
+#     "Det S"
+#     "Det DO"
+#     "Det IO"
+#     "Nou S"
+#     "Nou DO"
+#     "Nou IO"
+# ]
 
 
 function coClusterMatrix(dataPonts,k)
